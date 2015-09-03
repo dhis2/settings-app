@@ -1,0 +1,13 @@
+@import("susy")
+
+.body {
+    @include container();
+}
+
+.leftbar {
+    @include span(4 of 12);
+}
+
+.content-area {
+    @include span(4 of 12 last);
+}
