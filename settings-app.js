@@ -1,12 +1,19 @@
 import React from 'react';
 import d2Init from 'd2';
 
-var App = React.createClass({
+import settingsActions from './settingsActions';
+import settingsStore from './settingsStore';
+
+const App = React.createClass({
+    propTypes: {
+        store: React.PropTypes.Object.isRequired,
+        d2: React.PropTypes.Object.isRequired,
+    },
+
     componentWillMount() {
-        this.props.d2.system.settings.all()
-            .then(settings => {
-                this.setState({settings})
-            });
+        this.props.store.subscribe(settings => {
+            this.setState({settings});
+        });
     },
 
     render() {
@@ -24,11 +31,21 @@ var App = React.createClass({
                     })}
                 </table>
             </div>
-        )
-    }
+        );
+    },
 });
 
 d2Init({baseUrl: 'https://apps.dhis2.org/demo/api'})
-    .then(function (d2) {
-        React.render(<App d2={d2} />, document.getElementById('app'));
+    .then(d2 => {
+        settingsActions.load.subscribe(() => {
+            d2.system.settings.all()
+                    .then(settings => {
+                        settingsStore.setState(settings);
+                    });
+        });
+
+        // Fire the load action
+        settingsActions.load();
+
+        React.render(<App d2={d2} store={settingsStore} />, document.getElementById('app'));
     });

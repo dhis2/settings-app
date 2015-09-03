@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "npm test",
-    "lint": "jshint .",
+    "lint": "./node_modules/eslint/bin/eslint.js .",
     "validate": "npm ls"
   },
   "repository": {
