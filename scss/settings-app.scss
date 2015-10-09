@@ -1,13 +1,23 @@
-@import("susy")
+@import "~susy";
 
-.body {
-    @include container();
+$left-bar-width: 256px;
+
+html {
+    background: #ffffff;
+    font-family: 'Roboto', sans-serif;
 }
 
-.leftbar {
-    @include span(4 of 12);
+body {
+}
+
+.left-bar {
+    width: $left-bar-width;
+    float: left;
+    position: fixed;
+    margin-top: -16px;
 }
 
 .content-area {
-    @include span(4 of 12 last);
+    padding-left: 16px;
+    margin-left: $left-bar-width;
 }

@@ -1,3 +1,3 @@
 import {Action} from 'd2-flux';
 
-export default Action.createActionsFromNames(['load']);
+export default Action.createActionsFromNames(['load', 'setCategory', 'saveKey']);

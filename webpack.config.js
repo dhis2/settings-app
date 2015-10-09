@@ -11,7 +11,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.jsx?$/,
-                exclude: /(node_modules)/,
+                exclude: /node_modules/,
                 loader: 'babel',
                 query: {
                     stage: 2
@@ -20,6 +20,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: "style-loader!css-loader"
+            },
+            {
+                test: /\.scss$/,
+                loader: "style!css!sass"
             }
         ]
     },
