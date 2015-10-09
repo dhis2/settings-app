@@ -1,7 +1,7 @@
 import React from 'react/addons';
 import log from 'loglevel';
 
-import {init, config, getUserSettings, getManifest} from 'd2/src/d2';
+import {init, config, getUserSettings, getManifest} from 'd2/dist/d2';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -25,13 +25,13 @@ import Checkbox from 'material-ui/lib/checkbox';
 import Snackbar from 'material-ui/lib/snackbar';
 
 // Custom Components
-
 import Sidebar from './Sidebar.component';
 // import SettingsTable from './SettingsTable.component';
 
 // D2 UI
 
-import Form from 'd2-ui/src/forms/Form.component';
+import Form from 'd2-ui/lib/forms/Form.component';
+import HeaderBarWithContext from './header-bar/HeaderBarWithContext.component';
 
 // Styles
 
@@ -131,7 +131,6 @@ const App = React.createClass({
             const fieldConfig = {
                 name: settingsKey,
             };
-
             switch (mapping.type) {
             case 'dropdown':
                 fieldConfig.type = HackyDropDown;
@@ -209,6 +208,7 @@ const App = React.createClass({
         });
         const out = (
             <div className="app">
+                <HeaderBarWithContext d2={d2} />
                 <Snackbar
                     message={d2.i18n.getTranslation('settings_updated')}
                     autoHideDuration={1250}
@@ -280,7 +280,7 @@ getManifest(`./manifest.webapp`)
                         prev[curr.key] = curr.value;
                         return prev;
                     }, {});
-                cfg.corsWhitelist = results[1].corsWhitelist.filter(v => v.trim().length > 0).sort().join('\n');
+                cfg.corsWhitelist = (results[1].corsWhitelist || []).filter(v => v.trim().length > 0).sort().join('\n');
                 // Stupid fix for the fact that old controllers will save numbers as numbers,
                 // even though the API only allows string values, which creates a silly mismatch!
                 Object.keys(results[0]).map(key => {

@@ -25,10 +25,12 @@
   "dependencies": {
     "d2": "^0.0.9",
     "d2-flux": "^0.4.0",
+    "fbjs": "^0.2.1",
     "jquery": "^2.1.4",
     "loglevel": "^1.4.0",
-    "material-ui": "^0.11.1",
+    "material-ui": "^0.12.3",
     "react": "^0.13.3",
+    "react-dom": "^0.14.0",
     "react-router": "^0.13.3",
     "react-tap-event-plugin": "^0.1.7",
     "rx": "^3.1.2"
