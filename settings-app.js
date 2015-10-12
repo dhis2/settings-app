@@ -1,7 +1,7 @@
 import React from 'react/addons';
 import log from 'loglevel';
 
-import {init, config, getUserSettings, getManifest} from 'd2/dist/d2';
+import {init, config, getUserSettings, getManifest} from 'd2/lib/d2';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -268,7 +268,7 @@ getManifest(`./manifest.webapp`)
     .then(manifest => {
         //config.baseUrl = manifest.getBaseUrl();
         //config.baseUrl = 'https://apps.dhis2.org/demo/api';
-        config.baseUrl = 'http://localhost:8080/api';
+        config.baseUrl = 'http://localhost:8080/dhis/api';
     })
     .then(getUserSettings)
     .then(configI18n)
