@@ -1,3 +1,54 @@
 import {Action} from 'd2-flux';
+import {categories} from './settingsCategories';
+import {getInstance as getD2} from 'd2/lib/d2';
+import {Observable} from 'rx';
 
-export default Action.createActionsFromNames(['load', 'setCategory', 'saveKey']);
+const settingsActions = Action.createActionsFromNames(['load', 'setCategory', 'saveKey', 'searchSettings']);
+
+const settingsSearchMap = Observable.fromPromise(new Promise((resolve, reject) => {
+    settingsActions.load.subscribe(() => {
+        getD2()
+            .then(d2 => {
+                return Object.keys(categories)
+                    .map(categoryKey => categories[categoryKey].settings)
+                    .reduce((searchArray, categoryKeys) => {
+                        return searchArray.concat(categoryKeys);
+                    }, [])
+                    .reduce((translatedKeyValyeMap, settingsKey) => {
+                        return translatedKeyValyeMap.concat([[d2.i18n.getTranslation(d2.system.settings.mapping[settingsKey].label), settingsKey]]);
+                    }, []);
+            })
+            .then(searchMapping => resolve(searchMapping))
+            .catch(error => reject(error));
+    }, error => reject(error));
+}));
+
+function getSearchResultsFor(searchValue) {
+    return settingsSearchMap
+        .flatMap(val => Observable.fromArray(val))
+        .filter(keyValue => RegExp(searchValue.toLowerCase()).test(keyValue[0].toLowerCase()))
+        .map(([key, value]) => value)
+        .reduce((acc, value) => acc.concat(value), []);
+}
+
+settingsActions.searchSettings
+    .map(({data}) => data.target.value)
+    .debounce(500)
+    .map(searchValue => searchValue.toLowerCase().trim())
+    .distinctUntilChanged()
+    .map(searchValue => {
+        if (!searchValue) {
+            return Observable.just([]);
+        }
+        return getSearchResultsFor(searchValue);
+    })
+    .concatAll()
+    .subscribe((searchResultSettings) => {
+        if (searchResultSettings.length) {
+            settingsActions.setCategory({settings: searchResultSettings, searchResult: true});
+        } else {
+            settingsActions.setCategory('general');
+        }
+    });
+
+export default settingsActions;

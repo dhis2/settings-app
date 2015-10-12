@@ -1,11 +1,10 @@
 import React from 'react';
-
-// Material UI
-
 import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
 import RaisedButton from 'material-ui/lib/raised-button';
 import Color from 'material-ui/lib/styles/colors';
+import TextField from 'material-ui/lib/text-field';
+import settingsActions from './settingsActions.js';
 
 const MyListItem = React.createClass({
     render() {
@@ -43,6 +42,9 @@ const Sidebar = React.createClass({
         const theme = this.context.muiTheme;
         return (
             <div style={{backgroundColor: theme.sideBar.backgroundColor}} className="left-bar">
+                <div style={{padding: '0 1rem'}}>
+                    <TextField hintText={d2.i18n.getTranslation('search')} style={{width: '100%'}} onChange={settingsActions.searchSettings} />
+                </div>
                 <List style={{backgroundColor: 'transparent'}}>
                 {
                     categoryOrder

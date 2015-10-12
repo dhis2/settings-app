@@ -123,11 +123,13 @@ const App = React.createClass({
     getInitialState() {
         return {
             category: categoryOrder[0],
+            currentSettings: categories[categoryOrder[0]].settings,
         };
     },
 
     componentWillMount() {
-        this.props.settingsStore.subscribe(() => {
+        this.props.settingsStore.subscribe((storeState) => {
+            console.log('SettingsStore', storeState);
             this.forceUpdate();
         });
         this.props.configOptionStore.subscribe(() => {
@@ -137,13 +139,14 @@ const App = React.createClass({
             const category = arg.data;
             this.setState({
                 category: category,
+                currentSettings: category.searchResult ? category.settings : categories[category].settings,
             });
         });
     },
 
     render() {
         const d2 = this.props.d2;
-        const currentSettings = categories[this.state.category].settings;
+        const currentSettings = this.state.currentSettings;
         const fieldConfigs = currentSettings.map(settingsKey => {
             const mapping = d2.system.settings.mapping[settingsKey];
             const defaultValue = settingsStore.state ? settingsStore.state[settingsKey] : '';
@@ -249,7 +252,7 @@ const App = React.createClass({
                     />
 
                 <div className="content-area">
-                    <h1>{d2.i18n.getTranslation(this.props.categories[this.state.category].label)}</h1>
+                    <h1>{this.props.categories[this.state.category] ? d2.i18n.getTranslation(this.props.categories[this.state.category].label) : 'Search result'}</h1>
 
                     <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs}
                           onFormFieldUpdate={this._saveSetting}/>
