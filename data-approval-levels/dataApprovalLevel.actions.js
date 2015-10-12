@@ -39,7 +39,7 @@ actions.saveDataApprovalLevel
         }
 
         const dataApprovalLevelToSave = {
-            name: dataApprovalLevel.organisationUnitLevel.name,
+            name: dataApprovalLevel.name,
             orgUnitLevel: dataApprovalLevel.organisationUnitLevel.level,
             level: dataApprovalLevel.organisationUnitLevel.level,
         };

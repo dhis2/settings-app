@@ -123,10 +123,11 @@ export default React.createClass({
         const cssStyles = {
             textAlign: 'right',
             marginTop: '1rem',
+            marginBottom: '1rem',
         };
 
         return (
-            <div>
+            <div style={{width: '95%'}}>
                 <div style={cssStyles}>
                     <FloatingActionButton onClick={this.addClick}>
                         <FontIcon className="material-icons">add</FontIcon>
@@ -135,8 +136,7 @@ export default React.createClass({
                 <DataTable
                     rows={this.state.approvalLevels}
                     columns={this.props.columns}
-                    contextMenuActions={contextMenuActions}
-                />
+                    contextMenuActions={contextMenuActions} />
             </div>
         );
     },

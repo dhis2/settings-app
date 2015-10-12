@@ -31,6 +31,7 @@ import Sidebar from './Sidebar.component';
 // D2 UI
 import Form from 'd2-ui/lib/forms/Form.component';
 import HeaderBar from 'd2-ui/lib/header-bar/HeaderBar.component';
+import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 
 // Settings specific FormFields
 import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.component';
@@ -249,7 +250,7 @@ const App = React.createClass({
                     categories={this.props.categories}
                     currentCategory={this.state.category}
                     settingsActions={this.props.settingsActions}
-                    />
+                />
 
                 <div className="content-area">
                     <h1>{d2.i18n.getTranslation(this.props.categories[this.state.category].label)}</h1>
@@ -277,6 +278,8 @@ function configI18n({uiLocale}) {
     }
     config.i18n.sources.add('i18n/module/i18n_module_en.properties');
 }
+
+React.render(<LoadingMask />, document.getElementById('app'));
 
 getManifest(`./dev_manifest.webapp`)
     .then(manifest => {
