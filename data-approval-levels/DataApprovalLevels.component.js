@@ -2,7 +2,6 @@ import React from 'react';
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import dataApprovalLevelStore from './dataApprovalLevel.store';
 import dataApprovalLevelActions from './dataApprovalLevel.actions';
-
 import FloatingActionButton from 'material-ui/lib/floating-action-button';
 import FontIcon from 'material-ui/lib/font-icon';
 import Form from 'd2-ui/lib/forms/Form.component';
@@ -12,6 +11,7 @@ import SelectField from 'material-ui/lib/select-field';
 import RaisedButton from 'material-ui/lib/raised-button';
 import SelectFieldAsyncSource from './SelectFieldAsyncSource.component';
 import ListDivider from 'material-ui/lib/lists/list-divider';
+import Paper from 'material-ui/lib/paper';
 
 export default React.createClass({
     componentWillMount() {
@@ -43,35 +43,37 @@ export default React.createClass({
 
     renderForm() {
         const d2 = this.context.d2;
-        const createOptionsFromList = (list) => {
-            return list
-                .then(list => list.toArray())
-                .then(listItems => {
-                    return listItems
-                        .map(listItem => {
-                            return {
-                                text: listItem.displayName,
-                                payload: listItem,
-                            };
-                        });
-                });
-        };
+        const organisationUnitLevels = d2.models.organisationUnitLevel
+            .list()
+            .then(list => list.toArray())
+            .then(list => list.sort((left, right) => left.level - right.level))
+            .then(list => list.map(listItem => {
+                return {
+                    text: `${listItem.level}: ${listItem.displayName}`,
+                    payload: listItem,
+                };
+            }));
+
+        const categoryOptionGroupSets = d2.models.categoryOptionGroupSet
+            .list()
+            .then(list => list.toArray())
+            .then(listItems => {
+                return listItems
+                    .map(listItem => {
+                        return {
+                            text: listItem.displayName,
+                            payload: listItem,
+                        };
+                    });
+            });
 
         const fieldConfigs = [
-            {
-                name: 'name',
-                type: TextField,
-                value: this.modelToEdit.name,
-                fieldOptions: {
-                    floatingLabelText: this.getTranslation('name'),
-                },
-            },
             {
                 name: 'organisationUnitLevel',
                 type: SelectFieldAsyncSource,
                 fieldOptions: {
                     floatingLabelText: this.getTranslation('organisation_unit_level'),
-                    menuItemsSource: () => createOptionsFromList(d2.models.organisationUnitLevel.list()),
+                    menuItemsSource: () => organisationUnitLevels,
                     value: this.modelToEdit.organisationUnitLevel,
                 },
             },
@@ -79,18 +81,29 @@ export default React.createClass({
                 name: 'categoryOptionGroupSet',
                 type: SelectFieldAsyncSource,
                 fieldOptions: {
-                    floatingLabelText: this.getTranslation('category_option_group_sets'),
-                    menuItemsSource: () => createOptionsFromList(d2.models.categoryOptionGroupSet.list()),
+                    floatingLabelText: this.getTranslation('category_option_group_set'),
+                    menuItemsSource: () => categoryOptionGroupSets,
                     value: this.modelToEdit.categoryOptionGroupSet,
                 }
             }
         ];
 
+        const formPaperStyle = {
+            marginRight: '2rem',
+            marginTop: '2rem',
+            padding: '2rem',
+        };
+
         return (
-            <Form source={this.modelToEdit} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.formFieldUpdate}>
-                <RaisedButton onClick={this.saveAction} primary={true} label={this.getTranslation('save')} />
-                <RaisedButton onClick={this.cancelAction} style={{marginLeft: '1rem'}} label={this.getTranslation('cancel')} />
-            </Form>
+            <Paper style={formPaperStyle}>
+                <h2 style={{margin: 0}}>{this.getTranslation('create_new_approval_level')}</h2>
+                <Form source={this.modelToEdit} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.formFieldUpdate}>
+                    <div style={{marginTop: '1rem'}}>
+                        <RaisedButton onClick={this.saveAction} primary={true} label={this.getTranslation('save')} />
+                        <RaisedButton onClick={this.cancelAction} style={{marginLeft: '1rem'}} label={this.getTranslation('cancel')} />
+                    </div>
+                </Form>
+            </Paper>
         );
     },
 
@@ -98,12 +111,19 @@ export default React.createClass({
         dataApprovalLevelActions
             .saveDataApprovalLevel(this.modelToEdit)
             .subscribe(
-                message => console.log('Success', message),
+                (/*message*/) => {
+                    window.snackbar.show();
+                    this.resetAddFormAnddisplayList();
+                },
                 error => console.log('Error', error)
             );
     },
 
     cancelAction() {
+        this.resetAddFormAnddisplayList();
+    },
+
+    resetAddFormAnddisplayList() {
         this.modelToEdit = this.context.d2.models.dataApprovalLevel.create();
         this.setState({
             showAddForm: false,

@@ -13,13 +13,9 @@ import configOptionStore from './configOptionStore';
 import {categoryOrder, categories} from './settingsCategories';
 
 // Material UI
-
-// const ThemeManager = require('material-ui/lib/styles/theme-manager');
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
-import ColorTheme from './theme';
-// import AppBar from 'material-ui/lib/app-bar';
+import AppTheme from './theme';
 import TextField from 'material-ui/lib/text-field';
-// import RaisedButton from 'material-ui/lib/raised-button';
 import SelectField from 'material-ui/lib/select-field';
 import Checkbox from 'material-ui/lib/checkbox';
 import Snackbar from 'material-ui/lib/snackbar';
@@ -49,7 +45,7 @@ const MuiThemeMixin = {
 
     getChildContext() {
         return {
-            muiTheme: ThemeManager.getMuiTheme(ColorTheme),
+            muiTheme: AppTheme,
         };
     },
 };
@@ -250,12 +246,13 @@ const App = React.createClass({
                     categories={this.props.categories}
                     currentCategory={this.state.category}
                     settingsActions={this.props.settingsActions}
-                />
+                    />
 
                 <div className="content-area">
                     <h1>{d2.i18n.getTranslation(this.props.categories[this.state.category].label)}</h1>
 
-                    <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs} onFormFieldUpdate={this._saveSetting} />
+                    <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs}
+                          onFormFieldUpdate={this._saveSetting}/>
                 </div>
             </div>
         );
@@ -307,8 +304,12 @@ getManifest(`./dev_manifest.webapp`)
                 d2.system.configuration.all(args.data === true),
             ]).then(results => {
                 const cfg = Object.keys(results[1])
-                    .filter(key => { return key !== 'systemId'; })
-                    .map(key => { return { key: key, value: results[1][key] }; })
+                    .filter(key => {
+                        return key !== 'systemId';
+                    })
+                    .map(key => {
+                        return {key: key, value: results[1][key]};
+                    })
                     .reduce((prev, curr) => {
                         let value = curr.value;
                         if (value === null || value === 'null' || value === undefined) {
@@ -368,7 +369,7 @@ getManifest(`./dev_manifest.webapp`)
         log.info('Can settings:', d2.currentUser.authorities.has('F_SYSTEM_SETTING'), 'Can Oauth:', d2.currentUser.authorities.has('F_OAUTH2_CLIENT_MANAGE'));
         // Load translations
         d2.i18n.addStrings(d2.system.getI18nStrings());
-        d2.i18n.addStrings(['access_denied', 'settings_updated']);
+        d2.i18n.addStrings(['access_denied', 'settings_updated', 'save', 'delete', 'level', 'category_option_group_set']);
         d2.i18n.load().then(() => {
             if (!d2.currentUser.authorities.has('F_SYSTEM_SETTING')) {
                 document.write(d2.i18n.getTranslation('access_denied'));
@@ -380,7 +381,11 @@ getManifest(`./dev_manifest.webapp`)
                 d2.models.indicatorGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
                 d2.models.dataElementGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
                 d2.models.userGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
-                d2.models.organisationUnitLevel.list({paging: false, fields: 'id,level,displayName', order: 'level:asc'}),
+                d2.models.organisationUnitLevel.list({
+                    paging: false,
+                    fields: 'id,level,displayName',
+                    order: 'level:asc'
+                }),
                 d2.models.userRole.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
                 d2.models.organisationUnit.list({paging: false, fields: 'id,displayName', filter: ['level:in:[1,2]']}),
             ]).then(results => {

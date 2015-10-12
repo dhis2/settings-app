@@ -31,20 +31,23 @@ const Sidebar = React.createClass({
         d2: React.PropTypes.object.isRequired,
     },
 
+    contextTypes: {
+        muiTheme: React.PropTypes.object,
+    },
+
     render() {
         const d2 = this.props.d2;
         const categories = this.props.categories;
         const categoryOrder = this.props.categoryOrder;
         const currentCategory = this.props.currentCategory;
+        const theme = this.context.muiTheme;
         return (
-            <div className="left-bar">
-                <List>
+            <div style={{backgroundColor: theme.sideBar.backgroundColor}} className="left-bar">
+                <List style={{backgroundColor: 'transparent'}}>
                 {
-                    categoryOrder.map((categoryKey) => {
-                        if (categories[categoryKey].authority && !d2.currentUser.authorities.has(categories[categoryKey].authority)) {
-                            return (<span></span>);
-                        }
-
+                    categoryOrder
+                        .filter(categoryKey => !(categories[categoryKey].authority && !d2.currentUser.authorities.has(categories[categoryKey].authority)))
+                        .map((categoryKey) => {
                         return (
                             <MyListItem
                                 key={categoryKey}
@@ -52,19 +55,15 @@ const Sidebar = React.createClass({
                                 categoryKey={categoryKey}
                                 settingsActions={this.props.settingsActions}
                                 listStyle={{
-                                    backgroundColor: categoryKey === currentCategory ? '#276696' : Color.white,
-                                    color: categoryKey === currentCategory ? Color.white : Color.black,
+                                    backgroundColor: categoryKey === currentCategory ? theme.sideBar.backgroundColorItemActive : theme.sideBar.backgroundColorItem,
+                                    color: categoryKey === currentCategory ? theme.sideBar.textColorActive : theme.sideBar.textColor,
+                                    fontSize: 15,
                                 }}
                                 />
                         );
                     })
                 }
                 </List>
-                {/*<RaisedButton
-                    onClick={this.reload}
-                    label="Refresh settings"
-                    style={{marginLeft: 'auto', marginRight: 'auto'}}
-                    />*/}
             </div>
         );
     },

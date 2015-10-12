@@ -39,15 +39,15 @@ actions.saveDataApprovalLevel
         }
 
         const dataApprovalLevelToSave = {
-            name: dataApprovalLevel.name,
+            name: dataApprovalLevel.organisationUnitLevel.name,
             orgUnitLevel: dataApprovalLevel.organisationUnitLevel.level,
-            level: dataApprovalLevel.organisationUnitLevel.level,
         };
 
         if (dataApprovalLevel.categoryOptionGroupSet) {
             dataApprovalLevelToSave.categoryOptionGroupSet = {
                 id: dataApprovalLevel.categoryOptionGroupSet.id,
             };
+            dataApprovalLevelToSave.name = `${dataApprovalLevel.organisationUnitLevel.name} ${dataApprovalLevel.categoryOptionGroupSet.name}`;
         }
 
         getD2()

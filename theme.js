@@ -2,16 +2,17 @@
 import Colors from 'material-ui/lib/styles/colors';
 import ColorManipulator from 'material-ui/lib/utils/color-manipulator';
 import Spacing from 'material-ui/lib/styles/spacing';
+import ThemeManager from 'material-ui/lib/styles/theme-manager';
 
-export default {
+const style = {
     spacing: Spacing,
     fontFamily: 'Roboto, sans-serif',
     palette: {
         primary1Color: Colors.blue500,
         primary2Color: Colors.blue700,
         primary3Color: Colors.lightBlack,
-        accent1Color: Colors.pinkA200,
-        accent2Color: Colors.grey100,
+        accent1Color: '#276696',
+        accent2Color: '#E9E9E9',
         accent3Color: Colors.grey500,
         textColor: Colors.darkBlack,
         alternateTextColor: Colors.white,
@@ -20,3 +21,20 @@ export default {
         disabledColor: ColorManipulator.fade(Colors.darkBlack, 0.3),
     },
 };
+
+function createAppTheme(style) {
+    return {
+        sideBar: {
+            backgroundColor: '#F3F3F3',
+            backgroundColorItem: 'transparent',
+            backgroundColorItemActive: style.palette.accent2Color,
+            textColor: style.palette.textColor,
+            textColorActive: style.palette.textColor,
+        },
+    };
+}
+
+const muiTheme = ThemeManager.getMuiTheme(style);
+const appTheme = createAppTheme(style);
+
+export default Object.assign({}, muiTheme, appTheme);
