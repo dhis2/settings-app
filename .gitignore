@@ -9,3 +9,6 @@ node_modules/
 build/
 
 .DS_Store
+
+dev_manifest.webapp
+dev-jquery-auth.js

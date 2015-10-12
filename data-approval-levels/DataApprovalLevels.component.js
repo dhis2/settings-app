@@ -11,6 +11,7 @@ import TextField from 'material-ui/lib/text-field';
 import SelectField from 'material-ui/lib/select-field';
 import RaisedButton from 'material-ui/lib/raised-button';
 import SelectFieldAsyncSource from './SelectFieldAsyncSource.component';
+import ListDivider from 'material-ui/lib/lists/list-divider';
 
 export default React.createClass({
     componentWillMount() {
@@ -32,10 +33,12 @@ export default React.createClass({
     },
 
     render() {
-        if (this.state.showAddForm) {
-            return this.renderForm();
-        }
-        return this.renderList();
+        return (
+            <div>
+                <ListDivider style={{marginTop: '2rem'}} />
+                {this.state.showAddForm ? this.renderForm() : this.renderList()}
+            </div>
+        );
     },
 
     renderForm() {
@@ -66,27 +69,27 @@ export default React.createClass({
             {
                 name: 'organisationUnitLevel',
                 type: SelectFieldAsyncSource,
-                value: this.modelToEdit.organisationUnitLevel,
                 fieldOptions: {
                     floatingLabelText: this.getTranslation('organisation_unit_level'),
                     menuItemsSource: () => createOptionsFromList(d2.models.organisationUnitLevel.list()),
+                    value: this.modelToEdit.organisationUnitLevel,
                 },
             },
             {
                 name: 'categoryOptionGroupSet',
                 type: SelectFieldAsyncSource,
-                value: this.modelToEdit.categoryOptionGroupSet,
                 fieldOptions: {
                     floatingLabelText: this.getTranslation('category_option_group_sets'),
                     menuItemsSource: () => createOptionsFromList(d2.models.categoryOptionGroupSet.list()),
+                    value: this.modelToEdit.categoryOptionGroupSet,
                 }
             }
         ];
 
         return (
             <Form source={this.modelToEdit} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.formFieldUpdate}>
-                <RaisedButton onClick={this.saveAction}>Save</RaisedButton>
-                <RaisedButton onClick={this.cancelAction}>Cancel</RaisedButton>
+                <RaisedButton onClick={this.saveAction} primary={true} label={this.getTranslation('save')} />
+                <RaisedButton onClick={this.cancelAction} style={{marginLeft: '1rem'}} label={this.getTranslation('cancel')} />
             </Form>
         );
     },

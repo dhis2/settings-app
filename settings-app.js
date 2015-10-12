@@ -29,12 +29,13 @@ import Sidebar from './Sidebar.component';
 // import SettingsTable from './SettingsTable.component';
 
 // D2 UI
-
 import Form from 'd2-ui/lib/forms/Form.component';
-import HeaderBarWithContext from './header-bar/HeaderBarWithContext.component';
+import HeaderBar from 'd2-ui/lib/header-bar/HeaderBar.component';
+
+// Settings specific FormFields
+import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.component';
 
 // Styles
-
 require('./scss/settings-app.scss');
 
 
@@ -116,6 +117,12 @@ const App = React.createClass({
         d2: React.PropTypes.object,
     },
 
+    getChildContext() {
+        return {
+            d2: this.props.d2,
+        };
+    },
+
     getInitialState() {
         return {
             category: categoryOrder[0],
@@ -146,6 +153,7 @@ const App = React.createClass({
             const fieldConfig = {
                 name: settingsKey,
             };
+
             switch (mapping.type) {
             case 'dropdown':
                 fieldConfig.type = HackyDropDown;
@@ -209,6 +217,12 @@ const App = React.createClass({
                 fieldConfig.updateEvent = 'onBlur';
                 break;
 
+            case 'dataapproval':
+                fieldConfig.type = DataApprovalLevels;
+                fieldConfig.fieldOptions = {
+                    columns: ['level', 'name', 'categoryOptionGroupSet'],
+                };
+                break;
             default:
                 fieldConfig.type = HackyTextField;
                 fieldConfig.updateEvent = 'onBlur';
@@ -223,7 +237,7 @@ const App = React.createClass({
         });
         const out = (
             <div className="app">
-                <HeaderBarWithContext d2={d2} />
+                <HeaderBar />
                 <Snackbar
                     message={d2.i18n.getTranslation('settings_updated')}
                     autoHideDuration={1250}
@@ -264,11 +278,9 @@ function configI18n({uiLocale}) {
     config.i18n.sources.add('i18n/module/i18n_module_en.properties');
 }
 
-getManifest(`./manifest.webapp`)
+getManifest(`./dev_manifest.webapp`)
     .then(manifest => {
-        //config.baseUrl = manifest.getBaseUrl();
-        //config.baseUrl = 'https://apps.dhis2.org/demo/api';
-        config.baseUrl = 'http://localhost:8080/dhis/api';
+        config.baseUrl = manifest.getBaseUrl();
     })
     .then(getUserSettings)
     .then(configI18n)

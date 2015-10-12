@@ -3,6 +3,7 @@
 <head>
     <title>Settings</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=630, height=500, initial-scale=1">
 </head>
@@ -13,15 +14,8 @@
     </div>
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/rx/dist/rx.lite.js"></script>
-    <script>
-        jQuery.ajaxSetup({
-            headers: {
-//                Authorization: 'Basic ' + btoa('system:System123')
-                Authorization: 'Basic ' + btoa('admin:district')
-//                Authorization: 'Basic ' + btoa('user:Admin123')
-            }
-        });
+    <script src="dev-jquery-auth.js">
+        // TODO: Remove this for prod!
     </script>
     <script src="settings-app.js"></script>
 </body>
