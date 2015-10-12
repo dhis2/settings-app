@@ -40,8 +40,6 @@ require('./scss/settings-app.scss');
 
 log.setLevel(log.levels.TRACE);
 
-let currentCategory = '';
-
 const MuiThemeMixin = {
     childContextTypes: {
         muiTheme: React.PropTypes.object,
@@ -56,9 +54,6 @@ const MuiThemeMixin = {
 
 const HackyTextField = React.createClass({
     mixins: [MuiThemeMixin],
-
-    onBlur(e) {
-    },
 
     render() {
         return (
@@ -79,7 +74,7 @@ const HackyDropDown = React.createClass({
     mixins: [MuiThemeMixin],
 
     getInitialState() {
-        return {value: this.props.defaultValue === null ? 'null' : this.props.defaultValue};
+        return {value: this.props.defaultValue ? this.props.defaultValue : 'null'};
     },
 
     render() {
@@ -112,7 +107,6 @@ const App = React.createClass({
         settingsStore: React.PropTypes.object.isRequired,
         configOptionStore: React.PropTypes.object.isRequired,
         settingsActions: React.PropTypes.object.isRequired,
-        currentCategory: React.PropTypes.string.isRequired,
         d2: React.PropTypes.object.isRequired,
     },
 
@@ -122,9 +116,30 @@ const App = React.createClass({
         d2: React.PropTypes.object,
     },
 
+    getInitialState() {
+        return {
+            category: categoryOrder[0],
+        };
+    },
+
+    componentWillMount() {
+        this.props.settingsStore.subscribe(() => {
+            this.forceUpdate();
+        });
+        this.props.configOptionStore.subscribe(() => {
+            this.forceUpdate();
+        });
+        this.props.settingsActions.setCategory.subscribe((arg) => {
+            const category = arg.data;
+            this.setState({
+                category: category,
+            });
+        });
+    },
+
     render() {
         const d2 = this.props.d2;
-        const currentSettings = categories[currentCategory].settings;
+        const currentSettings = categories[this.state.category].settings;
         const fieldConfigs = currentSettings.map(settingsKey => {
             const mapping = d2.system.settings.mapping[settingsKey];
             const defaultValue = settingsStore.state ? settingsStore.state[settingsKey] : '';
@@ -136,7 +151,7 @@ const App = React.createClass({
                 fieldConfig.type = HackyDropDown;
                 fieldConfig.fieldOptions = {
                     floatingLabelText: d2.i18n.getTranslation(mapping.label),
-                    defaultValue: defaultValue,
+                    value: defaultValue,
                     menuItems: Object.keys(mapping.options || {}).map(value => {
                         const label = mapping.options[value];
                         return {
@@ -151,7 +166,7 @@ const App = React.createClass({
                 fieldConfig.type = HackyCheckbox;
                 fieldConfig.fieldOptions = {
                     label: d2.i18n.getTranslation(mapping.label),
-                    defaultChecked: defaultValue === 'true',
+                    checked: defaultValue === 'true',
                     onCheck: (e, v) => {
                         this.props.settingsActions.saveKey(settingsKey, v ? 'true' : 'false');
                     },
@@ -168,7 +183,7 @@ const App = React.createClass({
                 const opts = this.props.configOptionStore;
                 fieldConfig.fieldOptions = {
                     floatingLabelText: d2.i18n.getTranslation(mapping.label),
-                    defaultValue: defaultValue,
+                    defaultValue: defaultValue || 'null',
                     menuItems: opts.state ? opts.state[mapping.type] : [],
                 };
                 d2.system.configuration.get(settingsKey).then(value => {
@@ -212,30 +227,33 @@ const App = React.createClass({
                 <Snackbar
                     message={d2.i18n.getTranslation('settings_updated')}
                     autoHideDuration={1250}
-                    ref={(ref) => {this.snackOut(ref);}}
+                    ref={(ref) => {this._uglySnackbarRefExportFn(ref);}}
                     />
-                {/* <AppBar title={d2.i18n.getTranslation('system_settings')}/> */}
                 <Sidebar
                     d2={d2}
                     categoryOrder={this.props.categoryOrder}
                     categories={this.props.categories}
-                    currentCategory={this.props.currentCategory}
+                    currentCategory={this.state.category}
                     settingsActions={this.props.settingsActions}
                     />
 
                 <div className="content-area">
-                    <h1>{d2.i18n.getTranslation(this.props.categories[this.props.currentCategory].label)}</h1>
+                    <h1>{d2.i18n.getTranslation(this.props.categories[this.state.category].label)}</h1>
 
-                    <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.props.settingsActions.saveKey} />
+                    <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs} onFormFieldUpdate={this._saveSetting} />
                 </div>
             </div>
         );
         return out;
     },
 
-    snackOut(ref) {
+    _uglySnackbarRefExportFn(ref) {
         this._snackbar = ref;
         window.snackbar = this._snackbar;
+    },
+
+    _saveSetting(key, value) {
+        this.props.settingsActions.saveKey(key, value);
     },
 });
 
@@ -248,7 +266,8 @@ function configI18n({uiLocale}) {
 
 getManifest(`./manifest.webapp`)
     .then(manifest => {
-        config.baseUrl = manifest.getBaseUrl();
+        //config.baseUrl = manifest.getBaseUrl();
+        //config.baseUrl = 'https://apps.dhis2.org/demo/api';
         config.baseUrl = 'http://localhost:8080/api';
     })
     .then(getUserSettings)
@@ -263,7 +282,6 @@ getManifest(`./manifest.webapp`)
                 settingsActions={settingsActions}
                 categoryOrder={categoryOrder}
                 categories={categories}
-                currentCategory={currentCategory}
                 />, document.getElementById('app'));
         }
 
@@ -275,12 +293,18 @@ getManifest(`./manifest.webapp`)
             ]).then(results => {
                 const cfg = Object.keys(results[1])
                     .filter(key => { return key !== 'systemId'; })
-                    .map(key => { return { key: key, value: results[1][key] ? results[1][key].id : 'null' }; })
+                    .map(key => { return { key: key, value: results[1][key] }; })
                     .reduce((prev, curr) => {
-                        prev[curr.key] = curr.value;
+                        let value = curr.value;
+                        if (value === null || value === 'null' || value === undefined) {
+                            value = 'null';
+                        } else if (value.hasOwnProperty('id')) {
+                            value = value.id;
+                        }
+                        prev[curr.key] = value;
                         return prev;
                     }, {});
-                cfg.corsWhitelist = (results[1].corsWhitelist || []).filter(v => v.trim().length > 0).sort().join('\n');
+                cfg.corsWhitelist = results[1].corsWhitelist.filter(v => v.trim().length > 0).sort().join('\n');
                 // Stupid fix for the fact that old controllers will save numbers as numbers,
                 // even though the API only allows string values, which creates a silly mismatch!
                 Object.keys(results[0]).map(key => {
@@ -293,12 +317,6 @@ getManifest(`./manifest.webapp`)
             }, error => {
                 log.error(error);
             });
-        });
-
-        // settingsActions.setCategory handler
-        settingsActions.setCategory.subscribe((category) => {
-            currentCategory = category.data;
-            renderApp();
         });
 
         // settingsActions.saveKey handler
@@ -322,8 +340,11 @@ getManifest(`./manifest.webapp`)
                         log.error('Failed to save setting:', err);
                     });
             }
-            settingsStore.state[fieldName] = value;
-            renderApp();
+            //settingsStore.state[fieldName] = value;
+            const newState = settingsStore.state;
+            newState[fieldName] = value;
+            settingsStore.setState(newState);
+            //renderApp();
         });
 
         // App init
@@ -340,8 +361,6 @@ getManifest(`./manifest.webapp`)
             }
 
             settingsActions.load();
-            settingsActions.setCategory(categoryOrder[0]);
-
             Promise.all([
                 d2.models.indicatorGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
                 d2.models.dataElementGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
@@ -383,9 +402,10 @@ getManifest(`./manifest.webapp`)
                     userRoles: userRoles,
                     organisationUnits: organisationUnits,
                 });
-                renderApp();
+                //renderApp();
             });
         });
-    }, () => {
+    }, (err) => {
+        console.error('Failed to initialize D2:', err);
         document.write('Failed to initialize D2.');
     });

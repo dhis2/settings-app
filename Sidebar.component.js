@@ -52,7 +52,7 @@ const Sidebar = React.createClass({
                                 categoryKey={categoryKey}
                                 settingsActions={this.props.settingsActions}
                                 listStyle={{
-                                    backgroundColor: categoryKey === currentCategory ? Color.blue900 : Color.white,
+                                    backgroundColor: categoryKey === currentCategory ? '#276696' : Color.white,
                                     color: categoryKey === currentCategory ? Color.white : Color.black,
                                 }}
                                 />
@@ -60,11 +60,11 @@ const Sidebar = React.createClass({
                     })
                 }
                 </List>
-                <RaisedButton
+                {/*<RaisedButton
                     onClick={this.reload}
                     label="Refresh settings"
                     style={{marginLeft: 'auto', marginRight: 'auto'}}
-                    />
+                    />*/}
             </div>
         );
     },
