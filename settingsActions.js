@@ -10,7 +10,7 @@ const settingsSearchMap = Observable.fromPromise(new Promise((resolve, reject) =
         getD2()
             .then(d2 => {
                 return Object.keys(categories)
-                    .filter(categoryKey => d2.currentUser.authorities.has(categories[categoryKey].authority))
+                    .filter(categoryKey => !categories[categoryKey].authority || d2.currentUser.authorities.has(categories[categoryKey].authority))
                     .map(categoryKey => categories[categoryKey].settings)
                     .reduce((searchArray, categoryKeys) => {
                         return searchArray.concat(categoryKeys);
