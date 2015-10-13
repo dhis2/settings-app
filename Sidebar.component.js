@@ -34,22 +34,19 @@ const Sidebar = React.createClass({
         categoryOrder: React.PropTypes.array.isRequired,
         settingsActions: React.PropTypes.object.isRequired,
         d2: React.PropTypes.object.isRequired,
-        currentCategory: React.PropTypes.string.isRequired,
+        currentCategory: React.PropTypes.oneOfType([
+            React.PropTypes.object,
+            React.PropTypes.string,
+        ]).isRequired,
     },
 
     contextTypes: {
         muiTheme: React.PropTypes.object,
     },
 
-    componentWillMount() {
-        settingsActions.setCategory.subscribe(() => {
-            this.setState({searchString: ''});
-        });
-    },
-
     getInitialState() {
         return {
-            searchString: '',
+            searchValue: '',
         };
     },
 
@@ -63,12 +60,13 @@ const Sidebar = React.createClass({
             <div style={{backgroundColor: theme.sideBar.backgroundColor}} className="left-bar">
                 <div style={{padding: '0 1rem'}}>
                     <TextField hintText={d2.i18n.getTranslation('search')} style={{width: '100%'}}
-                               onChange={this._handleChange} value={this.state.searchString}/>
+                               onChange={this.search}/>
                 </div>
                 <List style={{backgroundColor: 'transparent'}}>
                     {
                         categoryOrder
                             .filter(categoryKey => !(categories[categoryKey].authority && !d2.currentUser.authorities.has(categories[categoryKey].authority)))
+                            .filter(() => !this.state.searchValue)
                             .map((categoryKey) => {
                                 return (
                                     <MyListItem
@@ -90,11 +88,11 @@ const Sidebar = React.createClass({
         );
     },
 
-    _handleChange(e) {
+    search(event) {
         this.setState({
-            searchString: e.target.value,
+            searchValue: event.target.value,
         });
-        settingsActions.searchSettings(e);
+        settingsActions.searchSettings(event.target.value);
     },
 });
 
