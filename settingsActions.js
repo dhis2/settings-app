@@ -27,7 +27,7 @@ function getSearchResultsFor(searchValue) {
     return settingsSearchMap
         .flatMap(val => Observable.fromArray(val))
         .filter(keyValue => RegExp(searchValue.toLowerCase()).test(keyValue[0].toLowerCase()))
-        .map(([key, value]) => value)
+        .map(([, value]) => value)
         .reduce((acc, value) => acc.concat(value), []);
 }
 

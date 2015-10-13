@@ -6,14 +6,18 @@ import FloatingActionButton from 'material-ui/lib/floating-action-button';
 import FontIcon from 'material-ui/lib/font-icon';
 import Form from 'd2-ui/lib/forms/Form.component';
 import Translate from 'd2-ui/lib/i18n/Translate.mixin';
-import TextField from 'material-ui/lib/text-field';
-import SelectField from 'material-ui/lib/select-field';
 import RaisedButton from 'material-ui/lib/raised-button';
 import SelectFieldAsyncSource from './SelectFieldAsyncSource.component';
 import ListDivider from 'material-ui/lib/lists/list-divider';
 import Paper from 'material-ui/lib/paper';
 
 export default React.createClass({
+    propTypes: {
+        columns: React.PropTypes.number.isRequired,
+    },
+
+    mixins: [Translate],
+
     componentWillMount() {
         dataApprovalLevelActions.loadDataApprovalLevels();
         dataApprovalLevelStore
@@ -22,23 +26,12 @@ export default React.createClass({
             });
     },
 
-    mixins: [Translate],
-
     getInitialState() {
         this.modelToEdit = this.context.d2.models.dataApprovalLevel.create();
         return {
             approvalLevels: [],
             showAddForm: false,
         };
-    },
-
-    render() {
-        return (
-            <div>
-                <ListDivider style={{marginTop: '2rem'}} />
-                {this.state.showAddForm ? this.renderForm() : this.renderList()}
-            </div>
-        );
     },
 
     renderForm() {
@@ -84,8 +77,8 @@ export default React.createClass({
                     floatingLabelText: this.getTranslation('category_option_group_set'),
                     menuItemsSource: () => categoryOptionGroupSets,
                     value: this.modelToEdit.categoryOptionGroupSet,
-                }
-            }
+                },
+            },
         ];
 
         const formPaperStyle = {
@@ -99,7 +92,7 @@ export default React.createClass({
                 <h2 style={{margin: 0}}>{this.getTranslation('create_new_approval_level')}</h2>
                 <Form source={this.modelToEdit} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.formFieldUpdate}>
                     <div style={{marginTop: '1rem'}}>
-                        <RaisedButton onClick={this.saveAction} primary={true} label={this.getTranslation('save')} />
+                        <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
                         <RaisedButton onClick={this.cancelAction} style={{marginLeft: '1rem'}} label={this.getTranslation('cancel')} />
                     </div>
                 </Form>
@@ -107,11 +100,45 @@ export default React.createClass({
         );
     },
 
+    renderList() {
+        const contextMenuActions = {
+            delete: dataApprovalLevelActions.deleteDataApprovalLevel,
+        };
+
+        const cssStyles = {
+            textAlign: 'right',
+            marginTop: '1rem',
+        };
+
+        return (
+            <div style={{marginRight: 16}}>
+                <div style={cssStyles}>
+                    <FloatingActionButton onClick={this.addClick}>
+                        <FontIcon className="material-icons">add</FontIcon>
+                    </FloatingActionButton>
+                </div>
+                <DataTable
+                    rows={this.state.approvalLevels}
+                    columns={this.props.columns}
+                    contextMenuActions={contextMenuActions} />
+            </div>
+        );
+    },
+
+    render() {
+        return (
+            <div>
+                <ListDivider style={{marginTop: '2rem'}} />
+                {this.state.showAddForm ? this.renderForm() : this.renderList()}
+            </div>
+        );
+    },
+
     saveAction() {
         dataApprovalLevelActions
             .saveDataApprovalLevel(this.modelToEdit)
             .subscribe(
-                (/*message*/) => {
+                () => {
                     window.snackbar.show();
                     this.resetAddFormAnddisplayList();
                 },
@@ -133,32 +160,6 @@ export default React.createClass({
     formFieldUpdate(fieldName, newValue) {
         this.modelToEdit[fieldName] = newValue;
         this.forceUpdate();
-    },
-
-    renderList() {
-        const contextMenuActions = {
-            delete: dataApprovalLevelActions.deleteDataApprovalLevel,
-        };
-
-        const cssStyles = {
-            textAlign: 'right',
-            marginTop: '1rem',
-            marginBottom: '1rem',
-        };
-
-        return (
-            <div style={{width: '95%'}}>
-                <div style={cssStyles}>
-                    <FloatingActionButton onClick={this.addClick}>
-                        <FontIcon className="material-icons">add</FontIcon>
-                    </FloatingActionButton>
-                </div>
-                <DataTable
-                    rows={this.state.approvalLevels}
-                    columns={this.props.columns}
-                    contextMenuActions={contextMenuActions} />
-            </div>
-        );
     },
 
     addClick() {
