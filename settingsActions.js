@@ -32,23 +32,22 @@ function getSearchResultsFor(searchValue) {
 }
 
 settingsActions.searchSettings
-    .map(({data}) => data.target.value)
     .debounce(500)
+    .map(action => action.data)
     .map(searchValue => searchValue.toLowerCase().trim())
     .distinctUntilChanged()
-    .map(searchValue => {
+    .tap(searchValue => {
         if (!searchValue) {
-            return Observable.just([]);
+            settingsActions.setCategory('general');
         }
+    })
+    .filter(searchValue => searchValue)
+    .map(searchValue => {
         return getSearchResultsFor(searchValue);
     })
     .concatAll()
     .subscribe((searchResultSettings) => {
-        if (searchResultSettings.length) {
-            settingsActions.setCategory({settings: searchResultSettings, searchResult: true});
-        } else {
-            settingsActions.setCategory('general');
-        }
+        settingsActions.setCategory({settings: searchResultSettings, searchResult: true});
     });
 
 export default settingsActions;

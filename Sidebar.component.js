@@ -34,6 +34,12 @@ const Sidebar = React.createClass({
         muiTheme: React.PropTypes.object,
     },
 
+    getInitialState() {
+        return {
+            searchValue: '',
+        };
+    },
+
     render() {
         const d2 = this.props.d2;
         const categories = this.props.categories;
@@ -43,12 +49,13 @@ const Sidebar = React.createClass({
         return (
             <div style={{backgroundColor: theme.sideBar.backgroundColor}} className="left-bar">
                 <div style={{padding: '0 1rem'}}>
-                    <TextField hintText={d2.i18n.getTranslation('search')} style={{width: '100%'}} onChange={settingsActions.searchSettings} />
+                    <TextField hintText={d2.i18n.getTranslation('search')} style={{width: '100%'}} onChange={this.search} />
                 </div>
                 <List style={{backgroundColor: 'transparent'}}>
                 {
                     categoryOrder
                         .filter(categoryKey => !(categories[categoryKey].authority && !d2.currentUser.authorities.has(categories[categoryKey].authority)))
+                        .filter(() => !this.state.searchValue)
                         .map((categoryKey) => {
                         return (
                             <MyListItem
@@ -68,6 +75,13 @@ const Sidebar = React.createClass({
                 </List>
             </div>
         );
+    },
+
+    search(event) {
+        this.setState({
+            searchValue: event.target.value,
+        });
+        settingsActions.searchSettings(event.target.value);
     },
 
     reload() {

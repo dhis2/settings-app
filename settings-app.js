@@ -253,7 +253,7 @@ const App = React.createClass({
 
                 <div className="content-area">
                     <h1>{this.props.categories[this.state.category] ? d2.i18n.getTranslation(this.props.categories[this.state.category].label) : 'Search result'}</h1>
-
+                    {!this.state.currentSettings.length ? <div>{d2.i18n.getTranslation('no_settings_found_that_match')}</div> : null}
                     <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs}
                           onFormFieldUpdate={this._saveSetting}/>
                 </div>
@@ -372,7 +372,7 @@ getManifest(`./dev_manifest.webapp`)
         log.info('Can settings:', d2.currentUser.authorities.has('F_SYSTEM_SETTING'), 'Can Oauth:', d2.currentUser.authorities.has('F_OAUTH2_CLIENT_MANAGE'));
         // Load translations
         d2.i18n.addStrings(d2.system.getI18nStrings());
-        d2.i18n.addStrings(['access_denied', 'settings_updated', 'save', 'delete', 'level', 'category_option_group_set']);
+        d2.i18n.addStrings(['access_denied', 'settings_updated', 'save', 'delete', 'level', 'category_option_group_set', 'search']);
         d2.i18n.load().then(() => {
             if (!d2.currentUser.authorities.has('F_SYSTEM_SETTING')) {
                 document.write(d2.i18n.getTranslation('access_denied'));
