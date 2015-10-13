@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
     context: __dirname,
@@ -26,6 +27,12 @@ module.exports = {
                 loader: "style!css!sass"
             }
         ]
+    },
+    resolve: {
+        alias: {
+            react: path.resolve('./node_modules/react'),
+            'material-ui': path.resolve('./node_modules/material-ui'),
+        }
     },
     plugins: [
         new webpack.optimize.DedupePlugin(),
