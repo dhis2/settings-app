@@ -123,8 +123,8 @@ const App = React.createClass({
 
     getInitialState() {
         return {
-            category: categoryOrder[0],
-            currentSettings: categories[categoryOrder[0]].settings,
+            category: categoryOrder[9],
+            currentSettings: categories[categoryOrder[9]].settings,
         };
     },
 
@@ -226,7 +226,7 @@ const App = React.createClass({
 
             case 'oauth2clients':
                 fieldConfig.type = Oauth2ClientEditor;
-                fieldConfig.fieldOptions = {};
+                fieldConfig.fieldOptions = {d2};
                 break;
 
             default:
@@ -376,7 +376,7 @@ getManifest(`./dev_manifest.webapp`)
         log.info('Can settings:', d2.currentUser.authorities.has('F_SYSTEM_SETTING'), 'Can Oauth:', d2.currentUser.authorities.has('F_OAUTH2_CLIENT_MANAGE'));
         // Load translations
         d2.i18n.addStrings(d2.system.getI18nStrings());
-        d2.i18n.addStrings(['access_denied', 'settings_updated', 'save', 'delete', 'level', 'category_option_group_set', 'search']);
+        d2.i18n.addStrings(['access_denied', 'settings_updated', 'save', 'delete', 'level', 'category_option_group_set', 'search', 'yes', 'no', 'edit']);
         d2.i18n.load().then(() => {
             if (!d2.currentUser.authorities.has('F_SYSTEM_SETTING')) {
                 document.write(d2.i18n.getTranslation('access_denied'));
