@@ -16,21 +16,15 @@ export const categories = {
     general: {
         label: 'general_settings',
         settings: [
-            //'keyCacheStrategy',
             'keyAnalyticsMaxLimit',
-            //'keyDatabaseServerCpus',
             'infrastructuralIndicators',
             'infrastructuralDataElements',
             'infrastructuralPeriodType',
             'keyAnalysisRelativePeriod',
             'feedbackRecipients',
             'offlineOrganisationUnitLevel',
-            //'keySystemNotificationsEmail',
             'factorDeviation',
             'phoneNumberAreaCode',
-            //'helpPageLink',
-            //'keyInstanceBaseUrl',
-            //'googleAnalyticsUA',
             'multiOrganisationUnitForms',
             'keyAnalyticsMaintenanceMode',
         ],
@@ -125,6 +119,6 @@ export const categories = {
     oauth2: {
         label: 'oauth2_clients',
         authority: 'F_OAUTH2_CLIENT_MANAGE',
-        settings: [],
+        settings: ['oauth2clients'],
     },
 };

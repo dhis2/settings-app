@@ -13,7 +13,6 @@ import configOptionStore from './configOptionStore';
 import {categoryOrder, categories} from './settingsCategories';
 
 // Material UI
-import ThemeManager from 'material-ui/lib/styles/theme-manager';
 import AppTheme from './theme';
 import TextField from 'material-ui/lib/text-field';
 import SelectField from 'material-ui/lib/select-field';
@@ -22,6 +21,7 @@ import Snackbar from 'material-ui/lib/snackbar';
 
 // Custom Components
 import Sidebar from './Sidebar.component';
+import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component';
 // import SettingsTable from './SettingsTable.component';
 
 // D2 UI
@@ -33,9 +33,10 @@ import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.component';
 
 // Styles
+
 require('./scss/settings-app.scss');
 
-
+/* eslint react/no-multi-comp: 0 */
 log.setLevel(log.levels.TRACE);
 
 const MuiThemeMixin = {
@@ -128,8 +129,7 @@ const App = React.createClass({
     },
 
     componentWillMount() {
-        this.props.settingsStore.subscribe((storeState) => {
-            console.log('SettingsStore', storeState);
+        this.props.settingsStore.subscribe(() => {
             this.forceUpdate();
         });
         this.props.configOptionStore.subscribe(() => {
@@ -191,7 +191,7 @@ const App = React.createClass({
                 const opts = this.props.configOptionStore;
                 fieldConfig.fieldOptions = {
                     floatingLabelText: d2.i18n.getTranslation(mapping.label),
-                    defaultValue: defaultValue || 'null',
+                    value: defaultValue || 'null',
                     menuItems: opts.state ? opts.state[mapping.type] : [],
                 };
                 d2.system.configuration.get(settingsKey).then(value => {
@@ -223,6 +223,12 @@ const App = React.createClass({
                     columns: ['level', 'name', 'categoryOptionGroupSet'],
                 };
                 break;
+
+            case 'oauth2clients':
+                fieldConfig.type = Oauth2ClientEditor;
+                fieldConfig.fieldOptions = {};
+                break;
+
             default:
                 fieldConfig.type = HackyTextField;
                 fieldConfig.updateEvent = 'onBlur';
@@ -359,11 +365,9 @@ getManifest(`./dev_manifest.webapp`)
                         log.error('Failed to save setting:', err);
                     });
             }
-            //settingsStore.state[fieldName] = value;
             const newState = settingsStore.state;
             newState[fieldName] = value;
             settingsStore.setState(newState);
-            //renderApp();
         });
 
         // App init
@@ -384,11 +388,7 @@ getManifest(`./dev_manifest.webapp`)
                 d2.models.indicatorGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
                 d2.models.dataElementGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
                 d2.models.userGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
-                d2.models.organisationUnitLevel.list({
-                    paging: false,
-                    fields: 'id,level,displayName',
-                    order: 'level:asc'
-                }),
+                d2.models.organisationUnitLevel.list({paging: false, fields: 'id,level,displayName', order: 'level:asc'}),
                 d2.models.userRole.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
                 d2.models.organisationUnit.list({paging: false, fields: 'id,displayName', filter: ['level:in:[1,2]']}),
             ]).then(results => {
@@ -425,10 +425,9 @@ getManifest(`./dev_manifest.webapp`)
                     userRoles: userRoles,
                     organisationUnits: organisationUnits,
                 });
-                //renderApp();
             });
         });
     }, (err) => {
-        console.error('Failed to initialize D2:', err);
+        log.error('Failed to initialize D2:', err);
         document.write('Failed to initialize D2.');
     });
