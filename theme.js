@@ -4,7 +4,7 @@ import ColorManipulator from 'material-ui/lib/utils/color-manipulator';
 import Spacing from 'material-ui/lib/styles/spacing';
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
 
-const style = {
+const theme = {
     spacing: Spacing,
     fontFamily: 'Roboto, sans-serif',
     palette: {
@@ -34,7 +34,7 @@ function createAppTheme(style) {
     };
 }
 
-const muiTheme = ThemeManager.getMuiTheme(style);
-const appTheme = createAppTheme(style);
+const muiTheme = ThemeManager.getMuiTheme(theme);
+const appTheme = createAppTheme(theme);
 
 export default Object.assign({}, muiTheme, appTheme);
