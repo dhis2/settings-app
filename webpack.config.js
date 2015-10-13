@@ -4,6 +4,7 @@ var path = require('path');
 module.exports = {
     context: __dirname,
     entry: './settings-app.js',
+    devtool: 'source-map',
     output: {
         path: __dirname + '/build',
         filename: 'settings-app.js'
@@ -35,16 +36,17 @@ module.exports = {
         }
     },
     plugins: [
+/*
+        new webpack.DefinePlugin({
+            NODE_ENV: 'production',
+        }),
         new webpack.optimize.DedupePlugin(),
-        /*
         new webpack.optimize.UglifyJsPlugin({
             minimize: true,
-            compress: {
-                warnings: false
-            },
+            sourceMap: true,
         }),
         new webpack.optimize.OccurenceOrderPlugin(),
-        */
+*/
     ],
     devServer: {
         progress: true,
