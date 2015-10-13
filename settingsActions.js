@@ -32,7 +32,7 @@ function getSearchResultsFor(searchValue) {
 }
 
 settingsActions.searchSettings
-    .debounce(500)
+    .debounce(200)
     .map(action => action.data)
     .map(searchValue => searchValue.toLowerCase().trim())
     .distinctUntilChanged()
