@@ -34,12 +34,6 @@ const Sidebar = React.createClass({
         muiTheme: React.PropTypes.object,
     },
 
-    getInitialState() {
-        return {
-            searchValue: '',
-        };
-    },
-
     render() {
         const d2 = this.props.d2;
         const categories = this.props.categories;
@@ -55,7 +49,6 @@ const Sidebar = React.createClass({
                 {
                     categoryOrder
                         .filter(categoryKey => !(categories[categoryKey].authority && !d2.currentUser.authorities.has(categories[categoryKey].authority)))
-                        .filter(() => !this.state.searchValue)
                         .map((categoryKey) => {
                         return (
                             <MyListItem
@@ -67,6 +60,7 @@ const Sidebar = React.createClass({
                                     backgroundColor: categoryKey === currentCategory ? theme.sideBar.backgroundColorItemActive : theme.sideBar.backgroundColorItem,
                                     color: categoryKey === currentCategory ? theme.sideBar.textColorActive : theme.sideBar.textColor,
                                     fontSize: 15,
+                                    fontWeight: categoryKey === currentCategory ? 'bold' : 'inherit',
                                 }}
                                 />
                         );
@@ -78,9 +72,6 @@ const Sidebar = React.createClass({
     },
 
     search(event) {
-        this.setState({
-            searchValue: event.target.value,
-        });
         settingsActions.searchSettings(event.target.value);
     },
 
