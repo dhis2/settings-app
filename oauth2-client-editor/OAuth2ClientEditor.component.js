@@ -22,8 +22,10 @@ export default React.createClass({
 
     componentWillMount() {
         oa2ClientStore.subscribe(() => {
-            this.setState({isEmpty: oa2ClientStore.state.length === 0});
-            this.forceUpdate();
+            if (this.isMounted()) {
+                this.setState({isEmpty: oa2ClientStore.state.length === 0});
+                this.forceUpdate();
+            }
         });
         oa2Actions.load();
     },

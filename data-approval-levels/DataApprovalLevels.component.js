@@ -13,7 +13,7 @@ import Paper from 'material-ui/lib/paper';
 
 export default React.createClass({
     propTypes: {
-        columns: React.PropTypes.number.isRequired,
+        columns: React.PropTypes.array.isRequired,
     },
 
     mixins: [Translate],
@@ -22,7 +22,9 @@ export default React.createClass({
         dataApprovalLevelActions.loadDataApprovalLevels();
         dataApprovalLevelStore
             .subscribe(approvalLevels => {
-                this.setState({approvalLevels, showAddForm: false});
+                if (this.isMounted()) {
+                    this.setState({approvalLevels, showAddForm: false});
+                }
             });
     },
 
