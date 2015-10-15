@@ -306,14 +306,14 @@ const App = React.createClass({
 
 function configI18n({uiLocale}) {
     if (uiLocale !== 'en') {
-        config.i18n.sources.add(`i18n/module/i18n_module_${uiLocale}.properties`);
+        config.i18n.sources.add('i18n/module/i18n_module_' + uiLocale + '.properties');
     }
     config.i18n.sources.add('i18n/module/i18n_module_en.properties');
 }
 
 React.render(<LoadingMask />, document.getElementById('app'));
 
-getManifest(`./manifest.webapp`)
+getManifest('manifest.webapp')
     .then(manifest => {
         config.baseUrl = manifest.getBaseUrl() + '/api';
     })
