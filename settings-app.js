@@ -23,10 +23,10 @@ import FlatButton from 'material-ui/lib/flat-button';
 // Custom Components
 import Sidebar from './Sidebar.component';
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component';
-// import SettingsTable from './SettingsTable.component';
 
 // D2 UI
 import Form from 'd2-ui/lib/forms/Form.component';
+import {wordToValidatorMap} from 'd2-ui/lib/forms/Validators';
 import HeaderBar from 'd2-ui/lib/header-bar/HeaderBar.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 
@@ -34,11 +34,16 @@ import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.component';
 
 // Styles
-
 require('./scss/settings-app.scss');
 
 /* eslint react/no-multi-comp: 0 */
 log.setLevel(log.levels.TRACE);
+
+function getValidatorFunctions(settingsMapping) {
+    return (settingsMapping.validators || [])
+        .filter(validatorName => wordToValidatorMap.has(validatorName))
+        .map(validatorName => wordToValidatorMap.get(validatorName));
+}
 
 const MuiThemeMixin = {
     childContextTypes: {
@@ -205,6 +210,9 @@ const App = React.createClass({
             case 'organisationUnitLevels':
             case 'userRoles':
             case 'organisationUnits':
+            case 'startModules':
+            case 'flags':
+            case 'styles':
                 fieldConfig.type = HackyDropDown;
                 const opts = this.props.configOptionStore;
                 fieldConfig.fieldOptions = {
@@ -212,6 +220,11 @@ const App = React.createClass({
                     value: defaultValue || 'null',
                     menuItems: opts.state ? opts.state[mapping.type] : [],
                 };
+
+                if (['startModules', 'flags', 'styles'].indexOf(mapping.type) >= 0) {
+                    break;
+                }
+
                 d2.system.configuration.get(settingsKey).then(value => {
                     fieldConfig.fieldOptions.defaultValue = value === null ? 'null' : value.id;
                 });
@@ -265,6 +278,13 @@ const App = React.createClass({
                     maxWidth: theme.forms.maxWidth,
                 };
             }
+
+            if (mapping.helpText) {
+                fieldConfig.fieldOptions.helpText = d2.i18n.getTranslation(mapping.helpText);
+            }
+
+            fieldConfig.validators = getValidatorFunctions(mapping);
+
             return fieldConfig;
         });
         return (
@@ -285,7 +305,8 @@ const App = React.createClass({
 
                 <div className="content-area" style={theme.forms}>
                     <h1>{this.props.categories[this.state.category] ? d2.i18n.getTranslation(this.props.categories[this.state.category].label) : 'Search result'}</h1>
-                    {!this.state.currentSettings.length ? <div>{d2.i18n.getTranslation('no_settings_found_that_match')}</div> : null}
+                    {!this.state.currentSettings.length ?
+                        <div>{d2.i18n.getTranslation('no_settings_found_that_match')}</div> : null}
                     <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs}
                           onFormFieldUpdate={this._saveSetting}/>
                 </div>
@@ -354,7 +375,7 @@ getManifest('manifest.webapp')
                         prev[curr.key] = value;
                         return prev;
                     }, {});
-                cfg.corsWhitelist = results[1].corsWhitelist.filter(v => v.trim().length > 0).sort().join('\n');
+                cfg.corsWhitelist = (results[1].corsWhitelist || []).filter(v => v.trim().length > 0).sort().join('\n');
                 // Stupid fix for the fact that old controllers will save numbers as numbers,
                 // even though the API only allows string values, which creates a silly mismatch!
                 Object.keys(results[0]).map(key => {
@@ -373,23 +394,27 @@ getManifest('manifest.webapp')
         settingsActions.saveKey.subscribe((args) => {
             const [fieldName, value] = args.data;
             const settingsKeyMapping = d2.system.settings.mapping[fieldName];
-            if (settingsKeyMapping.configuration) {
-                d2.system.configuration.set(fieldName, value)
-                    .then(() => {
-                        window.snackbar && window.snackbar.show();
-                    })
-                    .catch((err) => {
-                        log.error('Failed to save configuration:', err);
-                    });
-            } else {
-                d2.system.settings.set(fieldName, value)
-                    .then(() => {
-                        window.snackbar && window.snackbar.show();
-                    })
-                    .catch((err) => {
-                        log.error('Failed to save setting:', err);
-                    });
+
+            if (getValidatorFunctions(d2.system.settings.mapping[fieldName]).every(validatorFn => validatorFn(value) === true)) {
+                if (settingsKeyMapping.configuration) {
+                    d2.system.configuration.set(fieldName, value)
+                        .then(() => {
+                            window.snackbar && window.snackbar.show();
+                        })
+                        .catch((err) => {
+                            log.error('Failed to save configuration:', err);
+                        });
+                } else {
+                    d2.system.settings.set(fieldName, value)
+                        .then(() => {
+                            window.snackbar && window.snackbar.show();
+                        })
+                        .catch((err) => {
+                            log.error('Failed to save setting:', err);
+                        });
+                }
             }
+
             const newState = settingsStore.state;
             newState[fieldName] = value;
             settingsStore.setState(newState);
@@ -416,6 +441,9 @@ getManifest('manifest.webapp')
                 d2.models.organisationUnitLevel.list({paging: false, fields: 'id,level,displayName', order: 'level:asc'}),
                 d2.models.userRole.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
                 d2.models.organisationUnit.list({paging: false, fields: 'id,displayName', filter: ['level:in:[1,2]']}),
+                d2.Api.getApi().get('../dhis-web-commons/menu/getModules.action'),
+                d2.Api.getApi().get('system/flags'),
+                d2.Api.getApi().get('system/styles'),
             ]).then(results => {
                 function optionalize(collection) {
                     return collection.toArray().map((item) => {
@@ -441,6 +469,24 @@ getManifest('manifest.webapp')
                 });
                 const userRoles = optionalize(results[4]);
                 const organisationUnits = optionalize(results[5]);
+                const startModules = (results[6].modules || []).map(module => {
+                    return {
+                        payload: module.name,
+                        text: module.name,
+                    };
+                });
+                const flags  = (results[7] || []).map(flagName => {
+                    return {
+                        payload: flagName,
+                        text: flagName,
+                    };
+                });
+                const styles = Object.keys(results[8]).map(styleName => {
+                    return {
+                        payload: results[8][styleName],
+                        text: styleName,
+                    };
+                });
 
                 configOptionStore.setState({
                     indicatorGroups: indicatorGroups,
@@ -449,6 +495,9 @@ getManifest('manifest.webapp')
                     organisationUnitLevels: organisationUnitLevels,
                     userRoles: userRoles,
                     organisationUnits: organisationUnits,
+                    startModules,
+                    flags,
+                    styles,
                 });
             });
         });

@@ -131,7 +131,8 @@ export default React.createClass({
                     <DataTable
                         rows={this.state.approvalLevels}
                         columns={this.props.columns}
-                        contextMenuActions={contextMenuActions} />
+                        contextMenuActions={contextMenuActions}
+                        />
                 </div>
             </div>
         );

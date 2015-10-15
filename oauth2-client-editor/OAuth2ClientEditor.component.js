@@ -163,7 +163,9 @@ export default React.createClass({
                     <DataTable
                         rows={oa2ClientStore.state}
                         columns={['name', 'password', 'refresh_token', 'authorization_code']}
-                        contextMenuActions={contextMenuActions} />
+                        contextMenuActions={contextMenuActions}
+                        primaryAction={contextMenuActions.edit}
+                        />
                 </div>
             </div>
         );
