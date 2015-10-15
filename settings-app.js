@@ -110,11 +110,11 @@ const App = React.createClass({
         d2: React.PropTypes.object.isRequired,
     },
 
-    mixins: [MuiThemeMixin],
-
     childContextTypes: {
         d2: React.PropTypes.object,
     },
+
+    mixins: [MuiThemeMixin],
 
     getChildContext() {
         return {
@@ -267,7 +267,7 @@ const App = React.createClass({
             }
             return fieldConfig;
         });
-        const out = (
+        return (
             <div className="app">
                 <HeaderBar />
                 <Snackbar
@@ -285,13 +285,13 @@ const App = React.createClass({
 
                 <div className="content-area" style={theme.forms}>
                     <h1>{this.props.categories[this.state.category] ? d2.i18n.getTranslation(this.props.categories[this.state.category].label) : 'Search result'}</h1>
-                    {!this.state.currentSettings.length ? <div>{d2.i18n.getTranslation('no_settings_found_that_match')}</div> : null}
+                    {!this.state.currentSettings.length ?
+                        <div>{d2.i18n.getTranslation('no_settings_found_that_match')}</div> : null}
                     <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs}
                           onFormFieldUpdate={this._saveSetting}/>
                 </div>
             </div>
         );
-        return out;
     },
 
     _uglySnackbarRefExportFn(ref) {
@@ -306,14 +306,14 @@ const App = React.createClass({
 
 function configI18n({uiLocale}) {
     if (uiLocale !== 'en') {
-        config.i18n.sources.add(`i18n/module/i18n_module_${uiLocale}.properties`);
+        config.i18n.sources.add('i18n/module/i18n_module_' + uiLocale + '.properties');
     }
     config.i18n.sources.add('i18n/module/i18n_module_en.properties');
 }
 
 React.render(<LoadingMask />, document.getElementById('app'));
 
-getManifest(`./dev_manifest.webapp`)
+getManifest(`dev_manifest.webapp`)
     .then(manifest => {
         config.baseUrl = manifest.getBaseUrl() + '/api';
     })
