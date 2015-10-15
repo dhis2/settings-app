@@ -18,6 +18,7 @@ import TextField from 'material-ui/lib/text-field';
 import SelectField from 'material-ui/lib/select-field';
 import Checkbox from 'material-ui/lib/checkbox';
 import Snackbar from 'material-ui/lib/snackbar';
+import FlatButton from 'material-ui/lib/flat-button';
 
 // Custom Components
 import Sidebar from './Sidebar.component';
@@ -123,8 +124,8 @@ const App = React.createClass({
 
     getInitialState() {
         return {
-            category: categoryOrder[9],
-            currentSettings: categories[categoryOrder[9]].settings,
+            category: categoryOrder[0],
+            currentSettings: categories[categoryOrder[0]].settings,
         };
     },
 
@@ -178,6 +179,22 @@ const App = React.createClass({
                     onCheck: (e, v) => {
                         this.props.settingsActions.saveKey(settingsKey, v ? 'true' : 'false');
                     },
+                };
+                break;
+
+            case 'post_button':
+                fieldConfig.type = FlatButton;
+                fieldConfig.fieldOptions = {
+                    label: d2.i18n.getTranslation(mapping.label),
+                    onClick: () => {
+                        d2.Api.getApi().post(mapping.uri).then(result => {
+                            // TODO: Show a useful snackbar
+                            log.info(result.message);
+                            window.snackbar.show();
+                        });
+                    },
+                    secondary: true,
+                    style: {minWidth: 'initial', maxWidth: 'initial', float: 'right', marginTop: '1em'},
                 };
                 break;
 
