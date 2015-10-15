@@ -36,7 +36,6 @@ module.exports = {
         }
     },
     plugins: [
-/*
         new webpack.DefinePlugin({
             NODE_ENV: 'production',
         }),
@@ -46,7 +45,6 @@ module.exports = {
             sourceMap: true,
         }),
         new webpack.optimize.OccurenceOrderPlugin(),
-*/
     ],
     devServer: {
         progress: true,

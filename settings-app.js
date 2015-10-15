@@ -313,7 +313,7 @@ function configI18n({uiLocale}) {
 
 React.render(<LoadingMask />, document.getElementById('app'));
 
-getManifest(`./dev_manifest.webapp`)
+getManifest(`./manifest.webapp`)
     .then(manifest => {
         config.baseUrl = manifest.getBaseUrl() + '/api';
     })
