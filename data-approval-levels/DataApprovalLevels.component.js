@@ -1,15 +1,22 @@
 import React from 'react';
-import DataTable from 'd2-ui/lib/data-table/DataTable.component';
-import dataApprovalLevelStore from './dataApprovalLevel.store';
-import dataApprovalLevelActions from './dataApprovalLevel.actions';
+
+// Material UI components
 import FloatingActionButton from 'material-ui/lib/floating-action-button';
+import FlatButton from 'material-ui/lib/flat-button';
 import FontIcon from 'material-ui/lib/font-icon';
+import Paper from 'material-ui/lib/paper';
+import RaisedButton from 'material-ui/lib/raised-button';
+
+// D2 UI components
+import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import Form from 'd2-ui/lib/forms/Form.component';
 import Translate from 'd2-ui/lib/i18n/Translate.mixin';
-import RaisedButton from 'material-ui/lib/raised-button';
+
+// Local dependencies
+import dataApprovalLevelStore from './dataApprovalLevel.store';
+import dataApprovalLevelActions from './dataApprovalLevel.actions';
 import SelectFieldAsyncSource from './SelectFieldAsyncSource.component';
-import ListDivider from 'material-ui/lib/lists/list-divider';
-import Paper from 'material-ui/lib/paper';
+
 
 export default React.createClass({
     propTypes: {
@@ -84,9 +91,9 @@ export default React.createClass({
         ];
 
         const formPaperStyle = {
-            marginRight: '2rem',
-            marginTop: '2rem',
             padding: '2rem',
+            marginTop: '2rem',
+            marginRight: '2rem',
         };
 
         return (
@@ -95,7 +102,7 @@ export default React.createClass({
                 <Form source={this.modelToEdit} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.formFieldUpdate}>
                     <div style={{marginTop: '1rem'}}>
                         <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
-                        <RaisedButton onClick={this.cancelAction} style={{marginLeft: '1rem'}} label={this.getTranslation('cancel')} />
+                        <FlatButton onClick={this.cancelAction} style={{marginLeft: '1rem'}} label={this.getTranslation('cancel')} />
                     </div>
                 </Form>
             </Paper>
@@ -110,19 +117,22 @@ export default React.createClass({
         const cssStyles = {
             textAlign: 'right',
             marginTop: '1rem',
+            marginRight: 16,
         };
 
         return (
-            <div style={{marginRight: 16}}>
+            <div style={{maxWidth: 960, marginRight: 16}}>
                 <div style={cssStyles}>
                     <FloatingActionButton onClick={this.addClick}>
                         <FontIcon className="material-icons">add</FontIcon>
                     </FloatingActionButton>
                 </div>
-                <DataTable
-                    rows={this.state.approvalLevels}
-                    columns={this.props.columns}
-                    contextMenuActions={contextMenuActions} />
+                <div style={{marginTop: -24}}>
+                    <DataTable
+                        rows={this.state.approvalLevels}
+                        columns={this.props.columns}
+                        contextMenuActions={contextMenuActions} />
+                </div>
             </div>
         );
     },
@@ -130,7 +140,6 @@ export default React.createClass({
     render() {
         return (
             <div>
-                <ListDivider style={{marginTop: '2rem'}} />
                 {this.state.showAddForm ? this.renderForm() : this.renderList()}
             </div>
         );
