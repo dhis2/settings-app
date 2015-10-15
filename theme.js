@@ -31,6 +31,10 @@ function createAppTheme(style) {
             textColor: style.palette.textColor,
             textColorActive: style.palette.textColor,
         },
+        forms: {
+            minWidth: 350,
+            maxWidth: 900,
+        },
     };
 }
 
