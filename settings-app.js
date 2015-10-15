@@ -23,10 +23,10 @@ import FlatButton from 'material-ui/lib/flat-button';
 // Custom Components
 import Sidebar from './Sidebar.component';
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component';
-// import SettingsTable from './SettingsTable.component';
 
 // D2 UI
 import Form from 'd2-ui/lib/forms/Form.component';
+import {wordToValidatorMap} from 'd2-ui/lib/forms/Validators';
 import HeaderBar from 'd2-ui/lib/header-bar/HeaderBar.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 
@@ -34,11 +34,16 @@ import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.component';
 
 // Styles
-
 require('./scss/settings-app.scss');
 
 /* eslint react/no-multi-comp: 0 */
 log.setLevel(log.levels.TRACE);
+
+function getValidatorFunctions(settingsMapping) {
+    return (settingsMapping.validators || [])
+        .filter(validatorName => wordToValidatorMap.has(validatorName))
+        .map(validatorName => wordToValidatorMap.get(validatorName));
+}
 
 const MuiThemeMixin = {
     childContextTypes: {
@@ -278,6 +283,8 @@ const App = React.createClass({
                 fieldConfig.fieldOptions.helpText = d2.i18n.getTranslation(mapping.helpText);
             }
 
+            fieldConfig.validators = getValidatorFunctions(mapping);
+
             return fieldConfig;
         });
         return (
@@ -387,23 +394,27 @@ getManifest(`dev_manifest.webapp`)
         settingsActions.saveKey.subscribe((args) => {
             const [fieldName, value] = args.data;
             const settingsKeyMapping = d2.system.settings.mapping[fieldName];
-            if (settingsKeyMapping.configuration) {
-                d2.system.configuration.set(fieldName, value)
-                    .then(() => {
-                        window.snackbar && window.snackbar.show();
-                    })
-                    .catch((err) => {
-                        log.error('Failed to save configuration:', err);
-                    });
-            } else {
-                d2.system.settings.set(fieldName, value)
-                    .then(() => {
-                        window.snackbar && window.snackbar.show();
-                    })
-                    .catch((err) => {
-                        log.error('Failed to save setting:', err);
-                    });
+
+            if (getValidatorFunctions(d2.system.settings.mapping[fieldName]).every(validatorFn => validatorFn(value) === true)) {
+                if (settingsKeyMapping.configuration) {
+                    d2.system.configuration.set(fieldName, value)
+                        .then(() => {
+                            window.snackbar && window.snackbar.show();
+                        })
+                        .catch((err) => {
+                            log.error('Failed to save configuration:', err);
+                        });
+                } else {
+                    d2.system.settings.set(fieldName, value)
+                        .then(() => {
+                            window.snackbar && window.snackbar.show();
+                        })
+                        .catch((err) => {
+                            log.error('Failed to save setting:', err);
+                        });
+                }
             }
+
             const newState = settingsStore.state;
             newState[fieldName] = value;
             settingsStore.setState(newState);
