@@ -28,6 +28,7 @@ oa2Actions.delete.subscribe((e) => {
     e.data.delete().then(() => {
         oa2Store.state.splice(oa2Store.state.indexOf(e.data), 1);
         oa2Store.setState(oa2Store.state);
+        window.snackbar.show();
     });
 });
 
