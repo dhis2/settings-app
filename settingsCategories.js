@@ -65,6 +65,7 @@ export const categories = {
             'keyEmailPassword',
             'keyEmailTls',
             'keyEmailSender',
+            'emailTestButton',
         ],
     },
     access: {

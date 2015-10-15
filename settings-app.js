@@ -147,6 +147,7 @@ const App = React.createClass({
 
     render() {
         const d2 = this.props.d2;
+        const theme = AppTheme;
         const currentSettings = this.state.currentSettings;
         const fieldConfigs = currentSettings.map(settingsKey => {
             const mapping = d2.system.settings.mapping[settingsKey];
@@ -255,7 +256,15 @@ const App = React.createClass({
                     multiLine: mapping.multiLine && mapping.multiLine === true,
                 };
             }
-            fieldConfig.fieldOptions.style = {width: '100%', minWidth: 350, maxWidth: 500};
+            if (fieldConfig.fieldOptions && fieldConfig.fieldOptions.style) {
+                fieldConfig.fieldOptions.style = Object.assign({}, theme.forms, fieldConfig.fieldOptions.style);
+            } else {
+                fieldConfig.fieldOptions.style = {
+                    width: '100%',
+                    minWidth: theme.forms.minWidth,
+                    maxWidth: theme.forms.maxWidth,
+                };
+            }
             return fieldConfig;
         });
         const out = (
@@ -274,7 +283,7 @@ const App = React.createClass({
                     settingsActions={this.props.settingsActions}
                     />
 
-                <div className="content-area">
+                <div className="content-area" style={theme.forms}>
                     <h1>{this.props.categories[this.state.category] ? d2.i18n.getTranslation(this.props.categories[this.state.category].label) : 'Search result'}</h1>
                     {!this.state.currentSettings.length ? <div>{d2.i18n.getTranslation('no_settings_found_that_match')}</div> : null}
                     <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs}
@@ -306,7 +315,7 @@ React.render(<LoadingMask />, document.getElementById('app'));
 
 getManifest(`./dev_manifest.webapp`)
     .then(manifest => {
-        config.baseUrl = manifest.getBaseUrl();
+        config.baseUrl = manifest.getBaseUrl() + '/api';
     })
     .then(getUserSettings)
     .then(configI18n)
