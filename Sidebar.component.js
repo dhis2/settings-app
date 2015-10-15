@@ -3,6 +3,7 @@ import List from 'material-ui/lib/lists/list';
 import ListItem from 'material-ui/lib/lists/list-item';
 import TextField from 'material-ui/lib/text-field';
 import settingsActions from './settingsActions.js';
+import FontIcon from 'material-ui/lib/font-icon';
 /* eslint react/no-multi-comp: 0 */
 
 const MyListItem = React.createClass({
@@ -50,11 +51,22 @@ const Sidebar = React.createClass({
         const categoryOrder = this.props.categoryOrder;
         const currentCategory = this.props.currentCategory;
         const theme = this.context.muiTheme;
+
+        const closeButtonStyle = {
+            position: 'absolute',
+            cursor: 'pointer',
+            top: '1rem',
+            right: '.75rem',
+            fontSize: '1rem',
+            color: '#AAA',
+        };
+
         return (
             <div style={{backgroundColor: theme.sideBar.backgroundColor}} className="left-bar">
-                <div style={{padding: '0 1rem'}}>
+                <div style={{padding: '0 1rem', position: 'relative'}}>
                     <TextField hintText={d2.i18n.getTranslation('search')} style={{width: '100%'}}
-                               onChange={this.search}/>
+                               onChange={this.search} ref="searchBox" />
+                    {this.state && this.state.showCloseButton ? <FontIcon style={closeButtonStyle} className="material-icons" onClick={this.clearSearchBox}>clear</FontIcon> : null}
                 </div>
                 <List style={{backgroundColor: 'transparent'}}>
                     {
@@ -83,7 +95,16 @@ const Sidebar = React.createClass({
     },
 
     search(event) {
+        this.setState({showCloseButton: Boolean(event.target.value)});
         settingsActions.searchSettings(event.target.value);
+    },
+
+    clearSearchBox() {
+        if (this.refs.searchBox.getValue()) {
+            this.refs.searchBox.setValue('');
+            this.setState({showCloseButton: false});
+            settingsActions.searchSettings('');
+        }
     },
 });
 
