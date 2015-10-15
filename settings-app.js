@@ -110,11 +110,11 @@ const App = React.createClass({
         d2: React.PropTypes.object.isRequired,
     },
 
-    mixins: [MuiThemeMixin],
-
     childContextTypes: {
         d2: React.PropTypes.object,
     },
+
+    mixins: [MuiThemeMixin],
 
     getChildContext() {
         return {
@@ -267,7 +267,7 @@ const App = React.createClass({
             }
             return fieldConfig;
         });
-        const out = (
+        return (
             <div className="app">
                 <HeaderBar />
                 <Snackbar
@@ -291,7 +291,6 @@ const App = React.createClass({
                 </div>
             </div>
         );
-        return out;
     },
 
     _uglySnackbarRefExportFn(ref) {
