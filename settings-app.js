@@ -205,6 +205,9 @@ const App = React.createClass({
             case 'organisationUnitLevels':
             case 'userRoles':
             case 'organisationUnits':
+            case 'startModules':
+            case 'flags':
+            case 'styles':
                 fieldConfig.type = HackyDropDown;
                 const opts = this.props.configOptionStore;
                 fieldConfig.fieldOptions = {
@@ -212,6 +215,11 @@ const App = React.createClass({
                     value: defaultValue || 'null',
                     menuItems: opts.state ? opts.state[mapping.type] : [],
                 };
+
+                if (['startModules', 'flags', 'styles'].indexOf(mapping.type) >= 0) {
+                    break;
+                }
+
                 d2.system.configuration.get(settingsKey).then(value => {
                     fieldConfig.fieldOptions.defaultValue = value === null ? 'null' : value.id;
                 });
@@ -265,6 +273,11 @@ const App = React.createClass({
                     maxWidth: theme.forms.maxWidth,
                 };
             }
+
+            if (mapping.helpText) {
+                fieldConfig.fieldOptions.helpText = d2.i18n.getTranslation(mapping.helpText);
+            }
+
             return fieldConfig;
         });
         return (
@@ -355,7 +368,7 @@ getManifest(`dev_manifest.webapp`)
                         prev[curr.key] = value;
                         return prev;
                     }, {});
-                cfg.corsWhitelist = results[1].corsWhitelist.filter(v => v.trim().length > 0).sort().join('\n');
+                cfg.corsWhitelist = (results[1].corsWhitelist || []).filter(v => v.trim().length > 0).sort().join('\n');
                 // Stupid fix for the fact that old controllers will save numbers as numbers,
                 // even though the API only allows string values, which creates a silly mismatch!
                 Object.keys(results[0]).map(key => {
@@ -417,6 +430,9 @@ getManifest(`dev_manifest.webapp`)
                 d2.models.organisationUnitLevel.list({paging: false, fields: 'id,level,displayName', order: 'level:asc'}),
                 d2.models.userRole.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
                 d2.models.organisationUnit.list({paging: false, fields: 'id,displayName', filter: ['level:in:[1,2]']}),
+                d2.Api.getApi().get('../dhis-web-commons/menu/getModules.action'),
+                d2.Api.getApi().get('system/flags'),
+                d2.Api.getApi().get('system/styles'),
             ]).then(results => {
                 function optionalize(collection) {
                     return collection.toArray().map((item) => {
@@ -442,6 +458,24 @@ getManifest(`dev_manifest.webapp`)
                 });
                 const userRoles = optionalize(results[4]);
                 const organisationUnits = optionalize(results[5]);
+                const startModules = (results[6].modules || []).map(module => {
+                    return {
+                        payload: module.name,
+                        text: module.name,
+                    };
+                });
+                const flags  = (results[7] || []).map(flagName => {
+                    return {
+                        payload: flagName,
+                        text: flagName,
+                    };
+                });
+                const styles = Object.keys(results[8]).map(styleName => {
+                    return {
+                        payload: results[8][styleName],
+                        text: styleName,
+                    };
+                });
 
                 configOptionStore.setState({
                     indicatorGroups: indicatorGroups,
@@ -450,6 +484,9 @@ getManifest(`dev_manifest.webapp`)
                     organisationUnitLevels: organisationUnitLevels,
                     userRoles: userRoles,
                     organisationUnits: organisationUnits,
+                    startModules,
+                    flags,
+                    styles,
                 });
             });
         });
