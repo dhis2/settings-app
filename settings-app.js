@@ -472,7 +472,7 @@ getManifest(`dev_manifest.webapp`)
                 const startModules = (results[6].modules || []).map(module => {
                     return {
                         payload: module.name,
-                        text: module.name,
+                        text: module.displayName || module.name,
                     };
                 });
                 const flags  = (results[7] || []).map(flagName => {
