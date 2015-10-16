@@ -30,6 +30,7 @@ function createAppTheme(style) {
             backgroundColorItemActive: style.palette.accent2Color,
             textColor: style.palette.textColor,
             textColorActive: style.palette.primary1Color,
+            borderStyle: '1px solid #e1e1e1',
         },
         forms: {
             minWidth: 350,
