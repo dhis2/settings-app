@@ -304,7 +304,7 @@ const App = React.createClass({
                     />
 
                 <div className="content-area" style={theme.forms}>
-                    <h1>{this.props.categories[this.state.category] ? d2.i18n.getTranslation(this.props.categories[this.state.category].label) : 'Search result'}</h1>
+                    <h1 style={{fontSize: '1.75rem'}}>{this.props.categories[this.state.category] ? d2.i18n.getTranslation(this.props.categories[this.state.category].label) : 'Search result'}</h1>
                     {!this.state.currentSettings.length ?
                         <div>{d2.i18n.getTranslation('no_settings_found_that_match')}</div> : null}
                     <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs}
