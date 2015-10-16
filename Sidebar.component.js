@@ -62,8 +62,8 @@ const Sidebar = React.createClass({
         };
 
         return (
-            <div style={{backgroundColor: theme.sideBar.backgroundColor}} className="left-bar">
-                <div style={{padding: '0 1rem', position: 'relative'}}>
+            <div style={{backgroundColor: theme.sideBar.backgroundColor, borderRight: theme.sideBar.borderStyle}} className="left-bar">
+                <div style={{padding: '1.5rem 1rem 0', position: 'relative'}}>
                     <TextField hintText={d2.i18n.getTranslation('search')} style={{width: '100%'}}
                                onChange={this.search} ref="searchBox" />
                     {this.state && this.state.showCloseButton ? <FontIcon style={closeButtonStyle} className="material-icons" onClick={this.clearSearchBox}>clear</FontIcon> : null}
