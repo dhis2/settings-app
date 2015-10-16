@@ -29,7 +29,7 @@ function createAppTheme(style) {
             backgroundColorItem: 'transparent',
             backgroundColorItemActive: style.palette.accent2Color,
             textColor: style.palette.textColor,
-            textColorActive: style.palette.textColor,
+            textColorActive: style.palette.primary1Color,
         },
         forms: {
             minWidth: 350,

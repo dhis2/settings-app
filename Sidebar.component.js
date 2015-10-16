@@ -82,7 +82,7 @@ const Sidebar = React.createClass({
                                         listStyle={{
                                             backgroundColor: categoryKey === currentCategory ? theme.sideBar.backgroundColorItemActive : theme.sideBar.backgroundColorItem,
                                             color: categoryKey === currentCategory ? theme.sideBar.textColorActive : theme.sideBar.textColor,
-                                            fontSize: 15,
+                                            fontSize: 14,
                                             fontWeight: categoryKey === currentCategory ? 'bold' : 'inherit',
                                         }}
                                         />
