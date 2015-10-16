@@ -215,7 +215,7 @@ export default React.createClass({
         this.clientModel.redirectUris = (this.clientModel.redirectUris + '')
             .split('\n')
             .filter(url => {
-                return url.length > 0 && url.match(/https?:\/\/.{2,}\..{2,}/);
+                return url.length > 0; // && url.match(/https?:\/\/.{2,}\..{2,}/); //TODO: Run url validator here and give feedback to the user
             });
         this.clientModel.secret = generateUid();
         this.clientModel.save()
