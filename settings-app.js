@@ -477,14 +477,14 @@ getManifest(`dev_manifest.webapp`)
                 });
                 const flags  = (results[7] || []).map(flagName => {
                     return {
-                        payload: flagName,
-                        text: flagName,
+                        payload: flagName.key,
+                        text: flagName.name,
                     };
                 });
-                const styles = Object.keys(results[8]).map(styleName => {
+                const styles = (results[8] || []).map(styleName => {
                     return {
-                        payload: results[8][styleName],
-                        text: styleName,
+                        payload: styleName.path,
+                        text: styleName.name,
                     };
                 });
 
