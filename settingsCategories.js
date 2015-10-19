@@ -52,8 +52,6 @@ export const categories = {
             'helpPageLink',
             'keyFlag',
             'keyRequireAddToView',
-            'keyCustomLoginPageLogo',
-            'keyCustomTopMenuLogo',
         ],
     },
     email: {
