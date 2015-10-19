@@ -464,7 +464,7 @@ getManifest(`dev_manifest.webapp`)
                 const organisationUnitLevels = results[3].toArray().map(item => {
                     return {
                         payload: item.id,
-                        text: item.level + ': ' + item.displayName,
+                        text: item.displayName,
                     };
                 });
                 const userRoles = optionalize(results[4]);
