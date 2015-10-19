@@ -154,7 +154,7 @@ export default React.createClass({
                     window.snackbar.show();
                     this.resetAddFormAnddisplayList();
                 },
-                error => console.log('Error', error)
+                error => log.error('Error', error)
             );
     },
 

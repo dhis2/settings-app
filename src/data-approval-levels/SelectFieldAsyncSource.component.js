@@ -16,12 +16,12 @@ export default React.createClass({
         this.props.menuItemsSource()
             .then(items => {
                 this.setState({
-                    menuItems: items
+                    menuItems: items,
                 });
             });
     },
 
     render() {
-        return (<SelectField {...this.props} menuItems={this.state.menuItems} />)
+        return (<SelectField {...this.props} menuItems={this.state.menuItems} />);
     },
 });

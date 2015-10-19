@@ -15,14 +15,12 @@ import Form from 'd2-ui/lib/forms/Form.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import Translate from 'd2-ui/lib/i18n/Translate.mixin';
 // TODO: This should move into D2 UI
-import MultiToggle from './MultiToggle.component';
+import MultiToggle from '../form-fields/MultiToggle.component';
 
 import oa2ClientStore from './oauth2Client.store';
 import oa2Actions from './oauth2Client.actions';
 
 import AppTheme from '../theme';
-
-log.setLevel(log.levels.TRACE);
 
 function generateUid() {
     const alphabet = '0123456789abcdef';
