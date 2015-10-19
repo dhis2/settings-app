@@ -386,7 +386,7 @@ getManifest(`dev_manifest.webapp`)
                 log.info('System settings loaded successfully.', settingsStore.state);
                 renderApp();
             }, error => {
-                log.error(error);
+                log.error('Failed to load system settings:', error);
             });
         });
 
