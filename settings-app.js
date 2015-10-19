@@ -37,7 +37,7 @@ import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.compon
 require('./scss/settings-app.scss');
 
 /* eslint react/no-multi-comp: 0 */
-log.setLevel(log.levels.WARN);
+log.setLevel(log.levels.TRACE);
 
 function getValidatorFunctions(settingsMapping) {
     return (settingsMapping.validators || [])
@@ -227,7 +227,7 @@ const App = React.createClass({
 
                 d2.system.configuration.get(settingsKey).then(value => {
                     fieldConfig.fieldOptions.defaultValue = value === null ? 'null' : value.id;
-                });
+                }).catch(() => {});
                 break;
 
             case 'editlist':
@@ -386,7 +386,7 @@ getManifest('manifest.webapp')
                 log.info('System settings loaded successfully.', settingsStore.state);
                 renderApp();
             }, error => {
-                log.error(error);
+                log.error('Failed to load system settings:', error);
             });
         });
 
@@ -464,7 +464,7 @@ getManifest('manifest.webapp')
                 const organisationUnitLevels = results[3].toArray().map(item => {
                     return {
                         payload: item.id,
-                        text: item.level + ': ' + item.displayName,
+                        text: item.displayName,
                     };
                 });
                 const userRoles = optionalize(results[4]);
