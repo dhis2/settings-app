@@ -37,7 +37,7 @@ import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.compon
 require('./scss/settings-app.scss');
 
 /* eslint react/no-multi-comp: 0 */
-log.setLevel(log.levels.TRACE);
+log.setLevel(log.levels.WARN);
 
 function getValidatorFunctions(settingsMapping) {
     return (settingsMapping.validators || [])
