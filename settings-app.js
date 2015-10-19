@@ -227,7 +227,7 @@ const App = React.createClass({
 
                 d2.system.configuration.get(settingsKey).then(value => {
                     fieldConfig.fieldOptions.defaultValue = value === null ? 'null' : value.id;
-                });
+                }).catch(() => {});
                 break;
 
             case 'editlist':
