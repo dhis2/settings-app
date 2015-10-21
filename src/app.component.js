@@ -9,7 +9,7 @@ import FlatButton from 'material-ui/lib/flat-button';
 import HeaderBar from 'd2-ui/lib/header-bar/HeaderBar.component';
 import Sidebar from './Sidebar.component';
 import Form from 'd2-ui/lib/forms/Form.component';
-import {wordToValidatorMap} from '../../d2-ui/lib/forms/Validators';
+import {wordToValidatorMap} from 'd2-ui/lib/forms/Validators';
 
 // App
 import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.component';
