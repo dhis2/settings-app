@@ -7,7 +7,7 @@ import FloatingActionButton from 'material-ui/lib/floating-action-button';
 import FontIcon from 'material-ui/lib/font-icon';
 import Paper from 'material-ui/lib/paper';
 import RaisedButton from 'material-ui/lib/raised-button';
-import TextField from 'material-ui/lib/text-field';
+import TextField from '../form-fields/text-field';
 
 // D2 UI
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
@@ -42,11 +42,9 @@ export default React.createClass({
         return {showForm: false};
     },
 
-    componentWillMount() {
+    componentDidMount() {
         this.oa2cStoreDisposable = oa2ClientStore.subscribe(() => {
-            if (this.isMounted()) {
-                this.setState({isEmpty: oa2ClientStore.state.length === 0});
-            }
+            this.setState({isEmpty: oa2ClientStore.state.length === 0});
         });
         oa2Actions.load();
     },
@@ -55,6 +53,7 @@ export default React.createClass({
         const formFieldStyle = AppTheme.forms;
         if (!this.clientModel) {
             this.clientModel = this.context.d2.models.oAuth2Client.create();
+            this.clientModel.secret = generateUid();
         }
         const clientModel = this.clientModel;
         const grantTypes = (clientModel.grantTypes || []).reduce((curr, prev) => {
@@ -88,7 +87,7 @@ export default React.createClass({
                     floatingLabelText: this.getTranslation('client_secret'),
                     disabled: true,
                     style: formFieldStyle,
-                    value: clientModel.secret || generateUid(),
+                    value: clientModel.secret,
                 },
             },
             {
@@ -109,7 +108,8 @@ export default React.createClass({
                 type: TextField,
                 updateEvent: 'onBlur',
                 fieldOptions: {
-                    hintText: this.getTranslation('enter_one_uri_per_line'),
+                    helpText: this.getTranslation('one_url_per_line'),
+                    dynamicHelpText: true,
                     floatingLabelText: this.getTranslation('redirect_uris'),
                     multiLine: true,
                     style: formFieldStyle,
@@ -206,6 +206,7 @@ export default React.createClass({
 
     deleteAction(model) {
         oa2Actions.delete(model);
+        this.clientModel = undefined;
     },
 
     saveAction() {
@@ -213,9 +214,8 @@ export default React.createClass({
         this.clientModel.redirectUris = (this.clientModel.redirectUris + '')
             .split('\n')
             .filter(url => {
-                return url.length > 0; // && url.match(/https?:\/\/.{2,}\..{2,}/); //TODO: Run url validator here and give feedback to the user
+                return url.length > 0 && isUrl(url) === true;
             });
-        this.clientModel.secret = generateUid();
         this.clientModel.save()
             .then(() => {
                 window.snackbar.show();
@@ -230,7 +230,12 @@ export default React.createClass({
             });
     },
 
-    formUpdateAction(field, value) {
+    formUpdateAction(field, v) {
+        let value = v;
+        if (field === 'redirectUris') {
+            value = v.split('\n');
+        }
         this.clientModel[field] = value;
+        this.forceUpdate();
     },
 });
