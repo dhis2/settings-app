@@ -14,6 +14,7 @@ import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import Form from 'd2-ui/lib/forms/Form.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import Translate from 'd2-ui/lib/i18n/Translate.mixin';
+import {isUrlArray} from 'd2-ui/lib/forms/Validators';
 // TODO: This should move into D2 UI
 import MultiToggle from '../form-fields/MultiToggle.component';
 
@@ -34,6 +35,9 @@ function generateUid() {
     return uid;
 }
 
+function urlArrayValidator(v) {
+    return v === undefined || isUrlArray(v.join('\n'));
+}
 
 export default React.createClass({
     mixins: [Translate],
@@ -115,6 +119,7 @@ export default React.createClass({
                     style: formFieldStyle,
                     defaultValue: (clientModel.redirectUris || []).join('\n'),
                 },
+                validators: [urlArrayValidator],
             },
         ];
 
