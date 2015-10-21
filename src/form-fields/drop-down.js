@@ -10,6 +10,8 @@ export default React.createClass({
             React.PropTypes.number,
             React.PropTypes.bool,
         ]),
+        onFocus: React.PropTypes.func,
+        onBlur: React.PropTypes.func,
     },
 
     mixins: [MuiThemeMixin],
@@ -19,10 +21,11 @@ export default React.createClass({
     },
 
     render() {
+        const {onFocus, onBlur, ...other} = this.props;
         return (
             <SelectField
                 value={this.state.value.toString()}
-                {...this.props}/>
+                {...other}/>
         );
     },
 });
