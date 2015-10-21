@@ -1,4 +1,5 @@
 import React from 'react/addons';
+import log from 'loglevel';
 
 // Material UI
 import Snackbar from 'material-ui/lib/snackbar';
@@ -21,9 +22,11 @@ import AppTheme from './theme';
 
 
 function getValidatorFunctions(settingsMapping) {
-    return (settingsMapping.validators || [])
-        .filter(validatorName => wordToValidatorMap.has(validatorName))
-        .map(validatorName => wordToValidatorMap.get(validatorName));
+    if (settingsMapping.hasOwnProperty('validators')) {
+        return (settingsMapping.validators || [])
+            .filter(validatorName => wordToValidatorMap.has(validatorName))
+            .map(validatorName => wordToValidatorMap.get(validatorName));
+    }
 }
 
 
@@ -56,7 +59,7 @@ export default React.createClass({
         };
     },
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.settingsStore.subscribe(() => {
             this.forceUpdate();
         });
@@ -205,6 +208,7 @@ export default React.createClass({
 
             if (mapping.helpText) {
                 fieldConfig.fieldOptions.helpText = d2.i18n.getTranslation(mapping.helpText);
+                fieldConfig.fieldOptions.dynamicHelpText = true;
             }
 
             fieldConfig.validators = getValidatorFunctions(mapping);
