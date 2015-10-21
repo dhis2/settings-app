@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
     context: __dirname,
-    entry: './settings-app.js',
+    entry: './src/settings-app.js',
     devtool: 'source-map',
     output: {
         path: __dirname + '/build',

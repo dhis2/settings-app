@@ -1,3 +1,5 @@
+import log from 'loglevel';
+
 import Action from 'd2-flux/action/Action';
 import dataApprovalLevelStore from './dataApprovalLevel.store';
 import {getInstance as getD2} from 'd2/lib/d2';
@@ -32,10 +34,10 @@ actions.saveDataApprovalLevel
 
 
         if (Array.isArray(dataApprovalLevels)) {
-            console.log(dataApprovalLevels);
+            log.log(dataApprovalLevels);
             dataApprovalLevels
                 .filter(approvalLevel => approvalLevel.orgUnitLevel === dataApprovalLevel.organisationUnitLevel.level)
-                .forEach((item) => console.log(item));
+                .forEach((item) => log.log(item));
         }
 
         const dataApprovalLevelToSave = {
