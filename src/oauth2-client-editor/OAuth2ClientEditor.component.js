@@ -14,10 +14,9 @@ import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import Form from 'd2-ui/lib/forms/Form.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import Translate from 'd2-ui/lib/i18n/Translate.mixin';
-import {isUrlArray} from 'd2-ui/lib/forms/Validators';
-// TODO: This should move into D2 UI
-import MultiToggle from '../form-fields/MultiToggle.component';
+import {isRequired, isUrlArray} from 'd2-ui/lib/forms/Validators';
 
+import MultiToggle from '../form-fields/multi-toggle';
 import oa2ClientStore from './oauth2Client.store';
 import oa2Actions from './oauth2Client.actions';
 
@@ -48,19 +47,21 @@ export default React.createClass({
 
     componentDidMount() {
         this.oa2cStoreDisposable = oa2ClientStore.subscribe(() => {
-            this.setState({isEmpty: oa2ClientStore.state.length === 0});
+            if (this.isMounted()) {
+                if (oa2ClientStore.state.length === 0) {
+                    this.newAction();
+                }
+                this.setState({isEmpty: oa2ClientStore.state.length === 0});
+                this.forceUpdate();
+            }
         });
         oa2Actions.load();
     },
 
     renderForm() {
         const formFieldStyle = AppTheme.forms;
-        if (!this.clientModel) {
-            this.clientModel = this.context.d2.models.oAuth2Client.create();
-            this.clientModel.secret = generateUid();
-        }
         const clientModel = this.clientModel;
-        const grantTypes = (clientModel.grantTypes || []).reduce((curr, prev) => {
+        const grantTypes = (clientModel && clientModel.grantTypes || []).reduce((curr, prev) => {
             curr[prev] = true;
             return curr;
         }, {});
@@ -74,6 +75,7 @@ export default React.createClass({
                     floatingLabelText: this.getTranslation('name'),
                     style: formFieldStyle,
                 },
+                validators: [isRequired],
             },
             {
                 name: 'cid',
@@ -83,6 +85,7 @@ export default React.createClass({
                     floatingLabelText: this.getTranslation('client_id'),
                     style: formFieldStyle,
                 },
+                validators: [isRequired],
             },
             {
                 name: 'secret',
@@ -91,7 +94,7 @@ export default React.createClass({
                     floatingLabelText: this.getTranslation('client_secret'),
                     disabled: true,
                     style: formFieldStyle,
-                    value: clientModel.secret,
+                    value: clientModel && clientModel.secret,
                 },
             },
             {
@@ -192,19 +195,19 @@ export default React.createClass({
     },
 
     cancelAction() {
-        Object.assign(this.clientModel, this.clientModelBackup);
+        this.clientModel = undefined;
         oa2Actions.load();
         this.setState({showForm: false});
     },
 
     newAction() {
         this.clientModel = this.context.d2.models.oAuth2Client.create();
+        this.clientModel.secret = generateUid();
         this.setState({showForm: true});
     },
 
     editAction(model) {
         log.info('Edit OAuth2 client:', model.name);
-        this.clientModelBackup = Object.assign({}, model);
         this.clientModel = model;
         this.setState({showForm: true});
     },
@@ -216,29 +219,22 @@ export default React.createClass({
 
     saveAction() {
         this.setState({saving: true});
-        this.clientModel.redirectUris = (this.clientModel.redirectUris + '')
-            .split('\n')
-            .filter(url => {
-                return url.length > 0 && isUrl(url) === true;
-            });
         this.clientModel.save()
             .then(() => {
                 window.snackbar.show();
-                this.setState({showForm: false, saving: false});
                 oa2Actions.load();
+                this.setState({showForm: false, saving: false});
             })
             .catch((err) => {
                 this.setState({saving: false});
-                log.warn('Failed to save OAuth2 client:' + err.response.validationViolations.reduce((str, msg) => {
-                    return (str.length ? str + '\n' : '') + msg.property + ': ' + msg.message;
-                }, ''));
+                log.warn('Failed to save OAuth2 client:', err.messages);
             });
     },
 
     formUpdateAction(field, v) {
         let value = v;
         if (field === 'redirectUris') {
-            value = v.split('\n');
+            value = v.split('\n').filter(a => a.trim().length > 0);
         }
         this.clientModel[field] = value;
         this.forceUpdate();
