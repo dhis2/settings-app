@@ -38,6 +38,10 @@ function urlArrayValidator(v) {
     return v === undefined || isUrlArray(v.join('\n'));
 }
 
+function isUndefinedOrRequired(v) {
+    return v === undefined || isRequired(v.trim());
+}
+
 export default React.createClass({
     mixins: [Translate],
 
@@ -75,7 +79,7 @@ export default React.createClass({
                     floatingLabelText: this.getTranslation('name'),
                     style: formFieldStyle,
                 },
-                validators: [isRequired],
+                validators: [isUndefinedOrRequired],
             },
             {
                 name: 'cid',
@@ -85,7 +89,7 @@ export default React.createClass({
                     floatingLabelText: this.getTranslation('client_id'),
                     style: formFieldStyle,
                 },
-                validators: [isRequired],
+                validators: [isUndefinedOrRequired],
             },
             {
                 name: 'secret',
@@ -218,6 +222,8 @@ export default React.createClass({
     },
 
     saveAction() {
+        this.clientModel.name = this.clientModel.name || '';
+        this.clientModel.cid = this.clientModel.cid || '';
         this.setState({saving: true});
         this.clientModel.save()
             .then(() => {
