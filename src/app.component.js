@@ -206,7 +206,7 @@ export default React.createClass({
                 };
             }
 
-            if (mapping.helpText) {
+            if (mapping.helpText && !fieldConfig.fieldOptions.helpText) {
                 fieldConfig.fieldOptions.helpText = d2.i18n.getTranslation(mapping.helpText);
                 fieldConfig.fieldOptions.dynamicHelpText = true;
             }
@@ -232,11 +232,14 @@ export default React.createClass({
                     />
 
                 <div className="content-area" style={theme.forms}>
-                    <h1 style={{fontSize: '1.75rem'}}>{this.props.categories[this.state.category] ? d2.i18n.getTranslation(this.props.categories[this.state.category].label) : 'Search result'}</h1>
+                    <h1 style={{fontSize: '1.75rem'}}>{
+                        this.props.categories[this.state.category] ?
+                        d2.i18n.getTranslation(this.props.categories[this.state.category].pageLabel) :
+                        d2.i18n.getTranslation('search_results')
+                    }</h1>
                     {!this.state.currentSettings.length ?
                         <div>{d2.i18n.getTranslation('no_settings_found_that_match')}</div> : null}
-                    <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs}
-                          onFormFieldUpdate={this._saveSetting}/>
+                    <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs} onFormFieldUpdate={this._saveSetting}/>
                 </div>
             </div>
         );
