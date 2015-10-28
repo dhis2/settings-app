@@ -10,7 +10,7 @@ const theme = {
     palette: {
         primary1Color: Colors.blue500,
         primary2Color: Colors.blue700,
-        primary3Color: Colors.lightBlack,
+        primary3Color: Colors.grey300,
         accent1Color: '#276696',
         accent2Color: '#E9E9E9',
         accent3Color: Colors.grey500,

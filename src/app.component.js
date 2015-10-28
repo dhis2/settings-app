@@ -18,6 +18,7 @@ import MuiThemeMixin from './mui-theme.mixin.js';
 import HackyTextField from './form-fields/text-field';
 import HackyDropDown from './form-fields/drop-down';
 import HackyCheckbox from './form-fields/check-box';
+import FileUpload from './form-fields/file-upload.js';
 import AppTheme from './theme';
 
 
@@ -187,6 +188,17 @@ export default React.createClass({
                 fieldConfig.fieldOptions = {d2};
                 break;
 
+            case 'staticContent':
+                fieldConfig.type = FileUpload;
+                fieldConfig.fieldOptions = {
+                    label: d2.i18n.getTranslation(mapping.label),
+                    name: mapping.name,
+                    isEnabled: settingsStore.state.hasOwnProperty(settingsKey),
+                    defaultValue: defaultValue === 'true' || defaultValue === true,
+                    value: defaultValue === 'true' || defaultValue === true,
+                };
+                break;
+
             default:
                 fieldConfig.type = HackyTextField;
                 fieldConfig.updateEvent = 'onBlur';
@@ -206,7 +218,7 @@ export default React.createClass({
                 };
             }
 
-            if (mapping.helpText) {
+            if (mapping.helpText && !fieldConfig.fieldOptions.helpText) {
                 fieldConfig.fieldOptions.helpText = d2.i18n.getTranslation(mapping.helpText);
                 fieldConfig.fieldOptions.dynamicHelpText = true;
             }
@@ -232,11 +244,14 @@ export default React.createClass({
                     />
 
                 <div className="content-area" style={theme.forms}>
-                    <h1 style={{fontSize: '1.75rem'}}>{this.props.categories[this.state.category] ? d2.i18n.getTranslation(this.props.categories[this.state.category].label) : 'Search result'}</h1>
+                    <h1 style={{fontSize: '1.75rem'}}>{
+                        this.props.categories[this.state.category] ?
+                        d2.i18n.getTranslation(this.props.categories[this.state.category].pageLabel) :
+                        d2.i18n.getTranslation('search_results')
+                    }</h1>
                     {!this.state.currentSettings.length ?
                         <div>{d2.i18n.getTranslation('no_settings_found_that_match')}</div> : null}
-                    <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs}
-                          onFormFieldUpdate={this._saveSetting}/>
+                    <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs} onFormFieldUpdate={this._saveSetting}/>
                 </div>
             </div>
         );

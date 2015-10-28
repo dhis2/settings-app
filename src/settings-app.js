@@ -139,6 +139,7 @@ getManifest(`manifest.webapp`)
             }
 
             settingsActions.load();
+            // Load alternatives
             Promise.all([
                 d2.models.indicatorGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
                 d2.models.dataElementGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
@@ -150,7 +151,7 @@ getManifest(`manifest.webapp`)
                 d2.Api.getApi().get('system/flags'),
                 d2.Api.getApi().get('system/styles'),
             ]).then(results => {
-                function optionalize(collection) {
+                function collectionToOptionArray(collection) {
                     return collection.toArray().map((item) => {
                         return {
                             payload: item.id,
@@ -159,33 +160,28 @@ getManifest(`manifest.webapp`)
                     });
                 }
 
-                const indicatorGroups = optionalize(results[0]);
-                const dataElementGroups = optionalize(results[1]);
-                const userGroups = optionalize(results[2]);
-                userGroups.unshift({
-                    payload: 'null',
-                    text: d2.i18n.getTranslation('no_feedback_recipients'),
-                });
-                const organisationUnitLevels = results[3].toArray().map(item => {
-                    return {
-                        payload: item.id,
-                        text: item.displayName,
-                    };
-                });
-                const userRoles = optionalize(results[4]);
-                const organisationUnits = optionalize(results[5]);
+                const indicatorGroups = collectionToOptionArray(results[0]);
+                const dataElementGroups = collectionToOptionArray(results[1]);
+                const userGroups = collectionToOptionArray(results[2]);
+                userGroups.unshift({payload: 'null', text: d2.i18n.getTranslation('no_feedback_recipients')});
+                const organisationUnitLevels = collectionToOptionArray(results[3]);
+                const userRoles = collectionToOptionArray(results[4]);
+                const organisationUnits = collectionToOptionArray(results[5]);
+
                 const startModules = (results[6].modules || []).map(module => {
                     return {
                         payload: module.name,
                         text: module.displayName || module.name,
                     };
                 });
+
                 const flags  = (results[7] || []).map(flagName => {
                     return {
                         payload: flagName.key,
                         text: flagName.name,
                     };
                 });
+
                 const styles = (results[8] || []).map(styleName => {
                     return {
                         payload: styleName.path,
@@ -194,12 +190,12 @@ getManifest(`manifest.webapp`)
                 });
 
                 configOptionStore.setState({
-                    indicatorGroups: indicatorGroups,
-                    dataElementGroups: dataElementGroups,
-                    userGroups: userGroups,
-                    organisationUnitLevels: organisationUnitLevels,
-                    userRoles: userRoles,
-                    organisationUnits: organisationUnits,
+                    indicatorGroups,
+                    dataElementGroups,
+                    userGroups,
+                    organisationUnitLevels,
+                    userRoles,
+                    organisationUnits,
                     startModules,
                     flags,
                     styles,

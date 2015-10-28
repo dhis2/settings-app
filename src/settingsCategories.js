@@ -14,7 +14,8 @@ export const categoryOrder = [
 
 export const categories = {
     general: {
-        label: 'general_settings',
+        label: 'general',
+        pageLabel: 'general_settings',
         settings: [
             'keyAnalyticsMaxLimit',
             'infrastructuralIndicators',
@@ -30,7 +31,8 @@ export const categories = {
         ],
     },
     server: {
-        label: 'server_settings',
+        label: 'server',
+        pageLabel: 'server_settings',
         settings: [
             'keyCacheStrategy',
             'keyDatabaseServerCpus',
@@ -40,7 +42,8 @@ export const categories = {
         ],
     },
     appearance: {
-        label: 'appearance_settings',
+        label: 'appearance',
+        pageLabel: 'appearance_settings',
         settings: [
             'applicationTitle',
             'keyApplicationIntro',
@@ -52,10 +55,13 @@ export const categories = {
             'helpPageLink',
             'keyFlag',
             'keyRequireAddToView',
+            'keyUseCustomLogoFront',
+            'keyUseCustomLogoBanner',
         ],
     },
     email: {
-        label: 'email_settings',
+        label: 'email',
+        pageLabel: 'email_settings',
         settings: [
             'keyEmailHostName',
             'keyEmailPort',
@@ -67,7 +73,8 @@ export const categories = {
         ],
     },
     access: {
-        label: 'access_settings',
+        label: 'access',
+        pageLabel: 'access_settings',
         settings: [
             'selfRegistrationRole',
             'keySelfRegistrationNoRecaptcha',
@@ -82,7 +89,8 @@ export const categories = {
         ],
     },
     approval: {
-        label: 'approval_settings',
+        label: 'approval',
+        pageLabel: 'approval_settings',
         settings: [
             'keyHideUnapprovedDataInAnalytics',
             'keyAcceptanceRequiredForApproval',
@@ -90,14 +98,16 @@ export const categories = {
         ],
     },
     calendar: {
-        label: 'calendar_settings',
+        label: 'calendar',
+        pageLabel: 'calendar_settings',
         settings: [
             'keyCalendar',
             'keyDateFormat',
         ],
     },
     'import': {
-        label: 'import_settings',
+        label: 'import',
+        pageLabel: 'import_settings',
         settings: [
             'keyDataImportStrictPeriods',
             'keyDataImportStrictCategoryOptionCombos',
@@ -108,7 +118,8 @@ export const categories = {
         ],
     },
     sync: {
-        label: 'synchronization_settings',
+        label: 'synchronization',
+        pageLabel: 'synchronization_settings',
         settings: [
             'remoteServerUrl',
             'remoteServerUsername',
@@ -117,6 +128,7 @@ export const categories = {
     },
     oauth2: {
         label: 'oauth2_clients',
+        pageLabel: 'oauth2_clients',
         authority: 'F_OAUTH2_CLIENT_MANAGE',
         settings: ['oauth2clients'],
     },
