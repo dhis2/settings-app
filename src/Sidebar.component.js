@@ -52,6 +52,12 @@ const Sidebar = React.createClass({
         const currentCategory = this.props.currentCategory;
         const theme = this.context.muiTheme;
 
+        const sidebarStyle = {
+            backgroundColor: theme.sideBar.backgroundColor,
+            borderRight: theme.sideBar.borderStyle,
+            overflowY: 'auto',
+        };
+
         const closeButtonStyle = {
             position: 'absolute',
             cursor: 'pointer',
@@ -62,7 +68,7 @@ const Sidebar = React.createClass({
         };
 
         return (
-            <div style={{backgroundColor: theme.sideBar.backgroundColor, borderRight: theme.sideBar.borderStyle}} className="left-bar">
+            <div style={sidebarStyle} className="left-bar">
                 <div style={{padding: '1rem 1rem 0', position: 'relative'}}>
                     <TextField hintText={d2.i18n.getTranslation('search')} style={{width: '100%'}}
                                onChange={this.search} ref="searchBox" />
