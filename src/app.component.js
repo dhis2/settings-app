@@ -18,6 +18,7 @@ import MuiThemeMixin from './mui-theme.mixin.js';
 import HackyTextField from './form-fields/text-field';
 import HackyDropDown from './form-fields/drop-down';
 import HackyCheckbox from './form-fields/check-box';
+import FileUpload from './form-fields/file-upload.js';
 import AppTheme from './theme';
 
 
@@ -185,6 +186,17 @@ export default React.createClass({
             case 'oauth2clients':
                 fieldConfig.type = Oauth2ClientEditor;
                 fieldConfig.fieldOptions = {d2};
+                break;
+
+            case 'staticContent':
+                fieldConfig.type = FileUpload;
+                fieldConfig.fieldOptions = {
+                    label: d2.i18n.getTranslation(mapping.label),
+                    name: mapping.name,
+                    isEnabled: settingsStore.state.hasOwnProperty(settingsKey),
+                    defaultValue: defaultValue === 'true' || defaultValue === true,
+                    value: defaultValue === 'true' || defaultValue === true,
+                };
                 break;
 
             default:
