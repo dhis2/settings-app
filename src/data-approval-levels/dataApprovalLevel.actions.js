@@ -34,10 +34,10 @@ actions.saveDataApprovalLevel
 
 
         if (Array.isArray(dataApprovalLevels)) {
-            log.log(dataApprovalLevels);
+            log.info(dataApprovalLevels);
             dataApprovalLevels
                 .filter(approvalLevel => approvalLevel.orgUnitLevel === dataApprovalLevel.organisationUnitLevel.level)
-                .forEach((item) => log.log(item));
+                .forEach((item) => log.info(item));
         }
 
         const dataApprovalLevelToSave = {
