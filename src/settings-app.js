@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('../dev-jquery-auth.js');
+}
+
 import React from 'react/addons';
 import log from 'loglevel';
 
@@ -38,7 +42,7 @@ function configI18n({uiLocale}) {
 
 React.render(<LoadingMask />, document.getElementById('app'));
 
-getManifest(`dev_manifest.webapp`)
+getManifest(process.env.NODE_ENV === 'production' ? `manifest.webapp` : `dev_manifest.webapp`)
     .then(manifest => {
         config.baseUrl = manifest.getBaseUrl() + '/api';
     })
