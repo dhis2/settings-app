@@ -4,7 +4,7 @@
   "description": "Settings management application for DHIS2",
   "main": "index.html",
   "scripts": {
-    "lint": "./node_modules/eslint/bin/eslint.js theme.js `git diff --cached --name-only | grep \\.js$`",
+    "lint": "./node_modules/eslint/bin/eslint.js src `git diff --cached --name-only | grep \\.js$`",
     "validate": "npm ls --depth 0",
     "start": "webpack-dev-server",
     "build": "webpack --config webpack.config.prod.js && cp ./index.html build && cp -r i18n build/ && cp ./node_modules/babel-core/browser-polyfill.min.js build && cp ./node_modules/jquery/dist/jquery.js build && cp ./manifest.webapp build"
@@ -25,9 +25,9 @@
   },
   "homepage": "https://github.com/dhis2/settings-app#readme",
   "dependencies": {
-    "d2": "0.0.18",
+    "d2": "0.0.21",
     "d2-flux": "0.4.0",
-    "d2-ui": "0.0.3",
+    "d2-ui": "0.0.4",
     "fbjs": "0.2.1",
     "jquery": "2.1.4",
     "loglevel": "1.4.0",

@@ -170,7 +170,7 @@ export default React.createClass({
         api.post(['staticContent', this.props.name].join('/'), data, {
             contentType: false,
             processData: false,
-            xhr: () => {return xhr;},
+            xhr: () => { return xhr; },
         }).then(() => {
             log.info('File uploaded successfully');
             this.props.onChange({target: {value: true}});

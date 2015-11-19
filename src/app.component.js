@@ -233,7 +233,7 @@ export default React.createClass({
                 <Snackbar
                     message={d2.i18n.getTranslation('settings_updated')}
                     autoHideDuration={1250}
-                    ref={(ref) => {this._uglySnackbarRefExportFn(ref);}}
+                    ref={(ref) => { this._uglySnackbarRefExportFn(ref); }}
                     />
                 <Sidebar
                     d2={d2}
