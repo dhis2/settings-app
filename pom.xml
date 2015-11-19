@@ -56,7 +56,7 @@
   </distributionManagement>
   
   <build>
-	<resources>
+    <resources>
       <resource>
         <directory>build</directory>
       </resource>
