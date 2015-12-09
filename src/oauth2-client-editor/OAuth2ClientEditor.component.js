@@ -188,7 +188,7 @@ export default React.createClass({
                 <div style={{position: 'fixed', left: 0, top: 0, right: 0, bottom: 0, zIndex: 1000, backgroundColor: 'rgba(255,255,255,0.4)', display: this.state.saving ? 'block' : 'none'}}>
                     <LoadingMask />
                 </div>
-                {this.state.isEmpty ? <div style={{color: theme.palette.accent1Color}}>{this.getTranslation('no_oauth2_clients_registered')}</div> : undefined}
+                {this.state.isEmpty ? <div style={{color: theme.palette.primary1Color}}>{this.getTranslation('no_oauth2_clients_registered')}</div> : undefined}
                 {this.state.showForm || this.state.isEmpty ? this.renderForm() : this.renderList()}
             </div>
         );

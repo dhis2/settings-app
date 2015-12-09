@@ -1,4 +1,4 @@
-import React from 'react/addons';
+import React from 'react';
 import SelectField from 'material-ui/lib/select-field';
 
 import MuiThemeMixin from '../mui-theme.mixin';

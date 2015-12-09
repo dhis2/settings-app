@@ -1,4 +1,4 @@
-import React from 'react/addons';
+import React from 'react';
 import log from 'loglevel';
 
 import LinearProgress from 'material-ui/lib/linear-progress';
@@ -53,14 +53,14 @@ export default React.createClass({
 
     renderUpload() {
         const bodyStyle = {
-            backgroundColor: AppTheme.rawTheme.palette.accent1Color,
+            backgroundColor: AppTheme.rawTheme.palette.primary1Color,
             textAlign: 'center',
             overflow: 'auto',
             padding: 48,
         };
 
         const apiBase = this.context.d2.Api.getApi().baseUrl;
-        const imgUrl = [apiBase, 'staticContent', this.props.name].join('/');
+        const imgUrl = [apiBase, 'staticContent', this.props.name].join('/') + '?at=' + new Date();
 
         if (this.state.isEnabled) {
             return (
@@ -68,6 +68,8 @@ export default React.createClass({
                     <FlatButton label={this.getTranslation('replace_image')} secondary onClick={this._fileClick} />
                     <FlatButton label={this.getTranslation('preview_image')} onClick={this._previewClick} />
                     <Dialog ref="dialog"
+                            open={this.state.showDialog}
+                            onRequestClose={this._previewClick}
                             autoDetectWindowHeight
                             autoScrollBodyContent
                             bodyStyle={bodyStyle}>
@@ -136,7 +138,9 @@ export default React.createClass({
     },
 
     _previewClick() {
-        this.refs.dialog.show();
+        this.setState(state => {
+            return {showDialog: !state.showDialog};
+        });
     },
 
     _check(e) {

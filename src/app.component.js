@@ -1,4 +1,4 @@
-import React from 'react/addons';
+import React from 'react';
 import log from 'loglevel';
 
 // Material UI
@@ -23,11 +23,9 @@ import AppTheme from './theme';
 
 
 function getValidatorFunctions(settingsMapping) {
-    if (settingsMapping.hasOwnProperty('validators')) {
-        return (settingsMapping.validators || [])
-            .filter(validatorName => wordToValidatorMap.has(validatorName))
-            .map(validatorName => wordToValidatorMap.get(validatorName));
-    }
+    return (settingsMapping.hasOwnProperty('validators') ? settingsMapping.validators : [])
+        .filter(validatorName => wordToValidatorMap.has(validatorName))
+        .map(validatorName => wordToValidatorMap.get(validatorName));
 }
 
 
@@ -155,7 +153,8 @@ export default React.createClass({
 
                 d2.system.configuration.get(settingsKey).then(value => {
                     fieldConfig.fieldOptions.defaultValue = value === null ? 'null' : value.id;
-                }).catch(() => {});
+                }).catch(() => {
+                });
                 break;
 
             case 'editlist':
@@ -233,25 +232,27 @@ export default React.createClass({
                 <Snackbar
                     message={d2.i18n.getTranslation('settings_updated')}
                     autoHideDuration={1250}
+                    style={{left: 24, right: 'inherit'}}
                     ref={(ref) => {this._uglySnackbarRefExportFn(ref);}}
-                    />
+                />
                 <Sidebar
                     d2={d2}
                     categoryOrder={this.props.categoryOrder}
                     categories={this.props.categories}
                     currentCategory={this.state.category}
                     settingsActions={this.props.settingsActions}
-                    />
+                />
 
                 <div className="content-area" style={theme.forms}>
                     <h1 style={{fontSize: '1.75rem'}}>{
                         this.props.categories[this.state.category] ?
-                        d2.i18n.getTranslation(this.props.categories[this.state.category].pageLabel) :
-                        d2.i18n.getTranslation('search_results')
+                            d2.i18n.getTranslation(this.props.categories[this.state.category].pageLabel) :
+                            d2.i18n.getTranslation('search_results')
                     }</h1>
                     {!this.state.currentSettings.length ?
                         <div>{d2.i18n.getTranslation('no_settings_found_that_match')}</div> : null}
-                    <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs} onFormFieldUpdate={this._saveSetting}/>
+                    <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs}
+                          onFormFieldUpdate={this._saveSetting}/>
                 </div>
             </div>
         );

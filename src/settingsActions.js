@@ -15,8 +15,8 @@ const settingsSearchMap = Observable.fromPromise(new Promise((resolve, reject) =
                     .reduce((searchArray, categoryKeys) => {
                         return searchArray.concat(categoryKeys);
                     }, [])
-                    .reduce((translatedKeyValyeMap, settingsKey) => {
-                        return translatedKeyValyeMap.concat([[d2.i18n.getTranslation(d2.system.settings.mapping[settingsKey].label), settingsKey]]);
+                    .reduce((translatedKeyValueMap, settingsKey) => {
+                        return translatedKeyValueMap.concat([[d2.i18n.getTranslation(d2.system.settings.mapping[settingsKey].label), settingsKey]]);
                     }, []);
             })
             .then(searchMapping => resolve(searchMapping))

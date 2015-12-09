@@ -2,7 +2,7 @@
 @import "../node_modules/d2-ui/scss/HeaderBar";
 @import "../node_modules/d2-ui/scss/DataTable";
 
-$left-bar-width: 256px;
+$left-bar-width: 220px;
 
 html {
     background: #ffffff;
@@ -25,6 +25,6 @@ html {
 }
 
 .content-area {
-    padding-left: 3rem;
+    padding-left: 2rem;
     margin-left: $left-bar-width;
 }

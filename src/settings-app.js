@@ -2,7 +2,8 @@ if (process.env.NODE_ENV !== 'production') {
     require('../dev-jquery-auth.js');
 }
 
-import React from 'react/addons';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import log from 'loglevel';
 
 import {init, config, getUserSettings, getManifest} from 'd2/lib/d2';
@@ -18,7 +19,7 @@ import {categoryOrder, categories} from './settingsCategories';
 
 // D2 UI
 import {wordToValidatorMap} from 'd2-ui/lib/forms/Validators';
-import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component.js';
+import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 
 import App from './app.component.js';
 
@@ -40,9 +41,9 @@ function configI18n({uiLocale}) {
     config.i18n.sources.add('i18n/module/i18n_module_en.properties');
 }
 
-React.render(<LoadingMask />, document.getElementById('app'));
+ReactDOM.render(<LoadingMask />, document.getElementById('app'));
 
-getManifest(process.env.NODE_ENV === 'production' ? `manifest.webapp` : `dev_manifest.webapp`)
+getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_manifest.webapp')
     .then(manifest => {
         config.baseUrl = manifest.getBaseUrl() + '/api';
     })
@@ -51,14 +52,14 @@ getManifest(process.env.NODE_ENV === 'production' ? `manifest.webapp` : `dev_man
     .then(init)
     .then(d2 => {
         function renderApp() {
-            React.render(<App
+            ReactDOM.render(<App
                 d2={d2}
                 settingsStore={settingsStore}
                 configOptionStore={configOptionStore}
                 settingsActions={settingsActions}
                 categoryOrder={categoryOrder}
                 categories={categories}
-                />, document.getElementById('app'));
+            />, document.getElementById('app'));
         }
 
         // settingsActions.load handler
@@ -132,7 +133,6 @@ getManifest(process.env.NODE_ENV === 'production' ? `manifest.webapp` : `dev_man
         // App init
         log.info('D2 initialized', d2);
 
-        log.info('Can settings:', d2.currentUser.authorities.has('F_SYSTEM_SETTING'), 'Can Oauth:', d2.currentUser.authorities.has('F_OAUTH2_CLIENT_MANAGE'));
         // Load translations
         d2.i18n.addStrings(d2.system.getI18nStrings());
         d2.i18n.addStrings(['access_denied', 'settings_updated', 'save', 'delete', 'level', 'category_option_group_set', 'search', 'yes', 'no', 'edit']);
@@ -148,7 +148,11 @@ getManifest(process.env.NODE_ENV === 'production' ? `manifest.webapp` : `dev_man
                 d2.models.indicatorGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
                 d2.models.dataElementGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
                 d2.models.userGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
-                d2.models.organisationUnitLevel.list({paging: false, fields: 'id,level,displayName', order: 'level:asc'}),
+                d2.models.organisationUnitLevel.list({
+                    paging: false,
+                    fields: 'id,level,displayName',
+                    order: 'level:asc',
+                }),
                 d2.models.userRole.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
                 d2.models.organisationUnit.list({paging: false, fields: 'id,displayName', filter: ['level:in:[1,2]']}),
                 d2.Api.getApi().get('../dhis-web-commons/menu/getModules.action'),
@@ -179,7 +183,7 @@ getManifest(process.env.NODE_ENV === 'production' ? `manifest.webapp` : `dev_man
                     };
                 });
 
-                const flags  = (results[7] || []).map(flagName => {
+                const flags = (results[7] || []).map(flagName => {
                     return {
                         payload: flagName.key,
                         text: flagName.name,
@@ -207,6 +211,6 @@ getManifest(process.env.NODE_ENV === 'production' ? `manifest.webapp` : `dev_man
             });
         });
     }, (err) => {
-        log.error('Failed to initialize D2:', err);
-        document.write('Failed to initialize D2.');
+        log.error('Failed to initialize D2:', JSON.stringify(err));
+        document.write('D2 initialization error: ' + err);
     });

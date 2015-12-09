@@ -1,4 +1,4 @@
-import React from 'react/addons';
+import React from 'react';
 import TextField from 'material-ui/lib/text-field';
 
 import MuiThemeMixin from '../mui-theme.mixin';

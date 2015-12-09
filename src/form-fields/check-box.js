@@ -1,4 +1,4 @@
-import React from 'react/addons';
+import React from 'react';
 import Checkbox from 'material-ui/lib/checkbox';
 
 import MuiThemeMixin from '../mui-theme.mixin';
