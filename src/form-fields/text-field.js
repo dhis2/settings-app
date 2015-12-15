@@ -5,10 +5,21 @@ import MuiThemeMixin from '../mui-theme.mixin';
 
 export default React.createClass({
     propTypes: {
+        value: React.PropTypes.string,
         multiLine: React.PropTypes.bool,
     },
 
     mixins: [MuiThemeMixin],
+
+    getInitialState() {
+        return {
+            value: this.props.value,
+        };
+    },
+
+    componentWillReceiveProps(props) {
+        this.setState({value: props.value});
+    },
 
     render() {
         const errorStyle = {
@@ -17,7 +28,11 @@ export default React.createClass({
         };
 
         return (
-            <TextField errorStyle={errorStyle} {...this.props}/>
+            <TextField errorStyle={errorStyle} {...this.props} value={this.state.value} onChange={this._change}/>
         );
+    },
+
+    _change(e) {
+        this.setState({value: e.target.value});
     },
 });

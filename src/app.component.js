@@ -3,7 +3,7 @@ import log from 'loglevel';
 
 // Material UI
 import Snackbar from 'material-ui/lib/snackbar';
-import FlatButton from 'material-ui/lib/flat-button';
+import RaisedButton from 'material-ui/lib/raised-button';
 
 // D2 UI
 import HeaderBar from 'd2-ui/lib/header-bar/HeaderBar.component';
@@ -83,6 +83,7 @@ export default React.createClass({
         const fieldConfigs = currentSettings.map(settingsKey => {
             const mapping = d2.system.settings.mapping[settingsKey];
             const defaultValue = settingsStore.state ? settingsStore.state[settingsKey] : '';
+            const value = this.state.values && this.state.values[settingsKey];
             const fieldConfig = {
                 name: settingsKey,
             };
@@ -93,11 +94,11 @@ export default React.createClass({
                 fieldConfig.fieldOptions = {
                     floatingLabelText: d2.i18n.getTranslation(mapping.label),
                     value: defaultValue,
-                    menuItems: Object.keys(mapping.options || {}).map(value => {
-                        const label = mapping.options[value];
+                    menuItems: Object.keys(mapping.options || {}).map(val => {
+                        const label = mapping.options[val];
                         return {
-                            payload: value,
-                            text: isNaN(label) ? d2.i18n.getTranslation(mapping.options[value]) : label,
+                            payload: val,
+                            text: isNaN(label) ? d2.i18n.getTranslation(mapping.options[val]) : label,
                         };
                     }),
                 };
@@ -115,18 +116,19 @@ export default React.createClass({
                 break;
 
             case 'post_button':
-                fieldConfig.type = FlatButton;
+                fieldConfig.type = RaisedButton;
                 fieldConfig.fieldOptions = {
                     label: d2.i18n.getTranslation(mapping.label),
                     onClick: () => {
-                        d2.Api.getApi().post(mapping.uri).then(result => {
+                        const qry = mapping.query_type === 'DELETE' ? d2.Api.getApi().delete(mapping.uri) : d2.Api.getApi().post(mapping.uri);
+                        qry.then(result => {
                             // TODO: Show a useful snackbar
-                            log.info(result.message);
+                            log.info(result && result.message || 'Ok');
+                            this.props.settingsActions.load(true);
                             window.snackbar.show();
                         });
                     },
-                    secondary: true,
-                    style: {minWidth: 'initial', maxWidth: 'initial', float: 'right', marginTop: '1em'},
+                    style: {minWidth: 'initial', maxWidth: 'initial', marginTop: '1em'},
                 };
                 break;
 
@@ -151,9 +153,10 @@ export default React.createClass({
                     break;
                 }
 
-                d2.system.configuration.get(settingsKey).then(value => {
-                    fieldConfig.fieldOptions.defaultValue = value === null ? 'null' : value.id;
-                }).catch(() => {
+                d2.system.configuration.get(settingsKey).then(val => {
+                    fieldConfig.fieldOptions.defaultValue = val === null ? 'null' : val.id;
+                }).catch((err) => {
+                    log.warn('Failed to get value for ' + settingsKey, err);
                 });
                 break;
 
@@ -203,10 +206,11 @@ export default React.createClass({
                 fieldConfig.updateEvent = 'onBlur';
                 fieldConfig.fieldOptions = {
                     floatingLabelText: d2.i18n.getTranslation(mapping.label),
-                    defaultValue: defaultValue,
+                    value: value || defaultValue,
                     multiLine: mapping.multiLine && mapping.multiLine === true,
                 };
             }
+
             if (fieldConfig.fieldOptions && fieldConfig.fieldOptions.style) {
                 fieldConfig.fieldOptions.style = Object.assign({}, theme.forms, fieldConfig.fieldOptions.style);
             } else {
