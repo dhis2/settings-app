@@ -149,7 +149,12 @@ export default React.createClass({
                     menuItems: opts.state ? opts.state[mapping.type] : [],
                 };
 
-                if (['startModules', 'flags', 'styles'].indexOf(mapping.type) >= 0) {
+                if (['startModules', 'styles'].indexOf(mapping.type) >= 0) {
+                    break;
+                } else if (mapping.type === 'flags') {
+                    if (!settingsStore.state[settingsKey]) {
+                        fieldConfig.fieldOptions.value = 'dhis2';
+                    }
                     break;
                 }
 

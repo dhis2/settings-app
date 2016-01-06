@@ -189,6 +189,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                         text: flagName.name,
                     };
                 });
+                flags.unshift({payload: 'dhis2', text: d2.i18n.getTranslation('no_flag')});
 
                 const styles = (results[8] || []).map(styleName => {
                     return {
