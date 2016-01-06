@@ -19,7 +19,7 @@
     "HISP",
     "Settings"
   ],
-  "author": "Nicolay Ramm",
+  "author": "Nicolay Ramm <nicolayr@ifi.uio.no>",
   "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/dhis2/settings-app/issues"
@@ -30,8 +30,8 @@
     "d2-flux": "0.4.0",
     "d2-ui": "0.0.7",
     "fbjs": "0.5.0",
-    "jquery": "^2.1.4",
-    "loglevel": "^1.4.0",
+    "jquery": "2.1.4",
+    "loglevel": "1.4.0",
     "material-ui": "0.14.0-rc1",
     "react": "0.14.3",
     "react-dom": "0.14.3",
