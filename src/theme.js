@@ -5,30 +5,13 @@ import Spacing from 'material-ui/lib/styles/spacing';
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
 
 const theme = {
-    /*
-    spacing: Spacing,
-    fontFamily: 'Roboto, sans-serif',
-    palette: {
-        primary1Color: Colors.blue500,
-        primary2Color: Colors.blue700,
-        primary3Color: Colors.grey300,
-        accent1Color: '#276696',
-        accent2Color: '#E9E9E9',
-        accent3Color: Colors.grey500,
-        textColor: Colors.darkBlack,
-        alternateTextColor: Colors.white,
-        canvasColor: Colors.white,
-        borderColor: Colors.grey300,
-        disabledColor: ColorManipulator.fade(Colors.darkBlack, 0.3),
-    },
-    */
     spacing: Spacing,
     fontFamily: 'Roboto, sans-serif',
     palette: {
         primary1Color: '#276696',
-        primary2Color: Colors.cyan700,
+        primary2Color: '#86C5F9',
         primary3Color: Colors.lightBlack,
-        accent1Color: Colors.orangeA700,
+        accent1Color: Colors.green700,
         accent2Color: Colors.grey100,
         accent3Color: Colors.grey500,
         textColor: Colors.darkBlack,
