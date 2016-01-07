@@ -29,7 +29,7 @@
   <licenses>
     <license>
       <name>BSD</name>
-      <url>http://amplecode.org/license/license_bsd.txt</url>
+      <url>https://opensource.org/licenses/BSD-3-Clause</url>
     </license>
   </licenses>
   
@@ -72,20 +72,6 @@
           <nexusUrl>https://oss.sonatype.org/</nexusUrl>
           <autoReleaseAfterClose>true</autoReleaseAfterClose>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.6</version>
-        <executions>
-          <execution>
-            <id>sign-artifacts</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>sign</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
