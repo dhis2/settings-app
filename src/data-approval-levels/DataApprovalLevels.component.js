@@ -28,11 +28,12 @@ export default React.createClass({
 
     componentWillMount() {
         dataApprovalLevelActions.loadDataApprovalLevels();
+    },
+
+    componentDidMount() {
         dataApprovalLevelStore
             .subscribe(approvalLevels => {
-                if (this.isMounted()) {
-                    this.setState({approvalLevels, showAddForm: false});
-                }
+                this.setState({approvalLevels, showAddForm: false});
             });
     },
 
@@ -100,12 +101,12 @@ export default React.createClass({
         return (
             <Paper style={formPaperStyle}>
                 <h2 style={{margin: 0}}>{this.getTranslation('create_new_approval_level')}</h2>
-                <Form source={this.modelToEdit} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.formFieldUpdate}>
-                    <div style={{marginTop: '1rem'}}>
+                <div style={{marginTop: '1rem'}}>
+                    <Form source={this.modelToEdit} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.formFieldUpdate}>
                         <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
                         <FlatButton onClick={this.cancelAction} style={{marginLeft: '1rem'}} label={this.getTranslation('cancel')} />
-                    </div>
-                </Form>
+                    </Form>
+                </div>
             </Paper>
         );
     },

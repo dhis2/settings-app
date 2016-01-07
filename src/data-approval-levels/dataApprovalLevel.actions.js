@@ -20,7 +20,7 @@ function checkImportReport(response) {
 actions.loadDataApprovalLevels
     .subscribe(({complete, error}) => {
         getD2()
-            .then(d2 => d2.models.dataApprovalLevel.list({paging: false}))
+            .then(d2 => d2.models.dataApprovalLevel.list({paging: false, fields: ':all,categoryOptionGroupSet[id,displayName]'}))
             .then(dataApprovalLevelCollection => dataApprovalLevelCollection.toArray())
             .then(dataApprovalLevels => dataApprovalLevels.sort(sortByLevel))
             .then(dataApprovalLevels => dataApprovalLevelStore.setState(dataApprovalLevels))
