@@ -2,7 +2,6 @@
 export const categoryOrder = [
     'general',
     'server',
-    'apps',
     'appearance',
     'email',
     'access',
@@ -40,15 +39,6 @@ export const categories = {
             'keySystemNotificationsEmail',
             'keyInstanceBaseUrl',
             'googleAnalyticsUA',
-        ],
-    },
-    apps: {
-        label: 'apps',
-        pageLabel: 'apps_settings',
-        settings: [
-            'appFolderPath',
-            'appBaseUrl',
-            'resetAppsConfig',
         ],
     },
     appearance: {
