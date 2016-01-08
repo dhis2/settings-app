@@ -86,6 +86,7 @@ export default React.createClass({
             const value = this.state.values && this.state.values[settingsKey];
             const fieldConfig = {
                 name: settingsKey,
+                fieldOptions: {},
             };
 
             switch (mapping.type) {
@@ -185,14 +186,10 @@ export default React.createClass({
 
             case 'dataapproval':
                 fieldConfig.type = DataApprovalLevels;
-                fieldConfig.fieldOptions = {
-                    columns: ['level', 'name', 'categoryOptionGroupSet'],
-                };
                 break;
 
             case 'oauth2clients':
                 fieldConfig.type = Oauth2ClientEditor;
-                fieldConfig.fieldOptions = {d2};
                 break;
 
             case 'staticContent':

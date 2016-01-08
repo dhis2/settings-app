@@ -20,10 +20,6 @@ import log from 'loglevel';
 
 
 export default React.createClass({
-    propTypes: {
-        columns: React.PropTypes.array.isRequired,
-    },
-
     mixins: [Translate],
 
     componentWillMount() {
@@ -132,7 +128,7 @@ export default React.createClass({
                 <div style={{marginTop: -24}}>
                     <DataTable
                         rows={this.state.approvalLevels}
-                        columns={this.props.columns}
+                        columns={['level', 'name', 'categoryOptionGroupSet']}
                         contextMenuActions={contextMenuActions}
                         />
                 </div>
