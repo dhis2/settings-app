@@ -4,6 +4,8 @@ import SelectField from 'material-ui/lib/select-field';
 export default React.createClass({
     propTypes: {
         menuItemsSource: React.PropTypes.func,
+        prependItems: React.PropTypes.array,
+        appendItems: React.PropTypes.array,
     },
 
     getInitialState() {
@@ -16,7 +18,7 @@ export default React.createClass({
         this.props.menuItemsSource()
             .then(items => {
                 this.setState({
-                    menuItems: items,
+                    menuItems: (this.props.prependItems || []).concat(items).concat(this.props.appendItems || []),
                 });
             });
     },
