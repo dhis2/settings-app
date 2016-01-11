@@ -6,10 +6,6 @@ import {getInstance as getD2} from 'd2/lib/d2';
 
 const actions = Action.createActionsFromNames(['loadDataApprovalLevels', 'editDataApprovalLevel', 'saveDataApprovalLevel', 'deleteDataApprovalLevel']);
 
-function sortByLevel(left, right) {
-    return left.level - right.level;
-}
-
 function checkImportReport(response) {
     if (response.response && response.response.importCount && response.response.importCount.imported === 1) {
         return Promise.resolve(response);
@@ -22,7 +18,6 @@ actions.loadDataApprovalLevels
         getD2()
             .then(d2 => d2.models.dataApprovalLevel.list({paging: false, fields: ':all,categoryOptionGroupSet[id,displayName]', order: 'level:asc,displayName:asc'}))
             .then(dataApprovalLevelCollection => dataApprovalLevelCollection.toArray())
-            .then(dataApprovalLevels => dataApprovalLevels.sort(sortByLevel))
             .then(dataApprovalLevels => dataApprovalLevelStore.setState(dataApprovalLevels))
             .then(complete)
             .catch(error);
