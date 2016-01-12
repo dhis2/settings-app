@@ -78,6 +78,7 @@ export default React.createClass({
                 fieldOptions: {
                     floatingLabelText: this.getTranslation('name'),
                     style: formFieldStyle,
+                    value: clientModel.name,
                 },
                 validators: [isUndefinedOrRequired],
             },
@@ -88,6 +89,7 @@ export default React.createClass({
                 fieldOptions: {
                     floatingLabelText: this.getTranslation('client_id'),
                     style: formFieldStyle,
+                    value: clientModel.cid,
                 },
                 validators: [isUndefinedOrRequired],
             },
@@ -125,6 +127,7 @@ export default React.createClass({
                     multiLine: true,
                     style: formFieldStyle,
                     defaultValue: (clientModel.redirectUris || []).join('\n'),
+                    value: (clientModel.redirectUris || []).join('\n'),
                 },
                 validators: [urlArrayValidator],
             },
