@@ -144,10 +144,9 @@ export default React.createClass({
             <Paper style={formPaperStyle}>
                 <h2>{this.clientModel.id === undefined ? this.getTranslation('create_new_oauth2_client') : this.getTranslation('edit_oauth2_client')}</h2>
                 <Form source={this.clientModel} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.formUpdateAction}>
-                    <div style={{marginTop: '1rem'}}>
-                        <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
-                        {this.state.isEmpty ? undefined : <FlatButton onClick={this.cancelAction} style={{marginLeft: '1rem'}} label={this.getTranslation('cancel')} />}
-                    </div>
+                    <div style={{marginTop: '1rem'}}></div>
+                    <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
+                    {this.state.isEmpty ? undefined : <FlatButton onClick={this.cancelAction} style={{marginLeft: '1rem'}} label={this.getTranslation('cancel')} />}
                 </Form>
             </Paper>
         );
