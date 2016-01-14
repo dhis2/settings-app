@@ -121,9 +121,9 @@ export const categories = {
         label: 'synchronization',
         pageLabel: 'synchronization_settings',
         settings: [
-            'remoteServerUrl',
-            'remoteServerUsername',
-            'remoteServerPassword',
+            'keyRemoteInstanceUrl',
+            'keyRemoteInstanceUsername',
+            'keyRemoteInstancePassword',
         ],
     },
     oauth2: {
