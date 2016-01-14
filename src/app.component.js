@@ -179,6 +179,7 @@ export default React.createClass({
                 fieldConfig.type = HackyTextField;
                 fieldConfig.fieldOptions = {
                     floatingLabelText: d2.i18n.getTranslation(mapping.label),
+                    value: value || defaultValue,
                     type: 'password',
                 };
                 fieldConfig.updateEvent = 'onBlur';
