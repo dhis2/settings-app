@@ -15,3 +15,5 @@ dev-jquery-auth.js
 
 *.zip
 npm-debug.log
+*.pot
+*.po
