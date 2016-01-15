@@ -26,7 +26,7 @@ import App from './app.component.js';
 // Styles
 require('../scss/settings-app.scss');
 
-log.setLevel(log.levels.TRACE);
+log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.WARN : log.levels.TRACE);
 
 function getValidatorFunctions(settingsMapping) {
     return (settingsMapping.validators || [])
