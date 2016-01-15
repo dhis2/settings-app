@@ -109,7 +109,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                 if (settingsKeyMapping.configuration) {
                     d2.system.configuration.set(fieldName, value)
                         .then(() => {
-                            window.snackbar && window.snackbar.show();
+                            settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
                         })
                         .catch((err) => {
                             log.error('Failed to save configuration:', err);
@@ -117,7 +117,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                 } else {
                     d2.system.settings.set(fieldName, value)
                         .then(() => {
-                            window.snackbar && window.snackbar.show();
+                            settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
                         })
                         .catch((err) => {
                             log.error('Failed to save setting:', err);

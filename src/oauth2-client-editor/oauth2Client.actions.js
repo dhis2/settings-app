@@ -1,6 +1,8 @@
 import {Action} from 'd2-flux';
 import {getInstance as getD2} from 'd2/lib/d2';
 
+import settingsActions from '../settingsActions';
+
 import oa2Store from './oauth2Client.store';
 
 const oa2Actions = Action.createActionsFromNames(['load', 'delete']);
@@ -29,10 +31,15 @@ oa2Actions.delete.subscribe((e) => {
         .then(() => {
             oa2Store.state.splice(oa2Store.state.indexOf(e.data), 1);
             oa2Store.setState(oa2Store.state);
-            window.snackbar.show();
+            getD2().then(d2 => {
+                settingsActions.showSnackbarMessage(d2.i18n.getTranslation('oauth2_client_deleted'));
+            });
         })
         .catch((err) => {
             log.error('Failed to delete OAuth2 client:', err);
+            getD2().then(d2 => {
+                settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_save_oauth2_client'));
+            });
         });
 });
 

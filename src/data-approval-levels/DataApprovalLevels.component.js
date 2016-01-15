@@ -110,6 +110,7 @@ export default React.createClass({
                     floatingLabelText: this.getTranslation('organisation_unit_level'),
                     menuItemsSource: () => organisationUnitLevels,
                     value: this.modelToEdit.organisationUnitLevel,
+                    style: {width: '100%'},
                 },
             },
             {
@@ -118,8 +119,9 @@ export default React.createClass({
                 fieldOptions: {
                     floatingLabelText: this.getTranslation('category_option_group_set'),
                     menuItemsSource: () => categoryOptionGroupSets,
-                    prependItems: [{text: '', payload: null}],
+                    prependItems: [{text: '', payload: ''}],
                     value: this.modelToEdit.categoryOptionGroupSet,
+                    style: {width: '100%'},
                 },
             },
         ];
@@ -128,6 +130,7 @@ export default React.createClass({
             padding: '2rem',
             marginTop: '2rem',
             marginRight: '2rem',
+            maxWidth: 450,
         };
 
         return (
@@ -136,6 +139,7 @@ export default React.createClass({
                 <div style={{marginTop: '1rem'}}>
                     <Form source={this.modelToEdit} fieldConfigs={fieldConfigs}
                           onFormFieldUpdate={this.formFieldUpdate}>
+                        <div style={{marginTop: '2rem'}}></div>
                         <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')}/>
                         <FlatButton onClick={this.cancelAction} style={{marginLeft: '1rem'}}
                                     label={this.getTranslation('cancel')}/>
@@ -205,6 +209,7 @@ export default React.createClass({
                 fieldOptions: {
                     floatingLabelText: this.getTranslation('name'),
                     value: this.workflowModelToEdit.name,
+                    style: {width: '100%'},
                 },
                 validators: [isUndefinedOrRequired],
             },
@@ -221,6 +226,7 @@ export default React.createClass({
                         };
                     }),
                     value: this.workflowModelToEdit.periodType,
+                    style: {width: '100%'},
                 },
                 validators: [isUndefinedOrRequired],
             },
@@ -244,6 +250,7 @@ export default React.createClass({
             padding: '2rem',
             marginTop: '2rem',
             marginRight: '2rem',
+            maxWidth: 450,
         };
 
         return (
@@ -377,11 +384,9 @@ export default React.createClass({
             .saveDataApprovalLevel(this.modelToEdit)
             .subscribe(
                 () => {
-                    window.snackbar.show();
                     this.resetAddFormAnddisplayList();
                 },
-                error => {
-                    log.error('Error', error);
+                () => {
                     this.setState({saving: false});
                 }
             );
@@ -404,7 +409,7 @@ export default React.createClass({
     },
 
     addClick() {
-        this.workflowModelToEdit = this.context.d2.models.dataApprovalWorkflow.create();
+        this.workflowFormCancel();
         this.setState({
             approvalLevelToAdd: this.context.d2.models.dataApprovalLevel.create(),
             showForm: true,
@@ -440,6 +445,7 @@ export default React.createClass({
 
     workflowFormCancel() {
         this.workflowModelToEdit = this.context.d2.models.dataApprovalWorkflow.create();
+        this.workflowModelToEdit.periodType = 'Daily';
         this.setState({showForm: false});
     },
 });

@@ -20,6 +20,8 @@ import MultiToggle from '../form-fields/multi-toggle';
 import oa2ClientStore from './oauth2Client.store';
 import oa2Actions from './oauth2Client.actions';
 
+import settingsActions from '../settingsActions';
+
 import AppTheme from '../theme';
 
 function generateUid() {
@@ -64,6 +66,8 @@ export default React.createClass({
 
     renderForm() {
         const formFieldStyle = AppTheme.forms;
+        formFieldStyle.width = '100%';
+
         const clientModel = this.clientModel;
         const grantTypes = (clientModel && clientModel.grantTypes || []).reduce((curr, prev) => {
             curr[prev] = true;
@@ -138,6 +142,7 @@ export default React.createClass({
             marginTop: '2rem',
             marginRight: '2rem',
             overflow: 'hidden',
+            maxWidth: 450,
         };
 
         return (
@@ -145,8 +150,11 @@ export default React.createClass({
                 <h2>{this.clientModel.id === undefined ? this.getTranslation('create_new_oauth2_client') : this.getTranslation('edit_oauth2_client')}</h2>
                 <Form source={this.clientModel} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.formUpdateAction}>
                     <div style={{marginTop: '1rem'}}></div>
-                    <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
-                    {this.state.isEmpty ? undefined : <FlatButton onClick={this.cancelAction} style={{marginLeft: '1rem'}} label={this.getTranslation('cancel')} />}
+                    <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')}/>
+                    {this.state.isEmpty ? undefined :
+                        <FlatButton onClick={this.cancelAction} style={{marginLeft: '1rem'}}
+                                    label={this.getTranslation('cancel')}/>
+                    }
                 </Form>
             </Paper>
         );
@@ -177,7 +185,7 @@ export default React.createClass({
                         columns={['name', 'password', 'refresh_token', 'authorization_code']}
                         contextMenuActions={contextMenuActions}
                         primaryAction={contextMenuActions.edit}
-                        />
+                    />
                 </div>
             </div>
         );
@@ -185,12 +193,21 @@ export default React.createClass({
 
     render() {
         const theme = AppTheme.rawTheme;
+        const style = {
+            position: 'fixed',
+            left: 256,
+            top: '3rem',
+            right: 0,
+            bottom: 0,
+            zIndex: 1000,
+            backgroundColor: 'rgba(255,255,255,0.4)',
+        };
+
         return (
             <div>
-                <div style={{position: 'fixed', left: 0, top: 0, right: 0, bottom: 0, zIndex: 1000, backgroundColor: 'rgba(255,255,255,0.4)', display: this.state.saving ? 'block' : 'none'}}>
-                    <LoadingMask />
-                </div>
-                {this.state.isEmpty ? <div style={{color: theme.palette.primary1Color}}>{this.getTranslation('no_oauth2_clients_registered')}</div> : undefined}
+                {this.state.saving ? <div style={style}><LoadingMask /></div> : undefined}
+                {this.state.isEmpty ? <div
+                    style={{color: theme.palette.primary1Color}}>{this.getTranslation('no_oauth2_clients_registered')}</div> : undefined}
                 {this.state.showForm || this.state.isEmpty ? this.renderForm() : this.renderList()}
             </div>
         );
@@ -229,7 +246,7 @@ export default React.createClass({
         this.setState({saving: true});
         this.clientModel.save()
             .then(() => {
-                window.snackbar.show();
+                settingsActions.showSnackbarMessage(this.getTranslation('oauth2_client_saved'));
                 oa2Actions.load();
                 this.setState({showForm: false, saving: false});
             })

@@ -72,6 +72,11 @@ export default React.createClass({
                 currentSettings: category.searchResult ? category.settings : this.props.categories[category].settings,
             });
         });
+        this.props.settingsActions.showSnackbarMessage.subscribe(params => {
+            const message = typeof params.data === 'string' || params.data instanceof String ? params.data : undefined;
+            this.setState({snackbarMessage: message});
+            window.snackbar && window.snackbar.show();
+        });
     },
 
     render() {
@@ -131,7 +136,10 @@ export default React.createClass({
                             // TODO: Show a useful snackbar
                             log.info(result && result.message || 'Ok');
                             this.props.settingsActions.load(true);
-                            window.snackbar.show();
+                            this.props.settingsActions.showSnackbarMessage(result.message);
+                        }).catch(error => {
+                            log.error(error.message);
+                            this.props.settingsActions.showSnackbarMessage(error.message);
                         });
                     },
                     style: {minWidth: 'initial', maxWidth: 'initial', marginTop: '1em'},
@@ -243,7 +251,7 @@ export default React.createClass({
             <div className="app">
                 <HeaderBar />
                 <Snackbar
-                    message={d2.i18n.getTranslation('settings_updated')}
+                    message={this.state.snackbarMessage}
                     autoHideDuration={1250}
                     style={{left: 24, right: 'inherit'}}
                     ref={(ref) => { this._uglySnackbarRefExportFn(ref); }}

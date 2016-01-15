@@ -4,7 +4,7 @@ import {getInstance as getD2} from 'd2/lib/d2';
 import {Observable} from 'rx';
 import log from 'loglevel';
 
-const settingsActions = Action.createActionsFromNames(['load', 'setCategory', 'saveKey', 'searchSettings']);
+const settingsActions = Action.createActionsFromNames(['load', 'setCategory', 'saveKey', 'searchSettings', 'showSnackbarMessage']);
 
 const settingsSearchMap = Observable.fromPromise(new Promise((resolve, reject) => {
     settingsActions.load.subscribe(() => {

@@ -1,8 +1,9 @@
 import log from 'loglevel';
-
 import Action from 'd2-flux/action/Action';
 import dataApprovalLevelStore from './dataApprovalLevel.store';
 import {getInstance as getD2} from 'd2/lib/d2';
+
+import settingsActions from '../settingsActions';
 
 const actions = Action.createActionsFromNames(['loadDataApprovalLevels', 'editDataApprovalLevel', 'saveDataApprovalLevel', 'deleteDataApprovalLevel']);
 
@@ -16,7 +17,11 @@ function checkImportReport(response) {
 actions.loadDataApprovalLevels
     .subscribe(({complete, error}) => {
         getD2()
-            .then(d2 => d2.models.dataApprovalLevel.list({paging: false, fields: ':all,categoryOptionGroupSet[id,displayName]', order: 'level:asc,displayName:asc'}))
+            .then(d2 => d2.models.dataApprovalLevel.list({
+                paging: false,
+                fields: ':all,categoryOptionGroupSet[id,displayName]',
+                order: 'level:asc,displayName:asc',
+            }))
             .then(dataApprovalLevelCollection => dataApprovalLevelCollection.toArray())
             .then(dataApprovalLevels => dataApprovalLevelStore.setState(dataApprovalLevels))
             .then(complete)
@@ -26,13 +31,17 @@ actions.loadDataApprovalLevels
 actions.saveDataApprovalLevel
     .subscribe(({data: dataApprovalLevel, complete, error}) => {
         const dataApprovalLevels = dataApprovalLevelStore.getState();
-
+        if (!dataApprovalLevel.organisationUnitLevel) {
+            error();
+            getD2().then(d2 => {
+                settingsActions.showSnackbarMessage(d2.i18n.getTranslation('oranisation_unit_level_is_required'));
+            });
+            return;
+        }
 
         if (Array.isArray(dataApprovalLevels)) {
-            log.info(dataApprovalLevels);
             dataApprovalLevels
-                .filter(approvalLevel => approvalLevel.orgUnitLevel === dataApprovalLevel.organisationUnitLevel.level)
-                .forEach((item) => log.info(item));
+                .filter(approvalLevel => approvalLevel.orgUnitLevel === dataApprovalLevel.organisationUnitLevel.level);
         }
 
         const dataApprovalLevelToSave = {
@@ -47,21 +56,24 @@ actions.saveDataApprovalLevel
             dataApprovalLevelToSave.name = `${dataApprovalLevel.organisationUnitLevel.name} ${dataApprovalLevel.categoryOptionGroupSet.name}`;
         }
 
-        getD2()
-            .then(d2 => d2.Api.getApi())
-            .then(api => api.post('dataApprovalLevels', dataApprovalLevelToSave))
-            .then(checkImportReport)
-            .then(message => {
-                complete(message);
-                return message;
-            })
-            .then(() => actions.loadDataApprovalLevels())
-            .catch(errorResponse => {
-                if (errorResponse.response && errorResponse.response.importConflicts) {
-                    error(errorResponse.response.importConflicts);
-                }
-                error(errorResponse);
-            });
+        getD2().then(d2 => {
+            d2.Api.getApi().post('dataApprovalLevels', dataApprovalLevelToSave)
+                .then(checkImportReport)
+                .then(message => {
+                    settingsActions.showSnackbarMessage(d2.i18n.getTranslation('approval_level_saved'));
+                    actions.loadDataApprovalLevels();
+                    complete(message);
+                    return;
+                })
+                .catch(errorResponse => {
+                    if (errorResponse.response && errorResponse.response.importConflicts) {
+                        settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_save_approval_level') + ': ' + errorResponse.response.importConflicts[0].value);
+                        error(errorResponse.response.importConflicts);
+                        return;
+                    }
+                    error(errorResponse);
+                });
+        });
     });
 
 actions.deleteDataApprovalLevel
@@ -69,7 +81,18 @@ actions.deleteDataApprovalLevel
         dataApprovalLevel
             .delete()
             .then(complete)
-            .catch(error)
+            .then(() => {
+                getD2().then(d2 => {
+                    settingsActions.showSnackbarMessage(d2.i18n.getTranslation('approval_level_deleted'));
+                });
+            })
+            .catch(e => {
+                getD2().then(d2 => {
+                    log.error(e);
+                    settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_delete_approval_level'));
+                    error(e);
+                });
+            })
             .then(() => actions.loadDataApprovalLevels());
     });
 
