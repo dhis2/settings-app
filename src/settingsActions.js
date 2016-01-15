@@ -2,6 +2,7 @@ import {Action} from 'd2-flux';
 import {categories} from './settingsCategories';
 import {getInstance as getD2} from 'd2/lib/d2';
 import {Observable} from 'rx';
+import log from 'loglevel';
 
 const settingsActions = Action.createActionsFromNames(['load', 'setCategory', 'saveKey', 'searchSettings']);
 
@@ -16,6 +17,11 @@ const settingsSearchMap = Observable.fromPromise(new Promise((resolve, reject) =
                         return searchArray.concat(categoryKeys);
                     }, [])
                     .reduce((translatedKeyValueMap, settingsKey) => {
+                        if (!d2.system.settings.mapping[settingsKey]) {
+                            log.warn('No mapping found for', settingsKey);
+                            return translatedKeyValueMap;
+                        }
+
                         return translatedKeyValueMap.concat([[d2.i18n.getTranslation(d2.system.settings.mapping[settingsKey].label), settingsKey]]);
                     }, []);
             })

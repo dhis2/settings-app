@@ -82,6 +82,11 @@ export default React.createClass({
 
         const fieldConfigs = currentSettings.map(settingsKey => {
             const mapping = d2.system.settings.mapping[settingsKey];
+            if (!mapping) {
+                log.warn('Missing mapping for key:', settingsKey);
+                return undefined;
+            }
+
             const defaultValue = settingsStore.state ? settingsStore.state[settingsKey] : '';
             const value = this.state.values && this.state.values[settingsKey];
             const fieldConfig = {
