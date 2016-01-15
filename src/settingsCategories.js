@@ -50,7 +50,7 @@ export const categories = {
             'keyApplicationNotification',
             'keyApplicationFooter',
             'keyApplicationRightFooter',
-            'currentStyle',
+            'keyCurrentStyle',
             'startModule',
             'helpPageLink',
             'keyFlag',
