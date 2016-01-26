@@ -21,6 +21,8 @@ import HackyCheckbox from './form-fields/check-box';
 import FileUpload from './form-fields/file-upload.js';
 import AppTheme from './theme';
 
+import settingsKeyMapping from './settingsKeyMapping';
+
 
 function getValidatorFunctions(settingsMapping) {
     return (settingsMapping.hasOwnProperty('validators') ? settingsMapping.validators : [])
@@ -86,7 +88,7 @@ export default React.createClass({
         const currentSettings = this.state.currentSettings;
 
         const fieldConfigs = currentSettings.map(settingsKey => {
-            const mapping = d2.system.settings.mapping[settingsKey];
+            const mapping = settingsKeyMapping[settingsKey];
             if (!mapping) {
                 log.warn('Missing mapping for key:', settingsKey);
                 return undefined;

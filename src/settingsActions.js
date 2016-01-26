@@ -4,6 +4,8 @@ import {getInstance as getD2} from 'd2/lib/d2';
 import {Observable} from 'rx';
 import log from 'loglevel';
 
+import settingsKeyMapping from './settingsKeyMapping';
+
 const settingsActions = Action.createActionsFromNames(['load', 'setCategory', 'saveKey', 'searchSettings', 'showSnackbarMessage']);
 
 const settingsSearchMap = Observable.fromPromise(new Promise((resolve, reject) => {
@@ -17,12 +19,12 @@ const settingsSearchMap = Observable.fromPromise(new Promise((resolve, reject) =
                         return searchArray.concat(categoryKeys);
                     }, [])
                     .reduce((translatedKeyValueMap, settingsKey) => {
-                        if (!d2.system.settings.mapping[settingsKey]) {
+                        if (!settingsKeyMapping[settingsKey]) {
                             log.warn('No mapping found for', settingsKey);
                             return translatedKeyValueMap;
                         }
 
-                        return translatedKeyValueMap.concat([[d2.i18n.getTranslation(d2.system.settings.mapping[settingsKey].label), settingsKey]]);
+                        return translatedKeyValueMap.concat([[d2.i18n.getTranslation(settingsKeyMapping[settingsKey].label), settingsKey]]);
                     }, []);
             })
             .then(searchMapping => resolve(searchMapping))

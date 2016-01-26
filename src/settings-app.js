@@ -14,6 +14,7 @@ injectTapEventPlugin();
 import settingsActions from './settingsActions';
 import settingsStore from './settingsStore';
 import configOptionStore from './configOptionStore';
+import settingsKeyMapping from './settingsKeyMapping';
 
 import {categoryOrder, categories} from './settingsCategories';
 
@@ -103,10 +104,10 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
         // settingsActions.saveKey handler
         settingsActions.saveKey.subscribe((args) => {
             const [fieldName, value] = args.data;
-            const settingsKeyMapping = d2.system.settings.mapping[fieldName];
+            const mapping = settingsKeyMapping[fieldName];
 
-            if (getValidatorFunctions(d2.system.settings.mapping[fieldName]).every(validatorFn => validatorFn(value) === true)) {
-                if (settingsKeyMapping.configuration) {
+            if (getValidatorFunctions(settingsKeyMapping[fieldName]).every(validatorFn => validatorFn(value) === true)) {
+                if (mapping.configuration) {
                     d2.system.configuration.set(fieldName, value)
                         .then(() => {
                             settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
@@ -134,7 +135,32 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
         log.info('D2 initialized', d2);
 
         // Load translations
-        d2.i18n.addStrings(d2.system.getI18nStrings());
+        function getI18nStrings() {
+            const strings = new Set();
+            Object.keys(settingsKeyMapping).map(key => {
+                const val = settingsKeyMapping[key];
+
+                if (val.hasOwnProperty('label')) {
+                    strings.add(val.label);
+                }
+
+                if (val.hasOwnProperty('description')) {
+                    strings.add(val.description);
+                }
+
+                if (val.hasOwnProperty('options')) {
+                    for (const opt in val.options) {
+                        if (val.options.hasOwnProperty(opt) && isNaN(val.options[opt])) {
+                            strings.add(val.options[opt]);
+                        }
+                    }
+                }
+            });
+
+            return strings;
+        }
+
+        d2.i18n.addStrings(getI18nStrings());
         d2.i18n.addStrings(['access_denied', 'settings_updated', 'save', 'delete', 'level', 'category_option_group_set', 'search', 'yes', 'no', 'edit']);
         d2.i18n.load().then(() => {
             if (!d2.currentUser.authorities.has('F_SYSTEM_SETTING')) {
