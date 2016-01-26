@@ -1,5 +1,6 @@
 import React from 'react';
 import SelectField from 'material-ui/lib/select-field';
+import MenuItem from 'material-ui/lib/menus/menu-item';
 
 import MuiThemeMixin from '../mui-theme.mixin';
 
@@ -10,22 +11,60 @@ export default React.createClass({
             React.PropTypes.number,
             React.PropTypes.bool,
         ]),
+        value: React.PropTypes.string.isRequired,
         onFocus: React.PropTypes.func,
         onBlur: React.PropTypes.func,
+        onChange: React.PropTypes.func,
+        menuItems: React.PropTypes.oneOfType([
+            React.PropTypes.array,
+            React.PropTypes.object,
+        ]),
+        includeEmpty: React.PropTypes.bool,
+        emptyLabel: React.PropTypes.string,
     },
 
     mixins: [MuiThemeMixin],
 
-    getInitialState() {
-        return {value: this.props.defaultValue ? this.props.defaultValue : 'null'};
+    getDefaultProps() {
+        return {
+            includeEmpty: false,
+            emptyLabel: '',
+        };
+    },
+
+    renderMenuItems(menuItems) {
+        if (this.props.includeEmpty) {
+            menuItems.unshift(menuItems.length > 0 && !!menuItems[0].id ? {id: 'null', displayName: this.props.emptyLabel} : {payload: 'null', displayName: this.props.emptyLabel});
+        }
+
+        if (!!menuItems) {
+            return menuItems.map(item => {
+                return !!item.id ?
+                    (<MenuItem key={item.id} value={item.id} primaryText={item.displayName} />) :
+                    (<MenuItem key={item.payload} value={item.payload} primaryText={item.text} />);
+            });
+        }
+    },
+
+    renderEmptyItem() {
+        if (this.props.includeEmpty) {
+            return <MenuItem value="null" primaryText={this.props.emptyLabel}/>;
+        }
     },
 
     render() {
-        const {onFocus, onBlur, ...other} = this.props;
+        const {onFocus, onBlur, onChange, menuItems, ...other} = this.props;
         return (
             <SelectField
-                value={this.state.value.toString()}
-                {...other}/>
+                value={this.props.value}
+                onChange={this.handleChange.bind(this, onChange)}
+                {...other}>
+                {this.renderMenuItems(Array.isArray(menuItems) ? menuItems : menuItems.toArray())}
+            </SelectField>
         );
+    },
+
+    handleChange(onChange, event, index, value) {
+        onChange({target: {value: value}});
     },
 });

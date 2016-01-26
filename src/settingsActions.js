@@ -41,10 +41,10 @@ function getSearchResultsFor(searchValue) {
 }
 
 settingsActions.searchSettings
-    .debounce(200)
+    .distinctUntilChanged()
+    .debounce(150)
     .map(action => action.data)
     .map(searchValue => searchValue.toLowerCase().trim())
-    .distinctUntilChanged()
     .tap(searchValue => {
         if (!searchValue) {
             settingsActions.setCategory('general');
@@ -56,7 +56,7 @@ settingsActions.searchSettings
     })
     .concatAll()
     .subscribe((searchResultSettings) => {
-        settingsActions.setCategory({settings: searchResultSettings, searchResult: true});
+        settingsActions.setCategory({key: 'search', settings: searchResultSettings});
     });
 
 export default settingsActions;

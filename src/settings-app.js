@@ -185,23 +185,15 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                 d2.Api.getApi().get('system/flags'),
                 d2.Api.getApi().get('system/styles'),
             ]).then(results => {
-                function collectionToOptionArray(collection) {
-                    return collection.toArray().map((item) => {
-                        return {
-                            payload: item.id,
-                            text: item.displayName,
-                        };
-                    });
-                }
+                const [
+                    indicatorGroups,
+                    dataElementGroups,
+                    userGroups,
+                    organisationUnitLevels,
+                    userRoles,
+                    organisationUnits ] = results;
 
-                const indicatorGroups = collectionToOptionArray(results[0]);
-                const dataElementGroups = collectionToOptionArray(results[1]);
-                const userGroups = collectionToOptionArray(results[2]);
-                userGroups.unshift({payload: 'null', text: d2.i18n.getTranslation('no_feedback_recipients')});
-                const organisationUnitLevels = collectionToOptionArray(results[3]);
-                const userRoles = collectionToOptionArray(results[4]);
-                const organisationUnits = collectionToOptionArray(results[5]);
-
+                // Apps/modules
                 const startModules = (results[6].modules || []).map(module => {
                     return {
                         payload: module.name,
@@ -209,6 +201,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                     };
                 });
 
+                // Flags
                 const flags = (results[7] || []).map(flagName => {
                     return {
                         payload: flagName.key,
@@ -217,6 +210,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                 });
                 flags.unshift({payload: 'dhis2', text: d2.i18n.getTranslation('no_flag')});
 
+                // Stylesheets
                 const styles = (results[8] || []).map(styleName => {
                     return {
                         payload: styleName.path,

@@ -30,6 +30,7 @@ export default React.createClass({
             isEnabled: this.props.isEnabled,
             uploading: false,
             progress: undefined,
+            showDialog: false,
         };
     },
 

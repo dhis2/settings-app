@@ -200,7 +200,7 @@ export default React.createClass({
             'FinancialOct': 'FinancialOct',
         };
 
-        const approvalLevels = (this.workflowModelToEdit.dataApprovalLevels || []).map(level => level.id);
+        const approvalLevels = this.workflowModelToEdit.dataApprovalLevels.toArray().map(level => level.id);
         const fieldConfigs = [
             {
                 name: 'name',
@@ -419,8 +419,21 @@ export default React.createClass({
 
     workflowFormFieldUpdate(fieldName, newValue) {
         if (fieldName === 'dataApprovalLevels') {
-            this.workflowModelToEdit[fieldName] = newValue.map(id => {
-                return {id: id};
+            const add = [];
+            const rem = [];
+            const dataApprovalLevels = this.workflowModelToEdit.dataApprovalLevels;
+            this.state.approvalLevels.forEach(level => {
+                if (newValue.indexOf(level.id) >= 0 && !dataApprovalLevels.has(level.id)) {
+                    add.push(level);
+                } else if (newValue.indexOf(level.id) === -1 && dataApprovalLevels.has(level.id)) {
+                    rem.push(level);
+                }
+            });
+            add.forEach(level => {
+                dataApprovalLevels.add(level);
+            });
+            rem.forEach(level => {
+                dataApprovalLevels.remove(level);
             });
         } else {
             this.workflowModelToEdit[fieldName] = (newValue + '').trim();

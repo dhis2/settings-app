@@ -10,7 +10,7 @@ const actions = Action.createActionsFromNames(['loadDataApprovalWorkflows', 'edi
 
 function flattenDataApprovalLevels(dataApprovalWorkflows) {
     dataApprovalWorkflows.forEach(workflow => {
-        workflow.dataApprovalLevelList = workflow.dataApprovalLevels
+        workflow.dataApprovalLevelList = workflow.dataApprovalLevels.toArray()
             .sort((a, b) => {
                 return a.level - b.level;
             })
@@ -47,7 +47,7 @@ actions.saveDataApprovalWorkflow
         getD2().then(d2 => {
             const workflowToSave = data;
 
-            if (!workflowToSave.dirty) {
+            if (!workflowToSave.dirty && !workflowToSave.dataApprovalLevels.dirty) {
                 settingsActions.showSnackbarMessage(d2.i18n.getTranslation('approval_workflow_saved'));
                 complete();
                 return;

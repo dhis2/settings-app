@@ -5,9 +5,13 @@ import log from 'loglevel';
 import Snackbar from 'material-ui/lib/snackbar';
 import RaisedButton from 'material-ui/lib/raised-button';
 
+import Card from 'material-ui/lib/card/card';
+import CardHeader from 'material-ui/lib/card/card-header';
+import CardText from 'material-ui/lib/card/card-text';
+
 // D2 UI
 import HeaderBar from 'd2-ui/lib/header-bar/HeaderBar.component';
-import Sidebar from './Sidebar.component';
+import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 import Form from 'd2-ui/lib/forms/Form.component';
 import {wordToValidatorMap} from 'd2-ui/lib/forms/Validators';
 
@@ -57,6 +61,8 @@ export default React.createClass({
         return {
             category: this.props.categoryOrder[0],
             currentSettings: this.props.categories[this.props.categoryOrder[0]].settings,
+            snackbarMessage: '',
+            showSnackbar: false,
         };
     },
 
@@ -68,16 +74,24 @@ export default React.createClass({
             this.forceUpdate();
         });
         this.props.settingsActions.setCategory.subscribe((arg) => {
-            const category = arg.data;
-            this.setState({
-                category: category,
-                currentSettings: category.searchResult ? category.settings : this.props.categories[category].settings,
-            });
+            const category = arg.data.key || arg.data || this.props.categoryOrder[0];
+            const searchResult = arg.data.settings || [];
+            if (category === 'search') {
+                this.setState({
+                    category: category,
+                    currentSettings: searchResult,
+                });
+            } else {
+                this.sidebar.clearSearchBox();
+                this.setState({
+                    category: category,
+                    currentSettings: this.props.categories[category].settings,
+                });
+            }
         });
         this.props.settingsActions.showSnackbarMessage.subscribe(params => {
-            const message = typeof params.data === 'string' || params.data instanceof String ? params.data : undefined;
-            this.setState({snackbarMessage: message});
-            window.snackbar && window.snackbar.show();
+            const message = typeof params.data === 'string' || params.data instanceof String ? params.data : '';
+            this.setState({snackbarMessage: message, showSnackbar: true});
         });
     },
 
@@ -114,6 +128,8 @@ export default React.createClass({
                             text: isNaN(label) ? d2.i18n.getTranslation(mapping.options[val]) : label,
                         };
                     }),
+                    includeEmpty: !!mapping.includeEmpty,
+                    emptyLabel: mapping.emptyLabel ? d2.i18n.getTranslation(mapping.emptyLabel) : '',
                 };
                 break;
 
@@ -135,7 +151,6 @@ export default React.createClass({
                     onClick: () => {
                         const qry = mapping.query_type === 'DELETE' ? d2.Api.getApi().delete(mapping.uri) : d2.Api.getApi().post(mapping.uri);
                         qry.then(result => {
-                            // TODO: Show a useful snackbar
                             log.info(result && result.message || 'Ok');
                             this.props.settingsActions.load(true);
                             this.props.settingsActions.showSnackbarMessage(result.message);
@@ -163,11 +178,14 @@ export default React.createClass({
                     floatingLabelText: d2.i18n.getTranslation(mapping.label),
                     value: defaultValue || 'null',
                     menuItems: opts.state ? opts.state[mapping.type] : [],
+                    includeEmpty: !!mapping.includeEmpty,
+                    emptyLabel: mapping.emptyLabel ? d2.i18n.getTranslation(mapping.emptyLabel) : '',
                 };
 
                 if (['startModules', 'styles'].indexOf(mapping.type) >= 0) {
                     break;
                 } else if (mapping.type === 'flags') {
+                    // Treat 'no flag' as flag='dhis2'
                     if (!settingsStore.state[settingsKey]) {
                         fieldConfig.fieldOptions.value = 'dhis2';
                     }
@@ -177,7 +195,7 @@ export default React.createClass({
                 d2.system.configuration.get(settingsKey).then(val => {
                     fieldConfig.fieldOptions.defaultValue = val === null ? 'null' : val.id;
                 }).catch((err) => {
-                    log.warn('Failed to get value for ' + settingsKey, err);
+                    log.info('Failed to get value for ' + settingsKey, err);
                 });
                 break;
 
@@ -249,41 +267,64 @@ export default React.createClass({
 
             return fieldConfig;
         });
+
+        const sections = Object.keys(this.props.categories).map(catKey => {
+            return {key: catKey, label: d2.i18n.getTranslation(this.props.categories[catKey].label)};
+        });
+        const styles = {
+            card: {
+                marginTop: 8,
+                marginRight: '1rem',
+            },
+            cardTitle: {
+                background: '#5892BE',
+            },
+            cardTitleText: {
+                fontSize: 28,
+                fontWeight: 100,
+                color: 'white',
+            },
+        };
+
         return (
             <div className="app">
                 <HeaderBar />
                 <Snackbar
-                    message={this.state.snackbarMessage}
+                    message={this.state.snackbarMessage || ''}
                     autoHideDuration={1250}
-                    style={{left: 24, right: 'inherit'}}
-                    ref={(ref) => { this._uglySnackbarRefExportFn(ref); }}
-                />
+                    open={this.state.showSnackbar}
+                    onRequestClose={this.closeSnackbar}
+                    style={{left: 24, right: 'inherit'}}/>
                 <Sidebar
-                    d2={d2}
-                    categoryOrder={this.props.categoryOrder}
-                    categories={this.props.categories}
-                    currentCategory={this.state.category}
-                    settingsActions={this.props.settingsActions}
-                />
+                    sections={sections}
+                    onChangeSection={this.props.settingsActions.setCategory}
+                    currentSection={this.state.category}
+                    showSearchField
+                    ref={ref => { this.sidebar = ref; }}
+                    onChangeSearchText={this.props.settingsActions.searchSettings}/>
 
                 <div className="content-area" style={theme.forms}>
-                    <h1 style={{fontSize: '1.75rem'}}>{
-                        this.props.categories[this.state.category] ?
-                            d2.i18n.getTranslation(this.props.categories[this.state.category].pageLabel) :
-                            d2.i18n.getTranslation('search_results')
-                    }</h1>
-                    {!this.state.currentSettings.length ?
-                        <div>{d2.i18n.getTranslation('no_settings_found_that_match')}</div> : null}
-                    <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs}
-                          onFormFieldUpdate={this._saveSetting}/>
+                    <Card style={styles.card}>
+                        <CardHeader
+                            title={this.props.categories[this.state.category] ?
+                                d2.i18n.getTranslation(this.props.categories[this.state.category].pageLabel) :
+                                d2.i18n.getTranslation('search_results')}
+                            style={styles.cardTitle}
+                            titleStyle={styles.cardTitleText}/>
+                        <CardText>
+                            {!this.state.currentSettings.length ?
+                                <div>{d2.i18n.getTranslation('no_settings_found_that_match')}</div> : null}
+                            <Form source={this.props.settingsStore.state || {}} fieldConfigs={fieldConfigs}
+                                  onFormFieldUpdate={this._saveSetting}/>
+                        </CardText>
+                    </Card>
                 </div>
             </div>
         );
     },
 
-    _uglySnackbarRefExportFn(ref) {
-        this._snackbar = ref;
-        window.snackbar = this._snackbar;
+    closeSnackbar() {
+        this.setState({showSnackbar: false});
     },
 
     _saveSetting(key, value) {
