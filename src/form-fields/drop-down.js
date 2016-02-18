@@ -34,7 +34,7 @@ export default React.createClass({
 
     renderMenuItems(menuItems) {
         if (this.props.includeEmpty) {
-            menuItems.unshift(menuItems.length > 0 && !!menuItems[0].id ? {id: 'null', displayName: this.props.emptyLabel} : {payload: 'null', displayName: this.props.emptyLabel});
+            menuItems.unshift(menuItems.length > 0 && !!menuItems[0].id ? {id: 'null', displayName: this.props.emptyLabel} : {payload: 'null', text: this.props.emptyLabel});
         }
 
         if (!!menuItems) {
@@ -57,14 +57,14 @@ export default React.createClass({
         return (
             <SelectField
                 value={this.props.value}
-                onChange={this.handleChange.bind(this, onChange)}
+                onChange={this.handleChange}
                 {...other}>
                 {this.renderMenuItems(Array.isArray(menuItems) ? menuItems : menuItems.toArray())}
             </SelectField>
         );
     },
 
-    handleChange(onChange, event, index, value) {
-        onChange({target: {value: value}});
+    handleChange(event, index, value) {
+        this.props.onChange({target: {value: value}});
     },
 });

@@ -5,7 +5,12 @@ import {getInstance as getD2} from 'd2/lib/d2';
 
 import settingsActions from '../settingsActions';
 
-const actions = Action.createActionsFromNames(['loadDataApprovalLevels', 'editDataApprovalLevel', 'saveDataApprovalLevel', 'deleteDataApprovalLevel']);
+const actions = Action.createActionsFromNames([
+    'loadDataApprovalLevels',
+    'editDataApprovalLevel',
+    'saveDataApprovalLevel',
+    'deleteDataApprovalLevel',
+]);
 
 function checkImportReport(response) {
     if (response.response && response.response.importCount && response.response.importCount.imported === 1) {
@@ -45,15 +50,16 @@ actions.saveDataApprovalLevel
         }
 
         const dataApprovalLevelToSave = {
-            name: dataApprovalLevel.organisationUnitLevel.name,
+            name: dataApprovalLevel.organisationUnitLevel.displayName,
             orgUnitLevel: dataApprovalLevel.organisationUnitLevel.level,
         };
 
-        if (dataApprovalLevel.categoryOptionGroupSet) {
+        if (dataApprovalLevel.categoryOptionGroupSet && dataApprovalLevel.categoryOptionGroupSet.id) {
             dataApprovalLevelToSave.categoryOptionGroupSet = {
                 id: dataApprovalLevel.categoryOptionGroupSet.id,
             };
-            dataApprovalLevelToSave.name = `${dataApprovalLevel.organisationUnitLevel.name} ${dataApprovalLevel.categoryOptionGroupSet.name}`;
+            dataApprovalLevelToSave.name = dataApprovalLevel.organisationUnitLevel.displayName + ' ' +
+                dataApprovalLevel.categoryOptionGroupSet.displayName;
         }
 
         getD2().then(d2 => {
@@ -67,33 +73,36 @@ actions.saveDataApprovalLevel
                 })
                 .catch(errorResponse => {
                     if (errorResponse.response && errorResponse.response.importConflicts) {
-                        settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_save_approval_level') + ': ' + errorResponse.response.importConflicts[0].value);
+                        log.error(errorResponse.response.importConflicts);
+                        settingsActions.showSnackbarMessage(
+                            d2.i18n.getTranslation('failed_to_save_approval_level') + ': ' +
+                            errorResponse.response.importConflicts[0].value
+                        );
                         error(errorResponse.response.importConflicts);
                         return;
                     }
+                    log.error(errorResponse);
+                    settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_save_approval_level'));
                     error(errorResponse);
                 });
         });
     });
 
-actions.deleteDataApprovalLevel
-    .subscribe(({data: dataApprovalLevel, complete, error}) => {
-        dataApprovalLevel
-            .delete()
-            .then(complete)
-            .then(() => {
-                getD2().then(d2 => {
-                    settingsActions.showSnackbarMessage(d2.i18n.getTranslation('approval_level_deleted'));
-                });
-            })
-            .catch(e => {
-                getD2().then(d2 => {
-                    log.error(e);
-                    settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_delete_approval_level'));
-                    error(e);
-                });
-            })
-            .then(() => actions.loadDataApprovalLevels());
-    });
+actions.deleteDataApprovalLevel.subscribe(({data: dataApprovalLevel, complete}) => {
+    dataApprovalLevel.delete()
+        .then(() => {
+            complete();
+            actions.loadDataApprovalLevels();
+            getD2().then(d2 => {
+                settingsActions.showSnackbarMessage(d2.i18n.getTranslation('approval_level_deleted'));
+            });
+        })
+        .catch(e => {
+            log.error(e.message);
+            getD2().then(d2 => {
+                settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_delete_approval_level'));
+            });
+        });
+});
 
 export default actions;

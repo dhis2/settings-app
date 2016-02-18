@@ -50,7 +50,7 @@ export const categories = {
             'keyApplicationNotification',
             'keyApplicationFooter',
             'keyApplicationRightFooter',
-            'keyCurrentStyle',
+            'keyStyle',
             'startModule',
             'helpPageLink',
             'keyFlag',
@@ -77,8 +77,8 @@ export const categories = {
         pageLabel: 'access_settings',
         settings: [
             'selfRegistrationRole',
-            'keySelfRegistrationNoRecaptcha',
             'selfRegistrationOrgUnit',
+            'keySelfRegistrationNoRecaptcha',
             'keyAccountRecovery',
             'keyCanGrantOwnUserAuthorityGroups',
             'keyAllowObjectAssignment',

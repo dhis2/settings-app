@@ -70,17 +70,20 @@ actions.saveDataApprovalWorkflow
     });
 
 actions.deleteDataApprovalWorkflow
-    .subscribe(({data: dataApprovalLevel}) => {
+    .subscribe(({data, complete, error}) => {
         getD2().then(d2 => {
-            dataApprovalLevel
+            const workflowModel = data;
+            workflowModel
                 .delete()
                 .then(() => {
                     settingsActions.showSnackbarMessage(d2.i18n.getTranslation('approval_workflow_deleted'));
                     actions.loadDataApprovalWorkflows();
+                    complete();
                 })
-                .catch(error => {
-                    log.error('Failed to delete workflow:', error);
-                    actions.loadDataApprovalWorkflows();
+                .catch(err => {
+                    log.error('Failed to delete workflow:', err);
+                    settingsActions.showSnackbarMessage(err.message);
+                    error(err);
                 });
         });
     });

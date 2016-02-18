@@ -15,7 +15,6 @@ export default React.createClass({
         name: React.PropTypes.oneOf(['logo_front', 'logo_banner']).isRequired,
         label: React.PropTypes.string.isRequired,
         value: React.PropTypes.bool.isRequired,
-        defaultValue: React.PropTypes.bool.isRequired,
         isEnabled: React.PropTypes.bool.isRequired,
 
         onFocus: React.PropTypes.func,

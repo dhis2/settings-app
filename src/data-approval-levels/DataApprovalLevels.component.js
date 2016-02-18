@@ -1,10 +1,10 @@
 import React from 'react';
 
 // Material UI components
+import Dialog from 'material-ui/lib/dialog';
 import FloatingActionButton from 'material-ui/lib/floating-action-button';
 import FlatButton from 'material-ui/lib/flat-button';
 import FontIcon from 'material-ui/lib/font-icon';
-import Paper from 'material-ui/lib/paper';
 import RaisedButton from 'material-ui/lib/raised-button';
 
 // D2 UI components
@@ -53,6 +53,10 @@ export default React.createClass({
                 this.setState({approvalWorkflows, showForm: false, saving: false});
             })
         );
+
+        setTimeout(() => {
+            this.setState({componentDidMount: true});
+        }, 0);
     },
 
     componentWillUnmount() {
@@ -70,6 +74,7 @@ export default React.createClass({
             showForm: false,
             showWorkflows: false,
             saving: false,
+            componentDidMount: false,
         };
     },
 
@@ -79,7 +84,7 @@ export default React.createClass({
     renderApprovalLevelForm() {
         const d2 = this.context.d2;
         const organisationUnitLevels = d2.models.organisationUnitLevel
-            .list()
+            .list({fields: 'id,displayName,level'})
             .then(list => list.toArray())
             .then(list => list.sort((left, right) => left.level - right.level))
             .then(list => list.map(listItem => {
@@ -119,33 +124,34 @@ export default React.createClass({
                 fieldOptions: {
                     floatingLabelText: this.getTranslation('category_option_group_set'),
                     menuItemsSource: () => categoryOptionGroupSets,
-                    prependItems: [{text: '', payload: ''}],
+                    prependItems: [{text: this.getTranslation('none'), payload: {}}],
                     value: this.modelToEdit.categoryOptionGroupSet,
                     style: {width: '100%'},
                 },
             },
         ];
 
-        const formPaperStyle = {
-            padding: '2rem',
-            marginTop: '2rem',
-            marginRight: '2rem',
-            maxWidth: 450,
+        const styles = {
+            dialog: {
+                paddingLeft: 128,
+            },
+            content: {
+                maxWidth: 400,
+                minWidth: 400,
+            },
         };
 
         return (
-            <Paper style={formPaperStyle}>
-                <h2 style={{margin: 0}}>{this.getTranslation('create_new_approval_level')}</h2>
-                <div style={{marginTop: '1rem'}}>
-                    <Form source={this.modelToEdit} fieldConfigs={fieldConfigs}
-                          onFormFieldUpdate={this.formFieldUpdate}>
-                        <div style={{marginTop: '2rem'}}></div>
-                        <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')}/>
-                        <FlatButton onClick={this.cancelAction} style={{marginLeft: '1rem'}}
-                                    label={this.getTranslation('cancel')}/>
-                    </Form>
-                </div>
-            </Paper>
+            <Dialog open style={styles.dialog} contentStyle={styles.content}>
+                <h2>{this.getTranslation('create_new_approval_level')}</h2>
+                <Form source={this.modelToEdit} fieldConfigs={fieldConfigs}
+                      onFormFieldUpdate={this.formFieldUpdate}>
+                    <div style={{marginTop: '2rem'}}></div>
+                    <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')}/>
+                    <FlatButton onClick={this.cancelAction} style={{marginLeft: '1rem'}}
+                                label={this.getTranslation('cancel')}/>
+                </Form>
+            </Dialog>
         );
     },
 
@@ -154,32 +160,51 @@ export default React.createClass({
             delete: dataApprovalLevelActions.deleteDataApprovalLevel,
         };
 
-        const cssStyles = {
-            textAlign: 'right',
-            marginTop: '1rem',
-            marginRight: 16,
+        const styles = {
+            wrapper: {
+                position: 'relative',
+                marginTop: 48,
+            },
+            fab: {
+                position: 'absolute',
+                right: 0,
+                top: -28,
+            },
+            table: {
+                border: '0px solid #d0d0d0',
+                borderTopWidth: 1,
+                boxShadow: 'none',
+                marginTop: -24,
+                marginBottom: 0,
+            },
         };
 
+        const className = 'transition-mount transition-unmount' +
+            (!!this.state.componentDidMount ? '' : ' transition-mount-active');
+
         return (
-            <div style={{maxWidth: 960, marginRight: 16}}>
-                <div style={cssStyles}>
+            <div style={styles.wrapper}>
+                <div style={styles.fab} className={'fab ' + className}>
                     <FloatingActionButton onClick={this.addClick}>
                         <FontIcon className="material-icons">add</FontIcon>
                     </FloatingActionButton>
                 </div>
-                <div style={{marginTop: -24}}>
-                    <DataTable
-                        rows={this.state.approvalLevels}
-                        columns={['name', 'categoryOptionGroupSet', 'level']}
-                        contextMenuActions={contextMenuActions}
-                    />
-                </div>
+                <DataTable
+                    style={styles.table}
+                    rows={this.state.approvalLevels}
+                    columns={['name', 'categoryOptionGroupSet', 'level']}
+                    contextMenuActions={contextMenuActions}/>
             </div>
         );
     },
 
     renderApprovalLevels() {
-        return this.state.showForm ? this.renderApprovalLevelForm() : this.renderApprovalLevelList();
+        return (
+            <div>
+                {this.state.showForm ? this.renderApprovalLevelForm() : undefined}
+                {this.renderApprovalLevelList()}
+            </div>
+        );
     },
 
     /*
@@ -246,26 +271,35 @@ export default React.createClass({
             },
         ];
 
-        const formPaperStyle = {
-            padding: '2rem',
-            marginTop: '2rem',
-            marginRight: '2rem',
-            maxWidth: 450,
+        const styles = {
+            dialog: {
+                paddingLeft: 128,
+            },
+            content: {
+                maxWidth: 400,
+                minWidth: 400,
+            },
+            button: {
+                marginLeft: 16,
+            },
+            buttonRight: {
+                float: 'right',
+            },
         };
 
         return (
-            <Paper style={formPaperStyle}>
-                <h2 style={{margin: 0}}>{this.workflowModelToEdit.id ? this.getTranslation('edit_approval_workflow') : this.getTranslation('create_new_approval_workflow')}</h2>
-                <div style={{marginTop: '1rem'}}>
-                    <Form source={this.workflowModelToEdit} fieldConfigs={fieldConfigs}
-                          onFormFieldUpdate={this.workflowFormFieldUpdate}>
-                        <div style={{marginTop: '2rem'}}></div>
-                        <RaisedButton onClick={this.workflowFormSave} primary label={this.getTranslation('save')}/>
-                        <FlatButton onClick={this.workflowFormCancel} style={{marginLeft: '1rem'}}
-                                    label={this.getTranslation('cancel')}/>
-                    </Form>
-                </div>
-            </Paper>
+            <Dialog open style={styles.dialog} contentStyle={styles.content}>
+                <h2>{this.workflowModelToEdit.id ? this.getTranslation('edit_approval_workflow') : this.getTranslation('create_new_approval_workflow')}</h2>
+                <Form source={this.workflowModelToEdit} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.workflowFormFieldUpdate}>
+                    <div style={{marginTop: '1rem'}}></div>
+                    <RaisedButton onClick={this.workflowFormSave} primary label={this.getTranslation('save')}/>
+                    {this.workflowModelToEdit.id !== undefined ?
+                        (<FlatButton onClick={this.workflowDeleteAction} primary style={styles.button} label={this.getTranslation('delete')}/>) :
+                        undefined
+                    }
+                    <FlatButton onClick={this.workflowFormCancel} style={styles.buttonRight} label={this.getTranslation('cancel')}/>
+                </Form>
+            </Dialog>
         );
     },
 
@@ -277,31 +311,54 @@ export default React.createClass({
             },
             delete: (model) => {
                 this.setState({saving: true});
-                dataApprovalWorkflowActions.deleteDataApprovalWorkflow(model);
+                dataApprovalWorkflowActions
+                    .deleteDataApprovalWorkflow(model)
+                    .subscribe(
+                        () => {
+                            this.workflowFormCancel();
+                        },
+                        () => {
+                            this.setState({saving: false});
+                        }
+                    );
             },
         };
 
-        const cssStyles = {
-            textAlign: 'right',
-            marginTop: '1rem',
-            marginRight: 16,
+        const styles = {
+            wrapper: {
+                position: 'relative',
+                marginTop: 48,
+            },
+            fab: {
+                position: 'absolute',
+                right: 0,
+                top: -28,
+            },
+            table: {
+                border: '0px solid #d0d0d0',
+                borderTopWidth: 1,
+                boxShadow: 'none',
+                marginTop: -24,
+                marginBottom: 0,
+            },
         };
 
+        const className = 'transition-mount transition-unmount' +
+            (!!this.state.componentDidMount ? '' : ' transition-mount-active');
+
         return (
-            <div style={{maxWidth: 960, marginRight: 16}}>
-                <div style={cssStyles}>
+            <div style={styles.wrapper}>
+                <div style={styles.fab} className={'fab ' + className}>
                     <FloatingActionButton onClick={this.addClick}>
                         <FontIcon className="material-icons">add</FontIcon>
                     </FloatingActionButton>
                 </div>
-                <div style={{marginTop: -24}}>
-                    <DataTable
-                        rows={this.state.approvalWorkflows}
-                        columns={['name', 'periodType', 'dataApprovalLevelList']}
-                        contextMenuActions={contextMenuActions}
-                        primaryAction={contextMenuActions.edit}
-                    />
-                </div>
+                <DataTable
+                    style={styles.table}
+                    rows={this.state.approvalWorkflows}
+                    columns={['name', 'periodType', 'dataApprovalLevelList']}
+                    contextMenuActions={contextMenuActions}
+                    primaryAction={contextMenuActions.edit}/>
             </div>
         );
     },
@@ -309,7 +366,8 @@ export default React.createClass({
     renderWorkflows() {
         return (
             <div>
-                {this.state.showForm ? this.renderWorkflowForm() : this.renderWorkflowList()}
+                {this.state.showForm ? this.renderWorkflowForm() : undefined}
+                {this.renderWorkflowList()}
             </div>
         );
     },
@@ -323,12 +381,11 @@ export default React.createClass({
                 right: 0,
                 bottom: 0,
                 zIndex: 1000,
-                backgroundColor: 'rgba(255,255,255,0.8)',
+                backgroundColor: 'rgba(243,243,243,0.5)',
             },
             tabs: {
                 marginTop: 32,
-                marginBottom: -48,
-                marginLeft: -1,
+                marginBottom: -49,
             },
             tabButtonContainer: {
                 display: 'inline-block',
@@ -336,16 +393,14 @@ export default React.createClass({
             },
             tabButtonInactive: {
                 border: '1px solid #F0F0F0',
-                borderBottomColor: '#F5F5F5',
+                borderBottomColor: '#D0D0D0',
                 color: '#A0A0A0',
             },
             tabButtonActive: {
                 border: '1px solid #D0D0D0',
-                borderBottomColor: 'transparent',
+                borderBottomColor: 'white',
             },
-            tabBody: {
-                zIndex: 1,
-            },
+            tabBody: {},
         };
 
         return (
@@ -353,29 +408,51 @@ export default React.createClass({
                 {this.state.saving ? (
                     <div style={styles.loadingMask}><LoadingMask /></div>
                 ) : undefined}
-                {!this.state.showForm ? (
-                    <div style={styles.tabs}>
-                        <div style={styles.tabButtonContainer}>
-                            <FlatButton
-                                secondary={!this.state.showWorkflows}
-                                onClick={() => { this.setState({showWorkflows: false}); }}
-                                label={this.getTranslation('approval_levels')}
-                                style={this.state.showWorkflows ? styles.tabButtonInactive : styles.tabButtonActive}/>
-                        </div>
-                        <div style={styles.tabButtonContainer}>
-                            <FlatButton
-                                secondary={!!this.state.showWorkflows}
-                                onClick={() => { this.setState({showWorkflows: true}); }}
-                                label={this.getTranslation('approval_workflows')}
-                                style={this.state.showWorkflows ? styles.tabButtonActive : styles.tabButtonInactive}/>
-                        </div>
+                <div style={styles.tabs}>
+                    <div style={styles.tabButtonContainer}>
+                        <FlatButton
+                            secondary={!this.state.showWorkflows}
+                            onClick={this.levelTabClick}
+                            label={this.getTranslation('approval_levels')}
+                            style={this.state.showWorkflows ? styles.tabButtonInactive : styles.tabButtonActive}/>
                     </div>
-                ) : undefined}
+                    <div style={styles.tabButtonContainer}>
+                        <FlatButton
+                            secondary={!!this.state.showWorkflows}
+                            onClick={this.workflowTabClick}
+                            label={this.getTranslation('approval_workflows')}
+                            style={this.state.showWorkflows ? styles.tabButtonActive : styles.tabButtonInactive}/>
+                    </div>
+                </div>
                 <div style={styles.tabBody}>
                     {this.state.showWorkflows ? this.renderWorkflows() : this.renderApprovalLevels()}
                 </div>
             </div>
         );
+    },
+
+    tabClick() {
+        this.setState({componentDidMount: false}, () => {
+            setTimeout(() => {
+                this.setState({componentDidMount: true});
+            }, 75);
+        });
+    },
+
+    levelTabClick() {
+        this.setState({componentDidMount: false}, () => {
+            setTimeout(() => {
+                this.setState({showWorkflows: false, componentDidMount: true});
+            }, 75);
+        });
+    },
+
+    workflowTabClick() {
+        this.setState({componentDidMount: false}, () => {
+            setTimeout(() => {
+                this.setState({showWorkflows: true, componentDidMount: true});
+            }, 75);
+        });
     },
 
     saveAction() {
@@ -415,6 +492,20 @@ export default React.createClass({
             showForm: true,
             saving: false,
         });
+    },
+
+    workflowDeleteAction() {
+        this.setState({saving: true});
+        dataApprovalWorkflowActions
+            .deleteDataApprovalWorkflow(this.workflowModelToEdit)
+            .subscribe(
+                () => {
+                    this.workflowFormCancel();
+                },
+                () => {
+                    this.setState({saving: false});
+                }
+            );
     },
 
     workflowFormFieldUpdate(fieldName, newValue) {

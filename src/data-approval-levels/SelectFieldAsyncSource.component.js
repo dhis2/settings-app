@@ -1,11 +1,14 @@
 import React from 'react';
 import SelectField from 'material-ui/lib/select-field';
+import MenuItem from 'material-ui/lib/menus/menu-item';
 
 export default React.createClass({
     propTypes: {
         menuItemsSource: React.PropTypes.func,
         prependItems: React.PropTypes.array,
         appendItems: React.PropTypes.array,
+        value: React.PropTypes.any,
+        onChange: React.PropTypes.func.isRequired,
     },
 
     getInitialState() {
@@ -24,6 +27,20 @@ export default React.createClass({
     },
 
     render() {
-        return (<SelectField {...this.props} menuItems={this.state.menuItems} />);
+        const {onChange, ...other} = this.props;
+        return (
+            <SelectField
+                value={this.props.value}
+                onChange={this.handleChange}
+                {...other}>
+                {this.state.menuItems.map((item, i) => {
+                    return <MenuItem key={i} value={item.payload} primaryText={item.text} />;
+                })}
+            </SelectField>
+        );
+    },
+
+    handleChange(event, index, value) {
+        this.props.onChange({target: {value: value}});
     },
 });

@@ -2,29 +2,88 @@
 @import "../node_modules/d2-ui/scss/HeaderBar";
 @import "../node_modules/d2-ui/scss/DataTable";
 
-$left-bar-width: 220px;
+$left-bar-width: 256px;
 
 html {
-    background: #f3f3f3;
-    font-family: 'Roboto', sans-serif;
+  background: #f3f3f3;
+  font-family: 'Roboto', sans-serif;
 }
 
 .app {
-    padding-top: 3rem;
+  padding-top: 3rem;
 }
 
 .left-bar {
-    width: $left-bar-width;
-    float: left;
-    position: fixed;
-    margin-top: 16px;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    padding-top: 2rem;
+  width: $left-bar-width;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  padding-top: 3rem;
 }
 
 .content-area {
-    padding-left: 2rem;
-    margin-left: $left-bar-width;
+  padding-left: $left-bar-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.data-table__headers__header {
+  border-bottom: 1px solid #bdbdbd;
+}
+
+.data-table__rows__row {
+  &__column {
+    border-bottom: 1px solid #bdbdbd;
+    transition: background 0ms;
+  }
+
+  &:hover {
+    .data-table__rows__row__column {
+      background-color: #f0f0f0;
+    }
+  }
+
+  &:last-child .data-table__rows__row__column {
+    border: none;
+  }
+}
+
+.data-table__context-menu {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.transition-mount,
+.transition-unmount {
+  transition: 150ms ease-out;
+  transform: translate(0,0) scale(1) rotateZ(0deg);
+  opacity: 1;
+
+  &.card {
+    transition-duration: 75ms;
+  }
+
+  &-active {
+    &.card-up {
+      transform: translate(0,-500px);
+      opacity: 0;
+    }
+    &.card-right {
+      transform: translate(500px);
+      opacity: 0;
+    }
+    &.card-down {
+      transform: translate(0,500px);
+      opacity: 0;
+    }
+    &.fab {
+      transform: translate(0,0) scale(0.0) rotateZ(-90deg);
+      opacity: 0.5;
+    }
+  }
+
+  &.fab:hover>div>button>div>div {
+    transform: rotateZ(90deg);
+  }
 }

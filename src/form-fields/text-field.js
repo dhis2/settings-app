@@ -24,7 +24,7 @@ export default React.createClass({
     render() {
         const errorStyle = {
             lineHeight: this.props.multiLine ? '48px' : '12px',
-            marginTop: this.props.multiLine ? -16 : -12,
+            marginTop: this.props.multiLine ? -16 : 0,
         };
 
         return (

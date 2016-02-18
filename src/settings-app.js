@@ -16,10 +16,7 @@ import settingsStore from './settingsStore';
 import configOptionStore from './configOptionStore';
 import settingsKeyMapping from './settingsKeyMapping';
 
-import {categoryOrder, categories} from './settingsCategories';
-
 // D2 UI
-import {wordToValidatorMap} from 'd2-ui/lib/forms/Validators';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 
 import App from './app.component.js';
@@ -29,11 +26,6 @@ require('../scss/settings-app.scss');
 
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.WARN : log.levels.TRACE);
 
-function getValidatorFunctions(settingsMapping) {
-    return (settingsMapping.validators || [])
-        .filter(validatorName => wordToValidatorMap.has(validatorName))
-        .map(validatorName => wordToValidatorMap.get(validatorName));
-}
 
 function configI18n({uiLocale}) {
     if (uiLocale !== 'en') {
@@ -44,6 +36,7 @@ function configI18n({uiLocale}) {
 
 ReactDOM.render(<LoadingMask />, document.getElementById('app'));
 
+
 getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_manifest.webapp')
     .then(manifest => {
         config.baseUrl = manifest.getBaseUrl() + '/api';
@@ -53,14 +46,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
     .then(init)
     .then(d2 => {
         function renderApp() {
-            ReactDOM.render(<App
-                d2={d2}
-                settingsStore={settingsStore}
-                configOptionStore={configOptionStore}
-                settingsActions={settingsActions}
-                categoryOrder={categoryOrder}
-                categories={categories}
-            />, document.getElementById('app'));
+            ReactDOM.render(<App d2={d2}/>, document.getElementById('app'));
         }
 
         // settingsActions.load handler
@@ -106,24 +92,22 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
             const [fieldName, value] = args.data;
             const mapping = settingsKeyMapping[fieldName];
 
-            if (getValidatorFunctions(settingsKeyMapping[fieldName]).every(validatorFn => validatorFn(value) === true)) {
-                if (mapping.configuration) {
-                    d2.system.configuration.set(fieldName, value)
-                        .then(() => {
-                            settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
-                        })
-                        .catch((err) => {
-                            log.error('Failed to save configuration:', err);
-                        });
-                } else {
-                    d2.system.settings.set(fieldName, value)
-                        .then(() => {
-                            settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
-                        })
-                        .catch((err) => {
-                            log.error('Failed to save setting:', err);
-                        });
-                }
+            if (mapping.configuration) {
+                d2.system.configuration.set(fieldName, value)
+                    .then(() => {
+                        settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
+                    })
+                    .catch((err) => {
+                        log.error('Failed to save configuration:', err);
+                    });
+            } else {
+                d2.system.settings.set(fieldName, value)
+                    .then(() => {
+                        settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
+                    })
+                    .catch((err) => {
+                        log.error('Failed to save setting:', err);
+                    });
             }
 
             const newState = settingsStore.state;
@@ -161,7 +145,18 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
         }
 
         d2.i18n.addStrings(getI18nStrings());
-        d2.i18n.addStrings(['access_denied', 'settings_updated', 'save', 'delete', 'level', 'category_option_group_set', 'search', 'yes', 'no', 'edit']);
+        d2.i18n.addStrings([
+            'access_denied',
+            'settings_updated',
+            'save',
+            'delete',
+            'level',
+            'category_option_group_set',
+            'search',
+            'yes',
+            'no',
+            'edit',
+        ]);
         d2.i18n.load().then(() => {
             if (!d2.currentUser.authorities.has('F_SYSTEM_SETTING')) {
                 document.write(d2.i18n.getTranslation('access_denied'));

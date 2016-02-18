@@ -28,12 +28,14 @@ const settingsKeyMapping = {
     infrastructuralIndicators: {
         label: 'infrastructural_indicators',
         configuration: true,
-        type: 'indicatorGroups',
+        type: 'dropdown',
+        source: 'indicatorGroups',
     },
     infrastructuralDataElements: {
         label: 'infrastructural_data_elements',
         configuration: true,
-        type: 'dataElementGroups',
+        type: 'dropdown',
+        source: 'dataElementGroups',
     },
     infrastructuralPeriodType: {
         label: 'infrastructural_period_type',
@@ -91,7 +93,8 @@ const settingsKeyMapping = {
     feedbackRecipients: {
         label: 'feedback_recipients',
         configuration: true,
-        type: 'userGroups',
+        type: 'dropdown',
+        source: 'userGroups',
         includeEmpty: true,
         emptyLabel: 'no_feedback_recipients',
     },
@@ -99,7 +102,8 @@ const settingsKeyMapping = {
         label: 'max_levels_to_offline',
         description: 'relative_to_current_user',
         configuration: true,
-        type: 'organisationUnitLevels',
+        type: 'dropdown',
+        source: 'organisationUnitLevels',
     },
     factorDeviation: {
         label: 'data_analysis_factor',
@@ -190,17 +194,20 @@ const settingsKeyMapping = {
         appendLocale: true,
         multiLine: true,
     },
-    keyCurrentStyle: {
+    keyStyle: {
         label: 'style',
-        type: 'styles',
+        type: 'dropdown',
+        source: 'styles',
     },
     startModule: {
         label: 'start_page',
-        type: 'startModules',
+        type: 'dropdown',
+        source: 'startModules',
     },
     keyFlag: {
         label: 'flag',
-        type: 'flags',
+        type: 'dropdown',
+        source: 'flags',
     },
     keyRequireAddToView: {
         label: 'require_authority_to_add_to_view_object_lists',
@@ -246,7 +253,7 @@ const settingsKeyMapping = {
     },
     emailTestButton: {
         label: 'send_test_email',
-        type: 'post_button',
+        type: 'postButton',
         uri: '/email/test',
     },
     /* ============================================================================================================ */
@@ -255,7 +262,8 @@ const settingsKeyMapping = {
     selfRegistrationRole: {
         label: 'self_registration_account_user_role',
         configuration: true,
-        type: 'userRoles',
+        type: 'dropdown',
+        source: 'userRoles',
     },
     keySelfRegistrationNoRecaptcha: {
         label: 'do_not_require_recaptcha_for_self_registration',
@@ -264,7 +272,8 @@ const settingsKeyMapping = {
     selfRegistrationOrgUnit: {
         label: 'self_registration_account_organisation_unit',
         configuration: true,
-        type: 'organisationUnits',
+        type: 'dropdown',
+        source: 'organisationUnits',
     },
     keyAccountRecovery: {
         label: 'enable_user_account_recovery',
@@ -293,7 +302,6 @@ const settingsKeyMapping = {
     corsWhitelist: {
         label: 'cors_whitelist',
         configuration: true,
-        type: 'editlist',
         multiLine: true,
         helpText: 'one_url_per_line',
         validators: ['url_array'],
@@ -311,7 +319,7 @@ const settingsKeyMapping = {
     },
     dataApprovalLevels: {
         label: 'data_approval_levels',
-        type: 'dataapproval',
+        type: 'dataApproval',
     },
     /* ============================================================================================================ */
     /* Category: Calendar                                                                                           */
