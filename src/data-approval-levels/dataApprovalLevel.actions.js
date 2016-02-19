@@ -4,6 +4,7 @@ import dataApprovalLevelStore from './dataApprovalLevel.store';
 import {getInstance as getD2} from 'd2/lib/d2';
 
 import settingsActions from '../settingsActions';
+import workflowActions from './dataApprovalWorkflow.actions';
 
 const actions = Action.createActionsFromNames([
     'loadDataApprovalLevels',
@@ -66,6 +67,7 @@ actions.saveDataApprovalLevel
             d2.Api.getApi().post('dataApprovalLevels', dataApprovalLevelToSave)
                 .then(checkImportReport)
                 .then(message => {
+                    workflowActions.loadDataApprovalWorkflows();
                     settingsActions.showSnackbarMessage(d2.i18n.getTranslation('approval_level_saved'));
                     actions.loadDataApprovalLevels();
                     complete(message);
@@ -92,6 +94,7 @@ actions.deleteDataApprovalLevel.subscribe(({data: dataApprovalLevel, complete}) 
     dataApprovalLevel.delete()
         .then(() => {
             complete();
+            workflowActions.loadDataApprovalWorkflows();
             actions.loadDataApprovalLevels();
             getD2().then(d2 => {
                 settingsActions.showSnackbarMessage(d2.i18n.getTranslation('approval_level_deleted'));
