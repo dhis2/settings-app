@@ -233,7 +233,7 @@ export default React.createClass({
                 fontSize: 24,
                 fontWeight: 100,
                 color: AppTheme.rawTheme.palette.textColor,
-                padding: '18px 0',
+                padding: '6px 16px',
             },
             card: {
                 marginTop: 8,
