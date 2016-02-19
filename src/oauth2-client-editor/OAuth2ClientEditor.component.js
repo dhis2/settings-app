@@ -157,9 +157,12 @@ export default React.createClass({
             dialog: {
                 paddingLeft: 128,
             },
-            content: {
+            dialogContent: {
                 maxWidth: 400,
                 minWidth: 400,
+            },
+            dialogBody: {
+                overflowY: 'auto',
             },
             button: {
                 marginLeft: 16,
@@ -170,7 +173,7 @@ export default React.createClass({
         };
 
         return (
-            <Dialog open style={styles.dialog} contentStyle={styles.content}>
+            <Dialog open style={styles.dialog} contentStyle={styles.dialogContent} bodyStyle={styles.dialogBody}>
                 <h2>{this.clientModel.id === undefined ? this.getTranslation('create_new_oauth2_client') : this.getTranslation('edit_oauth2_client')}</h2>
                 <Form source={this.clientModel} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.formUpdateAction}>
                     <div style={{marginTop: '1rem'}}></div>

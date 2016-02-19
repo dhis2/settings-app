@@ -135,6 +135,9 @@ export default React.createClass({
             dialog: {
                 paddingLeft: 128,
             },
+            body: {
+                overflowY: 'auto',
+            },
             content: {
                 maxWidth: 400,
                 minWidth: 400,
@@ -142,7 +145,7 @@ export default React.createClass({
         };
 
         return (
-            <Dialog open style={styles.dialog} contentStyle={styles.content}>
+            <Dialog open style={styles.dialog} contentStyle={styles.content} bodyStyle={styles.body}>
                 <h2>{this.getTranslation('create_new_approval_level')}</h2>
                 <Form source={this.modelToEdit} fieldConfigs={fieldConfigs}
                       onFormFieldUpdate={this.formFieldUpdate}>
@@ -279,6 +282,9 @@ export default React.createClass({
                 maxWidth: 400,
                 minWidth: 400,
             },
+            body: {
+                overflowY: 'auto',
+            },
             button: {
                 marginLeft: 16,
             },
@@ -288,7 +294,7 @@ export default React.createClass({
         };
 
         return (
-            <Dialog open style={styles.dialog} contentStyle={styles.content}>
+            <Dialog open style={styles.dialog} contentStyle={styles.content} bodyStyle={styles.body}>
                 <h2>{this.workflowModelToEdit.id ? this.getTranslation('edit_approval_workflow') : this.getTranslation('create_new_approval_workflow')}</h2>
                 <Form source={this.workflowModelToEdit} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.workflowFormFieldUpdate}>
                     <div style={{marginTop: '1rem'}}></div>
