@@ -67,7 +67,6 @@
     "webpack-dev-server": "^1.14.0"
   },
   "pre-commit": [
-    "lint",
     "validate"
   ],
   "webapp.manifest": {
