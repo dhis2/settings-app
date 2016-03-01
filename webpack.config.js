@@ -10,8 +10,8 @@ webpackBaseConfig.devServer = {
         '/api/*': { target: 'http://localhost:8080' },
         '/dhis-web-commons/*': { target: 'http://localhost:8080' },
         '/icons/*': { target: 'http://localhost:8080' },
-        '/browser-polyfill.min.js': {
-            target: 'http://localhost:8081/node_modules/babel-core/',
+        '/polyfill.min.js': {
+            target: 'http://localhost:8081/node_modules/babel-polyfill/dist/',
         },
         '/jquery.min.js': {
             target: 'http://localhost:8081/node_modules/jquery/dist/',
