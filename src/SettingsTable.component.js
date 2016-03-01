@@ -7,7 +7,7 @@ const SettingsTable = React.createClass({
 
     componentWillMount() {
         this.props.store.subscribe(settings => {
-            this.setState({settings});
+            this.setState({ settings });
         });
     },
 

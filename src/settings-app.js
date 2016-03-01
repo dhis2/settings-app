@@ -6,7 +6,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import log from 'loglevel';
 
-import {init, config, getUserSettings, getManifest} from 'd2/lib/d2';
+import { init, config, getUserSettings, getManifest } from 'd2/lib/d2';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -27,7 +27,7 @@ require('../scss/settings-app.scss');
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.WARN : log.levels.TRACE);
 
 
-function configI18n({uiLocale}) {
+function configI18n({ uiLocale }) {
     if (uiLocale !== 'en') {
         config.i18n.sources.add('i18n/module/i18n_module_' + uiLocale + '.properties');
     }
@@ -46,7 +46,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
     .then(init)
     .then(d2 => {
         function renderApp() {
-            ReactDOM.render(<App d2={d2}/>, document.getElementById('app'));
+            ReactDOM.render(<App d2={d2} />, document.getElementById('app'));
         }
 
         // settingsActions.load handler
@@ -60,7 +60,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                         return key !== 'systemId';
                     })
                     .map(key => {
-                        return {key: key, value: results[1][key]};
+                        return { key: key, value: results[1][key] };
                     })
                     .reduce((prev, curr) => {
                         let value = curr.value;
@@ -166,16 +166,16 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
             settingsActions.load();
             // Load alternatives
             Promise.all([
-                d2.models.indicatorGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
-                d2.models.dataElementGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
-                d2.models.userGroup.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
+                d2.models.indicatorGroup.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),
+                d2.models.dataElementGroup.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),
+                d2.models.userGroup.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),
                 d2.models.organisationUnitLevel.list({
                     paging: false,
                     fields: 'id,level,displayName',
                     order: 'level:asc',
                 }),
-                d2.models.userRole.list({paging: false, fields: 'id,displayName', order: 'displayName:asc'}),
-                d2.models.organisationUnit.list({paging: false, fields: 'id,displayName', filter: ['level:in:[1,2]']}),
+                d2.models.userRole.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),
+                d2.models.organisationUnit.list({ paging: false, fields: 'id,displayName', filter: ['level:in:[1,2]'] }),
                 d2.Api.getApi().get('../dhis-web-commons/menu/getModules.action'),
                 d2.Api.getApi().get('system/flags'),
                 d2.Api.getApi().get('system/styles'),
@@ -186,7 +186,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                     userGroups,
                     organisationUnitLevels,
                     userRoles,
-                    organisationUnits ] = results;
+                    organisationUnits] = results;
 
                 // Apps/modules
                 const startModules = (results[6].modules || []).map(module => {
@@ -203,7 +203,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                         text: flagName.name,
                     };
                 });
-                flags.unshift({payload: 'dhis2', text: d2.i18n.getTranslation('no_flag')});
+                flags.unshift({ payload: 'dhis2', text: d2.i18n.getTranslation('no_flag') });
 
                 // Stylesheets
                 const styles = (results[8] || []).map(styleName => {

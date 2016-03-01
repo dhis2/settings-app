@@ -14,7 +14,7 @@ import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import Form from 'd2-ui/lib/forms/Form.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import Translate from 'd2-ui/lib/i18n/Translate.mixin';
-import {isRequired, isUrlArray} from 'd2-ui/lib/forms/Validators';
+import { isRequired, isUrlArray } from 'd2-ui/lib/forms/Validators';
 
 import MultiToggle from '../form-fields/multi-toggle';
 import oa2ClientStore from './oauth2Client.store';
@@ -62,15 +62,15 @@ export default React.createClass({
     componentDidMount() {
         this.disposables = [];
         this.disposables.push(oa2ClientStore.subscribe(() => {
-            this.setState({isEmpty: oa2ClientStore.state.length === 0});
+            this.setState({ isEmpty: oa2ClientStore.state.length === 0 });
         }));
 
         this.disposables.push(oa2Actions.delete.subscribe(() => {
-            this.setState({saving: false});
+            this.setState({ saving: false });
         }));
 
         setTimeout(() => {
-            this.setState({componentDidMount: true});
+            this.setState({ componentDidMount: true });
         }, 0);
 
         oa2Actions.load();
@@ -176,13 +176,13 @@ export default React.createClass({
             <Dialog open style={styles.dialog} contentStyle={styles.dialogContent} bodyStyle={styles.dialogBody}>
                 <h2>{this.clientModel.id === undefined ? this.getTranslation('create_new_oauth2_client') : this.getTranslation('edit_oauth2_client')}</h2>
                 <Form source={this.clientModel} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.formUpdateAction}>
-                    <div style={{marginTop: '1rem'}}></div>
-                    <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')}/>
+                    <div style={{ marginTop: '1rem' }}></div>
+                    <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
                     {this.clientModel.id !== undefined ?
-                        (<FlatButton onClick={this.deleteAction} primary style={styles.button} label={this.getTranslation('delete')}/>) :
+                        (<FlatButton onClick={this.deleteAction} primary style={styles.button} label={this.getTranslation('delete')} />) :
                         undefined
                     }
-                    <FlatButton onClick={this.cancelAction} style={styles.buttonRight} label={this.getTranslation('cancel')}/>
+                    <FlatButton onClick={this.cancelAction} style={styles.buttonRight} label={this.getTranslation('cancel')} />
                 </Form>
             </Dialog>
         );
@@ -261,23 +261,23 @@ export default React.createClass({
     cancelAction() {
         this.clientModel = undefined;
         oa2Actions.load();
-        this.setState({showForm: false});
+        this.setState({ showForm: false });
     },
 
     newAction() {
         this.clientModel = this.context.d2.models.oAuth2Client.create();
         this.clientModel.secret = generateSecret();
-        this.setState({showForm: true});
+        this.setState({ showForm: true });
     },
 
     editAction(model) {
         log.info('Edit OAuth2 client:', model.name);
         this.clientModel = Object.assign(this.context.d2.models.oAuth2Client.create(), model);
-        this.setState({showForm: true});
+        this.setState({ showForm: true });
     },
 
     deleteAction(model) {
-        this.setState({showForm: false, saving: true});
+        this.setState({ showForm: false, saving: true });
         oa2Actions.delete(!!model.id ? model : this.clientModel);
         this.clientModel = undefined;
     },
@@ -285,7 +285,7 @@ export default React.createClass({
     saveAction() {
         this.clientModel.name = this.clientModel.name || '';
         this.clientModel.cid = this.clientModel.cid || '';
-        this.setState({saving: true});
+        this.setState({ saving: true });
         this.clientModel.save()
             .then(importReport => {
                 if (!importReport.response || !importReport.response.importCount.imported === 1 && !importReport.response.importCount.updated === 1) {
@@ -295,11 +295,11 @@ export default React.createClass({
 
                 settingsActions.showSnackbarMessage(this.getTranslation('oauth2_client_saved'));
                 oa2Actions.load();
-                this.setState({showForm: false, saving: false});
+                this.setState({ showForm: false, saving: false });
             })
             .catch((err) => {
                 settingsActions.showSnackbarMessage(this.getTranslation('failed_to_save_oauth2_client'));
-                this.setState({saving: false});
+                this.setState({ saving: false });
                 log.warn('Failed to save OAuth2 client:', err.message ? err.message : err);
             });
     },

@@ -11,7 +11,7 @@ import CardText from 'material-ui/lib/card/card-text';
 // D2 UI
 import HeaderBar from 'd2-ui/lib/header-bar/HeaderBar.component';
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
-import {wordToValidatorMap} from 'd2-ui/lib/forms/Validators';
+import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 
 // App
@@ -26,7 +26,7 @@ import AppTheme from './theme';
 import settingsActions from './settingsActions';
 import settingsStore from './settingsStore';
 import settingsKeyMapping from './settingsKeyMapping';
-import {categoryOrder, categories} from './settingsCategories';
+import { categoryOrder, categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
 
 
@@ -87,7 +87,7 @@ export default React.createClass({
 
         this.subscriptions.push(settingsActions.showSnackbarMessage.subscribe(params => {
             const message = params.data;
-            this.setState({snackbarMessage: message, showSnackbar: !!message});
+            this.setState({ snackbarMessage: message, showSnackbar: !!message });
         }));
     },
 
@@ -109,7 +109,7 @@ export default React.createClass({
                     component: TextField,
                     props: {
                         floatingLabelText: this.props.d2.i18n.getTranslation(mapping.label),
-                        style: {width: '100%'},
+                        style: { width: '100%' },
                     },
                     validators: (mapping.validators || []).map(name => {
                         return wordToValidatorMap.has(name) ? {
@@ -204,7 +204,7 @@ export default React.createClass({
                                     settingsActions.showSnackbarMessage(error.message);
                                 });
                             },
-                            style: {minWidth: 'initial', maxWidth: 'initial', marginTop: '1em'},
+                            style: { minWidth: 'initial', maxWidth: 'initial', marginTop: '1em' },
                         },
                     });
 
@@ -218,7 +218,7 @@ export default React.createClass({
         return (
             <Card style={styles.card}>
                 <CardText>
-                    <FormBuilder fields={fields} onUpdateField={this._saveSetting}/>
+                    <FormBuilder fields={fields} onUpdateField={this._saveSetting} />
                 </CardText>
             </Card>
         );
@@ -226,7 +226,7 @@ export default React.createClass({
 
     render() {
         const sections = Object.keys(categories).map(category => {
-            return {key: category, label: this.props.d2.i18n.getTranslation(categories[category].label)};
+            return { key: category, label: this.props.d2.i18n.getTranslation(categories[category].label) };
         });
         const styles = {
             header: {
@@ -256,20 +256,20 @@ export default React.createClass({
 
         return (
             <div className="app">
-                <HeaderBar/>
+                <HeaderBar />
                 <Snackbar
                     message={this.state.snackbarMessage || ''}
                     autoHideDuration={1250}
                     open={this.state.showSnackbar}
                     onRequestClose={this.closeSnackbar}
-                    style={{left: 24, right: 'inherit'}}/>
+                    style={{ left: 24, right: 'inherit' }} />
                 <Sidebar
                     sections={sections}
                     onChangeSection={settingsActions.setCategory}
                     currentSection={this.state.category}
                     showSearchField
                     ref={ref => { this.sidebar = ref; }}
-                    onChangeSearchText={settingsActions.searchSettings}/>
+                    onChangeSearchText={settingsActions.searchSettings} />
 
                 <div className="content-area" style={styles.forms}>
                     <div style={styles.header}>{categories[this.state.category] ?
@@ -283,7 +283,7 @@ export default React.createClass({
     },
 
     closeSnackbar() {
-        this.setState({showSnackbar: false});
+        this.setState({ showSnackbar: false });
     },
 
     _saveSetting(key, value) {

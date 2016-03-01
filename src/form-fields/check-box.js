@@ -12,8 +12,8 @@ export default React.createClass({
 
     render() {
         return (
-            <div style={{marginTop: 12, marginBottom: 12}}>
-                <Checkbox onCheck={this.props.onChange} {...this.props}/>
+            <div style={{ marginTop: 12, marginBottom: 12 }}>
+                <Checkbox onCheck={this.props.onChange} {...this.props} />
             </div>
         );
     },

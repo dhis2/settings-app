@@ -18,7 +18,7 @@ export default React.createClass({
     },
 
     componentWillReceiveProps(props) {
-        this.setState({value: props.value});
+        this.setState({ value: props.value });
     },
 
     render() {
@@ -28,11 +28,11 @@ export default React.createClass({
         };
 
         return (
-            <TextField errorStyle={errorStyle} {...this.props} value={this.state.value} onChange={this._change}/>
+            <TextField errorStyle={errorStyle} {...this.props} value={this.state.value} onChange={this._change} />
         );
     },
 
     _change(e) {
-        this.setState({value: e.target.value});
+        this.setState({ value: e.target.value });
     },
 });

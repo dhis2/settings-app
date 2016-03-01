@@ -1,7 +1,7 @@
 import log from 'loglevel';
 import Action from 'd2-flux/action/Action';
 import dataApprovalLevelStore from './dataApprovalLevel.store';
-import {getInstance as getD2} from 'd2/lib/d2';
+import { getInstance as getD2 } from 'd2/lib/d2';
 
 import settingsActions from '../settingsActions';
 import workflowActions from './dataApprovalWorkflow.actions';
@@ -21,7 +21,7 @@ function checkImportReport(response) {
 }
 
 actions.loadDataApprovalLevels
-    .subscribe(({complete, error}) => {
+    .subscribe(({ complete, error }) => {
         getD2()
             .then(d2 => d2.models.dataApprovalLevel.list({
                 paging: false,
@@ -35,7 +35,7 @@ actions.loadDataApprovalLevels
     });
 
 actions.saveDataApprovalLevel
-    .subscribe(({data: dataApprovalLevel, complete, error}) => {
+    .subscribe(({ data: dataApprovalLevel, complete, error }) => {
         const dataApprovalLevels = dataApprovalLevelStore.getState();
         if (!dataApprovalLevel.organisationUnitLevel) {
             error();
@@ -90,7 +90,7 @@ actions.saveDataApprovalLevel
         });
     });
 
-actions.deleteDataApprovalLevel.subscribe(({data: dataApprovalLevel, complete}) => {
+actions.deleteDataApprovalLevel.subscribe(({ data: dataApprovalLevel, complete }) => {
     dataApprovalLevel.delete()
         .then(() => {
             complete();

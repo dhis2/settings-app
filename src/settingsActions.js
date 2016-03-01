@@ -1,7 +1,7 @@
-import {Action} from 'd2-flux';
-import {categories} from './settingsCategories';
-import {getInstance as getD2} from 'd2/lib/d2';
-import {Observable} from 'rx';
+import { Action } from 'd2-flux';
+import { categories } from './settingsCategories';
+import { getInstance as getD2 } from 'd2/lib/d2';
+import { Observable } from 'rx';
 import log from 'loglevel';
 
 import settingsKeyMapping from './settingsKeyMapping';
@@ -56,7 +56,7 @@ settingsActions.searchSettings
     })
     .concatAll()
     .subscribe((searchResultSettings) => {
-        settingsActions.setCategory({key: 'search', settings: searchResultSettings});
+        settingsActions.setCategory({ key: 'search', settings: searchResultSettings });
     });
 
 export default settingsActions;
