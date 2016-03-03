@@ -24,6 +24,7 @@ import settingsActions from '../settingsActions';
 
 import AppTheme from '../theme';
 
+/* eslint-disable complexity */
 function generateSecret() {
     const alphabet = '0123456789abcdef';
     let uid = '';
@@ -35,6 +36,7 @@ function generateSecret() {
     }
     return uid;
 }
+/* eslint-enable complexity */
 
 function urlArrayValidator(v) {
     return v === undefined || isUrlArray(Array.isArray(v) ? v.join('\n') : v);
@@ -45,6 +47,9 @@ function isUndefinedOrRequired(v) {
     return v === undefined || isRequired(v.trim());
 }
 
+
+// TODO: Rewrite as ES6 class
+/* eslint-disable react/prefer-es6-class */
 export default React.createClass({
     propTypes: {
         transitionUnmount: React.PropTypes.bool,
@@ -82,12 +87,75 @@ export default React.createClass({
         });
     },
 
+    componentWillUnMount() {
+        if (this.oa2cStoreDisposable) {
+            this.oa2cStoreDisposable.dispose();
+        }
+    },
+
+    cancelAction() {
+        this.clientModel = undefined;
+        oa2Actions.load();
+        this.setState({ showForm: false });
+    },
+
+    newAction() {
+        this.clientModel = this.context.d2.models.oAuth2Client.create();
+        this.clientModel.secret = generateSecret();
+        this.setState({ showForm: true });
+    },
+
+    editAction(model) {
+        log.info('Edit OAuth2 client:', model.name);
+        this.clientModel = Object.assign(this.context.d2.models.oAuth2Client.create(), model);
+        this.setState({ showForm: true });
+    },
+
+    deleteAction(model) {
+        this.setState({ showForm: false, saving: true });
+        oa2Actions.delete(!!model.id ? model : this.clientModel);
+        this.clientModel = undefined;
+    },
+
+    saveAction() {
+        this.clientModel.name = this.clientModel.name || '';
+        this.clientModel.cid = this.clientModel.cid || '';
+        this.setState({ saving: true });
+        this.clientModel.save()
+            .then(importReport => {
+                if (!importReport.response ||
+                    !importReport.response.importCount.imported === 1 &&
+                    !importReport.response.importCount.updated === 1) {
+                    const messages = importReport.response.importConflicts.map(conflict => conflict.value).join('\n');
+                    throw new Error(messages);
+                }
+
+                settingsActions.showSnackbarMessage(this.getTranslation('oauth2_client_saved'));
+                oa2Actions.load();
+                this.setState({ showForm: false, saving: false });
+            })
+            .catch((err) => {
+                settingsActions.showSnackbarMessage(this.getTranslation('failed_to_save_oauth2_client'));
+                this.setState({ saving: false });
+                log.warn('Failed to save OAuth2 client:', err.message ? err.message : err);
+            });
+    },
+
+    formUpdateAction(field, v) {
+        let value = v;
+        if (field === 'redirectUris') {
+            value = v.split('\n').filter(a => a.trim().length > 0);
+        }
+        this.clientModel[field] = value;
+        this.forceUpdate();
+    },
+
     renderForm() {
         const formFieldStyle = AppTheme.forms;
         formFieldStyle.width = '100%';
 
         const grantTypes = (this.clientModel && this.clientModel.grantTypes || []).reduce((curr, prev) => {
-            curr[prev] = true;
+            curr[prev] = true; // eslint-disable-line no-param-reassign
             return curr;
         }, {});
 
@@ -130,11 +198,19 @@ export default React.createClass({
                 style: formFieldStyle,
                 fieldOptions: {
                     label: this.getTranslation('grant_types'),
-                    items: [
-                        { name: 'password', text: this.getTranslation('password'), value: grantTypes.password },
-                        { name: 'refresh_token', text: this.getTranslation('refresh_token'), value: grantTypes.refresh_token },
-                        { name: 'authorization_code', text: this.getTranslation('authorization_code'), value: grantTypes.authorization_code },
-                    ],
+                    items: [{
+                        name: 'password',
+                        text: this.getTranslation('password'),
+                        value: grantTypes.password,
+                    }, {
+                        name: 'refresh_token',
+                        text: this.getTranslation('refresh_token'),
+                        value: grantTypes.refresh_token,
+                    }, {
+                        name: 'authorization_code',
+                        text: this.getTranslation('authorization_code'),
+                        value: grantTypes.authorization_code,
+                    }],
                 },
             },
             {
@@ -172,17 +248,28 @@ export default React.createClass({
             },
         };
 
+        const headerText = this.clientModel.id === undefined ?
+            this.getTranslation('create_new_oauth2_client') :
+            this.getTranslation('edit_oauth2_client');
         return (
             <Dialog open style={styles.dialog} contentStyle={styles.dialogContent} bodyStyle={styles.dialogBody}>
-                <h2>{this.clientModel.id === undefined ? this.getTranslation('create_new_oauth2_client') : this.getTranslation('edit_oauth2_client')}</h2>
+                <h2>{headerText}</h2>
                 <Form source={this.clientModel} fieldConfigs={fieldConfigs} onFormFieldUpdate={this.formUpdateAction}>
                     <div style={{ marginTop: '1rem' }}></div>
                     <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
                     {this.clientModel.id !== undefined ?
-                        (<FlatButton onClick={this.deleteAction} primary style={styles.button} label={this.getTranslation('delete')} />) :
-                        undefined
+                        (<FlatButton
+                            onClick={this.deleteAction}
+                            primary
+                            style={styles.button}
+                            label={this.getTranslation('delete')}
+                        />) : undefined
                     }
-                    <FlatButton onClick={this.cancelAction} style={styles.buttonRight} label={this.getTranslation('cancel')} />
+                    <FlatButton
+                        onClick={this.cancelAction}
+                        style={styles.buttonRight}
+                        label={this.getTranslation('cancel')}
+                    />
                 </Form>
             </Dialog>
         );
@@ -196,7 +283,7 @@ export default React.createClass({
                 margin: 0,
             },
             tableHeader: {
-                borderBottom: '1px solid ' + AppTheme.rawTheme.palette.borderColor,
+                borderBottom: `1px solid ${AppTheme.rawTheme.palette.borderColor}`,
                 boxShadow: '3px 3px rgba(0,0,0,0.3)',
             },
         };
@@ -207,10 +294,12 @@ export default React.createClass({
                     headerStyle={styles.tableHeader}
                     rows={oa2ClientStore.state}
                     columns={['name', 'password', 'refresh_token', 'authorization_code']}
-                    primaryAction={this.editAction} />
+                    primaryAction={this.editAction}
+                />
         );
     },
 
+    /* eslint-disable complexity */
     render() {
         const styles = {
             wrapper: {
@@ -236,80 +325,25 @@ export default React.createClass({
             },
         };
 
-        const className = 'transition-mount transition-unmount' +
-            (!!this.state.componentDidMount ? '' : ' transition-mount-active') +
-            (!!this.props.transitionUnmount ? ' transition-unmount-active' : '');
+        const className = `transition-mount transition-unmount
+            ${!!this.state.componentDidMount ? '' : ' transition-mount-active'}
+            ${!!this.props.transitionUnmount ? ' transition-unmount-active' : ''}`;
+
+        const saving = this.state.saving ? <div style={styles.loadingMask}><LoadingMask /></div> : undefined;
+        const body = this.state.isEmpty ?
+            <div style={styles.empty}>{this.getTranslation('no_oauth2_clients_registered')}</div> :
+            this.renderList();
+        const form = this.state.showForm ? this.renderForm() : undefined;
 
         return (
             <div style={styles.wrapper}>
-                <div style={styles.fab} className={'fab ' + className}>
+                <div style={styles.fab} className={`fab ${className}`}>
                     <FloatingActionButton onClick={this.newAction}>
                         <FontIcon className="material-icons">add</FontIcon>
                     </FloatingActionButton>
                 </div>
-                {this.state.saving ? <div style={styles.loadingMask}><LoadingMask /></div> : undefined}
-                {this.state.isEmpty ? <div style={styles.empty}>{this.getTranslation('no_oauth2_clients_registered')}</div> : this.renderList()}
-                {this.state.showForm ? this.renderForm() : undefined}
+                {saving}{body}{form}
             </div>
         );
-    },
-
-    componentWillUnMount() {
-        this.oa2cStoreDisposable && this.oa2cStoreDisposable.dispose();
-    },
-
-    cancelAction() {
-        this.clientModel = undefined;
-        oa2Actions.load();
-        this.setState({ showForm: false });
-    },
-
-    newAction() {
-        this.clientModel = this.context.d2.models.oAuth2Client.create();
-        this.clientModel.secret = generateSecret();
-        this.setState({ showForm: true });
-    },
-
-    editAction(model) {
-        log.info('Edit OAuth2 client:', model.name);
-        this.clientModel = Object.assign(this.context.d2.models.oAuth2Client.create(), model);
-        this.setState({ showForm: true });
-    },
-
-    deleteAction(model) {
-        this.setState({ showForm: false, saving: true });
-        oa2Actions.delete(!!model.id ? model : this.clientModel);
-        this.clientModel = undefined;
-    },
-
-    saveAction() {
-        this.clientModel.name = this.clientModel.name || '';
-        this.clientModel.cid = this.clientModel.cid || '';
-        this.setState({ saving: true });
-        this.clientModel.save()
-            .then(importReport => {
-                if (!importReport.response || !importReport.response.importCount.imported === 1 && !importReport.response.importCount.updated === 1) {
-                    const messages = importReport.response.importConflicts.map(conflict => conflict.value).join('\n');
-                    throw new Error(messages);
-                }
-
-                settingsActions.showSnackbarMessage(this.getTranslation('oauth2_client_saved'));
-                oa2Actions.load();
-                this.setState({ showForm: false, saving: false });
-            })
-            .catch((err) => {
-                settingsActions.showSnackbarMessage(this.getTranslation('failed_to_save_oauth2_client'));
-                this.setState({ saving: false });
-                log.warn('Failed to save OAuth2 client:', err.message ? err.message : err);
-            });
-    },
-
-    formUpdateAction(field, v) {
-        let value = v;
-        if (field === 'redirectUris') {
-            value = v.split('\n').filter(a => a.trim().length > 0);
-        }
-        this.clientModel[field] = value;
-        this.forceUpdate();
     },
 });

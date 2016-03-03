@@ -56,11 +56,9 @@ actions.saveDataApprovalLevel
         };
 
         if (dataApprovalLevel.categoryOptionGroupSet && dataApprovalLevel.categoryOptionGroupSet.id) {
-            dataApprovalLevelToSave.categoryOptionGroupSet = {
-                id: dataApprovalLevel.categoryOptionGroupSet.id,
-            };
-            dataApprovalLevelToSave.name = dataApprovalLevel.organisationUnitLevel.displayName + ' ' +
-                dataApprovalLevel.categoryOptionGroupSet.displayName;
+            dataApprovalLevelToSave.categoryOptionGroupSet = { id: dataApprovalLevel.categoryOptionGroupSet.id };
+            dataApprovalLevelToSave.name = `${dataApprovalLevel.organisationUnitLevel.displayName} `;
+            dataApprovalLevelToSave.name += dataApprovalLevel.categoryOptionGroupSet.displayName;
         }
 
         getD2().then(d2 => {
@@ -71,15 +69,13 @@ actions.saveDataApprovalLevel
                     settingsActions.showSnackbarMessage(d2.i18n.getTranslation('approval_level_saved'));
                     actions.loadDataApprovalLevels();
                     complete(message);
-                    return;
                 })
                 .catch(errorResponse => {
                     if (errorResponse.response && errorResponse.response.importConflicts) {
                         log.error(errorResponse.response.importConflicts);
-                        settingsActions.showSnackbarMessage(
-                            d2.i18n.getTranslation('failed_to_save_approval_level') + ': ' +
-                            errorResponse.response.importConflicts[0].value
-                        );
+                        settingsActions.showSnackbarMessage(`${
+                            d2.i18n.getTranslation('failed_to_save_approval_level')}: ${
+                            errorResponse.response.importConflicts[0].value}`);
                         error(errorResponse.response.importConflicts);
                         return;
                     }

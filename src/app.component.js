@@ -30,6 +30,8 @@ import { categoryOrder, categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
 
 
+// TODO: Rewrite as ES6 class
+/* eslint-disable react/prefer-es6-class */
 export default React.createClass({
     propTypes: {
         d2: React.PropTypes.object.isRequired,
@@ -41,12 +43,6 @@ export default React.createClass({
 
     mixins: [MuiThemeMixin],
 
-    getChildContext() {
-        return {
-            d2: this.props.d2,
-        };
-    },
-
     getInitialState() {
         return {
             category: categoryOrder[0],
@@ -54,6 +50,12 @@ export default React.createClass({
             snackbarMessage: '',
             showSnackbar: false,
             formValidator: undefined,
+        };
+    },
+
+    getChildContext() {
+        return {
+            d2: this.props.d2,
         };
     },
 
@@ -71,6 +73,7 @@ export default React.createClass({
             this.forceUpdate();
         }));
 
+        /* eslint-disable complexity */
         this.subscriptions.push(settingsActions.setCategory.subscribe((arg) => {
             const category = arg.data.key || arg.data || categoryOrder[0];
             const searchResult = arg.data.settings || [];
@@ -79,11 +82,9 @@ export default React.createClass({
             if (category !== 'search') {
                 this.sidebar.clearSearchBox();
             }
-            this.setState({
-                category: category,
-                currentSettings: currentSettings,
-            });
+            this.setState({ category, currentSettings });
         }));
+        /* eslint-enable complexity */
 
         this.subscriptions.push(settingsActions.showSnackbarMessage.subscribe(params => {
             const message = params.data;
@@ -97,7 +98,12 @@ export default React.createClass({
         });
     },
 
+    closeSnackbar() {
+        this.setState({ showSnackbar: false });
+    },
+
     renderFields(styles, settings) {
+        /* eslint-disable complexity */
         const fields = settings
             .map(key => {
                 const mapping = settingsKeyMapping[key];
@@ -111,12 +117,11 @@ export default React.createClass({
                         floatingLabelText: this.props.d2.i18n.getTranslation(mapping.label),
                         style: { width: '100%' },
                     },
-                    validators: (mapping.validators || []).map(name => {
-                        return wordToValidatorMap.has(name) ? {
-                            validator: wordToValidatorMap.get(name),
-                            message: this.props.d2.i18n.getTranslation(wordToValidatorMap.get(name).message),
-                        } : false;
-                    }).filter(v => v),
+                    validators: (mapping.validators || []).map(name => wordToValidatorMap.has(name) ? {
+                        validator: wordToValidatorMap.get(name),
+                        message: this.props.d2.i18n.getTranslation(wordToValidatorMap.get(name).message),
+                    } : false)
+                    .filter(v => v),
                 };
 
                 switch (mapping.type) {
@@ -144,13 +149,14 @@ export default React.createClass({
                             menuItems: mapping.source ?
                             configOptionStore.state && configOptionStore.state[mapping.source] || [] :
                                 Object.keys(mapping.options).map(id => {
-                                    return {
-                                        id: id,
-                                        displayName: !isNaN(mapping.options[id]) ? mapping.options[id] : this.props.d2.i18n.getTranslation(mapping.options[id]),
-                                    };
+                                    const displayName = !isNaN(mapping.options[id]) ?
+                                        mapping.options[id] :
+                                        this.props.d2.i18n.getTranslation(mapping.options[id]);
+                                    return { id, displayName };
                                 }),
                             includeEmpty: !!mapping.includeEmpty,
-                            emptyLabel: !!mapping.includeEmpty && mapping.emptyLabel ? this.props.d2.i18n.getTranslation(mapping.emptyLabel) : '',
+                            emptyLabel: !!mapping.includeEmpty && mapping.emptyLabel ?
+                                this.props.d2.i18n.getTranslation(mapping.emptyLabel) : '',
                         }),
                     });
 
@@ -194,7 +200,9 @@ export default React.createClass({
                         props: {
                             label: fieldBase.props.floatingLabelText,
                             onClick: () => {
-                                const qry = mapping.query_type === 'DELETE' ? this.props.d2.Api.getApi().delete(mapping.uri) : this.props.d2.Api.getApi().post(mapping.uri);
+                                const qry = mapping.query_type === 'DELETE' ?
+                                    this.props.d2.Api.getApi().delete(mapping.uri) :
+                                    this.props.d2.Api.getApi().post(mapping.uri);
                                 qry.then(result => {
                                     log.info(result && result.message || 'Ok');
                                     settingsActions.load(true);
@@ -214,11 +222,12 @@ export default React.createClass({
                 }
             })
             .filter(f => !!f.name);
+        /* eslint-enable complexity */
 
         return (
             <Card style={styles.card}>
                 <CardText>
-                    <FormBuilder fields={fields} onUpdateField={this._saveSetting} />
+                    <FormBuilder fields={fields} onUpdateField={settingsActions.saveKey} />
                 </CardText>
             </Card>
         );
@@ -226,7 +235,9 @@ export default React.createClass({
 
     render() {
         const sections = Object.keys(categories).map(category => {
-            return { key: category, label: this.props.d2.i18n.getTranslation(categories[category].label) };
+            const key = category;
+            const label = this.props.d2.i18n.getTranslation(categories[category].label);
+            return { key, label };
         });
         const styles = {
             header: {
@@ -253,6 +264,7 @@ export default React.createClass({
                 maxWidth: AppTheme.forms.maxWidth,
             },
         };
+        const setSidebar = (ref) => { this.sidebar = ref; };
 
         return (
             <div className="app">
@@ -262,14 +274,16 @@ export default React.createClass({
                     autoHideDuration={1250}
                     open={this.state.showSnackbar}
                     onRequestClose={this.closeSnackbar}
-                    style={{ left: 24, right: 'inherit' }} />
+                    style={{ left: 24, right: 'inherit' }}
+                />
                 <Sidebar
                     sections={sections}
                     onChangeSection={settingsActions.setCategory}
                     currentSection={this.state.category}
                     showSearchField
-                    ref={ref => { this.sidebar = ref; }}
-                    onChangeSearchText={settingsActions.searchSettings} />
+                    ref={setSidebar}
+                    onChangeSearchText={settingsActions.searchSettings}
+                />
 
                 <div className="content-area" style={styles.forms}>
                     <div style={styles.header}>{categories[this.state.category] ?
@@ -280,13 +294,5 @@ export default React.createClass({
                 </div>
             </div>
         );
-    },
-
-    closeSnackbar() {
-        this.setState({ showSnackbar: false });
-    },
-
-    _saveSetting(key, value) {
-        settingsActions.saveKey(key, value);
     },
 });

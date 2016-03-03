@@ -1,5 +1,8 @@
 import React from 'react';
 
+
+// TODO: Rewrite as ES6 class
+/* eslint-disable react/prefer-es6-class */
 const SettingsTable = React.createClass({
     propTypes: {
         store: React.PropTypes.object.isRequired,
@@ -16,14 +19,17 @@ const SettingsTable = React.createClass({
             <span>
                 <h2>Other system settings...</h2>
                 <ul>
-                    {this.state && Object.keys(this.state.settings).map(settingsKey => {
-                        return (
+                    {this.state && Object.keys(this.state.settings).map(settingsKey => (
                             <li key={settingsKey}>
                                 <b>{settingsKey}</b>&nbsp; = &nbsp;
-                                <span className="settings">{this.state.settings[settingsKey] instanceof Object ? JSON.stringify(this.state.settings[settingsKey]) : this.state.settings[settingsKey]}</span>
+                                <span className="settings">{
+                                    this.state.settings[settingsKey] instanceof Object ?
+                                        JSON.stringify(this.state.settings[settingsKey]) :
+                                        this.state.settings[settingsKey]
+                                }</span>
                             </li>
-                        );
-                    })}
+                        )
+                    )}
                 </ul>
             </span>
         );

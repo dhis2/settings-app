@@ -6,27 +6,33 @@ import log from 'loglevel';
 
 import settingsKeyMapping from './settingsKeyMapping';
 
-const settingsActions = Action.createActionsFromNames(['load', 'setCategory', 'saveKey', 'searchSettings', 'showSnackbarMessage']);
+const settingsActions = Action.createActionsFromNames([
+    'load',
+    'setCategory',
+    'saveKey',
+    'searchSettings',
+    'showSnackbarMessage',
+]);
 
 const settingsSearchMap = Observable.fromPromise(new Promise((resolve, reject) => {
     settingsActions.load.subscribe(() => {
         getD2()
-            .then(d2 => {
-                return Object.keys(categories)
-                    .filter(categoryKey => !categories[categoryKey].authority || d2.currentUser.authorities.has(categories[categoryKey].authority))
+            .then(d2 => Object.keys(categories)
+                    .filter(categoryKey => !categories[categoryKey].authority ||
+                        d2.currentUser.authorities.has(categories[categoryKey].authority))
                     .map(categoryKey => categories[categoryKey].settings)
-                    .reduce((searchArray, categoryKeys) => {
-                        return searchArray.concat(categoryKeys);
-                    }, [])
+                    .reduce((searchArray, categoryKeys) => searchArray.concat(categoryKeys), [])
                     .reduce((translatedKeyValueMap, settingsKey) => {
                         if (!settingsKeyMapping[settingsKey]) {
                             log.warn('No mapping found for', settingsKey);
                             return translatedKeyValueMap;
                         }
 
-                        return translatedKeyValueMap.concat([[d2.i18n.getTranslation(settingsKeyMapping[settingsKey].label), settingsKey]]);
-                    }, []);
-            })
+                        return translatedKeyValueMap.concat([
+                            [d2.i18n.getTranslation(settingsKeyMapping[settingsKey].label), settingsKey],
+                        ]);
+                    }, [])
+            )
             .then(searchMapping => resolve(searchMapping))
             .catch(error => reject(error));
     }, error => reject(error));
@@ -51,9 +57,7 @@ settingsActions.searchSettings
         }
     })
     .filter(searchValue => searchValue)
-    .map(searchValue => {
-        return getSearchResultsFor(searchValue);
-    })
+    .map(searchValue => getSearchResultsFor(searchValue))
     .concatAll()
     .subscribe((searchResultSettings) => {
         settingsActions.setCategory({ key: 'search', settings: searchResultSettings });

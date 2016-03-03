@@ -105,7 +105,7 @@ export const categories = {
             'keyDateFormat',
         ],
     },
-    'import': {
+    import: {
         label: 'import',
         pageLabel: 'import_settings',
         settings: [

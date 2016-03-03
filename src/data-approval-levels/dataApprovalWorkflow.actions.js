@@ -6,17 +6,21 @@ import { getInstance as getD2 } from 'd2/lib/d2';
 
 import settingsActions from '../settingsActions';
 
-const actions = Action.createActionsFromNames(['loadDataApprovalWorkflows', 'editDataApprovalWorkflow', 'saveDataApprovalWorkflow', 'deleteDataApprovalWorkflow']);
+const actions = Action.createActionsFromNames([
+    'loadDataApprovalWorkflows',
+    'editDataApprovalWorkflow',
+    'saveDataApprovalWorkflow',
+    'deleteDataApprovalWorkflow',
+]);
 
-function flattenDataApprovalLevels(dataApprovalWorkflows) {
-    dataApprovalWorkflows.forEach(workflow => {
-        workflow.dataApprovalLevelList = workflow.dataApprovalLevels.toArray()
-            .sort((a, b) => {
-                return a.level - b.level;
-            })
+function flattenDataApprovalLevels(approvalWorkflows) {
+    const flattened = approvalWorkflows;
+    flattened.forEach((workflow, i) => {
+        flattened[i].dataApprovalLevelList = workflow.dataApprovalLevels.toArray()
+            .sort((a, b) => a.level - b.level)
             .map(level => level.level).join(', ');
     });
-    return dataApprovalWorkflows;
+    return flattened;
 }
 
 function checkImportReport(response) {
@@ -63,7 +67,11 @@ actions.saveDataApprovalWorkflow
                 })
                 .then(complete)
                 .catch(e => {
-                    settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_save_approval_workflow') + ': ' + e.response.importConflicts[0].value);
+                    settingsActions.showSnackbarMessage(`${
+                        d2.i18n.getTranslation('failed_to_save_approval_workflow')
+                        }: ${
+                        e.response.importConflicts[0].value
+                        }`);
                     error(e);
                 });
         });

@@ -3,6 +3,9 @@ import React from 'react';
 // Material UI
 import Checkbox from 'material-ui/lib/checkbox';
 
+
+// TODO: Rewrite as ES6 class
+/* eslint-disable react/prefer-es6-class */
 export default React.createClass({
     propTypes: {
         label: React.PropTypes.string.isRequired,
@@ -30,28 +33,6 @@ export default React.createClass({
         };
     },
 
-    render() {
-        const style = Object.assign({}, this.context.muiTheme.forms, this.props.style);
-        return (
-            <div>
-                <div style={{ marginTop: 16, marginBottom: 8 }}>{this.props.label}</div>
-                {this.props.items.map(item => {
-                    return (
-                        <Checkbox
-                            key={item.name}
-                            name={item.name}
-                            value="true"
-                            defaultChecked={item.value === true}
-                            label={item.text}
-                            onCheck={this._handleToggle.bind(this, item.name)}
-                            style={style}
-                            labelPosition="right" />
-                    );
-                })}
-            </div>
-        );
-    },
-
     _handleToggle(value, event, checked) {
         this.setState(oldState => {
             if (checked) {
@@ -67,5 +48,29 @@ export default React.createClass({
         }, () => {
             this.props.onChange({ target: { value: this.state.values } });
         });
+    },
+
+    render() {
+        const style = Object.assign({}, this.context.muiTheme.forms, this.props.style);
+        return (
+            <div>
+                <div style={{ marginTop: 16, marginBottom: 8 }}>{this.props.label}</div>
+                {this.props.items.map(item => {
+                    const togglor = this._handleToggle.bind(null, item.name);
+                    return (
+                        <Checkbox
+                            key={item.name}
+                            name={item.name}
+                            value="true"
+                            defaultChecked={item.value === true}
+                            label={item.text}
+                            onCheck={togglor}
+                            style={style}
+                            labelPosition="right"
+                        />
+                    );
+                })}
+            </div>
+        );
     },
 });
