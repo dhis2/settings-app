@@ -2,6 +2,7 @@ if (process.env.NODE_ENV !== 'production') {
     require('../dev-jquery-auth.js');
 }
 
+import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import log from 'loglevel';
