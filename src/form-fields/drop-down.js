@@ -52,13 +52,18 @@ export default React.createClass({
         }
     },
 
+    isDisabled(menuItems) {
+        return menuItems.length > 0 ? false : true; 
+    },
+
     render() {
         const {onFocus, onBlur, onChange, menuItems, ...other} = this.props;
         return (
             <SelectField
                 value={this.props.value}
                 onChange={this.handleChange}
-                {...other}>
+                {...other}
+                disabled={this.isDisabled(Array.isArray(menuItems) ? menuItems : menuItems.toArray())}>
                 {this.renderMenuItems(Array.isArray(menuItems) ? menuItems : menuItems.toArray())}
             </SelectField>
         );
