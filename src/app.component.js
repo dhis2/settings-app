@@ -62,12 +62,7 @@ export default React.createClass({
     componentDidMount() {
         this.subscriptions = [];
 
-        this.subscriptions.push(settingsStore.subscribe(() => {
-            log.info('Settings store updated');
-        }));
-
         this.subscriptions.push(configOptionStore.subscribe(() => {
-            log.info('Config options loaded');
             // Must force update here in order to redraw form fields that require config options
             // TODO: Replace this with async select fields
             this.forceUpdate();

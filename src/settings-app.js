@@ -25,7 +25,7 @@ import App from './app.component.js';
 // Styles
 require('../scss/settings-app.scss');
 
-log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.WARN : log.levels.TRACE);
+log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.TRACE);
 
 
 function configI18n({ uiLocale }) {
@@ -41,6 +41,7 @@ ReactDOM.render(<LoadingMask />, document.getElementById('app'));
 getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_manifest.webapp')
     .then(manifest => {
         config.baseUrl = `${manifest.getBaseUrl()}/api`;
+        log.info(`Loading: ${manifest.name} v${manifest.version}`);
     })
     .then(getUserSettings)
     .then(configI18n)
@@ -80,7 +81,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                     results[0][key] = v !== null && !isNaN(v) ? v.toString() : v; // eslint-disable-line no-param-reassign
                 });
                 settingsStore.setState(Object.assign({}, results[0], cfg));
-                log.info('System settings loaded successfully.', settingsStore.state);
+                log.debug('System settings loaded successfully.', settingsStore.state);
                 renderApp();
             }, error => {
                 log.error('Failed to load system settings:', error);
@@ -116,7 +117,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
         });
 
         // App init
-        log.info('D2 initialized', d2);
+        log.debug('D2 initialized', d2);
 
         // Load translations
         function getI18nStrings() {

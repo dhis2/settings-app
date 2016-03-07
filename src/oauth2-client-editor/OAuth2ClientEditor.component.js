@@ -106,7 +106,6 @@ export default React.createClass({
     },
 
     editAction(model) {
-        log.info('Edit OAuth2 client:', model.name);
         this.clientModel = Object.assign(this.context.d2.models.oAuth2Client.create(), model);
         this.setState({ showForm: true });
     },
