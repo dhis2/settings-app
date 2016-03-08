@@ -25,7 +25,7 @@ For this to properly work you will need to add a `dev_manifest.webapp` to the ro
 }
 ```
 
-Additionally we also need to provide an Authentication header to the http requests as the dev server uses CORS to communicate with your local instance. For this we will use a file that is only included when the dev environment is run and will be left out when running in production mode. Create a file called `dev-jquery-auth.js` to the root of the project and give this file the following contents.
+Additionally we also need to provide an _Authorization_ header to the HTTP requests as the dev server uses CORS to communicate with your local instance. For this we will use a file that is only included when the dev environment is run and will be left out when running in production mode. Create a file called `dev-jquery-auth.js` to the root of the project and give this file the following contents.
 ```js
 jQuery.ajaxSetup({
     headers: {
