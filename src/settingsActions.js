@@ -1,4 +1,4 @@
-import { Action } from 'd2-flux';
+import Action from 'd2-ui/lib/action/Action';
 import { categories } from './settingsCategories';
 import { getInstance as getD2 } from 'd2/lib/d2';
 import { Observable } from 'rx';

@@ -42,7 +42,6 @@
     "classnames": "^2.2.3",
     "css-loader": "^0.23.0",
     "d2": "0.0.24",
-    "d2-flux": "0.5.0",
     "d2-manifest": "^1.0.0-1",
     "d2-ui": "0.0.18-alpha-0",
     "d2-utilizr": "^0.2.4",

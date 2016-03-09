@@ -1,5 +1,5 @@
 import log from 'loglevel';
-import Action from 'd2-flux/action/Action';
+import Action from 'd2-ui/lib/action/Action';
 import dataApprovalLevelStore from './dataApprovalLevel.store';
 import { getInstance as getD2 } from 'd2/lib/d2';
 
