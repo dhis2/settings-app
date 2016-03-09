@@ -107,7 +107,7 @@ const settingsKeyMapping = {
     },
     factorDeviation: {
         label: 'data_analysis_factor',
-        validators: ['number'],
+        validators: ['positive_number'],
     },
     phoneNumberAreaCode: {
         label: 'phone_number_area_code',
