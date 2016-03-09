@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js --fix src `git diff --cached --name-only | grep \\.js$`",
     "validate": "npm ls --depth 0",
-    "start": "webpack-dev-server",
+    "start": "d2-manifest package.json dev_manifest.webapp --href=http://localhost:8080 && webpack-dev-server",
     "prebuild": "rm -rf build",
     "build": "webpack --config webpack.config.prod.js",
     "postbuild": "cp -r index.html *.png i18n node_modules/jquery/dist/jquery.min.js build/ && npm run manifest",
