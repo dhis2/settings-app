@@ -58,6 +58,10 @@ export default React.createClass({
             overflow: 'auto',
             padding: 48,
         };
+        const dialogImgStyle = {
+          maxWidth: '100%',
+          maxHeight: '70vh',
+        };
 
         const apiBase = this.context.d2.Api.getApi().baseUrl;
         const imgUrl = [apiBase, 'staticContent', this.props.name].join('/') + '?at=' + new Date();
@@ -73,7 +77,7 @@ export default React.createClass({
                             autoDetectWindowHeight
                             autoScrollBodyContent
                             bodyStyle={bodyStyle}>
-                        <img src={imgUrl} />
+                        <img style={dialogImgStyle} src={imgUrl} />
                     </Dialog>
                 </div>
             );
