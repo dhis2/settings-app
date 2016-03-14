@@ -42,6 +42,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
     .then(manifest => {
         config.baseUrl = `${manifest.getBaseUrl()}/api`;
         log.info(`Loading: ${manifest.name} v${manifest.version}`);
+        log.info(`Built ${manifest.manifest_generated_at}`);
     })
     .then(getUserSettings)
     .then(configI18n)
