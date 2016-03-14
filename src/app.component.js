@@ -137,23 +137,40 @@ export default React.createClass({
                         }),
                     });
 
-                case 'dropdown':
-                    return Object.assign({}, fieldBase, {
+                case 'dropdown': {
+                    const dropDownFieldBase = fieldBase;
+                    const defaultEmptyLabel = 'no_options_available';
+                    // If there are no options and no source, placeholder text should show emptyLabel
+                    if (!mapping.options && !mapping.source) {
+                        dropDownFieldBase.props.floatingLabelText = mapping.emptyLabel ? this.props.d2.i18n.getTranslation(mapping.emptyLabel) : this.props.d2.i18n.getTranslation(defaultEmptyLabel);
+                    }
+                    if (mapping.source) {
+                        const items = configOptionStore.state && configOptionStore.state[mapping.source] || [];
+                        // If items is a ModelCollection
+                        if (typeof items.size !== 'undefined') {
+                            if (items.size === 0) {
+                                dropDownFieldBase.props.floatingLabelText = mapping.emptyLabel ? this.props.d2.i18n.getTranslation(mapping.emptyLabel) : this.props.d2.i18n.getTranslation(defaultEmptyLabel);
+                            }
+                        } else {
+                            // If items is an Array
+                            if (items.length === 0) {
+                                dropDownFieldBase.props.floatingLabelText = mapping.emptyLabel ? this.props.d2.i18n.getTranslation(mapping.emptyLabel) : this.props.d2.i18n.getTranslation(defaultEmptyLabel);
+                            }
+                        }
+                    }
+                    return Object.assign({}, dropDownFieldBase, {
                         component: HackyDropDown,
                         props: Object.assign({}, fieldBase.props, {
-                            menuItems: mapping.source ?
-                            configOptionStore.state && configOptionStore.state[mapping.source] || [] :
+                            menuItems: mapping.source ? configOptionStore.state && configOptionStore.state[mapping.source] || [] :
                                 Object.keys(mapping.options).map(id => {
                                     const displayName = !isNaN(mapping.options[id]) ?
                                         mapping.options[id] :
                                         this.props.d2.i18n.getTranslation(mapping.options[id]);
                                     return { id, displayName };
                                 }),
-                            includeEmpty: !!mapping.includeEmpty,
-                            emptyLabel: !!mapping.includeEmpty && mapping.emptyLabel ?
-                                this.props.d2.i18n.getTranslation(mapping.emptyLabel) : '',
                         }),
                     });
+                }
 
                 case 'checkbox':
                     return Object.assign({}, fieldBase, {

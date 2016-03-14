@@ -19,24 +19,11 @@ export default React.createClass({
             React.PropTypes.array,
             React.PropTypes.object,
         ]),
-        includeEmpty: React.PropTypes.bool,
-        emptyLabel: React.PropTypes.string,
     },
 
     mixins: [MuiThemeMixin],
 
-    getDefaultProps() {
-        return {
-            includeEmpty: false,
-            emptyLabel: '',
-        };
-    },
-
     renderMenuItems(menuItems) {
-        if (this.props.includeEmpty) {
-            menuItems.unshift(menuItems.length > 0 && !!menuItems[0].id ? {id: 'null', displayName: this.props.emptyLabel} : {payload: 'null', text: this.props.emptyLabel});
-        }
-
         if (!!menuItems) {
             return menuItems.map(item => {
                 return !!item.id ?
@@ -46,10 +33,8 @@ export default React.createClass({
         }
     },
 
-    renderEmptyItem() {
-        if (this.props.includeEmpty) {
-            return <MenuItem value="null" primaryText={this.props.emptyLabel}/>;
-        }
+    isDisabled(menuItems) {
+        return menuItems.length > 0 ? false : true; 
     },
 
     render() {
@@ -58,7 +43,8 @@ export default React.createClass({
             <SelectField
                 value={this.props.value}
                 onChange={this.handleChange}
-                {...other}>
+                {...other}
+                disabled={this.isDisabled(Array.isArray(menuItems) ? menuItems : menuItems.toArray())}>
                 {this.renderMenuItems(Array.isArray(menuItems) ? menuItems : menuItems.toArray())}
             </SelectField>
         );
