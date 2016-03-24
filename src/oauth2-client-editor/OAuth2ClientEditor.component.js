@@ -246,29 +246,6 @@ export default React.createClass({
                     message: this.context.d2.i18n.getTranslation(wordToValidatorMap.get('url_array').message),
                 }],
             },
-            {
-                name: 'saveClient',
-                component: RaisedButton,
-                props: {
-                    onClick: this.saveAction,
-                    primary: true,
-                    label: this.getTranslation('save'),
-                },
-            },
-            {
-                name: 'cancel',
-                component: FlatButton,
-                props: this.clientModel.id ? {
-                    onClick: this.deleteAction,
-                    primary: true,
-                    style: styles.button,
-                    label: this.getTranslation('delete'),
-                } : {
-                    onClick: this.cancelAction,
-                    style: styles.buttonRight,
-                    label: this.getTranslation('cancel'),
-                },
-            },
         ];
 
         const headerText = this.clientModel.id === undefined ?
@@ -278,6 +255,20 @@ export default React.createClass({
             <Dialog open style={styles.dialog} contentStyle={styles.dialogContent} bodyStyle={styles.dialogBody}>
                 <h2>{headerText}</h2>
                 <FormBuilder fields={fieldConfigs} onUpdateField={this.formUpdateAction} />
+                <div style={{ marginTop: '1rem' }}></div>
+                <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
+                {this.clientModel.id !== undefined ?
+                    (<FlatButton
+                        onClick={this.deleteAction}
+                        primary
+                        style={styles.button}
+                        label={this.getTranslation('delete')}
+                    />) : undefined
+                }
+                <FlatButton
+                    onClick={this.cancelAction}
+                    style={styles.buttonRight}
+                    label={this.getTranslation('cancel')}/>
             </Dialog>
         );
     },
