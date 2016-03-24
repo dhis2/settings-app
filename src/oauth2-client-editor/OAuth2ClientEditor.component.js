@@ -175,9 +175,9 @@ export default React.createClass({
                 props: {
                     floatingLabelText: this.getTranslation('name'),
                     style: formFieldStyle,
-                    value: this.clientModel.name,
                     changeEvent: 'onBlur',
                 },
+                value: this.clientModel.name,
                 validators: [{
                     validator: isRequired,
                     message: this.context.d2.i18n.getTranslation(isRequired.message),
@@ -189,9 +189,9 @@ export default React.createClass({
                 props: {
                     floatingLabelText: this.getTranslation('client_id'),
                     style: formFieldStyle,
-                    value: this.clientModel.cid,
                     changeEvent: 'onBlur',
                 },
+                value: this.clientModel.cid,
                 validators: [{
                     validator: isRequired,
                     message: this.context.d2.i18n.getTranslation(isRequired.message),
@@ -204,14 +204,13 @@ export default React.createClass({
                     floatingLabelText: this.getTranslation('client_secret'),
                     disabled: true,
                     style: formFieldStyle,
-                    value: this.clientModel && this.clientModel.secret,
                 },
+                value: this.clientModel && this.clientModel.secret,
             },
             {
                 name: 'grantTypes',
                 component: MultiToggle,
                 style: formFieldStyle,
-                onChange: 'onBlur',
                 props: {
                     label: this.getTranslation('grant_types'),
                     items: [{
@@ -238,9 +237,9 @@ export default React.createClass({
                     floatingLabelText: this.getTranslation('redirect_uris'),
                     multiLine: true,
                     style: formFieldStyle,
-                    value: (this.clientModel.redirectUris || []).join('\n'),
                     changeEvent: 'onBlur',
                 },
+                value: (this.clientModel.redirectUris || []).join('\n'),
                 validators: [{
                     validator: isUrlArray,
                     message: this.context.d2.i18n.getTranslation(isUrlArray.message),
