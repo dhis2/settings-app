@@ -14,7 +14,7 @@ import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import Translate from 'd2-ui/lib/i18n/Translate.mixin';
-import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators';
+import { isUrlArray, isRequired } from 'd2-ui/lib/forms/Validators';
 
 import MultiToggle from '../form-fields/multi-toggle';
 import oa2ClientStore from './oauth2Client.store';
@@ -179,8 +179,8 @@ export default React.createClass({
                     changeEvent: 'onBlur',
                 },
                 validators: [{
-                    validator: wordToValidatorMap.get('required'),
-                    message: this.context.d2.i18n.getTranslation(wordToValidatorMap.get('required').message),
+                    validator: isRequired,
+                    message: this.context.d2.i18n.getTranslation(isRequired.message),
                 }],
             },
             {
@@ -193,8 +193,8 @@ export default React.createClass({
                     changeEvent: 'onBlur',
                 },
                 validators: [{
-                    validator: wordToValidatorMap.get('required'),
-                    message: this.context.d2.i18n.getTranslation(wordToValidatorMap.get('required').message),
+                    validator: isRequired,
+                    message: this.context.d2.i18n.getTranslation(isRequired.message),
                 }],
             },
             {
@@ -242,8 +242,8 @@ export default React.createClass({
                     changeEvent: 'onBlur',
                 },
                 validators: [{
-                    validator: wordToValidatorMap.get('url_array'),
-                    message: this.context.d2.i18n.getTranslation(wordToValidatorMap.get('url_array').message),
+                    validator: isUrlArray,
+                    message: this.context.d2.i18n.getTranslation(isUrlArray.message),
                 }],
             },
         ];
