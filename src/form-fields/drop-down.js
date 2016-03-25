@@ -21,6 +21,7 @@ export default React.createClass({
         ]),
         includeEmpty: React.PropTypes.bool,
         emptyLabel: React.PropTypes.string,
+        noOptionsLabel: React.PropTypes.string,
     },
 
     mixins: [MuiThemeMixin],
@@ -34,16 +35,10 @@ export default React.createClass({
 
     renderMenuItems(menuItems) {
         if (this.props.includeEmpty) {
-            menuItems.unshift(menuItems.length > 0 && !!menuItems[0].id ? {id: 'null', displayName: this.props.emptyLabel} : {payload: 'null', text: this.props.emptyLabel});
+            menuItems.unshift({id: 'null', displayName: this.props.emptyLabel});
         }
 
-        if (!!menuItems) {
-            return menuItems.map(item => {
-                return !!item.id ?
-                    (<MenuItem key={item.id} value={item.id} primaryText={item.displayName} />) :
-                    (<MenuItem key={item.payload} value={item.payload} primaryText={item.text} />);
-            });
-        }
+        return menuItems.map(item => (<MenuItem key={item.id} value={item.id} primaryText={item.displayName} />));
     },
 
     renderEmptyItem() {
@@ -53,13 +48,20 @@ export default React.createClass({
     },
 
     render() {
-        const {onFocus, onBlur, onChange, menuItems, ...other} = this.props;
+        const {onFocus, onBlur, onChange, value, disabled, menuItems, ...other} = this.props;
+        const menuItemArray = Array.isArray(menuItems) && menuItems || menuItems.toArray();
+        const hasOptions = menuItemArray.length > 0;
+
         return (
             <SelectField
-                value={this.props.value}
+                value={hasOptions ? this.props.value : 1}
                 onChange={this.handleChange}
+                disabled={!hasOptions}
                 {...other}>
-                {this.renderMenuItems(Array.isArray(menuItems) ? menuItems : menuItems.toArray())}
+                {hasOptions
+                    ? this.renderMenuItems(menuItemArray)
+                    : <MenuItem value={1} primaryText={this.props.noOptionsLabel || '-'} />
+                }
             </SelectField>
         );
     },

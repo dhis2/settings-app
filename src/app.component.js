@@ -150,8 +150,11 @@ export default React.createClass({
                                     return { id, displayName };
                                 }),
                             includeEmpty: !!mapping.includeEmpty,
-                            emptyLabel: !!mapping.includeEmpty && mapping.emptyLabel ?
-                                this.props.d2.i18n.getTranslation(mapping.emptyLabel) : '',
+                            emptyLabel: (
+                                mapping.includeEmpty && mapping.emptyLabel &&
+                                this.props.d2.i18n.getTranslation(mapping.emptyLabel) || undefined
+                            ),
+                            noOptionsLabel: this.props.d2.i18n.getTranslation('no_options'),
                         }),
                     });
 
