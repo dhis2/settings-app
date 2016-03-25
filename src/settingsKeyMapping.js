@@ -303,7 +303,7 @@ const settingsKeyMapping = {
         label: 'cors_whitelist',
         configuration: true,
         multiLine: true,
-        helpText: 'one_url_per_line',
+        hintText: 'one_url_per_line',
         validators: ['url_array'],
     },
     /* ============================================================================================================ */
