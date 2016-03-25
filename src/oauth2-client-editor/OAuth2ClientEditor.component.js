@@ -6,7 +6,7 @@ import FlatButton from 'material-ui/lib/flat-button';
 import FloatingActionButton from 'material-ui/lib/floating-action-button';
 import FontIcon from 'material-ui/lib/font-icon';
 import RaisedButton from 'material-ui/lib/raised-button';
-import TextField from '../form-fields/text-field';
+import TextField from 'material-ui/lib/text-field';
 import Dialog from 'material-ui/lib/dialog';
 
 // D2 UI
@@ -76,12 +76,6 @@ export default React.createClass({
         this.disposables.forEach(d => {
             d.dispose();
         });
-    },
-
-    componentWillUnMount() {
-        if (this.oa2cStoreDisposable) {
-            this.oa2cStoreDisposable.dispose();
-        }
     },
 
     cancelAction() {
@@ -168,16 +162,16 @@ export default React.createClass({
             },
         };
 
-        const fieldConfigs = [
+        const fields = [
             {
                 name: 'name',
+                value: this.clientModel.name,
                 component: TextField,
                 props: {
                     floatingLabelText: this.getTranslation('name'),
                     style: formFieldStyle,
                     changeEvent: 'onBlur',
                 },
-                value: this.clientModel.name,
                 validators: [{
                     validator: isRequired,
                     message: this.context.d2.i18n.getTranslation(isRequired.message),
@@ -185,13 +179,13 @@ export default React.createClass({
             },
             {
                 name: 'cid',
+                value: this.clientModel.cid,
                 component: TextField,
                 props: {
                     floatingLabelText: this.getTranslation('client_id'),
                     style: formFieldStyle,
                     changeEvent: 'onBlur',
                 },
-                value: this.clientModel.cid,
                 validators: [{
                     validator: isRequired,
                     message: this.context.d2.i18n.getTranslation(isRequired.message),
@@ -199,13 +193,13 @@ export default React.createClass({
             },
             {
                 name: 'secret',
+                value: this.clientModel && this.clientModel.secret,
                 component: TextField,
                 props: {
                     floatingLabelText: this.getTranslation('client_secret'),
                     disabled: true,
                     style: formFieldStyle,
                 },
-                value: this.clientModel && this.clientModel.secret,
             },
             {
                 name: 'grantTypes',
@@ -230,16 +224,15 @@ export default React.createClass({
             },
             {
                 name: 'redirectUris',
+                value: (this.clientModel.redirectUris || []).join('\n'),
                 component: TextField,
                 props: {
-                    helpText: this.getTranslation('one_url_per_line'),
-                    dynamicHelpText: true,
+                    hintText: this.getTranslation('one_url_per_line'),
                     floatingLabelText: this.getTranslation('redirect_uris'),
                     multiLine: true,
                     style: formFieldStyle,
                     changeEvent: 'onBlur',
                 },
-                value: (this.clientModel.redirectUris || []).join('\n'),
                 validators: [{
                     validator: isUrlArray,
                     message: this.context.d2.i18n.getTranslation(isUrlArray.message),
@@ -253,21 +246,23 @@ export default React.createClass({
         return (
             <Dialog open style={styles.dialog} contentStyle={styles.dialogContent} bodyStyle={styles.dialogBody}>
                 <h2>{headerText}</h2>
-                <FormBuilder fields={fieldConfigs} onUpdateField={this.formUpdateAction} />
-                <div style={{ marginTop: '1rem' }}></div>
-                <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
-                {this.clientModel.id !== undefined ?
-                    (<FlatButton
-                        onClick={this.deleteAction}
-                        primary
-                        style={styles.button}
-                        label={this.getTranslation('delete')}
-                    />) : undefined
-                }
-                <FlatButton
-                    onClick={this.cancelAction}
-                    style={styles.buttonRight}
-                    label={this.getTranslation('cancel')}/>
+                <FormBuilder fields={fields} onUpdateField={this.formUpdateAction} />
+                <div style={{ marginTop: '1rem' }}>
+                    <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
+                    {this.clientModel.id !== undefined ?
+                        (<FlatButton
+                            onClick={this.deleteAction}
+                            primary
+                            style={styles.button}
+                            label={this.getTranslation('delete')}
+                        />) : undefined
+                    }
+                    <FlatButton
+                        onClick={this.cancelAction}
+                        style={styles.buttonRight}
+                        label={this.getTranslation('cancel')}
+                    />
+                </div>
             </Dialog>
         );
     },
@@ -285,14 +280,20 @@ export default React.createClass({
             },
         };
 
+        const actions = {
+            edit: this.editAction,
+            delete: this.deleteAction,
+        };
+
         return (
-                <DataTable
-                    style={styles.table}
-                    headerStyle={styles.tableHeader}
-                    rows={oa2ClientStore.state}
-                    columns={['name', 'password', 'refresh_token', 'authorization_code']}
-                    primaryAction={this.editAction}
-                />
+            <DataTable
+                style={styles.table}
+                headerStyle={styles.tableHeader}
+                rows={oa2ClientStore.state}
+                columns={['name', 'password', 'refresh_token', 'authorization_code']}
+                contextMenuActions={actions}
+                primaryAction={this.editAction}
+            />
         );
     },
 

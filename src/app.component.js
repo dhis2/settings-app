@@ -18,8 +18,8 @@ import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.component';
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component';
 import MuiThemeMixin from './mui-theme.mixin.js';
-import HackyDropDown from './form-fields/drop-down';
-import HackyCheckbox from './form-fields/check-box';
+import SelectField from './form-fields/drop-down';
+import Checkbox from './form-fields/check-box';
 import FileUpload from './form-fields/file-upload.js';
 import AppTheme from './theme';
 
@@ -111,6 +111,7 @@ export default React.createClass({
                     props: {
                         floatingLabelText: this.props.d2.i18n.getTranslation(mapping.label),
                         style: { width: '100%' },
+                        hintText: mapping.hintText,
                     },
                     validators: (mapping.validators || []).map(name => wordToValidatorMap.has(name) ? {
                         validator: wordToValidatorMap.get(name),
@@ -143,7 +144,7 @@ export default React.createClass({
                     }
 
                     return Object.assign({}, fieldBase, {
-                        component: HackyDropDown,
+                        component: SelectField,
                         props: Object.assign({}, fieldBase.props, {
                             menuItems: mapping.source
                                 ? configOptionStore.state && configOptionStore.state[mapping.source] || []
@@ -164,7 +165,7 @@ export default React.createClass({
 
                 case 'checkbox':
                     return Object.assign({}, fieldBase, {
-                        component: HackyCheckbox,
+                        component: Checkbox,
                         props: {
                             label: fieldBase.props.floatingLabelText,
                             style: fieldBase.props.style,
