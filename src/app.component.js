@@ -106,7 +106,7 @@ export default React.createClass({
                 // Base config, common for all component types
                 const fieldBase = {
                     name: key,
-                    value: settingsStore.state ? settingsStore.state[key] : '',
+                    value: settingsStore.state && settingsStore.state[key] || '',
                     component: TextField,
                     props: {
                         floatingLabelText: this.props.d2.i18n.getTranslation(mapping.label),
@@ -138,12 +138,16 @@ export default React.createClass({
                     });
 
                 case 'dropdown':
+                    if (mapping.includeEmpty && fieldBase.value === '') {
+                        fieldBase.value = 'null';
+                    }
+
                     return Object.assign({}, fieldBase, {
                         component: HackyDropDown,
                         props: Object.assign({}, fieldBase.props, {
-                            menuItems: mapping.source ?
-                            configOptionStore.state && configOptionStore.state[mapping.source] || [] :
-                                Object.keys(mapping.options).map(id => {
+                            menuItems: mapping.source
+                                ? configOptionStore.state && configOptionStore.state[mapping.source] || []
+                                : Object.keys(mapping.options).map(id => {
                                     const displayName = !isNaN(mapping.options[id]) ?
                                         mapping.options[id] :
                                         this.props.d2.i18n.getTranslation(mapping.options[id]);
