@@ -9,11 +9,11 @@ import RaisedButton from 'material-ui/lib/raised-button';
 
 // D2 UI components
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
-import Form from 'd2-ui/lib/forms/Form.component';
+import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import Translate from 'd2-ui/lib/i18n/Translate.mixin';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 
-import { isRequired } from 'd2-ui/lib/forms/Validators';
+import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators';
 
 // Local dependencies
 import dataApprovalLevelStore from './dataApprovalLevel.store';
@@ -29,9 +29,6 @@ import MultiToggle from '../form-fields/multi-toggle';
 import log from 'loglevel';
 
 
-function isUndefinedOrRequired(v) {
-    return v === undefined || isRequired(v.trim());
-}
 
 // TODO: Rewrite as ES6 class
 /* eslint-disable react/prefer-es6-class */
@@ -225,11 +222,23 @@ export default React.createClass({
                 return { text, payload };
             }));
 
+        const styles = {
+                dialog: {
+                    paddingLeft: 128,
+                },
+                body: {
+                    overflowY: 'auto',
+                },
+                content: {
+                    maxWidth: 400,
+                    minWidth: 400,
+                },
+            };
         const fieldConfigs = [
             {
                 name: 'organisationUnitLevel',
-                type: SelectFieldAsyncSource,
-                fieldOptions: {
+                component: SelectFieldAsyncSource,
+                props: {
                     floatingLabelText: this.getTranslation('organisation_unit_level'),
                     menuItemsSource: () => organisationUnitLevels,
                     value: this.modelToEdit.organisationUnitLevel,
@@ -238,8 +247,8 @@ export default React.createClass({
             },
             {
                 name: 'categoryOptionGroupSet',
-                type: SelectFieldAsyncSource,
-                fieldOptions: {
+                component: SelectFieldAsyncSource,
+                props: {
                     floatingLabelText: this.getTranslation('category_option_group_set'),
                     menuItemsSource: () => categoryOptionGroupSets,
                     prependItems: [{ text: this.getTranslation('none'), payload: {} }],
@@ -247,37 +256,31 @@ export default React.createClass({
                     style: { width: '100%' },
                 },
             },
+            {
+                name:'save',
+                component: RaisedButton,
+                props:{
+                  onClick: this.saveAction,
+                  style: {float: 'left' },
+                  primary:true,
+                  label: this.getTranslation('save'),
+                }
+            },
+            {
+              name:'cancel',
+              component: FlatButton,
+              props:{
+                  onClick:this.cancelAction,
+                  style: { float: 'right' },
+                  label:this.getTranslation('cancel'),
+              }
+            }
         ];
-
-        const styles = {
-            dialog: {
-                paddingLeft: 128,
-            },
-            body: {
-                overflowY: 'auto',
-            },
-            content: {
-                maxWidth: 400,
-                minWidth: 400,
-            },
-        };
 
         return (
             <Dialog open style={styles.dialog} contentStyle={styles.content} bodyStyle={styles.body}>
                 <h2>{this.getTranslation('create_new_approval_level')}</h2>
-                <Form
-                    source={this.modelToEdit}
-                    fieldConfigs={fieldConfigs}
-                    onFormFieldUpdate={this.formFieldUpdate}
-                >
-                    <div style={{ marginTop: '2rem' }}></div>
-                    <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
-                    <FlatButton
-                        onClick={this.cancelAction}
-                        style={{ marginLeft: '1rem' }}
-                        label={this.getTranslation('cancel')}
-                    />
-                </Form>
+                <FormBuilder fields={fieldConfigs} onUpdateField={this.formFieldUpdate}/>
             </Dialog>
         );
     },
@@ -357,19 +360,24 @@ export default React.createClass({
         const fieldConfigs = [
             {
                 name: 'name',
-                type: TextField,
-                updateEvent: 'onBlur',
-                fieldOptions: {
+                component: TextField,
+                props: {
                     floatingLabelText: this.getTranslation('name'),
                     value: this.workflowModelToEdit.name,
                     style: { width: '100%' },
+                    changeEvent: 'onBlur',
                 },
-                validators: [isUndefinedOrRequired],
+                validators:[
+                  {
+                      validator:wordToValidatorMap.get('required'),
+                      message:this.context.d2.i18n.getTranslation(wordToValidatorMap.get('required'))
+                  }
+                ]
             },
             {
                 name: 'periodType',
-                type: DropdownField,
-                fieldOptions: {
+                component: DropdownField,
+                props: {
                     floatingLabelText: this.getTranslation('period_type'),
                     menuItems: Object.keys(periodTypes).map(val => {
                         const label = periodTypes[val];
@@ -381,12 +389,17 @@ export default React.createClass({
                     value: this.workflowModelToEdit.periodType,
                     style: { width: '100%' },
                 },
-                validators: [isUndefinedOrRequired],
+                validators:[
+                  {
+                    validator: wordToValidatorMap.get('required'),
+                    message: this.context.d2.i18n.getTranslation(wordToValidatorMap.get('required'))
+                  }
+                ]
             },
             {
                 name: 'dataApprovalLevels',
-                type: MultiToggle,
-                fieldOptions: {
+                component: MultiToggle,
+                props: {
                     label: this.getTranslation('data_approval_levels'),
                     items: this.state.approvalLevels.map(level => {
                         const name = level.id;
@@ -396,6 +409,25 @@ export default React.createClass({
                     }),
                 },
             },
+            {
+                name:'save',
+                component: RaisedButton,
+                props:{
+                  onClick: this.workflowFormSave,
+                  primary:true,
+                  style: {float:'left' },
+                  label: this.getTranslation('save'),
+                }
+            },
+            {
+              name:'cancel',
+              component: FlatButton,
+              props:{
+                  onClick:this.workflowFormCancel,
+                  style: { float: 'right' },
+                  label:this.getTranslation('cancel'),
+              }
+            }
         ];
 
         const styles = {
@@ -424,28 +456,7 @@ export default React.createClass({
         return (
             <Dialog open style={styles.dialog} contentStyle={styles.content} bodyStyle={styles.body}>
                 <h2>{headerText}</h2>
-                <Form
-                    source={this.workflowModelToEdit}
-                    fieldConfigs={fieldConfigs}
-                    onFormFieldUpdate={this.workflowFormFieldUpdate}
-                >
-                    <div style={{ marginTop: '1rem' }}></div>
-                    <RaisedButton onClick={this.workflowFormSave} primary label={this.getTranslation('save')} />
-                    {this.workflowModelToEdit.id !== undefined ?
-                        (<FlatButton
-                            onClick={this.workflowDeleteAction}
-                            primary
-                            style={styles.button}
-                            label={this.getTranslation('delete')}
-                        />) :
-                        undefined
-                    }
-                    <FlatButton
-                        onClick={this.workflowFormCancel}
-                        style={styles.buttonRight}
-                        label={this.getTranslation('cancel')}
-                    />
-                </Form>
+                <FormBuilder fields={fieldConfigs} onUpdateField={this.workflowFormFieldUpdate}/>
             </Dialog>
         );
     },
