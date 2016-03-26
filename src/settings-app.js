@@ -195,23 +195,17 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                     organisationUnits] = results;
 
                 // Apps/modules
-                const startModules = (results[6].modules || []).map(module => {
-                    const text = module.displayName || module.name;
-                    return { payload: module.name, text };
-                });
+                const startModules = (results[6].modules || []).map(module => ({
+                    id: module.name,
+                    displayName: module.displayName || module.name,
+                }));
 
                 // Flags
-                const flags = (results[7] || []).map(flagName => {
-                    const text = flagName.name;
-                    return { payload: flagName.key, text };
-                });
-                flags.unshift({ payload: 'dhis2', text: d2.i18n.getTranslation('no_flag') });
+                const flags = (results[7] || []).map(flag => ({ id: flag.key, displayName: flag.name }));
+                flags.unshift({ id: 'dhis2', displayName: d2.i18n.getTranslation('no_flag') });
 
                 // Stylesheets
-                const styles = (results[8] || []).map(styleName => {
-                    const text = styleName.name;
-                    return { payload: styleName.path, text };
-                });
+                const styles = (results[8] || []).map(style => ({ id: style.path, displayName: style.name }));
 
                 configOptionStore.setState({
                     indicatorGroups,

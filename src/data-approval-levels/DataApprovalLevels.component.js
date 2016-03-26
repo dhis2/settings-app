@@ -374,8 +374,8 @@ export default React.createClass({
                     menuItems: Object.keys(periodTypes).map(val => {
                         const label = periodTypes[val];
                         return {
-                            payload: val,
-                            text: this.getTranslation(label),
+                            id: val,
+                            displayName: this.getTranslation(label),
                         };
                     }),
                     value: this.workflowModelToEdit.periodType,
