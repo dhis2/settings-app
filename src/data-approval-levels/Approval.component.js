@@ -7,6 +7,13 @@ import FlatButton from 'material-ui/lib/flat-button';
 import Translate from 'd2-ui/lib/i18n/Translate.mixin';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 
+// Local dependencies
+import dataApprovalLevelStore from './dataApprovalLevel.store';
+import dataApprovalLevelActions from './dataApprovalLevel.actions';
+
+import dataApprovalWorkflowActions from './dataApprovalWorkflow.actions';
+import dataApprovalWorkflowStore from './dataApprovalWorkflow.store';
+
 import DataApprovalWorkflow from './DataApprovalWorkflow.component';
 import DataApprovalLevel from './DataApprovalLevel.component';
 
@@ -17,10 +24,41 @@ export default React.createClass({
 
     getInitialState() {
         return {
+            approvalLevels:[],
+            approvalWorkflows:[],
             showWorkflows: false,
             saving: false,
             componentDidMount: false,
         };
+    },
+
+    componentWillMount() {
+        dataApprovalLevelActions.loadDataApprovalLevels();
+        dataApprovalWorkflowActions.loadDataApprovalWorkflows();
+        this.subscriptions = [];
+    },
+
+    componentWillUnmount() {
+        this.subscriptions.forEach(subscription => {
+            subscription.dispose();
+        });
+    },
+
+    componentDidMount() {
+        this.subscriptions.push(
+            dataApprovalLevelStore.subscribe(approvalLevels => {
+                this.setState({ approvalLevels, showForm: false, saving: false });
+            })
+        );
+        this.subscriptions.push(
+            dataApprovalWorkflowStore.subscribe(approvalWorkflows => {
+                this.setState({ approvalWorkflows, showForm: false, saving: false });
+            })
+        );
+
+        setTimeout(() => {
+            this.setState({ componentDidMount: true });
+        }, 0);
     },
 
     tabClick() {
@@ -107,7 +145,7 @@ export default React.createClass({
                     </div>
                 </div>
                 <div style={styles.tabBody}>
-                    {this.state.showWorkflows ? <DataApprovalWorkflow /> : <DataApprovalLevel />}
+                    {this.state.showWorkflows ? <DataApprovalWorkflow approvalLevels={this.state.approvalLevels} approvalWorkflows={this.state.approvalWorkflows} /> : <DataApprovalLevel approvalLevels={this.state.approvalLevels}/>}
                 </div>
             </div>
         );

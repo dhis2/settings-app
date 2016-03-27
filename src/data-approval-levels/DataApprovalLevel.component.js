@@ -9,13 +9,12 @@ import RaisedButton from 'material-ui/lib/raised-button';
 
 // D2 UI components
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
-import Form from 'd2-ui/lib/forms/Form.component';
+import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 
 import { isRequired } from 'd2-ui/lib/forms/Validators';
 
 // Local dependencies
-import dataApprovalLevelStore from './dataApprovalLevel.store';
 import dataApprovalLevelActions from './dataApprovalLevel.actions';
 
 import SelectFieldAsyncSource from './SelectFieldAsyncSource.component';
@@ -25,7 +24,6 @@ class DataApprovalLevel extends React.Component {
 		super(props, context);
 		this.context = context;
 		this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
-		
 		this.modelToEdit = this.context.d2.models.dataApprovalLevel.create();
 		this.state = {approvalLevels: [], showForm:false, saving:false, componentDidMount: false};
 		this.renderApprovalLevelList = this.renderApprovalLevelList.bind(this);
@@ -34,20 +32,17 @@ class DataApprovalLevel extends React.Component {
 		this.saveAction = this.saveAction.bind(this);
 		this.resetAddFormAnddisplayList = this.resetAddFormAnddisplayList.bind(this);
 		this.cancelAction = this.cancelAction.bind(this);
+        this.formFieldUpdate = this.formFieldUpdate.bind(this);
 	}
-
-	componentWillMount() {
-        dataApprovalLevelActions.loadDataApprovalLevels();
-        this.subscriptions = [];
+    componentDidMount() {
+        this.setState({ approvalWorkflows: this.props.approvalWorkflows, approvalLevels: this.props.approvalLevels, showForm: false, saving: false });
+        setTimeout(() => {
+            this.setState({ componentDidMount: true });
+        }, 0);
     }
 
-    componentDidMount() {
-        this.subscriptions.push(
-            dataApprovalLevelStore.subscribe(approvalLevels => {
-                this.setState({ approvalLevels, showForm: false, saving: false });
-            })
-        );
-
+    componentWillReceiveProps(newProps) {
+        this.setState({ approvalLevels: newProps.approvalLevels, showForm: false, saving: false });
         setTimeout(() => {
             this.setState({ componentDidMount: true });
         }, 0);
@@ -80,6 +75,11 @@ class DataApprovalLevel extends React.Component {
         this.resetAddFormAnddisplayList();
     }
 
+    formFieldUpdate(fieldName, newValue) {
+        this.modelToEdit[fieldName] = newValue;
+        this.forceUpdate();
+    }
+
     resetAddFormAnddisplayList() {
         this.modelToEdit = this.context.d2.models.dataApprovalLevel.create();
         this.setState({
@@ -96,7 +96,6 @@ class DataApprovalLevel extends React.Component {
                 const text = `${listItem.level}: ${listItem.displayName}`;
                 return { text, payload: listItem };
             }));
-        console.log(this.context.d2.models.organisationUnitLevel.list({ fields: 'id,displayName,level' }));
 
         const categoryOptionGroupSets = this.context.d2.models.categoryOptionGroupSet
             .list()
@@ -110,24 +109,26 @@ class DataApprovalLevel extends React.Component {
         const fieldConfigs = [
             {
                 name: 'organisationUnitLevel',
-                type: SelectFieldAsyncSource,
-                fieldOptions: {
+                component: SelectFieldAsyncSource,
+                props: {
                     floatingLabelText: this.getTranslation('organisation_unit_level'),
                     menuItemsSource: () => organisationUnitLevels,
                     value: this.modelToEdit.organisationUnitLevel,
                     style: { width: '100%' },
                 },
+                value: this.modelToEdit.organisationUnitLevel,
             },
             {
                 name: 'categoryOptionGroupSet',
-                type: SelectFieldAsyncSource,
-                fieldOptions: {
+                component: SelectFieldAsyncSource,
+                props: {
                     floatingLabelText: this.getTranslation('category_option_group_set'),
                     menuItemsSource: () => categoryOptionGroupSets,
                     prependItems: [{ text: this.getTranslation('none'), payload: {} }],
                     value: this.modelToEdit.categoryOptionGroupSet,
                     style: { width: '100%' },
                 },
+                value: this.modelToEdit.categoryOptionGroupSet,
             },
         ];
 
@@ -147,19 +148,17 @@ class DataApprovalLevel extends React.Component {
         return (
             <Dialog open style={styles.dialog} contentStyle={styles.content} bodyStyle={styles.body}>
                 <h2>{this.getTranslation('create_new_approval_level')}</h2>
-                <Form
+                <FormBuilder
                     source={this.modelToEdit}
-                    fieldConfigs={fieldConfigs}
-                    onFormFieldUpdate={this.formFieldUpdate}
-                >
-                    <div style={{ marginTop: '2rem' }}></div>
+                    fields={fieldConfigs}
+                    onUpdateField={this.formFieldUpdate}> 
+                </FormBuilder>
+                <div style={{ marginTop: '2rem' }}></div>
                     <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
                     <FlatButton
                         onClick={this.cancelAction}
                         style={{ marginLeft: '1rem' }}
-                        label={this.getTranslation('cancel')}
-                    />
-                </Form>
+                        label={this.getTranslation('cancel')}/>
             </Dialog>
         );
     }

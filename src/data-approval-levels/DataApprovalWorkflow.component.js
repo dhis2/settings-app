@@ -9,7 +9,6 @@ import RaisedButton from 'material-ui/lib/raised-button';
 
 // Local dependencies
 import dataApprovalWorkflowActions from './dataApprovalWorkflow.actions';
-import dataApprovalWorkflowStore from './dataApprovalWorkflow.store';
 
 // D2 UI components
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
@@ -32,7 +31,7 @@ class DataApprovalWorkflow extends React.Component {
 		super(props, context);
 		this.context = context;
 		this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
-		this.state = {approvalWorkflows: [], showForm:false, saving:false, componentDidMount: false};
+		this.state = {approvalLevels:[], approvalWorkflows: [], showForm:false, saving:false, componentDidMount: false};
 		this.workflowModelToEdit = context.d2.models.dataApprovalWorkflow.create();
 		this.renderWorkflowList = this.renderWorkflowList.bind(this);
 		this.workflowFormCancel = this.workflowFormCancel.bind(this);
@@ -42,34 +41,17 @@ class DataApprovalWorkflow extends React.Component {
 		this.renderWorkflowForm = this.renderWorkflowForm.bind(this);
 		this.addClick = this.addClick.bind(this);
 	}
-
-	componentWillMount() {
-        dataApprovalWorkflowActions.loadDataApprovalWorkflows();
-        this.subscriptions = [];
-    }
-
-	componentDidMount() {
-		this.subscriptions.push(
-            dataApprovalWorkflowStore.subscribe(approvalWorkflows => {
-                this.setState({ approvalWorkflows, showForm: false, saving: false });
-            })
-        );
-
+    componentDidMount() {
+        this.setState({ approvalWorkflows: this.props.approvalWorkflows, approvalLevels: this.props.approvalLevels, showForm: false, saving: false });
         setTimeout(() => {
             this.setState({ componentDidMount: true });
         }, 0);
-	}
-
-	componentWillUnmount() {
-        this.subscriptions.forEach(subscription => {
-            subscription.dispose();
-        });
     }
-
-    componentWillUnmount() {
-        this.subscriptions.forEach(subscription => {
-            subscription.dispose();
-        });
+	componentWillReceiveProps(nextProps) {
+        this.setState({ approvalWorkflows: nextProps.approvalWorkflows, approvalLevels: nextProps.approvalLevels, showForm: false, saving: false });
+        setTimeout(() => {
+            this.setState({ componentDidMount: true });
+        }, 0);
     }
 	
 	renderWorkflowList() {
@@ -136,7 +118,6 @@ class DataApprovalWorkflow extends React.Component {
     addClick() {
         this.workflowFormCancel();
         this.setState({
-            approvalLevelToAdd: this.context.d2.models.dataApprovalLevel.create(),
             showForm: true,
             saving: false,
         });
@@ -245,6 +226,19 @@ class DataApprovalWorkflow extends React.Component {
                     style: { width: '100%' },
                 },
                 validators: [isUndefinedOrRequired],
+            },
+            {
+                name: 'dataApprovalLevels',
+                type: MultiToggle,
+                fieldOptions: {
+                    label: this.getTranslation('data_approval_levels'),
+                    items: this.state.approvalLevels.map(level => {
+                        const name = level.id;
+                        const text = `${level.level}: ${level.displayName}`;
+                        const value = approvalLevels.indexOf(level.id) !== -1;
+                        return { name, text, value };
+                    }),
+                },
             },
         ];
 
