@@ -67,11 +67,8 @@ actions.saveDataApprovalWorkflow
                 })
                 .then(complete)
                 .catch(e => {
-                    settingsActions.showSnackbarMessage(`${
-                        d2.i18n.getTranslation('failed_to_save_approval_workflow')
-                        }: ${
-                        e.response.importConflicts[0].value
-                        }`);
+                    const errorLabel = d2.i18n.getTranslation('failed_to_save_approval_workflow');
+                    settingsActions.showSnackbarMessage(`${errorLabel}: ${e.response.importConflicts[0].value}`);
                     error(e);
                 });
         });
