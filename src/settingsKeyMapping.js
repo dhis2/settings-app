@@ -319,7 +319,7 @@ const settingsKeyMapping = {
     },
     dataApprovalLevels: {
         label: 'data_approval_levels',
-        type: 'dataApproval',
+        type: 'approval',
     },
     /* ============================================================================================================ */
     /* Category: Calendar                                                                                           */

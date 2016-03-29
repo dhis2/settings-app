@@ -15,7 +15,7 @@ import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 
 // App
-import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.component';
+import Approval from './data-approval-levels/Approval.component';
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component';
 import MuiThemeMixin from './mui-theme.mixin.js';
 import SelectField from './form-fields/drop-down';
@@ -187,9 +187,9 @@ export default React.createClass({
                         },
                     });
 
-                case 'dataApproval':
+                case 'approval':
                     return Object.assign({}, fieldBase, {
-                        component: DataApprovalLevels,
+                        component: Approval,
                     });
 
                 case 'oauth2clients':
