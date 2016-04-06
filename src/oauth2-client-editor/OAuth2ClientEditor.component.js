@@ -135,6 +135,7 @@ export default React.createClass({
     },
 
     renderForm() {
+        const d2 = this.context.d2;
         const formFieldStyle = AppTheme.forms;
         formFieldStyle.width = '100%';
 
@@ -161,6 +162,19 @@ export default React.createClass({
                 float: 'right',
             },
         };
+
+        function validateClientID(v) {
+            return new Promise((resolve, reject) => {
+                d2.models.oAuth2Clients.list({ paging: false, filter: [`cid:eq:${v}`] })
+                    .then(list => {
+                        if (list.size === 0) {
+                            resolve();
+                        } else {
+                            reject(d2.i18n.getTranslation('cid_already_taken'));
+                        }
+                    });
+            });
+        }
 
         const fields = [
             {
@@ -189,7 +203,13 @@ export default React.createClass({
                 validators: [{
                     validator: isRequired,
                     message: this.context.d2.i18n.getTranslation(isRequired.message),
+                }, {
+                    validator: (v) => v.toString().trim().length > 0,
+                    message: this.context.d2.i18n.getTranslation(isRequired.message),
                 }],
+                asyncValidators: [
+                    validateClientID,
+                ],
             },
             {
                 name: 'secret',
