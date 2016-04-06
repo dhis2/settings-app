@@ -10,8 +10,7 @@ html {
 }
 
 .app {
-  padding: 3rem 0;
-  max-width: 1200px;
+  padding-top: 3rem;
 }
 
 .left-bar {
@@ -25,6 +24,8 @@ html {
 
 .content-area {
   padding-left: $left-bar-width;
+  max-width: 750px;
+  min-width: 400px;
 }
 
 .data-table__headers__header {
@@ -64,18 +65,6 @@ html {
   }
 
   &-active {
-    &.card-up {
-      transform: translate(0,-500px);
-      opacity: 0;
-    }
-    &.card-right {
-      transform: translate(500px);
-      opacity: 0;
-    }
-    &.card-down {
-      transform: translate(0,500px);
-      opacity: 0;
-    }
     &.fab {
       transform: translate(0,0) scale(0.0) rotateZ(-90deg);
       opacity: 0.5;

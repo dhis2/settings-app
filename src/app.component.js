@@ -29,6 +29,32 @@ import settingsKeyMapping from './settingsKeyMapping';
 import { categoryOrder, categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
 
+const styles = {
+    header: {
+        fontSize: 24,
+        fontWeight: 300,
+        color: AppTheme.rawTheme.palette.textColor,
+        padding: '16px 0 5px 16px',
+    },
+    card: {
+        marginTop: 8,
+        marginRight: '1rem',
+    },
+    cardTitle: {
+        background: AppTheme.rawTheme.palette.primary2Color,
+        height: 62,
+    },
+    cardTitleText: {
+        fontSize: 28,
+        fontWeight: 100,
+        color: AppTheme.rawTheme.palette.alternateTextColor,
+    },
+    noHits: {
+        padding: '1rem',
+        marginTop: '1rem',
+        fontWeight: 300,
+    },
+};
 
 // TODO: Rewrite as ES6 class
 /* eslint-disable react/prefer-es6-class */
@@ -98,6 +124,10 @@ export default React.createClass({
     },
 
     renderFields(styles, settings) {
+        if (settings.length === 0) {
+            return <div style={styles.noHits}>{ this.props.d2.i18n.getTranslation('no_settings_matched_the_search_term') }</div>;
+        }
+
         /* eslint-disable complexity */
         const fields = settings
             .map(key => {
@@ -242,31 +272,6 @@ export default React.createClass({
             const label = this.props.d2.i18n.getTranslation(categories[category].label);
             return { key, label };
         });
-        const styles = {
-            header: {
-                fontSize: 24,
-                fontWeight: 100,
-                color: AppTheme.rawTheme.palette.textColor,
-                padding: '6px 16px',
-            },
-            card: {
-                marginTop: 8,
-                marginRight: '1rem',
-            },
-            cardTitle: {
-                background: AppTheme.rawTheme.palette.primary2Color,
-                height: 62,
-            },
-            cardTitleText: {
-                fontSize: 28,
-                fontWeight: 100,
-                color: AppTheme.rawTheme.palette.alternateTextColor,
-            },
-            forms: {
-                minWidth: AppTheme.forms.minWidth,
-                maxWidth: AppTheme.forms.maxWidth,
-            },
-        };
         const setSidebar = (ref) => { this.sidebar = ref; };
 
         return (
@@ -284,11 +289,12 @@ export default React.createClass({
                     onChangeSection={settingsActions.setCategory}
                     currentSection={this.state.category}
                     showSearchField
+                    searchFieldLabel={this.props.d2.i18n.getTranslation('search_settings')}
                     ref={setSidebar}
                     onChangeSearchText={settingsActions.searchSettings}
                 />
 
-                <div className="content-area" style={styles.forms}>
+                <div className="content-area">
                     <div style={styles.header}>{categories[this.state.category] ?
                         this.props.d2.i18n.getTranslation(categories[this.state.category].pageLabel) :
                         this.props.d2.i18n.getTranslation('search_results')}
