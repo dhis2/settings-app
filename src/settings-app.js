@@ -125,6 +125,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
         // Load translations
         function getI18nStrings() {
             const strings = new Set();
+            /* eslint-disable complexity */
             Object.keys(settingsKeyMapping).forEach(key => {
                 const val = settingsKeyMapping[key];
 
@@ -144,6 +145,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                     }
                 }
             });
+            /* eslint-enable complexity */
 
             return strings;
         }

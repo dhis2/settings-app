@@ -124,9 +124,13 @@ export default React.createClass({
         this.setState({ showSnackbar: false });
     },
 
-    renderFields(styles, settings) {
+    renderFields(settings) {
         if (settings.length === 0) {
-            return <div style={styles.noHits}>{ this.props.d2.i18n.getTranslation('no_settings_matched_the_search_term') }</div>;
+            return (
+                <div style={styles.noHits}>
+                    { this.props.d2.i18n.getTranslation('no_settings_matched_the_search_term') }
+                </div>
+            );
         }
 
         /* eslint-disable complexity */
@@ -148,7 +152,7 @@ export default React.createClass({
                         validator: wordToValidatorMap.get(name),
                         message: this.props.d2.i18n.getTranslation(wordToValidatorMap.get(name).message),
                     } : false)
-                    .filter(v => v),
+                        .filter(v => v),
                 };
 
                 switch (mapping.type) {
@@ -278,7 +282,9 @@ export default React.createClass({
             const label = this.props.d2.i18n.getTranslation(categories[category].label);
             return { key, label };
         });
-        const setSidebar = (ref) => { this.sidebar = ref; };
+        const setSidebar = (ref) => {
+            this.sidebar = ref;
+        };
 
         return (
             <div className="app">
@@ -305,7 +311,7 @@ export default React.createClass({
                         this.props.d2.i18n.getTranslation(categories[this.state.category].pageLabel) :
                         this.props.d2.i18n.getTranslation('search_results')}
                     </div>
-                    {this.renderFields(styles, this.state.currentSettings)}
+                    {this.renderFields(this.state.currentSettings)}
                 </div>
             </div>
         );
