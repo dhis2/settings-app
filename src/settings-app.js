@@ -91,11 +91,13 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
 
         // settingsActions.saveKey handler
         settingsActions.saveKey.subscribe((args) => {
-            const [fieldName, value] = args.data;
-            const mapping = settingsKeyMapping[fieldName];
+            const [fieldData, value] = args.data;
+            const key = Array.isArray(fieldData) ? fieldData.join('') : fieldData;
+            const mappingKey = Array.isArray(fieldData) ? fieldData[0] : fieldData;
+            const mapping = settingsKeyMapping[mappingKey];
 
             if (mapping.configuration) {
-                d2.system.configuration.set(fieldName, value)
+                d2.system.configuration.set(key, value)
                     .then(() => {
                         settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
                     })
@@ -103,7 +105,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                         log.error('Failed to save configuration:', err);
                     });
             } else {
-                d2.system.settings.set(fieldName, value)
+                d2.system.settings.set(key, value)
                     .then(() => {
                         settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
                     })
@@ -113,7 +115,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
             }
 
             const newState = settingsStore.state;
-            newState[fieldName] = value;
+            newState[key] = value;
             settingsStore.setState(newState);
         });
 
@@ -166,7 +168,9 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
             }
 
             settingsActions.load();
+
             // Load alternatives
+            const api = d2.Api.getApi();
             Promise.all([
                 d2.models.indicatorGroup.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),
                 d2.models.dataElementGroup.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),
@@ -182,9 +186,10 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                     fields: 'id,displayName',
                     filter: ['level:in:[1,2]'],
                 }),
-                d2.Api.getApi().get('../dhis-web-commons/menu/getModules.action'),
-                d2.Api.getApi().get('system/flags'),
-                d2.Api.getApi().get('system/styles'),
+                api.get('../dhis-web-commons/menu/getModules.action'),
+                api.get('system/flags'),
+                api.get('system/styles'),
+                api.get('locales/ui'),
             ]).then(results => {
                 const [
                     indicatorGroups,
@@ -207,6 +212,9 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                 // Stylesheets
                 const styles = (results[8] || []).map(style => ({ id: style.path, displayName: style.name }));
 
+                // Locales
+                const locales = (results[9] || []).map(locale => ({ id: locale.locale, displayName: locale.name }));
+
                 configOptionStore.setState({
                     indicatorGroups,
                     dataElementGroups,
@@ -217,7 +225,9 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                     startModules,
                     flags,
                     styles,
+                    locales,
                 });
+                log.debug('Got settings options:', configOptionStore.getState());
             });
         });
     }, (err) => {

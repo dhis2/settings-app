@@ -165,6 +165,9 @@ const settingsKeyMapping = {
     /* ============================================================================================================ */
     /* Category: Appearance                                                                                         */
     /* ============================================================================================================ */
+    localizedText: {
+        type: 'localizedAppearance',
+    },
     applicationTitle: {
         label: 'application_title',
         appendLocale: true,
@@ -191,7 +194,6 @@ const settingsKeyMapping = {
     keyApplicationRightFooter: {
         label: 'application_right_footer',
         description: 'allows_html',
-        appendLocale: true,
         multiLine: true,
     },
     keyStyle: {
