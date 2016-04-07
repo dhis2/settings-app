@@ -167,6 +167,12 @@ const settingsKeyMapping = {
     /* ============================================================================================================ */
     localizedText: {
         type: 'localizedAppearance',
+        searchLabels: [
+            'application_title',
+            'application_introduction',
+            'application_notification',
+            'application_left_footer',
+        ],
     },
     applicationTitle: {
         label: 'application_title',
@@ -320,8 +326,14 @@ const settingsKeyMapping = {
         type: 'checkbox',
     },
     dataApprovalLevels: {
-        label: 'data_approval_levels',
         type: 'dataApproval',
+        searchLabels: [
+            'data_approval_levels',
+            'approval_levels',
+            'approval_workflows',
+            'category_option_group_set',
+            'level',
+        ],
     },
     /* ============================================================================================================ */
     /* Category: Calendar                                                                                           */
@@ -393,8 +405,13 @@ const settingsKeyMapping = {
     /* Category: oAuth2 clients                                                                                     */
     /* ============================================================================================================ */
     oauth2clients: {
-        label: 'oauth2clients',
         type: 'oauth2clients',
+        searchLabels: [
+            'oauth2_clients',
+            'password',
+            'refresh_token',
+            'authorization_code',
+        ],
     },
 
     /* ============================================================================================================ */

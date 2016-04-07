@@ -28,6 +28,20 @@ const settingsSearchMap = Observable.fromPromise(new Promise((resolve, reject) =
                             return translatedKeyValueMap;
                         }
 
+                        if (settingsKeyMapping[settingsKey].searchLabels) {
+                            settingsKeyMapping[settingsKey].searchLabels.forEach(label => {
+                                if (!d2.i18n.isTranslated(label)) {
+                                    log.warn(`No translation found for ${label} under ${settingsKey}`);
+                                }
+                            });
+
+                            return translatedKeyValueMap.concat(
+                                settingsKeyMapping[settingsKey].searchLabels
+                                    .filter(label => d2.i18n.isTranslated(label))
+                                    .map(label => [d2.i18n.getTranslation(label), settingsKey])
+                            );
+                        }
+
                         return translatedKeyValueMap.concat([
                             [d2.i18n.getTranslation(settingsKeyMapping[settingsKey].label), settingsKey],
                         ]);
