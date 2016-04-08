@@ -137,6 +137,7 @@ const settingsKeyMapping = {
         type: 'dropdown',
         options: {
             NO_CACHE: 'no_cache',
+            CACHE_15_MINUTES: 'cache_for_15_minutes',
             CACHE_1_HOUR: 'cache_for_one_hour',
             CACHE_6AM_TOMORROW: 'cache_until_6am_tomorrow',
             CACHE_TWO_WEEKS: 'cache_for_two_weeks',
