@@ -206,6 +206,7 @@ const settingsKeyMapping = {
     keyStyle: {
         label: 'style',
         type: 'dropdown',
+        userSettingsOverride: true,
         source: 'styles',
     },
     startModule: {
@@ -221,16 +222,19 @@ const settingsKeyMapping = {
     keyUiLocale: {
         label: 'ui_locale',
         type: 'dropdown',
+        userSettingsOverride: true,
         source: 'locales',
     },
     keyDbLocale: {
         label: 'db_locale',
         type: 'dropdown',
+        userSettingsOverride: true,
         source: 'locales',
     },
     keyAnalysisDisplayProperty: {
         label: 'analysis_display_property',
         type: 'dropdown',
+        userSettingsOverride: true,
         options: {
             name: 'name',
             shortName: 'short_name',
@@ -289,10 +293,12 @@ const settingsKeyMapping = {
     keyMessageEmailNotification: {
         label: 'enable_message_email_notifications',
         type: 'checkbox',
+        userSettingsOverride: true,
     },
     keyMessageSmsNotification: {
         label: 'enable_message_sms_notifications',
         type: 'checkbox',
+        userSettingsOverride: true,
     },
     /* ============================================================================================================ */
     /* Category: Access                                                                                             */

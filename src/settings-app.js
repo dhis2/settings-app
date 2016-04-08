@@ -192,6 +192,7 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                 api.get('system/flags'),
                 api.get('system/styles'),
                 api.get('locales/ui'),
+                api.get('userSettings', { useFallback: false }),
             ]).then(results => {
                 const [
                     indicatorGroups,
@@ -216,6 +217,8 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
 
                 // Locales
                 const locales = (results[9] || []).map(locale => ({ id: locale.locale, displayName: locale.name }));
+
+                d2.currentUser.userSettingsNoFallback = results[10]; // eslint-disable-line
 
                 configOptionStore.setState({
                     indicatorGroups,

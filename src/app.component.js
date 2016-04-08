@@ -55,7 +55,37 @@ const styles = {
         marginTop: '1rem',
         fontWeight: 300,
     },
+    userSettingsOverride: {
+        color: AppTheme.rawTheme.palette.accent1Color,
+        marginTop: -8,
+        fontStyle: 'italic',
+    },
 };
+
+function userSettingsOverride(d2, component, valueLabel) {
+    return class extends component {
+        render() {
+            const labelStyle = Object.assign({}, styles.userSettingsOverride);
+            if (component === Checkbox) {
+                labelStyle.marginLeft = 40;
+                labelStyle.marginTop = -16;
+            } else if (component === SelectField && this.props.value === '') {
+                labelStyle.marginTop = -24;
+            }
+
+            return (
+                <div>
+                    {super.render()}
+                    <div style={labelStyle}>{
+                        valueLabel !== undefined
+                            ? `${d2.i18n.getTranslation('will_be_overridden_by_current_user_setting')}: ${valueLabel}`
+                            : d2.i18n.getTranslation('can_be_overridden_by_user_settings')
+                    }</div>
+                </div>
+            );
+        }
+    };
+}
 
 // TODO: Rewrite as ES6 class
 /* eslint-disable react/prefer-es6-class */
@@ -265,7 +295,34 @@ export default React.createClass({
                     return {};
                 }
             })
-            .filter(f => !!f.name);
+            .filter(f => !!f.name)
+            .map(field => {
+                const mapping = settingsKeyMapping[field.name];
+
+                if (mapping.userSettingsOverride) {
+                    const userSettingValue = d2.currentUser.userSettingsNoFallback[field.name] !== null
+                        ? d2.currentUser.userSettingsNoFallback[field.name]
+                        : '';
+                    let component = field.component;
+
+                    if (userSettingValue === '') {
+                        component = userSettingsOverride(d2, component);
+                    } else if (mapping.source) {
+                        const userSettingLabel = configOptionStore.getState()[mapping.source]
+                            .filter(opt => opt.id === userSettingValue)
+                            .map(opt => opt.displayName)
+                            .pop();
+
+                        component = userSettingsOverride(d2, component, userSettingLabel);
+                    } else {
+                        component = userSettingsOverride(d2, component, d2.i18n.getTranslation(userSettingValue));
+                    }
+
+                    return Object.assign(field, { component });
+                }
+
+                return field;
+            });
         /* eslint-enable complexity */
 
         return (

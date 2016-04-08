@@ -13,7 +13,7 @@ const theme = {
         primary3Color: Colors.blue100,
         accent1Color: Colors.orange500,
         accent2Color: Colors.grey100,
-        accent3Color: Colors.grey500,
+        accent3Color: Colors.orangeA200,
         textColor: Colors.darkBlack,
         alternateTextColor: Colors.white,
         canvasColor: Colors.white,
