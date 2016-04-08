@@ -218,6 +218,24 @@ const settingsKeyMapping = {
         type: 'dropdown',
         source: 'flags',
     },
+    keyUiLocale: {
+        label: 'ui_locale',
+        type: 'dropdown',
+        source: 'locales',
+    },
+    keyDbLocale: {
+        label: 'db_locale',
+        type: 'dropdown',
+        source: 'locales',
+    },
+    keyAnalysisDisplayProperty: {
+        label: 'analysis_display_property',
+        type: 'dropdown',
+        options: {
+            name: 'name',
+            shortName: 'short_name',
+        },
+    },
     keyRequireAddToView: {
         label: 'require_authority_to_add_to_view_object_lists',
         type: 'checkbox',
@@ -264,6 +282,17 @@ const settingsKeyMapping = {
         label: 'send_test_email',
         type: 'postButton',
         uri: '/email/test',
+    },
+    /* ============================================================================================================ */
+    /* Category: Messaging                                                                                          */
+    /* ============================================================================================================ */
+    keyMessageEmailNotification: {
+        label: 'enable_message_email_notifications',
+        type: 'checkbox',
+    },
+    keyMessageSmsNotification: {
+        label: 'enable_message_sms_notifications',
+        type: 'checkbox',
     },
     /* ============================================================================================================ */
     /* Category: Access                                                                                             */
