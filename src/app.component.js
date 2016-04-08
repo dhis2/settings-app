@@ -125,10 +125,11 @@ export default React.createClass({
     },
 
     renderFields(settings) {
+        const d2 = this.props.d2;
         if (settings.length === 0) {
             return (
                 <div style={styles.noHits}>
-                    { this.props.d2.i18n.getTranslation('no_settings_matched_the_search_term') }
+                    { d2.i18n.getTranslation('no_settings_matched_the_search_term') }
                 </div>
             );
         }
@@ -144,13 +145,13 @@ export default React.createClass({
                     value: settingsStore.state && settingsStore.state[key] || '',
                     component: TextField,
                     props: {
-                        floatingLabelText: this.props.d2.i18n.getTranslation(mapping.label),
+                        floatingLabelText: d2.i18n.getTranslation(mapping.label),
                         style: { width: '100%' },
                         hintText: mapping.hintText,
                     },
                     validators: (mapping.validators || []).map(name => wordToValidatorMap.has(name) ? {
                         validator: wordToValidatorMap.get(name),
-                        message: this.props.d2.i18n.getTranslation(wordToValidatorMap.get(name).message),
+                        message: d2.i18n.getTranslation(wordToValidatorMap.get(name).message),
                     } : false)
                         .filter(v => v),
                 };
@@ -186,15 +187,15 @@ export default React.createClass({
                                 : Object.keys(mapping.options).map(id => {
                                     const displayName = !isNaN(mapping.options[id]) ?
                                         mapping.options[id] :
-                                        this.props.d2.i18n.getTranslation(mapping.options[id]);
+                                        d2.i18n.getTranslation(mapping.options[id]);
                                     return { id, displayName };
                                 }),
                             includeEmpty: !!mapping.includeEmpty,
                             emptyLabel: (
                                 mapping.includeEmpty && mapping.emptyLabel &&
-                                this.props.d2.i18n.getTranslation(mapping.emptyLabel) || undefined
+                                d2.i18n.getTranslation(mapping.emptyLabel) || undefined
                             ),
-                            noOptionsLabel: this.props.d2.i18n.getTranslation('no_options'),
+                            noOptionsLabel: d2.i18n.getTranslation('no_options'),
                         }),
                     });
 
@@ -239,8 +240,8 @@ export default React.createClass({
                             label: fieldBase.props.floatingLabelText,
                             onClick: () => {
                                 const qry = mapping.query_type === 'DELETE' ?
-                                    this.props.d2.Api.getApi().delete(mapping.uri) :
-                                    this.props.d2.Api.getApi().post(mapping.uri);
+                                    d2.Api.getApi().delete(mapping.uri) :
+                                    d2.Api.getApi().post(mapping.uri);
                                 qry.then(result => {
                                     log.info(result && result.message || 'Ok');
                                     settingsActions.load(true);
