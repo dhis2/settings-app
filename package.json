@@ -63,7 +63,8 @@
     "style-loader": "^0.13.0",
     "susy": "^2.2.6",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack-dev-server": "^1.14.0",
+    "fixed-data-table": "0.6.0"
   },
   "pre-commit": [
     "validate"
