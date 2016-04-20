@@ -16,6 +16,7 @@ export const categoryOrder = [
 export const categories = {
     general: {
         label: 'general',
+        icon: 'settings',
         pageLabel: 'general_settings',
         settings: [
             'keyAnalyticsMaxLimit',
@@ -33,6 +34,7 @@ export const categories = {
     },
     server: {
         label: 'server',
+        icon: 'business',
         pageLabel: 'server_settings',
         settings: [
             'keyCacheStrategy',
@@ -44,6 +46,7 @@ export const categories = {
     },
     appearance: {
         label: 'appearance',
+        icon: 'looks',
         pageLabel: 'appearance_settings',
         settings: [
             'localizedText',
@@ -62,6 +65,7 @@ export const categories = {
     },
     email: {
         label: 'email',
+        icon: 'email',
         pageLabel: 'email_settings',
         settings: [
             'keyEmailHostName',
@@ -75,6 +79,7 @@ export const categories = {
     },
     messaging: {
         label: 'messaging',
+        icon: 'message',
         pageLabel: 'messaging_settings',
         settings: [
             'keyMessageEmailNotification',
@@ -83,6 +88,7 @@ export const categories = {
     },
     access: {
         label: 'access',
+        icon: 'lock_open',
         pageLabel: 'access_settings',
         settings: [
             'selfRegistrationRole',
@@ -99,6 +105,7 @@ export const categories = {
     },
     approval: {
         label: 'approval',
+        icon: 'spellcheck',
         pageLabel: 'approval_settings',
         settings: [
             'keyHideUnapprovedDataInAnalytics',
@@ -108,6 +115,7 @@ export const categories = {
     },
     calendar: {
         label: 'calendar',
+        icon: 'date_range',
         pageLabel: 'calendar_settings',
         settings: [
             'keyCalendar',
@@ -116,6 +124,7 @@ export const categories = {
     },
     import: {
         label: 'import',
+        icon: 'import_export',
         pageLabel: 'import_settings',
         settings: [
             'keyDataImportStrictPeriods',
@@ -128,6 +137,7 @@ export const categories = {
     },
     sync: {
         label: 'synchronization',
+        icon: 'sync',
         pageLabel: 'synchronization_settings',
         settings: [
             'keyRemoteInstanceUrl',
@@ -137,6 +147,7 @@ export const categories = {
     },
     oauth2: {
         label: 'oauth2_clients',
+        icon: 'flash_auto',
         pageLabel: 'oauth2_clients',
         authority: 'F_OAUTH2_CLIENT_MANAGE',
         settings: ['oauth2clients'],

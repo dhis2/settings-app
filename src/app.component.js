@@ -7,6 +7,7 @@ import RaisedButton from 'material-ui/lib/raised-button';
 import TextField from 'material-ui/lib/text-field';
 import Card from 'material-ui/lib/card/card';
 import CardText from 'material-ui/lib/card/card-text';
+import FontIcon from 'material-ui/lib/font-icon';
 
 // D2 UI
 import HeaderBar from 'd2-ui/lib/header-bar/HeaderBar.component';
@@ -59,6 +60,11 @@ const styles = {
         color: AppTheme.rawTheme.palette.accent1Color,
         marginTop: -8,
         fontStyle: 'italic',
+    },
+    menuLabel: {
+        position: 'relative',
+        top: -6,
+        marginLeft: 16,
     },
 };
 
@@ -215,11 +221,11 @@ export default React.createClass({
                             menuItems: mapping.source
                                 ? configOptionStore.state && configOptionStore.state[mapping.source] || []
                                 : Object.keys(mapping.options).map(id => {
-                                    const displayName = !isNaN(mapping.options[id]) ?
-                                        mapping.options[id] :
-                                        d2.i18n.getTranslation(mapping.options[id]);
-                                    return { id, displayName };
-                                }),
+                                const displayName = !isNaN(mapping.options[id]) ?
+                                    mapping.options[id] :
+                                    d2.i18n.getTranslation(mapping.options[id]);
+                                return { id, displayName };
+                            }),
                             includeEmpty: !!mapping.includeEmpty,
                             emptyLabel: (
                                 mapping.includeEmpty && mapping.emptyLabel &&
@@ -338,7 +344,14 @@ export default React.createClass({
         const sections = Object.keys(categories).map(category => {
             const key = category;
             const label = this.props.d2.i18n.getTranslation(categories[category].label);
-            return { key, label };
+            const icon = categories[category].icon;
+            // TODO: Un-hack?
+            return { key, label: (
+                <span>
+                    <FontIcon className="material-icons">{icon}</FontIcon>
+                    <span style={styles.menuLabel}>{label}</span>
+                </span>
+            ) };
         });
         const setSidebar = (ref) => {
             this.sidebar = ref;
