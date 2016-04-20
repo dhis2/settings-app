@@ -10,7 +10,7 @@ import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';
 import configOptionStore from '../configOptionStore';
 import settingsKeyMapping from '../settingsKeyMapping';
-import { getInstance as getD2 } from 'd2/lib/d2';
+import { getInstance as getD2, config } from 'd2/lib/d2';
 import {Table, Column, Cell} from 'fixed-data-table';
 
 class customComponent extends React.Component {
@@ -59,71 +59,87 @@ class customComponent extends React.Component {
         this.state.selectedTransactionType = value;
     }
 
-  componentDidMount(){
-    var self = this;
-    this.getVersions(self);
-    this.getSettings(self);
-    //this.getRemoteMasterVersion(self);
-  };
+    componentDidMount(){
+      console.log(config.baseUrl);
+      var self = this;
+      this.getVersions(self);
+      this.getSettings(self);
+      //this.getRemoteMasterVersion(self);
+    };
 
-  getVersions(self){
-    getD2().then(d2 => {
-        return d2.Api.getApi().get('/metadata/versions');
-      })
-      .then(result=>{
-        var versions = result.metadataversions.reverse();
-        self.setState({
-          metadataVersions: versions,
-          masterVersionName: versions[0].name
+    getVersions(self){
+      getD2().then(d2 => {
+          return d2.Api.getApi().get('/metadata/versions');
+        })
+        .then(result=>{
+          var versions = result.metadataversions.reverse();
+          self.setState({
+            metadataVersions: versions,
+            masterVersionName: versions[0].name
+          });
+        })
+        .catch(error => {
+          console.log('error', error);
         });
-      })
-      .catch(error => {
-        console.log('error', error.message);
-      });
-  };
+    };
 
-  getSettings(self){
-    getD2().then(d2 => {
-        return d2.Api.getApi().get('/systemSettings');
-      })
-      .then(result=>{
-        self.setState({
-          lastFailedTime: result.keyMetadataLastFailedTime,
-          isVersioningEnabled: result.keyVersionEnabled,
-          hqInstanceUrl: result.keyRemoteInstanceUrl
+    getSettings(self){
+      getD2().then(d2 => {
+          return d2.Api.getApi().get('/systemSettings');
+        })
+        .then(result=>{
+          self.setState({
+            lastFailedTime: result.keyMetadataLastFailedTime,
+            isVersioningEnabled: result.keyVersionEnabled,
+            hqInstanceUrl: result.keyRemoteInstanceUrl
+          });
+          if(this.state.isVersioningEnabled)
+            this.state.showVersions = "block";
+          else
+            this.state.showVersions= "none";
+
+          console.log(this.state.hqInstanceUrl)
+        })
+        .catch(error => {
+          console.log('error', error);
         });
-        if(this.state.isVersioningEnabled)
-          this.state.showVersions = "block";
-        else
-          this.state.showVersions= "none";
+    };
 
-        console.log(this.state.showVersions)
+    saveVersion(){
+      var mapping = settingsKeyMapping[this.createVersionKey];
+      getD2().then(d2 => {
+        return d2.Api.getApi().post(mapping.uri+'?type='+this.state.selectedTransactionType)
+        //d2.Api.getApi().post(mapping.uri+'?type=BEST_EFFORT')
       })
-      .catch(error => {
-        console.log('error', error.message);
+      .then(result => {
+        settingsActions.load(true);
+        settingsActions.showSnackbarMessage('Version updated in system.');
+      }).catch(error => {
+        //log.error(error);
+        settingsActions.showSnackbarMessage('Version not updated in system. Contact your system administrator.');
       });
-  };
+    };
 
-  //getRemoteMasterVersion(self){
-  //  init({baseUrl: this.state.hqInstanceUrl+'/api'})
-  //  .then(d2=>{
-  //    return d2.Api.getApi().get('/metadata/version');
-  //  })
-  //    .then(result=>{
-  //      var remoteVersion = result;
-  //      self.setState({
-  //        remoteVersionName: remoteVersion.name
-  //      });
-  //
-  //      //To identify if it is hq or local
-  //      if(this.state.hqInstanceUrl.length!=0)
-  //        this.state.masterVersionName=this.state.remoteVersionName;
-  //
-  //    })
-  //    .catch(error => {
-  //      console.log('error', error.message);
-  //    });
-  //}
+    //getRemoteMasterVersion(self){
+    //  dhis2({baseUrl: this.state.hqInstanceUrl+'/api'})
+    //  .then(d2=>{
+    //    return d2.Api.getApi().get('/metadata/version');
+    //  })
+    //    .then(result=>{
+    //      var remoteVersion = result;
+    //      self.setState({
+    //        remoteVersionName: remoteVersion.name
+    //      });
+    //
+    //      //To identify if it is hq or local
+    //      if(this.state.hqInstanceUrl.length!=0)
+    //        this.state.masterVersionName=this.state.remoteVersionName;
+    //
+    //    })
+    //    .catch(error => {
+    //      console.log('error', error);
+    //    });
+    //};
 
     render(){
         const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
@@ -144,29 +160,13 @@ class customComponent extends React.Component {
                 },
         }];
 
-        const mapping = settingsKeyMapping[this.createVersionKey];
-        const createversionfields = [
-            {
+        const createversionfields = [{
                 component: RaisedButton,
                 props: {
                     label: 'Create new version',
                     onClick: () => {
-                        const qry = getD2().then(d2 => {
-                                d2.Api.getApi().post(mapping.uri+'?type='+this.state.selectedTransactionType)});
-                                //d2.Api.getApi().post(mapping.uri+'?type=BEST_EFFORT')})    ;
-                        qry.then(result => {
-                            //log.info(result && result.message || 'Ok');
-                            settingsActions.load(true);
-                            settingsActions.showSnackbarMessage('Version updated in system.');
-                        }).catch(error => {
-                            //log.error(error.message);
-                            settingsActions.showSnackbarMessage('Version not updated in system. Contact your system administrator.');
-                        })
-                        .then(
-                          this.getVersions(this)
-                        );
+                            this.saveVersion().then(this.getVersions);
                     },
-                    style: { minWidth: 'initial', maxWidth: 'initial', marginTop: '1em' },
                 },
             }
             //,{
@@ -178,8 +178,8 @@ class customComponent extends React.Component {
             //}
         ];
 
-        const styleForMetadataVersion = {
-          master: {
+        const styles = {
+          bold: {
             "font-weight": "bold"
           },
           isVisible: {
@@ -198,10 +198,10 @@ class customComponent extends React.Component {
                         <FormBuilder fields={checkboxfields} onUpdateField={this.saveSettingsKey}/>
                     </div>
 
-              <div style={styleForMetadataVersion.isVisible}>
+              <div style={styles.isVisible}>
                     <br/><br/>
                     <h3>{this.getLocaleName("Create a new version")}</h3><hr/>
-                    <div style={styleForMetadataVersion.singleLine}>
+                    <div style={styles.singleLine}>
                         <RadioButtonGroup name="version_types" onChange={this.onSelectTransaction} defaultSelected="BEST_EFFORT">
                             <RadioButton
                               value="BEST_EFFORT"
@@ -211,19 +211,19 @@ class customComponent extends React.Component {
                               value="ATOMIC"
                               label="Atomic"
                             />
-                        </RadioButtonGroup>
+                        </RadioButtonGroup><br/>
                       <FormBuilder fields={createversionfields} onUpdateField={this.createVersionKey}/>
                     </div>
 
               <br/><br/><br/>
 
               <div>
-                <label for="master-version" style={styleForMetadataVersion.master}>Master Version: </label>
+                <label for="master-version" style={styles.bold}>Master Version: </label>
                 <span id="master-version">{this.state.masterVersionName}</span>
               </div>
 
               <div align="right">
-                <label style={styleForMetadataVersion.master}> Last sync attempt: </label>
+                <label style={styles.bold}> Last sync attempt: </label>
                 <span>{this.state.lastFailedTime}</span>
               </div>
 
