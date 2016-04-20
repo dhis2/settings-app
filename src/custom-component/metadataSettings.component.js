@@ -12,8 +12,9 @@ import configOptionStore from '../configOptionStore';
 import settingsKeyMapping from '../settingsKeyMapping';
 import { getInstance as getD2, config } from 'd2/lib/d2';
 import {Table, Column, Cell} from 'fixed-data-table';
+import metadataVersioningTable from './metadataVersioningTable';
 
-class customComponent extends React.Component {
+class metadataSettings extends React.Component {
     constructor(props, context) {
         super(props, context);
 
@@ -64,7 +65,7 @@ class customComponent extends React.Component {
       var self = this;
       this.getVersions(self);
       this.getSettings(self);
-      //this.getRemoteMasterVersion(self);
+      this.getRemoteMasterVersion(self);
     };
 
     getVersions(self){
@@ -120,26 +121,26 @@ class customComponent extends React.Component {
       });
     };
 
-    //getRemoteMasterVersion(self){
-    //  dhis2({baseUrl: this.state.hqInstanceUrl+'/api'})
-    //  .then(d2=>{
-    //    return d2.Api.getApi().get('/metadata/version');
-    //  })
-    //    .then(result=>{
-    //      var remoteVersion = result;
-    //      self.setState({
-    //        remoteVersionName: remoteVersion.name
-    //      });
-    //
-    //      //To identify if it is hq or local
-    //      if(this.state.hqInstanceUrl.length!=0)
-    //        this.state.masterVersionName=this.state.remoteVersionName;
-    //
-    //    })
-    //    .catch(error => {
-    //      console.log('error', error);
-    //    });
-    //};
+    getRemoteMasterVersion(self){
+      dhis2({baseUrl: this.state.hqInstanceUrl+'/api'})
+      .then(d2=>{
+        return d2.Api.getApi().get('/metadata/version');
+      })
+        .then(result=>{
+          var remoteVersion = result;
+          self.setState({
+            remoteVersionName: remoteVersion.name
+          });
+
+          //To identify if it is hq or local
+          if(this.state.hqInstanceUrl.length!=0)
+            this.state.masterVersionName=this.state.remoteVersionName;
+
+        })
+        .catch(error => {
+          console.log('error', error);
+        });
+    };
 
     render(){
         const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
@@ -191,7 +192,7 @@ class customComponent extends React.Component {
         };
 
         return (
-            <div>
+            <div className="metadataSettings">
                     <br/><br/>
                     <h2>{this.getLocaleName("Metadata Versioning")}</h2>
                     <div>
@@ -218,8 +219,8 @@ class customComponent extends React.Component {
               <br/><br/><br/>
 
               <div>
-                <label for="master-version" style={styles.bold}>Master Version: </label>
-                <span id="master-version">{this.state.masterVersionName}</span>
+                <label style={styles.bold}>Master Version: </label>
+                <span>{this.state.masterVersionName}</span>
               </div>
 
               <div align="right">
@@ -269,4 +270,4 @@ class customComponent extends React.Component {
     }
 }
 
-export default customComponent;
+export default metadataSettings;
