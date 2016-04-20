@@ -18,7 +18,7 @@ import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.component';
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component';
 import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component.js';
-import customComponent from './custom-component/metadataSettings.component.js';
+import metadataSettings from './metadata-settings/metadataSettings.component.js';
 import MuiThemeMixin from './mui-theme.mixin.js';
 import SelectField from './form-fields/drop-down';
 import Checkbox from './form-fields/check-box';
@@ -290,9 +290,9 @@ export default React.createClass({
                     return Object.assign({}, fieldBase, {
                         component: LocalizedAppearance,
                     });
-                case 'customComponent':
+                case 'metadataSettings':
                     return Object.assign({}, fieldBase, {
-                        component: customComponent,
+                        component: metadataSettings,
                     });
                 default:
                     log.warn(`Unknown control type "${mapping.type}" encountered for field "${key}"`);

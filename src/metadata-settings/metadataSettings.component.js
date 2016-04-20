@@ -12,7 +12,6 @@ import configOptionStore from '../configOptionStore';
 import settingsKeyMapping from '../settingsKeyMapping';
 import { getInstance as getD2, config } from 'd2/lib/d2';
 import {Table, Column, Cell} from 'fixed-data-table';
-import metadataVersioningTable from './metadataVersioningTable';
 
 class metadataSettings extends React.Component {
     constructor(props, context) {
@@ -65,7 +64,7 @@ class metadataSettings extends React.Component {
       var self = this;
       this.getVersions(self);
       this.getSettings(self);
-      this.getRemoteMasterVersion(self);
+      //this.getRemoteMasterVersion(self);
     };
 
     getVersions(self){
@@ -121,26 +120,26 @@ class metadataSettings extends React.Component {
       });
     };
 
-    getRemoteMasterVersion(self){
-      dhis2({baseUrl: this.state.hqInstanceUrl+'/api'})
-      .then(d2=>{
-        return d2.Api.getApi().get('/metadata/version');
-      })
-        .then(result=>{
-          var remoteVersion = result;
-          self.setState({
-            remoteVersionName: remoteVersion.name
-          });
-
-          //To identify if it is hq or local
-          if(this.state.hqInstanceUrl.length!=0)
-            this.state.masterVersionName=this.state.remoteVersionName;
-
-        })
-        .catch(error => {
-          console.log('error', error);
-        });
-    };
+    //getRemoteMasterVersion(self){
+    //  dhis2({baseUrl: this.state.hqInstanceUrl+'/api'})
+    //  .then(d2=>{
+    //    return d2.Api.getApi().get('/metadata/version');
+    //  })
+    //    .then(result=>{
+    //      var remoteVersion = result;
+    //      self.setState({
+    //        remoteVersionName: remoteVersion.name
+    //      });
+    //
+    //      //To identify if it is hq or local
+    //      if(this.state.hqInstanceUrl.length!=0)
+    //        this.state.masterVersionName=this.state.remoteVersionName;
+    //
+    //    })
+    //    .catch(error => {
+    //      console.log('error', error);
+    //    });
+    //};
 
     render(){
         const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
@@ -166,7 +165,8 @@ class metadataSettings extends React.Component {
                 props: {
                     label: 'Create new version',
                     onClick: () => {
-                            this.saveVersion().then(this.getVersions);
+                            this.saveVersion();
+                            this.handleChange();
                     },
                 },
             }
@@ -192,7 +192,7 @@ class metadataSettings extends React.Component {
         };
 
         return (
-            <div className="metadataSettings">
+            <div>
                     <br/><br/>
                     <h2>{this.getLocaleName("Metadata Versioning")}</h2>
                     <div>

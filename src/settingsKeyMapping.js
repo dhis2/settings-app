@@ -412,7 +412,7 @@ const settingsKeyMapping = {
     },
     keyMetadataDataVersioning: {
         label: 'KeyMetaDataVersioning',
-        type: 'customComponent',
+        type: 'metadataSettings',
     },
     keyVersionEnabled: {
         label: 'keyVersionEnabled',
