@@ -1,3 +1,5 @@
+require('fixed-data-table/dist/fixed-data-table.css');
+
 import React from 'react';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import Checkbox from '../form-fields/check-box';
@@ -17,7 +19,13 @@ class customComponent extends React.Component {
 
         this.state = {
             metadataVersions:[],
-            selectedTransactionType: null
+            selectedTransactionType: "BEST_EFFORT",
+            masterVersionName: null,
+            lastFailedTime: null,
+            hqInstanceUrl: null,
+            isVersioningEnabled: null,
+            showVersions: null,
+            remoteVersionName: null
             //locale: context.d2.currentUser.uiLocale,
             //localeName: LocalizedTextEditor.getLocaleName(context.d2.currentUser.uiLocale),
         };
@@ -53,12 +61,20 @@ class customComponent extends React.Component {
 
   componentDidMount(){
     var self = this;
-    const qry=getD2().then(d2 => {
+    this.getVersions(self);
+    this.getSettings(self);
+    //this.getRemoteMasterVersion(self);
+  };
+
+  getVersions(self){
+    getD2().then(d2 => {
         return d2.Api.getApi().get('/metadata/versions');
       })
       .then(result=>{
+        var versions = result.metadataversions.reverse();
         self.setState({
-          metadataVersions: result.metadataversions.reverse()
+          metadataVersions: versions,
+          masterVersionName: versions[0].name
         });
       })
       .catch(error => {
@@ -66,6 +82,48 @@ class customComponent extends React.Component {
       });
   };
 
+  getSettings(self){
+    getD2().then(d2 => {
+        return d2.Api.getApi().get('/systemSettings');
+      })
+      .then(result=>{
+        self.setState({
+          lastFailedTime: result.keyMetadataLastFailedTime,
+          isVersioningEnabled: result.keyVersionEnabled,
+          hqInstanceUrl: result.keyRemoteInstanceUrl
+        });
+        if(this.state.isVersioningEnabled)
+          this.state.showVersions = "block";
+        else
+          this.state.showVersions= "none";
+
+        console.log(this.state.showVersions)
+      })
+      .catch(error => {
+        console.log('error', error.message);
+      });
+  };
+
+  //getRemoteMasterVersion(self){
+  //  init({baseUrl: this.state.hqInstanceUrl+'/api'})
+  //  .then(d2=>{
+  //    return d2.Api.getApi().get('/metadata/version');
+  //  })
+  //    .then(result=>{
+  //      var remoteVersion = result;
+  //      self.setState({
+  //        remoteVersionName: remoteVersion.name
+  //      });
+  //
+  //      //To identify if it is hq or local
+  //      if(this.state.hqInstanceUrl.length!=0)
+  //        this.state.masterVersionName=this.state.remoteVersionName;
+  //
+  //    })
+  //    .catch(error => {
+  //      console.log('error', error.message);
+  //    });
+  //}
 
     render(){
         const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
@@ -74,10 +132,14 @@ class customComponent extends React.Component {
                 value: settingsStore.state && settingsStore.state[this.saveSettingsKey + localeAppendage] || '',
                 component: Checkbox,
                 props: {
-                    label: 'keyVersionEnabled',
+                    label: 'Enable versioning for metadata sync',
                     checked: (settingsStore.state && settingsStore.state[this.saveSettingsKey]) === 'true',
                     onCheck: (e, v) => {
                         settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false');
+                        if(v)
+                          this.state.showVersions = "block";
+                        else
+                          this.state.showVersions = "none";
                     },
                 },
         }];
@@ -87,7 +149,7 @@ class customComponent extends React.Component {
             {
                 component: RaisedButton,
                 props: {
-                    label: 'create_metadata_version',
+                    label: 'Create new version',
                     onClick: () => {
                         const qry = getD2().then(d2 => {
                                 d2.Api.getApi().post(mapping.uri+'?type='+this.state.selectedTransactionType)});
@@ -99,7 +161,10 @@ class customComponent extends React.Component {
                         }).catch(error => {
                             //log.error(error.message);
                             settingsActions.showSnackbarMessage('Version not updated in system. Contact your system administrator.');
-                        });
+                        })
+                        .then(
+                          this.getVersions(this)
+                        );
                     },
                     style: { minWidth: 'initial', maxWidth: 'initial', marginTop: '1em' },
                 },
@@ -113,37 +178,61 @@ class customComponent extends React.Component {
             //}
         ];
 
+        const styleForMetadataVersion = {
+          master: {
+            "font-weight": "bold"
+          },
+          isVisible: {
+            "display": this.state.showVersions
+          },
+          singleLine: {
+            "display": "inline-block"
+          }
+        };
+
         return (
             <div>
                     <br/><br/>
-                    <h3>{this.getLocaleName("metadata_versioning")}</h3>
+                    <h2>{this.getLocaleName("Metadata Versioning")}</h2>
                     <div>
                         <FormBuilder fields={checkboxfields} onUpdateField={this.saveSettingsKey}/>
                     </div>
 
+              <div style={styleForMetadataVersion.isVisible}>
                     <br/><br/>
-                    <h4>{this.getLocaleName("create_new_version_label")}</h4><hr/>
-                    <div>
-                        <RadioButtonGroup ref="version_types" name="version_types" value={this.state.version_types} onChange={this.onSelectTransaction} defaultSelected="BEST_EFFORT">
+                    <h3>{this.getLocaleName("Create a new version")}</h3><hr/>
+                    <div style={styleForMetadataVersion.singleLine}>
+                        <RadioButtonGroup name="version_types" onChange={this.onSelectTransaction} defaultSelected="BEST_EFFORT">
                             <RadioButton
                               value="BEST_EFFORT"
-                              label="BEST EFFORT"
+                              label="Best Effort"
                             />
                             <RadioButton
                               value="ATOMIC"
-                              label="ATOMIC"
+                              label="Atomic"
                             />
                         </RadioButtonGroup>
+                      <FormBuilder fields={createversionfields} onUpdateField={this.createVersionKey}/>
                     </div>
-                    <div>
-                        <FormBuilder fields={createversionfields} onUpdateField={this.createVersionKey}/>
-                    </div><br/><br/>
+
+              <br/><br/><br/>
+
+              <div>
+                <label for="master-version" style={styleForMetadataVersion.master}>Master Version: </label>
+                <span id="master-version">{this.state.masterVersionName}</span>
+              </div>
+
+              <div align="right">
+                <label style={styleForMetadataVersion.master}> Last sync attempt: </label>
+                <span>{this.state.lastFailedTime}</span>
+              </div>
+
               <div>
                 <Table
                   rowHeight={50}
                   rowsCount={this.state.metadataVersions.length}
-                  width={600}
-                  maxHeight={(this.state.metadataVersions.length + 1) * 50}
+                  width={700}
+                  maxHeight={(50 * 6)}
                   headerHeight={50}>
                   <Column
                     header={<Cell>Version</Cell>}
@@ -160,7 +249,7 @@ class customComponent extends React.Component {
               <Cell {...props}>
                 {this.state.metadataVersions[rowIndex].created}
               </Cell>
-            )}                          width={300}
+            )}                          width={400}
                   />
                   <Column
                     header={<Cell>Type</Cell>}
@@ -174,6 +263,7 @@ class customComponent extends React.Component {
                 </Table>
               </div>
 
+         </div>
             </div>
         );
     }
