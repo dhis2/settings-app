@@ -147,7 +147,7 @@ export const categories = {
     },
     oauth2: {
         label: 'oauth2_clients',
-        icon: 'flash_auto',
+        icon: 'vpn_lock',
         pageLabel: 'oauth2_clients',
         authority: 'F_OAUTH2_CLIENT_MANAGE',
         settings: ['oauth2clients'],
