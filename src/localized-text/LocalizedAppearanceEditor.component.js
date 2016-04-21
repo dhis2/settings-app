@@ -15,7 +15,6 @@ const styles = {
         padding: '0 16px 8px',
         borderRadius: 2,
         boxShadow: '0px 0px 5px rgba(0,0,0,0.15), 0px 2px 3px rgba(0,0,0,0.15)',
-        border: '2px solid rgba(33,150,243,0.3)',
     },
     field: {
         width: '100%',
