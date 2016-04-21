@@ -26,7 +26,8 @@ class metadataSettings extends React.Component {
             hqInstanceUrl: null,
             isVersioningEnabled: null,
             showVersions: null,
-            remoteVersionName: null
+            remoteVersionName: null,
+            isLocal: null
             //locale: context.d2.currentUser.uiLocale,
             //localeName: LocalizedTextEditor.getLocaleName(context.d2.currentUser.uiLocale),
         };
@@ -97,9 +98,7 @@ class metadataSettings extends React.Component {
             lastFailedTime: result.keyMetadataLastFailedTime,
             isVersioningEnabled: result.keyVersionEnabled,
             hqInstanceUrl: result.keyRemoteInstanceUrl,
-            remoteVersionName: result.keyRemoteMetadataVersion,
-            masterVersionName: ( (this.state.hqInstanceUrl!=undefined && this.state.hqInstanceUrl.length!=0) ?
-                                this.state.remoteVersionName:this.state.metadataVersions[0].name)
+            remoteVersionName: result.keyRemoteMetadataVersion
           });
 
           if(this.state.isVersioningEnabled)
@@ -107,10 +106,14 @@ class metadataSettings extends React.Component {
           else
             this.state.showVersions= "none";
 
-          console.log(this.state.hqInstanceUrl)
-          console.log(this.state.remoteVersionName)
-          console.log(this.state.metadataVersions[0].name)
-          console.log(this.state.masterVersionName);
+          if(this.state.hqInstanceUrl!=undefined && this.state.hqInstanceUrl.length!=0)
+            self.setState({isLocal: "block",
+              masterVersionName:this.state.remoteVersionName
+            });
+          else
+            self.setState({isLocal: "none",
+              masterVersionName:this.state.metadataVersions[0].name
+            });
 
           return Promise.resolve()
         })
@@ -204,7 +207,7 @@ class metadataSettings extends React.Component {
             "display": "inline-block"
           },
           isLocal: {
-            "display":"none"
+            "display": this.state.isLocal,
           }
         };
 
@@ -240,7 +243,7 @@ class metadataSettings extends React.Component {
                 <span>{this.state.masterVersionName}</span>
               </div>
 
-              <div align="right">
+              <div align="right" style={styles.isLocal}>
                 <label style={styles.bold}> Last sync attempt: </label>
                 <span>{this.state.lastFailedTime}</span>
               </div>
@@ -279,7 +282,7 @@ class metadataSettings extends React.Component {
                     width={150}
                   />
 
-                  <Column style={styles.isLocal}
+                  <Column
                     header={<Cell>Last Sync</Cell>}
                     cell={({rowIndex, ...props}) => (
               <Cell {...props}>
