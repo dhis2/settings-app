@@ -12,6 +12,7 @@ import configOptionStore from '../configOptionStore';
 import settingsKeyMapping from '../settingsKeyMapping';
 import { getInstance as getD2, config } from 'd2/lib/d2';
 import {Table, Column, Cell} from 'fixed-data-table';
+import metadataVersioningTable from './metadataVersioningTable';
 
 class metadataSettings extends React.Component {
     constructor(props, context) {
@@ -62,43 +63,56 @@ class metadataSettings extends React.Component {
     componentDidMount(){
       console.log(config.baseUrl);
       var self = this;
-      this.getVersions(self);
-      this.getSettings(self);
+      this.getVersions(self)
+        .then(function(){
+          self.getSettings(self)
+        });
+
       //this.getRemoteMasterVersion(self);
     };
 
     getVersions(self){
-      getD2().then(d2 => {
+      return getD2().then(d2 => {
           return d2.Api.getApi().get('/metadata/versions');
         })
         .then(result=>{
           var versions = result.metadataversions.reverse();
           self.setState({
-            metadataVersions: versions,
-            masterVersionName: versions[0].name
+            metadataVersions: versions
           });
+          return Promise.resolve()
         })
         .catch(error => {
           console.log('error', error);
+          return Promise.resolve()
         });
     };
 
     getSettings(self){
-      getD2().then(d2 => {
+      return getD2().then(d2 => {
           return d2.Api.getApi().get('/systemSettings');
         })
         .then(result=>{
           self.setState({
             lastFailedTime: result.keyMetadataLastFailedTime,
             isVersioningEnabled: result.keyVersionEnabled,
-            hqInstanceUrl: result.keyRemoteInstanceUrl
+            hqInstanceUrl: result.keyRemoteInstanceUrl,
+            remoteVersionName: result.keyRemoteMetadataVersion,
+            masterVersionName: ( (this.state.hqInstanceUrl!=undefined && this.state.hqInstanceUrl.length!=0) ?
+                                this.state.remoteVersionName:this.state.metadataVersions[0].name)
           });
+
           if(this.state.isVersioningEnabled)
             this.state.showVersions = "block";
           else
             this.state.showVersions= "none";
 
           console.log(this.state.hqInstanceUrl)
+          console.log(this.state.remoteVersionName)
+          console.log(this.state.metadataVersions[0].name)
+          console.log(this.state.masterVersionName);
+
+          return Promise.resolve()
         })
         .catch(error => {
           console.log('error', error);
@@ -188,6 +202,9 @@ class metadataSettings extends React.Component {
           },
           singleLine: {
             "display": "inline-block"
+          },
+          isLocal: {
+            "display":"none"
           }
         };
 
@@ -250,7 +267,7 @@ class metadataSettings extends React.Component {
               <Cell {...props}>
                 {this.state.metadataVersions[rowIndex].created}
               </Cell>
-            )}                          width={400}
+            )}                          width={200}
                   />
                   <Column
                     header={<Cell>Type</Cell>}
@@ -261,6 +278,17 @@ class metadataSettings extends React.Component {
             )}
                     width={150}
                   />
+
+                  <Column style={styles.isLocal}
+                    header={<Cell>Last Sync</Cell>}
+                    cell={({rowIndex, ...props}) => (
+              <Cell {...props}>
+                {this.state.metadataVersions[rowIndex].importdate}
+              </Cell>
+            )}
+                    width={200}
+                  />
+
                 </Table>
               </div>
 

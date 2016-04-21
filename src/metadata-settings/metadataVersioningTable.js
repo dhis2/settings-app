@@ -3,7 +3,6 @@ require('fixed-data-table/dist/fixed-data-table.css');
 var React = require('react');
 import { getInstance as getD2, config, init as dhis2 } from 'd2/lib/d2';
 import {Table, Column, Cell} from 'fixed-data-table';
-import metadataSettings from './metadataSettings.component';
 
 class metadataVersioningTable extends React.Component {
   constructor(props, context) {
