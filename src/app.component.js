@@ -58,8 +58,12 @@ const styles = {
     },
     userSettingsOverride: {
         color: AppTheme.rawTheme.palette.accent1Color,
-        marginTop: -8,
-        fontStyle: 'italic',
+        marginTop: -6,
+        fontSize: '0.8rem',
+        fontWeight: 300,
+    },
+    menuIcon: {
+        color: '#757575',
     },
     menuLabel: {
         position: 'relative',
@@ -74,9 +78,9 @@ function userSettingsOverride(d2, component, valueLabel) {
             const labelStyle = Object.assign({}, styles.userSettingsOverride);
             if (component === Checkbox) {
                 labelStyle.marginLeft = 40;
-                labelStyle.marginTop = -16;
+                labelStyle.marginTop = -14;
             } else if (component === SelectField && this.props.value === '') {
-                labelStyle.marginTop = -24;
+                labelStyle.marginTop = -22;
             }
 
             return (
@@ -348,7 +352,7 @@ export default React.createClass({
             // TODO: Un-hack?
             return { key, label: (
                 <span>
-                    <FontIcon className="material-icons">{icon}</FontIcon>
+                    <FontIcon className="material-icons" style={styles.menuIcon}>{icon}</FontIcon>
                     <span style={styles.menuLabel}>{label}</span>
                 </span>
             ) };
