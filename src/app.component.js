@@ -41,6 +41,7 @@ const styles = {
     card: {
         marginTop: 8,
         marginRight: '1rem',
+        padding: '0 1rem',
     },
     cardTitle: {
         background: AppTheme.rawTheme.palette.primary2Color,
