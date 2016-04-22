@@ -207,6 +207,7 @@ const settingsKeyMapping = {
         label: 'style',
         type: 'dropdown',
         userSettingsOverride: true,
+        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
         source: 'styles',
     },
     startModule: {
@@ -223,18 +224,21 @@ const settingsKeyMapping = {
         label: 'ui_locale',
         type: 'dropdown',
         userSettingsOverride: true,
+        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
         source: 'locales',
     },
     keyDbLocale: {
         label: 'db_locale',
         type: 'dropdown',
         userSettingsOverride: true,
+        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
         source: 'locales',
     },
     keyAnalysisDisplayProperty: {
         label: 'analysis_display_property',
         type: 'dropdown',
         userSettingsOverride: true,
+        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
         options: {
             name: 'name',
             shortName: 'short_name',
@@ -294,11 +298,13 @@ const settingsKeyMapping = {
         label: 'enable_message_email_notifications',
         type: 'checkbox',
         userSettingsOverride: true,
+        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
     },
     keyMessageSmsNotification: {
         label: 'enable_message_sms_notifications',
         type: 'checkbox',
         userSettingsOverride: true,
+        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
     },
     /* ============================================================================================================ */
     /* Category: Access                                                                                             */
