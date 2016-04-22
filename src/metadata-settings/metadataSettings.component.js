@@ -95,10 +95,11 @@ class metadataSettings extends React.Component {
         })
         .then(result=>{
           self.setState({
-            lastFailedTime: result.keyMetadataLastFailedTime,
+            lastFailedTime: result.keyMetadataFailedVersion.importDate, //TODO: need to check if result.keyMetadataLastFailedTime
             isVersioningEnabled: result.keyVersionEnabled,
             hqInstanceUrl: result.keyRemoteInstanceUrl,
-            remoteVersionName: result.keyRemoteMetadataVersion
+            remoteVersionName: result.keyRemoteMetadataVersion,
+            lastFailedVersion: result.keyMetadataFailedVersion.name
           });
 
           if(this.state.isVersioningEnabled)
@@ -109,7 +110,10 @@ class metadataSettings extends React.Component {
           if( this.state.hqInstanceUrl!=undefined && this.state.hqInstanceUrl.length!=0 ) //&& this.state.metadataVersions[0].importdate!=undefined
             self.setState({isLocal: "inline-block",
               masterVersionName:this.state.remoteVersionName,
-              isHQ: "none"
+              isHQ: "none",
+              isLastSyncValid: ( ( new Date(this.state.lastFailedTime)>new Date(this.state.metadataVersions[0].created) ) ?
+                                "inline-block":"none")
+              //TODO: need to change to importdate later
             });
           else
             self.setState({isLocal: "none",
@@ -215,9 +219,9 @@ class metadataSettings extends React.Component {
           isHQ: {
             "display": this.state.isHQ
           },
-          masterVersionWrapper: {
-            display: "inline-block",
-            float: "left"
+          isLastSyncValid: {
+            "display": this.state.isLastSyncValid,
+            float: "right"
           }
         };
 
@@ -252,15 +256,17 @@ class metadataSettings extends React.Component {
 
               <br/><br/><br/>
               <div>
-                <div style={styles.masterVersionWrapper}>
+                <div style={{display: "inline-block",float: "left"}}>
                   <label style={{"font-weight": "bold"}}>Master Version: </label>
                   <span>{this.state.masterVersionName}</span>
                 </div>
 
                 <div align="right" style={styles.isLocal}>
-                  <label style={{"font-weight": "bold"}}> Last sync attempt: </label>
-                  <span>name</span>
-                  <span> | <span style={{"color":"red"}}>Failed</span> | {new Date(this.state.lastFailedTime).toLocaleString()}</span>
+                  <div align="right" style={styles.isLastSyncValid}>
+                    <label style={{"font-weight": "bold"}}> Last sync attempt: </label>
+                    <span>{this.state.lastFailedVersion}</span>
+                    <span> | <span style={{"color":"red"}}>Failed</span> | {new Date(this.state.lastFailedTime).toLocaleString()}</span>
+                  </div>
                 </div>
               </div>
 
