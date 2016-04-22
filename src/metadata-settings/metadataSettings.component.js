@@ -68,8 +68,6 @@ class metadataSettings extends React.Component {
         .then(function(){
           self.getSettings(self)
         });
-
-      //this.getRemoteMasterVersion(self);
     };
 
     getVersions(self){
@@ -146,27 +144,6 @@ class metadataSettings extends React.Component {
       });
     };
 
-    //getRemoteMasterVersion(self){
-    //  dhis2({baseUrl: this.state.hqInstanceUrl+'/api'})
-    //  .then(d2=>{
-    //    return d2.Api.getApi().get('/metadata/version');
-    //  })
-    //    .then(result=>{
-    //      var remoteVersion = result;
-    //      self.setState({
-    //        remoteVersionName: remoteVersion.name
-    //      });
-    //
-    //      //To identify if it is hq or local
-    //      if(this.state.hqInstanceUrl.length!=0)
-    //        this.state.masterVersionName=this.state.remoteVersionName;
-    //
-    //    })
-    //    .catch(error => {
-    //      console.log('error', error);
-    //    });
-    //};
-
     render(){
         const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
         const checkboxfields = [{
@@ -191,11 +168,7 @@ class metadataSettings extends React.Component {
                 props: {
                     label: 'Create new version',
                     onClick: () => {
-                            this.saveVersion()
-                              .then(function(){
-                                self.getVersions(self);
-                              })
-                              .then(this.setState(this.state));
+                            this.saveVersion();
                     },
                 },
             }
@@ -263,7 +236,7 @@ class metadataSettings extends React.Component {
 
                 <div align="right" style={styles.isLocal}>
                   <div align="right" style={styles.isLastSyncValid}>
-                    <label style={{"font-weight": "bold"}}> Last sync attempt: </label>
+                    <label style={{"font-style": "italic"}}> Last sync attempt: </label>
                     <span>{this.state.lastFailedVersion}</span>
                     <span> | <span style={{"color":"red"}}>Failed</span> | {new Date(this.state.lastFailedTime).toLocaleString()}</span>
                   </div>
