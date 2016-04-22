@@ -106,19 +106,22 @@ class metadataSettings extends React.Component {
           else
             this.state.showVersions= "none";
 
-          if(this.state.hqInstanceUrl!=undefined && this.state.hqInstanceUrl.length!=0)
-            self.setState({isLocal: "block",
-              masterVersionName:this.state.remoteVersionName
+          if( this.state.hqInstanceUrl!=undefined && this.state.hqInstanceUrl.length!=0 ) //&& this.state.metadataVersions[0].importdate!=undefined
+            self.setState({isLocal: "inline-block",
+              masterVersionName:this.state.remoteVersionName,
+              isHQ: "none"
             });
           else
             self.setState({isLocal: "none",
-              masterVersionName:this.state.metadataVersions[0].name
+              masterVersionName:this.state.metadataVersions[0].name,
+              isHQ: "block"
             });
 
           return Promise.resolve()
         })
         .catch(error => {
           console.log('error', error);
+          return Promise.resolve()
         });
     };
 
@@ -131,9 +134,11 @@ class metadataSettings extends React.Component {
       .then(result => {
         settingsActions.load(true);
         settingsActions.showSnackbarMessage('Version updated in system.');
+        return Promise.resolve()
       }).catch(error => {
         //log.error(error);
         settingsActions.showSnackbarMessage('Version not updated in system. Contact your system administrator.');
+        return Promise.resolve()
       });
     };
 
@@ -182,8 +187,11 @@ class metadataSettings extends React.Component {
                 props: {
                     label: 'Create new version',
                     onClick: () => {
-                            this.saveVersion();
-                            this.handleChange();
+                            this.saveVersion()
+                              .then(function(){
+                                self.getVersions(self);
+                              })
+                              .then(this.setState(this.state));
                     },
                 },
             }
@@ -197,17 +205,19 @@ class metadataSettings extends React.Component {
         ];
 
         const styles = {
-          bold: {
-            "font-weight": "bold"
-          },
           isVisible: {
             "display": this.state.showVersions
           },
-          singleLine: {
-            "display": "inline-block"
-          },
           isLocal: {
             "display": this.state.isLocal,
+            float: "right"
+          },
+          isHQ: {
+            "display": this.state.isHQ
+          },
+          masterVersionWrapper: {
+            display: "inline-block",
+            float: "left"
           }
         };
 
@@ -222,8 +232,9 @@ class metadataSettings extends React.Component {
               <div style={styles.isVisible}>
                     <br/><br/>
                     <h3>{this.getLocaleName("Create a new version")}</h3><hr/>
-                    <div style={styles.singleLine}>
-                        <RadioButtonGroup name="version_types" onChange={this.onSelectTransaction} defaultSelected="BEST_EFFORT">
+                <div>
+                    <div style={{ "display": "inline-block" }}>
+                        <RadioButtonGroup name="version_types" onChange={this.onSelectTransaction} defaultSelected="BEST_EFFORT" style={{ display: 'flex' }}>
                             <RadioButton
                               value="BEST_EFFORT"
                               label="Best Effort"
@@ -232,23 +243,29 @@ class metadataSettings extends React.Component {
                               value="ATOMIC"
                               label="Atomic"
                             />
-                        </RadioButtonGroup><br/>
-                      <FormBuilder fields={createversionfields} onUpdateField={this.createVersionKey}/>
+                        </RadioButtonGroup>
+                      </div>
+                    <div style={{ "display": "inline-block", "float": "right" }}>
+                      <FormBuilder fields={createversionfields} onUpdateField={this.createVersionKey} />
                     </div>
+                  </div>
 
               <br/><br/><br/>
-
               <div>
-                <label style={styles.bold}>Master Version: </label>
-                <span>{this.state.masterVersionName}</span>
+                <div style={styles.masterVersionWrapper}>
+                  <label style={{"font-weight": "bold"}}>Master Version: </label>
+                  <span>{this.state.masterVersionName}</span>
+                </div>
+
+                <div align="right" style={styles.isLocal}>
+                  <label style={{"font-weight": "bold"}}> Last sync attempt: </label>
+                  <span>name</span>
+                  <span> | <span style={{"color":"red"}}>Failed</span> | {new Date(this.state.lastFailedTime).toLocaleString()}</span>
+                </div>
               </div>
 
-              <div align="right" style={styles.isLocal}>
-                <label style={styles.bold}> Last sync attempt: </label>
-                <span>{this.state.lastFailedTime}</span>
-              </div>
 
-              <div>
+              <div style={styles.isLocal}>
                 <Table
                   rowHeight={50}
                   rowsCount={this.state.metadataVersions.length}
@@ -268,7 +285,7 @@ class metadataSettings extends React.Component {
                     header={<Cell>When</Cell>}
                     cell={({rowIndex, ...props}) => (
               <Cell {...props}>
-                {this.state.metadataVersions[rowIndex].created}
+                {new Date(this.state.metadataVersions[rowIndex].created).toLocaleString()}
               </Cell>
             )}                          width={200}
                   />
@@ -286,7 +303,7 @@ class metadataSettings extends React.Component {
                     header={<Cell>Last Sync</Cell>}
                     cell={({rowIndex, ...props}) => (
               <Cell {...props}>
-                {this.state.metadataVersions[rowIndex].importdate}
+                {new Date(this.state.metadataVersions[rowIndex].importdate).toLocaleString()}
               </Cell>
             )}
                     width={200}
@@ -294,6 +311,45 @@ class metadataSettings extends React.Component {
 
                 </Table>
               </div>
+
+
+
+                <div style={styles.isHQ}>
+                  <Table
+                    rowHeight={50}
+                    rowsCount={this.state.metadataVersions.length}
+                    width={700}
+                    maxHeight={(50 * 6)}
+                    headerHeight={50}>
+                    <Column
+                      header={<Cell>Version</Cell>}
+                      cell={({rowIndex, ...props}) => (
+              <Cell {...props}>
+                {this.state.metadataVersions[rowIndex].name}
+              </Cell>
+            )}
+                      width={200}
+                    />
+                    <Column
+                      header={<Cell>When</Cell>}
+                      cell={({rowIndex, ...props}) => (
+              <Cell {...props}>
+                {new Date(this.state.metadataVersions[rowIndex].created).toLocaleString()}
+              </Cell>
+            )}                          width={300}
+                    />
+                    <Column
+                      header={<Cell>Type</Cell>}
+                      cell={({rowIndex, ...props}) => (
+              <Cell {...props}>
+                {this.state.metadataVersions[rowIndex].type}
+              </Cell>
+            )}
+                      width={200}
+                    />
+
+                  </Table>
+                </div>
 
          </div>
             </div>
