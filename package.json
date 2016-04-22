@@ -71,7 +71,7 @@
   "manifest.webapp": {
     "name": "DHIS 2 System Settings Management",
     "icons": {
-      "48": "dhis-web-settings.png"
+      "48": "icon.png"
     },
     "activities": {
       "dhis": {
