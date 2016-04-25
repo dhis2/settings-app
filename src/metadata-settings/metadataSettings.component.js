@@ -141,7 +141,7 @@ class metadataSettings extends React.Component {
         });
     };
 
-    saveVersion(){
+    saveVersion(self){
       var mapping = settingsKeyMapping[this.createVersionKey];
       getD2().then(d2 => {
         return d2.Api.getApi().post(mapping.uri+'?type='+this.state.selectedTransactionType)
@@ -151,7 +151,14 @@ class metadataSettings extends React.Component {
         settingsActions.load(true);
         settingsActions.showSnackbarMessage('Version updated in system.');
         return Promise.resolve()
-      }).catch(error => {
+      })
+        .then(function(){
+          self.getVersions(self)
+            .then(function(){
+              self.getSettings(self)
+            });
+        })
+        .catch(error => {
         //log.error(error);
         settingsActions.showSnackbarMessage('Version not updated in system. Contact your system administrator.');
         return Promise.resolve()
@@ -182,7 +189,7 @@ class metadataSettings extends React.Component {
                 props: {
                     label: 'Create new version',
                     onClick: () => {
-                            this.saveVersion();
+                            this.saveVersion(this);
                     },
                 },
             }
