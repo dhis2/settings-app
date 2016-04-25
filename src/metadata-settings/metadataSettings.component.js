@@ -87,6 +87,12 @@ class metadataSettings extends React.Component {
           self.setState({
             metadataVersions: versions
           });
+
+          if(this.state.metadataVersions!=undefined && this.state.metadataVersions.length!=0)
+            self.setState({ isSetupAvailable: "block", isInitialSetup: "none" });
+          else
+            self.setState({ isSetupAvailable: "none", isInitialSetup: "block" });
+
           return Promise.resolve()
         })
         .catch(error => {
@@ -203,6 +209,9 @@ class metadataSettings extends React.Component {
           isLastSyncValid: {
             "display": this.state.isLastSyncValid,
             float: "right"
+          },
+          isSetupAvailable:{
+            "display": this.state.isSetupAvailable
           }
         };
 
@@ -236,6 +245,8 @@ class metadataSettings extends React.Component {
                   </div>
 
               <br/><br/><br/>
+
+                <div style={styles.isSetupAvailable}>
               <div>
                 <div style={{display: "inline-block",float: "left"}}>
                   <label style={{"font-weight": "bold"}}>Master Version: </label>
@@ -336,6 +347,12 @@ class metadataSettings extends React.Component {
                     />
 
                   </Table>
+                </div>
+
+                  </div>
+
+                <div style={{display: this.state.isInitialSetup}}>
+                  <h4>No versions exist in system yet. Click CREATE NEW VERSION button to create versions.</h4>
                 </div>
 
          </div>
