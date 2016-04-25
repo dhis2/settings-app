@@ -75,7 +75,15 @@ class metadataSettings extends React.Component {
           return d2.Api.getApi().get('/metadata/versions');
         })
         .then(result=>{
-          var versions = result.metadataversions.reverse();
+          //var versions = result.metadataversions.reverse();
+          var versions = result.metadataversions.sort(function(a,b) {
+            if (a.created < b.created)
+              return 1;
+            else if (a.created > b.created)
+              return -1;
+            else
+              return 0;
+          });
           self.setState({
             metadataVersions: versions
           });
