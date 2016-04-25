@@ -61,7 +61,7 @@ const styles = {
         color: AppTheme.rawTheme.palette.accent1Color,
         marginTop: -6,
         fontSize: '0.8rem',
-        fontWeight: 300,
+        fontWeight: 400,
     },
     menuIcon: {
         color: '#757575',
@@ -339,7 +339,7 @@ export default React.createClass({
         return (
             <Card style={styles.card}>
                 <CardText>
-                    <FormBuilder fields={fields} onUpdateField={settingsActions.saveKey} />
+                    <FormBuilder key={this.state.category} fields={fields} onUpdateField={settingsActions.saveKey} />
                 </CardText>
             </Card>
         );
