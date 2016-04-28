@@ -1,6 +1,18 @@
 # settings-app
 DHIS2 Settings App
 
+brew uninstall nodejs
+install nodejs
+
+npm install
+
+After this you should also create a file called `dev-jquery-auth.js` that contains the following:
+jQuery.ajaxSetup({
+    headers: {
+        Authorization: 'Basic ' + btoa('admin:district') // Change your username and password to be the one you're using for CORS
+    }
+});
+
 ### Pre-requisites
 Since the app uses webpack as a build tool you will need to install this first.
 ```sh
