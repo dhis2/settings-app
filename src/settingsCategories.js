@@ -124,7 +124,7 @@ export const categories = {
     },
     import: {
         label: 'import',
-        icon: 'import_export',
+        icon: 'system_update_alt',
         pageLabel: 'import_settings',
         settings: [
             'keyDataImportStrictPeriods',
