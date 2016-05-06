@@ -8,11 +8,9 @@ node_modules/
 
 build/
 target/
+manifest.webapp
 
 .DS_Store
-
-dev_manifest.webapp
-dev-jquery-auth.js
 
 *.zip
 npm-debug.log
