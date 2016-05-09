@@ -25,7 +25,7 @@ const styles = {
         fontSize: 24,
         fontWeight: 300,
         color: AppTheme.rawTheme.palette.textColor,
-        padding: '16px 0 5px 16px',
+        padding: '24px 0 12px 16px',
     },
     card: {
         marginTop: 8,
