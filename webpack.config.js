@@ -67,7 +67,7 @@ const webpackConfig = {
         colors: true,
         port: 8081,
         inline: true,
-        compress: false,
+        compress: true,
         proxy: [
             { path: '/api/*', target: dhisConfig.baseUrl, bypass: log },
             { path: '/dhis-web-commons/*', target: dhisConfig.baseUrl, bypass: log },

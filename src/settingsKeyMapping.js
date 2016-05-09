@@ -371,6 +371,7 @@ const settingsKeyMapping = {
         hintText: 'one_url_per_line',
         validators: ['url_array'],
     },
+    keyMapzenSearchApiKey: { label: 'mapzen_search_api_key' },
     /* ============================================================================================================ */
     /* Category: Approval                                                                                           */
     /* ============================================================================================================ */
