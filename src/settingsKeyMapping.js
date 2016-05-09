@@ -244,6 +244,15 @@ const settingsKeyMapping = {
             shortName: 'short_name',
         },
     },
+    keyAnalysisDigitGroupSeparator: {
+        label: 'analysis_digit_group_separator',
+        type: 'dropdown',
+        options: {
+            SPACE: 'space',
+            COMMA: 'comma',
+            NONE: 'none',
+        },
+    },
     keyRequireAddToView: {
         label: 'require_authority_to_add_to_view_object_lists',
         type: 'checkbox',
