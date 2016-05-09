@@ -57,6 +57,7 @@ export const categories = {
             'keyUiLocale',
             'keyDbLocale',
             'keyAnalysisDisplayProperty',
+            'keyAnalysisDigitGroupSeparator',
             'keyRequireAddToView',
             'keyUseCustomLogoFront',
             'keyUseCustomLogoBanner',
