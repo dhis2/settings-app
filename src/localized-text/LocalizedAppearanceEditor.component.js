@@ -68,6 +68,7 @@ class LocalizedTextEditor extends React.Component {
             'keyApplicationIntro',
             'keyApplicationNotification',
             'keyApplicationFooter',
+            'keyApplicationRightFooter',
         ];
         const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
 

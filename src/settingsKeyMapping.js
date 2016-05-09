@@ -173,6 +173,7 @@ const settingsKeyMapping = {
             'application_introduction',
             'application_notification',
             'application_left_footer',
+            'application_right_footer',
         ],
     },
     applicationTitle: {
@@ -201,6 +202,7 @@ const settingsKeyMapping = {
     keyApplicationRightFooter: {
         label: 'application_right_footer',
         description: 'allows_html',
+        appendLocale: true,
         multiLine: true,
     },
     keyStyle: {

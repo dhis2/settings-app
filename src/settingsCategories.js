@@ -50,7 +50,6 @@ export const categories = {
         pageLabel: 'appearance_settings',
         settings: [
             'localizedText',
-            'keyApplicationRightFooter',
             'keyStyle',
             'startModule',
             'helpPageLink',
