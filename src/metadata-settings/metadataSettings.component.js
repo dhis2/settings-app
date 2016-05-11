@@ -126,9 +126,9 @@ class metadataSettings extends React.Component {
             isLocal: "inline-block",
             masterVersionName: this.state.remoteVersionName,
             isHQ: "none",
-            isLastSyncValid: ( ( this.state.lastFailedTime != null && new Date(this.state.lastFailedTime) > new Date(this.state.metadataVersions[ 0 ].created) ) ?
+            isLastSyncValid: ( ( this.state.lastFailedTime != null && new Date(this.state.lastFailedTime) > new Date(this.state.metadataVersions[ 0 ].importdate) ) ?
               "inline-block" : "none")
-            //TODO: need to change to importdate later
+            //changed from created to importdate
           });
         else
           self.setState({
