@@ -54,7 +54,6 @@ class metadataSettings extends React.Component {
       locale: e.target.value,
       localeName: this.getLocaleName(e.target.value),
     }, () => {
-      // Have to force update because.
       this.forceUpdate();
     });
   };
@@ -99,6 +98,7 @@ class metadataSettings extends React.Component {
       })
       .catch(error => {
         console.log('error', error);
+        self.setState({ showVersions: "none" });
         return Promise.resolve()
       });
   };
@@ -113,13 +113,26 @@ class metadataSettings extends React.Component {
           isVersioningEnabled: result.keyVersionEnabled,
           hqInstanceUrl: result.keyRemoteInstanceUrl,
           remoteVersionName: result.keyRemoteMetadataVersion,
-          lastFailedVersion: (result.keyMetadataFailedVersion != undefined ? result.keyMetadataFailedVersion.name : null)
+          lastFailedVersion: (result.keyMetadataFailedVersion != undefined ? result.keyMetadataFailedVersion.name : null),
+          isSchedulerEnabled: (result.keySchedTasks != undefined ? true : false)
         });
 
-        if( this.state.isVersioningEnabled )
+        console.log(this.state.isSchedulerEnabled);
+        if( this.state.isVersioningEnabled ) //&& this.state.isSchedulerEnabled
           this.state.showVersions = "block";
         else
           this.state.showVersions = "none";
+
+        //runs only once
+        if(!settingsStore.state[ this.saveSettingsKey ]&&this.state.isSchedulerEnabled) {
+          this.saveSettings(true)
+            .then(function() {
+              self.getVersions(self);
+            })
+            .then(function() {
+              self.getSettings(self)
+            });
+        }
 
         if( this.state.hqInstanceUrl != undefined && this.state.hqInstanceUrl.length != 0 ) //&& this.state.metadataVersions[0].importdate!=undefined
           self.setState({
@@ -169,6 +182,11 @@ class metadataSettings extends React.Component {
       });
   };
 
+  saveSettings(v){
+    settingsActions.saveKey(this.saveSettingsKey, true);
+    return Promise.resolve();
+  }
+
   render() {
     const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
     const checkboxfields = [ {
@@ -177,9 +195,9 @@ class metadataSettings extends React.Component {
       component: Checkbox,
       props: {
         label: 'Enable versioning for metadata sync',
-        checked: (settingsStore.state && settingsStore.state[ this.saveSettingsKey ]) === 'true',
+        checked: ((settingsStore.state && settingsStore.state[ this.saveSettingsKey ])) === true,
         onCheck: (e, v) => {
-          settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false');
+          settingsActions.saveKey(this.saveSettingsKey, v ? true : false);
           if( v )
             this.state.showVersions = "block";
           else
@@ -197,13 +215,6 @@ class metadataSettings extends React.Component {
         },
       },
     }
-      //,{
-      //    name: '',
-      //    component: RadioButtonGroup,
-      //    props: {
-      //
-      //    }
-      //}
     ];
 
     const styles = {
