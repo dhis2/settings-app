@@ -139,7 +139,7 @@ class SettingsFields extends React.Component {
                     props: {
                         floatingLabelText: d2.i18n.getTranslation(mapping.label),
                         style: { width: '100%' },
-                        hintText: mapping.hintText,
+                        hintText: mapping.hintText && d2.i18n.getTranslation(mapping.hintText),
                     },
                     validators: (mapping.validators || []).map(name => wordToValidatorMap.has(name) ? {
                             validator: wordToValidatorMap.get(name),
