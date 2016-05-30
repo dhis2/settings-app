@@ -62,31 +62,6 @@ const styles = {
     },
 };
 
-function wrapUserSettingsOverride(d2, component, valueLabel) {
-    return class extends component {
-        render() {
-            const labelStyle = Object.assign({}, styles.userSettingsOverride);
-            if (component === Checkbox) {
-                labelStyle.marginLeft = 40;
-                labelStyle.marginTop = -14;
-            } else if (component === SelectField && this.props.value === '') {
-                labelStyle.marginTop = -22;
-            }
-
-            return (
-                <div>
-                    {super.render()}
-                    <div style={labelStyle}>{
-                        valueLabel !== undefined
-                            ? `${d2.i18n.getTranslation('will_be_overridden_by_current_user_setting')}: ${valueLabel}`
-                            : d2.i18n.getTranslation('can_be_overridden_by_user_settings')
-                    }</div>
-                </div>
-            );
-        }
-    };
-}
-
 // TODO: Rewrite as ES6 class
 /* eslint-disable react/prefer-es6-class */
 export default React.createClass({
