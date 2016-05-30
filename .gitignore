@@ -6,6 +6,7 @@ node_modules*/
 .jshintignore
 .jshintrc
 dev-jquery-auth.js
+dev_manifest.webapp
 
 build/
 target/
