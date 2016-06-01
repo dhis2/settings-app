@@ -256,6 +256,8 @@ const settingsKeyMapping = {
         label: 'self_registration_account_user_role',
         configuration: true,
         type: 'userRoles',
+        includeEmpty: true,
+        emptyLabel: 'disable_self_registration',
     },
     keySelfRegistrationNoRecaptcha: {
         label: 'do_not_require_recaptcha_for_self_registration',
@@ -265,6 +267,8 @@ const settingsKeyMapping = {
         label: 'self_registration_account_organisation_unit',
         configuration: true,
         type: 'organisationUnits',
+        includeEmpty: true,
+        emptyLabel: 'disable_self_registration',
     },
     keyAccountRecovery: {
         label: 'enable_user_account_recovery',

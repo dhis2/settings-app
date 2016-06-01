@@ -194,8 +194,8 @@ export default React.createClass({
 
                 d2.system.configuration.get(settingsKey).then(val => {
                     fieldConfig.fieldOptions.defaultValue = val === null ? 'null' : val.id;
-                }).catch((err) => {
-                    log.info('Failed to get value for ' + settingsKey, err);
+                }).catch(() => {
+                    fieldConfig.fieldOptions.defaultValue = 'null';
                 });
                 break;
 
