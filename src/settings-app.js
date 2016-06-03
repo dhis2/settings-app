@@ -208,7 +208,9 @@ getManifest('manifest.webapp')
 
                 // Apps/modules
                 const startModules = (results[6].modules || []).map(module => ({
-                    id: module.name,
+                    id: module.defaultAction.substr(0, 3) === '../'
+                        ? module.name
+                        : `app:${module.name}`,
                     displayName: module.displayName || module.name,
                 }));
 
