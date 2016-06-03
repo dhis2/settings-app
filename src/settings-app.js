@@ -196,7 +196,9 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
                 // Apps/modules
                 const startModules = (results[6].modules || []).map(module => {
                     return {
-                        payload: module.name,
+                        payload: module.defaultAction.substr(0, 3) === '../'
+                        	? module.name
+                        	: `app:${module.name}`,
                         text: module.displayName || module.name,
                     };
                 });
