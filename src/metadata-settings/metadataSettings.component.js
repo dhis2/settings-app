@@ -109,11 +109,15 @@ class metadataSettings extends React.Component {
       })
       .then(result=> {
         self.setState({
-          lastFailedTime: (result.keyMetadataFailedVersion != undefined ? result.keyMetadataFailedVersion.importDate : null), //TODO: need to check if result.keyMetadataLastFailedTime
+          lastFailedTime: (result.keyMetadataFailedVersion == undefined ? null :
+              (result.keyMetadataFailedVersion.importDate != undefined ?
+                result.keyMetadataFailedVersion.importDate : result.keyMetadataLastFailedTime)
+          ),
           isVersioningEnabled: result.keyVersionEnabled,
           hqInstanceUrl: result.keyRemoteInstanceUrl,
           remoteVersionName: result.keyRemoteMetadataVersion,
-          lastFailedVersion: (result.keyMetadataFailedVersion != undefined ? result.keyMetadataFailedVersion.name : null),
+          lastFailedVersion: (result.keyMetadataFailedVersion == undefined ? null :
+            (result.keyMetadataFailedVersion.name != undefined ? result.keyMetadataFailedVersion.name : result.keyRemoteMetadataVersion)),
           isSchedulerEnabled: (result.keySchedTasks != undefined ? true : false)
         });
 
@@ -124,7 +128,7 @@ class metadataSettings extends React.Component {
           this.state.showVersions = "none";
 
         //runs only once
-        if(!settingsStore.state[ this.saveSettingsKey ]&&this.state.isSchedulerEnabled) {
+        if( !settingsStore.state[ this.saveSettingsKey ] && this.state.isSchedulerEnabled ) {
           this.saveSettings(true)
             .then(function() {
               self.getVersions(self);
@@ -182,7 +186,7 @@ class metadataSettings extends React.Component {
       });
   };
 
-  saveSettings(v){
+  saveSettings(v) {
     settingsActions.saveKey(this.saveSettingsKey, true);
     return Promise.resolve();
   }
