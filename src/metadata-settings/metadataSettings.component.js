@@ -128,8 +128,8 @@ class metadataSettings extends React.Component {
           this.state.showVersions = "none";
 
         //runs only once
-        if( !settingsStore.state[ this.saveSettingsKey ] && this.state.isSchedulerEnabled ) {
-          this.saveSettings(true)
+        if( settingsStore.state[ this.saveSettingsKey ] === 'false' && this.state.isSchedulerEnabled ) {
+          this.saveSettings('true')
             .then(function() {
               self.getVersions(self);
             })
@@ -187,7 +187,11 @@ class metadataSettings extends React.Component {
   };
 
   saveSettings(v) {
-    settingsActions.saveKey(this.saveSettingsKey, true);
+    settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false');
+    if( v )
+      this.state.showVersions = "block";
+    else
+      this.state.showVersions = "none";
     return Promise.resolve();
   }
 
@@ -199,9 +203,9 @@ class metadataSettings extends React.Component {
       component: Checkbox,
       props: {
         label: 'Enable versioning for metadata sync',
-        checked: ((settingsStore.state && settingsStore.state[ this.saveSettingsKey ])) === true,
+        checked: ((settingsStore.state && settingsStore.state[ this.saveSettingsKey ])) === 'true',
         onCheck: (e, v) => {
-          settingsActions.saveKey(this.saveSettingsKey, v ? true : false);
+          settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false');
           if( v )
             this.state.showVersions = "block";
           else
