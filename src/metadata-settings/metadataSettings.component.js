@@ -121,36 +121,24 @@ class metadataSettings extends React.Component {
           isSchedulerEnabled: (result.keySchedTasks != undefined ? true : false)
         });
 
-        console.log(this.state.isSchedulerEnabled);
         if( this.state.isVersioningEnabled ) //&& this.state.isSchedulerEnabled
           this.state.showVersions = "block";
         else
           this.state.showVersions = "none";
-
-        //runs only once
-        if( settingsStore.state[ this.saveSettingsKey ] === 'false' && this.state.isSchedulerEnabled ) {
-          this.saveSettings('true')
-            .then(function() {
-              self.getVersions(self);
-            })
-            .then(function() {
-              self.getSettings(self)
-            });
-        }
 
         if( this.state.hqInstanceUrl != undefined && this.state.hqInstanceUrl.length != 0 ) //&& this.state.metadataVersions[0].importdate!=undefined
           self.setState({
             isLocal: "inline-block",
             masterVersionName: this.state.remoteVersionName,
             isHQ: "none",
-            isLastSyncValid: ( ( this.state.lastFailedTime != null && new Date(this.state.lastFailedTime) > new Date(this.state.metadataVersions[ 0 ].importdate) ) ?
+            isLastSyncValid: ( ( this.state.lastFailedTime != null && this.state.metadataVersions != undefined && this.state.metadataVersions.length != 0 && new Date(this.state.lastFailedTime) > new Date(this.state.metadataVersions[ 0 ].importdate) ) ?
               "inline-block" : "none")
             //changed from created to importdate
           });
         else
           self.setState({
             isLocal: "none",
-            masterVersionName: this.state.metadataVersions[ 0 ].name,
+            masterVersionName: (this.state.metadataVersions != undefined && this.state.metadataVersions.length != 0 ? this.state.metadataVersions[ 0 ].name : null),
             isHQ: "block"
           });
 
@@ -180,20 +168,10 @@ class metadataSettings extends React.Component {
           });
       })
       .catch(error => {
-        //log.error(error);
         settingsActions.showSnackbarMessage('Version not updated in system. Contact your system administrator.');
         return Promise.resolve()
       });
   };
-
-  saveSettings(v) {
-    settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false');
-    if( v )
-      this.state.showVersions = "block";
-    else
-      this.state.showVersions = "none";
-    return Promise.resolve();
-  }
 
   render() {
     const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
