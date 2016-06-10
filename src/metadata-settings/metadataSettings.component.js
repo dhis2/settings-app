@@ -109,15 +109,11 @@ class metadataSettings extends React.Component {
       })
       .then(result=> {
         self.setState({
-          lastFailedTime: (result.keyMetadataFailedVersion == undefined ? null :
-              (result.keyMetadataFailedVersion.importDate != undefined ?
-                result.keyMetadataFailedVersion.importDate : result.keyMetadataLastFailedTime)
-          ),
+          lastFailedTime: (result.keyMetadataLastFailedTime == undefined ? null : result.keyMetadataLastFailedTime),
           isVersioningEnabled: result.keyVersionEnabled,
           hqInstanceUrl: result.keyRemoteInstanceUrl,
           remoteVersionName: result.keyRemoteMetadataVersion,
-          lastFailedVersion: (result.keyMetadataFailedVersion == undefined ? null :
-            (result.keyMetadataFailedVersion.name != undefined ? result.keyMetadataFailedVersion.name : result.keyRemoteMetadataVersion)),
+          lastFailedVersion: (result.keyMetadataFailedVersion == undefined ? null : result.keyMetadataFailedVersion),
           isSchedulerEnabled: (result.keySchedTasks != undefined ? true : false)
         });
 
@@ -131,9 +127,7 @@ class metadataSettings extends React.Component {
             isLocal: "inline-block",
             masterVersionName: this.state.remoteVersionName,
             isHQ: "none",
-            isLastSyncValid: ( ( this.state.lastFailedTime != null && this.state.metadataVersions != undefined && this.state.metadataVersions.length != 0 && new Date(this.state.lastFailedTime) > new Date(this.state.metadataVersions[ 0 ].importdate) ) ?
-              "inline-block" : "none")
-            //changed from created to importdate
+            isLastSyncValid: ( ( this.state.lastFailedTime != null && this.state.lastFailedTime != undefined) ? "inline-block" : "none")
           });
         else
           self.setState({
