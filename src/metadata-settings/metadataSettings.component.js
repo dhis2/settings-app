@@ -12,7 +12,6 @@ import configOptionStore from '../configOptionStore';
 import settingsKeyMapping from '../settingsKeyMapping';
 import { getInstance as getD2, config } from 'd2/lib/d2';
 import {Table, Column, Cell} from 'fixed-data-table';
-import metadataVersioningTable from './metadataVersioningTable';
 
 class metadataSettings extends React.Component {
   constructor(props, context) {
