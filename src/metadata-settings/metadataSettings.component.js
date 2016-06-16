@@ -126,7 +126,8 @@ class metadataSettings extends React.Component {
             isLocal: "inline-block",
             masterVersionName: this.state.remoteVersionName,
             isHQ: "none",
-            isLastSyncValid: ( ( this.state.lastFailedTime != null && this.state.lastFailedTime != undefined) ? "inline-block" : "none")
+            isLastSyncValid: ( ( this.state.lastFailedTime != null && this.state.lastFailedTime != undefined && this.state.metadataVersions != undefined && this.state.metadataVersions.length != 0 && new Date(this.state.lastFailedTime) > new Date(this.state.metadataVersions[ 0 ].importdate) ) ?
+              "inline-block" : "none")
           });
         else
           self.setState({
