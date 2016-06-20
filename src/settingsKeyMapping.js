@@ -421,7 +421,7 @@ const settingsKeyMapping = {
     createVersionButton: {
         label: 'create_metadata_version',
         type: 'postButton',
-        uri: '/metadata/version/create', //    /api/metadata/version/create?type=<version_type>
+        uri: '/metadata/version/create',
     },
     /* ============================================================================================================ */
     /* Category: Data Import                                                                                        */

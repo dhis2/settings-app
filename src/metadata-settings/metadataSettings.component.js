@@ -10,8 +10,8 @@ import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';
 import configOptionStore from '../configOptionStore';
 import settingsKeyMapping from '../settingsKeyMapping';
-import { getInstance as getD2, config } from 'd2/lib/d2';
 import {Table, Column, Cell} from 'fixed-data-table';
+import classNames from 'classnames';
 
 class metadataSettings extends React.Component {
   constructor(props, context) {
@@ -28,12 +28,10 @@ class metadataSettings extends React.Component {
       remoteVersionName: null,
       isLocal: null,
       isSetupAvailable: "none",
-      isInitialSetup: "block"
-      //locale: context.d2.currentUser.uiLocale,
-      //localeName: LocalizedTextEditor.getLocaleName(context.d2.currentUser.uiLocale),
+      isInitialSetup: "block",
     };
-
-    this.handleChange = this.handleChange.bind(this);
+    this.d2 = context.d2;
+    this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
     this.onSelectTransaction = this.onSelectTransaction.bind(this);
     this.saveSettingsKey = 'keyVersionEnabled';
     this.createVersionKey = 'createVersionButton';
@@ -45,24 +43,14 @@ class metadataSettings extends React.Component {
           .map(locale => locale.displayName)
           .pop() || code;
     };
-    //this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
   }
 
-  handleChange(e) {
-    this.setState({
-      locale: e.target.value,
-      localeName: this.getLocaleName(e.target.value),
-    }, () => {
-      this.forceUpdate();
-    });
-  };
 
   onSelectTransaction(event, value) {
-    this.state.selectedTransactionType = value;
+    this.setState({selectedTransactionType : value});
   }
 
   componentDidMount() {
-    console.log(config.baseUrl);
     var self = this;
     this.getVersions(self)
       .then(function() {
@@ -71,11 +59,8 @@ class metadataSettings extends React.Component {
   };
 
   getVersions(self) {
-    return getD2().then(d2 => {
-        return d2.Api.getApi().get('/metadata/versions');
-      })
+    return this.d2.Api.getApi().get('/metadata/versions')
       .then(result=> {
-        //var versions = result.metadataversions.reverse();
         var versions = result.metadataversions.sort(function(a, b) {
           if( a.created < b.created )
             return 1;
@@ -84,6 +69,10 @@ class metadataSettings extends React.Component {
           else
             return 0;
         });
+        versions.forEach(version =>{
+          version.importdate = version.importdate ? new Date(version.importdate).toLocaleString() : "NA";
+        });
+
         self.setState({
           metadataVersions: versions
         });
@@ -103,9 +92,7 @@ class metadataSettings extends React.Component {
   };
 
   getSettings(self) {
-    return getD2().then(d2 => {
-        return d2.Api.getApi().get('/systemSettings');
-      })
+    this.d2.Api.getApi().get('/systemSettings')
       .then(result=> {
         self.setState({
           lastFailedTime: (result.keyMetadataLastFailedTime == undefined ? null : result.keyMetadataLastFailedTime),
@@ -113,10 +100,10 @@ class metadataSettings extends React.Component {
           hqInstanceUrl: result.keyRemoteInstanceUrl,
           remoteVersionName: result.keyRemoteMetadataVersion,
           lastFailedVersion: (result.keyMetadataFailedVersion == undefined ? null : result.keyMetadataFailedVersion),
-          isSchedulerEnabled: (result.keySchedTasks != undefined ? true : false)
+          isSchedulerEnabled: (result.keySchedTasks != undefined)
         });
 
-        if( this.state.isVersioningEnabled ) //&& this.state.isSchedulerEnabled
+        if( this.state.isVersioningEnabled )
           this.state.showVersions = "block";
         else
           this.state.showVersions = "none";
@@ -146,13 +133,10 @@ class metadataSettings extends React.Component {
 
   saveVersion(self) {
     var mapping = settingsKeyMapping[ this.createVersionKey ];
-    getD2().then(d2 => {
-        return d2.Api.getApi().post(mapping.uri + '?type=' + this.state.selectedTransactionType)
-        //d2.Api.getApi().post(mapping.uri+'?type=BEST_EFFORT')
-      })
+    this.d2.Api.getApi().post(mapping.uri + '?type=' + this.state.selectedTransactionType)
       .then(result => {
         settingsActions.load(true);
-        settingsActions.showSnackbarMessage('Version updated in system.');
+        settingsActions.showSnackbarMessage(this.getTranslation('version_created'));
         return Promise.resolve()
       })
       .then(function() {
@@ -162,7 +146,7 @@ class metadataSettings extends React.Component {
           });
       })
       .catch(error => {
-        settingsActions.showSnackbarMessage('Version not updated in system. Contact your system administrator.');
+        settingsActions.showSnackbarMessage(this.getTranslation('version_not_created'));
         return Promise.resolve()
       });
   };
@@ -174,7 +158,7 @@ class metadataSettings extends React.Component {
       value: settingsStore.state && settingsStore.state[ this.saveSettingsKey + localeAppendage ] || '',
       component: Checkbox,
       props: {
-        label: 'Enable versioning for metadata sync',
+        label: this.getTranslation('keyVersionEnabled'),
         checked: ((settingsStore.state && settingsStore.state[ this.saveSettingsKey ])) === 'true',
         onCheck: (e, v) => {
           settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false');
@@ -188,8 +172,9 @@ class metadataSettings extends React.Component {
 
     const createversionfields = [ {
       component: RaisedButton,
+      name: 'create_metadata_version',
       props: {
-        label: 'Create new version',
+        label: this.getTranslation('create_metadata_version'),
         onClick: () => {
           this.saveVersion(this);
         },
@@ -220,25 +205,25 @@ class metadataSettings extends React.Component {
     return (
       <div>
         <br/><br/>
-        <h2>{this.getLocaleName("Metadata Versioning")}</h2>
+        <h2>{this.getTranslation("metadata_versioning")}</h2>
         <div>
           <FormBuilder fields={checkboxfields} onUpdateField={this.saveSettingsKey}/>
         </div>
-
+        //className={classNames({hidden: !this.state.isVisible})}
         <div style={styles.isVisible}>
           <br/><br/>
-          <h3>{this.getLocaleName("Create a new version")}</h3>
+          <h3>{this.getTranslation("create_metadata_version")}</h3>
           <hr/>
           <div>
             <div style={{ "display": "inline-block" }}>
               <RadioButtonGroup name="version_types" onChange={this.onSelectTransaction} defaultSelected="BEST_EFFORT" style={{ display: 'flex' }}>
                 <RadioButton
                   value="BEST_EFFORT"
-                  label="Best Effort"
+                  label={this.getTranslation('version_type_best_effort')}
                 />
                 <RadioButton
                   value="ATOMIC"
-                  label="Atomic"
+                  label={this.getTranslation('version_type_atomic')}
                 />
               </RadioButtonGroup>
             </div>
@@ -252,13 +237,13 @@ class metadataSettings extends React.Component {
           <div style={styles.isSetupAvailable}>
             <div>
               <div style={{display: "inline-block",float: "left"}}>
-                <label style={{"font-weight": "bold"}}>Master Version: </label>
+                <label style={{"fontWeight": "bold"}}>Master Version: </label>
                 <span>{this.state.masterVersionName}</span>
               </div>
 
               <div align="right" style={styles.isLocal}>
                 <div align="right" style={styles.isLastSyncValid}>
-                  <label style={{"font-style": "italic"}}> Last sync attempt: </label>
+                  <label style={{"fontStyle": "italic"}}> Last sync attempt: </label>
                   <span>{this.state.lastFailedVersion}</span>
                   <span> | <span style={{"color":"red"}}>Failed</span> | {new Date(this.state.lastFailedTime).toLocaleString()}</span>
                 </div>
@@ -304,7 +289,7 @@ class metadataSettings extends React.Component {
                   header={<Cell>Last Sync</Cell>}
                   cell={({rowIndex, ...props}) => (
               <Cell {...props}>
-                {new Date(this.state.metadataVersions[rowIndex].importdate).toLocaleString()}
+                {this.state.metadataVersions[rowIndex].importdate}
               </Cell>
             )}
                   width={200}
@@ -354,7 +339,7 @@ class metadataSettings extends React.Component {
           </div>
 
           <div style={{display: this.state.isInitialSetup}}>
-            <h4>No versions exist in system yet. Click CREATE NEW VERSION button to create versions.</h4>
+            <h4>{this.getTranslation('no_versions_exist')}</h4>
           </div>
 
         </div>
@@ -362,5 +347,8 @@ class metadataSettings extends React.Component {
     );
   }
 }
+metadataSettings.contextTypes = {
+  d2: React.PropTypes.object.isRequired
+};
 
 export default metadataSettings;
