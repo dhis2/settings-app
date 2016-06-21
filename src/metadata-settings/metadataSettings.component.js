@@ -29,21 +29,21 @@ class metadataSettings extends React.Component {
     };
     this.d2 = context.d2;
     this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
-    this.onSelectTransaction = this.onSelectTransaction.bind(this);
-    this.getVersions = this.getVersions.bind(this);
-    this.getSettings = this.getSettings.bind(this);
+    this.onSelectTransactionType = this.onSelectTransactionType.bind(this);
+    this.syncVersions = this.syncVersions.bind(this);
+    this.syncSettings = this.syncSettings.bind(this);
     this.createVersion = this.createVersion.bind(this);
     this.sync = this.sync.bind(this);
-    this.onCheck = this.onCheck.bind(this);
+    this.onToggleVersioning = this.onToggleVersioning.bind(this);
     this.saveSettingsKey = 'keyVersionEnabled';
     this.createVersionKey = 'createVersionButton';
   }
 
   sync(){
-    return this.getVersions()
-      .then(this.getSettings)
+    return this.syncVersions()
+      .then(this.syncSettings)
   }
-  onSelectTransaction(event, value) {
+  onSelectTransactionType(event, value) {
     this.setState({selectedTransactionType : value});
   }
 
@@ -51,7 +51,7 @@ class metadataSettings extends React.Component {
     this.sync()
   };
 
-  getVersions() {
+  syncVersions() {
     return this.d2.Api.getApi().get('/metadata/versions')
       .then(result=> {
         const versions = result.metadataversions.sort(function(a, b) {
@@ -65,13 +65,10 @@ class metadataSettings extends React.Component {
         versions.forEach(version =>{
           version.importdate = version.importdate ? new Date(version.importdate).toLocaleString() : "NA";
         });
-
         this.setState({
-          metadataVersions: versions
+          metadataVersions: versions,
+          hasVersions: ( versions != undefined && versions.length != 0 )
         });
-
-        this.setState({hasVersions: ( this.state.metadataVersions != undefined && this.state.metadataVersions.length != 0 ) })
-
         return Promise.resolve()
       })
       .catch(error => {
@@ -81,19 +78,19 @@ class metadataSettings extends React.Component {
       });
   };
 
-  getSettings() {
+  syncSettings() {
     this.d2.Api.getApi().get('/systemSettings')
       .then(result=> {
         this.setState({
-          lastFailedTime: (result.keyMetadataLastFailedTime == undefined ? null : result.keyMetadataLastFailedTime),
+          lastFailedTime: (result.keyMetadataLastFailedTime ? null : result.keyMetadataLastFailedTime),
           isVersioningEnabled: result.keyVersionEnabled,
           hqInstanceUrl: result.keyRemoteInstanceUrl,
           remoteVersionName: result.keyRemoteMetadataVersion,
-          lastFailedVersion: (result.keyMetadataFailedVersion == undefined ? null : result.keyMetadataFailedVersion),
+          lastFailedVersion: (result.keyMetadataFailedVersion ? null : result.keyMetadataFailedVersion),
           isSchedulerEnabled: (result.keySchedTasks != undefined)
         });
 
-        if( this.state.hqInstanceUrl != undefined && this.state.hqInstanceUrl.length != 0 ) //&& this.state.metadataVersions[0].importdate!=undefined
+        if( this.state.hqInstanceUrl != undefined && this.state.hqInstanceUrl.length != 0 )
           this.setState({
             isLocalInstance: true,
             masterVersionName: this.state.remoteVersionName,
@@ -108,6 +105,7 @@ class metadataSettings extends React.Component {
       })
       .catch(error => {
         console.log('error', error);
+        settingsActions.showSnackbarMessage(this.getTranslation('error_fetching_settings'));
         return Promise.resolve()
       });
   };
@@ -128,7 +126,7 @@ class metadataSettings extends React.Component {
       });
   };
 
-  onCheck(e, v){
+  onToggleVersioning(e, v){
     this.setState({isVersioningEnabled: v})
     settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false')
     setTimeout(this.sync, 100);
@@ -136,18 +134,18 @@ class metadataSettings extends React.Component {
 
   render() {
     const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
-    const checkboxfields = [ {
+    const checkboxFields = [ {
       name: 'keyVersionEnabled',
       value: settingsStore.state && settingsStore.state[ this.saveSettingsKey + localeAppendage ] || '',
       component: Checkbox,
       props: {
         label: this.getTranslation('keyVersionEnabled'),
         checked: ((settingsStore.state && settingsStore.state[ this.saveSettingsKey ])) === 'true',
-        onCheck: this.onCheck
+        onCheck: this.onToggleVersioning
       },
     } ];
 
-    const createversionfields = [ {
+    const createVersionFields = [ {
       component: RaisedButton,
       name: 'create_metadata_version',
       props: {
@@ -160,7 +158,7 @@ class metadataSettings extends React.Component {
 
     const styles = {
 
-      inline: {
+      inlineRight: {
         "display": "inline-block",
         float: "right"
       },
@@ -183,7 +181,7 @@ class metadataSettings extends React.Component {
         <br/><br/>
         <h2>{this.getTranslation("metadata_versioning")}</h2>
         <div>
-          <FormBuilder fields={checkboxfields} onUpdateField={this.saveSettingsKey}/>
+          <FormBuilder fields={checkboxFields} onUpdateField={this.saveSettingsKey}/>
         </div>
         <div style={this.state.isVersioningEnabled ? styles.visible : styles.hidden}>
           <br/><br/>
@@ -191,7 +189,7 @@ class metadataSettings extends React.Component {
           <hr/>
           <div>
             <div style={{ "display": "inline-block" }}>
-              <RadioButtonGroup name="version_types" onChange={this.onSelectTransaction} defaultSelected="BEST_EFFORT" style={{ display: 'flex' }}>
+              <RadioButtonGroup name="version_types" onChange={this.onSelectTransactionType} defaultSelected="BEST_EFFORT" style={{ display: 'flex' }}>
                 <RadioButton
                   value="BEST_EFFORT"
                   label={this.getTranslation('version_type_best_effort')}
@@ -202,8 +200,8 @@ class metadataSettings extends React.Component {
                 />
               </RadioButtonGroup>
             </div>
-            <div style={{ "display": "inline-block", "float": "right" }}>
-              <FormBuilder fields={createversionfields} onUpdateField={this.createVersionKey}/>
+            <div style={styles.inlineRight}>
+              <FormBuilder fields={createVersionFields} onUpdateField={this.createVersionKey}/>
             </div>
           </div>
 
@@ -216,8 +214,8 @@ class metadataSettings extends React.Component {
                 <span>{this.state.masterVersionName}</span>
               </div>
 
-              <div align="right" style={this.state.isLocalInstance ? styles.inline : styles.hidden}>
-                <div align="right" style={this.state.isLastSyncValid ? styles.inline : styles.hidden}>
+              <div align="right" style={this.state.isLocalInstance ? styles.inlineRight : styles.hidden}>
+                <div align="right" style={this.state.isLastSyncValid ? styles.inlineRight : styles.hidden}>
                   <label style={{"fontStyle": "italic"}}> Last sync attempt: </label>
                   <span>{this.state.lastFailedVersion}</span>
                   <span> | <span style={{"color":"red"}}>Failed</span> | {new Date(this.state.lastFailedTime).toLocaleString()}</span>
@@ -226,7 +224,7 @@ class metadataSettings extends React.Component {
             </div>
 
 
-            <div style={this.state.isLocalInstance ? styles.inline : styles.hidden}>
+            <div style={this.state.isLocalInstance ? styles.inlineRight : styles.hidden}>
               <Table
                 rowHeight={50}
                 rowsCount={this.state.metadataVersions.length}
