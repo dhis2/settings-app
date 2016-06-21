@@ -1,4 +1,4 @@
-node_modules*/
+node_modules/
 .sass-cache
 *.iml
 .idea
@@ -13,6 +13,9 @@ target/
 manifest.webapp
 
 .DS_Store
+
+dev_manifest.webapp
+dev-jquery-auth.js
 
 *.zip
 npm-debug.log

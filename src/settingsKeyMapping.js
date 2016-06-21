@@ -419,7 +419,7 @@ const settingsKeyMapping = {
         },
     },
     /* ============================================================================================================ */
-    /* Category: Calendar                                                                                           */
+    /* Category: Synchronization                                                                                           */
     /* ============================================================================================================ */
     keyRemoteInstanceUrl: {
         label: 'remote_server_url',
@@ -431,6 +431,19 @@ const settingsKeyMapping = {
     keyRemoteInstancePassword: {
         label: 'remote_server_password',
         type: 'password',
+    },
+    keyMetadataDataVersioning: {
+        label: 'KeyMetaDataVersioning',
+        type: 'metadataSettings',
+    },
+    keyVersionEnabled: {
+        label: 'keyVersionEnabled',
+        type: 'checkbox',
+    },
+    createVersionButton: {
+        label: 'create_metadata_version',
+        type: 'postButton',
+        uri: '/metadata/version/create',
     },
     /* ============================================================================================================ */
     /* Category: Data Import                                                                                        */
