@@ -15,6 +15,7 @@ const styles = {
         padding: '0 16px 8px',
         borderRadius: 2,
         boxShadow: '0px 0px 5px rgba(0,0,0,0.15), 0px 2px 3px rgba(0,0,0,0.15)',
+        margin: '8px -12px 4px',
     },
     field: {
         width: '100%',
@@ -67,6 +68,7 @@ class LocalizedTextEditor extends React.Component {
             'keyApplicationIntro',
             'keyApplicationNotification',
             'keyApplicationFooter',
+            'keyApplicationRightFooter',
         ];
         const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
 

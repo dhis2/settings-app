@@ -5,12 +5,15 @@ node_modules/
 
 .jshintignore
 .jshintrc
+dev-jquery-auth.js
+dev_manifest.webapp
 
 build/
 target/
+manifest.webapp
 
 .DS_Store
-webpack.config.js
+
 dev_manifest.webapp
 dev-jquery-auth.js
 

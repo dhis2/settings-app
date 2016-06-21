@@ -173,6 +173,7 @@ const settingsKeyMapping = {
             'application_introduction',
             'application_notification',
             'application_left_footer',
+            'application_right_footer',
         ],
     },
     applicationTitle: {
@@ -201,12 +202,14 @@ const settingsKeyMapping = {
     keyApplicationRightFooter: {
         label: 'application_right_footer',
         description: 'allows_html',
+        appendLocale: true,
         multiLine: true,
     },
     keyStyle: {
         label: 'style',
         type: 'dropdown',
         userSettingsOverride: true,
+        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
         source: 'styles',
     },
     startModule: {
@@ -223,21 +226,33 @@ const settingsKeyMapping = {
         label: 'ui_locale',
         type: 'dropdown',
         userSettingsOverride: true,
+        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
         source: 'locales',
     },
     keyDbLocale: {
         label: 'db_locale',
         type: 'dropdown',
         userSettingsOverride: true,
+        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
         source: 'locales',
     },
     keyAnalysisDisplayProperty: {
         label: 'analysis_display_property',
         type: 'dropdown',
         userSettingsOverride: true,
+        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
         options: {
             name: 'name',
             shortName: 'short_name',
+        },
+    },
+    keyAnalysisDigitGroupSeparator: {
+        label: 'analysis_digit_group_separator',
+        type: 'dropdown',
+        options: {
+            SPACE: 'space',
+            COMMA: 'comma',
+            NONE: 'none',
         },
     },
     keyRequireAddToView: {
@@ -294,11 +309,13 @@ const settingsKeyMapping = {
         label: 'enable_message_email_notifications',
         type: 'checkbox',
         userSettingsOverride: true,
+        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
     },
     keyMessageSmsNotification: {
         label: 'enable_message_sms_notifications',
         type: 'checkbox',
         userSettingsOverride: true,
+        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
     },
     /* ============================================================================================================ */
     /* Category: Access                                                                                             */
@@ -308,6 +325,8 @@ const settingsKeyMapping = {
         configuration: true,
         type: 'dropdown',
         source: 'userRoles',
+        includeEmpty: true,
+        emptyLabel: 'disable_self_registration',
     },
     keySelfRegistrationNoRecaptcha: {
         label: 'do_not_require_recaptcha_for_self_registration',
@@ -318,6 +337,8 @@ const settingsKeyMapping = {
         configuration: true,
         type: 'dropdown',
         source: 'organisationUnits',
+        includeEmpty: true,
+        emptyLabel: 'disable_self_registration',
     },
     keyAccountRecovery: {
         label: 'enable_user_account_recovery',
@@ -350,6 +371,7 @@ const settingsKeyMapping = {
         hintText: 'one_url_per_line',
         validators: ['url_array'],
     },
+    keyMapzenSearchApiKey: { label: 'mapzen_search_api_key' },
     /* ============================================================================================================ */
     /* Category: Approval                                                                                           */
     /* ============================================================================================================ */

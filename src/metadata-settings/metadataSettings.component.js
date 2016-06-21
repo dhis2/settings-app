@@ -181,7 +181,7 @@ class metadataSettings extends React.Component {
         <br/><br/>
         <h2>{this.getTranslation("metadata_versioning")}</h2>
         <div>
-          <FormBuilder fields={checkboxFields} onUpdateField={this.saveSettingsKey}/>
+          <FormBuilder fields={checkboxFields} onUpdateField={settingsActions.saveKey}/>
         </div>
         <div style={this.state.isVersioningEnabled ? styles.visible : styles.hidden}>
           <br/><br/>
@@ -201,7 +201,7 @@ class metadataSettings extends React.Component {
               </RadioButtonGroup>
             </div>
             <div style={styles.inlineRight}>
-              <FormBuilder fields={createVersionFields} onUpdateField={this.createVersionKey}/>
+              <FormBuilder fields={createVersionFields} onUpdateField={settingsActions.saveKey}/>
             </div>
           </div>
 
@@ -224,11 +224,11 @@ class metadataSettings extends React.Component {
             </div>
 
 
-            <div style={this.state.isLocalInstance ? styles.inlineRight : styles.hidden}>
+            <div style={this.state.isLocalInstance ? styles.visible : styles.hidden}>
               <Table
                 rowHeight={50}
                 rowsCount={this.state.metadataVersions.length}
-                width={700}
+                width={670}
                 maxHeight={(50 * 6)}
                 headerHeight={50}>
                 <Column
@@ -238,7 +238,7 @@ class metadataSettings extends React.Component {
                 {this.state.metadataVersions[rowIndex].name}
               </Cell>
             )}
-                  width={150}
+                  width={135}
                 />
                 <Column
                   header={<Cell>When</Cell>}
@@ -246,7 +246,7 @@ class metadataSettings extends React.Component {
               <Cell {...props}>
                 {new Date(this.state.metadataVersions[rowIndex].created).toLocaleString()}
               </Cell>
-            )} width={200}
+            )} width={205}
                 />
                 <Column
                   header={<Cell>Type</Cell>}
@@ -255,7 +255,7 @@ class metadataSettings extends React.Component {
                 {this.state.metadataVersions[rowIndex].type}
               </Cell>
             )}
-                  width={150}
+                  width={145}
                 />
 
                 <Column
@@ -265,7 +265,7 @@ class metadataSettings extends React.Component {
                 {this.state.metadataVersions[rowIndex].importdate}
               </Cell>
             )}
-                  width={200}
+                  width={185}
                 />
 
               </Table>
@@ -276,7 +276,7 @@ class metadataSettings extends React.Component {
               <Table
                 rowHeight={50}
                 rowsCount={this.state.metadataVersions.length}
-                width={700}
+                width={670}
                 maxHeight={(50 * 6)}
                 headerHeight={50}>
                 <Column
@@ -286,7 +286,7 @@ class metadataSettings extends React.Component {
                 {this.state.metadataVersions[rowIndex].name}
               </Cell>
             )}
-                  width={200}
+                  width={190}
                 />
                 <Column
                   header={<Cell>When</Cell>}
@@ -294,7 +294,7 @@ class metadataSettings extends React.Component {
               <Cell {...props}>
                 {new Date(this.state.metadataVersions[rowIndex].created).toLocaleString()}
               </Cell>
-            )} width={300}
+            )} width={280}
                 />
                 <Column
                   header={<Cell>Type</Cell>}

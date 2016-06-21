@@ -1,5 +1,6 @@
+const dhisDevConfig = DHIS_CONFIG;
 if (process.env.NODE_ENV !== 'production') {
-    require('../dev-jquery-auth.js');
+    jQuery.ajaxSetup({ headers: { Authorization: dhisDevConfig.authorization } });
 }
 
 import 'babel-polyfill';
@@ -28,7 +29,9 @@ require('../scss/settings-app.scss');
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.TRACE);
 
 
-function configI18n({ uiLocale }) {
+function configI18n(userSettings) {
+    const uiLocale = userSettings.keyUiLocale;
+
     if (uiLocale !== 'en') {
         config.i18n.sources.add(`i18n/module/i18n_module_${uiLocale}.properties`);
     }
@@ -38,9 +41,10 @@ function configI18n({ uiLocale }) {
 ReactDOM.render(<LoadingMask />, document.getElementById('app'));
 
 
-getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_manifest.webapp')
+getManifest('manifest.webapp')
     .then(manifest => {
-        config.baseUrl = `${manifest.getBaseUrl()}/api`;
+        const baseUrl = process.env.NODE_ENV === 'production' ? manifest.getBaseUrl() : dhisDevConfig.baseUrl;
+        config.baseUrl = `${baseUrl}/api`;
         log.info(`Loading: ${manifest.name} v${manifest.version}`);
         log.info(`Built ${manifest.manifest_generated_at}`);
     })
@@ -204,7 +208,9 @@ getManifest(process.env.NODE_ENV === 'production' ? 'manifest.webapp' : 'dev_man
 
                 // Apps/modules
                 const startModules = (results[6].modules || []).map(module => ({
-                    id: module.name,
+                    id: module.defaultAction.substr(0, 3) === '../'
+                        ? module.name
+                        : `app:${module.name}`,
                     displayName: module.displayName || module.name,
                 }));
 

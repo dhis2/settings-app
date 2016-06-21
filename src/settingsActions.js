@@ -58,14 +58,20 @@ function getSearchResultsFor(searchValue) {
         .filter(keyValue => RegExp(searchValue.toLowerCase()).test(keyValue[0].toLowerCase()))
         .map(([, value]) => value)
         .distinct()
-        .reduce((acc, value) => acc.concat(value), []);
+        .reduce((acc, value) => acc.concat(value), [])
+        .map(results => {
+            if (settingsKeyMapping.hasOwnProperty(searchValue)) {
+                results.push(searchValue);
+            }
+            return results;
+        });
 }
 
 settingsActions.searchSettings
     .distinctUntilChanged()
     .debounce(150)
     .map(action => action.data)
-    .map(searchValue => searchValue.toLowerCase().trim())
+    .map(searchValue => searchValue.trim())
     .tap(searchValue => {
         if (!searchValue) {
             settingsActions.setCategory('general');

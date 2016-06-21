@@ -1,39 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0          http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.twoca.dhis</groupId>
-    <artifactId>dhis-settings-app</artifactId>
-    <version>2.24.2</version>
-    <packaging>jar</packaging>
-    <name>Multi Modules Build Using Bintray.com</name>
-
-    <organization>
-        <name>DHIS 2</name>
-        <url>https://www.dhis2.org</url>
-    </organization>
-
-    <developers>
-        <developer>
-            <name>Nicolay Ramm</name>
-            <email>nicolay@dhis2.org</email>
-            <organization>UiO</organization>
-            <organizationUrl>http://www.uio.no/</organizationUrl>
-        </developer>
-    </developers>
-
-    <licenses>
-        <license>
-            <name>BSD</name>
-            <url>https://opensource.org/licenses/BSD-3-Clause</url>
-        </license>
-    </licenses>
-
-
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/dhis2/settings-app</url>
-    </issueManagement>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>org.hisp.dhis</groupId>
+  <artifactId>dhis-app-settings</artifactId>
+  <version>2.23-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>Settings</name>	
+  <description>DHIS 2 settings app</description>  
+  <url>https://github.com/dhis2/settings-app</url>
+  
+  <organization>
+    <name>DHIS 2</name>
+    <url>https://www.dhis2.org</url>
+  </organization>
+  
+  <developers>
+    <developer>
+      <name>Nicolay Ramm</name>
+      <email>nicolay@dhis2.org</email>
+      <organization>UiO</organization>
+      <organizationUrl>http://www.uio.no/</organizationUrl>
+    </developer>
+  </developers>
+  
+  <licenses>
+    <license>
+      <name>BSD</name>
+      <url>https://opensource.org/licenses/BSD-3-Clause</url>
+    </license>
+  </licenses>
+  
+  <scm>
+    <connection>scm:git:git@github.com:dhis2/settings-app.git</connection>
+    <developerConnection>scm:git:git@github.com:dhis2/settings-app.git</developerConnection>
+    <url>git@github.com:dhis2/settings-app.git</url>
+  </scm>
+  
+  <issueManagement>
+	<system>GitHub</system>
+	<url>https://github.com/dhis2/settings-app</url>
+  </issueManagement>
 
     <distributionManagement>
         <repository>
