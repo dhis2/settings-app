@@ -11,7 +11,6 @@ import settingsStore from '../settingsStore';
 import configOptionStore from '../configOptionStore';
 import settingsKeyMapping from '../settingsKeyMapping';
 import {Table, Column, Cell} from 'fixed-data-table';
-import classNames from 'classnames';
 
 class metadataSettings extends React.Component {
   constructor(props, context) {
@@ -23,45 +22,39 @@ class metadataSettings extends React.Component {
       masterVersionName: null,
       lastFailedTime: null,
       hqInstanceUrl: null,
-      isVersioningEnabled: null,
-      showVersions: null,
+      isVersioningEnabled: false,
       remoteVersionName: null,
-      isLocal: null,
-      isSetupAvailable: "none",
-      isInitialSetup: "block",
+      isLocalInstance: false,
+      hasVersions: false
     };
     this.d2 = context.d2;
     this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
     this.onSelectTransaction = this.onSelectTransaction.bind(this);
+    this.getVersions = this.getVersions.bind(this);
+    this.getSettings = this.getSettings.bind(this);
+    this.createVersion = this.createVersion.bind(this);
+    this.sync = this.sync.bind(this);
+    this.onCheck = this.onCheck.bind(this);
     this.saveSettingsKey = 'keyVersionEnabled';
     this.createVersionKey = 'createVersionButton';
-
-    this.getLocaleName = function(code) {
-      return configOptionStore.state &&
-        configOptionStore.getState().locales
-          .filter(locale => locale.id === code)
-          .map(locale => locale.displayName)
-          .pop() || code;
-    };
   }
 
-
+  sync(){
+    return this.getVersions()
+      .then(this.getSettings)
+  }
   onSelectTransaction(event, value) {
     this.setState({selectedTransactionType : value});
   }
 
   componentDidMount() {
-    var self = this;
-    this.getVersions(self)
-      .then(function() {
-        self.getSettings(self)
-      });
+    this.sync()
   };
 
-  getVersions(self) {
+  getVersions() {
     return this.d2.Api.getApi().get('/metadata/versions')
       .then(result=> {
-        var versions = result.metadataversions.sort(function(a, b) {
+        const versions = result.metadataversions.sort(function(a, b) {
           if( a.created < b.created )
             return 1;
           else if( a.created > b.created )
@@ -73,28 +66,25 @@ class metadataSettings extends React.Component {
           version.importdate = version.importdate ? new Date(version.importdate).toLocaleString() : "NA";
         });
 
-        self.setState({
+        this.setState({
           metadataVersions: versions
         });
 
-        if( this.state.metadataVersions != undefined && this.state.metadataVersions.length != 0 )
-          self.setState({ isSetupAvailable: "block", isInitialSetup: "none" });
-        else
-          self.setState({ isSetupAvailable: "none", isInitialSetup: "block" });
+        this.setState({hasVersions: ( this.state.metadataVersions != undefined && this.state.metadataVersions.length != 0 ) })
 
         return Promise.resolve()
       })
       .catch(error => {
         console.log('error', error);
-        self.setState({ showVersions: "none" });
+        this.setState({ hasVersions: false });
         return Promise.resolve()
       });
   };
 
-  getSettings(self) {
+  getSettings() {
     this.d2.Api.getApi().get('/systemSettings')
       .then(result=> {
-        self.setState({
+        this.setState({
           lastFailedTime: (result.keyMetadataLastFailedTime == undefined ? null : result.keyMetadataLastFailedTime),
           isVersioningEnabled: result.keyVersionEnabled,
           hqInstanceUrl: result.keyRemoteInstanceUrl,
@@ -103,26 +93,17 @@ class metadataSettings extends React.Component {
           isSchedulerEnabled: (result.keySchedTasks != undefined)
         });
 
-        if( this.state.isVersioningEnabled )
-          this.state.showVersions = "block";
-        else
-          this.state.showVersions = "none";
-
         if( this.state.hqInstanceUrl != undefined && this.state.hqInstanceUrl.length != 0 ) //&& this.state.metadataVersions[0].importdate!=undefined
-          self.setState({
-            isLocal: "inline-block",
+          this.setState({
+            isLocalInstance: true,
             masterVersionName: this.state.remoteVersionName,
-            isHQ: "none",
-            isLastSyncValid: ( ( this.state.lastFailedTime != null && this.state.lastFailedTime != undefined && this.state.metadataVersions != undefined && this.state.metadataVersions.length != 0 && new Date(this.state.lastFailedTime) > new Date(this.state.metadataVersions[ 0 ].importdate) ) ?
-              "inline-block" : "none")
+            isLastSyncValid:  this.state.lastFailedTime != null
           });
         else
-          self.setState({
-            isLocal: "none",
+          this.setState({
+            isLocalInstance: false,
             masterVersionName: (this.state.metadataVersions != undefined && this.state.metadataVersions.length != 0 ? this.state.metadataVersions[ 0 ].name : null),
-            isHQ: "block"
           });
-
         return Promise.resolve()
       })
       .catch(error => {
@@ -131,25 +112,27 @@ class metadataSettings extends React.Component {
       });
   };
 
-  saveVersion(self) {
-    var mapping = settingsKeyMapping[ this.createVersionKey ];
+  createVersion() {
+    const mapping = settingsKeyMapping[ this.createVersionKey ];
     this.d2.Api.getApi().post(mapping.uri + '?type=' + this.state.selectedTransactionType)
       .then(result => {
         settingsActions.load(true);
         settingsActions.showSnackbarMessage(this.getTranslation('version_created'));
         return Promise.resolve()
       })
-      .then(function() {
-        self.getVersions(self)
-          .then(function() {
-            self.getSettings(self)
-          });
-      })
+      .then(this.sync)
       .catch(error => {
+        console.log('error', error)
         settingsActions.showSnackbarMessage(this.getTranslation('version_not_created'));
         return Promise.resolve()
       });
   };
+
+  onCheck(e, v){
+    this.setState({isVersioningEnabled: v})
+    settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false')
+    setTimeout(this.sync, 100);
+  }
 
   render() {
     const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
@@ -160,13 +143,7 @@ class metadataSettings extends React.Component {
       props: {
         label: this.getTranslation('keyVersionEnabled'),
         checked: ((settingsStore.state && settingsStore.state[ this.saveSettingsKey ])) === 'true',
-        onCheck: (e, v) => {
-          settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false');
-          if( v )
-            this.state.showVersions = "block";
-          else
-            this.state.showVersions = "none";
-        },
+        onCheck: this.onCheck
       },
     } ];
 
@@ -175,42 +152,40 @@ class metadataSettings extends React.Component {
       name: 'create_metadata_version',
       props: {
         label: this.getTranslation('create_metadata_version'),
-        onClick: () => {
-          this.saveVersion(this);
-        },
+        onClick: this.createVersion
+
       },
     }
     ];
 
     const styles = {
-      isVisible: {
-        "display": this.state.showVersions
-      },
-      isLocal: {
-        "display": this.state.isLocal,
+
+      inline: {
+        "display": "inline-block",
         float: "right"
       },
-      isHQ: {
-        "display": this.state.isHQ
+
+      visible: {
+        "display": "block"
       },
-      isLastSyncValid: {
-        "display": this.state.isLastSyncValid,
-        float: "right"
-      },
-      isSetupAvailable: {
-        "display": this.state.isSetupAvailable
+
+      hidden: {
+        "display": "none"
       }
+
     };
 
     return (
+
+
       <div>
+
         <br/><br/>
         <h2>{this.getTranslation("metadata_versioning")}</h2>
         <div>
           <FormBuilder fields={checkboxfields} onUpdateField={this.saveSettingsKey}/>
         </div>
-        //className={classNames({hidden: !this.state.isVisible})}
-        <div style={styles.isVisible}>
+        <div style={this.state.isVersioningEnabled ? styles.visible : styles.hidden}>
           <br/><br/>
           <h3>{this.getTranslation("create_metadata_version")}</h3>
           <hr/>
@@ -234,15 +209,15 @@ class metadataSettings extends React.Component {
 
           <br/><br/><br/>
 
-          <div style={styles.isSetupAvailable}>
+          <div style={this.state.hasVersions ? styles.visible : styles.hidden}>
             <div>
               <div style={{display: "inline-block",float: "left"}}>
                 <label style={{"fontWeight": "bold"}}>Master Version: </label>
                 <span>{this.state.masterVersionName}</span>
               </div>
 
-              <div align="right" style={styles.isLocal}>
-                <div align="right" style={styles.isLastSyncValid}>
+              <div align="right" style={this.state.isLocalInstance ? styles.inline : styles.hidden}>
+                <div align="right" style={this.state.isLastSyncValid ? styles.inline : styles.hidden}>
                   <label style={{"fontStyle": "italic"}}> Last sync attempt: </label>
                   <span>{this.state.lastFailedVersion}</span>
                   <span> | <span style={{"color":"red"}}>Failed</span> | {new Date(this.state.lastFailedTime).toLocaleString()}</span>
@@ -251,7 +226,7 @@ class metadataSettings extends React.Component {
             </div>
 
 
-            <div style={styles.isLocal}>
+            <div style={this.state.isLocalInstance ? styles.inline : styles.hidden}>
               <Table
                 rowHeight={50}
                 rowsCount={this.state.metadataVersions.length}
@@ -299,7 +274,7 @@ class metadataSettings extends React.Component {
             </div>
 
 
-            <div style={styles.isHQ}>
+            <div style={this.state.isLocalInstance ? styles.hidden : styles.visible}>
               <Table
                 rowHeight={50}
                 rowsCount={this.state.metadataVersions.length}
@@ -338,7 +313,7 @@ class metadataSettings extends React.Component {
 
           </div>
 
-          <div style={{display: this.state.isInitialSetup}}>
+          <div style={this.state.hasVersions ? styles.hidden : styles.visible}>
             <h4>{this.getTranslation('no_versions_exist')}</h4>
           </div>
 

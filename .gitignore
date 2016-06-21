@@ -10,7 +10,7 @@ build/
 target/
 
 .DS_Store
-
+webpack.config.js
 dev_manifest.webapp
 dev-jquery-auth.js
 
