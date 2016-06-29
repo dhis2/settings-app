@@ -15,6 +15,7 @@ import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.component';
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component';
 import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component.js';
+import metadataSettings from './metadata-settings/metadataSettings.component.js';
 import SelectField from './form-fields/drop-down';
 import Checkbox from './form-fields/check-box';
 import FileUpload from './form-fields/file-upload.js';
@@ -250,6 +251,11 @@ class SettingsFields extends React.Component {
                 case 'localizedAppearance':
                     return Object.assign({}, fieldBase, {
                         component: LocalizedAppearance,
+                    });
+
+                case 'metadataSettings':
+                    return Object.assign({}, fieldBase, {
+                        component: metadataSettings,
                     });
 
                 default:

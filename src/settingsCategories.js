@@ -1,4 +1,3 @@
-
 export const categoryOrder = [
     'general',
     'server',
@@ -144,6 +143,7 @@ export const categories = {
             'keyRemoteInstanceUrl',
             'keyRemoteInstanceUsername',
             'keyRemoteInstancePassword',
+            'keyMetadataDataVersioning',
         ],
     },
     oauth2: {
