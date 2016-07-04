@@ -166,6 +166,14 @@ getManifest('manifest.webapp')
             'yes',
             'no',
             'edit',
+            'app_search_placeholder',
+            'manage_my_apps',
+            'settings',
+            'profile',
+            'account',
+            'help',
+            'about_dhis2',
+            'log_out',
         ]);
         d2.i18n.load().then(() => {
             if (!d2.currentUser.authorities.has('F_SYSTEM_SETTING')) {

@@ -5,20 +5,22 @@ import Snackbar from 'material-ui/lib/snackbar';
 import FontIcon from 'material-ui/lib/font-icon';
 
 // D2 UI
-import HeaderBar from 'd2-ui/lib/header-bar/HeaderBar.component';
+import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
+import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
+import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 
 // App
 import SettingsFields from './settingsFields.component.js';
 import MuiThemeMixin from './mui-theme.mixin.js';
-import SelectField from './form-fields/drop-down';
-import Checkbox from './form-fields/check-box';
 import AppTheme from './theme';
 
 import settingsActions from './settingsActions';
 import { categoryOrder, categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
 
+
+const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
 const styles = {
     header: {
