@@ -174,6 +174,7 @@ getManifest('manifest.webapp')
             'help',
             'about_dhis2',
             'log_out',
+            'no_results_found',
         ]);
         d2.i18n.load().then(() => {
             if (!d2.currentUser.authorities.has('F_SYSTEM_SETTING')) {
