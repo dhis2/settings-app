@@ -1,5 +1,3 @@
-require('fixed-data-table/dist/fixed-data-table.css');
-
 import React from 'react';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import Checkbox from '../form-fields/check-box';
