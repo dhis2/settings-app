@@ -101,6 +101,7 @@ export const categories = {
             'keyOpenIdProviderLabel',
             'corsWhitelist',
             'keyMapzenSearchApiKey',
+            'keyGoogleMapsApiKey',
         ],
     },
     approval: {
