@@ -14,14 +14,11 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 import settingsActions from './settingsActions';
-import settingsStore from './settingsStore';
 import configOptionStore from './configOptionStore';
 import settingsKeyMapping from './settingsKeyMapping';
 
 // D2 UI
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
-
-import App from './app.component.js';
 
 // Styles
 require('../scss/settings-app.scss');
@@ -52,77 +49,6 @@ getManifest('manifest.webapp')
     .then(configI18n)
     .then(init)
     .then(d2 => {
-        function renderApp() {
-            ReactDOM.render(<App d2={d2} />, document.getElementById('app'));
-        }
-
-        // settingsActions.load handler
-        settingsActions.load.subscribe((args) => {
-            Promise.all([
-                d2.system.settings.all(),
-                d2.system.configuration.all(args.data === true),
-            ]).then(results => {
-                const cfg = Object.keys(results[1])
-                    .filter(key => key !== 'systemId')
-                    .map(key => {
-                        const value = results[1][key];
-                        return { key, value };
-                    })
-                    .reduce((prev, curr) => {
-                        let value = curr.value;
-                        if (value === null || value === 'null' || value === undefined) {
-                            value = 'null';
-                        } else if (value.hasOwnProperty('id')) {
-                            value = value.id;
-                        }
-                        prev[curr.key] = value; // eslint-disable-line no-param-reassign
-                        return prev;
-                    }, {});
-                cfg.corsWhitelist = (results[1].corsWhitelist || []).filter(v => v.trim().length > 0).sort().join('\n');
-                // Stupid fix for the fact that old controllers will save numbers as numbers,
-                // even though the API only allows string values, which creates a silly mismatch!
-                Object.keys(results[0]).forEach(key => {
-                    const v = results[0][key];
-                    results[0][key] = v !== null && !isNaN(v) ? v.toString() : v; // eslint-disable-line no-param-reassign
-                });
-                settingsStore.setState(Object.assign({}, results[0], cfg));
-                log.debug('System settings loaded successfully.', settingsStore.state);
-                renderApp();
-            }, error => {
-                log.error('Failed to load system settings:', error);
-            });
-        });
-
-        // settingsActions.saveKey handler
-        settingsActions.saveKey.subscribe((args) => {
-            const [fieldData, value] = args.data;
-            const key = Array.isArray(fieldData) ? fieldData.join('') : fieldData;
-            const mappingKey = Array.isArray(fieldData) ? fieldData[0] : fieldData;
-            const mapping = settingsKeyMapping[mappingKey];
-
-            if (mapping.configuration) {
-                d2.system.configuration.set(key, value)
-                    .then(() => {
-                        settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
-                    })
-                    .catch((err) => {
-                        log.error('Failed to save configuration:', err);
-                    });
-            } else {
-                d2.system.settings.set(key, value)
-                    .then(() => {
-                        settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
-                    })
-                    .catch((err) => {
-                        log.error('Failed to save setting:', err);
-                    });
-            }
-
-            const newState = settingsStore.state;
-            newState[key] = value;
-            settingsStore.setState(newState);
-        });
-
         // App init
         log.debug('D2 initialized', d2);
 
