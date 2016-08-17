@@ -9,6 +9,8 @@ import settingsStore from '../settingsStore';
 import settingsKeyMapping from '../settingsKeyMapping';
 import { Table, Column, Cell } from 'fixed-data-table';
 
+require('fixed-data-table/dist/fixed-data-table.css');
+
 class metadataSettings extends React.Component {
     constructor(props, context) {
         super(props, context);
