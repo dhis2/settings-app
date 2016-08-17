@@ -2,7 +2,6 @@ import React from 'react';
 
 // Material UI
 import Snackbar from 'material-ui/lib/snackbar';
-import FontIcon from 'material-ui/lib/font-icon';
 
 // D2 UI
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
@@ -136,8 +135,7 @@ export default React.createClass({
             const key = category;
             const label = this.props.d2.i18n.getTranslation(categories[category].label);
             const icon = categories[category].icon;
-            // TODO: Un-hack?
-            return { key, label, icon: <FontIcon className="material-icons" style={styles.menuIcon}>{icon}</FontIcon> };
+            return { key, label, icon };
         });
         const setSidebar = (ref) => {
             this.sidebar = ref;
