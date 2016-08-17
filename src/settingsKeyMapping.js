@@ -434,7 +434,7 @@ const settingsKeyMapping = {
         type: 'password',
     },
     keyMetadataDataVersioning: {
-        label: 'KeyMetaDataVersioning',
+        label: 'keyVersionEnabled',
         type: 'metadataSettings',
     },
     keyVersionEnabled: {
