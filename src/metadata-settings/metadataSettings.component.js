@@ -24,7 +24,8 @@ class metadataSettings extends React.Component {
             isVersioningEnabled: false,
             remoteVersionName: null,
             isLocalInstance: false,
-            hasVersions: false
+            hasVersions: false,
+            isTaskRunning: false
         };
         this.d2 = context.d2;
         this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
@@ -116,14 +117,17 @@ class metadataSettings extends React.Component {
 
     createVersion() {
         const mapping = settingsKeyMapping[this.createVersionKey];
+        this.setState({ isTaskRunning: true });
         this.d2.Api.getApi().post(mapping.uri + '?type=' + this.state.selectedTransactionType)
             .then(() => {
+                this.setState({ isTaskRunning: false });
                 settingsActions.load(true);
                 settingsActions.showSnackbarMessage(this.getTranslation('version_created'));
                 return Promise.resolve()
             })
             .then(this.sync)
             .catch(error => {
+                this.setState({ isTaskRunning: false });
                 console.log('Error creating version:', error);
                 settingsActions.showSnackbarMessage(this.getTranslation('version_not_created'));
                 return Promise.resolve()
@@ -146,20 +150,11 @@ class metadataSettings extends React.Component {
                 props: {
                     label: this.getTranslation('keyVersionEnabled'),
                     checked: ((settingsStore.state && settingsStore.state[this.saveSettingsKey])) === 'true',
-                    onCheck: this.onToggleVersioning
+                    onCheck: this.onToggleVersioning,
+                    disabled: this.state.isTaskRunning
                 },
             }
         ];
-
-        const createVersionFields = [{
-            component: RaisedButton,
-            name: 'create_metadata_version',
-            props: {
-                label: this.getTranslation('create_metadata_version'),
-                onClick: this.createVersion
-
-            },
-        }];
 
         const styles = {
             inlineRight: {
@@ -173,6 +168,11 @@ class metadataSettings extends React.Component {
             hidden: {
                 display: 'none',
             },
+            alignButton :{
+                display: 'inline-block',
+                float: 'right',
+                "margin-left": '10'
+            }
         };
 
         return (
@@ -200,8 +200,12 @@ class metadataSettings extends React.Component {
                                 />
                             </RadioButtonGroup>
                         </div>
+                        <div style={this.state.isTaskRunning ? styles.alignButton : styles.hidden} >
+                            <img style={{ height: '35' }} src="resources/img/loading.gif" alt="loading......."/>
+                        </div>
+
                         <div style={styles.inlineRight}>
-                            <FormBuilder fields={createVersionFields} onUpdateField={settingsActions.saveKey}/>
+                            <RaisedButton ref="btn" label={this.getTranslation('create_metadata_version')} onClick={this.createVersion} disabled={this.state.isTaskRunning}/>
                         </div>
                     </div>
 
