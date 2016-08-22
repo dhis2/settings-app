@@ -4,6 +4,7 @@ import Checkbox from '../form-fields/check-box';
 import RaisedButton from 'material-ui/lib/raised-button';
 import RadioButtonGroup from 'material-ui/lib/radio-button-group';
 import RadioButton from 'material-ui/lib/radio-button';
+import CircularProgress from 'material-ui/lib/circular-progress';
 import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';
 import settingsKeyMapping from '../settingsKeyMapping';
@@ -167,11 +168,6 @@ class metadataSettings extends React.Component {
             },
             hidden: {
                 display: 'none',
-            },
-            alignButton :{
-                display: 'inline-block',
-                float: 'right',
-                "margin-left": '10'
             }
         };
 
@@ -200,9 +196,8 @@ class metadataSettings extends React.Component {
                                 />
                             </RadioButtonGroup>
                         </div>
-                        <div style={this.state.isTaskRunning ? styles.alignButton : styles.hidden} >
-                            <img style={{ height: '35' }} src="resources/img/loading.gif" alt="loading......."/>
-                        </div>
+
+                        <CircularProgress style={this.state.isTaskRunning? { display: "inline-block", float: "right", top: "-7px" } : styles.hidden} size={0.5}/>
 
                         <div style={styles.inlineRight}>
                             <RaisedButton ref="btn" label={this.getTranslation('create_metadata_version')} onClick={this.createVersion} disabled={this.state.isTaskRunning}/>
