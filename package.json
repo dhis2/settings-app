@@ -48,6 +48,7 @@
     "eslint-config-dhis2": "^2.0.0",
     "eslint-plugin-react": "^4.0.0",
     "fbjs": "^0.7.2",
+    "fixed-data-table": "~0.6.0",
     "http-proxy": "git+https://github.com/nicolayr/node-http-proxy.git",
     "lodash.isfinite": "^3.3.0",
     "loglevel": "1.4.0",
@@ -63,8 +64,7 @@
     "style-loader": "^0.13.0",
     "susy": "^2.2.6",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0",
-    "fixed-data-table": "~0.6.0"
+    "webpack-dev-server": "1.14.x"
   },
   "pre-commit": [
     "validate"
