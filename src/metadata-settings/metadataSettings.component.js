@@ -171,8 +171,8 @@ class metadataSettings extends React.Component {
             },
             inlineProgressIcon: {
                 display: 'inline-block',
-                float: 'right',
-                top: '-7px'
+                top: '-7px',
+                float: 'left',
             }
         };
 
@@ -194,17 +194,18 @@ class metadataSettings extends React.Component {
                                 <RadioButton
                                     value="BEST_EFFORT"
                                     label={this.getTranslation('version_type_best_effort')}
+                                    disabled={this.state.isTaskRunning}
                                 />
                                 <RadioButton
                                     value="ATOMIC"
                                     label={this.getTranslation('version_type_atomic')}
+                                    disabled={this.state.isTaskRunning}
                                 />
                             </RadioButtonGroup>
                         </div>
 
-                        <CircularProgress style={this.state.isTaskRunning? styles.inlineProgressIcon : styles.hidden} size={0.5}/>
-
                         <div style={styles.inlineRight}>
+                            {this.state.isTaskRunning && <CircularProgress style={styles.inlineProgressIcon} size={0.5}/>}
                             <RaisedButton ref="btn" label={this.getTranslation('create_metadata_version')} onClick={this.createVersion} disabled={this.state.isTaskRunning}/>
                         </div>
                     </div>
