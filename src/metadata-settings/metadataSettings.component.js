@@ -4,6 +4,7 @@ import Checkbox from '../form-fields/check-box';
 import RaisedButton from 'material-ui/lib/raised-button';
 import RadioButtonGroup from 'material-ui/lib/radio-button-group';
 import RadioButton from 'material-ui/lib/radio-button';
+import CircularProgress from 'material-ui/lib/circular-progress';
 import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';
 import settingsKeyMapping from '../settingsKeyMapping';
@@ -24,7 +25,8 @@ class metadataSettings extends React.Component {
             isVersioningEnabled: false,
             remoteVersionName: null,
             isLocalInstance: false,
-            hasVersions: false
+            hasVersions: false,
+            isTaskRunning: false
         };
         this.d2 = context.d2;
         this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
@@ -116,14 +118,17 @@ class metadataSettings extends React.Component {
 
     createVersion() {
         const mapping = settingsKeyMapping[this.createVersionKey];
+        this.setState({ isTaskRunning: true });
         this.d2.Api.getApi().post(mapping.uri + '?type=' + this.state.selectedTransactionType)
             .then(() => {
+                this.setState({ isTaskRunning: false });
                 settingsActions.load(true);
                 settingsActions.showSnackbarMessage(this.getTranslation('version_created'));
                 return Promise.resolve()
             })
             .then(this.sync)
             .catch(error => {
+                this.setState({ isTaskRunning: false });
                 console.log('Error creating version:', error);
                 settingsActions.showSnackbarMessage(this.getTranslation('version_not_created'));
                 return Promise.resolve()
@@ -146,20 +151,11 @@ class metadataSettings extends React.Component {
                 props: {
                     label: this.getTranslation('keyVersionEnabled'),
                     checked: ((settingsStore.state && settingsStore.state[this.saveSettingsKey])) === 'true',
-                    onCheck: this.onToggleVersioning
+                    onCheck: this.onToggleVersioning,
+                    disabled: this.state.isTaskRunning
                 },
             }
         ];
-
-        const createVersionFields = [{
-            component: RaisedButton,
-            name: 'create_metadata_version',
-            props: {
-                label: this.getTranslation('create_metadata_version'),
-                onClick: this.createVersion
-
-            },
-        }];
 
         const styles = {
             inlineRight: {
@@ -173,6 +169,11 @@ class metadataSettings extends React.Component {
             hidden: {
                 display: 'none',
             },
+            inlineProgressIcon: {
+                display: 'inline-block',
+                float: 'right',
+                top: '-7px'
+            }
         };
 
         return (
@@ -200,8 +201,11 @@ class metadataSettings extends React.Component {
                                 />
                             </RadioButtonGroup>
                         </div>
+
+                        <CircularProgress style={this.state.isTaskRunning? styles.inlineProgressIcon : styles.hidden} size={0.5}/>
+
                         <div style={styles.inlineRight}>
-                            <FormBuilder fields={createVersionFields} onUpdateField={settingsActions.saveKey}/>
+                            <RaisedButton ref="btn" label={this.getTranslation('create_metadata_version')} onClick={this.createVersion} disabled={this.state.isTaskRunning}/>
                         </div>
                     </div>
 
