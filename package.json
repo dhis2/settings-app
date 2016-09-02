@@ -1,6 +1,6 @@
 {
   "name": "settings-app",
-  "version": "24.0.10",
+  "version": "24.0.11",
   "description": "Settings management application for DHIS2",
   "main": "index.html",
   "scripts": {
