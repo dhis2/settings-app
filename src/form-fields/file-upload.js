@@ -133,7 +133,7 @@ export default React.createClass({
 
     _fileClick(e) {
         if (this.fileInput && !this.state.uploading) {
-            this.fileInput.getDOMNode().click(e);
+            this.fileInput.click(e);
         } else if (this.state.uploading) {
             this.xhr.abort();
             this.setState({uploading: false, progress: undefined});
@@ -175,11 +175,7 @@ export default React.createClass({
         const data = new FormData();
         data.append('file', e.target.files[0]);
 
-        api.post(['staticContent', this.props.name].join('/'), data, {
-            contentType: false,
-            processData: false,
-            xhr: () => { return xhr; },
-        }).then(() => {
+        api.post(['staticContent', this.props.name].join('/'), data).then(() => {
             log.info('File uploaded successfully');
             this.props.onChange({target: {value: true}});
             this.setState({
