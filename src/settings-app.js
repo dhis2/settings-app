@@ -1,7 +1,4 @@
 const dhisDevConfig = DHIS_CONFIG;
-if (process.env.NODE_ENV !== 'production') {
-    jQuery.ajaxSetup({ headers: { Authorization: dhisDevConfig.authorization } });
-}
 
 import 'babel-polyfill';
 import React from 'react';

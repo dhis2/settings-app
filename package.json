@@ -27,9 +27,7 @@
     "url": "https://github.com/dhis2/settings-app/issues"
   },
   "homepage": "https://github.com/dhis2/settings-app#readme",
-  "dependencies": {
-    "jquery": "^2.2.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.6.4",
     "babel-eslint": "^6.0.0-beta.1",

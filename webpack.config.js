@@ -73,7 +73,6 @@ const webpackConfig = {
             { path: '/api/*', target: dhisConfig.baseUrl, bypass: log },
             { path: '/dhis-web-commons/*', target: dhisConfig.baseUrl, bypass: log },
             { path: '/icons/*', target: dhisConfig.baseUrl, bypass: log },
-            { path: '/jquery.min.js', target: 'http://localhost:8081/node_modules/jquery/dist', bypass: log },
         ],
     },
 };
