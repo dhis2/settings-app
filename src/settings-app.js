@@ -136,7 +136,7 @@ getManifest('manifest.webapp')
             // Locales
             const locales = (results[9] || []).map(locale => ({ id: locale.locale, displayName: locale.name }));
 
-            d2.currentUser.userSettingsNoFallback = results[10]; // eslint-disable-line
+            const userSettingsNoFallback = results[10];
 
             configOptionStore.setState({
                 indicatorGroups,
@@ -149,6 +149,7 @@ getManifest('manifest.webapp')
                 flags,
                 styles,
                 locales,
+                userSettingsNoFallback,
             });
             log.debug('Got settings options:', configOptionStore.getState());
         });

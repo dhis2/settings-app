@@ -268,7 +268,8 @@ class SettingsFields extends React.Component {
                 const mapping = settingsKeyMapping[field.name];
 
                 if (mapping.userSettingsOverride) {
-                    const userSettingValue = d2.currentUser.userSettingsNoFallback[field.name] !== null
+                    const userSettingsNoFallback = configOptionStore.getState().userSettingsNoFallback;
+                    const userSettingValue = userSettingsNoFallback && userSettingsNoFallback[field.name] !== null
                         ? d2.currentUser.userSettingsNoFallback[field.name]
                         : '';
                     let component = field.component;
