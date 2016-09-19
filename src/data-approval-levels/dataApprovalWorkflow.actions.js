@@ -46,13 +46,13 @@ actions.loadDataApprovalWorkflows
     });
 
 actions.saveDataApprovalWorkflow
-    .subscribe(({ data, complete, error }) => {
+    .subscribe(({ data, complete: actionComplete, error: actionFailed }) => {
         getD2().then(d2 => {
             const workflowToSave = data;
 
             if (!workflowToSave.dirty && !workflowToSave.dataApprovalLevels.dirty) {
                 settingsActions.showSnackbarMessage(d2.i18n.getTranslation('approval_workflow_saved'));
-                complete();
+                actionComplete();
                 return;
             }
 
@@ -64,14 +64,15 @@ actions.saveDataApprovalWorkflow
                     actions.loadDataApprovalWorkflows();
                     settingsActions.showSnackbarMessage(d2.i18n.getTranslation('approval_workflow_saved'));
                 })
-                .then(complete)
-                .catch(e => {
+                .then(actionComplete)
+                .catch(error => {
                     const errorLabel = d2.i18n.getTranslation('failed_to_save_approval_workflow');
-                    log.error(`Error when saving approval workflow:\n - ${
-                        e.messages && e.messages.map(r => r.message).join('\n - ') || e.message || e
-                    }`);
+                    const message = (error.messages || error.response && error.response.errorReports)
+                        ? `\n - ${(error.messages || error.response.errorReports).map(e => e.message).join('\n - ')}`
+                        : error.message || error;
+                    log.warn(`Error when saving approval workflow: ${message}`);
                     settingsActions.showSnackbarMessage(`${errorLabel}`);
-                    error(e);
+                    actionFailed();
                 });
         });
     });
@@ -88,7 +89,7 @@ actions.deleteDataApprovalWorkflow
                     complete();
                 })
                 .catch(err => {
-                    log.error('Failed to delete workflow:', err);
+                    log.warn('Error when deleting approval workflow:', err);
                     settingsActions.showSnackbarMessage(err.message);
                     error(err);
                 });

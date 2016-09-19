@@ -118,9 +118,11 @@ export default React.createClass({
             .catch(error => {
                 settingsActions.showSnackbarMessage(this.getTranslation('failed_to_save_oauth2_client'));
                 this.setState({ saving: false });
-                log.warn(`Failed to save OAuth2 client:\n - ${
-                    error.messages && error.messages.map(e => e.message).join('\n - ') || error.message || error
-                }`);
+
+                const message = (error.messages || error.response && error.response.errorReports)
+                    ? `\n - ${(error.messages || error.response.errorReports).map(e => e.message).join('\n - ')}`
+                    : error.message || error;
+                log.warn(`Error when saving OAuth2 client: ${message}`);
             });
     },
 

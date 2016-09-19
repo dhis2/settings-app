@@ -33,7 +33,7 @@ settingsActions.saveKey.subscribe((args) => {
                     settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
                 })
                 .catch((err) => {
-                    log.error('Failed to save configuration:', err);
+                    log.warn('Failed to save configuration:', err);
                 });
         } else {
             d2.system.settings.set(key, value)
@@ -41,7 +41,7 @@ settingsActions.saveKey.subscribe((args) => {
                     settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
                 })
                 .catch((err) => {
-                    log.error('Failed to save setting:', err);
+                    log.warn('Failed to save setting:', err);
                 });
         }
 
@@ -85,7 +85,7 @@ const settingsSearchMap = Observable.fromPromise(new Promise((resolve) => {
                 log.debug('System settings loaded successfully.', settingsStore.state);
                 ReactDOM.render(<App d2={d2} />, document.getElementById('app'));
             }, error => {
-                log.error('Failed to load system settings:', error);
+                log.warn('Failed to load system settings:', error);
             });
 
             // Build the search index

@@ -189,7 +189,7 @@ export default React.createClass({
                 () => {
                     this.setState({ saving: false, showForm: false });
                 },
-                (err) => {
+                () => {
                     this.setState({ saving: false });
                 }
             );

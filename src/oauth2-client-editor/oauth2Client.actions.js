@@ -35,7 +35,7 @@ oa2Actions.delete.subscribe((e) => {
             });
         })
         .catch((err) => {
-            log.error('Failed to delete OAuth2 client:', err);
+            log.warn('Error when deleting OAuth2 client:', err);
             getD2().then(d2 => {
                 settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_save_oauth2_client'));
             });
