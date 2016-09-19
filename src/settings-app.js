@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import log from 'loglevel';
 
 import { init, config, getUserSettings, getManifest } from 'd2/lib/d2';
+import getBaseUrlFromD2ApiUrl from 'd2-ui/lib/app-header/getBaseUrlFromD2ApiUrl';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -68,7 +69,7 @@ ReactDOM.render(<LoadingMask />, document.getElementById('app'));
 getManifest('manifest.webapp')
     .then(manifest => {
         const baseUrl = process.env.NODE_ENV === 'production' ? manifest.getBaseUrl() : dhisDevConfig.baseUrl;
-        config.baseUrl = `${baseUrl}/api`;
+        config.baseUrl = `${baseUrl}/api/25`;
         log.info(`Loading: ${manifest.name} v${manifest.version}`);
         log.info(`Built ${manifest.manifest_generated_at}`);
     })
@@ -89,6 +90,7 @@ getManifest('manifest.webapp')
 
         // Load alternatives
         const api = d2.Api.getApi();
+        const baseUrl = getBaseUrlFromD2ApiUrl(d2);
         Promise.all([
             d2.models.indicatorGroup.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),
             d2.models.dataElementGroup.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),
@@ -104,7 +106,7 @@ getManifest('manifest.webapp')
                 fields: 'id,displayName',
                 filter: ['level:in:[1,2]'],
             }),
-            api.get('../dhis-web-commons/menu/getModules.action'),
+            api.get(`${baseUrl}/dhis-web-commons/menu/getModules.action`),
             api.get('system/flags'),
             api.get('system/styles'),
             api.get('locales/ui'),
