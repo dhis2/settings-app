@@ -9,7 +9,7 @@
     "start": "d2-manifest package.json manifest.webapp && webpack-dev-server",
     "prebuild": "rm -rf build",
     "build": "webpack",
-    "postbuild": "cp -r index.html *.png i18n node_modules/jquery/dist/jquery.min.js build/ && npm run manifest",
+    "postbuild": "cp -r index.html *.png i18n build/ && npm run manifest",
     "manifest": "d2-manifest package.json build/manifest.webapp"
   },
   "repository": {
