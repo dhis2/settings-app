@@ -232,17 +232,15 @@ class SettingsFields extends React.Component {
                         props: {
                             label: fieldBase.props.floatingLabelText,
                             onClick: () => {
-                                const qry = mapping.query_type === 'DELETE' ?
-                                    d2.Api.getApi().delete(mapping.uri) :
-                                    d2.Api.getApi().post(mapping.uri);
-                                qry.then(result => {
-                                    log.info(result && result.message || 'Ok');
-                                    settingsActions.load(true);
-                                    settingsActions.showSnackbarMessage(result.message);
-                                }).catch(error => {
-                                    log.error(error.message);
-                                    settingsActions.showSnackbarMessage(error.message);
-                                });
+                                d2.Api.getApi().post(mapping.uri)
+                                    .then(result => {
+                                        log.info(result && result.message || 'Ok');
+                                        settingsActions.load(true);
+                                        settingsActions.showSnackbarMessage(result.message);
+                                    }).catch(error => {
+                                        log.warn('Error when performing API query:', error.message);
+                                        settingsActions.showSnackbarMessage(error.message);
+                                    });
                             },
                             style: { minWidth: 'initial', maxWidth: 'initial', marginTop: '1em' },
                         },
