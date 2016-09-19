@@ -14,7 +14,7 @@ const actions = Action.createActionsFromNames([
 ]);
 
 function checkImportReport(response) {
-    if (response.response && response.response.importCount && response.response.importCount.imported === 1) {
+    if (response.status === 'OK') {
         return Promise.resolve(response);
     }
     return Promise.reject(response);
@@ -71,15 +71,15 @@ actions.saveDataApprovalLevel
                     complete(message);
                 })
                 .catch(errorResponse => {
-                    if (errorResponse.response && errorResponse.response.importConflicts) {
-                        log.error(errorResponse.response.importConflicts);
-                        settingsActions.showSnackbarMessage(`${
-                            d2.i18n.getTranslation('failed_to_save_approval_level')}: ${
-                            errorResponse.response.importConflicts[0].value}`);
-                        error(errorResponse.response.importConflicts);
+                    if (errorResponse.response && errorResponse.response.errorReports) {
+                        log.error(`Error when saving approval level:\n - ${
+                            errorResponse.response.errorReports.map(e => e.message).join('\n - ')
+                        }`);
+                        settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_save_approval_level'));
+                        error(errorResponse.response.errorReports);
                         return;
                     }
-                    log.error(errorResponse);
+                    log.error(`Error when saving approval level: ${errorResponse.message || errorResponse}`);
                     settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_save_approval_level'));
                     error(errorResponse);
                 });

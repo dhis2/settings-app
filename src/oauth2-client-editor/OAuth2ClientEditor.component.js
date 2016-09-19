@@ -107,21 +107,20 @@ export default React.createClass({
         this.setState({ saving: true });
         this.clientModel.save()
             .then(importReport => {
-                if (!importReport.response ||
-                    !importReport.response.importCount.imported === 1 &&
-                    !importReport.response.importCount.updated === 1) {
-                    const messages = importReport.response.importConflicts.map(conflict => conflict.value).join('\n');
-                    throw new Error(messages);
+                if (importReport.status !== 'OK') {
+                    throw new Error(importReport);
                 }
 
                 settingsActions.showSnackbarMessage(this.getTranslation('oauth2_client_saved'));
                 oa2Actions.load();
                 this.setState({ showForm: false, saving: false });
             })
-            .catch((err) => {
+            .catch(error => {
                 settingsActions.showSnackbarMessage(this.getTranslation('failed_to_save_oauth2_client'));
                 this.setState({ saving: false });
-                log.warn('Failed to save OAuth2 client:', err.message ? err.message : err);
+                log.warn(`Failed to save OAuth2 client:\n - ${
+                    error.messages && error.messages.map(e => e.message).join('\n - ') || error.message || error
+                }`);
             });
     },
 

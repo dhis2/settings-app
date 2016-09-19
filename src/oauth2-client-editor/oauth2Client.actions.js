@@ -15,6 +15,7 @@ oa2Actions.load.subscribe(() => {
                 .then(oa2ClientCollection => {
                     const yes = d2.i18n.getTranslation('yes');
                     const no = d2.i18n.getTranslation('no');
+                    // Map grant types to object props in order to display them in the data table
                     oa2Store.setState(oa2ClientCollection.toArray().map(oa2c => Object.assign(oa2c,
                         {
                             password: oa2c.grantTypes.indexOf('password') !== -1 ? yes : no,

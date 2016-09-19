@@ -24,8 +24,7 @@ function flattenDataApprovalLevels(approvalWorkflows) {
 }
 
 function checkImportReport(response) {
-    const result = response.response;
-    if (result && result.importCount && result.importCount.imported === 1 || result.importCount.updated === 1) {
+    if (response.status === 'OK') {
         return Promise.resolve(response);
     }
     return Promise.reject(response);
@@ -68,7 +67,10 @@ actions.saveDataApprovalWorkflow
                 .then(complete)
                 .catch(e => {
                     const errorLabel = d2.i18n.getTranslation('failed_to_save_approval_workflow');
-                    settingsActions.showSnackbarMessage(`${errorLabel}: ${e.response.importConflicts[0].value}`);
+                    log.error(`Error when saving approval workflow:\n - ${
+                        e.messages && e.messages.map(r => r.message).join('\n - ') || e.message || e
+                    }`);
+                    settingsActions.showSnackbarMessage(`${errorLabel}`);
                     error(e);
                 });
         });
