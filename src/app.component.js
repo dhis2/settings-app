@@ -11,12 +11,14 @@ import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 
 // App
 import SettingsFields from './settingsFields.component.js';
-import MuiThemeMixin from './mui-theme.mixin.js';
 import AppTheme from './theme';
 
 import settingsActions from './settingsActions';
 import { categoryOrder, categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
+
+// Routing / browser history manipulation
+import createHistory from 'history/createHashHistory';
 
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
@@ -63,34 +65,28 @@ const styles = {
     },
 };
 
-// TODO: Rewrite as ES6 class
-/* eslint-disable react/prefer-es6-class */
-export default React.createClass({
-    propTypes: {
-        d2: React.PropTypes.object.isRequired,
-    },
+class AppComponent extends React.Component {
+    constructor(props, context) {
+        super(props, context);
 
-    childContextTypes: {
-        d2: React.PropTypes.object,
-    },
-
-    mixins: [MuiThemeMixin],
-
-    getInitialState() {
-        return {
+        this.state = {
             category: categoryOrder[0],
             currentSettings: categories[categoryOrder[0]].settings,
             snackbarMessage: '',
             showSnackbar: false,
             formValidator: undefined,
         };
-    },
+
+        this.closeSnackbar = this.closeSnackbar.bind(this);
+        this.doSearch = this.doSearch.bind(this);
+    }
 
     getChildContext() {
         return {
             d2: this.props.d2,
+            muiTheme: AppTheme,
         };
-    },
+    }
 
     componentDidMount() {
         this.subscriptions = [];
@@ -110,7 +106,21 @@ export default React.createClass({
             if (category !== 'search') {
                 this.sidebar.clearSearchBox();
             }
-            this.setState({ category, currentSettings });
+
+            const pathname = `/${category}`;
+            const search = category === 'search'
+                ? `?${encodeURIComponent(arg.data.searchTerms.join(' '))}`
+                : '';
+
+            if (pathname !== this.history.location.pathname || search !== this.history.location.search) {
+                this.history.push({ pathname, search });
+            }
+
+            this.setState({
+                category,
+                currentSettings,
+                searchText: category === 'search' ? this.state.searchText : '',
+            });
         }));
         /* eslint-enable complexity */
 
@@ -118,17 +128,49 @@ export default React.createClass({
             const message = params.data;
             this.setState({ snackbarMessage: message, showSnackbar: !!message });
         }));
-    },
+
+        // Helper function for setting app state based on location
+        var navigate = (location) => {
+            const section = location.pathname.substr(1);
+            if (location.pathname === '/search') {
+                const search = decodeURIComponent(location.search.substr(1));
+                this.doSearch(search);
+            } else if (Object.keys(categories).includes(section)) {
+                settingsActions.setCategory(section);
+            } else {
+                this.history.replace(`/${categoryOrder[0]}`);
+                settingsActions.setCategory(categoryOrder[0]);
+            }
+        };
+
+        // Listen for location changes and update app state as necessary
+        this.history = createHistory();
+        this.unlisten = this.history.listen((location, action) => {
+            if (action === 'POP') {
+                navigate(location);
+            }
+        });
+
+        // Set initial app state based on current location
+        navigate(this.history.location);
+    }
 
     componentWillUnmount() {
         this.subscriptions.forEach(sub => {
             sub.dispose();
         });
-    },
+
+        this.unlisten && this.unlisten();
+    }
 
     closeSnackbar() {
         this.setState({ showSnackbar: false });
-    },
+    }
+
+    doSearch(searchText) {
+        this.setState({ searchText });
+        settingsActions.searchSettings(searchText);
+    }
 
     render() {
         const sections = Object.keys(categories).map(category => {
@@ -158,11 +200,18 @@ export default React.createClass({
                     showSearchField
                     searchFieldLabel={this.props.d2.i18n.getTranslation('search_settings')}
                     ref={setSidebar}
-                    onChangeSearchText={settingsActions.searchSettings}
+                    onChangeSearchText={this.doSearch}
+                    searchText={this.state.searchText}
                 />
 
-                <SettingsFields category={this.state.category} currentSettings={this.state.currentSettings} />
+                <SettingsFields category={this.state.category} currentSettings={this.state.currentSettings}/>
             </div>
         );
-    },
-});
+    }
+}
+
+AppComponent.propTypes = { d2: React.PropTypes.object.isRequired };
+AppComponent.contextTypes = { muiTheme: React.PropTypes.object };
+AppComponent.childContextTypes = { d2: React.PropTypes.object, muiTheme: React.PropTypes.object };
+
+export default AppComponent;

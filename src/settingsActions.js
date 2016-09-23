@@ -126,36 +126,38 @@ const settingsSearchMap = Observable.fromPromise(new Promise((resolve) => {
     });
 }));
 
-function getSearchResultsFor(searchValue) {
+function getSearchResultsFor(searchTerms) {
     return settingsSearchMap
         .flatMap(val => Observable.fromArray(val))
-        .filter(keyValue => RegExp(searchValue.toLowerCase()).test(keyValue[0].toLowerCase()))
+        .filter(keyValue => searchTerms.every(term => keyValue[0].toLowerCase().includes(term.toLowerCase())))
+        .map(x => { console.info(x); return x; })
         .map(([, value]) => value)
         .distinct()
         .reduce((acc, value) => acc.concat(value), [])
         .map(results => {
-            if (settingsKeyMapping.hasOwnProperty(searchValue)) {
-                results.push(searchValue);
+            if (searchTerms.length === 1 && settingsKeyMapping.hasOwnProperty(searchTerms[0])) {
+                results.push(searchTerms[0]);
             }
             return results;
         });
 }
 
+let searchTerms;
 settingsActions.searchSettings
     .distinctUntilChanged()
     .debounce(150)
-    .map(action => action.data)
-    .map(searchValue => searchValue.trim())
+    .map(action => action.data.trim().split(/\s+/).filter(t => t.length > 0))
     .tap(searchValue => {
-        if (!searchValue) {
+        searchTerms = searchValue;
+        if (searchValue.length === 0) {
             settingsActions.setCategory('general');
         }
     })
-    .filter(searchValue => searchValue)
+    .filter(searchValue => searchValue.length)
     .map(searchValue => getSearchResultsFor(searchValue))
     .concatAll()
     .subscribe((searchResultSettings) => {
-        settingsActions.setCategory({ key: 'search', settings: searchResultSettings });
+        settingsActions.setCategory({ key: 'search', settings: searchResultSettings, searchTerms });
     });
 
 export default settingsActions;
