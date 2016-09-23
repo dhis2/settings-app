@@ -262,7 +262,7 @@ export default React.createClass({
         };
 
         return (
-            <Dialog open style={styles.dialog} contentStyle={styles.content} bodyStyle={styles.body}>
+            <Dialog open modal style={styles.dialog} contentStyle={styles.content} bodyStyle={styles.body}>
                 <h2>{this.getTranslation('create_new_approval_level')}</h2>
                 <Form
                     source={this.modelToEdit}
@@ -421,7 +421,7 @@ export default React.createClass({
             this.getTranslation('create_new_approval_workflow');
 
         return (
-            <Dialog open style={styles.dialog} contentStyle={styles.content} bodyStyle={styles.body}>
+            <Dialog open modal style={styles.dialog} contentStyle={styles.content} bodyStyle={styles.body}>
                 <h2>{headerText}</h2>
                 <Form
                     source={this.workflowModelToEdit}

@@ -55,7 +55,7 @@ const styles = {
         fontWeight: 300,
     },
     userSettingsOverride: {
-        color: AppTheme.rawTheme.palette.accent1Color,
+        color: AppTheme.rawTheme.palette.primary1Color,
         marginTop: -6,
         fontSize: '0.8rem',
         fontWeight: 400,
@@ -102,13 +102,6 @@ class SettingsFields extends React.Component {
 
     componentDidMount() {
         this.disposables = [];
-        this.disposables.push(configOptionStore.subscribe(() => {
-            this.forceUpdate();
-        }));
-
-        this.disposables.push(settingsStore.subscribe(() => {
-            this.forceUpdate();
-        }));
     }
 
     componentWillUnmount() {
@@ -264,18 +257,19 @@ class SettingsFields extends React.Component {
             .filter(f => !!f.name)
             .map(field => {
                 const mapping = settingsKeyMapping[field.name];
+                const options = configOptionStore.getState();
 
                 if (mapping.userSettingsOverride) {
-                    const userSettingsNoFallback = configOptionStore.getState().userSettingsNoFallback;
+                    const userSettingsNoFallback = options && options.userSettingsNoFallback || {};
                     const userSettingValue = userSettingsNoFallback && userSettingsNoFallback[field.name] !== null
-                        ? d2.currentUser.userSettingsNoFallback[field.name]
+                        ? userSettingsNoFallback[field.name]
                         : '';
                     let component = field.component;
 
                     if (userSettingValue === '') {
                         component = wrapUserSettingsOverride(d2, component);
                     } else if (mapping.source) {
-                        const userSettingLabel = configOptionStore.getState()[mapping.source]
+                        const userSettingLabel = (options && options[mapping.source] || [])
                             .filter(opt => opt.id === userSettingValue)
                             .map(opt => opt.displayName)
                             .pop();

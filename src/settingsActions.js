@@ -130,7 +130,6 @@ function getSearchResultsFor(searchTerms) {
     return settingsSearchMap
         .flatMap(val => Observable.fromArray(val))
         .filter(keyValue => searchTerms.every(term => keyValue[0].toLowerCase().includes(term.toLowerCase())))
-        .map(x => { console.info(x); return x; })
         .map(([, value]) => value)
         .distinct()
         .reduce((acc, value) => acc.concat(value), [])

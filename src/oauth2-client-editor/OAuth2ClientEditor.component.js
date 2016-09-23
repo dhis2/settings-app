@@ -265,7 +265,7 @@ export default React.createClass({
             this.getTranslation('create_new_oauth2_client') :
             this.getTranslation('edit_oauth2_client');
         return (
-            <Dialog open style={styles.dialog} contentStyle={styles.dialogContent} bodyStyle={styles.dialogBody}>
+            <Dialog open modal style={styles.dialog} contentStyle={styles.dialogContent} bodyStyle={styles.dialogBody}>
                 <h2>{headerText}</h2>
                 <FormBuilder fields={fields} onUpdateField={this.formUpdateAction} />
                 <div style={{ marginTop: '1rem' }}>

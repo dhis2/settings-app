@@ -48,9 +48,6 @@ class LocalizedTextEditor extends React.Component {
         this.setState({
             locale: e.target.value,
             localeName: LocalizedTextEditor.getLocaleName(e.target.value),
-        }, () => {
-            // Have to force update because.
-            this.forceUpdate();
         });
     }
 
@@ -84,11 +81,12 @@ class LocalizedTextEditor extends React.Component {
             },
         }));
 
+        const options = configOptionStore.getState();
         return (
             <div>
                 <div style={styles.inset}>
                     <SelectField
-                        menuItems={configOptionStore.getState().locales}
+                        menuItems={options && options.locales || []}
                         value={this.state.locale}
                         floatingLabelText={this.getTranslation('select_language')}
                         onChange={this.handleChange}
