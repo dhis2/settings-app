@@ -85,9 +85,6 @@ getManifest('manifest.webapp')
             return;
         }
 
-        // Load current system settings and configuration
-        settingsActions.load();
-
         // Load alternatives
         const api = d2.Api.getApi();
         const baseUrl = getBaseUrlFromD2ApiUrl(d2);
@@ -154,6 +151,9 @@ getManifest('manifest.webapp')
                 userSettingsNoFallback,
             });
             log.debug('Got settings options:', configOptionStore.getState());
+
+            // Load current system settings and configuration
+            settingsActions.load();
         });
     }, (err) => {
         log.error('Failed to initialize D2:', JSON.stringify(err));
