@@ -72,6 +72,19 @@ getManifest('manifest.webapp')
         config.baseUrl = `${baseUrl}/api/25`;
         log.info(`Loading: ${manifest.name} v${manifest.version}`);
         log.info(`Built ${manifest.manifest_generated_at}`);
+
+        config.schemas = [
+            'indicatorGroup',
+            'dataElementGroup',
+            'userGroup',
+            'organisationUnitLevel',
+            'userRole',
+            'organisationUnit',
+            'dataApprovalLevel',
+            'dataApprovalWorkflow',
+            'categoryOptionGroupSet',
+            'oAuth2Client',
+        ];
     })
     .then(getUserSettings)
     .then(configI18n)
