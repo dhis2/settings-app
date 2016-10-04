@@ -191,7 +191,7 @@ class SettingsFields extends React.Component {
                         props: {
                             label: fieldBase.props.floatingLabelText,
                             style: fieldBase.props.style,
-                            checked: fieldBase.value === 'true',
+                            defaultChecked: fieldBase.value === 'true',
                             onCheck: (e, v) => {
                                 settingsActions.saveKey(key, v ? 'true' : 'false');
                             },
