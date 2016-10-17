@@ -1,13 +1,13 @@
 import React from 'react';
 import log from 'loglevel';
 
-import LinearProgress from 'material-ui/lib/linear-progress';
-import FlatButton from 'material-ui/lib/flat-button';
-import Dialog from 'material-ui/lib/dialog';
+import LinearProgress from 'material-ui/LinearProgress';
+import FlatButton from 'material-ui/FlatButton';
+import Dialog from 'material-ui/Dialog';
 
 import Translate from 'd2-ui/lib/i18n/Translate.mixin';
 
-import Checkbox from 'material-ui/lib/checkbox';
+import Checkbox from 'material-ui/Checkbox';
 import AppTheme from '../theme';
 
 export default React.createClass({

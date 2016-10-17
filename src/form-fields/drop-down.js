@@ -1,6 +1,6 @@
 import React from 'react';
-import SelectField from 'material-ui/lib/select-field';
-import MenuItem from 'material-ui/lib/menus/menu-item';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 
 import MuiThemeMixin from '../mui-theme.mixin';
 
@@ -48,7 +48,7 @@ export default React.createClass({
     },
 
     render() {
-        const {onFocus, onBlur, onChange, value, disabled, menuItems, ...other} = this.props;
+        const {onFocus, onBlur, onChange, value, disabled, menuItems, includeEmpty, emptyLabel, noOptionsLabel, isRequired, ...other} = this.props;
         const menuItemArray = Array.isArray(menuItems) && menuItems || menuItems.toArray();
         const hasOptions = menuItemArray.length > 0;
 

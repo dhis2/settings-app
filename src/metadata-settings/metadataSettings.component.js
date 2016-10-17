@@ -1,10 +1,9 @@
 import React from 'react';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import Checkbox from '../form-fields/check-box';
-import RaisedButton from 'material-ui/lib/raised-button';
-import RadioButtonGroup from 'material-ui/lib/radio-button-group';
-import RadioButton from 'material-ui/lib/radio-button';
-import CircularProgress from 'material-ui/lib/circular-progress';
+import RaisedButton from 'material-ui/RaisedButton';
+import { RadioButtonGroup, RadioButton } from 'material-ui/RadioButton';
+import CircularProgress from 'material-ui/CircularProgress';
 import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';
 import settingsKeyMapping from '../settingsKeyMapping';
@@ -218,8 +217,8 @@ class metadataSettings extends React.Component {
                             {this.state.masterVersionName || this.getTranslation('none')}
                         </div>
 
-                        <div align="right" style={this.state.isLocalInstance ? styles.inlineRight : styles.hidden}>
-                            <div align="right" style={this.state.isLastSyncValid ? styles.inlineRight : styles.hidden}>
+                        <div style={this.state.isLocalInstance ? styles.inlineRight : styles.hidden}>
+                            <div style={this.state.isLastSyncValid ? styles.inlineRight : styles.hidden}>
                                 <label style={{"fontStyle": "italic"}}>{this.getTranslation('last_sync_attempt')}: </label>
                                 <span>{this.state.lastFailedVersion}</span>
                                 <span> | <span style={{"color":"red"}}>{this.getTranslation('failed')}</span> | {new Date(this.state.lastFailedTime).toLocaleString()}</span>

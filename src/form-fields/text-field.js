@@ -1,5 +1,5 @@
 import React from 'react';
-import TextField from 'material-ui/lib/text-field';
+import TextField from 'material-ui/TextField';
 
 import MuiThemeMixin from '../mui-theme.mixin';
 
@@ -29,13 +29,14 @@ export default React.createClass({
     },
 
     render() {
+        const {changeEvent, isRequired, defaultValue, ...other} = this.props;
         const errorStyle = {
             lineHeight: this.props.multiLine ? '48px' : '12px',
             marginTop: this.props.multiLine ? -16 : 0,
         };
 
         return (
-            <TextField errorStyle={errorStyle} {...this.props} value={this.state.value} onChange={this._change} />
+            <TextField errorStyle={errorStyle} {...other} value={this.state.value} onChange={this._change} />
         );
     },
 });

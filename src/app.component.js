@@ -1,7 +1,8 @@
 import React from 'react';
 
 // Material UI
-import Snackbar from 'material-ui/lib/snackbar';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Snackbar from 'material-ui/Snackbar';
 
 // D2 UI
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
@@ -11,7 +12,7 @@ import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 
 // App
 import SettingsFields from './settingsFields.component.js';
-import AppTheme from './theme';
+import appTheme from './theme';
 
 import settingsActions from './settingsActions';
 import { categoryOrder, categories } from './settingsCategories';
@@ -27,7 +28,7 @@ const styles = {
     header: {
         fontSize: 24,
         fontWeight: 300,
-        color: AppTheme.rawTheme.palette.textColor,
+        color: appTheme.rawTheme.palette.textColor,
         padding: '24px 0 12px 16px',
     },
     card: {
@@ -36,13 +37,13 @@ const styles = {
         padding: '0 1rem',
     },
     cardTitle: {
-        background: AppTheme.rawTheme.palette.primary2Color,
+        background: appTheme.rawTheme.palette.primary2Color,
         height: 62,
     },
     cardTitleText: {
         fontSize: 28,
         fontWeight: 100,
-        color: AppTheme.rawTheme.palette.alternateTextColor,
+        color: appTheme.rawTheme.palette.alternateTextColor,
     },
     noHits: {
         padding: '1rem',
@@ -50,7 +51,7 @@ const styles = {
         fontWeight: 300,
     },
     userSettingsOverride: {
-        color: AppTheme.rawTheme.palette.accent1Color,
+        color: appTheme.rawTheme.palette.accent1Color,
         marginTop: -6,
         fontSize: '0.8rem',
         fontWeight: 400,
@@ -84,7 +85,7 @@ class AppComponent extends React.Component {
     getChildContext() {
         return {
             d2: this.props.d2,
-            muiTheme: AppTheme,
+            muiTheme: appTheme,
         };
     }
 
@@ -184,28 +185,30 @@ class AppComponent extends React.Component {
         };
 
         return (
-            <div className="app">
-                <HeaderBar />
-                <Snackbar
-                    message={this.state.snackbarMessage || ''}
-                    autoHideDuration={1250}
-                    open={this.state.showSnackbar}
-                    onRequestClose={this.closeSnackbar}
-                    style={{ left: 24, right: 'inherit' }}
-                />
-                <Sidebar
-                    sections={sections}
-                    onChangeSection={settingsActions.setCategory}
-                    currentSection={this.state.category}
-                    showSearchField
-                    searchFieldLabel={this.props.d2.i18n.getTranslation('search_settings')}
-                    ref={setSidebar}
-                    onChangeSearchText={this.doSearch}
-                    searchText={this.state.searchText}
-                />
+            <MuiThemeProvider muiTheme={appTheme}>
+                <div className="app">
+                    <HeaderBar />
+                    <Snackbar
+                        message={this.state.snackbarMessage || ''}
+                        autoHideDuration={1250}
+                        open={this.state.showSnackbar}
+                        onRequestClose={this.closeSnackbar}
+                        style={{ left: 24, right: 'inherit' }}
+                    />
+                    <Sidebar
+                        sections={sections}
+                        onChangeSection={settingsActions.setCategory}
+                        currentSection={this.state.category}
+                        showSearchField
+                        searchFieldLabel={this.props.d2.i18n.getTranslation('search_settings')}
+                        ref={setSidebar}
+                        onChangeSearchText={this.doSearch}
+                        searchText={this.state.searchText}
+                    />
 
-                <SettingsFields category={this.state.category} currentSettings={this.state.currentSettings}/>
-            </div>
+                    <SettingsFields category={this.state.category} currentSettings={this.state.currentSettings}/>
+                </div>
+            </MuiThemeProvider>
         );
     }
 }

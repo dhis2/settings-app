@@ -6,7 +6,9 @@ import ReactDOM from 'react-dom';
 import log from 'loglevel';
 
 import { init, config, getUserSettings, getManifest } from 'd2/lib/d2';
-import getBaseUrlFromD2ApiUrl from 'd2-ui/lib/app-header/getBaseUrlFromD2ApiUrl';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import appTheme from './theme';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -63,7 +65,7 @@ function configI18n(userSettings) {
     config.i18n.strings.add('edit');
 }
 
-ReactDOM.render(<LoadingMask />, document.getElementById('app'));
+ReactDOM.render(<MuiThemeProvider muiTheme={appTheme}><LoadingMask /></MuiThemeProvider>, document.getElementById('app'));
 
 
 getManifest('manifest.webapp')
@@ -100,7 +102,7 @@ getManifest('manifest.webapp')
 
         // Load alternatives
         const api = d2.Api.getApi();
-        const baseUrl = getBaseUrlFromD2ApiUrl(d2);
+        const baseUrl = api.baseUrl.substr(0, api.baseUrl.lastIndexOf('/api/'));
         Promise.all([
             d2.models.indicatorGroup.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),
             d2.models.dataElementGroup.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),

@@ -44,7 +44,6 @@ const webpackConfig = {
                 exclude: /node_modules/,
                 loader: 'babel',
                 query: {
-                    presets: ['es2015', 'stage-0', 'react']
                 },
             },
             {
@@ -70,8 +69,9 @@ const webpackConfig = {
         inline: true,
         compress: true,
         proxy: [
+            { path: '/polyfill.min.js', target: 'http://localhost:8081/node_modules/babel-polyfill/dist', bypass: log },
             { path: '/api/*', target: dhisConfig.baseUrl, bypass: log },
-            { path: '/dhis-web-commons/*', target: dhisConfig.baseUrl, bypass: log },
+            { path: '/dhis-web-commons/**', target: dhisConfig.baseUrl, bypass: log },
             { path: '/icons/*', target: dhisConfig.baseUrl, bypass: log },
         ],
     },

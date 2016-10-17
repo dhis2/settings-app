@@ -1,5 +1,5 @@
 import React from 'react';
-import Checkbox from 'material-ui/lib/checkbox';
+import Checkbox from 'material-ui/Checkbox';
 
 import MuiThemeMixin from '../mui-theme.mixin';
 
@@ -14,9 +14,10 @@ export default React.createClass({
     mixins: [MuiThemeMixin],
 
     render() {
+        const {errorText, errorStyle, ...other} = this.props;
         return (
             <div style={{ marginTop: 12, marginBottom: 12 }}>
-                <Checkbox onCheck={this.props.onChange} {...this.props} />
+                <Checkbox onCheck={this.props.onChange} {...other} />
             </div>
         );
     },

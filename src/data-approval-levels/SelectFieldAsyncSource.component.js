@@ -1,6 +1,6 @@
 import React from 'react';
-import SelectField from 'material-ui/lib/select-field';
-import MenuItem from 'material-ui/lib/menus/menu-item';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 
 export default React.createClass({
     propTypes: {
@@ -27,7 +27,7 @@ export default React.createClass({
     },
 
     render() {
-        const {onChange, ...other} = this.props;
+        const {onChange, isRequired, menuItemsSource, prependItems, ...other} = this.props;
         return (
             <SelectField
                 value={this.props.value}

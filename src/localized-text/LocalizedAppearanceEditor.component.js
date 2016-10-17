@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TextField from 'material-ui/lib/text-field';
+import TextField from '../form-fields/text-field';
 import SelectField from '../form-fields/drop-down';
 
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';

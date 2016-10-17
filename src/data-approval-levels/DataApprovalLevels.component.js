@@ -1,11 +1,11 @@
 import React from 'react';
 
 // Material UI components
-import Dialog from 'material-ui/lib/dialog';
-import FloatingActionButton from 'material-ui/lib/floating-action-button';
-import FlatButton from 'material-ui/lib/flat-button';
-import FontIcon from 'material-ui/lib/font-icon';
-import RaisedButton from 'material-ui/lib/raised-button';
+import Dialog from 'material-ui/Dialog';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import FlatButton from 'material-ui/FlatButton';
+import FontIcon from 'material-ui/FontIcon';
+import RaisedButton from 'material-ui/RaisedButton';
 
 // D2 UI components
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';

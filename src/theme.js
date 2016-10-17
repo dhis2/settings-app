@@ -1,28 +1,39 @@
 
-import Colors from 'material-ui/lib/styles/colors';
-import ColorManipulator from 'material-ui/lib/utils/color-manipulator';
-import Spacing from 'material-ui/lib/styles/spacing';
-import ThemeManager from 'material-ui/lib/styles/theme-manager';
+import Spacing from 'material-ui/styles/spacing';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+import {
+    blue100,
+    blue500,
+    blue700,
+    grey100,
+    grey400,
+    orange500,
+    orangeA200,
+    darkBlack,
+    white,
+} from 'material-ui/styles/colors';
+import { fade } from 'material-ui/utils/colorManipulator';
 
 const theme = {
     spacing: Spacing,
     fontFamily: 'Roboto, sans-serif',
     palette: {
-        primary1Color: Colors.blue500,
-        primary2Color: Colors.blue700,
-        primary3Color: Colors.blue100,
-        accent1Color: Colors.orange500,
-        accent2Color: Colors.grey100,
-        accent3Color: Colors.orangeA200,
-        textColor: Colors.darkBlack,
-        alternateTextColor: Colors.white,
-        canvasColor: Colors.white,
-        borderColor: Colors.grey400,
-        disabledColor: ColorManipulator.fade(Colors.darkBlack, 0.3),
+        primary1Color: blue500,
+        primary2Color: blue700,
+        primary3Color: blue100,
+        accent1Color: orange500,
+        accent2Color: grey100,
+        accent3Color: orangeA200,
+        textColor: darkBlack,
+        alternateTextColor: white,
+        canvasColor: white,
+        borderColor: grey400,
+        disabledColor: fade(darkBlack, 0.3),
     },
 };
 
-const muiTheme = ThemeManager.getMuiTheme(theme);
+const muiTheme = getMuiTheme(theme);
 
 export default Object.assign({}, muiTheme, {
     forms: {

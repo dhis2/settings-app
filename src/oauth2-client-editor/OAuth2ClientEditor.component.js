@@ -2,12 +2,11 @@ import React from 'react';
 import log from 'loglevel';
 
 // Material UI
-import FlatButton from 'material-ui/lib/flat-button';
-import FloatingActionButton from 'material-ui/lib/floating-action-button';
-import FontIcon from 'material-ui/lib/font-icon';
-import RaisedButton from 'material-ui/lib/raised-button';
-import TextField from 'material-ui/lib/text-field';
-import Dialog from 'material-ui/lib/dialog';
+import FlatButton from 'material-ui/FlatButton';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import FontIcon from 'material-ui/FontIcon';
+import RaisedButton from 'material-ui/RaisedButton';
+import Dialog from 'material-ui/Dialog';
 
 // D2 UI
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
@@ -16,6 +15,7 @@ import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import Translate from 'd2-ui/lib/i18n/Translate.mixin';
 import { isUrlArray, isRequired } from 'd2-ui/lib/forms/Validators';
 
+import TextField from '../form-fields/text-field';
 import MultiToggle from '../form-fields/multi-toggle';
 import oa2ClientStore from './oauth2Client.store';
 import oa2Actions from './oauth2Client.actions';
@@ -187,10 +187,12 @@ export default React.createClass({
                     style: formFieldStyle,
                     changeEvent: 'onBlur',
                 },
-                validators: [{
-                    validator: isRequired,
-                    message: this.context.d2.i18n.getTranslation(isRequired.message),
-                }],
+                validators: [
+                    {
+                        validator: isRequired,
+                        message: this.context.d2.i18n.getTranslation(isRequired.message),
+                    }
+                ],
             },
             {
                 name: 'cid',
@@ -201,13 +203,15 @@ export default React.createClass({
                     style: formFieldStyle,
                     changeEvent: 'onBlur',
                 },
-                validators: [{
-                    validator: isRequired,
-                    message: this.context.d2.i18n.getTranslation(isRequired.message),
-                }, {
-                    validator: (v) => v.toString().trim().length > 0,
-                    message: this.context.d2.i18n.getTranslation(isRequired.message),
-                }],
+                validators: [
+                    {
+                        validator: isRequired,
+                        message: this.context.d2.i18n.getTranslation(isRequired.message),
+                    }, {
+                        validator: (v) => v.toString().trim().length > 0,
+                        message: this.context.d2.i18n.getTranslation(isRequired.message),
+                    }
+                ],
                 asyncValidators: [
                     validateClientID,
                 ],
@@ -228,19 +232,21 @@ export default React.createClass({
                 style: formFieldStyle,
                 props: {
                     label: this.getTranslation('grant_types'),
-                    items: [{
-                        name: 'password',
-                        text: this.getTranslation('password'),
-                        value: grantTypes.password,
-                    }, {
-                        name: 'refresh_token',
-                        text: this.getTranslation('refresh_token'),
-                        value: grantTypes.refresh_token,
-                    }, {
-                        name: 'authorization_code',
-                        text: this.getTranslation('authorization_code'),
-                        value: grantTypes.authorization_code,
-                    }],
+                    items: [
+                        {
+                            name: 'password',
+                            text: this.getTranslation('password'),
+                            value: grantTypes.password,
+                        }, {
+                            name: 'refresh_token',
+                            text: this.getTranslation('refresh_token'),
+                            value: grantTypes.refresh_token,
+                        }, {
+                            name: 'authorization_code',
+                            text: this.getTranslation('authorization_code'),
+                            value: grantTypes.authorization_code,
+                        }
+                    ],
                 },
             },
             {
@@ -254,10 +260,12 @@ export default React.createClass({
                     style: formFieldStyle,
                     changeEvent: 'onBlur',
                 },
-                validators: [{
-                    validator: isUrlArray,
-                    message: this.context.d2.i18n.getTranslation(isUrlArray.message),
-                }],
+                validators: [
+                    {
+                        validator: isUrlArray,
+                        message: this.context.d2.i18n.getTranslation(isUrlArray.message),
+                    }
+                ],
             },
         ];
 
@@ -267,9 +275,9 @@ export default React.createClass({
         return (
             <Dialog open modal style={styles.dialog} contentStyle={styles.dialogContent} bodyStyle={styles.dialogBody}>
                 <h2>{headerText}</h2>
-                <FormBuilder fields={fields} onUpdateField={this.formUpdateAction} />
+                <FormBuilder fields={fields} onUpdateField={this.formUpdateAction}/>
                 <div style={{ marginTop: '1rem' }}>
-                    <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
+                    <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')}/>
                     {this.clientModel.id !== undefined ?
                         (<FlatButton
                             onClick={this.deleteAction}

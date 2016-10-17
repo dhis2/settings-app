@@ -2,10 +2,8 @@ import React from 'react';
 import log from 'loglevel';
 
 // Material UI
-import RaisedButton from 'material-ui/lib/raised-button';
-import TextField from 'material-ui/lib/text-field';
-import Card from 'material-ui/lib/card/card';
-import CardText from 'material-ui/lib/card/card-text';
+import RaisedButton from './form-fields/raised-button';
+import { Card, CardText } from 'material-ui/Card';
 
 // D2 UI
 import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators';
@@ -19,6 +17,7 @@ import metadataSettings from './metadata-settings/metadataSettings.component.js'
 import SelectField from './form-fields/drop-down';
 import Checkbox from './form-fields/check-box';
 import FileUpload from './form-fields/file-upload.js';
+import TextField from './form-fields/text-field';
 import AppTheme from './theme';
 
 import settingsActions from './settingsActions';
@@ -136,9 +135,9 @@ class SettingsFields extends React.Component {
                         hintText: mapping.hintText && d2.i18n.getTranslation(mapping.hintText),
                     },
                     validators: (mapping.validators || []).map(name => wordToValidatorMap.has(name) ? {
-                            validator: wordToValidatorMap.get(name),
-                            message: d2.i18n.getTranslation(wordToValidatorMap.get(name).message),
-                        } : false)
+                        validator: wordToValidatorMap.get(name),
+                        message: d2.i18n.getTranslation(wordToValidatorMap.get(name).message),
+                    } : false)
                         .filter(v => v),
                 };
 
@@ -231,9 +230,9 @@ class SettingsFields extends React.Component {
                                         settingsActions.load(true);
                                         settingsActions.showSnackbarMessage(result.message);
                                     }).catch(error => {
-                                        log.warn('Error when performing API query:', error.message);
-                                        settingsActions.showSnackbarMessage(error.message);
-                                    });
+                                    log.warn('Error when performing API query:', error.message);
+                                    settingsActions.showSnackbarMessage(error.message);
+                                });
                             },
                             style: { minWidth: 'initial', maxWidth: 'initial', marginTop: '1em' },
                         },
