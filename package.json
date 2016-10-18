@@ -63,7 +63,8 @@
     "webpack-dev-server": "2.1.0-beta.9"
   },
   "pre-commit": [
-    "validate"
+    "validate",
+    "lint"
   ],
   "manifest.webapp": {
     "name": "DHIS 2 System Settings Management",
