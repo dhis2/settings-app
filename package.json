@@ -11,7 +11,8 @@
     "prebuild": "rm -rf build && npm run validate && npm run lint-all",
     "build": "webpack",
     "postbuild": "cp -r index.html *.png i18n build/ && npm run manifest",
-    "manifest": "d2-manifest package.json build/manifest.webapp"
+    "manifest": "d2-manifest package.json build/manifest.webapp",
+    "deploy": "npm run build && mvn clean deploy"
   },
   "repository": {
     "type": "git",
