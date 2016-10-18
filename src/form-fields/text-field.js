@@ -24,19 +24,19 @@ export default React.createClass({
         this.setState({ value: props.value });
     },
 
-    _change(e) {
+    onChange(e) {
         this.setState({ value: e.target.value });
     },
 
     render() {
-        const {changeEvent, isRequired, defaultValue, ...other} = this.props;
+        const { changeEvent, isRequired, defaultValue, ...other } = this.props; // eslint-disable-line
         const errorStyle = {
             lineHeight: this.props.multiLine ? '48px' : '12px',
             marginTop: this.props.multiLine ? -16 : 0,
         };
 
         return (
-            <TextField errorStyle={errorStyle} {...other} value={this.state.value} onChange={this._change} />
+            <TextField errorStyle={errorStyle} {...other} value={this.state.value} onChange={this.onChange} />
         );
     },
 });

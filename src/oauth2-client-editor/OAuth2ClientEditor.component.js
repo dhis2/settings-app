@@ -73,7 +73,7 @@ export default React.createClass({
     },
 
     componentWillUnmount() {
-        this.disposables.forEach(d => {
+        this.disposables.forEach((d) => {
             d.dispose();
         });
     },
@@ -97,7 +97,7 @@ export default React.createClass({
 
     deleteAction(model) {
         this.setState({ showForm: false, saving: true });
-        oa2Actions.delete(!!model.id ? model : this.clientModel);
+        oa2Actions.delete(model.id ? model : this.clientModel);
         this.clientModel = undefined;
     },
 
@@ -106,7 +106,7 @@ export default React.createClass({
         this.clientModel.cid = this.clientModel.cid || '';
         this.setState({ saving: true });
         this.clientModel.save()
-            .then(importReport => {
+            .then((importReport) => {
                 if (importReport.status !== 'OK') {
                     throw new Error(importReport);
                 }
@@ -115,11 +115,11 @@ export default React.createClass({
                 oa2Actions.load();
                 this.setState({ showForm: false, saving: false });
             })
-            .catch(error => {
+            .catch((error) => {
                 settingsActions.showSnackbarMessage(this.getTranslation('failed_to_save_oauth2_client'));
                 this.setState({ saving: false });
 
-                const message = (error.messages || error.response && error.response.errorReports)
+                const message = ((error.messages || error.response) && error.response.errorReports)
                     ? `\n - ${(error.messages || error.response.errorReports).map(e => e.message).join('\n - ')}`
                     : error.message || error;
                 log.warn(`Error when saving OAuth2 client: ${message}`);
@@ -140,7 +140,7 @@ export default React.createClass({
         const formFieldStyle = AppTheme.forms;
         formFieldStyle.width = '100%';
 
-        const grantTypes = (this.clientModel && this.clientModel.grantTypes || []).reduce((curr, prev) => {
+        const grantTypes = ((this.clientModel && this.clientModel.grantTypes) || []).reduce((curr, prev) => {
             curr[prev] = true; // eslint-disable-line no-param-reassign
             return curr;
         }, {});
@@ -167,7 +167,7 @@ export default React.createClass({
         function validateClientID(v) {
             return new Promise((resolve, reject) => {
                 d2.models.oAuth2Clients.list({ paging: false, filter: [`cid:eq:${v}`] })
-                    .then(list => {
+                    .then((list) => {
                         if (list.size === 0) {
                             resolve();
                         } else {
@@ -191,7 +191,7 @@ export default React.createClass({
                     {
                         validator: isRequired,
                         message: this.context.d2.i18n.getTranslation(isRequired.message),
-                    }
+                    },
                 ],
             },
             {
@@ -208,9 +208,9 @@ export default React.createClass({
                         validator: isRequired,
                         message: this.context.d2.i18n.getTranslation(isRequired.message),
                     }, {
-                        validator: (v) => v.toString().trim().length > 0,
+                        validator: v => v.toString().trim().length > 0,
                         message: this.context.d2.i18n.getTranslation(isRequired.message),
-                    }
+                    },
                 ],
                 asyncValidators: [
                     validateClientID,
@@ -245,7 +245,7 @@ export default React.createClass({
                             name: 'authorization_code',
                             text: this.getTranslation('authorization_code'),
                             value: grantTypes.authorization_code,
-                        }
+                        },
                     ],
                 },
             },
@@ -264,7 +264,7 @@ export default React.createClass({
                     {
                         validator: isUrlArray,
                         message: this.context.d2.i18n.getTranslation(isUrlArray.message),
-                    }
+                    },
                 ],
             },
         ];
@@ -275,9 +275,9 @@ export default React.createClass({
         return (
             <Dialog open modal style={styles.dialog} contentStyle={styles.dialogContent} bodyStyle={styles.dialogBody}>
                 <h2>{headerText}</h2>
-                <FormBuilder fields={fields} onUpdateField={this.formUpdateAction}/>
+                <FormBuilder fields={fields} onUpdateField={this.formUpdateAction} />
                 <div style={{ marginTop: '1rem' }}>
-                    <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')}/>
+                    <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
                     {this.clientModel.id !== undefined ?
                         (<FlatButton
                             onClick={this.deleteAction}
@@ -353,8 +353,8 @@ export default React.createClass({
         };
 
         const className = `transition-mount transition-unmount
-            ${!!this.state.componentDidMount ? '' : ' transition-mount-active'}
-            ${!!this.props.transitionUnmount ? ' transition-unmount-active' : ''}`;
+            ${this.state.componentDidMount ? '' : ' transition-mount-active'}
+            ${this.props.transitionUnmount ? ' transition-unmount-active' : ''}`;
 
         const saving = this.state.saving ? <div style={styles.loadingMask}><LoadingMask /></div> : undefined;
         const body = this.state.isEmpty ?

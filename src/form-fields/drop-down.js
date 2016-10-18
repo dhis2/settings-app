@@ -33,9 +33,13 @@ export default React.createClass({
         };
     },
 
+    handleChange(event, index, value) {
+        this.props.onChange({ target: { value } });
+    },
+
     renderMenuItems(menuItems) {
         if (this.props.includeEmpty) {
-            menuItems.unshift({id: 'null', displayName: this.props.emptyLabel});
+            menuItems.unshift({ id: 'null', displayName: this.props.emptyLabel });
         }
 
         return menuItems.map(item => (<MenuItem key={item.id} value={item.id} primaryText={item.displayName} />));
@@ -43,13 +47,18 @@ export default React.createClass({
 
     renderEmptyItem() {
         if (this.props.includeEmpty) {
-            return <MenuItem value="null" primaryText={this.props.emptyLabel}/>;
+            return <MenuItem value="null" primaryText={this.props.emptyLabel} />;
         }
+
+        return null;
     },
 
     render() {
-        const {onFocus, onBlur, onChange, value, disabled, menuItems, includeEmpty, emptyLabel, noOptionsLabel, isRequired, ...other} = this.props;
-        const menuItemArray = Array.isArray(menuItems) && menuItems || menuItems.toArray();
+        const {
+            onFocus, onBlur, onChange, value, disabled, menuItems,  // eslint-disable-line
+            includeEmpty, emptyLabel, noOptionsLabel, isRequired,   // eslint-disable-line
+            ...other } = this.props;
+        const menuItemArray = (Array.isArray(menuItems) && menuItems) || menuItems.toArray();
         const hasOptions = menuItemArray.length > 0;
 
         return (
@@ -57,16 +66,13 @@ export default React.createClass({
                 value={hasOptions ? this.props.value : 1}
                 onChange={this.handleChange}
                 disabled={!hasOptions}
-                {...other}>
+                {...other}
+            >
                 {hasOptions
                     ? this.renderMenuItems(menuItemArray)
                     : <MenuItem value={1} primaryText={this.props.noOptionsLabel || '-'} />
                 }
             </SelectField>
         );
-    },
-
-    handleChange(event, index, value) {
-        this.props.onChange({target: {value: value}});
     },
 });

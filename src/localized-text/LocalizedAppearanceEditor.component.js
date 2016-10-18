@@ -1,9 +1,9 @@
 import React from 'react';
 
+import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
+
 import TextField from '../form-fields/text-field';
 import SelectField from '../form-fields/drop-down';
-
-import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 
 import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';
@@ -24,11 +24,11 @@ const styles = {
 
 class LocalizedTextEditor extends React.Component {
     static getLocaleName(code) {
-        return configOptionStore.state &&
+        return (configOptionStore.state &&
             configOptionStore.getState().locales
                 .filter(locale => locale.id === code)
                 .map(locale => locale.displayName)
-                .pop() || '';
+                .pop()) || '';
     }
 
     constructor(props, context) {
@@ -71,7 +71,7 @@ class LocalizedTextEditor extends React.Component {
 
         const fields = keys.map(key => ({
             name: key,
-            value: settingsStore.state && settingsStore.state[key + localeAppendage] || '',
+            value: (settingsStore.state && settingsStore.state[key + localeAppendage]) || '',
             component: TextField,
             props: {
                 floatingLabelText: `${this.getTranslation(settingsKeyMapping[key].label)} - ${this.state.localeName}`,
@@ -86,7 +86,7 @@ class LocalizedTextEditor extends React.Component {
             <div>
                 <div style={styles.inset}>
                     <SelectField
-                        menuItems={options && options.locales || []}
+                        menuItems={(options && options.locales) || []}
                         value={this.state.locale}
                         floatingLabelText={this.getTranslation('select_language')}
                         onChange={this.handleChange}

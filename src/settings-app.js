@@ -1,5 +1,3 @@
-const dhisDevConfig = DHIS_CONFIG;
-
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -8,17 +6,20 @@ import log from 'loglevel';
 import { init, config, getUserSettings, getManifest } from 'd2/lib/d2';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import appTheme from './theme';
-
 import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
+
+// D2 UI
+import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
+
+import appTheme from './theme';
 
 import settingsActions from './settingsActions';
 import configOptionStore from './configOptionStore';
 import settingsKeyMapping from './settingsKeyMapping';
 
-// D2 UI
-import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
+
+const dhisDevConfig = DHIS_CONFIG; // eslint-disable-line
+injectTapEventPlugin();
 
 // Styles
 require('../scss/settings-app.scss');
@@ -41,7 +42,7 @@ function configI18n(userSettings) {
     config.i18n.sources.add('i18n/module/i18n_module_en.properties');
 
     // Strings
-    Object.keys(settingsKeyMapping).forEach(key => {
+    Object.keys(settingsKeyMapping).forEach((key) => {
         const val = settingsKeyMapping[key];
 
         if (val.hasOwnProperty('label')) {
@@ -53,11 +54,10 @@ function configI18n(userSettings) {
         }
 
         if (val.hasOwnProperty('options')) {
-            for (const opt in val.options) {
-                if (val.options.hasOwnProperty(opt) && isNaN(val.options[opt])) {
-                    config.i18n.strings.add(val.options[opt]);
-                }
-            }
+            Object.keys(val.options)
+                .map(opt => val.options[opt])
+                .filter(value => isNaN(value))
+                .forEach(value => config.i18n.strings.add(val.options[value]));
         }
     });
     config.i18n.strings.add('access_denied');
@@ -71,11 +71,14 @@ function configI18n(userSettings) {
     config.i18n.strings.add('edit');
 }
 
-ReactDOM.render(<MuiThemeProvider muiTheme={appTheme}><LoadingMask /></MuiThemeProvider>, document.getElementById('app'));
+ReactDOM.render(
+    <MuiThemeProvider muiTheme={appTheme}><LoadingMask /></MuiThemeProvider>,
+    document.getElementById('app')
+);
 
 
 getManifest('manifest.webapp')
-    .then(manifest => {
+    .then((manifest) => {
         const baseUrl = process.env.NODE_ENV === 'production' ? manifest.getBaseUrl() : dhisDevConfig.baseUrl;
         config.baseUrl = `${baseUrl}/api/25`;
         log.info(`Loading: ${manifest.name} v${manifest.version}`);
@@ -97,7 +100,7 @@ getManifest('manifest.webapp')
     .then(getUserSettings)
     .then(configI18n)
     .then(init)
-    .then(d2 => {
+    .then((d2) => {
         // App init
         log.debug('D2 initialized', d2);
 
@@ -129,7 +132,7 @@ getManifest('manifest.webapp')
             api.get('system/styles'),
             api.get('locales/ui'),
             api.get('userSettings', { useFallback: false }),
-        ]).then(results => {
+        ]).then((results) => {
             const [
                 indicatorGroups,
                 dataElementGroups,

@@ -1,4 +1,5 @@
 import React from 'react';
+import createHistory from 'history/createHashHistory';
 
 // Material UI
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -11,60 +12,15 @@ import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 
 // App
-import SettingsFields from './settingsFields.component.js';
+import SettingsFields from './settingsFields.component';
 import appTheme from './theme';
 
 import settingsActions from './settingsActions';
 import { categoryOrder, categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
 
-// Routing / browser history manipulation
-import createHistory from 'history/createHashHistory';
-
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
-
-const styles = {
-    header: {
-        fontSize: 24,
-        fontWeight: 300,
-        color: appTheme.rawTheme.palette.textColor,
-        padding: '24px 0 12px 16px',
-    },
-    card: {
-        marginTop: 8,
-        marginRight: '1rem',
-        padding: '0 1rem',
-    },
-    cardTitle: {
-        background: appTheme.rawTheme.palette.primary2Color,
-        height: 62,
-    },
-    cardTitleText: {
-        fontSize: 28,
-        fontWeight: 100,
-        color: appTheme.rawTheme.palette.alternateTextColor,
-    },
-    noHits: {
-        padding: '1rem',
-        marginTop: '1rem',
-        fontWeight: 300,
-    },
-    userSettingsOverride: {
-        color: appTheme.rawTheme.palette.accent1Color,
-        marginTop: -6,
-        fontSize: '0.8rem',
-        fontWeight: 400,
-    },
-    menuIcon: {
-        color: '#757575',
-    },
-    menuLabel: {
-        position: 'relative',
-        top: -6,
-        marginLeft: 16,
-    },
-};
 
 class AppComponent extends React.Component {
     constructor(props, context) {
@@ -125,13 +81,13 @@ class AppComponent extends React.Component {
         }));
         /* eslint-enable complexity */
 
-        this.subscriptions.push(settingsActions.showSnackbarMessage.subscribe(params => {
+        this.subscriptions.push(settingsActions.showSnackbarMessage.subscribe((params) => {
             const message = params.data;
             this.setState({ snackbarMessage: message, showSnackbar: !!message });
         }));
 
         // Helper function for setting app state based on location
-        var navigate = (location) => {
+        const navigate = (location) => {
             const section = location.pathname.substr(1);
             if (location.pathname === '/search') {
                 const search = decodeURIComponent(location.search.substr(1));
@@ -157,11 +113,13 @@ class AppComponent extends React.Component {
     }
 
     componentWillUnmount() {
-        this.subscriptions.forEach(sub => {
+        this.subscriptions.forEach((sub) => {
             sub.dispose();
         });
 
-        this.unlisten && this.unlisten();
+        if (typeof this.unlisten === 'function') {
+            this.unlisten();
+        }
     }
 
     closeSnackbar() {
@@ -174,7 +132,7 @@ class AppComponent extends React.Component {
     }
 
     render() {
-        const sections = Object.keys(categories).map(category => {
+        const sections = Object.keys(categories).map((category) => {
             const key = category;
             const label = this.props.d2.i18n.getTranslation(categories[category].label);
             const icon = categories[category].icon;
@@ -206,7 +164,7 @@ class AppComponent extends React.Component {
                         searchText={this.state.searchText}
                     />
 
-                    <SettingsFields category={this.state.category} currentSettings={this.state.currentSettings}/>
+                    <SettingsFields category={this.state.category} currentSettings={this.state.currentSettings} />
                 </div>
             </MuiThemeProvider>
         );

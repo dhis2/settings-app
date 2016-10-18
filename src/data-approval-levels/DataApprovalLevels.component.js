@@ -26,7 +26,6 @@ import SelectFieldAsyncSource from './SelectFieldAsyncSource.component';
 import TextField from '../form-fields/text-field';
 import DropdownField from '../form-fields/drop-down';
 import MultiToggle from '../form-fields/multi-toggle';
-import log from 'loglevel';
 
 
 function isUndefinedOrRequired(v) {
@@ -59,12 +58,12 @@ export default React.createClass({
 
     componentDidMount() {
         this.subscriptions.push(
-            dataApprovalLevelStore.subscribe(approvalLevels => {
+            dataApprovalLevelStore.subscribe((approvalLevels) => {
                 this.setState({ approvalLevels, showForm: false, saving: false });
             })
         );
         this.subscriptions.push(
-            dataApprovalWorkflowStore.subscribe(approvalWorkflows => {
+            dataApprovalWorkflowStore.subscribe((approvalWorkflows) => {
                 this.setState({ approvalWorkflows, showForm: false, saving: false });
             })
         );
@@ -75,7 +74,7 @@ export default React.createClass({
     },
 
     componentWillUnmount() {
-        this.subscriptions.forEach(subscription => {
+        this.subscriptions.forEach((subscription) => {
             subscription.dispose();
         });
     },
@@ -162,17 +161,17 @@ export default React.createClass({
             const add = [];
             const rem = [];
             const dataApprovalLevels = this.workflowModelToEdit.dataApprovalLevels;
-            this.state.approvalLevels.forEach(level => {
+            this.state.approvalLevels.forEach((level) => {
                 if (newValue.indexOf(level.id) >= 0 && !dataApprovalLevels.has(level.id)) {
                     add.push(level);
                 } else if (newValue.indexOf(level.id) === -1 && dataApprovalLevels.has(level.id)) {
                     rem.push(level);
                 }
             });
-            add.forEach(level => {
+            add.forEach((level) => {
                 dataApprovalLevels.add(level);
             });
-            rem.forEach(level => {
+            rem.forEach((level) => {
                 dataApprovalLevels.remove(level);
             });
         } else {
@@ -210,7 +209,7 @@ export default React.createClass({
             .list({ fields: 'id,displayName,level' })
             .then(list => list.toArray())
             .then(list => list.sort((left, right) => left.level - right.level))
-            .then(list => list.map(listItem => {
+            .then(list => list.map((listItem) => {
                 const text = `${listItem.level}: ${listItem.displayName}`;
                 return { text, payload: listItem };
             }));
@@ -218,7 +217,7 @@ export default React.createClass({
         const categoryOptionGroupSets = d2.models.categoryOptionGroupSet
             .list()
             .then(list => list.toArray())
-            .then(listItems => listItems.map(listItem => {
+            .then(listItems => listItems.map((listItem) => {
                 const text = listItem.displayName;
                 const payload = listItem;
                 return { text, payload };
@@ -269,7 +268,7 @@ export default React.createClass({
                     fieldConfigs={fieldConfigs}
                     onFormFieldUpdate={this.formFieldUpdate}
                 >
-                    <div style={{ marginTop: '2rem' }}></div>
+                    <div style={{ marginTop: '2rem' }} />
                     <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
                     <FlatButton
                         onClick={this.cancelAction}
@@ -306,7 +305,7 @@ export default React.createClass({
         };
 
         const className = `transition-mount transition-unmount
-            ${(!!this.state.componentDidMount ? '' : ' transition-mount-active')}`;
+            ${(this.state.componentDidMount ? '' : ' transition-mount-active')}`;
 
         return (
             <div style={styles.wrapper}>
@@ -370,7 +369,7 @@ export default React.createClass({
                 type: DropdownField,
                 fieldOptions: {
                     floatingLabelText: this.getTranslation('period_type'),
-                    menuItems: Object.keys(periodTypes).map(val => {
+                    menuItems: Object.keys(periodTypes).map((val) => {
                         const label = periodTypes[val];
                         return {
                             id: val,
@@ -387,7 +386,7 @@ export default React.createClass({
                 type: MultiToggle,
                 fieldOptions: {
                     label: this.getTranslation('data_approval_levels'),
-                    items: this.state.approvalLevels.map(level => {
+                    items: this.state.approvalLevels.map((level) => {
                         const name = level.id;
                         const text = `${level.level}: ${level.displayName}`;
                         const value = approvalLevels.indexOf(level.id) !== -1;
@@ -428,7 +427,7 @@ export default React.createClass({
                     fieldConfigs={fieldConfigs}
                     onFormFieldUpdate={this.workflowFormFieldUpdate}
                 >
-                    <div style={{ marginTop: '1rem' }}></div>
+                    <div style={{ marginTop: '1rem' }} />
                     <RaisedButton onClick={this.workflowFormSave} primary label={this.getTranslation('save')} />
                     {this.workflowModelToEdit.id !== undefined ?
                         (<FlatButton
@@ -490,7 +489,7 @@ export default React.createClass({
         };
 
         const className = `transition-mount transition-unmount
-            ${(!!this.state.componentDidMount ? '' : ' transition-mount-active')}`;
+            ${(this.state.componentDidMount ? '' : ' transition-mount-active')}`;
 
         return (
             <div style={styles.wrapper}>

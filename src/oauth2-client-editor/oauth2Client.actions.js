@@ -10,9 +10,9 @@ const oa2Actions = Action.createActionsFromNames(['load', 'delete']);
 
 oa2Actions.load.subscribe(() => {
     getD2()
-        .then(d2 => {
+        .then((d2) => {
             d2.models.oAuth2Client.list({ paging: false, fields: ':all', order: 'displayName' })
-                .then(oa2ClientCollection => {
+                .then((oa2ClientCollection) => {
                     const yes = d2.i18n.getTranslation('yes');
                     const no = d2.i18n.getTranslation('no');
                     // Map grant types to object props in order to display them in the data table
@@ -30,13 +30,13 @@ oa2Actions.delete.subscribe((e) => {
     e.data.delete()
         .then(() => {
             oa2Actions.load();
-            getD2().then(d2 => {
+            getD2().then((d2) => {
                 settingsActions.showSnackbarMessage(d2.i18n.getTranslation('oauth2_client_deleted'));
             });
         })
         .catch((err) => {
             log.warn('Error when deleting OAuth2 client:', err);
-            getD2().then(d2 => {
+            getD2().then((d2) => {
                 settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_save_oauth2_client'));
             });
         });

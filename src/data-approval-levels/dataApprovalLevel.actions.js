@@ -1,8 +1,8 @@
 import log from 'loglevel';
 import Action from 'd2-ui/lib/action/Action';
-import dataApprovalLevelStore from './dataApprovalLevel.store';
 import { getInstance as getD2 } from 'd2/lib/d2';
 
+import dataApprovalLevelStore from './dataApprovalLevel.store';
 import settingsActions from '../settingsActions';
 import workflowActions from './dataApprovalWorkflow.actions';
 
@@ -39,7 +39,7 @@ actions.saveDataApprovalLevel
         const dataApprovalLevels = dataApprovalLevelStore.getState();
         if (!dataApprovalLevel.organisationUnitLevel) {
             actionFailed();
-            getD2().then(d2 => {
+            getD2().then((d2) => {
                 settingsActions.showSnackbarMessage(d2.i18n.getTranslation('oranisation_unit_level_is_required'));
             });
             return;
@@ -61,17 +61,17 @@ actions.saveDataApprovalLevel
             dataApprovalLevelToSave.name += dataApprovalLevel.categoryOptionGroupSet.displayName;
         }
 
-        getD2().then(d2 => {
+        getD2().then((d2) => {
             d2.Api.getApi().post('dataApprovalLevels', dataApprovalLevelToSave)
                 .then(checkImportReport)
-                .then(message => {
+                .then((message) => {
                     workflowActions.loadDataApprovalWorkflows();
                     settingsActions.showSnackbarMessage(d2.i18n.getTranslation('approval_level_saved'));
                     actions.loadDataApprovalLevels();
                     actionComplete(message);
                 })
-                .catch(error => {
-                    const message = (error.messages || error.response && error.response.errorReports)
+                .catch((error) => {
+                    const message = (error.messages || (error.response && error.response.errorReports))
                         ? `\n - ${(error.messages || error.response.errorReports).map(e => e.message).join('\n - ')}`
                         : error.message || error;
                     log.warn(`Error when saving approval level: ${message}`);
@@ -87,13 +87,13 @@ actions.deleteDataApprovalLevel.subscribe(({ data: dataApprovalLevel, complete }
             complete();
             workflowActions.loadDataApprovalWorkflows();
             actions.loadDataApprovalLevels();
-            getD2().then(d2 => {
+            getD2().then((d2) => {
                 settingsActions.showSnackbarMessage(d2.i18n.getTranslation('approval_level_deleted'));
             });
         })
-        .catch(e => {
+        .catch((e) => {
             log.warn('Error when deleting approval level:', e.message);
-            getD2().then(d2 => {
+            getD2().then((d2) => {
                 settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_delete_approval_level'));
             });
         });

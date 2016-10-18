@@ -33,6 +33,67 @@ export default React.createClass({
         };
     },
 
+    onClick(e) {
+        if (this.fileInput && !this.state.uploading) {
+            this.fileInput.click(e);
+        } else if (this.state.uploading) {
+            this.xhr.abort();
+            this.setState({ uploading: false, progress: undefined });
+            log.info('File upload cancelled');
+        }
+    },
+
+    onPreviewClick() {
+        this.setState(state => ({ showDialog: !state.showDialog }));
+    },
+
+    onToggle(e) {
+        this.props.onChange({ target: { value: e.target.checked } });
+    },
+
+    onUpload(e) {
+        if (e.target.files.length === 0) {
+            return;
+        }
+
+        this.setState({
+            uploading: true,
+            progress: undefined,
+        });
+
+        const api = this.context.d2.Api.getApi();
+        const xhr = new XMLHttpRequest();
+        xhr.upload.onprogress = (progress) => {
+            if (progress.lengthComputable) {
+                this.setState({ progress: (progress.loaded / progress.total) * 100 });
+            } else {
+                this.setState({ progress: undefined });
+            }
+        };
+        this.xhr = xhr;
+
+        const data = new FormData();
+        data.append('file', e.target.files[0]);
+
+        api.post(['staticContent', this.props.name].join('/'), data).then(() => {
+            log.info('File uploaded successfully');
+            this.props.onChange({ target: { value: true } });
+            this.setState({
+                uploading: false,
+                progress: undefined,
+                isEnabled: true,
+            });
+        }).catch((err) => {
+            log.warn('File upload failed:', err);
+            this.props.onChange({ target: { value: false } });
+            this.setState({
+                uploading: false,
+                progress: undefined,
+                isEnabled: false,
+            });
+        });
+    },
+
     renderUploading() {
         const progressStyle = {
             position: 'absolute',
@@ -43,9 +104,12 @@ export default React.createClass({
 
         return (
             <div>
-                <FlatButton label={this.getTranslation('cancel_upload')} onClick={this._fileClick} />
+                <FlatButton label={this.getTranslation('cancel_upload')} onClick={this.onClick} />
                 <div style={progressStyle}>
-                    <LinearProgress mode={this.state.progress ? 'determinate' : 'indeterminate'} value={this.state.progress}/>
+                    <LinearProgress
+                        mode={this.state.progress ? 'determinate' : 'indeterminate'}
+                        value={this.state.progress}
+                    />
                 </div>
             </div>
         );
@@ -59,37 +123,38 @@ export default React.createClass({
             padding: 48,
         };
         const dialogImgStyle = {
-          maxWidth: '100%',
-          maxHeight: '70vh',
+            maxWidth: '100%',
+            maxHeight: '70vh',
         };
 
         const apiBase = this.context.d2.Api.getApi().baseUrl;
-        const imgUrl = [apiBase, 'staticContent', this.props.name].join('/') + '?at=' + new Date();
+        const imgUrl = `${[apiBase, 'staticContent', this.props.name].join('/')}?at=${new Date()}`;
 
         if (this.state.isEnabled) {
             return (
                 <div>
-                    <FlatButton label={this.getTranslation('replace_image')} secondary onClick={this._fileClick} />
-                    <FlatButton label={this.getTranslation('preview_image')} onClick={this._previewClick} />
-                    <Dialog ref="dialog"
-                            open={this.state.showDialog}
-                            onRequestClose={this._previewClick}
-                            autoDetectWindowHeight
-                            autoScrollBodyContent
-                            bodyStyle={bodyStyle}>
-                        <img style={dialogImgStyle} src={imgUrl} />
+                    <FlatButton label={this.getTranslation('replace_image')} secondary onClick={this.onClick} />
+                    <FlatButton label={this.getTranslation('preview_image')} onClick={this.onPreviewClick} />
+                    <Dialog
+                        open={this.state.showDialog}
+                        onRequestClose={this.onPreviewClick}
+                        autoDetectWindowHeight
+                        autoScrollBodyContent
+                        bodyStyle={bodyStyle}
+                    >
+                        <img style={dialogImgStyle} src={imgUrl} role="presentation" />
                     </Dialog>
                 </div>
             );
         }
 
         return (
-            <FlatButton label={this.getTranslation('upload_image')} primary onClick={this._fileClick} />
+            <FlatButton label={this.getTranslation('upload_image')} primary onClick={this.onClick} />
         );
     },
 
     render() {
-        const {onFocus, onBlur, onChange, ...other} = this.props;
+        const { onFocus, onBlur, onChange, ...other } = this.props; // eslint-disable-line
 
         const containerStyle = {
             position: 'relative',
@@ -111,86 +176,29 @@ export default React.createClass({
             top: 2,
         };
 
+        const setRef = (ref) => { this.fileInput = ref; };
+
         return (
             <div style={containerStyle}>
                 <div style={checkStyle}>
-                    <Checkbox label={this.props.label}
-                              onCheck={this._check}
-                              disabled={!this.state.isEnabled}
-                              labelStyle={{color: AppTheme.rawTheme.palette.textColor}}
-                              checked={this.props.value} />
+                    <Checkbox
+                        label={this.props.label}
+                        onCheck={this.onToggle}
+                        disabled={!this.state.isEnabled}
+                        labelStyle={{ color: AppTheme.rawTheme.palette.textColor }}
+                        checked={this.props.value}
+                    />
                 </div>
                 <div style={btnStyle}>
                     { this.state.uploading ? this.renderUploading() : this.renderUpload() }
-                    <input type="file"
-                           style={{visibility: 'hidden', display: 'none'}}
-                           ref={(ref) => this.fileInput = ref}
-                           onChange={this._upload} />
+                    <input
+                        type="file"
+                        style={{ visibility: 'hidden', display: 'none' }}
+                        ref={setRef}
+                        onChange={this.onUpload}
+                    />
                 </div>
             </div>
         );
-    },
-
-    _fileClick(e) {
-        if (this.fileInput && !this.state.uploading) {
-            this.fileInput.click(e);
-        } else if (this.state.uploading) {
-            this.xhr.abort();
-            this.setState({uploading: false, progress: undefined});
-            log.info('File upload cancelled');
-        }
-    },
-
-    _previewClick() {
-        this.setState(state => {
-            return {showDialog: !state.showDialog};
-        });
-    },
-
-    _check(e) {
-        this.props.onChange({target: {value: e.target.checked}});
-    },
-
-    _upload(e) {
-        if (e.target.files.length === 0) {
-            return;
-        }
-
-        this.setState({
-            uploading: true,
-            progress: undefined,
-        });
-
-        const api = this.context.d2.Api.getApi();
-        const xhr = new XMLHttpRequest();
-        xhr.upload.onprogress = (progress) => {
-            if (progress.lengthComputable) {
-                this.setState({progress: (progress.loaded / progress.total) * 100});
-            } else {
-                this.setState({progress: undefined});
-            }
-        };
-        this.xhr = xhr;
-
-        const data = new FormData();
-        data.append('file', e.target.files[0]);
-
-        api.post(['staticContent', this.props.name].join('/'), data).then(() => {
-            log.info('File uploaded successfully');
-            this.props.onChange({target: {value: true}});
-            this.setState({
-                uploading: false,
-                progress: undefined,
-                isEnabled: true,
-            });
-        }).catch(() => {
-            log.warn('File upload failed:', arguments);
-            this.props.onChange({target: {value: false}});
-            this.setState({
-                uploading: false,
-                progress: undefined,
-                isEnabled: false,
-            });
-        });
     },
 });

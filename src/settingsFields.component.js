@@ -2,7 +2,6 @@ import React from 'react';
 import log from 'loglevel';
 
 // Material UI
-import RaisedButton from './form-fields/raised-button';
 import { Card, CardText } from 'material-ui/Card';
 
 // D2 UI
@@ -12,11 +11,12 @@ import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 // App
 import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.component';
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component';
-import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component.js';
-import metadataSettings from './metadata-settings/metadataSettings.component.js';
+import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component';
+import metadataSettings from './metadata-settings/metadataSettings.component';
+import RaisedButton from './form-fields/raised-button';
 import SelectField from './form-fields/drop-down';
 import Checkbox from './form-fields/check-box';
-import FileUpload from './form-fields/file-upload.js';
+import FileUpload from './form-fields/file-upload';
 import TextField from './form-fields/text-field';
 import AppTheme from './theme';
 
@@ -95,13 +95,13 @@ function wrapUserSettingsOverride(d2, component, valueLabel) {
 }
 
 class SettingsFields extends React.Component {
-    shouldComponentUpdate(nextProps) {
-        return nextProps.currentSettings.join(',') !== this.props.currentSettings.join(',');
-    }
-
     componentDidMount() {
         this.disposables = [];
         this.disposables.push(settingsStore.subscribe(() => this.forceUpdate()));
+    }
+
+    shouldComponentUpdate(nextProps) {
+        return nextProps.currentSettings.join(',') !== this.props.currentSettings.join(',');
     }
 
     componentWillUnmount() {
@@ -122,24 +122,32 @@ class SettingsFields extends React.Component {
 
         /* eslint-disable complexity */
         const fields = settings
-            .map(key => {
+            .map((key) => {
                 const mapping = settingsKeyMapping[key];
 
                 // Base config, common for all component types
+                const validators = [];
+                if (mapping.validators) {
+                    mapping.validators.forEach((name) => {
+                        if (wordToValidatorMap.has(name)) {
+                            validators.push({
+                                validator: wordToValidatorMap.get(name),
+                                message: d2.i18n.getTranslation(wordToValidatorMap.get(name).message),
+                            });
+                        }
+                    });
+                }
+
                 const fieldBase = {
                     name: key,
-                    value: settingsStore.state && settingsStore.state[key] || '',
+                    value: (settingsStore.state && settingsStore.state[key]) || '',
                     component: TextField,
                     props: {
                         floatingLabelText: d2.i18n.getTranslation(mapping.label),
                         style: { width: '100%' },
                         hintText: mapping.hintText && d2.i18n.getTranslation(mapping.hintText),
                     },
-                    validators: (mapping.validators || []).map(name => wordToValidatorMap.has(name) ? {
-                        validator: wordToValidatorMap.get(name),
-                        message: d2.i18n.getTranslation(wordToValidatorMap.get(name).message),
-                    } : false)
-                        .filter(v => v),
+                    validators,
                 };
 
                 switch (mapping.type) {
@@ -169,17 +177,17 @@ class SettingsFields extends React.Component {
                         component: SelectField,
                         props: Object.assign({}, fieldBase.props, {
                             menuItems: mapping.source
-                                ? configOptionStore.state && configOptionStore.state[mapping.source] || []
-                                : Object.keys(mapping.options).map(id => {
-                                const displayName = !isNaN(mapping.options[id]) ?
+                                ? (configOptionStore.state && configOptionStore.state[mapping.source]) || []
+                                : Object.keys(mapping.options).map((id) => {
+                                    const displayName = !isNaN(mapping.options[id]) ?
                                     mapping.options[id] :
                                     d2.i18n.getTranslation(mapping.options[id]);
-                                return { id, displayName };
-                            }),
+                                    return { id, displayName };
+                                }),
                             includeEmpty: !!mapping.includeEmpty,
                             emptyLabel: (
-                                mapping.includeEmpty && mapping.emptyLabel &&
-                                d2.i18n.getTranslation(mapping.emptyLabel) || undefined
+                                (mapping.includeEmpty &&
+                                mapping.emptyLabel && d2.i18n.getTranslation(mapping.emptyLabel)) || undefined
                             ),
                             noOptionsLabel: d2.i18n.getTranslation('no_options'),
                         }),
@@ -226,14 +234,14 @@ class SettingsFields extends React.Component {
                             label: fieldBase.props.floatingLabelText,
                             onClick: () => {
                                 d2.Api.getApi().post(mapping.uri)
-                                    .then(result => {
-                                        log.info(result && result.message || 'Ok');
+                                    .then((result) => {
+                                        log.info((result && result.message) || 'Ok');
                                         settingsActions.load(true);
                                         settingsActions.showSnackbarMessage(result.message);
-                                    }).catch(error => {
-                                    log.warn('Error when performing API query:', error.message);
-                                    settingsActions.showSnackbarMessage(error.message);
-                                });
+                                    }).catch((error) => {
+                                        log.warn('Error when performing API query:', error.message);
+                                        settingsActions.showSnackbarMessage(error.message);
+                                    });
                             },
                             style: { minWidth: 'initial', maxWidth: 'initial', marginTop: '1em' },
                         },
@@ -255,12 +263,12 @@ class SettingsFields extends React.Component {
                 }
             })
             .filter(f => !!f.name)
-            .map(field => {
+            .map((field) => {
                 const mapping = settingsKeyMapping[field.name];
                 const options = configOptionStore.getState();
 
                 if (mapping.userSettingsOverride) {
-                    const userSettingsNoFallback = options && options.userSettingsNoFallback || {};
+                    const userSettingsNoFallback = (options && options.userSettingsNoFallback) || {};
                     const userSettingValue = userSettingsNoFallback && userSettingsNoFallback[field.name] !== null
                         ? userSettingsNoFallback[field.name]
                         : '';
@@ -269,7 +277,7 @@ class SettingsFields extends React.Component {
                     if (userSettingValue === '') {
                         component = wrapUserSettingsOverride(d2, component);
                     } else if (mapping.source) {
-                        const userSettingLabel = (options && options[mapping.source] || [])
+                        const userSettingLabel = ((options && options[mapping.source]) || [])
                             .filter(opt => opt.id === userSettingValue)
                             .map(opt => opt.displayName)
                             .pop();
@@ -289,7 +297,7 @@ class SettingsFields extends React.Component {
         return (
             <Card style={styles.card} key={this.props.category}>
                 <CardText>
-                    <FormBuilder fields={fields} onUpdateField={settingsActions.saveKey}/>
+                    <FormBuilder fields={fields} onUpdateField={settingsActions.saveKey} />
                 </CardText>
             </Card>
         );

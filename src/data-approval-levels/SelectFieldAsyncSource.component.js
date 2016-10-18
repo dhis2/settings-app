@@ -19,28 +19,29 @@ export default React.createClass({
 
     componentWillMount() {
         this.props.menuItemsSource()
-            .then(items => {
+            .then((items) => {
                 this.setState({
                     menuItems: (this.props.prependItems || []).concat(items).concat(this.props.appendItems || []),
                 });
             });
     },
 
+    handleChange(event, index, value) {
+        this.props.onChange({ target: { value } });
+    },
+
     render() {
-        const {onChange, isRequired, menuItemsSource, prependItems, ...other} = this.props;
+        const { onChange, isRequired, menuItemsSource, prependItems, ...other } = this.props; // eslint-disable-line
         return (
             <SelectField
                 value={this.props.value}
                 onChange={this.handleChange}
-                {...other}>
-                {this.state.menuItems.map((item, i) => {
-                    return <MenuItem key={i} value={item.payload} primaryText={item.text} />;
-                })}
+                {...other}
+            >
+                {this.state.menuItems.map((item, i) => (
+                    <MenuItem key={i} value={item.payload} primaryText={item.text} />
+                ))}
             </SelectField>
         );
-    },
-
-    handleChange(event, index, value) {
-        this.props.onChange({target: {value: value}});
     },
 });

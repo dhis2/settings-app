@@ -14,7 +14,7 @@ export default React.createClass({
     mixins: [MuiThemeMixin],
 
     render() {
-        const {errorText, errorStyle, ...other} = this.props;
+        const { errorText, errorStyle, ...other } = this.props; // eslint-disable-line
         return (
             <div style={{ marginTop: 12, marginBottom: 12 }}>
                 <Checkbox onCheck={this.props.onChange} {...other} />

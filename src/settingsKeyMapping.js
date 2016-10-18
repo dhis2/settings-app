@@ -148,8 +148,8 @@ const settingsKeyMapping = {
         type: 'dropdown',
         options: {
             0: 'detect_based_on_web_server',
-            1: '1', 2: '2', 3: '3', 4: '4', 5: '5',
-            6: '6', 7: '7', 8: '8', 16: '16', 32: '32',
+            1: '1', 2: '2', 3: '3', 4: '4', 5: '5',     // eslint-disable-line
+            6: '6', 7: '7', 8: '8', 16: '16', 32: '32', // eslint-disable-line
         },
     },
     keySystemNotificationsEmail: {

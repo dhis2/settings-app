@@ -1,13 +1,15 @@
 import React from 'react';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
-import Checkbox from '../form-fields/check-box';
 import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButtonGroup, RadioButton } from 'material-ui/RadioButton';
 import CircularProgress from 'material-ui/CircularProgress';
+import { Table, Column, Cell } from 'fixed-data-table';
+import log from 'loglevel';
+
+import Checkbox from '../form-fields/check-box';
 import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';
 import settingsKeyMapping from '../settingsKeyMapping';
-import { Table, Column, Cell } from 'fixed-data-table';
 
 require('fixed-data-table/dist/fixed-data-table.css');
 
@@ -17,7 +19,7 @@ class metadataSettings extends React.Component {
 
         this.state = {
             metadataVersions: [],
-            selectedTransactionType: "BEST_EFFORT",
+            selectedTransactionType: 'BEST_EFFORT',
             masterVersionName: null,
             lastFailedTime: null,
             hqInstanceUrl: null,
@@ -25,7 +27,7 @@ class metadataSettings extends React.Component {
             remoteVersionName: null,
             isLocalInstance: false,
             hasVersions: false,
-            isTaskRunning: false
+            isTaskRunning: false,
         };
         this.d2 = context.d2;
         this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
@@ -39,65 +41,58 @@ class metadataSettings extends React.Component {
         this.createVersionKey = 'createVersionButton';
     }
 
-    sync() {
-        return this.syncVersions()
-            .then(this.syncSettings)
+    componentDidMount() {
+        this.sync();
     }
 
     onSelectTransactionType(event, value) {
         this.setState({ selectedTransactionType: value });
     }
 
-    componentDidMount() {
-        this.sync()
-    };
+    onToggleVersioning(e, v) {
+        this.setState({ isVersioningEnabled: v });
+        settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false');
+        setTimeout(this.sync, 100);
+    }
 
-    syncVersions() {
-        return this.d2.Api.getApi().get('/metadata/versions')
-            .then(result=> {
-                const versions = result.metadataversions.sort(function (a, b) {
-                    if (a.created < b.created)
-                        return 1;
-                    else if (a.created > b.created)
-                        return -1;
-                    else
-                        return 0;
-                });
-                versions.forEach(version => {
-                    version.importdate = version.importdate ? new Date(version.importdate).toLocaleString() : "NA";
-                });
-                this.setState({
-                    metadataVersions: versions,
-                    hasVersions: ( versions != undefined && versions.length != 0 )
-                });
-                return Promise.resolve()
+    createVersion() {
+        const mapping = settingsKeyMapping[this.createVersionKey];
+        this.setState({ isTaskRunning: true });
+        this.d2.Api.getApi().post(`${mapping.uri}?type=${this.state.selectedTransactionType}`)
+            .then(() => {
+                this.setState({ isTaskRunning: false });
+                settingsActions.load(true);
+                settingsActions.showSnackbarMessage(this.getTranslation('version_created'));
+                return Promise.resolve();
             })
-            .catch(error => {
-                console.log('error', error);
-                this.setState({ hasVersions: false });
-                return Promise.resolve()
+            .then(this.sync)
+            .catch((error) => {
+                this.setState({ isTaskRunning: false });
+                log.warn('Error creating version:', error);
+                settingsActions.showSnackbarMessage(this.getTranslation('version_not_created'));
+                return Promise.resolve();
             });
-    };
+    }
 
     syncSettings() {
         this.d2.Api.getApi().get('/systemSettings')
-            .then(result=> {
+            .then((result) => {
                 this.setState({
                     lastFailedTime: (result.keyMetadataLastFailedTime ? null : result.keyMetadataLastFailedTime),
                     isVersioningEnabled: result.keyVersionEnabled,
                     hqInstanceUrl: result.keyRemoteInstanceUrl,
                     remoteVersionName: result.keyRemoteMetadataVersion,
                     lastFailedVersion: (result.keyMetadataFailedVersion ? null : result.keyMetadataFailedVersion),
-                    isSchedulerEnabled: (result.keySchedTasks != undefined)
+                    isSchedulerEnabled: (result.keySchedTasks !== undefined),
                 });
 
-                if (this.state.hqInstanceUrl !== undefined && this.state.hqInstanceUrl.length !== 0)
+                if (this.state.hqInstanceUrl !== undefined && this.state.hqInstanceUrl.length !== 0) {
                     this.setState({
                         isLocalInstance: true,
                         masterVersionName: this.state.remoteVersionName,
-                        isLastSyncValid: this.state.lastFailedTime != null
+                        isLastSyncValid: this.state.lastFailedTime != null,
                     });
-                else
+                } else {
                     this.setState({
                         isLocalInstance: false,
                         masterVersionName: (
@@ -106,38 +101,47 @@ class metadataSettings extends React.Component {
                                 : null
                         ),
                     });
-                return Promise.resolve()
+                }
+                return Promise.resolve();
             })
-            .catch(error => {
-                console.log('error', error);
+            .catch((error) => {
+                log.warn('Error:', error);
                 settingsActions.showSnackbarMessage(this.getTranslation('error_fetching_settings'));
-                return Promise.resolve()
+                return Promise.resolve();
             });
-    };
+    }
 
-    createVersion() {
-        const mapping = settingsKeyMapping[this.createVersionKey];
-        this.setState({ isTaskRunning: true });
-        this.d2.Api.getApi().post(mapping.uri + '?type=' + this.state.selectedTransactionType)
-            .then(() => {
-                this.setState({ isTaskRunning: false });
-                settingsActions.load(true);
-                settingsActions.showSnackbarMessage(this.getTranslation('version_created'));
-                return Promise.resolve()
+    syncVersions() {
+        return this.d2.Api.getApi().get('/metadata/versions')
+            .then((result) => {
+                const versions = result.metadataversions.sort((a, b) => {
+                    if (a.created < b.created) {
+                        return 1;
+                    } else if (a.created > b.created) {
+                        return -1;
+                    }
+
+                    return 0;
+                });
+                versions.forEach((version) => {
+                    version.importdate = version.importdate ? new Date(version.importdate).toLocaleString() : 'NA'; // eslint-disable-line
+                });
+                this.setState({
+                    metadataVersions: versions,
+                    hasVersions: (versions !== undefined && versions.length !== 0),
+                });
+                return Promise.resolve();
             })
-            .then(this.sync)
-            .catch(error => {
-                this.setState({ isTaskRunning: false });
-                console.log('Error creating version:', error);
-                settingsActions.showSnackbarMessage(this.getTranslation('version_not_created'));
-                return Promise.resolve()
+            .catch((error) => {
+                log.error('Error:', error);
+                this.setState({ hasVersions: false });
+                return Promise.resolve();
             });
-    };
+    }
 
-    onToggleVersioning(e, v) {
-        this.setState({ isVersioningEnabled: v });
-        settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false');
-        setTimeout(this.sync, 100);
+    sync() {
+        return this.syncVersions()
+            .then(this.syncSettings);
     }
 
     render() {
@@ -145,15 +149,15 @@ class metadataSettings extends React.Component {
         const checkboxFields = [
             {
                 name: 'keyVersionEnabled',
-                value: settingsStore.state && settingsStore.state[this.saveSettingsKey + localeAppendage] || '',
+                value: (settingsStore.state && settingsStore.state[this.saveSettingsKey + localeAppendage]) || '',
                 component: Checkbox,
                 props: {
                     label: this.getTranslation('keyVersionEnabled'),
                     checked: ((settingsStore.state && settingsStore.state[this.saveSettingsKey])) === 'true',
                     onCheck: this.onToggleVersioning,
-                    disabled: this.state.isTaskRunning
+                    disabled: this.state.isTaskRunning,
                 },
-            }
+            },
         ];
 
         const styles = {
@@ -172,13 +176,13 @@ class metadataSettings extends React.Component {
                 display: 'inline-block',
                 top: '-7px',
                 float: 'left',
-            }
+            },
         };
 
         return (
             <div style={{ paddingTop: '2rem' }}>
                 <h2>{this.getTranslation('metadata_versioning')}</h2>
-                <FormBuilder fields={checkboxFields} onUpdateField={settingsActions.saveKey}/>
+                <FormBuilder fields={checkboxFields} onUpdateField={settingsActions.saveKey} />
 
                 <div style={this.state.isVersioningEnabled ? styles.visible : styles.hidden}>
                     <h3>{this.getTranslation('create_metadata_version')}</h3>
@@ -204,13 +208,17 @@ class metadataSettings extends React.Component {
                         </div>
 
                         <div style={styles.inlineRight}>
-                            {this.state.isTaskRunning && <CircularProgress style={styles.inlineProgressIcon} size={0.5}/>}
-                            <RaisedButton ref="btn" label={this.getTranslation('create_metadata_version')} onClick={this.createVersion} disabled={this.state.isTaskRunning}/>
+                            {this.state.isTaskRunning &&
+                            <CircularProgress style={styles.inlineProgressIcon} size={0.5} />}
+                            <RaisedButton
+                                label={this.getTranslation('create_metadata_version')}
+                                onClick={this.createVersion} disabled={this.state.isTaskRunning}
+                            />
                         </div>
                     </div>
 
                     <div style={this.state.hasVersions ? styles.visible : styles.hidden}>
-                        <div style={{ display: "inline-block", float: "left" }}>
+                        <div style={{ display: 'inline-block', float: 'left' }}>
                             <span style={{ fontSize: '1.17em', fontWeight: 'bold', marginRight: 8 }}>
                                 {this.getTranslation('master_version')}:
                             </span>
@@ -219,9 +227,12 @@ class metadataSettings extends React.Component {
 
                         <div style={this.state.isLocalInstance ? styles.inlineRight : styles.hidden}>
                             <div style={this.state.isLastSyncValid ? styles.inlineRight : styles.hidden}>
-                                <label style={{"fontStyle": "italic"}}>{this.getTranslation('last_sync_attempt')}: </label>
+                                <span style={{ fontStyle: 'italic' }}>
+                                    {this.getTranslation('last_sync_attempt')}:
+                                </span>
                                 <span>{this.state.lastFailedVersion}</span>
-                                <span> | <span style={{"color":"red"}}>{this.getTranslation('failed')}</span> | {new Date(this.state.lastFailedTime).toLocaleString()}</span>
+                                <span> | <span style={{ color: 'red' }}>{this.getTranslation('failed')}</span>
+                                    | {new Date(this.state.lastFailedTime).toLocaleString()}</span>
                             </div>
                         </div>
                     </div>
@@ -232,26 +243,27 @@ class metadataSettings extends React.Component {
                             rowsCount={this.state.metadataVersions.length}
                             width={670}
                             maxHeight={(50 * 6)}
-                            headerHeight={50}>
+                            headerHeight={50}
+                        >
                             <Column
                                 header={<Cell>Version</Cell>}
-                                cell={({rowIndex, ...props}) => (
+                                cell={({ rowIndex, ...props }) => (
                                     <Cell {...props}>{this.state.metadataVersions[rowIndex].name}</Cell>
-                                    )}
+                                )}
                                 width={135}
                             />
                             <Column
                                 header={<Cell>When</Cell>}
-                                cell={({rowIndex, ...props}) => (
+                                cell={({ rowIndex, ...props }) => (
                                     <Cell {...props}>
                                         {new Date(this.state.metadataVersions[rowIndex].created).toLocaleString()}
                                     </Cell>
-                                    )}
+                                )}
                                 width={205}
                             />
                             <Column
                                 header={<Cell>Type</Cell>}
-                                cell={({rowIndex, ...props}) => (
+                                cell={({ rowIndex, ...props }) => (
                                     <Cell {...props}>
                                         {this.state.metadataVersions[rowIndex].type}
                                     </Cell>
@@ -260,7 +272,7 @@ class metadataSettings extends React.Component {
                             />
                             <Column
                                 header={<Cell>Last Sync</Cell>}
-                                cell={({rowIndex, ...props}) => (
+                                cell={({ rowIndex, ...props }) => (
                                     <Cell {...props}>
                                         {this.state.metadataVersions[rowIndex].importdate}
                                     </Cell>
@@ -276,10 +288,11 @@ class metadataSettings extends React.Component {
                             rowsCount={this.state.metadataVersions.length}
                             width={670}
                             maxHeight={(50 * 6)}
-                            headerHeight={50}>
+                            headerHeight={50}
+                        >
                             <Column
                                 header={<Cell>Version</Cell>}
-                                cell={({rowIndex, ...props}) => (
+                                cell={({ rowIndex, ...props }) => (
                                     <Cell {...props}>
                                         {this.state.metadataVersions[rowIndex].name}
                                     </Cell>
@@ -288,7 +301,7 @@ class metadataSettings extends React.Component {
                             />
                             <Column
                                 header={<Cell>When</Cell>}
-                                cell={({rowIndex, ...props}) => (
+                                cell={({ rowIndex, ...props }) => (
                                     <Cell {...props}>
                                         {new Date(this.state.metadataVersions[rowIndex].created).toLocaleString()}
                                     </Cell>
@@ -296,7 +309,7 @@ class metadataSettings extends React.Component {
                             />
                             <Column
                                 header={<Cell>Type</Cell>}
-                                cell={({rowIndex, ...props}) => (
+                                cell={({ rowIndex, ...props }) => (
                                     <Cell {...props}>
                                         {this.state.metadataVersions[rowIndex].type}
                                     </Cell>
@@ -316,7 +329,7 @@ class metadataSettings extends React.Component {
     }
 }
 metadataSettings.contextTypes = {
-    d2: React.PropTypes.object.isRequired
+    d2: React.PropTypes.object.isRequired,
 };
 
 export default metadataSettings;
