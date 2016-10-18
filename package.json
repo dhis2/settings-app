@@ -43,6 +43,7 @@
     "fixed-data-table": "^0.6.3",
     "history": "^4.3.0",
     "material-ui": "0.15",
+    "node-pre-gyp": "^0.6.30",
     "node-sass": "^3.10.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
@@ -50,8 +51,8 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "susy": "^2.2.12",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.2"
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-server": "2.1.0-beta.9"
   },
   "pre-commit": [
     "validate"

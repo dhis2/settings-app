@@ -29,7 +29,6 @@ function log(req, res, opt) {
 
 const webpackConfig = {
     context: __dirname,
-    contentBase: __dirname,
     entry: './src/settings-app.js',
     devtool: 'source-map',
     output: {
@@ -85,7 +84,7 @@ if (!isDevBuild) {
             DHIS_CONFIG: JSON.stringify({}),
         }),
         new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
         //     compress: {
         //         warnings: false,

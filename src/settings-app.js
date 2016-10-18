@@ -25,6 +25,12 @@ require('../scss/settings-app.scss');
 
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.TRACE);
 
+function getAbsoluteUrl(url) {
+    const a = document.createElement('a');
+    a.href = url;
+    return a.href;
+}
+
 function configI18n(userSettings) {
     // Sources
     const uiLocale = userSettings.keyUiLocale;
@@ -102,7 +108,7 @@ getManifest('manifest.webapp')
 
         // Load alternatives
         const api = d2.Api.getApi();
-        const baseUrl = api.baseUrl.substr(0, api.baseUrl.lastIndexOf('/api/'));
+        const baseUrl = getAbsoluteUrl(api.baseUrl.substr(0, api.baseUrl.lastIndexOf('/api/')));
         Promise.all([
             d2.models.indicatorGroup.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),
             d2.models.dataElementGroup.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),
@@ -118,7 +124,7 @@ getManifest('manifest.webapp')
                 fields: 'id,displayName',
                 filter: ['level:in:[1,2]'],
             }),
-            api.get(`${baseUrl}/dhis-web-commons/menu/getModules.action`),
+            api.get(`${baseUrl}dhis-web-commons/menu/getModules.action`),
             api.get('system/flags'),
             api.get('system/styles'),
             api.get('locales/ui'),
