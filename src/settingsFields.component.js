@@ -101,6 +101,7 @@ class SettingsFields extends React.Component {
 
     componentDidMount() {
         this.disposables = [];
+        this.disposables.push(settingsStore.subscribe(() => this.forceUpdate()));
     }
 
     componentWillUnmount() {
