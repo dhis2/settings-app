@@ -10,17 +10,14 @@ let dhisConfig;
 
 try {
     dhisConfig = require(dhisConfigPath);
-    console.log('\nLoaded DHIS config:');
 } catch (e) {
     // Failed to load config file - use default config
     console.warn(`\nWARNING! Failed to load DHIS config:`, e.message);
-    console.info('Using default config');
     dhisConfig = {
         baseUrl: 'http://localhost:8080/dhis',
         authorization: 'Basic YWRtaW46ZGlzdHJpY3Q=', // admin:district
     };
 }
-console.log(JSON.stringify(dhisConfig, null, 2), '\n');
 
 function log(req, res, opt) {
     req.headers.Authorization = dhisConfig.authorization;
@@ -86,11 +83,8 @@ if (!isDevBuild) {
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
-        //     compress: {
-        //         warnings: false,
-        //     },
             comments: false,
-            beautify: true,
+            sourceMap: true,
         }),
     ];
 } else {
