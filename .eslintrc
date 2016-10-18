@@ -1,8 +1,6 @@
 {
   "extends": "airbnb",
-  "env": {
-    "browser": true
-  },
+  "env": { "browser": true },
   "rules": {
     "indent": [2, 4],
     "max-len": [
@@ -12,19 +10,15 @@
         "ignorePattern": "^\\s*var\\s.+=\\s*require\\s*\\("
       }
     ],
-
     "complexity": [1, 5],
-
     "import/no-extraneous-dependencies": [
       "error", {
         "optionalDependencies": false,
         "peerDependencies": false
       }
     ],
-
     "no-prototype-builtins": "off",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-
     "react/jsx-indent": [2, 4],
     "react/jsx-indent-props": [2, 4],
     "react/prefer-es6-class": [1, "always"],
