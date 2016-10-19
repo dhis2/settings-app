@@ -8,6 +8,7 @@
 </head>
 <body>
 <div id="app"></div>
-<script src="settings-app.js"></script>
+<%= htmlWebpackPlugin.options.vendorScripts %>
+<%= htmlWebpackPlugin.options.serviceWorkerScript %>
 </body>
 </html>

@@ -1,12 +1,9 @@
-import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import log from 'loglevel';
 
 import { init, config, getUserSettings, getManifest } from 'd2/lib/d2';
-
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // D2 UI
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
@@ -19,7 +16,6 @@ import settingsKeyMapping from './settingsKeyMapping';
 
 
 const dhisDevConfig = DHIS_CONFIG; // eslint-disable-line
-injectTapEventPlugin();
 
 // Styles
 require('../scss/settings-app.scss');

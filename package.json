@@ -10,7 +10,7 @@
     "start": "d2-manifest package.json manifest.webapp && webpack-dev-server",
     "prebuild": "rm -rf build && npm run validate && npm run lint-all",
     "build": "webpack",
-    "postbuild": "cp -r index.html *.png i18n build/ && npm run manifest",
+    "postbuild": "cp -r *.png i18n node_modules/babel-polyfill/dist/polyfill.min.js build/ && npm run manifest",
     "manifest": "d2-manifest package.json build/manifest.webapp",
     "deploy": "npm run build && mvn clean deploy"
   },
@@ -49,6 +49,7 @@
     "eslint-plugin-react": "^6.4.1",
     "fixed-data-table": "^0.6.3",
     "history": "^4.3.0",
+    "html-webpack-plugin": "^2.22.0",
     "loglevel": "^1.4.1",
     "material-ui": "0.15",
     "node-pre-gyp": "^0.6.30",
