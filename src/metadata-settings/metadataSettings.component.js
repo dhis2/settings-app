@@ -44,7 +44,8 @@ class metadataSettings extends React.Component {
         this.disposables = [];
         this.disposables.push(settingsStore.subscribe((settings) => {
             this.setState({ isVersioningEnabled: settings[this.saveSettingsKey] === 'true' }, () => {
-                this.syncVersions();
+                this.syncVersions()
+                  .then(this.syncSettings);
             });
         }));
     }
