@@ -3,6 +3,8 @@ import log from 'loglevel';
 
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
+import IconButton from 'material-ui/IconButton';
+import FontIcon from 'material-ui/FontIcon';
 
 // D2 UI
 import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators';
@@ -55,9 +57,9 @@ const styles = {
     },
     userSettingsOverride: {
         color: AppTheme.rawTheme.palette.primary1Color,
-        marginTop: -6,
-        fontSize: '0.8rem',
-        fontWeight: 400,
+        position: 'absolute',
+        right: 0,
+        top: 24,
     },
     menuIcon: {
         color: '#757575',
@@ -74,20 +76,25 @@ function wrapUserSettingsOverride(d2, component, valueLabel) {
         render() {
             const labelStyle = Object.assign({}, styles.userSettingsOverride);
             if (component === Checkbox) {
-                labelStyle.marginLeft = 40;
-                labelStyle.marginTop = -14;
-            } else if (component === SelectField && this.props.value === '') {
-                labelStyle.marginTop = -22;
+                labelStyle.top = -8;
             }
 
+            const labelText = valueLabel !== undefined
+                ? `${d2.i18n.getTranslation('will_be_overridden_by_current_user_setting')}: ${valueLabel}`
+                : d2.i18n.getTranslation('can_be_overridden_by_user_settings');
+
             return (
-                <div>
+                <div style={{ marginRight: 48 }}>
                     {super.render()}
-                    <div style={labelStyle}>{
-                        valueLabel !== undefined
-                            ? `${d2.i18n.getTranslation('will_be_overridden_by_current_user_setting')}: ${valueLabel}`
-                            : d2.i18n.getTranslation('can_be_overridden_by_user_settings')
-                    }</div>
+                    <div style={labelStyle}>
+                        <IconButton
+                            iconClassName="material-icons"
+                            tooltip={labelText}
+                            tooltipPosition="bottom-left"
+                            iconStyle={{color: AppTheme.rawTheme.palette.primary1Color}}
+                            tooltipStyles={{fontSize: '.75rem'}}
+                        >info_outline</IconButton>
+                    </div>
                 </div>
             );
         }
@@ -179,11 +186,11 @@ class SettingsFields extends React.Component {
                             menuItems: mapping.source
                                 ? (configOptionStore.state && configOptionStore.state[mapping.source]) || []
                                 : Object.keys(mapping.options).map((id) => {
-                                    const displayName = !isNaN(mapping.options[id]) ?
+                                const displayName = !isNaN(mapping.options[id]) ?
                                     mapping.options[id] :
                                     d2.i18n.getTranslation(mapping.options[id]);
-                                    return { id, displayName };
-                                }),
+                                return { id, displayName };
+                            }),
                             includeEmpty: !!mapping.includeEmpty,
                             emptyLabel: (
                                 (mapping.includeEmpty &&
@@ -239,9 +246,9 @@ class SettingsFields extends React.Component {
                                         settingsActions.load(true);
                                         settingsActions.showSnackbarMessage(result.message);
                                     }).catch((error) => {
-                                        log.warn('Error when performing API query:', error.message);
-                                        settingsActions.showSnackbarMessage(error.message);
-                                    });
+                                    log.warn('Error when performing API query:', error.message);
+                                    settingsActions.showSnackbarMessage(error.message);
+                                });
                             },
                             style: { minWidth: 'initial', maxWidth: 'initial', marginTop: '1em' },
                         },
@@ -297,7 +304,7 @@ class SettingsFields extends React.Component {
         return (
             <Card style={styles.card} key={this.props.category}>
                 <CardText>
-                    <FormBuilder fields={fields} onUpdateField={settingsActions.saveKey} />
+                    <FormBuilder fields={fields} onUpdateField={settingsActions.saveKey}/>
                 </CardText>
             </Card>
         );
