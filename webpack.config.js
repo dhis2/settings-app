@@ -20,7 +20,7 @@ try {
 }
 
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const scriptPrefix = (isDevBuild ? dhisConfig.baseUrl + '/' : '..');
+const scriptPrefix = (isDevBuild ? dhisConfig.baseUrl : '..');
 
 function log(req, res, opt) {
     req.headers.Authorization = dhisConfig.authorization;
@@ -41,17 +41,17 @@ const webpackConfig = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 query: {
                 },
             },
             {
                 test: /\.css$/,
-                loader: 'style!css',
+                loader: 'style-loader!css-loader',
             },
             {
                 test: /\.scss$/,
-                loader: 'style!css!sass',
+                loader: 'style-loader!css-loader!sass-loader',
             },
         ],
     },
@@ -84,7 +84,7 @@ const webpackConfig = {
             vendorScripts: [
                 "polyfill.min.js",
                 `${scriptPrefix}/dhis-web-core-resource/react-15/react-15${isDevBuild ? '' : '.min'}.js`,
-                `${scriptPrefix}/dhis-web-core-resource/rxjs/4.1.0/rx.lite${isDevBuild ? '' : '.min'}.js`,
+                `${scriptPrefix}/dhis-web-core-resource/rxjs/4.1.0/rx.all${isDevBuild ? '' : '.min'}.js`,
                 `${scriptPrefix}/dhis-web-core-resource/lodash/4.15.0/lodash${isDevBuild ? '' : '.min'}.js`,
             ]
                 .map(script => {
