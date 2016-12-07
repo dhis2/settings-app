@@ -129,6 +129,10 @@ const settingsKeyMapping = {
         label: 'put_analytics_in_maintenance_mode',
         type: 'checkbox',
     },
+    keySkipDataTypeValidationInAnalyticsTableExport: {
+        label: 'skip_data_type_validation_in_analytics_table_export',
+        type: 'checkbox',
+    },
     /* ============================================================================================================ */
     /* Category: Server                                                                                             */
     /* ============================================================================================================ */
