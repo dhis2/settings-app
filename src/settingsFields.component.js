@@ -4,7 +4,6 @@ import log from 'loglevel';
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
 import IconButton from 'material-ui/IconButton';
-import FontIcon from 'material-ui/FontIcon';
 
 // D2 UI
 import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators';
@@ -91,8 +90,8 @@ function wrapUserSettingsOverride(d2, component, valueLabel) {
                             iconClassName="material-icons"
                             tooltip={labelText}
                             tooltipPosition="bottom-left"
-                            iconStyle={{color: AppTheme.rawTheme.palette.primary1Color}}
-                            tooltipStyles={{fontSize: '.75rem'}}
+                            iconStyle={{ color: AppTheme.rawTheme.palette.primary1Color }}
+                            tooltipStyles={{ fontSize: '.75rem' }}
                         >info_outline</IconButton>
                     </div>
                 </div>
@@ -186,11 +185,11 @@ class SettingsFields extends React.Component {
                             menuItems: mapping.source
                                 ? (configOptionStore.state && configOptionStore.state[mapping.source]) || []
                                 : Object.keys(mapping.options).map((id) => {
-                                const displayName = !isNaN(mapping.options[id]) ?
+                                    const displayName = !isNaN(mapping.options[id]) ?
                                     mapping.options[id] :
                                     d2.i18n.getTranslation(mapping.options[id]);
-                                return { id, displayName };
-                            }),
+                                    return { id, displayName };
+                                }),
                             includeEmpty: !!mapping.includeEmpty,
                             emptyLabel: (
                                 (mapping.includeEmpty &&
@@ -246,9 +245,9 @@ class SettingsFields extends React.Component {
                                         settingsActions.load(true);
                                         settingsActions.showSnackbarMessage(result.message);
                                     }).catch((error) => {
-                                    log.warn('Error when performing API query:', error.message);
-                                    settingsActions.showSnackbarMessage(error.message);
-                                });
+                                        log.warn('Error when performing API query:', error.message);
+                                        settingsActions.showSnackbarMessage(error.message);
+                                    });
                             },
                             style: { minWidth: 'initial', maxWidth: 'initial', marginTop: '1em' },
                         },
@@ -304,7 +303,7 @@ class SettingsFields extends React.Component {
         return (
             <Card style={styles.card} key={this.props.category}>
                 <CardText>
-                    <FormBuilder fields={fields} onUpdateField={settingsActions.saveKey}/>
+                    <FormBuilder fields={fields} onUpdateField={settingsActions.saveKey} />
                 </CardText>
             </Card>
         );

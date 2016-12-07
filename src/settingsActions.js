@@ -112,7 +112,7 @@ const settingsSearchMap = Observable.fromPromise(new Promise((resolve) => {
                         return translatedKeyValueMap.concat(
                             settingsKeyMapping[settingsKey].searchLabels
                                 .filter(label => d2.i18n.isTranslated(label))
-                                .map(label => [d2.i18n.getTranslation(label), settingsKey])
+                                .map(label => [d2.i18n.getTranslation(label), settingsKey]),
                         );
                     }
 

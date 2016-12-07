@@ -60,12 +60,12 @@ export default React.createClass({
         this.subscriptions.push(
             dataApprovalLevelStore.subscribe((approvalLevels) => {
                 this.setState({ approvalLevels, showForm: false, saving: false });
-            })
+            }),
         );
         this.subscriptions.push(
             dataApprovalWorkflowStore.subscribe((approvalWorkflows) => {
                 this.setState({ approvalWorkflows, showForm: false, saving: false });
-            })
+            }),
         );
 
         setTimeout(() => {
@@ -113,7 +113,7 @@ export default React.createClass({
                 },
                 () => {
                     this.setState({ saving: false });
-                }
+                },
             );
     },
 
@@ -152,7 +152,7 @@ export default React.createClass({
                 },
                 () => {
                     this.setState({ saving: false });
-                }
+                },
             );
     },
 
@@ -190,7 +190,7 @@ export default React.createClass({
                 },
                 () => {
                     this.setState({ saving: false });
-                }
+                },
             );
     },
 
@@ -464,7 +464,7 @@ export default React.createClass({
                         },
                         () => {
                             this.setState({ saving: false });
-                        }
+                        },
                     );
             },
         };

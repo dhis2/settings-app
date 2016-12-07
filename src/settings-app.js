@@ -69,7 +69,7 @@ function configI18n(userSettings) {
 
 ReactDOM.render(
     <MuiThemeProvider muiTheme={appTheme}><LoadingMask /></MuiThemeProvider>,
-    document.getElementById('app')
+    document.getElementById('app'),
 );
 
 
