@@ -120,9 +120,6 @@ if (!isDevBuild) {
         })
     );
     webpackConfig.plugins.push(
-        new webpack.optimize.DedupePlugin()
-    );
-    webpackConfig.plugins.push(
         new webpack.optimize.OccurrenceOrderPlugin()
     );
     webpackConfig.plugins.push(
