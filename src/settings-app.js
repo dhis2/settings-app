@@ -123,7 +123,7 @@ getManifest('manifest.webapp')
                 fields: 'id,displayName',
                 filter: ['level:in:[1,2]'],
             }),
-            api.get(`${baseUrl}dhis-web-commons/menu/getModules.action`),
+            api.get(`${baseUrl}/dhis-web-commons/menu/getModules.action`),
             api.get('system/flags'),
             api.get('system/styles'),
             api.get('locales/ui'),
