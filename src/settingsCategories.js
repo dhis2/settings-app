@@ -29,6 +29,18 @@ export const categories = {
             'phoneNumberAreaCode',
             'multiOrganisationUnitForms',
             'keyAnalyticsMaintenanceMode',
+        ],
+    },
+    analytics: {
+        label: 'analytics',
+        icon: 'equalizer',
+        pageLabel: 'analytics_settings',
+        settings: [
+            'keyAnalysisRelativePeriod',
+            'keyCacheability',
+            'keyCacheStrategy',
+            'keyIgnoreAnalyticsApprovalYearThreshold',
+            'keyRespectMetaDataStartEndDatesInAnalyticsTableExport',
             // 'keySkipDataTypeValidationInAnalyticsTableExport',
         ],
     },

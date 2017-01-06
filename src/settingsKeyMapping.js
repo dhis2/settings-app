@@ -15,7 +15,7 @@ const settingsKeyMapping = {
     /* ============================================================================================================ */
     /* Category: General                                                                                            */
     /* ============================================================================================================ */
-    keyAnalyticsMaxLimit: {
+    keyAnalyticsMaxLimit: { // Analytics
         label: 'analytics_max_limit',
         type: 'dropdown',
         options: {
@@ -55,41 +55,6 @@ const settingsKeyMapping = {
             FinancialOct: 'FinancialOct',
         },
     },
-    keyAnalysisRelativePeriod: {
-        label: 'default_analysis_relative_period',
-        type: 'dropdown',
-        options: {
-            THIS_MONTH: 'THIS_MONTH',
-            LAST_MONTH: 'LAST_MONTH',
-            THIS_BIMONTH: 'THIS_BIMONTH',
-            LAST_BIMONTH: 'LAST_BIMONTH',
-            THIS_QUARTER: 'THIS_QUARTER',
-            LAST_QUARTER: 'LAST_QUARTER',
-            THIS_SIX_MONTH: 'THIS_SIX_MONTH',
-            LAST_SIX_MONTH: 'LAST_SIX_MONTH',
-            MONTHS_THIS_YEAR: 'MONTHS_THIS_YEAR',
-            QUARTERS_THIS_YEAR: 'QUARTERS_THIS_YEAR',
-            THIS_YEAR: 'THIS_YEAR',
-            MONTHS_LAST_YEAR: 'MONTHS_LAST_YEAR',
-            QUARTERS_LAST_YEAR: 'QUARTERS_LAST_YEAR',
-            LAST_YEAR: 'LAST_YEAR',
-            LAST_5_YEARS: 'LAST_5_YEARS',
-            LAST_12_MONTHS: 'LAST_12_MONTHS',
-            LAST_6_MONTHS: 'LAST_6_MONTHS',
-            LAST_3_MONTHS: 'LAST_3_MONTHS',
-            LAST_6_BIMONTHS: 'LAST_6_BIMONTHS',
-            LAST_4_QUARTERS: 'LAST_4_QUARTERS',
-            LAST_2_SIXMONTHS: 'LAST_2_SIXMONTHS',
-            THIS_FINANCIAL_YEAR: 'THIS_FINANCIAL_YEAR',
-            LAST_FINANCIAL_YEAR: 'LAST_FINANCIAL_YEAR',
-            LAST_5_FINANCIAL_YEARS: 'LAST_5_FINANCIAL_YEARS',
-            THIS_WEEK: 'THIS_WEEK',
-            LAST_WEEK: 'LAST_WEEK',
-            LAST_4_WEEKS: 'LAST_4_WEEKS',
-            LAST_12_WEEKS: 'LAST_12_WEEKS',
-            LAST_52_WEEKS: 'LAST_52_WEEKS',
-        },
-    },
     feedbackRecipients: {
         label: 'feedback_recipients',
         configuration: true,
@@ -125,17 +90,56 @@ const settingsKeyMapping = {
         label: 'omit_indicators_zero_numerator_data_mart',
         type: 'checkbox',
     },
-    keyAnalyticsMaintenanceMode: {
+    keyAnalyticsMaintenanceMode: { // Analytics
         label: 'put_analytics_in_maintenance_mode',
         type: 'checkbox',
     },
-    keySkipDataTypeValidationInAnalyticsTableExport: {
-        label: 'skip_data_type_validation_in_analytics_table_export',
-        type: 'checkbox',
+    /* ============================================================================================================ */
+    /* Category: Analytics                                                                                          */
+    /* ============================================================================================================ */
+    keyAnalysisRelativePeriod: {
+        label: 'default_analysis_relative_period',
+        type: 'dropdown',
+        options: {
+            THIS_MONTH: 'THIS_MONTH',
+            LAST_MONTH: 'LAST_MONTH',
+            THIS_BIMONTH: 'THIS_BIMONTH',
+            LAST_BIMONTH: 'LAST_BIMONTH',
+            THIS_QUARTER: 'THIS_QUARTER',
+            LAST_QUARTER: 'LAST_QUARTER',
+            THIS_SIX_MONTH: 'THIS_SIX_MONTH',
+            LAST_SIX_MONTH: 'LAST_SIX_MONTH',
+            MONTHS_THIS_YEAR: 'MONTHS_THIS_YEAR',
+            QUARTERS_THIS_YEAR: 'QUARTERS_THIS_YEAR',
+            THIS_YEAR: 'THIS_YEAR',
+            MONTHS_LAST_YEAR: 'MONTHS_LAST_YEAR',
+            QUARTERS_LAST_YEAR: 'QUARTERS_LAST_YEAR',
+            LAST_YEAR: 'LAST_YEAR',
+            LAST_5_YEARS: 'LAST_5_YEARS',
+            LAST_12_MONTHS: 'LAST_12_MONTHS',
+            LAST_6_MONTHS: 'LAST_6_MONTHS',
+            LAST_3_MONTHS: 'LAST_3_MONTHS',
+            LAST_6_BIMONTHS: 'LAST_6_BIMONTHS',
+            LAST_4_QUARTERS: 'LAST_4_QUARTERS',
+            LAST_2_SIXMONTHS: 'LAST_2_SIXMONTHS',
+            THIS_FINANCIAL_YEAR: 'THIS_FINANCIAL_YEAR',
+            LAST_FINANCIAL_YEAR: 'LAST_FINANCIAL_YEAR',
+            LAST_5_FINANCIAL_YEARS: 'LAST_5_FINANCIAL_YEARS',
+            THIS_WEEK: 'THIS_WEEK',
+            LAST_WEEK: 'LAST_WEEK',
+            LAST_4_WEEKS: 'LAST_4_WEEKS',
+            LAST_12_WEEKS: 'LAST_12_WEEKS',
+            LAST_52_WEEKS: 'LAST_52_WEEKS',
+        },
     },
-    /* ============================================================================================================ */
-    /* Category: Server                                                                                             */
-    /* ============================================================================================================ */
+    keyCacheability: {
+        label: 'cacheability',
+        type: 'dropdown',
+        options: {
+            PUBLIC: 'public',
+            PRIVATE: 'private',
+        },
+    },
     keyCacheStrategy: {
         label: 'cache_strategy',
         type: 'dropdown',
@@ -148,6 +152,34 @@ const settingsKeyMapping = {
             CACHE_TWO_WEEKS: 'cache_for_two_weeks',
         },
     },
+    keyIgnoreAnalyticsApprovalYearThreshold: {
+        label: 'max_number_of_years_to_hide_unapproved_data_in_analytics',
+        type: 'dropdown',
+        options: {
+            0: 'check_approval_for_all_data',
+            1: 'current_year_only',
+            2: '2_years',
+            3: '3_years',
+            4: '4_years',
+            5: '5_years',
+            6: '6_years',
+            7: '7_years',
+            8: '8_years',
+            9: '9_years',
+            10: '10_years',
+        },
+    },
+    keySkipDataTypeValidationInAnalyticsTableExport: {
+        label: 'skip_data_type_validation_in_analytics_table_export',
+        type: 'checkbox',
+    },
+    keyRespectMetaDataStartEndDatesInAnalyticsTableExport: {
+        label: 'respect_category_option_start_and_end_date_in_analytics_table_export',
+        type: 'checkbox',
+    },
+    /* ============================================================================================================ */
+    /* Category: Server                                                                                             */
+    /* ============================================================================================================ */
     keyDatabaseServerCpus: {
         label: 'no_of_database_server_cpus',
         type: 'dropdown',
