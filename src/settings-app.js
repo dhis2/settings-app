@@ -22,8 +22,8 @@ require('../scss/settings-app.scss');
 
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.TRACE);
 
+const a = document.createElement('a');
 function getAbsoluteUrl(url) {
-    const a = document.createElement('a');
     a.href = url;
     return a.href;
 }
@@ -107,7 +107,8 @@ getManifest('manifest.webapp')
 
         // Load alternatives
         const api = d2.Api.getApi();
-        const baseUrl = getAbsoluteUrl(api.baseUrl.substr(0, api.baseUrl.lastIndexOf('/api/')));
+        const apiBaseUrl = getAbsoluteUrl(api.baseUrl);
+        const baseUrl = apiBaseUrl.substr(0, apiBaseUrl.lastIndexOf('/api/'));
         Promise.all([
             d2.models.indicatorGroup.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),
             d2.models.dataElementGroup.list({ paging: false, fields: 'id,displayName', order: 'displayName:asc' }),
