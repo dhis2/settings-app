@@ -91,7 +91,7 @@ function wrapUserSettingsOverride(d2, component, valueLabel) {
                             tooltip={labelText}
                             tooltipPosition="bottom-left"
                             iconStyle={{ color: AppTheme.rawTheme.palette.primary1Color }}
-                            tooltipStyles={{ fontSize: '.75rem' }}
+                            tooltipStyles={{ fontSize: '.75rem', marginRight: 32, marginTop: -32 }}
                         >info_outline</IconButton>
                     </div>
                 </div>
