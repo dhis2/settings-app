@@ -122,7 +122,7 @@ export const categories = {
         icon: 'spellcheck',
         pageLabel: 'approval_settings',
         settings: [
-            'keyHideUnapprovedDataInAnalytics',
+            // 'keyHideUnapprovedDataInAnalytics',
             'keyAcceptanceRequiredForApproval',
             'dataApprovalLevels',
         ],
