@@ -36,7 +36,9 @@ class metadataSettings extends React.Component {
         this.syncSettings = this.syncSettings.bind(this);
         this.createVersion = this.createVersion.bind(this);
         this.onToggleVersioning = this.onToggleVersioning.bind(this);
+        this.onToggleButton = this.onToggleButton.bind(this);
         this.saveSettingsKey = 'keyVersionEnabled';
+        this.stopMetadataSyncKey = 'keyStopMetadataSync';
         this.createVersionKey = 'createVersionButton';
     }
 
@@ -45,6 +47,8 @@ class metadataSettings extends React.Component {
         this.disposables.push(settingsStore.subscribe((settings) => {
             this.setState({ isVersioningEnabled: settings[this.saveSettingsKey] === 'true' }, () => {
                 this.syncVersions();
+                this.syncVersions()
+                    .then(this.syncSettings);
             });
         }));
     }
@@ -59,6 +63,10 @@ class metadataSettings extends React.Component {
 
     onToggleVersioning(e, v) {
         settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false');
+    }
+
+    onToggleButton(e, v) {
+        settingsActions.saveKey(this.stopMetadataSyncKey, v ? 'true' : 'false');
     }
 
     createVersion() {
@@ -327,6 +335,16 @@ class metadataSettings extends React.Component {
                     disabled: this.state.isTaskRunning,
                 },
             },
+            {
+                name: 'keyStopMetadataSync',
+                value: (settingsStore.state && settingsStore.state[this.stopMetadataSyncKey + localeAppendage]) || '',
+                component: Checkbox,
+                props: {
+                    label: this.getTranslation('keyStopMetadataSync'),
+                    checked: ((settingsStore.state && settingsStore.state[this.stopMetadataSyncKey])) === 'true',
+                    onCheck: this.onToggleButton
+                },
+            }
         ];
 
         return (
