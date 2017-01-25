@@ -92,11 +92,11 @@ class metadataSettings extends React.Component {
         this.d2.Api.getApi().get('/systemSettings')
             .then((result) => {
                 this.setState({
-                    lastFailedTime: (result.keyMetadataLastFailedTime ? null : result.keyMetadataLastFailedTime),
+                    lastFailedTime: (result.keyMetadataLastFailedTime ? result.keyMetadataLastFailedTime : null),
                     isVersioningEnabled: result.keyVersionEnabled,
                     hqInstanceUrl: result.keyRemoteInstanceUrl,
                     remoteVersionName: result.keyRemoteMetadataVersion,
-                    lastFailedVersion: (result.keyMetadataFailedVersion ? null : result.keyMetadataFailedVersion),
+                    lastFailedVersion: (result.keyMetadataFailedVersion ? result.keyMetadataFailedVersion : null),
                     isSchedulerEnabled: (result.keySchedTasks !== undefined),
                 });
 
