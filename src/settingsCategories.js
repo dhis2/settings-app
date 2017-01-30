@@ -28,7 +28,6 @@ export const categories = {
             'factorDeviation',
             'phoneNumberAreaCode',
             'multiOrganisationUnitForms',
-            'keyAnalyticsMaintenanceMode',
         ],
     },
     analytics: {
@@ -42,7 +41,7 @@ export const categories = {
             'keyIgnoreAnalyticsApprovalYearThreshold',
             'keyCacheAnalyticsDataYearThreshold',
             'keyRespectMetaDataStartEndDatesInAnalyticsTableExport',
-            // 'keySkipDataTypeValidationInAnalyticsTableExport',
+            'keyAnalyticsMaintenanceMode',
         ],
     },
     server: {
