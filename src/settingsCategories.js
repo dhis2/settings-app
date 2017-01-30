@@ -107,6 +107,7 @@ export const categories = {
             'selfRegistrationOrgUnit',
             'keySelfRegistrationNoRecaptcha',
             'keyAccountRecovery',
+            'keyLockMultipleFailedLogins',
             'keyCanGrantOwnUserAuthorityGroups',
             'keyAllowObjectAssignment',
             'credentialsExpires',

@@ -404,6 +404,10 @@ const settingsKeyMapping = {
         label: 'enable_user_account_recovery',
         type: 'checkbox',
     },
+    keyLockMultipleFailedLogins: {
+        label: 'lock_user_account_temporarily_after_multiple_failed_login_attempts',
+        type: 'checkbox',
+    },
     keyCanGrantOwnUserAuthorityGroups: {
         label: 'allow_users_to_grant_own_user_roles',
         type: 'checkbox',
