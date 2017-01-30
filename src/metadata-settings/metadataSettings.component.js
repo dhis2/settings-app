@@ -36,7 +36,7 @@ class metadataSettings extends React.Component {
         this.syncSettings = this.syncSettings.bind(this);
         this.createVersion = this.createVersion.bind(this);
         this.onToggleVersioning = this.onToggleVersioning.bind(this);
-        this.onToggleButton = this.onToggleButton.bind(this);
+        this.onToggleStopSync = this.onToggleStopSync.bind(this);
         this.saveSettingsKey = 'keyVersionEnabled';
         this.stopMetadataSyncKey = 'keyStopMetadataSync';
         this.createVersionKey = 'createVersionButton';
@@ -65,7 +65,7 @@ class metadataSettings extends React.Component {
         settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false');
     }
 
-    onToggleButton(e, v) {
+    onToggleStopSync(e, v) {
         settingsActions.saveKey(this.stopMetadataSyncKey, v ? 'true' : 'false');
     }
 
@@ -342,9 +342,9 @@ class metadataSettings extends React.Component {
                 props: {
                     label: this.getTranslation('keyStopMetadataSync'),
                     checked: ((settingsStore.state && settingsStore.state[this.stopMetadataSyncKey])) === 'true',
-                    onCheck: this.onToggleButton
+                    onCheck: this.onToggleStopSync,
                 },
-            }
+            },
         ];
 
         return (
