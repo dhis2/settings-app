@@ -40,6 +40,7 @@ export const categories = {
             'keyCacheability',
             'keyCacheStrategy',
             'keyIgnoreAnalyticsApprovalYearThreshold',
+            'keyCacheAnalyticsDataYearThreshold',
             'keyRespectMetaDataStartEndDatesInAnalyticsTableExport',
             // 'keySkipDataTypeValidationInAnalyticsTableExport',
         ],
