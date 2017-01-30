@@ -1,5 +1,6 @@
-# settings-app
-DHIS2 Settings App
+# DHIS2 Settings App
+
+[![Build Status](https://travis-ci.org/dhis2/settings-app.svg?branch=master)](https://travis-ci.org/dhis2/settings-app)
 
 ### Pre-requisites
 Since the app uses webpack as a build tool you will need to install this first.
