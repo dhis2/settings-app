@@ -156,7 +156,7 @@ const settingsKeyMapping = {
         label: 'max_number_of_years_to_hide_unapproved_data_in_analytics',
         type: 'dropdown',
         options: {
-            '-1': 'never_check',
+            '-1': 'never_check_approval',
             0: 'check_approval_for_all_data',
             1: 'current_year_only',
             2: 'last_2_years',
