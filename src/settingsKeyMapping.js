@@ -505,6 +505,10 @@ const settingsKeyMapping = {
         label: 'keyVersionEnabled',
         type: 'checkbox',
     },
+    keyStopMetadataSync: {
+        label: 'keyStopMetadataSync',
+        type: 'checkbox',
+    },
     createVersionButton: {
         label: 'create_metadata_version',
         type: 'postButton',

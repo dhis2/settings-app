@@ -36,7 +36,9 @@ class metadataSettings extends React.Component {
         this.syncSettings = this.syncSettings.bind(this);
         this.createVersion = this.createVersion.bind(this);
         this.onToggleVersioning = this.onToggleVersioning.bind(this);
+        this.onToggleStopSync = this.onToggleStopSync.bind(this);
         this.saveSettingsKey = 'keyVersionEnabled';
+        this.stopMetadataSyncKey = 'keyStopMetadataSync';
         this.createVersionKey = 'createVersionButton';
     }
 
@@ -45,6 +47,8 @@ class metadataSettings extends React.Component {
         this.disposables.push(settingsStore.subscribe((settings) => {
             this.setState({ isVersioningEnabled: settings[this.saveSettingsKey] === 'true' }, () => {
                 this.syncVersions();
+                this.syncVersions()
+                    .then(this.syncSettings);
             });
         }));
     }
@@ -59,6 +63,10 @@ class metadataSettings extends React.Component {
 
     onToggleVersioning(e, v) {
         settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false');
+    }
+
+    onToggleStopSync(e, v) {
+        settingsActions.saveKey(this.stopMetadataSyncKey, v ? 'true' : 'false');
     }
 
     createVersion() {
@@ -84,11 +92,11 @@ class metadataSettings extends React.Component {
         this.d2.Api.getApi().get('/systemSettings')
             .then((result) => {
                 this.setState({
-                    lastFailedTime: (result.keyMetadataLastFailedTime ? null : result.keyMetadataLastFailedTime),
+                    lastFailedTime: (result.keyMetadataLastFailedTime ? result.keyMetadataLastFailedTime : null),
                     isVersioningEnabled: result.keyVersionEnabled,
                     hqInstanceUrl: result.keyRemoteInstanceUrl,
                     remoteVersionName: result.keyRemoteMetadataVersion,
-                    lastFailedVersion: (result.keyMetadataFailedVersion ? null : result.keyMetadataFailedVersion),
+                    lastFailedVersion: (result.keyMetadataFailedVersion ? result.keyMetadataFailedVersion : null),
                     isSchedulerEnabled: (result.keySchedTasks !== undefined),
                 });
 
@@ -325,6 +333,16 @@ class metadataSettings extends React.Component {
                     checked: ((settingsStore.state && settingsStore.state[this.saveSettingsKey])) === 'true',
                     onCheck: this.onToggleVersioning,
                     disabled: this.state.isTaskRunning,
+                },
+            },
+            {
+                name: 'keyStopMetadataSync',
+                value: (settingsStore.state && settingsStore.state[this.stopMetadataSyncKey + localeAppendage]) || '',
+                component: Checkbox,
+                props: {
+                    label: this.getTranslation('keyStopMetadataSync'),
+                    checked: ((settingsStore.state && settingsStore.state[this.stopMetadataSyncKey])) === 'true',
+                    onCheck: this.onToggleStopSync,
                 },
             },
         ];
