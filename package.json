@@ -48,7 +48,6 @@
     "fbjs": "^0.7.2",
     "fixed-data-table": "~0.6.0",
     "history": "^4.2.0",
-    "http-proxy": "git+https://github.com/nicolayr/node-http-proxy.git",
     "lodash.isfinite": "^3.3.0",
     "loglevel": "1.4.0",
     "material-ui": "^0.14.4",
