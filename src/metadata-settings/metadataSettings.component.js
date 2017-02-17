@@ -33,10 +33,12 @@ class metadataSettings extends React.Component {
         this.onSelectTransactionType = this.onSelectTransactionType.bind(this);
         this.syncVersions = this.syncVersions.bind(this);
         this.syncSettings = this.syncSettings.bind(this);
+        this.onToggleStopSync = this.onToggleStopSync.bind(this);
         this.createVersion = this.createVersion.bind(this);
         this.sync = this.sync.bind(this);
         this.onToggleVersioning = this.onToggleVersioning.bind(this);
         this.saveSettingsKey = 'keyVersionEnabled';
+        this.stopMetadataSyncKey = 'keyStopMetadataSync';
         this.createVersionKey = 'createVersionButton';
     }
 
@@ -84,11 +86,11 @@ class metadataSettings extends React.Component {
         this.d2.Api.getApi().get('/systemSettings')
             .then(result=> {
                 this.setState({
-                    lastFailedTime: (result.keyMetadataLastFailedTime ? null : result.keyMetadataLastFailedTime),
+                    lastFailedTime: (result.keyMetadataLastFailedTime ? result.keyMetadataLastFailedTime : null),
                     isVersioningEnabled: result.keyVersionEnabled,
                     hqInstanceUrl: result.keyRemoteInstanceUrl,
                     remoteVersionName: result.keyRemoteMetadataVersion,
-                    lastFailedVersion: (result.keyMetadataFailedVersion ? null : result.keyMetadataFailedVersion),
+                    lastFailedVersion: (result.keyMetadataFailedVersion ? result.keyMetadataFailedVersion : null),
                     isSchedulerEnabled: (result.keySchedTasks != undefined)
                 });
 
@@ -141,6 +143,12 @@ class metadataSettings extends React.Component {
         setTimeout(this.sync, 100);
     }
 
+    onToggleStopSync(e, v) {
+        this.setState({ stopMetadataSyncKey: v });
+        settingsActions.saveKey(this.stopMetadataSyncKey, v ? 'true' : 'false');
+        setTimeout(this.sync, 100);
+    }
+
     render() {
         const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
         const checkboxFields = [
@@ -153,6 +161,16 @@ class metadataSettings extends React.Component {
                     checked: ((settingsStore.state && settingsStore.state[this.saveSettingsKey])) === 'true',
                     onCheck: this.onToggleVersioning,
                     disabled: this.state.isTaskRunning
+                },
+            },
+            {
+                name: 'keyStopMetadataSync',
+                value: (settingsStore.state && settingsStore.state[this.stopMetadataSyncKey + localeAppendage]) || '',
+                component: Checkbox,
+                props: {
+                    label: this.getTranslation('keyStopMetadataSync'),
+                    checked: ((settingsStore.state && settingsStore.state[this.stopMetadataSyncKey])) === 'true',
+                    onCheck: this.onToggleStopSync,
                 },
             }
         ];
