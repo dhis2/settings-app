@@ -9,6 +9,7 @@ export const categoryOrder = [
     'calendar',
     'import',
     'sync',
+    'monitoring',
     'oauth2',
 ];
 
@@ -159,6 +160,16 @@ export const categories = {
             'keyRemoteInstanceUsername',
             'keyRemoteInstancePassword',
             'keyMetadataDataVersioning',
+        ],
+    },
+    monitoring: {
+        label: 'system_monitoring',
+        icon: 'dns',
+        pageLabel: 'system_monitoring_settings',
+        settings: [
+            'keySystemMonitoringUrl',
+            'keySystemMonitoringUsername',
+            'keySystemMonitoringPassword',
         ],
     },
     oauth2: {
