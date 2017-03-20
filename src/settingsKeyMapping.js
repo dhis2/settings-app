@@ -426,6 +426,16 @@ const settingsKeyMapping = {
             12: '12_months',
         },
     },
+    minPasswordLength: {
+        label: 'min_chars_in_password',
+        type: 'dropdown',
+        options: {
+            8: 8,
+            10: 10,
+            12: 12,
+            14: 14,
+        },
+    },
     keyOpenIdProvider: { label: 'openid_provider' },
     keyOpenIdProviderLabel: { label: 'openid_provider_label' },
     corsWhitelist: {

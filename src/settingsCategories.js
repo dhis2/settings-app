@@ -112,6 +112,7 @@ export const categories = {
             'keyCanGrantOwnUserAuthorityGroups',
             'keyAllowObjectAssignment',
             'credentialsExpires',
+            'minPasswordLength',
             'keyOpenIdProvider',
             'keyOpenIdProviderLabel',
             'corsWhitelist',
