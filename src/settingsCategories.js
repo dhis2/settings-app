@@ -111,6 +111,7 @@ export const categories = {
             'keyCanGrantOwnUserAuthorityGroups',
             'keyAllowObjectAssignment',
             'credentialsExpires',
+            'credentialsExpiryAlert',
             'minPasswordLength',
             'keyOpenIdProvider',
             'keyOpenIdProviderLabel',

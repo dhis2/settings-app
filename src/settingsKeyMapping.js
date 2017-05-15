@@ -416,6 +416,10 @@ const settingsKeyMapping = {
         label: 'allow_assigning_object_to_related_objects_during_add_or_update',
         type: 'checkbox',
     },
+    credentialsExpiryAlert: {
+        label: 'enable_password_expiry_alerts',
+        type: 'checkbox',
+    },
     credentialsExpires: {
         label: 'user_credentials_expires',
         type: 'dropdown',
