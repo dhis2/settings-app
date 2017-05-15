@@ -97,8 +97,6 @@ const webpackConfig = {
         })
     ],
     devServer: {
-        progress: true,
-        colors: true,
         port: 8081,
         inline: true,
         compress: true,
