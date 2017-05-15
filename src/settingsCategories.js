@@ -50,7 +50,6 @@ export const categories = {
         icon: 'business',
         pageLabel: 'server_settings',
         settings: [
-            'keyCacheStrategy',
             'keyDatabaseServerCpus',
             'keySystemNotificationsEmail',
             'keyInstanceBaseUrl',
