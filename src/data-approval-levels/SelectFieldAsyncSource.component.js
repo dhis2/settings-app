@@ -38,8 +38,8 @@ export default React.createClass({
                 onChange={this.handleChange}
                 {...other}
             >
-                {this.state.menuItems.map((item, i) => (
-                    <MenuItem key={i} value={item.payload} primaryText={item.text} />
+                {this.state.menuItems.map(item => (
+                    <MenuItem key={item.payload} value={item.payload} primaryText={item.text} />
                 ))}
             </SelectField>
         );

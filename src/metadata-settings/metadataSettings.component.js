@@ -206,7 +206,8 @@ class metadataSettings extends React.Component {
                         <CircularProgress style={styles.inlineProgressIcon} size={0.5} />}
                         <RaisedButton
                             label={this.getTranslation('create_metadata_version')}
-                            onClick={this.createVersion} disabled={this.state.isTaskRunning}
+                            onClick={this.createVersion}
+                            disabled={this.state.isTaskRunning}
                         />
                     </div>
                 </div>
@@ -299,7 +300,8 @@ class metadataSettings extends React.Component {
                                 <Cell {...props}>
                                     {new Date(this.state.metadataVersions[rowIndex].created).toLocaleString()}
                                 </Cell>
-                            )} width={280}
+                            )}
+                            width={280}
                         />
                         <Column
                             header={<Cell>Type</Cell>}

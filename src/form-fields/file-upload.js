@@ -142,7 +142,7 @@ export default React.createClass({
                         autoScrollBodyContent
                         bodyStyle={bodyStyle}
                     >
-                        <img style={dialogImgStyle} src={imgUrl} role="presentation" />
+                        <img style={dialogImgStyle} src={imgUrl} alt="preview" />
                     </Dialog>
                 </div>
             );
