@@ -211,7 +211,7 @@ export default React.createClass({
             .then(list => list.sort((left, right) => left.level - right.level))
             .then(list => list.map((listItem) => {
                 const text = `${listItem.level}: ${listItem.displayName}`;
-                return { text, payload: listItem };
+                return { text, payload: listItem.id };
             }));
 
         const categoryOptionGroupSets = d2.models.categoryOptionGroupSet
@@ -219,7 +219,7 @@ export default React.createClass({
             .then(list => list.toArray())
             .then(listItems => listItems.map((listItem) => {
                 const text = listItem.displayName;
-                const payload = listItem;
+                const payload = listItem.id;
                 return { text, payload };
             }));
 
