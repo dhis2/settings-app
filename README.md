@@ -1,5 +1,7 @@
 # DHIS2 Settings App
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/dhis2/settings-app.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/dhis2/settings-app.svg?branch=master)](https://travis-ci.org/dhis2/settings-app)
 
 ### Pre-requisites
