@@ -474,7 +474,7 @@ const settingsKeyMapping = {
             julian: 'julian',
             nepali: 'nepali',
             thai: 'thai',
-            persian: 'persian'
+            persian: 'persian',
         },
     },
     keyDateFormat: {

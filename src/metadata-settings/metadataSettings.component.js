@@ -157,6 +157,7 @@ class metadataSettings extends React.Component {
         return Promise.resolve();
     }
 
+    /* eslint-disable complexity */
     renderVersionList() {
         const styles = {
             inlineRight: {
@@ -176,6 +177,12 @@ class metadataSettings extends React.Component {
                 float: 'left',
             },
         };
+
+        const fieldGetter = (field, filter = x => x) => ({ rowIndex, ...props }) => (
+            <Cell {...props}>{filter(this.state.metadataVersions[rowIndex][field])}</Cell>
+        );
+
+        const dateFmt = str => new Date(str).toLocaleString();
 
         return (
             <div>
@@ -242,36 +249,22 @@ class metadataSettings extends React.Component {
                     >
                         <Column
                             header={<Cell>Version</Cell>}
-                            cell={({ rowIndex, ...props }) => (
-                                <Cell {...props}>{this.state.metadataVersions[rowIndex].name}</Cell>
-                            )}
+                            cell={fieldGetter('name')}
                             width={135}
                         />
                         <Column
                             header={<Cell>When</Cell>}
-                            cell={({ rowIndex, ...props }) => (
-                                <Cell {...props}>
-                                    {new Date(this.state.metadataVersions[rowIndex].created).toLocaleString()}
-                                </Cell>
-                            )}
+                            cell={fieldGetter('created', dateFmt)}
                             width={205}
                         />
                         <Column
                             header={<Cell>Type</Cell>}
-                            cell={({ rowIndex, ...props }) => (
-                                <Cell {...props}>
-                                    {this.state.metadataVersions[rowIndex].type}
-                                </Cell>
-                            )}
+                            cell={fieldGetter('type')}
                             width={145}
                         />
                         <Column
                             header={<Cell>Last Sync</Cell>}
-                            cell={({ rowIndex, ...props }) => (
-                                <Cell {...props}>
-                                    {this.state.metadataVersions[rowIndex].importdate}
-                                </Cell>
-                            )}
+                            cell={fieldGetter('importdate')}
                             width={185}
                         />
                     </Table>
@@ -287,29 +280,17 @@ class metadataSettings extends React.Component {
                     >
                         <Column
                             header={<Cell>Version</Cell>}
-                            cell={({ rowIndex, ...props }) => (
-                                <Cell {...props}>
-                                    {this.state.metadataVersions[rowIndex].name}
-                                </Cell>
-                            )}
+                            cell={fieldGetter('name')}
                             width={190}
                         />
                         <Column
                             header={<Cell>When</Cell>}
-                            cell={({ rowIndex, ...props }) => (
-                                <Cell {...props}>
-                                    {new Date(this.state.metadataVersions[rowIndex].created).toLocaleString()}
-                                </Cell>
-                            )}
+                            cell={fieldGetter('created')}
                             width={280}
                         />
                         <Column
                             header={<Cell>Type</Cell>}
-                            cell={({ rowIndex, ...props }) => (
-                                <Cell {...props}>
-                                    {this.state.metadataVersions[rowIndex].type}
-                                </Cell>
-                            )}
+                            cell={fieldGetter('type')}
                             width={200}
                         />
                     </Table>
@@ -322,6 +303,7 @@ class metadataSettings extends React.Component {
             </div>
         );
     }
+    /* eslint-enable complexity */
 
     render() {
         const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;

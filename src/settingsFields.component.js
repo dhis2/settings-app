@@ -185,8 +185,8 @@ class SettingsFields extends React.Component {
                                 ? (configOptionStore.state && configOptionStore.state[mapping.source]) || []
                                 : Object.keys(mapping.options).map((id) => {
                                     const displayName = !isNaN(mapping.options[id]) ?
-                                    mapping.options[id] :
-                                    d2.i18n.getTranslation(mapping.options[id]);
+                                        mapping.options[id] :
+                                        d2.i18n.getTranslation(mapping.options[id]);
                                     return { id, displayName };
                                 }),
                             includeEmpty: !!mapping.includeEmpty,
