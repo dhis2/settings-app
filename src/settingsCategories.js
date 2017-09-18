@@ -5,7 +5,6 @@ export const categoryOrder = [
     'email',
     'messaging',
     'access',
-    'approval',
     'calendar',
     'import',
     'sync',
@@ -29,6 +28,7 @@ export const categories = {
             'factorDeviation',
             'phoneNumberAreaCode',
             'multiOrganisationUnitForms',
+            'keyAcceptanceRequiredForApproval',
         ],
     },
     analytics: {
@@ -118,16 +118,6 @@ export const categories = {
             'corsWhitelist',
             'keyMapzenSearchApiKey',
             'keyGoogleMapsApiKey',
-        ],
-    },
-    approval: {
-        label: 'approval',
-        icon: 'spellcheck',
-        pageLabel: 'approval_settings',
-        settings: [
-            // 'keyHideUnapprovedDataInAnalytics',
-            'keyAcceptanceRequiredForApproval',
-            'dataApprovalLevels',
         ],
     },
     calendar: {

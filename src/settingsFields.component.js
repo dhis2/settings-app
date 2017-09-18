@@ -10,7 +10,6 @@ import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 
 // App
-import DataApprovalLevels from './data-approval-levels/DataApprovalLevels.component';
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component';
 import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component';
 import metadataSettings from './metadata-settings/metadataSettings.component';
@@ -221,11 +220,6 @@ class SettingsFields extends React.Component {
                             isEnabled: settingsStore.state.hasOwnProperty(key),
                             value: fieldBase.value === 'true' || fieldBase.value === true,
                         },
-                    });
-
-                case 'dataApproval':
-                    return Object.assign({}, fieldBase, {
-                        component: DataApprovalLevels,
                     });
 
                 case 'oauth2clients':

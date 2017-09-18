@@ -87,8 +87,6 @@ getManifest('manifest.webapp')
             'organisationUnitLevel',
             'userRole',
             'organisationUnit',
-            'dataApprovalLevel',
-            'dataApprovalWorkflow',
             'categoryOptionGroupSet',
             'oAuth2Client',
         ];

@@ -94,6 +94,14 @@ const settingsKeyMapping = {
         label: 'put_analytics_in_maintenance_mode',
         type: 'checkbox',
     },
+    keyHideUnapprovedDataInAnalytics: {
+        label: 'hide_unapproved_data_in_analytics',
+        type: 'checkbox',
+    },
+    keyAcceptanceRequiredForApproval: {
+        label: 'acceptance_required_before_approval',
+        type: 'checkbox',
+    },
     /* ============================================================================================================ */
     /* Category: Analytics                                                                                          */
     /* ============================================================================================================ */
@@ -451,27 +459,6 @@ const settingsKeyMapping = {
     },
     keyMapzenSearchApiKey: { label: 'mapzen_search_api_key' },
     keyGoogleMapsApiKey: { label: 'google_maps_api_key' },
-    /* ============================================================================================================ */
-    /* Category: Approval                                                                                           */
-    /* ============================================================================================================ */
-    keyHideUnapprovedDataInAnalytics: {
-        label: 'hide_unapproved_data_in_analytics',
-        type: 'checkbox',
-    },
-    keyAcceptanceRequiredForApproval: {
-        label: 'acceptance_required_before_approval',
-        type: 'checkbox',
-    },
-    dataApprovalLevels: {
-        type: 'dataApproval',
-        searchLabels: [
-            'data_approval_levels',
-            'approval_levels',
-            'approval_workflows',
-            'category_option_group_set',
-            'level',
-        ],
-    },
     /* ============================================================================================================ */
     /* Category: Calendar                                                                                           */
     /* ============================================================================================================ */
