@@ -101,8 +101,8 @@ function wrapUserSettingsOverride(d2, component, valueLabel) {
 
 class SettingsFields extends React.Component {
     componentDidMount() {
-        this.disposables = [];
-        this.disposables.push(settingsStore.subscribe(() => this.forceUpdate()));
+        this.subscriptions = [];
+        this.subscriptions.push(settingsStore.subscribe(() => this.forceUpdate()));
     }
 
     shouldComponentUpdate(nextProps) {
@@ -110,8 +110,8 @@ class SettingsFields extends React.Component {
     }
 
     componentWillUnmount() {
-        if (Array.isArray(this.disposables)) {
-            this.disposables.forEach(d => d.dispose());
+        if (Array.isArray(this.subscriptions)) {
+            this.subscriptions.forEach(sub => sub.unsubscribe());
         }
     }
 

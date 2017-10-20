@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Action from 'd2-ui/lib/action/Action';
 import { getInstance as getD2 } from 'd2/lib/d2';
-import { Observable } from 'rx';
+import { Observable } from 'rxjs';
 import log from 'loglevel';
 
 import App from './app.component';
@@ -146,7 +146,7 @@ settingsActions.searchSettings
     .distinctUntilChanged()
     .debounce(150)
     .map(action => action.data.trim().split(/\s+/).filter(t => t.length > 0))
-    .tap((searchValue) => {
+    .do((searchValue) => {
         searchTerms = searchValue;
         if (searchValue.length === 0) {
             settingsActions.setCategory('general');

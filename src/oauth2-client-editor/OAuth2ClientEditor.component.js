@@ -56,12 +56,12 @@ export default React.createClass({
     },
 
     componentDidMount() {
-        this.disposables = [];
-        this.disposables.push(oa2ClientStore.subscribe(() => {
+        this.subscriptions = [];
+        this.subscriptions.push(oa2ClientStore.subscribe(() => {
             this.setState({ isEmpty: oa2ClientStore.state.length === 0 });
         }));
 
-        this.disposables.push(oa2Actions.delete.subscribe(() => {
+        this.subscriptions.push(oa2Actions.delete.subscribe(() => {
             this.setState({ saving: false });
         }));
 
@@ -73,8 +73,8 @@ export default React.createClass({
     },
 
     componentWillUnmount() {
-        this.disposables.forEach((d) => {
-            d.dispose();
+        this.subscriptions.forEach((sub) => {
+            sub.unsubscribe();
         });
     },
 
