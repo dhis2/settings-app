@@ -43,8 +43,8 @@ class metadataSettings extends React.Component {
     }
 
     componentDidMount() {
-        this.disposables = [];
-        this.disposables.push(settingsStore.subscribe((settings) => {
+        this.subscriptions = [];
+        this.subscriptions.push(settingsStore.subscribe((settings) => {
             this.setState({ isVersioningEnabled: settings[this.saveSettingsKey] === 'true' }, () => {
                 this.syncVersions();
                 this.syncVersions()
@@ -54,7 +54,7 @@ class metadataSettings extends React.Component {
     }
 
     componentWillUnmount() {
-        this.disposables.forEach(disposable => disposable.dispose());
+        this.subscriptions.forEach(sub => sub.unsubscribe());
     }
 
     onSelectTransactionType(event, value) {

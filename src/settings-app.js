@@ -20,7 +20,7 @@ const dhisDevConfig = DHIS_CONFIG; // eslint-disable-line
 // Styles
 require('../scss/settings-app.scss');
 
-log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.TRACE);
+log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.DEBUG);
 
 const a = document.createElement('a');
 function getAbsoluteUrl(url) {

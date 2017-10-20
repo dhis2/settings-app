@@ -87,7 +87,7 @@ class LocalizedTextEditor extends React.Component {
                 <div style={styles.inset}>
                     <SelectField
                         menuItems={(options && options.locales) || []}
-                        value={this.state.locale}
+                        value={this.state.locale || ''}
                         floatingLabelText={this.getTranslation('select_language')}
                         onChange={this.handleChange}
                     />
