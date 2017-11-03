@@ -128,7 +128,7 @@ const settingsSearchMap = Observable.fromPromise(new Promise((resolve) => {
 
 function getSearchResultsFor(searchTerms) {
     return settingsSearchMap
-        .flatMap(val => Observable.fromArray(val))
+        .flatMap(val => Observable.from(val))
         .filter(keyValue => searchTerms.every(term => keyValue[0].toLowerCase().includes(term.toLowerCase())))
         .map(([, value]) => value)
         .distinct()
@@ -144,7 +144,7 @@ function getSearchResultsFor(searchTerms) {
 let searchTerms;
 settingsActions.searchSettings
     .distinctUntilChanged()
-    .debounce(150)
+    .debounceTime(150)
     .map(action => action.data.trim().split(/\s+/).filter(t => t.length > 0))
     .do((searchValue) => {
         searchTerms = searchValue;
