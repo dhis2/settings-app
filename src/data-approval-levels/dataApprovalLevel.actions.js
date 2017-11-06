@@ -37,10 +37,14 @@ actions.loadDataApprovalLevels
 actions.saveDataApprovalLevel
     .subscribe(({ data: dataApprovalLevel, complete: actionComplete, error: actionFailed }) => {
         const dataApprovalLevels = dataApprovalLevelStore.getState();
-        if (!dataApprovalLevel.organisationUnitLevel) {
+        if (!dataApprovalLevel.organisationUnitLevel || !dataApprovalLevel.name) {
             actionFailed();
             getD2().then((d2) => {
-                settingsActions.showSnackbarMessage(d2.i18n.getTranslation('oranisation_unit_level_is_required'));
+                if (!dataApprovalLevel.organisationUnitLevel) {
+                    settingsActions.showSnackbarMessage(d2.i18n.getTranslation('oranisation_unit_level_is_required'));
+                } else if (!dataApprovalLevel.name) {
+                    settingsActions.showSnackbarMessage(d2.i18n.getTranslation('name_is_required'));
+                }
             });
             return;
         }
@@ -51,14 +55,12 @@ actions.saveDataApprovalLevel
         }
 
         const dataApprovalLevelToSave = {
-            name: dataApprovalLevel.organisationUnitLevel.displayName,
+            name: dataApprovalLevel.name,
             orgUnitLevel: dataApprovalLevel.organisationUnitLevel.level,
         };
 
         if (dataApprovalLevel.categoryOptionGroupSet && dataApprovalLevel.categoryOptionGroupSet.id) {
             dataApprovalLevelToSave.categoryOptionGroupSet = { id: dataApprovalLevel.categoryOptionGroupSet.id };
-            dataApprovalLevelToSave.name = `${dataApprovalLevel.organisationUnitLevel.displayName} `;
-            dataApprovalLevelToSave.name += dataApprovalLevel.categoryOptionGroupSet.displayName;
         }
 
         getD2().then((d2) => {

@@ -39,7 +39,7 @@ export default React.createClass({
                 {...other}
             >
                 {this.state.menuItems.map(item => (
-                    <MenuItem key={item.payload} value={item.payload} primaryText={item.text} />
+                    <MenuItem key={item.text} value={item.payload} primaryText={item.text} />
                 ))}
             </SelectField>
         );
