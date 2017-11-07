@@ -24,6 +24,8 @@ import settingsActions from '../settingsActions';
 
 import AppTheme from '../theme';
 
+import i18next from 'i18next';
+
 /* eslint-disable complexity */
 function generateSecret() {
     const alphabet = '0123456789abcdef';
@@ -111,12 +113,12 @@ export default React.createClass({
                     throw new Error(importReport);
                 }
 
-                settingsActions.showSnackbarMessage(this.getTranslation('oauth2_client_saved'));
+                settingsActions.showSnackbarMessage(i18next.t('OAuth2 client saved'));
                 oa2Actions.load();
                 this.setState({ showForm: false, saving: false });
             })
             .catch((error) => {
-                settingsActions.showSnackbarMessage(this.getTranslation('failed_to_save_oauth2_client'));
+                settingsActions.showSnackbarMessage(i18next.t('Failed to save OAuth2 client'));
                 this.setState({ saving: false });
 
                 const message = ((error.messages || error.response) && error.response.errorReports)
@@ -171,7 +173,7 @@ export default React.createClass({
                         if (list.size === 0) {
                             resolve();
                         } else {
-                            reject(d2.i18n.getTranslation('cid_already_taken'));
+                            reject(i18next.t('This client ID is already taken'));
                         }
                     });
             });
@@ -183,14 +185,14 @@ export default React.createClass({
                 value: this.clientModel.name,
                 component: TextField,
                 props: {
-                    floatingLabelText: this.getTranslation('name'),
+                    floatingLabelText: i18next.t('Name'),
                     style: formFieldStyle,
                     changeEvent: 'onBlur',
                 },
                 validators: [
                     {
                         validator: isRequired,
-                        message: this.context.d2.i18n.getTranslation(isRequired.message),
+                        message: i18next.t(isRequired.message),
                     },
                 ],
             },
@@ -199,17 +201,17 @@ export default React.createClass({
                 value: this.clientModel.cid,
                 component: TextField,
                 props: {
-                    floatingLabelText: this.getTranslation('client_id'),
+                    floatingLabelText: i18next.t('Client ID'),
                     style: formFieldStyle,
                     changeEvent: 'onBlur',
                 },
                 validators: [
                     {
                         validator: isRequired,
-                        message: this.context.d2.i18n.getTranslation(isRequired.message),
+                        message: i18next.t(isRequired.message),
                     }, {
                         validator: v => v.toString().trim().length > 0,
-                        message: this.context.d2.i18n.getTranslation(isRequired.message),
+                        message: i18next.t(isRequired.message),
                     },
                 ],
                 asyncValidators: [
@@ -221,7 +223,7 @@ export default React.createClass({
                 value: this.clientModel && this.clientModel.secret,
                 component: TextField,
                 props: {
-                    floatingLabelText: this.getTranslation('client_secret'),
+                    floatingLabelText: i18next.t('Client Secret'),
                     disabled: true,
                     style: formFieldStyle,
                 },
@@ -231,19 +233,19 @@ export default React.createClass({
                 component: MultiToggle,
                 style: formFieldStyle,
                 props: {
-                    label: this.getTranslation('grant_types'),
+                    label: i18next.t('Grant Types'),
                     items: [
                         {
                             name: 'password',
-                            text: this.getTranslation('password'),
+                            text: i18next.t('Password'),
                             value: grantTypes.password,
                         }, {
                             name: 'refresh_token',
-                            text: this.getTranslation('refresh_token'),
+                            text: i18next.t('Refresh token'),
                             value: grantTypes.refresh_token,
                         }, {
                             name: 'authorization_code',
-                            text: this.getTranslation('authorization_code'),
+                            text: i18next.t('Authorization code'),
                             value: grantTypes.authorization_code,
                         },
                     ],
@@ -254,8 +256,8 @@ export default React.createClass({
                 value: (this.clientModel.redirectUris || []).join('\n'),
                 component: TextField,
                 props: {
-                    hintText: this.getTranslation('one_url_per_line'),
-                    floatingLabelText: this.getTranslation('redirect_uris'),
+                    hintText: i18next.t('One URL per line'),
+                    floatingLabelText: i18next.t('Redirect URIs'),
                     multiLine: true,
                     style: formFieldStyle,
                     changeEvent: 'onBlur',
@@ -263,33 +265,33 @@ export default React.createClass({
                 validators: [
                     {
                         validator: isUrlArray,
-                        message: this.context.d2.i18n.getTranslation(isUrlArray.message),
+                        message: i18next.t(isUrlArray.message),
                     },
                 ],
             },
         ];
 
         const headerText = this.clientModel.id === undefined ?
-            this.getTranslation('create_new_oauth2_client') :
-            this.getTranslation('edit_oauth2_client');
+            i18next.t('Create new OAuth2 Client') :
+            i18next.t('Edit OAuth2 Client');
         return (
             <Dialog open modal style={styles.dialog} contentStyle={styles.dialogContent} bodyStyle={styles.dialogBody}>
                 <h2>{headerText}</h2>
                 <FormBuilder fields={fields} onUpdateField={this.formUpdateAction} />
                 <div style={{ marginTop: '1rem' }}>
-                    <RaisedButton onClick={this.saveAction} primary label={this.getTranslation('save')} />
+                    <RaisedButton onClick={this.saveAction} primary label={i18next.t('Save')} />
                     {this.clientModel.id !== undefined ?
                         (<FlatButton
                             onClick={this.deleteAction}
                             primary
                             style={styles.button}
-                            label={this.getTranslation('delete')}
+                            label={i18next.t('Delete')}
                         />) : undefined
                     }
                     <FlatButton
                         onClick={this.cancelAction}
                         style={styles.buttonRight}
-                        label={this.getTranslation('cancel')}
+                        label={i18next.t('Cancel')}
                     />
                 </div>
             </Dialog>
@@ -358,7 +360,7 @@ export default React.createClass({
 
         const saving = this.state.saving ? <div style={styles.loadingMask}><LoadingMask /></div> : undefined;
         const body = this.state.isEmpty ?
-            <div style={styles.empty}>{this.getTranslation('no_oauth2_clients_registered')}</div> :
+            <div style={styles.empty}>{i18next.t('There are currently no OAuth2 clients registered')}</div> :
             this.renderList();
         const form = this.state.showForm ? this.renderForm() : undefined;
 

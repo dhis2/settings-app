@@ -11,6 +11,8 @@ import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';
 import settingsKeyMapping from '../settingsKeyMapping';
 
+import i18next from 'i18next';
+
 require('fixed-data-table/dist/fixed-data-table.css');
 
 class metadataSettings extends React.Component {
@@ -30,7 +32,6 @@ class metadataSettings extends React.Component {
             isTaskRunning: false,
         };
         this.d2 = context.d2;
-        this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
         this.onSelectTransactionType = this.onSelectTransactionType.bind(this);
         this.syncVersions = this.syncVersions.bind(this);
         this.syncSettings = this.syncSettings.bind(this);
@@ -76,14 +77,14 @@ class metadataSettings extends React.Component {
             .then(() => {
                 this.setState({ isTaskRunning: false });
                 settingsActions.load(true);
-                settingsActions.showSnackbarMessage(this.getTranslation('version_created'));
+                settingsActions.showSnackbarMessage(i18next.t('Metadata Version created.'));
                 return Promise.resolve();
             })
             .then(this.sync)
             .catch((error) => {
                 this.setState({ isTaskRunning: false });
                 log.warn('Error creating version:', error);
-                settingsActions.showSnackbarMessage(this.getTranslation('version_not_created'));
+                settingsActions.showSnackbarMessage(i18next.t('Could not create a Metadata Version. Contact your system administrator.'));
                 return Promise.resolve();
             });
     }
@@ -120,7 +121,7 @@ class metadataSettings extends React.Component {
             })
             .catch((error) => {
                 log.warn('Error:', error);
-                settingsActions.showSnackbarMessage(this.getTranslation('error_fetching_settings'));
+                settingsActions.showSnackbarMessage(i18next.t('Could not fetch system settings'));
                 return Promise.resolve();
             });
     }
@@ -186,7 +187,7 @@ class metadataSettings extends React.Component {
 
         return (
             <div>
-                <h3>{this.getTranslation('create_metadata_version')}</h3>
+                <h3>{i18next.t('Create new version')}</h3>
                 <div>
                     <div style={{ display: 'inline-block' }}>
                         <RadioButtonGroup
@@ -197,12 +198,12 @@ class metadataSettings extends React.Component {
                         >
                             <RadioButton
                                 value="BEST_EFFORT"
-                                label={this.getTranslation('version_type_best_effort')}
+                                label={i18next.t('Best Effort')}
                                 disabled={this.state.isTaskRunning}
                             />
                             <RadioButton
                                 value="ATOMIC"
-                                label={this.getTranslation('version_type_atomic')}
+                                label={i18next.t('Atomic')}
                                 disabled={this.state.isTaskRunning}
                             />
                         </RadioButtonGroup>
@@ -212,7 +213,7 @@ class metadataSettings extends React.Component {
                         {this.state.isTaskRunning &&
                         <CircularProgress style={styles.inlineProgressIcon} size={0.5} />}
                         <RaisedButton
-                            label={this.getTranslation('create_metadata_version')}
+                            label={i18next.t('Create new version')}
                             onClick={this.createVersion}
                             disabled={this.state.isTaskRunning}
                         />
@@ -222,18 +223,18 @@ class metadataSettings extends React.Component {
                 <div style={this.state.hasVersions ? styles.visible : styles.hidden}>
                     <div style={{ display: 'inline-block', float: 'left' }}>
                         <span style={{ fontSize: '1.17em', fontWeight: 'bold', marginRight: 8 }}>
-                            {this.getTranslation('master_version')}:
+                            {i18next.t('Master version')}:
                         </span>
-                        {this.state.masterVersionName || this.getTranslation('none')}
+                        {this.state.masterVersionName || i18next.t('None')}
                     </div>
 
                     <div style={this.state.isLocalInstance ? styles.inlineRight : styles.hidden}>
                         <div style={this.state.isLastSyncValid ? styles.inlineRight : styles.hidden}>
                             <span style={{ fontStyle: 'italic' }}>
-                                {this.getTranslation('last_sync_attempt')}:
+                                {i18next.t('Last sync attempt')}:
                             </span>
                             <span>{this.state.lastFailedVersion}</span>
-                            <span> | <span style={{ color: 'red' }}>{this.getTranslation('failed')}</span>
+                            <span> | <span style={{ color: 'red' }}>{i18next.t('Failed')}</span>
                                 | {new Date(this.state.lastFailedTime).toLocaleString()}</span>
                         </div>
                     </div>
@@ -297,7 +298,7 @@ class metadataSettings extends React.Component {
                 </div>
 
                 <div style={this.state.hasVersions ? styles.hidden : styles.visible}>
-                    <h4>{this.getTranslation('no_versions_exist')}</h4>
+                    <h4>{i18next.t('No versions exist')}</h4>
                 </div>
 
             </div>
@@ -313,7 +314,7 @@ class metadataSettings extends React.Component {
                 value: (settingsStore.state && settingsStore.state[this.saveSettingsKey + localeAppendage]) || '',
                 component: Checkbox,
                 props: {
-                    label: this.getTranslation('keyVersionEnabled'),
+                    label: i18next.t('Enable Versioning for metadata sync'),
                     checked: ((settingsStore.state && settingsStore.state[this.saveSettingsKey])) === 'true',
                     onCheck: this.onToggleVersioning,
                     disabled: this.state.isTaskRunning,
@@ -324,7 +325,7 @@ class metadataSettings extends React.Component {
                 value: (settingsStore.state && settingsStore.state[this.stopMetadataSyncKey + localeAppendage]) || '',
                 component: Checkbox,
                 props: {
-                    label: this.getTranslation('keyStopMetadataSync'),
+                    label: i18next.t('Don\'t sync metadata if DHIS versions differ'),
                     checked: ((settingsStore.state && settingsStore.state[this.stopMetadataSyncKey])) === 'true',
                     onCheck: this.onToggleStopSync,
                 },
@@ -333,7 +334,7 @@ class metadataSettings extends React.Component {
 
         return (
             <div style={{ paddingTop: '2rem' }}>
-                <h2>{this.getTranslation('metadata_versioning')}</h2>
+                <h2>{i18next.t('Metadata Versioning')}</h2>
                 <FormBuilder fields={checkboxFields} onUpdateField={settingsActions.saveKey} />
 
                 {this.state.isVersioningEnabled === true ? this.renderVersionList() : null}

@@ -11,6 +11,8 @@ import { categories } from './settingsCategories';
 import settingsKeyMapping from './settingsKeyMapping';
 import settingsStore from './settingsStore';
 
+import i18next from 'i18next';
+
 const settingsActions = Action.createActionsFromNames([
     'load',
     'setCategory',
@@ -30,7 +32,7 @@ settingsActions.saveKey.subscribe((args) => {
         if (mapping.configuration) {
             d2.system.configuration.set(key, value)
                 .then(() => {
-                    settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
+                    settingsActions.showSnackbarMessage(i18next.t('Settings updated'));
                 })
                 .catch((err) => {
                     log.warn('Failed to save configuration:', err);
@@ -38,7 +40,7 @@ settingsActions.saveKey.subscribe((args) => {
         } else {
             d2.system.settings.set(key, value)
                 .then(() => {
-                    settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
+                    settingsActions.showSnackbarMessage(i18next.t('Settings updated'));
                 })
                 .catch((err) => {
                     log.warn('Failed to save setting:', err);
@@ -112,12 +114,12 @@ const settingsSearchMap = Observable.fromPromise(new Promise((resolve) => {
                         return translatedKeyValueMap.concat(
                             settingsKeyMapping[settingsKey].searchLabels
                                 .filter(label => d2.i18n.isTranslated(label))
-                                .map(label => [d2.i18n.getTranslation(label), settingsKey]),
+                                .map(label => [i18next.t(label), settingsKey]),
                         );
                     }
 
                     return translatedKeyValueMap.concat([
-                        [d2.i18n.getTranslation(settingsKeyMapping[settingsKey].label), settingsKey],
+                        [i18next.t(settingsKeyMapping[settingsKey].label), settingsKey],
                     ]);
                 }, []);
 

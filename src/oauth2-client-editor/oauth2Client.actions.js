@@ -6,6 +6,8 @@ import settingsActions from '../settingsActions';
 
 import oa2Store from './oauth2Client.store';
 
+import i18next from 'i18next';
+
 const oa2Actions = Action.createActionsFromNames(['load', 'delete']);
 
 oa2Actions.load.subscribe(() => {
@@ -13,8 +15,8 @@ oa2Actions.load.subscribe(() => {
         .then((d2) => {
             d2.models.oAuth2Client.list({ paging: false, fields: ':all', order: 'displayName' })
                 .then((oa2ClientCollection) => {
-                    const yes = d2.i18n.getTranslation('yes');
-                    const no = d2.i18n.getTranslation('no');
+                    const yes = i18next.t('yes');
+                    const no = i18next.t('no');
                     // Map grant types to object props in order to display them in the data table
                     oa2Store.setState(oa2ClientCollection.toArray().map(oa2c => Object.assign(oa2c,
                         {
@@ -31,13 +33,13 @@ oa2Actions.delete.subscribe((e) => {
         .then(() => {
             oa2Actions.load();
             getD2().then((d2) => {
-                settingsActions.showSnackbarMessage(d2.i18n.getTranslation('oauth2_client_deleted'));
+                settingsActions.showSnackbarMessage(i18next.t('OAUTH2 client deleted'));
             });
         })
         .catch((err) => {
             log.warn('Error when deleting OAuth2 client:', err);
             getD2().then((d2) => {
-                settingsActions.showSnackbarMessage(d2.i18n.getTranslation('failed_to_save_oauth2_client'));
+                settingsActions.showSnackbarMessage(i18next.t('Failed to sava OAUTH2 client'));
             });
         });
 });

@@ -19,6 +19,8 @@ import settingsActions from './settingsActions';
 import { categoryOrder, categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
 
+import i18next from 'i18next';
+
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
@@ -134,7 +136,7 @@ class AppComponent extends React.Component {
     render() {
         const sections = Object.keys(categories).map((category) => {
             const key = category;
-            const label = this.props.d2.i18n.getTranslation(categories[category].label);
+            const label = i18next.t(categories[category].label);
             const icon = categories[category].icon;
             return { key, label, icon };
         });
@@ -158,7 +160,7 @@ class AppComponent extends React.Component {
                         onChangeSection={settingsActions.setCategory}
                         currentSection={this.state.category}
                         showSearchField
-                        searchFieldLabel={this.props.d2.i18n.getTranslation('search_settings')}
+                        searchFieldLabel={i18next.t('Search settings')}
                         ref={setSidebar}
                         onChangeSearchText={this.doSearch}
                         searchText={this.state.searchText}
