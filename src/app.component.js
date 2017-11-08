@@ -134,6 +134,45 @@ class AppComponent extends React.Component {
     }
 
     render() {
+        const categories = {
+            general: {
+                label: i18next.t('General')
+            },
+            analytics: {
+                label: i18next.t('Analytics')
+            },
+            server: {
+                label: i18next.t('Server')
+            },
+            appearance: {
+                label: i18next.t('Appearance')
+            },
+            email: {
+                label: i18next.t('Email')
+            },
+            messaging: {
+                label: i18next.t('Messaging')
+            },
+            access: {
+                label: i18next.t('Access')
+            },
+            calendar: {
+                label: i18next.t('Calendar')
+            },
+            import: {
+                label: i18next.t('Import')
+            },
+            sync: {
+                label: i18next.t('Synchronization')
+            },
+            monitoring: {
+                label: i18next.t('System monitoring')
+            },
+            oauth2: {
+                label: i18next.t('OAuth2 Clients')
+            }
+        };
+
         const sections = Object.keys(categories).map((category) => {
             const key = category;
             const label = i18next.t(categories[category].label);

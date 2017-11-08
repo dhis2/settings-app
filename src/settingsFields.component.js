@@ -305,6 +305,45 @@ class SettingsFields extends React.Component {
     }
 
     render() {
+        const categories = {
+            general: {
+                pageLabel: i18next.t('General settings')
+            },
+            analytics: {
+                pageLabel: i18next.t('Analytics settings')
+            },
+            server: {
+                pageLabel: i18next.t('Server settings')
+            },
+            appearance: {
+                pageLabel: i18next.t('Appearance settings')
+            },
+            email: {
+                pageLabel: i18next.t('Email settings')
+            },
+            messaging: {
+                pageLabel: i18next.t('Messaging settings')
+            },
+            access: {
+                pageLabel: i18next.t('Access settings')
+            },
+            calendar: {
+                pageLabel: i18next.t('Calendar settings')
+            },
+            import: {
+                pageLabel: i18next.t('Data import settings')
+            },
+            sync: {
+                pageLabel: i18next.t('Synchronization settings')
+            },
+            monitoring: {
+                pageLabel: i18next.t('System monitoring settings')
+            },
+            oauth2: {
+                pageLabel: i18next.t('OAuth2 Clients')
+            },
+        };
+
         return (
             <div className="content-area">
                 <div style={styles.header}>{categories[this.props.category] ?
