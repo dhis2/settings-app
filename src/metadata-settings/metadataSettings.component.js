@@ -9,7 +9,7 @@ import log from 'loglevel';
 import Checkbox from '../form-fields/check-box';
 import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';
-import settingsKeyMapping from '../settingsKeyMapping';
+import settingsKeyMappingI18next from '../settingsKeyMappingI18next';
 
 import i18next from 'i18next';
 
@@ -71,6 +71,7 @@ class metadataSettings extends React.Component {
     }
 
     createVersion() {
+        const settingsKeyMapping = settingsKeyMappingI18next(i18next);
         const mapping = settingsKeyMapping[this.createVersionKey];
         this.setState({ isTaskRunning: true });
         this.d2.Api.getApi().post(`${mapping.uri}?type=${this.state.selectedTransactionType}`)

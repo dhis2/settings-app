@@ -12,7 +12,6 @@ import appTheme from './theme';
 
 import settingsActions from './settingsActions';
 import configOptionStore from './configOptionStore';
-import settingsKeyMapping from './settingsKeyMapping';
 
 import i18next from 'i18next';
 import XHR from 'i18next-xhr-backend';
