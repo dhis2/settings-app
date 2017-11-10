@@ -8,7 +8,7 @@ import log from 'loglevel';
 
 import App from './app.component';
 import { categories } from './settingsCategories';
-import settingsKeyMapping from './settingsKeyMapping';
+import settingsKeyMappingI18next from './settingsKeyMappingI18next';
 import settingsStore from './settingsStore';
 
 import i18next from 'i18next';
@@ -20,6 +20,8 @@ const settingsActions = Action.createActionsFromNames([
     'searchSettings',
     'showSnackbarMessage',
 ]);
+
+const settingsKeyMapping = settingsKeyMappingI18next(i18next);
 
 // settingsActions.saveKey handler
 settingsActions.saveKey.subscribe((args) => {
