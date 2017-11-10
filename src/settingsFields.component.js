@@ -22,7 +22,7 @@ import AppTheme from './theme';
 
 import settingsActions from './settingsActions';
 import settingsStore from './settingsStore';
-import settingsKeyMapping from './settingsKeyMapping';
+import settingsKeyMappingI18next from './settingsKeyMappingI18next';
 import { categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
 
@@ -117,6 +117,7 @@ class SettingsFields extends React.Component {
     }
 
     renderFields(settings) {
+        const settingsKeyMapping = settingsKeyMappingI18next(i18next);
         const d2 = this.context.d2;
         if (settings.length === 0) {
             return (
@@ -307,40 +308,40 @@ class SettingsFields extends React.Component {
     render() {
         const categories = {
             general: {
-                pageLabel: i18next.t('General settings')
+                pageLabel: i18next.t('General settings'),
             },
             analytics: {
-                pageLabel: i18next.t('Analytics settings')
+                pageLabel: i18next.t('Analytics settings'),
             },
             server: {
-                pageLabel: i18next.t('Server settings')
+                pageLabel: i18next.t('Server settings'),
             },
             appearance: {
-                pageLabel: i18next.t('Appearance settings')
+                pageLabel: i18next.t('Appearance settings'),
             },
             email: {
-                pageLabel: i18next.t('Email settings')
+                pageLabel: i18next.t('Email settings'),
             },
             messaging: {
-                pageLabel: i18next.t('Messaging settings')
+                pageLabel: i18next.t('Messaging settings'),
             },
             access: {
-                pageLabel: i18next.t('Access settings')
+                pageLabel: i18next.t('Access settings'),
             },
             calendar: {
-                pageLabel: i18next.t('Calendar settings')
+                pageLabel: i18next.t('Calendar settings'),
             },
             import: {
-                pageLabel: i18next.t('Data import settings')
+                pageLabel: i18next.t('Data import settings'),
             },
             sync: {
-                pageLabel: i18next.t('Synchronization settings')
+                pageLabel: i18next.t('Synchronization settings'),
             },
             monitoring: {
-                pageLabel: i18next.t('System monitoring settings')
+                pageLabel: i18next.t('System monitoring settings'),
             },
             oauth2: {
-                pageLabel: i18next.t('OAuth2 Clients')
+                pageLabel: i18next.t('OAuth2 Clients'),
             },
         };
 

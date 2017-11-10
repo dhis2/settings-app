@@ -8,7 +8,7 @@ import SelectField from '../form-fields/drop-down';
 import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';
 import configOptionStore from '../configOptionStore';
-import settingsKeyMapping from '../settingsKeyMapping';
+import settingsKeyMappingI18next from '../settingsKeyMappingI18next';
 
 import i18next from 'i18next';
 
@@ -68,6 +68,8 @@ class LocalizedTextEditor extends React.Component {
             'keyApplicationFooter',
             'keyApplicationRightFooter',
         ];
+
+        const settingsKeyMapping = settingsKeyMappingI18next(i18next);
         const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
 
         const fields = keys.map(key => ({
@@ -75,7 +77,7 @@ class LocalizedTextEditor extends React.Component {
             value: (settingsStore.state && settingsStore.state[key + localeAppendage]) || '',
             component: TextField,
             props: {
-                floatingLabelText: `${i18next.t(settingsKeyMapping[key].label)} - ${this.state.localeName}`,
+                floatingLabelText: `${settingsKeyMapping[key].label} - ${this.state.localeName}`,
                 changeEvent: 'onBlur',
                 style: styles.field,
                 multiLine: true,
