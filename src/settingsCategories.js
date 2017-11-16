@@ -37,6 +37,7 @@ export const categories = {
         pageLabel: 'analytics_settings',
         settings: [
             'keyAnalysisRelativePeriod',
+            'analyticsFinancialYearStart',
             'keyCacheability',
             'keyCacheStrategy',
             'keyIgnoreAnalyticsApprovalYearThreshold',

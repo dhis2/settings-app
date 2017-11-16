@@ -140,6 +140,15 @@ const settingsKeyMapping = {
             LAST_52_WEEKS: 'LAST_52_WEEKS',
         },
     },
+    analyticsFinancialYearStart: {
+        label: 'analytics_financial_year_start',
+        type: 'dropdown',
+        options: {
+            FINANCIAL_PERIOD_APRIL: 'APRIL',
+            FINANCIAL_PERIOD_JULY: 'JULY',
+            FINANCIAL_PERIOD_OCTOBER: 'OCTOBER',
+        },
+    },
     keyCacheability: {
         label: 'cacheability',
         type: 'dropdown',
