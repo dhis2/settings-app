@@ -223,7 +223,7 @@ class metadataSettings extends React.Component {
                 <div style={this.state.hasVersions ? styles.visible : styles.hidden}>
                     <div style={{ display: 'inline-block', float: 'left' }}>
                         <span style={{ fontSize: '1.17em', fontWeight: 'bold', marginRight: 8 }}>
-                            {this.getTranslation('master_version')}:
+                            {i18next.t('Master version')}:
                         </span>
                         {this.state.masterVersionName || i18next.t('None')}
                     </div>

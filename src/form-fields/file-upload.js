@@ -10,6 +10,8 @@ import Translate from 'd2-ui/lib/i18n/Translate.mixin';
 import Checkbox from 'material-ui/Checkbox';
 import AppTheme from '../theme';
 
+import i18next from 'i18next';
+
 export default React.createClass({
     propTypes: {
         name: React.PropTypes.oneOf(['logo_front', 'logo_banner']).isRequired,
@@ -104,7 +106,7 @@ export default React.createClass({
 
         return (
             <div>
-                <FlatButton label={this.getTranslation('cancel_upload')} onClick={this.onClick} />
+                <FlatButton label={i18next.t('Cancel upload')} onClick={this.onClick} />
                 <div style={progressStyle}>
                     <LinearProgress
                         mode={this.state.progress ? 'determinate' : 'indeterminate'}
@@ -133,8 +135,8 @@ export default React.createClass({
         if (this.state.isEnabled) {
             return (
                 <div>
-                    <FlatButton label={this.getTranslation('replace_image')} secondary onClick={this.onClick} />
-                    <FlatButton label={this.getTranslation('preview_image')} onClick={this.onPreviewClick} />
+                    <FlatButton label={i18next.t('Replace image')} secondary onClick={this.onClick} />
+                    <FlatButton label={i18next.t('Preview image')} onClick={this.onPreviewClick} />
                     <Dialog
                         open={this.state.showDialog}
                         onRequestClose={this.onPreviewClick}
@@ -149,7 +151,7 @@ export default React.createClass({
         }
 
         return (
-            <FlatButton label={this.getTranslation('upload_image')} primary onClick={this.onClick} />
+            <FlatButton label={i18next.t('Upload image')} primary onClick={this.onClick} />
         );
     },
 
