@@ -14,9 +14,9 @@ export const categoryOrder = [
 
 export const categories = {
     general: {
-        label: 'general',
+        label: 'General',
         icon: 'settings',
-        pageLabel: 'general_settings',
+        pageLabel: 'General settings',
         settings: [
             'keyAnalyticsMaxLimit',
             'infrastructuralIndicators',
@@ -32,9 +32,9 @@ export const categories = {
         ],
     },
     analytics: {
-        label: 'analytics',
+        label: 'Analytics',
         icon: 'equalizer',
-        pageLabel: 'analytics_settings',
+        pageLabel: 'Analytics settings',
         settings: [
             'keyAnalysisRelativePeriod',
             'analyticsFinancialYearStart',
@@ -47,9 +47,9 @@ export const categories = {
         ],
     },
     server: {
-        label: 'server',
+        label: 'Server',
         icon: 'business',
-        pageLabel: 'server_settings',
+        pageLabel: 'Server settings',
         settings: [
             'keyDatabaseServerCpus',
             'keySystemNotificationsEmail',
@@ -58,9 +58,9 @@ export const categories = {
         ],
     },
     appearance: {
-        label: 'appearance',
+        label: 'Appearance',
         icon: 'looks',
-        pageLabel: 'appearance_settings',
+        pageLabel: 'Appearance settings',
         settings: [
             'localizedText',
             'keyStyle',
@@ -77,9 +77,9 @@ export const categories = {
         ],
     },
     email: {
-        label: 'email',
+        label: 'Email',
         icon: 'email',
-        pageLabel: 'email_settings',
+        pageLabel: 'Email settings',
         settings: [
             'keyEmailHostName',
             'keyEmailPort',
@@ -91,18 +91,18 @@ export const categories = {
         ],
     },
     messaging: {
-        label: 'messaging',
+        label: 'Messaging',
         icon: 'message',
-        pageLabel: 'messaging_settings',
+        pageLabel: 'Messaging settings',
         settings: [
             'keyMessageEmailNotification',
             'keyMessageSmsNotification',
         ],
     },
     access: {
-        label: 'access',
+        label: 'Access',
         icon: 'lock_open',
-        pageLabel: 'access_settings',
+        pageLabel: 'Access settings',
         settings: [
             'selfRegistrationRole',
             'selfRegistrationOrgUnit',
@@ -122,18 +122,18 @@ export const categories = {
         ],
     },
     calendar: {
-        label: 'calendar',
+        label: 'Calendar',
         icon: 'date_range',
-        pageLabel: 'calendar_settings',
+        pageLabel: 'Calendar settings',
         settings: [
             'keyCalendar',
             'keyDateFormat',
         ],
     },
     import: {
-        label: 'import',
+        label: 'Import',
         icon: 'system_update_alt',
-        pageLabel: 'import_settings',
+        pageLabel: 'Data import settings',
         settings: [
             'keyDataImportStrictPeriods',
             'keyDataImportStrictCategoryOptionCombos',
@@ -144,9 +144,9 @@ export const categories = {
         ],
     },
     sync: {
-        label: 'synchronization',
+        label: 'Synchronization',
         icon: 'sync',
-        pageLabel: 'synchronization_settings',
+        pageLabel: 'Synchronization settings',
         settings: [
             'keyRemoteInstanceUrl',
             'keyRemoteInstanceUsername',
@@ -155,9 +155,9 @@ export const categories = {
         ],
     },
     monitoring: {
-        label: 'system_monitoring',
+        label: 'System monitoring',
         icon: 'dns',
-        pageLabel: 'system_monitoring_settings',
+        pageLabel: 'System monitoring settings',
         settings: [
             'keySystemMonitoringUrl',
             'keySystemMonitoringUsername',
@@ -165,9 +165,9 @@ export const categories = {
         ],
     },
     oauth2: {
-        label: 'oauth2_clients',
+        label: 'OAuth2 Clients',
         icon: 'vpn_lock',
-        pageLabel: 'oauth2_clients',
+        pageLabel: 'OAuth2 Clients',
         authority: 'F_OAUTH2_CLIENT_MANAGE',
         settings: ['oauth2clients'],
     },

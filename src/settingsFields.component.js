@@ -26,6 +26,7 @@ import settingsKeyMapping from './settingsKeyMapping';
 import { categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
 
+import i18next from 'i18next';
 
 const styles = {
     header: {
@@ -78,8 +79,8 @@ function wrapUserSettingsOverride(d2, component, valueLabel) {
             }
 
             const labelText = valueLabel !== undefined
-                ? `${d2.i18n.getTranslation('will_be_overridden_by_current_user_setting')}: ${valueLabel}`
-                : d2.i18n.getTranslation('can_be_overridden_by_user_settings');
+                ? `${i18next.t('This setting will be overridden by the current user setting')}: ${valueLabel}`
+                : i18next.t('This setting can be overridden by user settings');
 
             return (
                 <div style={{ marginRight: 48 }}>
@@ -120,7 +121,7 @@ class SettingsFields extends React.Component {
         if (settings.length === 0) {
             return (
                 <div style={styles.noHits}>
-                    { d2.i18n.getTranslation('no_settings_matched_the_search_term') }
+                    { i18next.t('No settings matched the search term') }
                 </div>
             );
         }
@@ -137,7 +138,7 @@ class SettingsFields extends React.Component {
                         if (wordToValidatorMap.has(name)) {
                             validators.push({
                                 validator: wordToValidatorMap.get(name),
-                                message: d2.i18n.getTranslation(wordToValidatorMap.get(name).message),
+                                message: i18next.t(wordToValidatorMap.get(name).message),
                             });
                         }
                     });
@@ -148,9 +149,9 @@ class SettingsFields extends React.Component {
                     value: (settingsStore.state && settingsStore.state[key]) || '',
                     component: TextField,
                     props: {
-                        floatingLabelText: d2.i18n.getTranslation(mapping.label),
+                        floatingLabelText: i18next.t(mapping.label),
                         style: { width: '100%' },
-                        hintText: mapping.hintText && d2.i18n.getTranslation(mapping.hintText),
+                        hintText: mapping.hintText && i18next.t(mapping.hintText),
                     },
                     validators,
                 };
@@ -186,15 +187,15 @@ class SettingsFields extends React.Component {
                                 : Object.keys(mapping.options).map((id) => {
                                     const displayName = !isNaN(mapping.options[id]) ?
                                         mapping.options[id] :
-                                        d2.i18n.getTranslation(mapping.options[id]);
+                                        i18next.t(mapping.options[id]);
                                     return { id, displayName };
                                 }),
                             includeEmpty: !!mapping.includeEmpty,
                             emptyLabel: (
                                 (mapping.includeEmpty &&
-                                mapping.emptyLabel && d2.i18n.getTranslation(mapping.emptyLabel)) || undefined
+                                mapping.emptyLabel && i18next.t(mapping.emptyLabel)) || undefined
                             ),
-                            noOptionsLabel: d2.i18n.getTranslation('no_options'),
+                            noOptionsLabel: i18next.t('No options'),
                         }),
                     });
 
@@ -284,7 +285,7 @@ class SettingsFields extends React.Component {
 
                         component = wrapUserSettingsOverride(d2, component, userSettingLabel);
                     } else {
-                        component = wrapUserSettingsOverride(d2, component, d2.i18n.getTranslation(userSettingValue));
+                        component = wrapUserSettingsOverride(d2, component, i18next.t(userSettingValue));
                     }
 
                     return Object.assign(field, { component });
@@ -307,8 +308,8 @@ class SettingsFields extends React.Component {
         return (
             <div className="content-area">
                 <div style={styles.header}>{categories[this.props.category] ?
-                    this.context.d2.i18n.getTranslation(categories[this.props.category].pageLabel) :
-                    this.context.d2.i18n.getTranslation('search_results')}
+                    i18next.t(categories[this.props.category].pageLabel) :
+                    i18next.t('Search results')}
                 </div>
                 {this.renderFields(this.props.currentSettings)}
             </div>

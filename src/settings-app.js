@@ -12,8 +12,9 @@ import appTheme from './theme';
 
 import settingsActions from './settingsActions';
 import configOptionStore from './configOptionStore';
-import settingsKeyMapping from './settingsKeyMapping';
 
+import i18next from 'i18next';
+import XHR from 'i18next-xhr-backend';
 
 const dhisDevConfig = DHIS_CONFIG; // eslint-disable-line
 
@@ -29,42 +30,21 @@ function getAbsoluteUrl(url) {
 }
 
 function configI18n(userSettings) {
-    // Sources
-    const uiLocale = userSettings.keyUiLocale;
-
-    if (uiLocale !== 'en') {
-        config.i18n.sources.add(`i18n/module/i18n_module_${uiLocale}.properties`);
-    }
-    config.i18n.sources.add('i18n/module/i18n_module_en.properties');
-
-    // Strings
-    Object.keys(settingsKeyMapping).forEach((key) => {
-        const val = settingsKeyMapping[key];
-
-        if (val.hasOwnProperty('label')) {
-            config.i18n.strings.add(val.label);
-        }
-
-        if (val.hasOwnProperty('description')) {
-            config.i18n.strings.add(val.description);
-        }
-
-        if (val.hasOwnProperty('options')) {
-            Object.keys(val.options)
-                .map(opt => val.options[opt])
-                .filter(value => isNaN(value))
-                .forEach(value => config.i18n.strings.add(val.options[value]));
-        }
-    });
-    config.i18n.strings.add('access_denied');
-    config.i18n.strings.add('settings_updated');
-    config.i18n.strings.add('save');
-    config.i18n.strings.add('delete');
-    config.i18n.strings.add('level');
-    config.i18n.strings.add('category_option_group_set');
-    config.i18n.strings.add('yes');
-    config.i18n.strings.add('no');
-    config.i18n.strings.add('edit');
+    i18next
+        .use(XHR)
+        .init({
+            returnEmptyString: false,
+            fallbackLng: false,
+            keySeparator: '|',
+            backend: {
+                loadPath: './i18n/{{lng}}.json',
+            },
+        }, (err, t) => {
+            const uiLocale = userSettings.keyUiLocale;
+            if (uiLocale && uiLocale !== 'en') {
+                i18next.changeLanguage(uiLocale);
+            }
+        });
 }
 
 ReactDOM.render(
@@ -99,7 +79,7 @@ getManifest('manifest.webapp')
         log.debug('D2 initialized', d2);
 
         if (!d2.currentUser.authorities.has('F_SYSTEM_SETTING')) {
-            document.write(d2.i18n.getTranslation('access_denied'));
+            document.write(i18next.t('Access denied'));
             return;
         }
 
@@ -146,7 +126,7 @@ getManifest('manifest.webapp')
 
             // Flags
             const flags = (results[7] || []).map(flag => ({ id: flag.key, displayName: flag.name }));
-            flags.unshift({ id: 'dhis2', displayName: d2.i18n.getTranslation('no_flag') });
+            flags.unshift({ id: 'dhis2', displayName: i18next.t('No flag') });
 
             // Stylesheets
             const styles = (results[8] || []).map(style => ({ id: style.path, displayName: style.name }));

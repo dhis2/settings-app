@@ -12,7 +12,8 @@
     "build": "webpack",
     "postbuild": "cp -r *.png i18n node_modules/babel-polyfill/dist/polyfill.min.js build/ && npm run manifest",
     "manifest": "d2-manifest package.json build/manifest.webapp",
-    "deploy": "npm run build && mvn clean deploy"
+    "deploy": "npm run build && mvn clean deploy",
+    "extract-strings": "node extract-strings.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,10 @@
     "url": "https://github.com/dhis2/settings-app/issues"
   },
   "homepage": "https://github.com/dhis2/settings-app#readme",
-  "dependencies": {},
+  "dependencies": {
+    "i18next": "^10.1.0",
+    "i18next-xhr-backend": "^1.5.0"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
@@ -49,6 +53,8 @@
     "fixed-data-table": "^0.6.4",
     "history": "^4.7.2",
     "html-webpack-plugin": "^2.22.0",
+    "i18next-conv": "^5.0.0",
+    "import-export": "^1.0.1",
     "loglevel": "^1.4.1",
     "material-ui": "^0.15.4",
     "moment": "^2.18.1",
@@ -58,6 +64,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-tap-event-plugin": "1.0.0",
+    "recursive-readdir": "^2.2.1",
     "rxjs": "^5.5.0",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",

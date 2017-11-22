@@ -10,6 +10,8 @@ import settingsStore from '../settingsStore';
 import configOptionStore from '../configOptionStore';
 import settingsKeyMapping from '../settingsKeyMapping';
 
+import i18next from 'i18next';
+
 const styles = {
     inset: {
         padding: '0 16px 8px',
@@ -41,7 +43,6 @@ class LocalizedTextEditor extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.saveSettingsKey = this.saveSettingsKey.bind(this);
-        this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
     }
 
     handleChange(e) {
@@ -74,7 +75,7 @@ class LocalizedTextEditor extends React.Component {
             value: (settingsStore.state && settingsStore.state[key + localeAppendage]) || '',
             component: TextField,
             props: {
-                floatingLabelText: `${this.getTranslation(settingsKeyMapping[key].label)} - ${this.state.localeName}`,
+                floatingLabelText: `${i18next.t(settingsKeyMapping[key].label)} - ${this.state.localeName}`,
                 changeEvent: 'onBlur',
                 style: styles.field,
                 multiLine: true,
@@ -88,7 +89,7 @@ class LocalizedTextEditor extends React.Component {
                     <SelectField
                         menuItems={(options && options.locales) || []}
                         value={this.state.locale || ''}
-                        floatingLabelText={this.getTranslation('select_language')}
+                        floatingLabelText={i18next.t('Select language')}
                         onChange={this.handleChange}
                     />
                     <FormBuilder fields={fields} onUpdateField={this.saveSettingsKey} />
