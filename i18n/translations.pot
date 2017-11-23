@@ -1,0 +1,840 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2017-11-23T10:48:11.271Z\n"
+"PO-Revision-Date: 2017-11-23T10:48:11.271Z\n"
+
+msgid "0"
+msgstr ""
+
+msgid "1"
+msgstr ""
+
+msgid "2"
+msgstr ""
+
+msgid "3"
+msgstr ""
+
+msgid "4"
+msgstr ""
+
+msgid "5"
+msgstr ""
+
+msgid "6"
+msgstr ""
+
+msgid "7"
+msgstr ""
+
+msgid "8"
+msgstr ""
+
+msgid "10"
+msgstr ""
+
+msgid "12"
+msgstr ""
+
+msgid "14"
+msgstr ""
+
+msgid "16"
+msgstr ""
+
+msgid "25"
+msgstr ""
+
+msgid "32"
+msgstr ""
+
+msgid "465"
+msgstr ""
+
+msgid "587"
+msgstr ""
+
+msgid "50000"
+msgstr ""
+
+msgid "100000"
+msgstr ""
+
+msgid "200000"
+msgstr ""
+
+msgid "Access denied"
+msgstr ""
+
+msgid "No flag"
+msgstr ""
+
+msgid "Settings updated"
+msgstr ""
+
+msgid "This setting will be overridden by the current user setting"
+msgstr ""
+
+msgid "This setting can be overridden by user settings"
+msgstr ""
+
+msgid "No settings matched the search term"
+msgstr ""
+
+msgid "No options"
+msgstr ""
+
+msgid "Search results"
+msgstr ""
+
+msgid "Cancel upload"
+msgstr ""
+
+msgid "Replace image"
+msgstr ""
+
+msgid "Preview image"
+msgstr ""
+
+msgid "Upload image"
+msgstr ""
+
+msgid "Select language"
+msgstr ""
+
+msgid "Metadata Version created."
+msgstr ""
+
+msgid "Could not create a Metadata Version. Contact your system administrator."
+msgstr ""
+
+msgid "Could not fetch system settings"
+msgstr ""
+
+msgid "Create new version"
+msgstr ""
+
+msgid "Best Effort"
+msgstr ""
+
+msgid "Atomic"
+msgstr ""
+
+msgid "Master version"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Last sync attempt"
+msgstr ""
+
+msgid "Failed"
+msgstr ""
+
+msgid "No versions exist"
+msgstr ""
+
+msgid "Enable Versioning for metadata sync"
+msgstr ""
+
+msgid "Don\\'t sync metadata if DHIS versions differ"
+msgstr ""
+
+msgid "Metadata Versioning"
+msgstr ""
+
+msgid "OAuth2 client saved"
+msgstr ""
+
+msgid "Failed to save OAuth2 client"
+msgstr ""
+
+msgid "This client ID is already taken"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Client ID"
+msgstr ""
+
+msgid "Client Secret"
+msgstr ""
+
+msgid "Grant Types"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Refresh token"
+msgstr ""
+
+msgid "Authorization code"
+msgstr ""
+
+msgid "One URL per line"
+msgstr ""
+
+msgid "Redirect URIs"
+msgstr ""
+
+msgid "Create new OAuth2 Client"
+msgstr ""
+
+msgid "Edit OAuth2 Client"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr ""
+
+msgid "yes"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "OAUTH2 client deleted"
+msgstr ""
+
+msgid "Failed to sava OAUTH2 client"
+msgstr ""
+
+msgid "Maximum number of analytics records"
+msgstr ""
+
+msgid "Unlimited"
+msgstr ""
+
+msgid "Infrastructural indicators"
+msgstr ""
+
+msgid "Infrastructural data elements"
+msgstr ""
+
+msgid "Infrastructural period type"
+msgstr ""
+
+msgid "Daily"
+msgstr ""
+
+msgid "Weekly"
+msgstr ""
+
+msgid "Monthly"
+msgstr ""
+
+msgid "BiMonthly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr ""
+
+msgid "SixMonthly"
+msgstr ""
+
+msgid "SixMonthlyApril"
+msgstr ""
+
+msgid "Yearly"
+msgstr ""
+
+msgid "FinancialApril"
+msgstr ""
+
+msgid "FinancialJuly"
+msgstr ""
+
+msgid "FinancialOct"
+msgstr ""
+
+msgid "Feedback recipients"
+msgstr ""
+
+msgid "No message recipients"
+msgstr ""
+
+msgid "Max offline organisation unit levels"
+msgstr ""
+
+msgid "Data analysis std dev factor"
+msgstr ""
+
+msgid "Phone number area code"
+msgstr ""
+
+msgid "Help page link"
+msgstr ""
+
+msgid "Enable multi-organisation unit forms"
+msgstr ""
+
+msgid "Omit indicator values with zero numerator in data mart"
+msgstr ""
+
+msgid "Put analytics in maintenance mode"
+msgstr ""
+
+msgid "Max number of years to hide unapproved data in analytics"
+msgstr ""
+
+msgid "Acceptance required before approval"
+msgstr ""
+
+msgid "Default relative period for analysis"
+msgstr ""
+
+msgid "This month"
+msgstr ""
+
+msgid "Last month"
+msgstr ""
+
+msgid "This bi-month"
+msgstr ""
+
+msgid "Last bi-month"
+msgstr ""
+
+msgid "This quarter"
+msgstr ""
+
+msgid "Last quarter"
+msgstr ""
+
+msgid "This six-month"
+msgstr ""
+
+msgid "Last six-month"
+msgstr ""
+
+msgid "Last 5 years"
+msgstr ""
+
+msgid "This week"
+msgstr ""
+
+msgid "APRIL"
+msgstr ""
+
+msgid "JULY"
+msgstr ""
+
+msgid "OCTOBER"
+msgstr ""
+
+msgid "Cacheability"
+msgstr ""
+
+msgid "Public"
+msgstr ""
+
+msgid "Private"
+msgstr ""
+
+msgid "Cache strategy"
+msgstr ""
+
+msgid "No cache"
+msgstr ""
+
+msgid "Cache for 15 minutes"
+msgstr ""
+
+msgid "Cache for 30 minutes"
+msgstr ""
+
+msgid "Cache for one hour"
+msgstr ""
+
+msgid "Cache until 6 AM tomorrow"
+msgstr ""
+
+msgid "Cache for two weeks"
+msgstr ""
+
+msgid "Check approval for all data"
+msgstr ""
+
+msgid "Current year only"
+msgstr ""
+
+msgid "Last 2 years"
+msgstr ""
+
+msgid "Last 3 years"
+msgstr ""
+
+msgid "Last 4 years"
+msgstr ""
+
+msgid "Last 6 years"
+msgstr ""
+
+msgid "Last 7 years"
+msgstr ""
+
+msgid "Last 8 years"
+msgstr ""
+
+msgid "Last 9 years"
+msgstr ""
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "Never check approval"
+msgstr ""
+
+msgid "Threshold for analytics data caching"
+msgstr ""
+
+msgid "No caching"
+msgstr ""
+
+msgid "1 year"
+msgstr ""
+
+msgid "2 years"
+msgstr ""
+
+msgid "3 years"
+msgstr ""
+
+msgid "4 years"
+msgstr ""
+
+msgid "5 years"
+msgstr ""
+
+msgid "6 years"
+msgstr ""
+
+msgid "7 years"
+msgstr ""
+
+msgid "8 years"
+msgstr ""
+
+msgid "9 years"
+msgstr ""
+
+msgid "10 years"
+msgstr ""
+
+msgid "11 years"
+msgstr ""
+
+msgid "12 years"
+msgstr ""
+
+msgid "13 years"
+msgstr ""
+
+msgid "14 years"
+msgstr ""
+
+msgid "15 years"
+msgstr ""
+
+msgid "Skip data type validation in analytics table export"
+msgstr ""
+
+msgid "Respect category option start and end date in analytics table export"
+msgstr ""
+
+msgid "Number of database server CPUs"
+msgstr ""
+
+msgid "Automatic (detect based on web server)"
+msgstr ""
+
+msgid "System notifications email address"
+msgstr ""
+
+msgid "Server base URL"
+msgstr ""
+
+msgid "Google Analytics (Universal Analytics) key"
+msgstr ""
+
+msgid "Application title"
+msgstr ""
+
+msgid "Application introduction"
+msgstr ""
+
+msgid "Application notification"
+msgstr ""
+
+msgid "Application left-side footer"
+msgstr ""
+
+msgid "Application right-side footer"
+msgstr ""
+
+msgid "Style"
+msgstr ""
+
+msgid "Start page"
+msgstr ""
+
+msgid "Flag"
+msgstr ""
+
+msgid "Interface language"
+msgstr ""
+
+msgid "Database language"
+msgstr ""
+
+msgid "Property to display in analysis modules"
+msgstr ""
+
+msgid "Short name"
+msgstr ""
+
+msgid "Default digit group separator to display in analysis modules"
+msgstr ""
+
+msgid "Space"
+msgstr ""
+
+msgid "Comma"
+msgstr ""
+
+msgid "Require authority to add to view object lists"
+msgstr ""
+
+msgid "Custom login page logo"
+msgstr ""
+
+msgid "Custom top menu logo"
+msgstr ""
+
+msgid "Host name"
+msgstr ""
+
+msgid "Port"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "TLS"
+msgstr ""
+
+msgid "Email sender"
+msgstr ""
+
+msgid "Send me a test email"
+msgstr ""
+
+msgid "Enable message email notifications"
+msgstr ""
+
+msgid "Enable message SMS notifications"
+msgstr ""
+
+msgid "Self registration account user role"
+msgstr ""
+
+msgid "Disable self registration"
+msgstr ""
+
+msgid "Do not require recaptcha for self registration"
+msgstr ""
+
+msgid "Self registration account organisation unit"
+msgstr ""
+
+msgid "Enable user account recovery"
+msgstr ""
+
+msgid "Lock user account temporarily after multiple failed login attempts"
+msgstr ""
+
+msgid "Allow users to grant own user roles"
+msgstr ""
+
+msgid "Allow assigning object to related objects during add or update"
+msgstr ""
+
+msgid "Enable password expiry alerts"
+msgstr ""
+
+msgid "Require user account password change"
+msgstr ""
+
+msgid "Never"
+msgstr ""
+
+msgid "3 months"
+msgstr ""
+
+msgid "6 months"
+msgstr ""
+
+msgid "12 months"
+msgstr ""
+
+msgid "Minimum characters in password"
+msgstr ""
+
+msgid "OpenID provider"
+msgstr ""
+
+msgid "OpenID provider label"
+msgstr ""
+
+msgid "CORS whitelist"
+msgstr ""
+
+msgid "Mapzen search API key"
+msgstr ""
+
+msgid "Google Maps API key"
+msgstr ""
+
+msgid "Calendar"
+msgstr ""
+
+msgid "coptic"
+msgstr ""
+
+msgid "ethiopian"
+msgstr ""
+
+msgid "gregorian"
+msgstr ""
+
+msgid "islamic"
+msgstr ""
+
+msgid "iso8601"
+msgstr ""
+
+msgid "julian"
+msgstr ""
+
+msgid "nepali"
+msgstr ""
+
+msgid "thai"
+msgstr ""
+
+msgid "persian"
+msgstr ""
+
+msgid "Date format"
+msgstr ""
+
+msgid "1981-03-31 (yyyy-MM-dd)"
+msgstr ""
+
+msgid "03-31-1981 (dd-MM-yyyy)"
+msgstr ""
+
+msgid "Remote server URL"
+msgstr ""
+
+msgid "Remote server username"
+msgstr ""
+
+msgid "Remote server password"
+msgstr ""
+
+msgid "Don't sync metadata if DHIS versions differ"
+msgstr ""
+
+msgid "Require periods to match period type of data set"
+msgstr ""
+
+msgid "Require category option combos to match category combo of data element"
+msgstr ""
+
+msgid "Require organisation units to match assignment of data set"
+msgstr ""
+
+msgid "Require attribute option combos to match category combo of data set"
+msgstr ""
+
+msgid "Require category option combo to be specified"
+msgstr ""
+
+msgid "Require attribute option combo to be specified"
+msgstr ""
+
+msgid "System monitoring URL"
+msgstr ""
+
+msgid "System monitoring username"
+msgstr ""
+
+msgid "System monitoring password"
+msgstr ""
+
+msgid "General"
+msgstr ""
+
+msgid "General settings"
+msgstr ""
+
+msgid "Analytics"
+msgstr ""
+
+msgid "Analytics settings"
+msgstr ""
+
+msgid "Server"
+msgstr ""
+
+msgid "Server settings"
+msgstr ""
+
+msgid "Appearance"
+msgstr ""
+
+msgid "Appearance settings"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Email settings"
+msgstr ""
+
+msgid "Messaging"
+msgstr ""
+
+msgid "Messaging settings"
+msgstr ""
+
+msgid "Access"
+msgstr ""
+
+msgid "Access settings"
+msgstr ""
+
+msgid "Calendar settings"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Data import settings"
+msgstr ""
+
+msgid "Synchronization"
+msgstr ""
+
+msgid "Synchronization settings"
+msgstr ""
+
+msgid "System monitoring"
+msgstr ""
+
+msgid "System monitoring settings"
+msgstr ""
+
+msgid "OAuth2 Clients"
+msgstr ""
+
+msgctxt "settings"
+msgid "search"
+msgstr ""
+
+msgctxt "YEAR"
+msgid "MONTHS_THIS"
+msgstr ""
+
+msgctxt "YEAR"
+msgid "QUARTERS_THIS"
+msgstr ""
+
+msgctxt "YEAR"
+msgid "THIS"
+msgstr ""
+
+msgctxt "YEAR"
+msgid "MONTHS_LAST"
+msgstr ""
+
+msgctxt "YEAR"
+msgid "QUARTERS_LAST"
+msgstr ""
+
+msgctxt "YEAR"
+msgid "LAST"
+msgstr ""
+
+msgctxt "YEAR"
+msgid "THIS_FINANCIAL"
+msgstr ""
+
+msgctxt "YEAR"
+msgid "LAST_FINANCIAL"
+msgstr ""
+
+msgctxt "MONTHS"
+msgid "LAST_12"
+msgstr ""
+
+msgctxt "MONTHS"
+msgid "LAST_6"
+msgstr ""
+
+msgctxt "MONTHS"
+msgid "LAST_3"
+msgstr ""
+
+msgctxt "BIMONTHS"
+msgid "LAST_6"
+msgstr ""
+
+msgctxt "QUARTERS"
+msgid "LAST_4"
+msgstr ""
+
+msgctxt "SIXMONTHS"
+msgid "LAST_2"
+msgstr ""
+
+msgctxt "YEARS"
+msgid "LAST_5_FINANCIAL"
+msgstr ""
+
+msgctxt "WEEK"
+msgid "LAST"
+msgstr ""
+
+msgctxt "WEEKS"
+msgid "LAST_4"
+msgstr ""
+
+msgctxt "WEEKS"
+msgid "LAST_12"
+msgstr ""
+
+msgctxt "WEEKS"
+msgid "LAST_52"
+msgstr ""
+
+msgctxt "start"
+msgid "analytics_financial_year"
+msgstr ""
