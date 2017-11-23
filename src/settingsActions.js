@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import i18next from 'i18next';
 
 import Action from 'd2-ui/lib/action/Action';
 import { getInstance as getD2 } from 'd2/lib/d2';
@@ -10,8 +11,6 @@ import App from './app.component';
 import { categories } from './settingsCategories';
 import settingsKeyMapping from './settingsKeyMapping';
 import settingsStore from './settingsStore';
-
-import i18next from 'i18next';
 
 const settingsActions = Action.createActionsFromNames([
     'load',

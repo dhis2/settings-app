@@ -1,5 +1,6 @@
 import React from 'react';
 import createHistory from 'history/createHashHistory';
+import i18next from 'i18next';
 
 // Material UI
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -18,9 +19,6 @@ import appTheme from './theme';
 import settingsActions from './settingsActions';
 import { categoryOrder, categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
-
-import i18next from 'i18next';
-
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 

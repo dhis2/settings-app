@@ -1,5 +1,6 @@
 import React from 'react';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
+import i18next from 'i18next';
 import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButtonGroup, RadioButton } from 'material-ui/RadioButton';
 import CircularProgress from 'material-ui/CircularProgress';
@@ -10,8 +11,6 @@ import Checkbox from '../form-fields/check-box';
 import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';
 import settingsKeyMapping from '../settingsKeyMapping';
-
-import i18next from 'i18next';
 
 require('fixed-data-table/dist/fixed-data-table.css');
 

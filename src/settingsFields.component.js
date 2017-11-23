@@ -1,6 +1,8 @@
 import React from 'react';
 import log from 'loglevel';
 
+import i18next from 'i18next';
+
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
 import IconButton from 'material-ui/IconButton';
@@ -25,8 +27,6 @@ import settingsStore from './settingsStore';
 import settingsKeyMapping from './settingsKeyMapping';
 import { categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
-
-import i18next from 'i18next';
 
 const styles = {
     header: {

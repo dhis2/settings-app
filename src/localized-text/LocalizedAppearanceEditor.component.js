@@ -1,4 +1,5 @@
 import React from 'react';
+import i18next from 'i18next';
 
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 
@@ -9,8 +10,6 @@ import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';
 import configOptionStore from '../configOptionStore';
 import settingsKeyMapping from '../settingsKeyMapping';
-
-import i18next from 'i18next';
 
 const styles = {
     inset: {

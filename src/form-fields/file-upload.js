@@ -1,4 +1,5 @@
 import React from 'react';
+import i18next from 'i18next';
 import log from 'loglevel';
 
 import LinearProgress from 'material-ui/LinearProgress';
@@ -9,8 +10,6 @@ import Translate from 'd2-ui/lib/i18n/Translate.mixin';
 
 import Checkbox from 'material-ui/Checkbox';
 import AppTheme from '../theme';
-
-import i18next from 'i18next';
 
 export default React.createClass({
     propTypes: {

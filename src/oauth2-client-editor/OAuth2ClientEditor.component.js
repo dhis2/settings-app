@@ -1,4 +1,5 @@
 import React from 'react';
+import i18next from 'i18next';
 import log from 'loglevel';
 
 // Material UI
@@ -23,8 +24,6 @@ import oa2Actions from './oauth2Client.actions';
 import settingsActions from '../settingsActions';
 
 import AppTheme from '../theme';
-
-import i18next from 'i18next';
 
 /* eslint-disable complexity */
 function generateSecret() {

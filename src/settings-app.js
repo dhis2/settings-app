@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import log from 'loglevel';
 
+import i18next from 'i18next';
+import XHR from 'i18next-xhr-backend';
+
 import { init, config, getUserSettings, getManifest } from 'd2/lib/d2';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -12,9 +15,6 @@ import appTheme from './theme';
 
 import settingsActions from './settingsActions';
 import configOptionStore from './configOptionStore';
-
-import i18next from 'i18next';
-import XHR from 'i18next-xhr-backend';
 
 const dhisDevConfig = DHIS_CONFIG; // eslint-disable-line
 
@@ -39,7 +39,7 @@ function configI18n(userSettings) {
             backend: {
                 loadPath: './i18n/{{lng}}.json',
             },
-        }, (err, t) => {
+        }, () => {
             const uiLocale = userSettings.keyUiLocale;
             if (uiLocale && uiLocale !== 'en') {
                 i18next.changeLanguage(uiLocale);
