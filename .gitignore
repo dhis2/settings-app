@@ -17,4 +17,5 @@ manifest.webapp
 *.zip
 npm-debug.log
 *.pot
+!i18n/translations.pot
 *.po

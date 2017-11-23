@@ -13,8 +13,12 @@
     "postbuild": "cp -r *.png i18n node_modules/babel-polyfill/dist/polyfill.min.js build/ && npm run manifest",
     "manifest": "d2-manifest package.json build/manifest.webapp",
     "deploy": "npm run build && mvn clean deploy",
-    "extract-pot": "node pot-extractor.js"
+    "extract-pot": "node pot-extractor.js",
+    "refresh-translations-template": "npm run extract-pot -- -o translations.pot && git add ./i18n/translations.pot"
   },
+  "pre-commit":[
+    "refresh-translations-template"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dhis2/settings-app.git"
