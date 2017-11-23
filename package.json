@@ -13,7 +13,7 @@
     "postbuild": "cp -r *.png i18n node_modules/babel-polyfill/dist/polyfill.min.js build/ && npm run manifest",
     "manifest": "d2-manifest package.json build/manifest.webapp",
     "deploy": "npm run build && mvn clean deploy",
-    "extract-strings": "node extract-strings.js"
+    "extract-pot": "node pot-extractor.js"
   },
   "repository": {
     "type": "git",
