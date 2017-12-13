@@ -144,9 +144,9 @@ const settingsKeyMapping = {
         label: 'analytics_financial_year_start',
         type: 'dropdown',
         options: {
-            FINANCIAL_PERIOD_APRIL: 'APRIL',
-            FINANCIAL_PERIOD_JULY: 'JULY',
-            FINANCIAL_PERIOD_OCTOBER: 'OCTOBER',
+            FINANCIAL_YEAR_APRIL: 'APRIL',
+            FINANCIAL_YEAR_JULY: 'JULY',
+            FINANCIAL_YEAR_OCTOBER: 'OCTOBER',
         },
     },
     keyCacheability: {
