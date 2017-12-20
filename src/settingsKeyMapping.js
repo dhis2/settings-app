@@ -103,10 +103,10 @@ const settingsKeyMapping = {
         type: 'checkbox',
     },
     recaptchaSecret: {
-        label: 'recaptcha_secret_label'
+        label: 'recaptcha_secret_label',
     },
     recaptchaSite: {
-        label: 'recaptcha_site_label'
+        label: 'recaptcha_site_label',
     },
     /* ============================================================================================================ */
     /* Category: Analytics                                                                                          */
