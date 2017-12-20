@@ -102,6 +102,12 @@ const settingsKeyMapping = {
         label: 'acceptance_required_before_approval',
         type: 'checkbox',
     },
+    recaptchaSecret: {
+        label: 'recaptcha_secret_label'
+    },
+    recaptchaSite: {
+        label: 'recaptcha_site_label'
+    },
     /* ============================================================================================================ */
     /* Category: Analytics                                                                                          */
     /* ============================================================================================================ */
