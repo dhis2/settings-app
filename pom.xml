@@ -40,8 +40,8 @@
   </scm>
   
   <issueManagement>
-	<system>GitHub</system>
-	<url>https://github.com/dhis2/settings-app</url>
+    <system>GitHub</system>
+    <url>https://github.com/dhis2/settings-app</url>
   </issueManagement>
 
   <distributionManagement>
