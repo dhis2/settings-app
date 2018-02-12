@@ -91,12 +91,7 @@ export default React.createClass({
     },
 
     editAction(model) {
-        // Cast model to JSON so properties can be deleted
-        const modelJSON = model.toJSON();
-        // Remove the favorite property, since this doesn't have a setter on the model
-        // ... and it is not needed to display the edit-form and save the model
-        delete modelJSON.favorite;
-        this.clientModel = Object.assign(this.context.d2.models.oAuth2Client.create(), model);
+        this.clientModel = model;
         this.setState({ showForm: true });
     },
 
