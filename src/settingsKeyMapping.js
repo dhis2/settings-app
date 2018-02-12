@@ -561,20 +561,6 @@ const settingsKeyMapping = {
     /* ============================================================================================================ */
     /* Category: oAuth2 clients                                                                                     */
     /* ============================================================================================================ */
-    keySystemMonitoringUrl: {
-        label: 'system_monitoring_url',
-        validators: ['url'],
-    },
-    keySystemMonitoringUsername: {
-        label: 'system_monitoring_username',
-    },
-    keySystemMonitoringPassword: {
-        label: 'system_monitoring_password',
-        type: 'password',
-    },
-    /* ============================================================================================================ */
-    /* Category: oAuth2 clients                                                                                     */
-    /* ============================================================================================================ */
     oauth2clients: {
         type: 'oauth2clients',
         searchLabels: [
