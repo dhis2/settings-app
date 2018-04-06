@@ -291,6 +291,7 @@ const settingsKeyMapping = {
     keyStyle: {
         label: 'style',
         type: 'dropdown',
+        includeEmpty: false,
         userSettingsOverride: true,
         searchLabels: ['style', 'can_be_overridden_by_user_settings'],
         source: 'styles',
