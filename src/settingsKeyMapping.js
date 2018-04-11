@@ -102,6 +102,12 @@ const settingsKeyMapping = {
         label: 'Acceptance required before approval',
         type: 'checkbox',
     },
+    recaptchaSecret: {
+        label: 'recaptcha_secret_label',
+    },
+    recaptchaSite: {
+        label: 'recaptcha_site_label',
+    },
     /* ============================================================================================================ */
     /* Category: Analytics                                                                                          */
     /* ============================================================================================================ */
@@ -144,9 +150,9 @@ const settingsKeyMapping = {
         label: 'analytics_financial_year_start',
         type: 'dropdown',
         options: {
-            FINANCIAL_PERIOD_APRIL: 'APRIL',
-            FINANCIAL_PERIOD_JULY: 'JULY',
-            FINANCIAL_PERIOD_OCTOBER: 'OCTOBER',
+            FINANCIAL_YEAR_APRIL: 'APRIL',
+            FINANCIAL_YEAR_JULY: 'JULY',
+            FINANCIAL_YEAR_OCTOBER: 'OCTOBER',
         },
     },
     keyCacheability: {
@@ -285,6 +291,7 @@ const settingsKeyMapping = {
     keyStyle: {
         label: 'Style',
         type: 'dropdown',
+        includeEmpty: false,
         userSettingsOverride: true,
         searchLabels: ['Style', 'This setting can be overridden by user settings'],
         source: 'styles',
@@ -578,7 +585,7 @@ const settingsKeyMapping = {
             'Authorization code',
         ],
     },
-
+  
     /* ============================================================================================================ */
     // The following keys are present in the demo database but are not managed by dhis-web-maintenance-settings
     //

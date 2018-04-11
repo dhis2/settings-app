@@ -119,6 +119,8 @@ export const categories = {
             'corsWhitelist',
             'keyMapzenSearchApiKey',
             'keyGoogleMapsApiKey',
+            'recaptchaSite',
+            'recaptchaSecret',
         ],
     },
     calendar: {

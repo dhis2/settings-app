@@ -92,7 +92,7 @@ export default React.createClass({
     },
 
     editAction(model) {
-        this.clientModel = Object.assign(this.context.d2.models.oAuth2Client.create(), model);
+        this.clientModel = model;
         this.setState({ showForm: true });
     },
 
