@@ -291,6 +291,7 @@ const settingsKeyMapping = {
     keyStyle: {
         label: 'style',
         type: 'dropdown',
+        includeEmpty: false,
         userSettingsOverride: true,
         searchLabels: ['style', 'can_be_overridden_by_user_settings'],
         source: 'styles',
@@ -557,20 +558,6 @@ const settingsKeyMapping = {
     keyDataImportRequireAttributeOptionCombo: {
         label: 'require_attribute_option_combo_to_be_specified',
         type: 'checkbox',
-    },
-    /* ============================================================================================================ */
-    /* Category: oAuth2 clients                                                                                     */
-    /* ============================================================================================================ */
-    keySystemMonitoringUrl: {
-        label: 'system_monitoring_url',
-        validators: ['url'],
-    },
-    keySystemMonitoringUsername: {
-        label: 'system_monitoring_username',
-    },
-    keySystemMonitoringPassword: {
-        label: 'system_monitoring_password',
-        type: 'password',
     },
     /* ============================================================================================================ */
     /* Category: oAuth2 clients                                                                                     */

@@ -156,16 +156,6 @@ export const categories = {
             'keyMetadataDataVersioning',
         ],
     },
-    monitoring: {
-        label: 'system_monitoring',
-        icon: 'dns',
-        pageLabel: 'system_monitoring_settings',
-        settings: [
-            'keySystemMonitoringUrl',
-            'keySystemMonitoringUsername',
-            'keySystemMonitoringPassword',
-        ],
-    },
     oauth2: {
         label: 'oauth2_clients',
         icon: 'vpn_lock',
