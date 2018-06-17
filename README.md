@@ -1,6 +1,7 @@
 # DHIS2 Settings App
 
 [![Build Status](https://travis-ci.org/dhis2/settings-app.svg?branch=master)](https://travis-ci.org/dhis2/settings-app)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdhis2%2Fsettings-app.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdhis2%2Fsettings-app?ref=badge_shield)
 
 ### Pre-requisites
 Since the app uses webpack as a build tool you will need to install this first.
@@ -31,3 +32,7 @@ To build a production version of the application run the following command.
 ```sh
 npm run build
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdhis2%2Fsettings-app.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdhis2%2Fsettings-app?ref=badge_large)
