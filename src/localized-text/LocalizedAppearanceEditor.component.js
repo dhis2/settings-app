@@ -91,7 +91,7 @@ class LocalizedTextEditor extends React.Component {
                         floatingLabelText={this.getTranslation('select_language')}
                         onChange={this.handleChange}
                     />
-                    <FormBuilder fields={fields} onUpdateField={this.saveSettingsKey} />
+                    { this.state.locale && <FormBuilder fields={fields} onUpdateField={this.saveSettingsKey} /> }
                 </div>
             </div>
         );
