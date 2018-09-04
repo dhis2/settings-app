@@ -137,6 +137,7 @@ export const categories = {
         pageLabel: 'import_settings',
         settings: [
             'keyDataImportStrictPeriods',
+            'keyDataImportStrictDataElements',
             'keyDataImportStrictCategoryOptionCombos',
             'keyDataImportStrictOrganisationUnits',
             'keyDataImportStrictAttributeOptionCombos',
