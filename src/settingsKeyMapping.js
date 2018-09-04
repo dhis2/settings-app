@@ -473,7 +473,6 @@ const settingsKeyMapping = {
         hintText: 'one_url_per_line',
         validators: ['url_array'],
     },
-    keyMapzenSearchApiKey: { label: 'mapzen_search_api_key' },
     keyGoogleMapsApiKey: { label: 'google_maps_api_key' },
     /* ============================================================================================================ */
     /* Category: Calendar                                                                                           */
