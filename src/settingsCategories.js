@@ -117,7 +117,6 @@ export const categories = {
             'keyOpenIdProvider',
             'keyOpenIdProviderLabel',
             'corsWhitelist',
-            'keyMapzenSearchApiKey',
             'keyGoogleMapsApiKey',
             'recaptchaSite',
             'recaptchaSecret',
