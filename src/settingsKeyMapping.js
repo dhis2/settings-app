@@ -538,6 +538,10 @@ const settingsKeyMapping = {
         label: 'require_periods_to_match_period_type',
         type: 'checkbox',
     },
+    keyDataImportStrictDataElements: {
+        label: 'require_data_elements_to_be_part_of_data_set',
+        type: 'checkbox',
+    },
     keyDataImportStrictCategoryOptionCombos: {
         label: 'require_category_option_combos_to_match',
         type: 'checkbox',
