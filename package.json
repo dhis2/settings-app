@@ -11,8 +11,7 @@
     "prebuild": "rm -rf build && npm run validate && npm run lint-all",
     "build": "webpack",
     "postbuild": "cp -r ./package.json *.png i18n node_modules/babel-polyfill/dist/polyfill.min.js build/ && npm run manifest",
-    "manifest": "d2-manifest package.json build/manifest.webapp",
-    "deploy": "deploy-build"
+    "manifest": "d2-manifest package.json build/manifest.webapp"
   },
   "repository": {
     "type": "git",
@@ -31,7 +30,6 @@
   "homepage": "https://github.com/dhis2/settings-app#readme",
   "dependencies": {},
   "devDependencies": {
-    "@dhis2/deploy-build": "^1.0.4",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.2",
