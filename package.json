@@ -10,9 +10,8 @@
     "start": "d2-manifest package.json manifest.webapp && webpack-dev-server",
     "prebuild": "rm -rf build && npm run validate && npm run lint-all",
     "build": "webpack",
-    "postbuild": "cp -r *.png i18n node_modules/babel-polyfill/dist/polyfill.min.js build/ && npm run manifest",
-    "manifest": "d2-manifest package.json build/manifest.webapp",
-    "deploy": "npm run build && mvn clean deploy"
+    "postbuild": "cp -r ./package.json *.png i18n node_modules/babel-polyfill/dist/polyfill.min.js build/ && npm run manifest",
+    "manifest": "d2-manifest package.json build/manifest.webapp"
   },
   "repository": {
     "type": "git",
@@ -61,8 +60,7 @@
     "rxjs": "^5.5.0",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
-    "susy": "^2.2.12",
-    "webpack": "^2.5.1",
+    "susy": "^2.2.12", "webpack": "^2.5.1",
     "webpack-dev-server": "^2.7.1"
   },
   "pre-commit": [
