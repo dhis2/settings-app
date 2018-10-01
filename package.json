@@ -73,6 +73,9 @@
     "icons": {
       "48": "icon.png"
     },
+    "dhis2": {
+      "apiVersion": "30"
+    },
     "activities": {
       "dhis": {
         "href": ".."
