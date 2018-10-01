@@ -58,7 +58,6 @@ const webpackConfig = {
     resolve: {
         alias: {
             react: path.resolve('./node_modules/react'),
-            'material-ui': path.resolve('./node_modules/material-ui'),
         },
     },
     externals: [
