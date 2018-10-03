@@ -6,10 +6,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Snackbar from 'material-ui/Snackbar';
 
 // D2 UI
-import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
-import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
-import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
+import HeaderBar from '@dhis2/d2-ui-header-bar';
 
 // App
 import SettingsFields from './settingsFields.component';
@@ -19,8 +17,6 @@ import settingsActions from './settingsActions';
 import { categoryOrder, categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
 
-
-const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
 class AppComponent extends React.Component {
     constructor(props, context) {
@@ -145,7 +141,7 @@ class AppComponent extends React.Component {
         return (
             <MuiThemeProvider muiTheme={appTheme}>
                 <div className="app">
-                    <HeaderBar />
+                    <HeaderBar d2={this.props.d2} />
                     <Snackbar
                         message={this.state.snackbarMessage || ''}
                         autoHideDuration={1250}

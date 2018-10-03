@@ -16,5 +16,6 @@ manifest.webapp
 
 *.zip
 npm-debug.log
+yarn-error.log
 *.pot
 *.po
