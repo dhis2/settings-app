@@ -6,10 +6,10 @@ cache:
   directories:
   - node_modules
 before_script:
-- yarn install --global @dhis2/deploy-build
-- yarn rebuild node-sass
+- npm install --global @dhis2/deploy-build
+- npm rebuild node-sass
 script:
-- yarn run build
+- npm run build
 deploy:
 - provider: script
   script: deploy-build
