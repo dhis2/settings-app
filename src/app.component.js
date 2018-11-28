@@ -147,7 +147,6 @@ class AppComponent extends React.Component {
                         autoHideDuration={1250}
                         open={this.state.showSnackbar}
                         onRequestClose={this.closeSnackbar}
-                        style={{ left: 24, right: 'inherit' }}
                     />
                     <Sidebar
                         sections={sections}
