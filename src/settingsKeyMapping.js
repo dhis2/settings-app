@@ -25,6 +25,16 @@ const settingsKeyMapping = {
             0: 'unlimited',
         },
     },
+    keySqlViewMaxLimit: {
+        label: 'sql_view_max_limit',
+        type: 'dropdown',
+        options: {
+            '-1': 'sql_view_max_limit_unlimited',
+            50000: 'sql_view_max_limit_50000',
+            100000: 'sql_view_max_limit_100000',
+            200000: 'sql_view_max_limit_200000',
+        },
+    },
     infrastructuralIndicators: {
         label: 'infrastructural_indicators',
         configuration: true,
