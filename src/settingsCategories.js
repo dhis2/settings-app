@@ -19,6 +19,7 @@ export const categories = {
         pageLabel: 'general_settings',
         settings: [
             'keyAnalyticsMaxLimit',
+            'keySqlViewMaxLimit',
             'infrastructuralIndicators',
             'infrastructuralDataElements',
             'infrastructuralPeriodType',
