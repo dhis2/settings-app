@@ -104,8 +104,10 @@ const settingsKeyMapping = {
     },
     recaptchaSecret: {
         label: 'recaptcha_secret_label',
+        type: 'password',
     },
     recaptchaSite: {
+        type: 'password',
         label: 'recaptcha_site_label',
     },
     /* ============================================================================================================ */
@@ -473,7 +475,10 @@ const settingsKeyMapping = {
         hintText: 'one_url_per_line',
         validators: ['url_array'],
     },
-    keyGoogleMapsApiKey: { label: 'google_maps_api_key' },
+    keyGoogleMapsApiKey: {
+        label: 'google_maps_api_key',
+        type: 'password',
+    },
     /* ============================================================================================================ */
     /* Category: Calendar                                                                                           */
     /* ============================================================================================================ */
