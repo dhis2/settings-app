@@ -58,12 +58,11 @@ const webpackConfig = {
     resolve: {
         alias: {
             react: path.resolve('./node_modules/react'),
+            reactDOM: path.resolve('./node_modules/react-dom'),
         },
     },
     externals: [
         {
-            'react': 'var React',
-            'react-dom': 'var ReactDOM',
             'react-addons-transition-group': 'var React.addons.TransitionGroup',
             'react-addons-create-fragment': 'var React.addons.createFragment',
             'react-addons-update': 'var React.addons.update',
@@ -73,7 +72,6 @@ const webpackConfig = {
             'lodash': 'var _',
         },
         /^react-addons/,
-        /^react-dom$/,
         /^rx$/,
 
     ],
@@ -82,7 +80,6 @@ const webpackConfig = {
             template: 'index.html',
             vendorScripts: [
                 "polyfill.min.js",
-                `${scriptPrefix}/dhis-web-core-resource/react-15/react-15${isDevBuild ? '' : '.min'}.js`,
                 `${scriptPrefix}/dhis-web-core-resource/rxjs/4.1.0/rx.all${isDevBuild ? '' : '.min'}.js`,
                 `${scriptPrefix}/dhis-web-core-resource/lodash/4.15.0/lodash${isDevBuild ? '' : '.min'}.js`,
             ]

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButtonGroup, RadioButton } from 'material-ui/RadioButton';
@@ -342,7 +343,7 @@ class metadataSettings extends React.Component {
     }
 }
 metadataSettings.contextTypes = {
-    d2: React.PropTypes.object.isRequired,
+    d2: PropTypes.object.isRequired,
 };
 
 export default metadataSettings;

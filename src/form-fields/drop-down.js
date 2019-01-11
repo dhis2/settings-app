@@ -1,41 +1,38 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-
+import applyMuiThemeContext from '../mui-theme.HOC.js'
 import MuiThemeMixin from '../mui-theme.mixin';
 
-export default React.createClass({
-    propTypes: {
-        defaultValue: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.number,
-            React.PropTypes.bool,
-        ]),
-        value: React.PropTypes.string.isRequired,
-        onFocus: React.PropTypes.func,
-        onBlur: React.PropTypes.func,
-        onChange: React.PropTypes.func,
-        menuItems: React.PropTypes.oneOfType([
-            React.PropTypes.array,
-            React.PropTypes.object,
-        ]),
-        includeEmpty: React.PropTypes.bool,
-        emptyLabel: React.PropTypes.string,
-        noOptionsLabel: React.PropTypes.string,
-    },
+class DropDown extends React.Component {
+    static defaultProps = {
+        includeEmpty: false,
+        emptyLabel: '',
+    };
 
-    mixins: [MuiThemeMixin],
-
-    getDefaultProps() {
-        return {
-            includeEmpty: false,
-            emptyLabel: '',
-        };
-    },
+    static propTypes = {
+        defaultValue: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+            PropTypes.bool,
+        ]),
+        value: PropTypes.string.isRequired,
+        onFocus: PropTypes.func,
+        onBlur: PropTypes.func,
+        onChange: PropTypes.func,
+        menuItems: PropTypes.oneOfType([
+            PropTypes.array,
+            PropTypes.object,
+        ]),
+        includeEmpty: PropTypes.bool,
+        emptyLabel: PropTypes.string,
+        noOptionsLabel: PropTypes.string,
+    }
 
     handleChange(event, index, value) {
         this.props.onChange({ target: { value } });
-    },
+    }
 
     renderMenuItems(menuItems) {
         if (this.props.includeEmpty) {
@@ -43,7 +40,7 @@ export default React.createClass({
         }
 
         return menuItems.map(item => (<MenuItem key={item.id} value={item.id} primaryText={item.displayName} />));
-    },
+    }
 
     renderEmptyItem() {
         if (this.props.includeEmpty) {
@@ -51,7 +48,7 @@ export default React.createClass({
         }
 
         return null;
-    },
+    }
 
     render() {
         const {
@@ -74,5 +71,11 @@ export default React.createClass({
                 }
             </SelectField>
         );
-    },
-});
+    }
+}
+
+const DropDownWithMuiTheme = applyMuiThemeContext(
+  DropDown,
+);
+
+export default DropDownWithMuiTheme;

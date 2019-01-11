@@ -1,37 +1,34 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import log from 'loglevel';
 
 import LinearProgress from 'material-ui/LinearProgress';
 import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
 
-import Translate from 'd2-ui/lib/i18n/Translate.mixin';
+import applyTranslateContext from '../Translate.HOC';
 
 import Checkbox from 'material-ui/Checkbox';
 import AppTheme from '../theme';
 
-export default React.createClass({
-    propTypes: {
-        name: React.PropTypes.oneOf(['logo_front', 'logo_banner']).isRequired,
-        label: React.PropTypes.string.isRequired,
-        value: React.PropTypes.bool.isRequired,
-        isEnabled: React.PropTypes.bool.isRequired,
+class FileUpload extends React.Component {
+    static propTypes = {
+        name: PropTypes.oneOf(['logo_front', 'logo_banner']).isRequired,
+        label: PropTypes.string.isRequired,
+        value: PropTypes.bool.isRequired,
+        isEnabled: PropTypes.bool.isRequired,
 
-        onFocus: React.PropTypes.func,
-        onBlur: React.PropTypes.func,
-        onChange: React.PropTypes.func,
-    },
+        onFocus: PropTypes.func,
+        onBlur: PropTypes.func,
+        onChange: PropTypes.func,
+    }
 
-    mixins: [Translate],
-
-    getInitialState() {
-        return {
-            isEnabled: this.props.isEnabled,
-            uploading: false,
-            progress: undefined,
-            showDialog: false,
-        };
-    },
+    state = {
+        isEnabled: this.props.isEnabled,
+        uploading: false,
+        progress: undefined,
+        showDialog: false,
+    }
 
     onClick(e) {
         if (this.fileInput && !this.state.uploading) {
@@ -41,15 +38,15 @@ export default React.createClass({
             this.setState({ uploading: false, progress: undefined });
             log.info('File upload cancelled');
         }
-    },
+    }
 
     onPreviewClick() {
         this.setState(state => ({ showDialog: !state.showDialog }));
-    },
+    }
 
     onToggle(e) {
         this.props.onChange({ target: { value: e.target.checked } });
-    },
+    }
 
     onUpload(e) {
         if (e.target.files.length === 0) {
@@ -92,7 +89,7 @@ export default React.createClass({
                 isEnabled: false,
             });
         });
-    },
+    }
 
     renderUploading() {
         const progressStyle = {
@@ -113,7 +110,7 @@ export default React.createClass({
                 </div>
             </div>
         );
-    },
+    }
 
     renderUpload() {
         const bodyStyle = {
@@ -151,7 +148,7 @@ export default React.createClass({
         return (
             <FlatButton label={this.getTranslation('upload_image')} primary onClick={this.onClick} />
         );
-    },
+    }
 
     render() {
         const { onFocus, onBlur, onChange, ...other } = this.props; // eslint-disable-line
@@ -200,5 +197,11 @@ export default React.createClass({
                 </div>
             </div>
         );
-    },
-});
+    }
+}
+
+const FileUploadWithTranslation = applyTranslateContext(
+    FileUpload,
+);
+
+export default FileUploadWithTranslation;

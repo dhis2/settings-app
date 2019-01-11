@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 
@@ -98,7 +99,7 @@ class LocalizedTextEditor extends React.Component {
     }
 }
 LocalizedTextEditor.contextTypes = {
-    d2: React.PropTypes.object.isRequired,
+    d2: PropTypes.object.isRequired,
 };
 
 export default LocalizedTextEditor;

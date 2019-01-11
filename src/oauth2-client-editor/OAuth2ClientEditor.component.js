@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import log from 'loglevel';
 
 // Material UI
@@ -12,8 +13,8 @@ import Dialog from 'material-ui/Dialog';
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
-import Translate from 'd2-ui/lib/i18n/Translate.mixin';
 import { isUrlArray, isRequired } from 'd2-ui/lib/forms/Validators';
+import applyTranslateContext from '../Translate.HOC';
 
 import TextField from '../form-fields/text-field';
 import MultiToggle from '../form-fields/multi-toggle';
@@ -38,22 +39,15 @@ function generateSecret() {
 }
 /* eslint-enable complexity */
 
+class OAuth2ClientEditor extends React.Component {
+    static propTypes = {
+        transitionUnmount: PropTypes.bool,
+    }
 
-// TODO: Rewrite as ES6 class
-/* eslint-disable react/prefer-es6-class */
-export default React.createClass({
-    propTypes: {
-        transitionUnmount: React.PropTypes.bool,
-    },
-
-    mixins: [Translate],
-
-    getInitialState() {
-        return {
-            componentDidMount: false,
-            showForm: false,
-        };
-    },
+    state = {
+        componentDidMount: false,
+        showForm: false,
+    }
 
     componentDidMount() {
         this.subscriptions = [];
@@ -70,36 +64,36 @@ export default React.createClass({
         }, 0);
 
         oa2Actions.load();
-    },
+    }
 
     componentWillUnmount() {
         this.subscriptions.forEach((sub) => {
             sub.unsubscribe();
         });
-    },
+    }
 
     cancelAction() {
         this.clientModel = undefined;
         oa2Actions.load();
         this.setState({ showForm: false });
-    },
+    }
 
     newAction() {
         this.clientModel = this.context.d2.models.oAuth2Client.create();
         this.clientModel.secret = generateSecret();
         this.setState({ showForm: true });
-    },
+    }
 
     editAction(model) {
         this.clientModel = model;
         this.setState({ showForm: true });
-    },
+    }
 
     deleteAction(model) {
         this.setState({ showForm: false, saving: true });
         oa2Actions.delete(model.id ? model : this.clientModel);
         this.clientModel = undefined;
-    },
+    }
 
     saveAction() {
         this.clientModel.name = this.clientModel.name || '';
@@ -124,7 +118,7 @@ export default React.createClass({
                     : error.message || error;
                 log.warn(`Error when saving OAuth2 client: ${message}`);
             });
-    },
+    }
 
     formUpdateAction(field, v) {
         let value = v;
@@ -133,7 +127,7 @@ export default React.createClass({
         }
         this.clientModel[field] = value;
         this.forceUpdate();
-    },
+    }
 
     renderForm() {
         const d2 = this.context.d2;
@@ -294,7 +288,7 @@ export default React.createClass({
                 </div>
             </Dialog>
         );
-    },
+    }
 
     renderList() {
         const styles = {
@@ -324,7 +318,7 @@ export default React.createClass({
                 primaryAction={this.editAction}
             />
         );
-    },
+    }
 
     /* eslint-disable complexity */
     render() {
@@ -372,5 +366,12 @@ export default React.createClass({
                 {saving}{body}{form}
             </div>
         );
-    },
-});
+    }
+}
+
+
+const OAuth2ClientEditorWithTranslation = applyTranslateContext(
+  OAuth2ClientEditor,
+);
+
+export default OAuth2ClientEditorWithTranslation;
