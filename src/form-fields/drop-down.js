@@ -33,8 +33,6 @@ class DropDown extends React.Component {
         super(props);
 
         this.handleChange = this.handleChange.bind(this);
-        this.renderEmptyItem = this.renderEmptyItem.bind(this);
-        this.renderMenuItems = this.renderMenuItems.bind(this);
     }
 
     handleChange(event, index, value) {
@@ -47,14 +45,6 @@ class DropDown extends React.Component {
         }
 
         return menuItems.map(item => (<MenuItem key={item.id} value={item.id} primaryText={item.displayName} />));
-    }
-
-    renderEmptyItem() {
-        if (this.props.includeEmpty) {
-            return <MenuItem value="null" primaryText={this.props.emptyLabel} />;
-        }
-
-        return null;
     }
 
     render() {
