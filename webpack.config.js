@@ -78,7 +78,6 @@ const webpackConfig = {
         new HTMLWebpackPlugin({
             template: 'index.html',
             vendorScripts: [
-                "polyfill.min.js",
                 `${scriptPrefix}/dhis-web-core-resource/rxjs/4.1.0/rx.all${isDevBuild ? '' : '.min'}.js`,
             ]
                 .map(script => {
@@ -95,7 +94,6 @@ const webpackConfig = {
         inline: true,
         compress: true,
         proxy: [
-            { path: '/polyfill.min.js', target: 'http://localhost:8081/node_modules/babel-polyfill/dist', bypass: log },
             { path: '/api/*', target: dhisConfig.baseUrl, bypass: log },
             { path: '/dhis-web-commons/**', target: dhisConfig.baseUrl, bypass: log },
             { path: '/icons/*', target: dhisConfig.baseUrl, bypass: log },

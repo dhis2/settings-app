@@ -1,3 +1,5 @@
+import 'babel-polyfill/dist/polyfill.min';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import log from 'loglevel';
