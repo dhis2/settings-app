@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import applyMuiThemeContext from '../mui-theme.HOC.js'
-import MuiThemeMixin from '../mui-theme.mixin';
 
 class DropDown extends React.Component {
     static defaultProps = {

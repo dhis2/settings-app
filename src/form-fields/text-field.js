@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TextField from 'material-ui/TextField';
 import applyMuiThemeContext from '../mui-theme.HOC.js'
-import MuiThemeMixin from '../mui-theme.mixin';
 
 class TextFieldComponent extends React.Component {
     static propTypes = {
