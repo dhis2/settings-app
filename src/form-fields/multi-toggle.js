@@ -25,6 +25,12 @@ class MultiToggle extends React.Component {
         }, []),
     }
 
+    constructor(props) {
+        super(props);
+
+        this.onToggle = this.onToggle.bind(this);
+    }
+
     onToggle(value, event, checked) {
         this.setState((oldState) => {
             if (checked) {

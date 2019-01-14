@@ -12,6 +12,12 @@ class TextFieldComponent extends React.Component {
     state = {
         value: this.props.value,
     }
+
+    constructor(props) {
+        super(props);
+
+        this.onChange = this.onChange.bind(this);
+    }
   
     componentWillReceiveProps(props) {
         this.setState({ value: props.value });

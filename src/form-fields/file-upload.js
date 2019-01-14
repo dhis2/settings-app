@@ -30,6 +30,15 @@ class FileUpload extends React.Component {
         showDialog: false,
     }
 
+  constructor(props) {
+      super(props);
+
+      this.onClick = this.onClick.bind(this);
+      this.onPreviewClick = this.onPreviewClick.bind(this);
+      this.onToggle = this.onToggle.bind(this);
+      this.onUpload = this.onUpload.bind(this);
+  }
+
     onClick(e) {
         if (this.fileInput && !this.state.uploading) {
             this.fileInput.click(e);

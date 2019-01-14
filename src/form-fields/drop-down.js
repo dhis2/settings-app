@@ -29,6 +29,14 @@ class DropDown extends React.Component {
         noOptionsLabel: PropTypes.string,
     }
 
+    constructor(props) {
+        super(props);
+
+        this.handleChange = this.handleChange.bind(this);
+        this.renderEmptyItem = this.renderEmptyItem.bind(this);
+        this.renderMenuItems = this.renderMenuItems.bind(this);
+    }
+
     handleChange(event, index, value) {
         this.props.onChange({ target: { value } });
     }

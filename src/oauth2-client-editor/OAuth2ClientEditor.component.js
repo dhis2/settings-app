@@ -49,6 +49,16 @@ class OAuth2ClientEditor extends React.Component {
         showForm: false,
     }
 
+    constructor(props) {
+        super(props);
+
+        this.formUpdateAction = this.formUpdateAction.bind(this);
+        this.saveAction = this.saveAction.bind(this);
+        this.deleteAction = this.deleteAction.bind(this);
+        this.cancelAction = this.cancelAction.bind(this);
+        this.newAction = this.newAction.bind(this);
+    }
+
     componentDidMount() {
         this.subscriptions = [];
         this.subscriptions.push(oa2ClientStore.subscribe(() => {
