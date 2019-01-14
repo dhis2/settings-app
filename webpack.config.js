@@ -69,7 +69,6 @@ const webpackConfig = {
             'react-addons-pure-render-mixin': 'var React.addons.PureRenderMixin',
             'react-addons-shallow-compare': 'var React.addons.ShallowCompare',
             'rx': 'var Rx',
-            'lodash': 'var _',
         },
         /^react-addons/,
         /^rx$/,
@@ -81,7 +80,6 @@ const webpackConfig = {
             vendorScripts: [
                 "polyfill.min.js",
                 `${scriptPrefix}/dhis-web-core-resource/rxjs/4.1.0/rx.all${isDevBuild ? '' : '.min'}.js`,
-                `${scriptPrefix}/dhis-web-core-resource/lodash/4.15.0/lodash${isDevBuild ? '' : '.min'}.js`,
             ]
                 .map(script => {
                     if (Array.isArray(script)) {
