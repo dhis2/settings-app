@@ -71,15 +71,11 @@ const webpackConfig = {
             'rx': 'var Rx',
         },
         /^react-addons/,
-        /^rx$/,
-
     ],
     plugins: [
         new HTMLWebpackPlugin({
             template: 'index.html',
-            vendorScripts: [
-                `${scriptPrefix}/dhis-web-core-resource/rxjs/4.1.0/rx.all${isDevBuild ? '' : '.min'}.js`,
-            ]
+            vendorScripts: []
                 .map(script => {
                     if (Array.isArray(script)) {
                         return (`<script ${script[1]} src="${script[0]}"></script>`);
