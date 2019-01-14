@@ -55,22 +55,7 @@ const webpackConfig = {
             },
         ],
     },
-    resolve: {
-        alias: {
-            react: path.resolve('./node_modules/react'),
-            reactDOM: path.resolve('./node_modules/react-dom'),
-        },
-    },
-    externals: [
-        {
-            'react-addons-transition-group': 'var React.addons.TransitionGroup',
-            'react-addons-create-fragment': 'var React.addons.createFragment',
-            'react-addons-update': 'var React.addons.update',
-            'react-addons-pure-render-mixin': 'var React.addons.PureRenderMixin',
-            'react-addons-shallow-compare': 'var React.addons.ShallowCompare',
-        },
-        /^react-addons/,
-    ],
+    externals: [],
     plugins: [
         new HTMLWebpackPlugin({ template: 'index.html' }),
     ],
