@@ -72,17 +72,7 @@ const webpackConfig = {
         /^react-addons/,
     ],
     plugins: [
-        new HTMLWebpackPlugin({
-            template: 'index.html',
-            vendorScripts: []
-                .map(script => {
-                    if (Array.isArray(script)) {
-                        return (`<script ${script[1]} src="${script[0]}"></script>`);
-                    }
-                    return (`<script src="${script}"></script>`);
-                })
-                .join("\n"),
-        })
+        new HTMLWebpackPlugin({ template: 'index.html' }),
     ],
     devServer: {
         port: 8081,
