@@ -1,6 +1,7 @@
 {
   "extends": "airbnb",
   "env": { "browser": true },
+  "parser": "babel-eslint",
   "rules": {
     "indent": [2, 4],
     "max-len": [

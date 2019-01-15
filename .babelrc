@@ -1,12 +1,15 @@
 {
-  "presets": [
-    [
-      "es2015",
-      {
-        "modules": false
-      }
+    "presets": [
+        "@babel/react",
+        [
+            "@babel/preset-env",
+            {
+                "modules": false
+            }
+        ]
     ],
-    "react",
-    "stage-0"
-  ]
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-transform-runtime"
+    ]
 }

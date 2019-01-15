@@ -1,4 +1,4 @@
-import 'babel-polyfill/dist/polyfill.min';
+import '@babel/polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -73,7 +73,6 @@ ReactDOM.render(
     <MuiThemeProvider muiTheme={appTheme}><LoadingMask /></MuiThemeProvider>,
     document.getElementById('app'),
 );
-
 
 getManifest('manifest.webapp')
     .then((manifest) => {
