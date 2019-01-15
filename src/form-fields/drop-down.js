@@ -2,14 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import applyMuiThemeContext from '../mui-theme.HOC.js'
 
 class DropDown extends React.Component {
-    static defaultProps = {
-        includeEmpty: false,
-        emptyLabel: '',
-    };
-
     static propTypes = {
         defaultValue: PropTypes.oneOfType([
             PropTypes.string,
@@ -17,9 +11,6 @@ class DropDown extends React.Component {
             PropTypes.bool,
         ]),
         value: PropTypes.string.isRequired,
-        onFocus: PropTypes.func,
-        onBlur: PropTypes.func,
-        onChange: PropTypes.func,
         menuItems: PropTypes.oneOfType([
             PropTypes.array,
             PropTypes.object,
@@ -27,7 +18,24 @@ class DropDown extends React.Component {
         includeEmpty: PropTypes.bool,
         emptyLabel: PropTypes.string,
         noOptionsLabel: PropTypes.string,
+
+        onFocus: PropTypes.func,
+        onBlur: PropTypes.func,
+        onChange: PropTypes.func,
     }
+
+    static defaultProps = {
+        defaultValue: '',
+        includeEmpty: false,
+        emptyLabel: '',
+        menuItems: [],
+        noOptionsLabel: '',
+
+        onFocus: undefined,
+        onBlur: undefined,
+        onChange: undefined,
+
+    };
 
     constructor(props) {
         super(props);
@@ -47,6 +55,7 @@ class DropDown extends React.Component {
         return menuItems.map(item => (<MenuItem key={item.id} value={item.id} primaryText={item.displayName} />));
     }
 
+    /* eslint-disable complexity */
     render() {
         const {
             onFocus, onBlur, onChange, value, disabled, menuItems,  // eslint-disable-line
@@ -69,10 +78,7 @@ class DropDown extends React.Component {
             </SelectField>
         );
     }
+    /* eslint-enable */
 }
 
-const DropDownWithMuiTheme = applyMuiThemeContext(
-  DropDown,
-);
-
-export default DropDownWithMuiTheme;
+export default DropDown;

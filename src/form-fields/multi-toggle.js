@@ -16,6 +16,17 @@ class MultiToggle extends React.Component {
         style: PropTypes.object,
     }
 
+    static defaultProps = {
+        items: [],
+        style: {},
+    }
+
+    constructor(props) {
+        super(props);
+
+        this.onToggle = this.onToggle.bind(this);
+    }
+
     state = {
         values: this.props.items.reduce((prev, curr) => {
             if (curr.value) {
@@ -23,12 +34,6 @@ class MultiToggle extends React.Component {
             }
             return prev;
         }, []),
-    }
-
-    constructor(props) {
-        super(props);
-
-        this.onToggle = this.onToggle.bind(this);
     }
 
     onToggle(value, event, checked) {
@@ -60,7 +65,7 @@ class MultiToggle extends React.Component {
                             value="true"
                             defaultChecked={item.value === true}
                             label={item.text}
-                            onCheck={togglor}
+                            onCheck={togglor} // eslint-disable-line react/jsx-no-bind
                             style={style}
                             labelPosition="right"
                         />

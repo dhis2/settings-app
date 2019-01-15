@@ -155,7 +155,7 @@ class AppComponent extends React.Component {
                         currentSection={this.state.category}
                         showSearchField
                         searchFieldLabel={this.props.d2.i18n.getTranslation('search_settings')}
-                        ref={setSidebar}
+                        ref={setSidebar} // eslint-disable-line react/jsx-no-bind
                         onChangeSearchText={this.doSearch}
                         searchText={this.state.searchText}
                     />

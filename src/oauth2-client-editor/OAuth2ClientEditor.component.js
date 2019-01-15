@@ -44,9 +44,8 @@ class OAuth2ClientEditor extends React.Component {
         transitionUnmount: PropTypes.bool,
     }
 
-    state = {
-        componentDidMount: false,
-        showForm: false,
+    static defaultProps = {
+        transitionUnmount: false,
     }
 
     constructor(props) {
@@ -57,6 +56,11 @@ class OAuth2ClientEditor extends React.Component {
         this.deleteAction = this.deleteAction.bind(this);
         this.cancelAction = this.cancelAction.bind(this);
         this.newAction = this.newAction.bind(this);
+    }
+
+    state = {
+        componentDidMount: false,
+        showForm: false,
     }
 
     componentDidMount() {
@@ -119,6 +123,7 @@ class OAuth2ClientEditor extends React.Component {
                 oa2Actions.load();
                 this.setState({ showForm: false, saving: false });
             })
+            /* eslint-disable complexity */
             .catch((error) => {
                 settingsActions.showSnackbarMessage(this.getTranslation('failed_to_save_oauth2_client'));
                 this.setState({ saving: false });
@@ -128,6 +133,7 @@ class OAuth2ClientEditor extends React.Component {
                     : error.message || error;
                 log.warn(`Error when saving OAuth2 client: ${message}`);
             });
+        /* eslint-enable */
     }
 
     formUpdateAction(field, v) {
@@ -139,6 +145,7 @@ class OAuth2ClientEditor extends React.Component {
         this.forceUpdate();
     }
 
+    /* eslint-disable complexity */
     renderForm() {
         const d2 = this.context.d2;
         const formFieldStyle = AppTheme.forms;
@@ -299,6 +306,7 @@ class OAuth2ClientEditor extends React.Component {
             </Dialog>
         );
     }
+    /* eslint-enable */
 
     renderList() {
         const styles = {
@@ -381,7 +389,7 @@ class OAuth2ClientEditor extends React.Component {
 
 
 const OAuth2ClientEditorWithTranslation = applyTranslateContext(
-  OAuth2ClientEditor,
+    OAuth2ClientEditor,
 );
 
 export default OAuth2ClientEditorWithTranslation;

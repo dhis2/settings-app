@@ -60,6 +60,7 @@ class LocalizedTextEditor extends React.Component {
         }
     }
 
+    /* eslint-disable complexity */
     render() {
         const keys = [
             'applicationTitle',
@@ -97,6 +98,7 @@ class LocalizedTextEditor extends React.Component {
             </div>
         );
     }
+    /* eslint-enable */
 }
 LocalizedTextEditor.contextTypes = {
     d2: PropTypes.object.isRequired,

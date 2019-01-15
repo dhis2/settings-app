@@ -5,10 +5,9 @@ import log from 'loglevel';
 import LinearProgress from 'material-ui/LinearProgress';
 import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
+import Checkbox from 'material-ui/Checkbox';
 
 import applyTranslateContext from '../Translate.HOC';
-
-import Checkbox from 'material-ui/Checkbox';
 import AppTheme from '../theme';
 
 class FileUpload extends React.Component {
@@ -23,21 +22,27 @@ class FileUpload extends React.Component {
         onChange: PropTypes.func,
     }
 
+    static defaultProps = {
+        onFocus: undefined,
+        onBlur: undefined,
+        onChange: undefined,
+    }
+
+    constructor(props) {
+        super(props);
+
+        this.onClick = this.onClick.bind(this);
+        this.onPreviewClick = this.onPreviewClick.bind(this);
+        this.onToggle = this.onToggle.bind(this);
+        this.onUpload = this.onUpload.bind(this);
+    }
+
     state = {
         isEnabled: this.props.isEnabled,
         uploading: false,
         progress: undefined,
         showDialog: false,
     }
-
-  constructor(props) {
-      super(props);
-
-      this.onClick = this.onClick.bind(this);
-      this.onPreviewClick = this.onPreviewClick.bind(this);
-      this.onToggle = this.onToggle.bind(this);
-      this.onUpload = this.onUpload.bind(this);
-  }
 
     onClick(e) {
         if (this.fileInput && !this.state.uploading) {
@@ -200,7 +205,7 @@ class FileUpload extends React.Component {
                     <input
                         type="file"
                         style={{ visibility: 'hidden', display: 'none' }}
-                        ref={setRef}
+                        ref={setRef} // eslint-disable-line react/jsx-no-bind
                         onChange={this.onUpload}
                     />
                 </div>
