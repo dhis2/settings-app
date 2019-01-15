@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import createHistory from 'history/createHashHistory';
 
 // Material UI
@@ -154,7 +155,7 @@ class AppComponent extends React.Component {
                         currentSection={this.state.category}
                         showSearchField
                         searchFieldLabel={this.props.d2.i18n.getTranslation('search_settings')}
-                        ref={setSidebar}
+                        ref={setSidebar} // eslint-disable-line react/jsx-no-bind
                         onChangeSearchText={this.doSearch}
                         searchText={this.state.searchText}
                     />
@@ -166,8 +167,8 @@ class AppComponent extends React.Component {
     }
 }
 
-AppComponent.propTypes = { d2: React.PropTypes.object.isRequired };
-AppComponent.contextTypes = { muiTheme: React.PropTypes.object };
-AppComponent.childContextTypes = { d2: React.PropTypes.object, muiTheme: React.PropTypes.object };
+AppComponent.propTypes = { d2: PropTypes.object.isRequired };
+AppComponent.contextTypes = { muiTheme: PropTypes.object };
+AppComponent.childContextTypes = { d2: PropTypes.object, muiTheme: PropTypes.object };
 
 export default AppComponent;

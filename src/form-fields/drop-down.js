@@ -1,41 +1,51 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-import MuiThemeMixin from '../mui-theme.mixin';
-
-export default React.createClass({
-    propTypes: {
-        defaultValue: React.PropTypes.oneOfType([
-            React.PropTypes.string,
-            React.PropTypes.number,
-            React.PropTypes.bool,
+class DropDown extends React.Component {
+    static propTypes = {
+        defaultValue: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+            PropTypes.bool,
         ]),
-        value: React.PropTypes.string.isRequired,
-        onFocus: React.PropTypes.func,
-        onBlur: React.PropTypes.func,
-        onChange: React.PropTypes.func,
-        menuItems: React.PropTypes.oneOfType([
-            React.PropTypes.array,
-            React.PropTypes.object,
+        value: PropTypes.string.isRequired,
+        menuItems: PropTypes.oneOfType([
+            PropTypes.array,
+            PropTypes.object,
         ]),
-        includeEmpty: React.PropTypes.bool,
-        emptyLabel: React.PropTypes.string,
-        noOptionsLabel: React.PropTypes.string,
-    },
+        includeEmpty: PropTypes.bool,
+        emptyLabel: PropTypes.string,
+        noOptionsLabel: PropTypes.string,
 
-    mixins: [MuiThemeMixin],
+        onFocus: PropTypes.func,
+        onBlur: PropTypes.func,
+        onChange: PropTypes.func,
+    }
 
-    getDefaultProps() {
-        return {
-            includeEmpty: false,
-            emptyLabel: '',
-        };
-    },
+    static defaultProps = {
+        defaultValue: '',
+        includeEmpty: false,
+        emptyLabel: '',
+        menuItems: [],
+        noOptionsLabel: '',
+
+        onFocus: undefined,
+        onBlur: undefined,
+        onChange: undefined,
+
+    };
+
+    constructor(props) {
+        super(props);
+
+        this.handleChange = this.handleChange.bind(this);
+    }
 
     handleChange(event, index, value) {
         this.props.onChange({ target: { value } });
-    },
+    }
 
     renderMenuItems(menuItems) {
         if (this.props.includeEmpty) {
@@ -43,16 +53,9 @@ export default React.createClass({
         }
 
         return menuItems.map(item => (<MenuItem key={item.id} value={item.id} primaryText={item.displayName} />));
-    },
+    }
 
-    renderEmptyItem() {
-        if (this.props.includeEmpty) {
-            return <MenuItem value="null" primaryText={this.props.emptyLabel} />;
-        }
-
-        return null;
-    },
-
+    /* eslint-disable complexity */
     render() {
         const {
             onFocus, onBlur, onChange, value, disabled, menuItems,  // eslint-disable-line
@@ -74,5 +77,8 @@ export default React.createClass({
                 }
             </SelectField>
         );
-    },
-});
+    }
+    /* eslint-enable */
+}
+
+export default DropDown;

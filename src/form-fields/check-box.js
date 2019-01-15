@@ -1,17 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Checkbox from 'material-ui/Checkbox';
 
-import MuiThemeMixin from '../mui-theme.mixin';
-
-
-// TODO: Rewrite as ES6 class
-/* eslint-disable react/prefer-es6-class */
-export default React.createClass({
-    propTypes: {
-        onChange: React.PropTypes.func.isRequired,
-    },
-
-    mixins: [MuiThemeMixin],
+/* eslint-disable react/prefer-stateless-function */
+class CheckBox extends React.Component {
+    static propTypes = {
+        onChange: PropTypes.func.isRequired,
+    }
 
     render() {
         const { errorText, errorStyle, ...other } = this.props; // eslint-disable-line
@@ -20,5 +15,8 @@ export default React.createClass({
                 <Checkbox onCheck={this.props.onChange} {...other} />
             </div>
         );
-    },
-});
+    }
+}
+/* eslint-enable */
+
+export default CheckBox;

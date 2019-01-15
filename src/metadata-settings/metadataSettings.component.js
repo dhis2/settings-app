@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import RaisedButton from 'material-ui/RaisedButton';
 import { RadioButtonGroup, RadioButton } from 'material-ui/RadioButton';
@@ -89,6 +90,7 @@ class metadataSettings extends React.Component {
     }
 
     syncSettings() {
+        /* eslint-disable complexity */
         this.d2.Api.getApi().get('/systemSettings')
             .then((result) => {
                 this.setState({
@@ -123,6 +125,7 @@ class metadataSettings extends React.Component {
                 settingsActions.showSnackbarMessage(this.getTranslation('error_fetching_settings'));
                 return Promise.resolve();
             });
+        /* eslint-enable */
     }
 
     syncVersions() {
@@ -305,6 +308,7 @@ class metadataSettings extends React.Component {
     }
     /* eslint-enable complexity */
 
+    /* eslint-disable complexity */
     render() {
         const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
         const checkboxFields = [
@@ -340,9 +344,10 @@ class metadataSettings extends React.Component {
             </div>
         );
     }
+    /* eslint-disable */
 }
 metadataSettings.contextTypes = {
-    d2: React.PropTypes.object.isRequired,
+    d2: PropTypes.object.isRequired,
 };
 
 export default metadataSettings;

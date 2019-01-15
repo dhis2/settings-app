@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import log from 'loglevel';
 
 // Material UI
@@ -317,11 +318,11 @@ class SettingsFields extends React.Component {
 }
 
 SettingsFields.propTypes = {
-    category: React.PropTypes.string.isRequired,
-    currentSettings: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+    category: PropTypes.string.isRequired,
+    currentSettings: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 SettingsFields.contextTypes = {
-    d2: React.PropTypes.object.isRequired,
+    d2: PropTypes.object.isRequired,
 };
 
 
