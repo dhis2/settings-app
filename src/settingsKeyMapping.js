@@ -158,6 +158,22 @@ const settingsKeyMapping = {
             LAST_52_WEEKS: 'LAST_52_WEEKS',
         },
     },
+    keyHideDailyPeriods: {
+        label: 'key_hide_daily_periods',
+        type: 'checkbox',
+    },
+    keyHideWeeklyPeriods: {
+        label: 'key_hide_weekly_periods',
+        type: 'checkbox',
+    },
+    keyHideMonthlyPeriods: {
+        label: 'key_hide_monthly_periods',
+        type: 'checkbox',
+    },
+    keyHideBiMonthlyPeriods: {
+        label: 'key_hide_bi_monthly_periods',
+        type: 'checkbox',
+    },
     analyticsFinancialYearStart: {
         label: 'analytics_financial_year_start',
         type: 'dropdown',

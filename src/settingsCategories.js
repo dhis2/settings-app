@@ -38,6 +38,10 @@ export const categories = {
         pageLabel: 'analytics_settings',
         settings: [
             'keyAnalysisRelativePeriod',
+            'keyHideDailyPeriods',
+            'keyHideWeeklyPeriods',
+            'keyHideMonthlyPeriods',
+            'keyHideBiMonthlyPeriods',
             'analyticsFinancialYearStart',
             'keyCacheability',
             'keyCacheStrategy',
