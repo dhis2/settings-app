@@ -30,9 +30,9 @@
   "homepage": "https://github.com/dhis2/settings-app#readme",
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
-    "@dhis2/d2-ui-header-bar": "^1.1.1",
+    "@dhis2/d2-ui-header-bar": "^5.2.6",
     "classnames": "^2.2.5",
-    "d2": "^30.0.0",
+    "d2": "^31.4.0",
     "d2-manifest": "^1.0.0",
     "d2-ui": "^29.0.5",
     "d2-utilizr": "^0.2.15",
@@ -43,9 +43,9 @@
     "material-ui": "^0.20.0",
     "moment": "^2.18.1",
     "prop-types": "^15.6.2",
-    "react": "16.7.0",
+    "react": "16.8.3",
     "react-dom": "^16.7.0",
-    "rxjs": "^5.5.7"
+    "rxjs": "^6.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -53,20 +53,20 @@
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
-    "@babel/runtime": "7.0.0-beta.55",
-    "babel-eslint": "^7.2.3",
+    "@babel/runtime": "7.3.4",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
-    "css-loader": "^0.28.7",
+    "css-loader": "^2.1.0",
     "eslint-config-dhis2": "^3.0.3",
-    "html-webpack-plugin": "^2.22.0",
-    "node-pre-gyp": "^0.6.37",
-    "node-sass": "4.9.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-pre-gyp": "^0.12.0",
+    "node-sass": "4.11.0",
     "precommit-hook": "^3.0.0",
-    "sass-loader": "^6.0.5",
-    "style-loader": "^0.17.0",
-    "susy": "^2.2.12",
-    "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.7.1"
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "susy": "^3.0.5",
+    "webpack": "^4.29.6",
+    "webpack-dev-server": "^3.2.1"
   },
   "pre-commit": [
     "lint"
