@@ -4,12 +4,15 @@
   "description": "Settings management application for DHIS2",
   "main": "index.html",
   "scripts": {
+    "build": "webpack --mode production",
     "lint": "eslint .",
-    "start": "d2-manifest package.json manifest.webapp && webpack-dev-server",
-    "prebuild": "rm -rf build",
-    "build": "webpack",
+    "manifest": "d2-manifest package.json build/manifest.webapp",
     "postbuild": "cp -r ./package.json *.png i18n build/ && npm run manifest",
-    "manifest": "d2-manifest package.json build/manifest.webapp"
+    "prebuild": "rm -rf build",
+    "start:manifest": "d2-manifest package.json manifest.webapp",
+    "start:dev": "webpack-dev-server --mode development",
+    "start": "npm run start:manifest && npm run start:dev",
+    "validate": "npm ls"
   },
   "repository": {
     "type": "git",
@@ -64,16 +67,13 @@
     "html-webpack-plugin": "^3.2.0",
     "node-pre-gyp": "^0.12.0",
     "node-sass": "4.11.0",
-    "precommit-hook": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "susy": "^3.0.5",
     "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "manifest.webapp": {
     "name": "DHIS 2 System Settings Management",
     "icons": {
