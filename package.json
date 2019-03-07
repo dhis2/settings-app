@@ -20,6 +20,11 @@
     "HISP",
     "Settings"
   ],
+  "greenkeeper": {
+    "ignore": [
+      "d2"
+    ]
+  },
   "author": "Nicolay Ramm <nicolay@dhis2.org> (https://www.dhis2.org)",
   "license": "BSD-3-Clause",
   "bugs": {
@@ -30,7 +35,7 @@
     "@babel/polyfill": "^7.2.5",
     "@dhis2/d2-ui-header-bar": "^5.2.6",
     "classnames": "^2.2.5",
-    "d2": "^31.4.0",
+    "d2": "^30.0.0",
     "d2-manifest": "^1.0.0",
     "d2-ui": "^29.0.5",
     "d2-utilizr": "^0.2.15",
