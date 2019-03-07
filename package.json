@@ -4,14 +4,12 @@
   "description": "Settings management application for DHIS2",
   "main": "index.html",
   "scripts": {
-    "lint": "eslint --fix src/theme.js `git diff --cached --name-only | grep \\.js$`",
-    "lint-all": "eslint --fix src/",
+    "lint": "eslint .",
     "start": "d2-manifest package.json manifest.webapp && webpack-dev-server",
-    "prebuild": "rm -rf build && npm run lint-all",
+    "prebuild": "rm -rf build",
     "build": "webpack",
     "postbuild": "cp -r ./package.json *.png i18n build/ && npm run manifest",
-    "manifest": "d2-manifest package.json build/manifest.webapp",
-    "validate": "npm ls"
+    "manifest": "d2-manifest package.json build/manifest.webapp"
   },
   "repository": {
     "type": "git",
