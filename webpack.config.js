@@ -36,11 +36,10 @@ function bypass(req, res, opt) {
  */
 
 module.exports = {
-    context: path.resolve(__dirname),
     entry: path.resolve(__dirname, 'src', 'settings-app.js'),
     devtool: 'source-map',
     output: {
-        path: path.join(__dirname, 'build'),
+        path: path.resolve(__dirname, 'build'),
         filename: 'settings-app.js',
         publicPath: isProd ? './' : 'http://localhost:8081/',
     },
@@ -63,7 +62,9 @@ module.exports = {
     },
     externals: [],
     plugins: [
-        new HTMLWebpackPlugin({ template: 'index.html' }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'index.html')
+        }),
         new DefinePlugin({
             DHIS_CONFIG: isProd ? JSON.stringify({}) : JSON.stringify(dhisConfig),
         }),
