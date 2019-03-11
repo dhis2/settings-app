@@ -24,7 +24,8 @@
   ],
   "greenkeeper": {
     "ignore": [
-      "d2"
+      "d2",
+      "@dhis2/d2-ui-header-bar"
     ]
   },
   "author": "Nicolay Ramm <nicolay@dhis2.org> (https://www.dhis2.org)",
@@ -35,7 +36,7 @@
   "homepage": "https://github.com/dhis2/settings-app#readme",
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
-    "@dhis2/d2-ui-header-bar": "^5.2.6",
+    "@dhis2/d2-ui-header-bar": "1.1.1",
     "classnames": "^2.2.5",
     "d2": "^30.0.0",
     "d2-manifest": "^1.0.0",
