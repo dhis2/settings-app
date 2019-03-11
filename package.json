@@ -24,9 +24,7 @@
   ],
   "greenkeeper": {
     "ignore": [
-      "d2",
-      "@dhis2/d2-ui-header-bar",
-      "rxjs"
+      "d2"
     ]
   },
   "author": "Nicolay Ramm <nicolay@dhis2.org> (https://www.dhis2.org)",
@@ -37,7 +35,7 @@
   "homepage": "https://github.com/dhis2/settings-app#readme",
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
-    "@dhis2/d2-ui-header-bar": "1.1.1",
+    "@dhis2/d2-ui-header-bar": "^5.2.9",
     "classnames": "^2.2.5",
     "d2": "^30.0.0",
     "d2-manifest": "^1.0.0",
@@ -52,7 +50,7 @@
     "prop-types": "^15.6.2",
     "react": "16.8.3",
     "react-dom": "^16.7.0",
-    "rxjs": "5.5.7"
+    "rxjs": "^6.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
