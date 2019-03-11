@@ -11,8 +11,7 @@
     "prebuild": "rm -rf build",
     "start:manifest": "d2-manifest package.json manifest.webapp",
     "start:dev": "webpack-dev-server --mode development",
-    "start": "npm run start:manifest && npm run start:dev",
-    "validate": "npm ls"
+    "start": "npm run start:manifest && npm run start:dev"
   },
   "repository": {
     "type": "git",
