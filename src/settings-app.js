@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import log from 'loglevel';
 
-import { init, config, getUserSettings, getManifest } from 'd2/lib/d2';
+import { init, config, getUserSettings, getManifest } from 'd2';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 // D2 UI

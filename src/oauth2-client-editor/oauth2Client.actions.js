@@ -1,6 +1,6 @@
 import log from 'loglevel';
 import Action from 'd2-ui/lib/action/Action';
-import { getInstance as getD2 } from 'd2/lib/d2';
+import { getInstance as getD2 } from 'd2';
 
 import settingsActions from '../settingsActions';
 

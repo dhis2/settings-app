@@ -2288,14 +2288,12 @@ d2-utilizr@^0.2.15:
     lodash.isset "^4.3.0"
     lodash.isstring "^4.0.1"
 
-d2@^30.0.0:
-  version "30.1.0"
-  resolved "https://registry.yarnpkg.com/d2/-/d2-30.1.0.tgz#c0f97b433b8539942ca2efbdba7346fe9dd46a04"
-  integrity sha512-Y7zmcwPLes3jAwcLFg4zVxqDj3+YYqblCsdFqiUEEAcZIHtDs2Z0eyijuXC27+da60j0c0gMAjpDqT+YMutzAQ==
+d2@^31.4.0:
+  version "31.6.0"
+  resolved "https://registry.yarnpkg.com/d2/-/d2-31.6.0.tgz#de30c97764db9efd973e67f4c118d23d3c5c8836"
+  integrity sha512-ztT7+n8qRflXnAuwQoT0YyX08E/CtF5LD8kcrMZBMu03jteTsOpsmwWUeqrFsfphPugESOCx/MBP7pkrejXQOA==
   dependencies:
-    docdash "^0.4.0"
-    jsdoc "^3.5.5"
-    whatwg-fetch "^2.0.3"
+    isomorphic-fetch "^2.2.1"
 
 d2@~31.1:
   version "31.1.1"
@@ -4272,7 +4270,7 @@ isobject@^3.0.0, isobject@^3.0.1:
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
 
-isomorphic-fetch@^2.1.1:
+isomorphic-fetch@^2.1.1, isomorphic-fetch@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
   integrity sha1-YRrhrPFPXoH3KVB0coGf6XM1WKk=
