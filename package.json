@@ -24,7 +24,9 @@
   ],
   "greenkeeper": {
     "ignore": [
-      "d2"
+      "@dhis2/d2-ui-header-bar",
+      "d2",
+      "rxjs"
     ]
   },
   "author": "Nicolay Ramm <nicolay@dhis2.org> (https://www.dhis2.org)",
