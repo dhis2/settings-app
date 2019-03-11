@@ -4,14 +4,14 @@
   "description": "Settings management application for DHIS2",
   "main": "index.html",
   "scripts": {
-    "lint": "eslint --fix src/theme.js `git diff --cached --name-only | grep \\.js$`",
-    "lint-all": "eslint --fix src/",
-    "start": "d2-manifest package.json manifest.webapp && webpack-dev-server",
-    "prebuild": "rm -rf build && npm run lint-all",
-    "build": "webpack",
-    "postbuild": "cp -r ./package.json *.png i18n build/ && npm run manifest",
+    "build": "webpack --mode production",
+    "lint": "eslint .",
     "manifest": "d2-manifest package.json build/manifest.webapp",
-    "validate": "npm ls"
+    "postbuild": "cp -r ./package.json *.png i18n build/ && npm run manifest",
+    "prebuild": "rm -rf build",
+    "start:manifest": "d2-manifest package.json manifest.webapp",
+    "start:dev": "webpack-dev-server --mode development",
+    "start": "npm run start:manifest && npm run start:dev"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,13 @@
     "HISP",
     "Settings"
   ],
+  "greenkeeper": {
+    "ignore": [
+      "@dhis2/d2-ui-header-bar",
+      "d2",
+      "rxjs"
+    ]
+  },
   "author": "Nicolay Ramm <nicolay@dhis2.org> (https://www.dhis2.org)",
   "license": "BSD-3-Clause",
   "bugs": {
@@ -43,7 +50,7 @@
     "material-ui": "^0.20.0",
     "moment": "^2.18.1",
     "prop-types": "^15.6.2",
-    "react": "16.7.0",
+    "react": "16.8.3",
     "react-dom": "^16.7.0",
     "rxjs": "^5.5.7"
   },
@@ -53,24 +60,21 @@
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
-    "@babel/runtime": "7.0.0-beta.55",
-    "babel-eslint": "^7.2.3",
+    "@babel/runtime": "7.3.4",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
-    "css-loader": "^0.28.7",
+    "css-loader": "^2.1.0",
     "eslint-config-dhis2": "^3.0.3",
-    "html-webpack-plugin": "^2.22.0",
-    "node-pre-gyp": "^0.6.37",
-    "node-sass": "4.9.0",
-    "precommit-hook": "^3.0.0",
-    "sass-loader": "^6.0.5",
-    "style-loader": "^0.17.0",
-    "susy": "^2.2.12",
-    "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.7.1"
+    "html-webpack-plugin": "^3.2.0",
+    "node-pre-gyp": "^0.12.0",
+    "node-sass": "4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "susy": "^3.0.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "manifest.webapp": {
     "name": "DHIS 2 System Settings Management",
     "icons": {

@@ -1,43 +1,50 @@
-'use strict';
-
-const webpack = require('webpack');
 const path = require('path');
-const colors = require('colors');
+const { DefinePlugin } = require('webpack');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
-const isDevBuild = process.argv[1].indexOf('webpack-dev-server') !== -1;
-const dhisConfigPath = process.env.DHIS2_HOME && `${process.env.DHIS2_HOME}/config`;
-let dhisConfig;
+/**
+ * Load config file before building
+ */
+
+const { NODE_ENV, DHIS2_HOME } = process.env;
+const isProd = NODE_ENV === 'production';
+const dhisConfigPath = DHIS2_HOME && path.join(DHIS2_HOME, 'config');
+let dhisConfig = {
+    baseUrl: 'http://localhost:8080/dhis',
+    authorization: 'Basic YWRtaW46ZGlzdHJpY3Q=', // admin:district
+};
 
 try {
+    // eslint-disable-next-line global-require, import/no-dynamic-require
     dhisConfig = require(dhisConfigPath);
 } catch (e) {
-    // Failed to load config file - use default config
-    console.warn(`\nWARNING! Failed to load DHIS config:`, e.message);
-    dhisConfig = {
-        baseUrl: 'http://localhost:8080/dhis',
-        authorization: 'Basic YWRtaW46ZGlzdHJpY3Q=', // admin:district
-    };
+    // Failed to load config file, stick with default config
+    console.warn('\nWARNING! Failed to load DHIS config:', e.message);
 }
 
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-const scriptPrefix = (isDevBuild ? dhisConfig.baseUrl : '..');
+/**
+ * Modify request for the dev server
+ */
 
-function log(req, res, opt) {
+function bypass(req, res, opt) {
     req.headers.Authorization = dhisConfig.authorization;
-    console.log('[PROXY]'.cyan.bold, req.method.green.bold, req.url.magenta, '=>'.dim, opt.target.dim);
+    console.log('[PROXY]', req.method, req.url, '=>', opt.target);
 }
 
-const webpackConfig = {
-    context: __dirname,
-    entry: './src/settings-app.js',
+/**
+ * Webpack config
+ */
+
+module.exports = {
+    entry: path.resolve(__dirname, 'src', 'settings-app.js'),
     devtool: 'source-map',
     output: {
-        path: __dirname + '/build',
+        path: path.resolve(__dirname, 'build'),
         filename: 'settings-app.js',
-        publicPath: isDevBuild ? 'http://localhost:8081/' : './',
+        publicPath: isProd ? './' : 'http://localhost:8081/',
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
@@ -55,43 +62,21 @@ const webpackConfig = {
     },
     externals: [],
     plugins: [
-        new HTMLWebpackPlugin({ template: 'index.html' }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'index.html')
+        }),
+        new DefinePlugin({
+            DHIS_CONFIG: isProd ? JSON.stringify({}) : JSON.stringify(dhisConfig),
+        }),
     ],
     devServer: {
         port: 8081,
         inline: true,
         compress: true,
         proxy: [
-            { path: '/api/*', target: dhisConfig.baseUrl, bypass: log },
-            { path: '/dhis-web-commons/**', target: dhisConfig.baseUrl, bypass: log },
-            { path: '/icons/*', target: dhisConfig.baseUrl, bypass: log },
+            { path: '/api/*', target: dhisConfig.baseUrl, bypass },
+            { path: '/dhis-web-commons/**', target: dhisConfig.baseUrl, bypass },
+            { path: '/icons/*', target: dhisConfig.baseUrl, bypass },
         ],
     },
 };
-
-if (!isDevBuild) {
-    webpackConfig.plugins.push(
-        // Replace any occurance of process.env.NODE_ENV with the string 'production'
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': '"production"',
-            DHIS_CONFIG: JSON.stringify({}),
-        })
-    );
-    webpackConfig.plugins.push(
-        new webpack.optimize.OccurrenceOrderPlugin()
-    );
-    webpackConfig.plugins.push(
-        new webpack.optimize.UglifyJsPlugin({
-            comments: false,
-            sourceMap: true,
-        })
-    );
-} else {
-    webpackConfig.plugins.push(
-        new webpack.DefinePlugin({
-            DHIS_CONFIG: JSON.stringify(dhisConfig)
-        })
-    );
-}
-
-module.exports = webpackConfig;
