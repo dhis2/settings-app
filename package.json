@@ -25,7 +25,8 @@
   "greenkeeper": {
     "ignore": [
       "d2",
-      "@dhis2/d2-ui-header-bar"
+      "@dhis2/d2-ui-header-bar",
+      "rxjs"
     ]
   },
   "author": "Nicolay Ramm <nicolay@dhis2.org> (https://www.dhis2.org)",
@@ -51,7 +52,7 @@
     "prop-types": "^15.6.2",
     "react": "16.8.3",
     "react-dom": "^16.7.0",
-    "rxjs": "^6.4.0"
+    "rxjs": "5.5.7"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
