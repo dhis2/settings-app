@@ -6,7 +6,6 @@ import { RadioButtonGroup, RadioButton } from 'material-ui/RadioButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import { Table, Column, Cell } from 'fixed-data-table';
 import log from 'loglevel';
-
 import Checkbox from '../form-fields/check-box';
 import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';

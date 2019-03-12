@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import log from 'loglevel';
-
 import LinearProgress from 'material-ui/LinearProgress';
 import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
 import Checkbox from 'material-ui/Checkbox';
-
 import applyTranslateContext from '../Translate.HOC';
 import AppTheme from '../theme';
 

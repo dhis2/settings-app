@@ -1,16 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import log from 'loglevel';
-
-// Material UI
 import { Card, CardText } from 'material-ui/Card';
 import IconButton from 'material-ui/IconButton';
-
-// D2 UI
 import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
-
-// App
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component';
 import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component';
 import metadataSettings from './metadata-settings/metadataSettings.component';
@@ -20,13 +14,11 @@ import Checkbox from './form-fields/check-box';
 import FileUpload from './form-fields/file-upload';
 import TextField from './form-fields/text-field';
 import AppTheme from './theme';
-
 import settingsActions from './settingsActions';
 import settingsStore from './settingsStore';
 import settingsKeyMapping from './settingsKeyMapping';
 import { categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
-
 
 const styles = {
     header: {

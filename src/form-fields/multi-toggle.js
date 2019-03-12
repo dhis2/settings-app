@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// Material UI
 import Checkbox from 'material-ui/Checkbox';
 
 class MultiToggle extends React.Component {
