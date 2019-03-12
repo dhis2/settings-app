@@ -4,6 +4,7 @@ node_js:
 before_script:
 - npm install --global @dhis2/deploy-build
 - npm rebuild node-sass
+- npm run lint
 script:
 - npm run build
 deploy:

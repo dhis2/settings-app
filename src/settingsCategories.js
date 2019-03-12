@@ -10,7 +10,7 @@ export const categoryOrder = [
     'sync',
     'monitoring',
     'oauth2',
-];
+]
 
 export const categories = {
     general: {
@@ -94,10 +94,7 @@ export const categories = {
         label: 'messaging',
         icon: 'message',
         pageLabel: 'messaging_settings',
-        settings: [
-            'keyMessageEmailNotification',
-            'keyMessageSmsNotification',
-        ],
+        settings: ['keyMessageEmailNotification', 'keyMessageSmsNotification'],
     },
     access: {
         label: 'access',
@@ -126,10 +123,7 @@ export const categories = {
         label: 'calendar',
         icon: 'date_range',
         pageLabel: 'calendar_settings',
-        settings: [
-            'keyCalendar',
-            'keyDateFormat',
-        ],
+        settings: ['keyCalendar', 'keyDateFormat'],
     },
     import: {
         label: 'import',
@@ -163,4 +157,4 @@ export const categories = {
         authority: 'F_OAUTH2_CLIENT_MANAGE',
         settings: ['oauth2clients'],
     },
-};
+}
