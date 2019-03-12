@@ -49,6 +49,7 @@ export const categories = {
             'keyCacheAnalyticsDataYearThreshold',
             'keyRespectMetaDataStartEndDatesInAnalyticsTableExport',
             'keyAnalyticsMaintenanceMode',
+            'keySkipZeroValuesInAnalyticsTableExport',
         ],
     },
     server: {

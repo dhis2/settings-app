@@ -1,7 +1,5 @@
-
 import Spacing from 'material-ui/styles/spacing';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
 import {
     blue100,
     blue500,

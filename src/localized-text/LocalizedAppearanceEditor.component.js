@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
-
 import TextField from '../form-fields/text-field';
 import SelectField from '../form-fields/drop-down';
-
 import settingsActions from '../settingsActions';
 import settingsStore from '../settingsStore';
 import configOptionStore from '../configOptionStore';

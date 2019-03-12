@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import Action from 'd2-ui/lib/action/Action';
 import { getInstance as getD2 } from 'd2/lib/d2';
 import { Observable } from 'rxjs';
 import log from 'loglevel';
-
 import App from './app.component';
 import { categories } from './settingsCategories';
 import settingsKeyMapping from './settingsKeyMapping';

@@ -1,28 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import log from 'loglevel';
-
-// Material UI
 import FlatButton from 'material-ui/FlatButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import FontIcon from 'material-ui/FontIcon';
 import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
-
-// D2 UI
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component';
 import { isUrlArray, isRequired } from 'd2-ui/lib/forms/Validators';
 import applyTranslateContext from '../Translate.HOC';
-
 import TextField from '../form-fields/text-field';
 import MultiToggle from '../form-fields/multi-toggle';
 import oa2ClientStore from './oauth2Client.store';
 import oa2Actions from './oauth2Client.actions';
-
 import settingsActions from '../settingsActions';
-
 import AppTheme from '../theme';
 
 /* eslint-disable complexity */

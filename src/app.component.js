@@ -1,23 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import createHistory from 'history/createHashHistory';
-
-// Material UI
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Snackbar from 'material-ui/Snackbar';
-
-// D2 UI
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 import HeaderBar from '@dhis2/d2-ui-header-bar';
-
-// App
 import SettingsFields from './settingsFields.component';
 import appTheme from './theme';
-
 import settingsActions from './settingsActions';
 import { categoryOrder, categories } from './settingsCategories';
 import configOptionStore from './configOptionStore';
-
 
 class AppComponent extends React.Component {
     constructor(props, context) {
