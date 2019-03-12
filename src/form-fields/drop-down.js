@@ -1,8 +1,8 @@
-import React from 'react';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
+import React from 'react'
+import SelectField from 'material-ui/SelectField'
+import MenuItem from 'material-ui/MenuItem'
 
-import MuiThemeMixin from '../mui-theme.mixin';
+import MuiThemeMixin from '../mui-theme.mixin'
 
 export default React.createClass({
     propTypes: {
@@ -30,36 +30,55 @@ export default React.createClass({
         return {
             includeEmpty: false,
             emptyLabel: '',
-        };
+        }
     },
 
     handleChange(event, index, value) {
-        this.props.onChange({ target: { value } });
+        this.props.onChange({ target: { value } })
     },
 
     renderMenuItems(menuItems) {
         if (this.props.includeEmpty) {
-            menuItems.unshift({ id: 'null', displayName: this.props.emptyLabel });
+            menuItems.unshift({
+                id: 'null',
+                displayName: this.props.emptyLabel,
+            })
         }
 
-        return menuItems.map(item => (<MenuItem key={item.id} value={item.id} primaryText={item.displayName} />));
+        return menuItems.map(item => (
+            <MenuItem
+                key={item.id}
+                value={item.id}
+                primaryText={item.displayName}
+            />
+        ))
     },
 
     renderEmptyItem() {
         if (this.props.includeEmpty) {
-            return <MenuItem value="null" primaryText={this.props.emptyLabel} />;
+            return <MenuItem value="null" primaryText={this.props.emptyLabel} />
         }
 
-        return null;
+        return null
     },
 
     render() {
         const {
-            onFocus, onBlur, onChange, value, disabled, menuItems,  // eslint-disable-line
-            includeEmpty, emptyLabel, noOptionsLabel, isRequired,   // eslint-disable-line
-            ...other } = this.props;
-        const menuItemArray = (Array.isArray(menuItems) && menuItems) || menuItems.toArray();
-        const hasOptions = menuItemArray.length > 0;
+            onFocus,
+            onBlur,
+            onChange,
+            value,
+            disabled,
+            menuItems, // eslint-disable-line
+            includeEmpty,
+            emptyLabel,
+            noOptionsLabel,
+            isRequired, // eslint-disable-line
+            ...other
+        } = this.props
+        const menuItemArray =
+            (Array.isArray(menuItems) && menuItems) || menuItems.toArray()
+        const hasOptions = menuItemArray.length > 0
 
         return (
             <SelectField
@@ -68,11 +87,15 @@ export default React.createClass({
                 disabled={!hasOptions}
                 {...other}
             >
-                {hasOptions
-                    ? this.renderMenuItems(menuItemArray)
-                    : <MenuItem value={1} primaryText={this.props.noOptionsLabel || '-'} />
-                }
+                {hasOptions ? (
+                    this.renderMenuItems(menuItemArray)
+                ) : (
+                    <MenuItem
+                        value={1}
+                        primaryText={this.props.noOptionsLabel || '-'}
+                    />
+                )}
             </SelectField>
-        );
+        )
     },
-});
+})

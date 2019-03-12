@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import AppTheme from './theme';
+import AppTheme from './theme'
 
 export default {
     childContextTypes: {
@@ -10,6 +10,6 @@ export default {
     getChildContext() {
         return {
             muiTheme: AppTheme,
-        };
+        }
     },
-};
+}
