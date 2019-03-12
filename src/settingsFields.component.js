@@ -316,5 +316,4 @@ SettingsFields.contextTypes = {
     d2: PropTypes.object.isRequired,
 };
 
-
 export default SettingsFields;
