@@ -23,6 +23,8 @@
     }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/no-unused-prop-types": [2, { "skipShapeProps": true }],
-    "react/forbid-prop-types": [0]
+    "react/forbid-prop-types": [0],
+    "react/jsx-indent": 0,
+    "react/jsx-indent-props": 0
   }
 }
