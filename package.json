@@ -31,6 +31,7 @@
   "homepage": "https://github.com/dhis2/settings-app#readme",
   "dependencies": {},
   "devDependencies": {
+    "@dhis2/cli-style": "^2.2.2",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.2",
@@ -46,15 +47,16 @@
     "d2-utilizr": "^0.2.15",
     "d3-color": "^1.0.3",
     "eslint-config-dhis2": "^3.0.3",
+    "eslint-config-prettier": "^4.1.0",
     "fixed-data-table": "^0.6.4",
     "history": "^4.7.2",
     "html-webpack-plugin": "^2.22.0",
+    "husky": "^1.3.1",
     "loglevel": "^1.4.1",
     "material-ui": "^0.15.4",
     "moment": "^2.18.1",
     "node-pre-gyp": "^0.6.37",
     "node-sass": "^4.5.2",
-    "precommit-hook": "^3.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-tap-event-plugin": "1.0.0",
@@ -65,11 +67,12 @@
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.7.1"
   },
-  "pre-commit": [
-    "lint",
-    "validate",
-    "test"
-  ],
+  "husky": {
+    "hooks": {
+      "commit-msg": "d2-style commit check",
+      "pre-commit": "d2-style js apply"
+    }
+  },
   "manifest.webapp": {
     "name": "DHIS 2 System Settings Management",
     "icons": {
