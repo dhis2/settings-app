@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/dhis2/settings-app#readme",
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
+    "@babel/polyfill": "^7.4.0",
     "@dhis2/d2-ui-header-bar": "^1.1.1",
     "classnames": "^2.2.5",
     "d2": "^30.0.0",
