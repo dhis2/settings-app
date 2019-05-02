@@ -59,7 +59,6 @@ export const categories = {
         settings: [
             'keyDatabaseServerCpus',
             'keySystemNotificationsEmail',
-            'keyInstanceBaseUrl',
             'googleAnalyticsUA',
         ],
     },

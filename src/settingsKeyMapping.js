@@ -271,10 +271,6 @@ const settingsKeyMapping = {
         label: 'system_notifications_email_address',
         validators: ['email'],
     },
-    keyInstanceBaseUrl: {
-        label: 'server_base_url',
-        validators: ['url'],
-    },
     googleAnalyticsUA: {
         label: 'google_analytics_ua_key',
     },
