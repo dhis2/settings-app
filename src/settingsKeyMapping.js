@@ -160,6 +160,7 @@ const settingsKeyMapping = {
     },
     keyHideDailyPeriods: {
         label: 'key_hide_daily_periods',
+        sectionLabel: 'hidden_period_types_in_analytics_apps',
         type: 'checkbox',
     },
     keyHideWeeklyPeriods: {
