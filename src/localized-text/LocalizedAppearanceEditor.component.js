@@ -35,8 +35,8 @@ class LocalizedTextEditor extends React.Component {
         super(props, context);
 
         this.state = {
-            locale: context.d2.currentUser.uiLocale,
-            localeName: LocalizedTextEditor.getLocaleName(context.d2.currentUser.uiLocale),
+            locale: settingsStore.state.keyUiLocale,
+            localeName: LocalizedTextEditor.getLocaleName(settingsStore.state.keyUiLocale),
         };
 
         this.handleChange = this.handleChange.bind(this);
