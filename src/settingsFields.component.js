@@ -196,6 +196,7 @@ class SettingsFields extends React.Component {
                         component: Checkbox,
                         props: {
                             label: fieldBase.props.floatingLabelText,
+                            sectionLabel: (mapping.sectionLabel && d2.i18n.getTranslation(mapping.sectionLabel) ) || undefined,
                             style: fieldBase.props.style,
                             onCheck: (e, v) => {
                                 settingsActions.saveKey(key, v ? 'true' : 'false');
