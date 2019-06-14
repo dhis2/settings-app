@@ -61,7 +61,7 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "7.3.4",
-    "@dhis2/cli-style": "^2.2.2",
+    "@dhis2/cli-style": "^3.3.4",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "cross-env": "^5.2.0",
