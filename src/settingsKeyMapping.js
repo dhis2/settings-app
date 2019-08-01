@@ -160,6 +160,7 @@ const settingsKeyMapping = {
     },
     keyHideDailyPeriods: {
         label: 'key_hide_daily_periods',
+        sectionLabel: 'hidden_period_types_in_analytics_apps',
         type: 'checkbox',
     },
     keyHideWeeklyPeriods: {
@@ -270,10 +271,6 @@ const settingsKeyMapping = {
     keySystemNotificationsEmail: {
         label: 'system_notifications_email_address',
         validators: ['email'],
-    },
-    keyInstanceBaseUrl: {
-        label: 'server_base_url',
-        validators: ['url'],
     },
     googleAnalyticsUA: {
         label: 'google_analytics_ua_key',
