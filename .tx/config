@@ -1,0 +1,10 @@
+[main]
+host = https://www.transifex.com
+lang_map = fa_AF: prs
+
+[app-settings-app.i18n-module-en-properties]
+file_filter = i18n/module/i18n_module_<lang>.properties
+minimum_perc = 0
+source_file = i18n/module/i18n_module_en.properties
+source_lang = en
+type = PROPERTIES
