@@ -45,6 +45,7 @@ class OAuth2ClientEditor extends React.Component {
         super(props);
 
         this.formUpdateAction = this.formUpdateAction.bind(this);
+        this.editAction = this.editAction.bind(this);
         this.saveAction = this.saveAction.bind(this);
         this.deleteAction = this.deleteAction.bind(this);
         this.cancelAction = this.cancelAction.bind(this);

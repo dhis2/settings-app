@@ -27,7 +27,6 @@ try {
  */
 
 function bypass(req, res, opt) {
-    req.headers.Authorization = dhisConfig.authorization;
     console.log('[PROXY]', req.method, req.url, '=>', opt.target);
 }
 
