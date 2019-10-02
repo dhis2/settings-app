@@ -163,8 +163,9 @@ class AppComponent extends React.Component {
                         onChangeSearchText={this.doSearch}
                         searchText={this.state.searchText}
                     />
-
-                    <SettingsFields category={this.state.category} currentSettings={this.state.currentSettings} />
+                    <form autoComplete="off">
+                        <SettingsFields category={this.state.category} currentSettings={this.state.currentSettings} />
+                    </form>
                 </div>
             </MuiThemeProvider>
         );
