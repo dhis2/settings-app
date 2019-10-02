@@ -163,6 +163,7 @@ class SettingsFields extends React.Component {
                         props: Object.assign({}, fieldBase.props, {
                             type: 'password',
                             changeEvent: 'onBlur',
+                            autoComplete: 'new-password',
                         }),
                     });
 
