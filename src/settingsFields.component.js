@@ -155,6 +155,7 @@ class SettingsFields extends React.Component {
                         props: Object.assign({}, fieldBase.props, {
                             changeEvent: 'onBlur',
                             multiLine: !!mapping.multiLine,
+                            autoComplete: mapping.label === 'username' ? 'new-password' : undefined,
                         }),
                     });
 
@@ -163,6 +164,7 @@ class SettingsFields extends React.Component {
                         props: Object.assign({}, fieldBase.props, {
                             type: 'password',
                             changeEvent: 'onBlur',
+                            autoComplete: 'new-password',
                         }),
                     });
 
