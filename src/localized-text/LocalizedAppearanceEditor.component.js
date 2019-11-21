@@ -25,7 +25,7 @@ const styles = {
 class LocalizedTextEditor extends React.Component {
     static getLocaleName(code) {
         return (configOptionStore.state &&
-            configOptionStore.getState().locales
+            configOptionStore.getState().uiLocales
                 .filter(locale => locale.id === code)
                 .map(locale => locale.displayName)
                 .pop()) || '';
@@ -86,7 +86,7 @@ class LocalizedTextEditor extends React.Component {
             <div>
                 <div style={styles.inset}>
                     <SelectField
-                        menuItems={(options && options.locales) || []}
+                        menuItems={(options && options.uiLocales) || []}
                         value={this.state.locale || ''}
                         floatingLabelText={this.getTranslation('select_language')}
                         onChange={this.handleChange}
