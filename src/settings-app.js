@@ -120,7 +120,9 @@ getManifest('manifest.webapp')
             api.get('system/flags'),
             api.get('system/styles'),
             api.get('locales/ui'),
+            api.get('locales/db'),
             api.get('userSettings', { useFallback: false }),
+        /* eslint-disable complexity */
         ]).then((results) => {
             const [
                 indicatorGroups,
@@ -146,9 +148,10 @@ getManifest('manifest.webapp')
             const styles = (results[8] || []).map(style => ({ id: style.path, displayName: style.name }));
 
             // Locales
-            const locales = (results[9] || []).map(locale => ({ id: locale.locale, displayName: locale.name }));
+            const uiLocales = (results[9] || []).map(locale => ({ id: locale.locale, displayName: locale.name }));
+            const dbLocales = (results[10] || []).map(locale => ({ id: locale.locale, displayName: locale.name }));
 
-            const userSettingsNoFallback = results[10];
+            const userSettingsNoFallback = results[11];
 
             configOptionStore.setState({
                 indicatorGroups,
@@ -160,7 +163,8 @@ getManifest('manifest.webapp')
                 startModules,
                 flags,
                 styles,
-                locales,
+                uiLocales,
+                dbLocales,
                 userSettingsNoFallback,
             });
             log.debug('Got settings options:', configOptionStore.getState());
