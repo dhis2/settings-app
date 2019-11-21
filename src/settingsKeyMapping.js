@@ -339,14 +339,14 @@ const settingsKeyMapping = {
         type: 'dropdown',
         userSettingsOverride: true,
         searchLabels: ['style', 'can_be_overridden_by_user_settings'],
-        source: 'locales',
+        source: 'uiLocales',
     },
     keyDbLocale: {
         label: 'db_locale',
         type: 'dropdown',
         userSettingsOverride: true,
         searchLabels: ['style', 'can_be_overridden_by_user_settings'],
-        source: 'locales',
+        source: 'dbLocales',
     },
     keyAnalysisDisplayProperty: {
         label: 'analysis_display_property',
