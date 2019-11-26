@@ -3,7 +3,6 @@ export const categoryOrder = [
     'server',
     'appearance',
     'email',
-    'messaging',
     'access',
     'calendar',
     'import',
@@ -89,15 +88,6 @@ export const categories = {
             'keyEmailTls',
             'keyEmailSender',
             'emailTestButton',
-        ],
-    },
-    messaging: {
-        label: 'messaging',
-        icon: 'message',
-        pageLabel: 'messaging_settings',
-        settings: [
-            'keyMessageEmailNotification',
-            'keyMessageSmsNotification',
         ],
     },
     access: {
