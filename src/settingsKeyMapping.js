@@ -416,21 +416,6 @@ const settingsKeyMapping = {
         uri: '/email/test',
     },
     /* ============================================================================================================ */
-    /* Category: Messaging                                                                                          */
-    /* ============================================================================================================ */
-    keyMessageEmailNotification: {
-        label: 'enable_message_email_notifications',
-        type: 'checkbox',
-        userSettingsOverride: true,
-        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
-    },
-    keyMessageSmsNotification: {
-        label: 'enable_message_sms_notifications',
-        type: 'checkbox',
-        userSettingsOverride: true,
-        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
-    },
-    /* ============================================================================================================ */
     /* Category: Access                                                                                             */
     /* ============================================================================================================ */
     selfRegistrationRole: {
