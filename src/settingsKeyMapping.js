@@ -15,7 +15,8 @@ const settingsKeyMapping = {
     /* ============================================================================================================ */
     /* Category: General                                                                                            */
     /* ============================================================================================================ */
-    keyAnalyticsMaxLimit: { // Analytics
+    keyAnalyticsMaxLimit: {
+        // Analytics
         label: 'analytics_max_limit',
         type: 'dropdown',
         options: {
@@ -100,7 +101,8 @@ const settingsKeyMapping = {
         label: 'omit_indicators_zero_numerator_data_mart',
         type: 'checkbox',
     },
-    keyAnalyticsMaintenanceMode: { // Analytics
+    keyAnalyticsMaintenanceMode: {
+        // Analytics
         label: 'put_analytics_in_maintenance_mode',
         type: 'checkbox',
     },
@@ -249,7 +251,8 @@ const settingsKeyMapping = {
         type: 'checkbox',
     },
     keyRespectMetaDataStartEndDatesInAnalyticsTableExport: {
-        label: 'respect_category_option_start_and_end_date_in_analytics_table_export',
+        label:
+            'respect_category_option_start_and_end_date_in_analytics_table_export',
         type: 'checkbox',
     },
     keySkipZeroValuesInAnalyticsTableExport: {
@@ -264,8 +267,16 @@ const settingsKeyMapping = {
         type: 'dropdown',
         options: {
             0: 'detect_based_on_web_server',
-            1: '1', 2: '2', 3: '3', 4: '4', 5: '5',     // eslint-disable-line
-            6: '6', 7: '7', 8: '8', 16: '16', 32: '32', // eslint-disable-line
+            1: '1',
+            2: '2',
+            3: '3',
+            4: '4',
+            5: '5', // eslint-disable-line
+            6: '6',
+            7: '7',
+            8: '8',
+            16: '16',
+            32: '32', // eslint-disable-line
         },
     },
     keySystemNotificationsEmail: {
@@ -274,6 +285,10 @@ const settingsKeyMapping = {
     },
     googleAnalyticsUA: {
         label: 'google_analytics_ua_key',
+    },
+    keyBingMapsApiKey: {
+        label: 'key_bing_maps_api_key',
+        type: 'password',
     },
     /* ============================================================================================================ */
     /* Category: Appearance                                                                                         */
@@ -443,7 +458,8 @@ const settingsKeyMapping = {
         type: 'checkbox',
     },
     keyLockMultipleFailedLogins: {
-        label: 'lock_user_account_temporarily_after_multiple_failed_login_attempts',
+        label:
+            'lock_user_account_temporarily_after_multiple_failed_login_attempts',
         type: 'checkbox',
     },
     keyCanGrantOwnUserAuthorityGroups: {
@@ -628,6 +644,6 @@ const settingsKeyMapping = {
     // 'scheduleAggregateQueryBuilder'
     // 'keyDataSetCompletenessTask'
     // 'keyDataMartTask'
-};
+}
 
-export default settingsKeyMapping;
+export default settingsKeyMapping
