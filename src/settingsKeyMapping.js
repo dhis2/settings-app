@@ -275,6 +275,9 @@ const settingsKeyMapping = {
     googleAnalyticsUA: {
         label: 'google_analytics_ua_key',
     },
+    keyBingMapsApiKey: {
+        label: 'key_bing_maps_api_key',
+    },
     /* ============================================================================================================ */
     /* Category: Appearance                                                                                         */
     /* ============================================================================================================ */
