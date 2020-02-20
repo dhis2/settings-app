@@ -44,7 +44,6 @@ const styles = {
         padding: 12,
     }
 };
-const SYSTEM_DEFAULT = '@@__SYSTEM_DEFAULT__@@';
 
 const LOCALIZED_SETTING_KEYS = [
     'applicationTitle',
@@ -53,11 +52,6 @@ const LOCALIZED_SETTING_KEYS = [
     'keyApplicationFooter',
     'keyApplicationRightFooter',
 ];
-
-const readDefaultAppearanceSettingsFromStore = () => 
-    Promise.resolve(LOCALIZED_SETTING_KEYS.map(key =>
-        settingsStore.state && settingsStore.state[key]
-    ));
 
 class LocalizedTextEditor extends React.Component {
     static getLocaleName(code) {
@@ -90,11 +84,8 @@ class LocalizedTextEditor extends React.Component {
 
     getAppearanceSettings(code) {
         const locale = code || this.state.locale
-        const promise = locale === SYSTEM_DEFAULT
-            ? readDefaultAppearanceSettingsFromStore()
-            : this.fetchLocalizedAppearanceSettings(locale);
         
-        promise.then(values => {
+        this.fetchLocalizedAppearanceSettings(locale).then(values => {
             this.settings = LOCALIZED_SETTING_KEYS.reduce((acc, key, i) => {
                 acc[key] = values[i];
                 return acc;
@@ -108,13 +99,9 @@ class LocalizedTextEditor extends React.Component {
 
     fetchLocalizedAppearanceSettings(locale) {
         const api = this.context.d2.Api.getApi();
-        const headers = new Headers({
-            'Content-Type': 'text/plain',
-            'Accept': 'text/plain',
-        });
         
         return Promise.all(LOCALIZED_SETTING_KEYS.map(key => 
-            api.get(`systemSettings/${key}`, { locale }, { headers })
+            api.get(`systemSettings/${key}`, { locale }).then(json => json[key])
         ));
     }
 
@@ -132,8 +119,7 @@ class LocalizedTextEditor extends React.Component {
 
     saveSettingsKey(key, value) {
         this.settings[key] = value;
-        const locale = this.state.locale === SYSTEM_DEFAULT ? null : this.state.locale;
-        settingsActions.saveKey(key, value, locale);
+        settingsActions.saveKey(key, value, this.state.locale);
     }
 
     renderLocalizedAppearanceFields() {
@@ -165,19 +151,14 @@ class LocalizedTextEditor extends React.Component {
     }
 
     render() {
-        const systemDefaultOption = {
-            id: SYSTEM_DEFAULT, 
-            displayName: this.getTranslation('system_default')
-        };
         const optionStoreState = configOptionStore.getState();
         const uiLocales = (optionStoreState && optionStoreState.uiLocales) || [];
-        const options = [ systemDefaultOption, ...uiLocales ];
 
         return (
             <div>
                 <div style={styles.inset}>
                     <SelectField
-                        menuItems={options}
+                        menuItems={uiLocales}
                         value={this.state.locale || ''}
                         floatingLabelText={this.getTranslation('select_language')}
                         onChange={this.handleChange}
