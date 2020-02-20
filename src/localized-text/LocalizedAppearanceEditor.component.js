@@ -9,22 +9,6 @@ import settingsActions from '../settingsActions';
 import configOptionStore from '../configOptionStore';
 import settingsKeyMapping from '../settingsKeyMapping';
 
-/**
- * To understand why this component works the way it does, some background knowledge is required:
- * 
- * The default values of these appearance settings cannot be fetched via `/systemSettings/<key>`
- * because this keyed endpoint applies translation. However, the default values for the appearance
- * settings can be obtained when calling `/systemSettings`, because this endpoint doesn't apply
- * translations. As such, the default values are already present in the `settingsStore`.
- * 
- * When posting settings for a specific locale, we need to add a `locale` query parameter like so:
- * `/systemSettings/<key>?locale=<locale>`. To make this work a dedicated function has been created
- * in `src/settingsActions.js` called `saveLocalizedAppearanceSetting`. However, when we want to
- * update a default value, we need to omit the `locale` query parameter. Effectively his means that
- * updating a default appearance setting is identical to updating a regular setting, so it can just
- * be handled by the `saveSetting` function.
- */
-
 const styles = {
     inset: {
         padding: '0 16px 8px',
