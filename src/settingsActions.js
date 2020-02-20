@@ -19,9 +19,14 @@ const settingsActions = Action.createActionsFromNames([
 
 const saveLocalizedAppearanceSetting = (d2, key, value, locale) => {
     const api = d2.Api.getApi();
-    const url = `/systemSettings/${key}?value=${value}&locale=${locale}`;
+    const localeSuffix = locale ? `?locale=${locale}` : '';
+    const url = `/systemSettings/${key}${localeSuffix}`;
+    const headers = new Headers({
+        'Content-Type': 'text/plain',
+        'Accept': 'text/plain',
+    })
 
-    return api.post(url)
+    return api.post(url, value, { headers })
         .then(() => {
             settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
         })
