@@ -53,7 +53,9 @@ settingsActions.saveKey.subscribe((args) => {
     const mapping = settingsKeyMapping[key];
 
     getD2().then((d2) => {
-        if (mapping.appendLocale && locale) {
+        const isLocalisedAppearanceSetting = mapping.appendLocale && locale;
+
+        if (isLocalisedAppearanceSetting) {
             saveLocalizedAppearanceSetting(d2, key, value, locale)
         }
         else if (mapping.configuration) {
@@ -62,8 +64,10 @@ settingsActions.saveKey.subscribe((args) => {
             saveSetting(d2, key, value)
         }
 
-        settingsStore.state[key] = value;
-        settingsStore.setState(settingsStore.state);
+        if (!isLocalisedAppearanceSetting) {
+            settingsStore.state[key] = value;
+            settingsStore.setState(settingsStore.state);
+        }
     });
 });
 
