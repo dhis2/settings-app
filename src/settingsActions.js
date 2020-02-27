@@ -21,8 +21,12 @@ const saveLocalizedAppearanceSetting = (d2, key, value, locale) => {
     const api = d2.Api.getApi();
     const localeSuffix = locale ? `&locale=${locale}` : '';
     const url = `/systemSettings/${key}?value=${value}${localeSuffix}`;
+    const headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+    };
 
-    return api.post(url)
+    return api.post(url, '', { headers })
         .then(() => {
             settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
         })

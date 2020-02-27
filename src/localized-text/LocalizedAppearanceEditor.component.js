@@ -102,9 +102,14 @@ class LocalizedTextEditor extends React.Component {
 
     fetchLocalizedAppearanceSettings(locale) {
         const api = this.context.d2.Api.getApi();
-        
-        return Promise.all(LOCALIZED_SETTING_KEYS.map(key => 
-            api.get(`systemSettings/${key}`, { locale }).then(json => json[key])
+        const headers = new Headers({
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        });
+
+        return Promise.all(LOCALIZED_SETTING_KEYS.map(key =>
+            api.get(`systemSettings/${key}`, { locale }, { headers })
+                .then(json => json[key])
         ));
     }
 
