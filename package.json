@@ -78,7 +78,7 @@
       "48": "icon.png"
     },
     "dhis2": {
-      "apiVersion": "30"
+      "apiVersion": "31"
     },
     "activities": {
       "dhis": {
