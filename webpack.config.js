@@ -10,7 +10,7 @@ const { NODE_ENV, DHIS2_HOME } = process.env;
 const isProd = NODE_ENV === 'production';
 const dhisConfigPath = DHIS2_HOME && path.join(DHIS2_HOME, 'config');
 let dhisConfig = {
-    baseUrl: 'http://localhost:8080/dhis',
+    baseUrl: 'http://localhost:8080',
     authorization: 'Basic YWRtaW46ZGlzdHJpY3Q=', // admin:district
 };
 

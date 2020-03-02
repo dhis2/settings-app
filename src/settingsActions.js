@@ -17,34 +17,61 @@ const settingsActions = Action.createActionsFromNames([
     'showSnackbarMessage',
 ]);
 
+const saveLocalizedAppearanceSetting = (d2, key, value, locale) => {
+    const api = d2.Api.getApi();
+    const localeSuffix = locale ? `&locale=${locale}` : '';
+    const url = `/systemSettings/${key}?value=${value}${localeSuffix}`;
+    const headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+    };
+
+    return api.post(url, '', { headers })
+        .then(() => {
+            settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
+        })
+        .catch((err) => {
+            log.warn('Failed to save localized setting:', err);
+        });
+}
+
+const saveConfiguration = (d2, key, value) => d2.system.configuration.set(key, value)
+    .then(() => {
+        settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
+    })
+    .catch((err) => {
+        log.warn('Failed to save configuration:', err);
+    });
+
+const saveSetting = (d2, key, value) => d2.system.settings.set(key, value)
+    .then(() => {
+        settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
+    })
+    .catch((err) => {
+        log.warn('Failed to save setting:', err);
+    });
+
 // settingsActions.saveKey handler
 settingsActions.saveKey.subscribe((args) => {
-    const [fieldData, value] = args.data;
-    const key = Array.isArray(fieldData) ? fieldData.join('') : fieldData;
-    const mappingKey = Array.isArray(fieldData) ? fieldData[0] : fieldData;
-    const mapping = settingsKeyMapping[mappingKey];
+    const [key, value, locale] = args.data;
+    const mapping = settingsKeyMapping[key];
 
     getD2().then((d2) => {
-        if (mapping.configuration) {
-            d2.system.configuration.set(key, value)
-                .then(() => {
-                    settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
-                })
-                .catch((err) => {
-                    log.warn('Failed to save configuration:', err);
-                });
+        const isLocalisedAppearanceSetting = mapping.appendLocale && locale;
+
+        if (isLocalisedAppearanceSetting) {
+            saveLocalizedAppearanceSetting(d2, key, value, locale)
+        }
+        else if (mapping.configuration) {
+            saveConfiguration(d2, key, value)
         } else {
-            d2.system.settings.set(key, value)
-                .then(() => {
-                    settingsActions.showSnackbarMessage(d2.i18n.getTranslation('settings_updated'));
-                })
-                .catch((err) => {
-                    log.warn('Failed to save setting:', err);
-                });
+            saveSetting(d2, key, value)
         }
 
-        settingsStore.state[key] = value;
-        settingsStore.setState(settingsStore.state);
+        if (!isLocalisedAppearanceSetting) {
+            settingsStore.state[key] = value;
+            settingsStore.setState(settingsStore.state);
+        }
     });
 });
 
