@@ -42,7 +42,12 @@ const styles = {
     error: {
         color: 'red',
         padding: 12,
-    }
+    },
+    clickableHelpText: {
+        color: '#3162C5',
+        textDecoration: 'underline',
+        cursor: 'pointer',
+    },
 };
 const SYSTEM_DEFAULT = '@@__SYSTEM_DEFAULT__@@';
 
@@ -120,6 +125,10 @@ class LocalizedTextEditor extends React.Component {
         this.getAppearanceSettings(code);
     }
 
+    switchToDefaultLocale = () => {
+        this.handleChange({target: { value: SYSTEM_DEFAULT}})
+    }
+
     saveSettingsKey(key, value) {
         this.setState({
             settings: {
@@ -129,6 +138,31 @@ class LocalizedTextEditor extends React.Component {
         })
         const locale = this.state.locale === SYSTEM_DEFAULT ? null : this.state.locale;
         settingsActions.saveKey(key, value, locale);
+    }
+
+    createFieldHelpTextProps = (fieldKey) => {
+        const defaultValue = settingsStore.state[fieldKey]
+        const { locale } = this.state
+
+        if (locale === SYSTEM_DEFAULT) {
+            return null;
+        }
+
+        if (defaultValue) {
+            return {
+                helpText: `${this.getTranslation('default_value')}: ${defaultValue}`
+            };
+        }
+
+        return {
+            disabled: true,
+            helpText: (
+                // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+                <span style={styles.clickableHelpText} onClick={this.switchToDefaultLocale}>
+                    {this.getTranslation('set_main_value_first')}
+                </span>
+            ),
+        }
     }
 
     renderLocalizedAppearanceFields() {
@@ -149,10 +183,11 @@ class LocalizedTextEditor extends React.Component {
             value: this.state.settings[key] || '',
             component: TextField,
             props: {
-                floatingLabelText: `${this.getTranslation(settingsKeyMapping[key].label)} - ${this.state.localeName}`,
+                floatingLabelText: `${this.getTranslation(settingsKeyMapping[key].label)} - ${(this.state.localeName || this.getTranslation('system_default'))}`,
                 changeEvent: 'onBlur',
                 style: styles.field,
                 multiLine: true,
+                ...this.createFieldHelpTextProps(key),
             },
         }));
 
