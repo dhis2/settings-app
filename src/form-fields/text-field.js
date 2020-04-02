@@ -5,8 +5,7 @@ import TextField from 'material-ui/TextField';
 const helpTextStyle = {
     fontSize: '12px',
     color: 'rgba(0, 0, 0, 0.3)',
-    margin: 0,
-    marginTop: -4,
+    margin: '-4px 0 0',
 }
 
 class TextFieldComponent extends React.Component {
