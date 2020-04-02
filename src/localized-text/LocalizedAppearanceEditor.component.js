@@ -80,6 +80,8 @@ class LocalizedTextEditor extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.saveSettingsKey = this.saveSettingsKey.bind(this);
+        this.switchToDefaultLocale = this.switchToDefaultLocale.bind(this);
+        this.createFieldHelpTextProps = this.createFieldHelpTextProps.bind(this);
         this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
     }
 
@@ -130,7 +132,7 @@ class LocalizedTextEditor extends React.Component {
         this.getAppearanceSettings(code);
     }
 
-    switchToDefaultLocale = () => {
+    switchToDefaultLocale() {
         this.handleChange({target: { value: SYSTEM_DEFAULT}})
     }
 
@@ -145,7 +147,7 @@ class LocalizedTextEditor extends React.Component {
         settingsActions.saveKey(key, value, locale);
     }
 
-    createFieldHelpTextProps = (fieldKey) => {
+    createFieldHelpTextProps(fieldKey) {
         const defaultValue = settingsStore.state[fieldKey]
         const { locale } = this.state
 
@@ -163,9 +165,9 @@ class LocalizedTextEditor extends React.Component {
             disabled: true,
             helpText: (
                 // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-                <span style={styles.clickableHelpText} onClick={this.switchToDefaultLocale}>
-                    {this.getTranslation('set_main_value_first')}
-                </span>
+              <span style={styles.clickableHelpText} onClick={this.switchToDefaultLocale}>
+                {this.getTranslation('set_main_value_first')}
+              </span>
             ),
         }
     }
