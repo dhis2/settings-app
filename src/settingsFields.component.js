@@ -256,7 +256,20 @@ class SettingsFields extends React.Component {
                     return {};
                 }
             })
-            .filter(f => !!f.name)
+            .filter(f => {
+                if (!f.name) {
+                    return false
+                }
+                
+                const displayCondition = settingsKeyMapping[f.name].showWhen
+                if (!displayCondition) {
+                    return true
+                }
+
+                const currentValue = settingsStore.state[displayCondition.settingsKey]
+ 
+                return displayCondition.settingsValue === currentValue
+            })
             .map((field) => {
                 const mapping = settingsKeyMapping[field.name];
                 const options = configOptionStore.getState();

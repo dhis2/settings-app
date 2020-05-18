@@ -194,6 +194,37 @@ const settingsKeyMapping = {
             PRIVATE: 'private',
         },
     },
+    keyAnalyticsCacheTtlMode: {
+        label: 'key_analytics_cache_ttl_mode',
+        type: 'dropdown',
+        options: {
+            PROGRESSIVE: 'progressive',
+            FIXED: 'fixed',
+        }
+    },
+    keyAnalyticsCacheProgressiveTtlFactor: {
+        label: 'key_analytics_cache_progressive_ttl_factor',
+        type: 'dropdown',
+        options: {
+            1: '1',
+            2: '2',
+            4: '4',
+            8: '8',
+            16: '16',
+            32: '32',
+            64: '64',
+            128: '128',
+            192: '192',
+            256: '256',
+            320: '320',
+            512: '512',
+            1024: '1024',
+        },
+        showWhen: {
+            settingsKey: 'keyAnalyticsCacheTtlMode',
+            settingsValue: 'PROGRESSIVE',
+        }
+    },
     keyCacheStrategy: {
         label: 'cache_strategy',
         type: 'dropdown',
@@ -222,28 +253,6 @@ const settingsKeyMapping = {
             8: 'last_8_years',
             9: 'last_9_years',
             10: 'last_10_years',
-        },
-    },
-    keyCacheAnalyticsDataYearThreshold: {
-        label: 'threshold_for_analytics_data_caching',
-        type: 'dropdown',
-        options: {
-            0: 'no_caching',
-            1: '1_year',
-            2: '2_years',
-            3: '3_years',
-            4: '4_years',
-            5: '5_years',
-            6: '6_years',
-            7: '7_years',
-            8: '8_years',
-            9: '9_years',
-            10: '10_years',
-            11: '11_years',
-            12: '12_years',
-            13: '13_years',
-            14: '14_years',
-            15: '15_years',
         },
     },
     keySkipDataTypeValidationInAnalyticsTableExport: {
