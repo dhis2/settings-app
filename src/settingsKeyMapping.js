@@ -220,9 +220,9 @@ const settingsKeyMapping = {
             512: '512',
             1024: '1024',
         },
-        showWhen: {
+        hideWhen: {
             settingsKey: 'keyAnalyticsCacheTtlMode',
-            settingsValue: 'PROGRESSIVE',
+            settingsValue: 'FIXED',
         }
     },
     keyCacheStrategy: {

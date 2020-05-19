@@ -92,6 +92,17 @@ function wrapUserSettingsOverride(d2, component, valueLabel) {
     };
 }
 
+function addConditionallyHiddenStyles(mapping) {
+    if (!mapping || !mapping.hideWhen) {
+        return {}
+    }
+
+    const { settingsKey, settingsValue } = mapping.hideWhen
+    const currentValue = settingsStore.state[settingsKey]
+
+    return settingsValue === currentValue ? { display: 'none' } : {}
+}
+
 class SettingsFields extends React.Component {
     componentDidMount() {
         this.subscriptions = [];
@@ -142,7 +153,7 @@ class SettingsFields extends React.Component {
                     component: TextField,
                     props: {
                         floatingLabelText: d2.i18n.getTranslation(mapping.label),
-                        style: { width: '100%' },
+                        style: { width: '100%', ...addConditionallyHiddenStyles(mapping) },
                         hintText: mapping.hintText && d2.i18n.getTranslation(mapping.hintText),
                     },
                     validators,
@@ -256,20 +267,7 @@ class SettingsFields extends React.Component {
                     return {};
                 }
             })
-            .filter(f => {
-                if (!f.name) {
-                    return false
-                }
-                
-                const displayCondition = settingsKeyMapping[f.name].showWhen
-                if (!displayCondition) {
-                    return true
-                }
-
-                const currentValue = settingsStore.state[displayCondition.settingsKey]
- 
-                return displayCondition.settingsValue === currentValue
-            })
+            .filter(f => !!f.name)
             .map((field) => {
                 const mapping = settingsKeyMapping[field.name];
                 const options = configOptionStore.getState();
