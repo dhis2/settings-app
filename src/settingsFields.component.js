@@ -92,6 +92,17 @@ function wrapUserSettingsOverride(d2, component, valueLabel) {
     };
 }
 
+function addConditionallyHiddenStyles(mapping) {
+    if (!mapping || !mapping.hideWhen) {
+        return {}
+    }
+
+    const { settingsKey, settingsValue } = mapping.hideWhen
+    const currentValue = settingsStore.state[settingsKey]
+
+    return settingsValue === currentValue ? { display: 'none' } : {}
+}
+
 class SettingsFields extends React.Component {
     componentDidMount() {
         this.subscriptions = [];
@@ -142,7 +153,7 @@ class SettingsFields extends React.Component {
                     component: TextField,
                     props: {
                         floatingLabelText: d2.i18n.getTranslation(mapping.label),
-                        style: { width: '100%' },
+                        style: { width: '100%', ...addConditionallyHiddenStyles(mapping) },
                         hintText: mapping.hintText && d2.i18n.getTranslation(mapping.hintText),
                     },
                     validators,
