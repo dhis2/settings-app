@@ -19,7 +19,6 @@ export const categories = {
         settings: [
             'keyAnalyticsMaxLimit',
             'keySqlViewMaxLimit',
-            'keyCacheStrategy',
             'infrastructuralIndicators',
             'infrastructuralDataElements',
             'infrastructuralPeriodType',
@@ -43,6 +42,7 @@ export const categories = {
             'keyHideMonthlyPeriods',
             'keyHideBiMonthlyPeriods',
             'analyticsFinancialYearStart',
+            'keyCacheStrategy',
             'keyCacheability',
             'keyAnalyticsCacheTtlMode',
             'keyAnalyticsCacheProgressiveTtlFactor',
