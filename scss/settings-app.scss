@@ -7,25 +7,26 @@ $left-bar-width: 295px;
 html {
   background: #f3f3f3;
   font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
-.app {
-  padding-top: 3rem;
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.content-wrap {
+  display: flex;
 }
 
 .left-bar {
   width: $left-bar-width;
-  position: fixed;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  padding-top: 3rem;
+  flex-grow: 0;
 }
 
 .content-area {
-  padding-left: $left-bar-width;
-  max-width: 750px;
-  min-width: 400px;
+  flex-grow: 1;
   margin-bottom: 64px;
 }
 

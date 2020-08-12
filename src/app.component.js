@@ -4,7 +4,8 @@ import createHistory from 'history/createHashHistory';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Snackbar from 'material-ui/Snackbar';
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
-import HeaderBar from '@dhis2/d2-ui-header-bar';
+import { DataProvider } from '@dhis2/app-runtime'
+import { HeaderBar } from '@dhis2/ui-widgets'
 import SettingsFields from './settingsFields.component';
 import appTheme from './theme';
 import settingsActions from './settingsActions';
@@ -111,6 +112,15 @@ class AppComponent extends React.Component {
         }
     }
 
+    getDataProviderProps() {
+        const baseUrl = this.props.d2.system.systemInfo.contextPath
+        const apiUrl = this.props.d2.system.settings.api.baseUrl;
+        const versionString = apiUrl.split('/').pop()
+        const apiVersion = isNaN(parseInt(versionString, 10)) ? '' : versionString
+        
+        return { baseUrl, apiVersion }
+    }
+
     closeSnackbar() {
         this.setState({ showSnackbar: false });
     }
@@ -132,30 +142,34 @@ class AppComponent extends React.Component {
         };
 
         return (
-            <MuiThemeProvider muiTheme={appTheme}>
-                <div className="app">
-                    <HeaderBar d2={this.props.d2} />
-                    <Snackbar
-                        message={this.state.snackbarMessage || ''}
-                        autoHideDuration={1250}
-                        open={this.state.showSnackbar}
-                        onRequestClose={this.closeSnackbar}
-                    />
-                    <Sidebar
-                        sections={sections}
-                        onChangeSection={settingsActions.setCategory}
-                        currentSection={this.state.category}
-                        showSearchField
-                        searchFieldLabel={this.props.d2.i18n.getTranslation('search_settings')}
-                        ref={setSidebar} // eslint-disable-line react/jsx-no-bind
-                        onChangeSearchText={this.doSearch}
-                        searchText={this.state.searchText}
-                    />
-                    <form autoComplete="off">
-                        <SettingsFields category={this.state.category} currentSettings={this.state.currentSettings} />
-                    </form>
-                </div>
-            </MuiThemeProvider>
+            <DataProvider {...this.getDataProviderProps()}>
+                <MuiThemeProvider muiTheme={appTheme}>
+                    <div className="app">
+                        <HeaderBar appName={this.props.d2.i18n.getTranslation('settings_app')} />
+                        <Snackbar
+                            message={this.state.snackbarMessage || ''}
+                            autoHideDuration={1250}
+                            open={this.state.showSnackbar}
+                            onRequestClose={this.closeSnackbar}
+                        />
+                        <div className="content-wrap">
+                            <Sidebar
+                                sections={sections}
+                                onChangeSection={settingsActions.setCategory}
+                                currentSection={this.state.category}
+                                showSearchField
+                                searchFieldLabel={this.props.d2.i18n.getTranslation('search_settings')}
+                                ref={setSidebar} // eslint-disable-line react/jsx-no-bind
+                                onChangeSearchText={this.doSearch}
+                                searchText={this.state.searchText}
+                            />
+                            <form autoComplete="off" className="content-area">
+                                <SettingsFields category={this.state.category} currentSettings={this.state.currentSettings} />
+                            </form>
+                        </div>
+                    </div>
+                </MuiThemeProvider>
+            </DataProvider>
         );
     }
 }
