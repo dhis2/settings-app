@@ -8,7 +8,7 @@ before_script:
   - npm install node-sass && npm rebuild node-sass
 script:
   - npm run lint
-  - npm build
+  - npm run build
 deploy:
   - provider: script
     script: npx --package @dhis2/deploy-build deploy-build d2-ci build/app
