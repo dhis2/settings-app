@@ -1,15 +1,15 @@
 language: node_js
 node_js:
   - 10
-before_script:
-  - npm install --global @dhis2/deploy-build
-  - npm rebuild node-sass
+cache:
+    directories:
+        - node_modules
 script:
-  - npm run lint
-  - npm run build
+  - yarn lint
+  - yarn build
 deploy:
   - provider: script
-    script: deploy-build
+    script: npx --package @dhis2/deploy-build deploy-build d2-ci build
     skip_cleanup: true
     on:
       all_branches: true
