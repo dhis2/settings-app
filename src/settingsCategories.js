@@ -29,6 +29,7 @@ export const categories = {
             'phoneNumberAreaCode',
             'multiOrganisationUnitForms',
             'keyAcceptanceRequiredForApproval',
+            'keyGatherAnalyticalObjectStatisticsInDashboardViews',
         ],
     },
     analytics: {

@@ -122,6 +122,10 @@ const settingsKeyMapping = {
         type: 'password',
         label: 'recaptcha_site_label',
     },
+    keyGatherAnalyticalObjectStatisticsInDashboardViews: {
+        label: 'gather_analytical_object_statistics_in_dashboard_views',
+        type: 'checkbox',
+    },
     /* ============================================================================================================ */
     /* Category: Analytics                                                                                          */
     /* ============================================================================================================ */
@@ -200,7 +204,7 @@ const settingsKeyMapping = {
         options: {
             PROGRESSIVE: 'progressive',
             FIXED: 'fixed',
-        }
+        },
     },
     keyAnalyticsCacheProgressiveTtlFactor: {
         label: 'key_analytics_cache_progressive_ttl_factor',
@@ -223,7 +227,7 @@ const settingsKeyMapping = {
         hideWhen: {
             settingsKey: 'keyAnalyticsCacheTtlMode',
             settingsValue: 'FIXED',
-        }
+        },
     },
     keyCacheStrategy: {
         label: 'cache_strategy',
