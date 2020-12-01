@@ -168,7 +168,7 @@ jobs:
               with:
                   # uncomment following line for monorepo apps:
                   #cwd: ./packages/app
-                  build-dir: build/app
+                  build-dir: build
                   github-token: ${{ env.GH_TOKEN }}
 
     release:
