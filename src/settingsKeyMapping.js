@@ -200,7 +200,7 @@ const settingsKeyMapping = {
         options: {
             PROGRESSIVE: 'progressive',
             FIXED: 'fixed',
-        }
+        },
     },
     keyAnalyticsCacheProgressiveTtlFactor: {
         label: 'key_analytics_cache_progressive_ttl_factor',
@@ -223,7 +223,7 @@ const settingsKeyMapping = {
         hideWhen: {
             settingsKey: 'keyAnalyticsCacheTtlMode',
             settingsValue: 'FIXED',
-        }
+        },
     },
     keyCacheStrategy: {
         label: 'cache_strategy',
@@ -262,10 +262,6 @@ const settingsKeyMapping = {
     keyRespectMetaDataStartEndDatesInAnalyticsTableExport: {
         label:
             'respect_category_option_start_and_end_date_in_analytics_table_export',
-        type: 'checkbox',
-    },
-    keySkipZeroValuesInAnalyticsTableExport: {
-        label: 'key_skip_zero_values_in_analytics_table_export',
         type: 'checkbox',
     },
     /* ============================================================================================================ */
