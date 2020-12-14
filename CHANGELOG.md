@@ -1,3 +1,10 @@
+# [29.2.0](https://github.com/dhis2/settings-app/compare/v29.1.2...v29.2.0) (2020-12-14)
+
+
+### Features
+
+* **analytics:** remove skip zero values in analytics tables-setting ([fbec09d](https://github.com/dhis2/settings-app/commit/fbec09dccc45b188e8fcc62bcb872fbde4b591a4))
+
 ## [29.1.2](https://github.com/dhis2/settings-app/compare/v29.1.1...v29.1.2) (2020-12-04)
 
 
