@@ -49,7 +49,6 @@ export const categories = {
             'keyIgnoreAnalyticsApprovalYearThreshold',
             'keyRespectMetaDataStartEndDatesInAnalyticsTableExport',
             'keyAnalyticsMaintenanceMode',
-            'keySkipZeroValuesInAnalyticsTableExport',
         ],
     },
     server: {
