@@ -122,6 +122,10 @@ const settingsKeyMapping = {
         type: 'password',
         label: 'recaptcha_site_label',
     },
+    keyGatherAnalyticalObjectStatisticsInDashboardViews: {
+        label: 'gather_analytical_object_statistics_in_dashboard_views',
+        type: 'checkbox',
+    },
     /* ============================================================================================================ */
     /* Category: Analytics                                                                                          */
     /* ============================================================================================================ */
