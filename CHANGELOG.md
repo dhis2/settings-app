@@ -1,3 +1,10 @@
+# [29.3.0](https://github.com/dhis2/settings-app/compare/v29.2.3...v29.3.0) (2021-01-18)
+
+
+### Features
+
+* add support for updating favorite data statistics [DHIS2-9554] ([006bedb](https://github.com/dhis2/settings-app/commit/006bedb3061b29282c5e943e4c8423c9b7b04705))
+
 ## [29.2.3](https://github.com/dhis2/settings-app/compare/v29.2.2...v29.2.3) (2021-01-01)
 
 
