@@ -406,6 +406,22 @@ const settingsKeyMapping = {
         type: 'staticContent',
         name: 'logo_banner',
     },
+    keyDashboardContextMenuItemSwitchViewType: {
+        label: 'dashboard_context_menu_item_switch_view_type',
+        type: 'checkbox',
+    },
+    keyDashboardContextMenuItemOpenInRelevantApp: {
+        label: 'dashboard_context_menu_open_in_relevant_app',
+        type: 'checkbox',
+    },
+    keyDashboardContextMenuItemShowInterpretationsAndDetails: {
+        label: 'dashboard_context_menu_item_show_interpretations_and_details',
+        type: 'checkbox',
+    },
+    keyDashboardContextMenuItemViewFullscreen: {
+        label: 'dashboard_context_menu_item_view_full_screen',
+        type: 'checkbox',
+    },
     /* ============================================================================================================ */
     /* Category: Email                                                                                              */
     /* ============================================================================================================ */
