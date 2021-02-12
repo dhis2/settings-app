@@ -1,3 +1,10 @@
+# [29.4.0](https://github.com/dhis2/settings-app/compare/v29.3.4...v29.4.0) (2021-02-12)
+
+
+### Features
+
+* add in dashboard context menu item system settings [DHIS2-7630] ([f627f3f](https://github.com/dhis2/settings-app/commit/f627f3f514b87b7e4d5518846260486c9cd34c55))
+
 ## [29.3.4](https://github.com/dhis2/settings-app/compare/v29.3.3...v29.3.4) (2021-02-02)
 
 
