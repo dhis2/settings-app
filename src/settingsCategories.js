@@ -81,6 +81,10 @@ export const categories = {
             'keyRequireAddToView',
             'keyUseCustomLogoFront',
             'keyUseCustomLogoBanner',
+            'keyDashboardContextMenuItemSwitchViewType',
+            'keyDashboardContextMenuItemOpenInRelevantApp',
+            'keyDashboardContextMenuItemShowInterpretationsAndDetails',
+            'keyDashboardContextMenuItemViewFullscreen',
         ],
     },
     email: {
