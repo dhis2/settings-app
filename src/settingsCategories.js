@@ -30,6 +30,7 @@ export const categories = {
             'multiOrganisationUnitForms',
             'keyAcceptanceRequiredForApproval',
             'keyGatherAnalyticalObjectStatisticsInDashboardViews',
+            'keyCountPassiveDashboardViewsInUsageAnalytics',
         ],
     },
     analytics: {
