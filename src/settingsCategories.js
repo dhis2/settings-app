@@ -116,8 +116,6 @@ export const categories = {
             'credentialsExpires',
             'credentialsExpiryAlert',
             'minPasswordLength',
-            'keyOpenIdProvider',
-            'keyOpenIdProviderLabel',
             'corsWhitelist',
             'recaptchaSite',
             'recaptchaSecret',

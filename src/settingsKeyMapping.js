@@ -519,8 +519,6 @@ const settingsKeyMapping = {
             14: 14,
         },
     },
-    keyOpenIdProvider: { label: 'openid_provider' },
-    keyOpenIdProviderLabel: { label: 'openid_provider_label' },
     corsWhitelist: {
         label: 'cors_whitelist',
         configuration: true,
