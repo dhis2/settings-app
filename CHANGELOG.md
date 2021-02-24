@@ -1,3 +1,10 @@
+## [29.4.4](https://github.com/dhis2/settings-app/compare/v29.4.3...v29.4.4) (2021-02-24)
+
+
+### Bug Fixes
+
+* **acess-settings:** remove OpenID fields ([#794](https://github.com/dhis2/settings-app/issues/794)) ([432aa8b](https://github.com/dhis2/settings-app/commit/432aa8b88563876d2218356adba9b30bd3b5ccd3))
+
 ## [29.4.3](https://github.com/dhis2/settings-app/compare/v29.4.2...v29.4.3) (2021-02-21)
 
 
