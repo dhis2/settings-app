@@ -126,6 +126,10 @@ const settingsKeyMapping = {
         label: 'gather_analytical_object_statistics_in_dashboard_views',
         type: 'checkbox',
     },
+    keyCountPassiveDashboardViewsInUsageAnalytics: {
+        label: 'count_passive_dashboard_views_in_usage_analytics',
+        type: 'checkbox',
+    },
     /* ============================================================================================================ */
     /* Category: Analytics                                                                                          */
     /* ============================================================================================================ */
