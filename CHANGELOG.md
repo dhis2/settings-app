@@ -1,3 +1,10 @@
+# [29.5.0](https://github.com/dhis2/settings-app/compare/v29.4.5...v29.5.0) (2021-02-25)
+
+
+### Features
+
+* add keyCountPassiveDashboardViewsInUsageAnalytics [DHIS2-7016] ([242a0ae](https://github.com/dhis2/settings-app/commit/242a0aed4ba9c12dc9c6a8b8adf804267dfd1699))
+
 ## [29.4.5](https://github.com/dhis2/settings-app/compare/v29.4.4...v29.4.5) (2021-02-25)
 
 
