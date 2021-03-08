@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
+import MenuItem from 'material-ui/MenuItem'
+import SelectField from 'material-ui/SelectField'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 class DropDown extends React.Component {
     static propTypes = {
@@ -11,10 +11,7 @@ class DropDown extends React.Component {
             PropTypes.bool,
         ]),
         value: PropTypes.string.isRequired,
-        menuItems: PropTypes.oneOfType([
-            PropTypes.array,
-            PropTypes.object,
-        ]),
+        menuItems: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
         includeEmpty: PropTypes.bool,
         emptyLabel: PropTypes.string,
         noOptionsLabel: PropTypes.string,
@@ -34,25 +31,33 @@ class DropDown extends React.Component {
         onFocus: undefined,
         onBlur: undefined,
         onChange: undefined,
-
-    };
+    }
 
     constructor(props) {
-        super(props);
+        super(props)
 
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange(event, index, value) {
-        this.props.onChange({ target: { value } });
+        this.props.onChange({ target: { value } })
     }
 
     renderMenuItems(menuItems) {
         if (this.props.includeEmpty) {
-            menuItems.unshift({ id: 'null', displayName: this.props.emptyLabel });
+            menuItems.unshift({
+                id: 'null',
+                displayName: this.props.emptyLabel,
+            })
         }
 
-        return menuItems.map(item => (<MenuItem key={item.id} value={item.id} primaryText={item.displayName} />));
+        return menuItems.map(item => (
+            <MenuItem
+                key={item.id}
+                value={item.id}
+                primaryText={item.displayName}
+            />
+        ))
     }
 
     /* eslint-disable complexity */
@@ -60,9 +65,11 @@ class DropDown extends React.Component {
         const {
             onFocus, onBlur, onChange, value, disabled, menuItems,  // eslint-disable-line
             includeEmpty, emptyLabel, noOptionsLabel, isRequired,   // eslint-disable-line
-            ...other } = this.props;
-        const menuItemArray = (Array.isArray(menuItems) && menuItems) || menuItems.toArray();
-        const hasOptions = menuItemArray.length > 0;
+            ...other
+        } = this.props
+        const menuItemArray =
+            (Array.isArray(menuItems) && menuItems) || menuItems.toArray()
+        const hasOptions = menuItemArray.length > 0
         return (
             <SelectField
                 value={hasOptions ? this.props.value : 1}
@@ -70,14 +77,18 @@ class DropDown extends React.Component {
                 disabled={!hasOptions || disabled}
                 {...other}
             >
-                {hasOptions
-                    ? this.renderMenuItems(menuItemArray)
-                    : <MenuItem value={1} primaryText={this.props.noOptionsLabel || '-'} />
-                }
+                {hasOptions ? (
+                    this.renderMenuItems(menuItemArray)
+                ) : (
+                    <MenuItem
+                        value={1}
+                        primaryText={this.props.noOptionsLabel || '-'}
+                    />
+                )}
             </SelectField>
-        );
+        )
     }
     /* eslint-enable */
 }
 
-export default DropDown;
+export default DropDown

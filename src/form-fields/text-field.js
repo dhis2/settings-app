@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import TextField from 'material-ui/TextField';
+import TextField from 'material-ui/TextField'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 const helpTextStyle = {
     fontSize: '12px',
@@ -22,21 +22,21 @@ class TextFieldComponent extends React.Component {
     }
 
     constructor(props) {
-        super(props);
+        super(props)
 
-        this.onChange = this.onChange.bind(this);
+        this.onChange = this.onChange.bind(this)
     }
 
     state = {
         value: this.props.value,
     }
 
-    componentWillReceiveProps(props) {
-        this.setState({ value: props.value });
+    UNSAFE_componentWillReceiveProps(props) {
+        this.setState({ value: props.value })
     }
 
     onChange(e) {
-        this.setState({ value: e.target.value });
+        this.setState({ value: e.target.value })
     }
 
     render() {
@@ -44,15 +44,20 @@ class TextFieldComponent extends React.Component {
         const errorStyle = {
             lineHeight: this.props.multiLine ? '48px' : '12px',
             marginTop: this.props.multiLine ? -16 : 0,
-        };
+        }
 
         return (
             <div>
-                <TextField errorStyle={errorStyle} {...other} value={this.state.value} onChange={this.onChange} />
+                <TextField
+                    errorStyle={errorStyle}
+                    {...other}
+                    value={this.state.value}
+                    onChange={this.onChange}
+                />
                 {helpText && <p style={helpTextStyle}>{helpText}</p>}
             </div>
-        );
+        )
     }
 }
 
-export default TextFieldComponent;
+export default TextFieldComponent

@@ -1,20 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import createHistory from 'history/createHashHistory';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Snackbar from 'material-ui/Snackbar';
-import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
-import { DataProvider } from '@dhis2/app-runtime'
-import { HeaderBar } from '@dhis2/ui-widgets'
-import SettingsFields from './settingsFields.component';
-import appTheme from './theme';
-import settingsActions from './settingsActions';
-import { categoryOrder, categories } from './settingsCategories';
-import configOptionStore from './configOptionStore';
+import i18n from '@dhis2/d2-i18n'
+import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component'
+import createHistory from 'history/createHashHistory'
+import Snackbar from 'material-ui/Snackbar'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import PropTypes from 'prop-types'
+import React from 'react'
+import styles from './App.module.css'
+import configOptionStore from './configOptionStore'
+import settingsActions from './settingsActions'
+import { categoryOrder, categories } from './settingsCategories'
+import SettingsFields from './settingsFields.component'
+import appTheme from './theme'
 
 class AppComponent extends React.Component {
     constructor(props, context) {
-        super(props, context);
+        super(props, context)
 
         this.state = {
             category: categoryOrder[0],
@@ -22,160 +22,171 @@ class AppComponent extends React.Component {
             snackbarMessage: '',
             showSnackbar: false,
             formValidator: undefined,
-        };
+        }
 
-        this.closeSnackbar = this.closeSnackbar.bind(this);
-        this.doSearch = this.doSearch.bind(this);
+        this.sidebarRef = React.createRef()
     }
 
     getChildContext() {
         return {
             d2: this.props.d2,
             muiTheme: appTheme,
-        };
-    }
-
-    componentDidMount() {
-        this.subscriptions = [];
-
-        this.subscriptions.push(configOptionStore.subscribe(() => {
-            // Must force update here in order to redraw form fields that require config options
-            // TODO: Replace this with async select fields
-            this.forceUpdate();
-        }));
-
-        /* eslint-disable complexity */
-        this.subscriptions.push(settingsActions.setCategory.subscribe((arg) => {
-            const category = arg.data.key || arg.data || categoryOrder[0];
-            const searchResult = arg.data.settings || [];
-            const currentSettings = category === 'search' ? searchResult : categories[category].settings;
-
-            if (category !== 'search') {
-                this.sidebar.clearSearchBox();
-            }
-
-            const pathname = `/${category}`;
-            const search = category === 'search'
-                ? `?${encodeURIComponent(arg.data.searchTerms.join(' '))}`
-                : '';
-
-            if (pathname !== this.history.location.pathname || search !== this.history.location.search) {
-                this.history.push({ pathname, search });
-            }
-
-            this.setState({
-                category,
-                currentSettings,
-                searchText: category === 'search' ? this.state.searchText : '',
-            });
-        }));
-        /* eslint-enable complexity */
-
-        this.subscriptions.push(settingsActions.showSnackbarMessage.subscribe((params) => {
-            const message = params.data;
-            this.setState({ snackbarMessage: message, showSnackbar: !!message });
-        }));
-
-        // Helper function for setting app state based on location
-        const navigate = (location) => {
-            const section = location.pathname.substr(1);
-            if (location.pathname === '/search') {
-                const search = decodeURIComponent(location.search.substr(1));
-                this.doSearch(search);
-            } else if (Object.keys(categories).includes(section)) {
-                settingsActions.setCategory(section);
-            } else {
-                this.history.replace(`/${categoryOrder[0]}`);
-                settingsActions.setCategory(categoryOrder[0]);
-            }
-        };
-
-        // Listen for location changes and update app state as necessary
-        this.history = createHistory();
-        this.unlisten = this.history.listen((location, action) => {
-            if (action === 'POP') {
-                navigate(location);
-            }
-        });
-
-        // Set initial app state based on current location
-        navigate(this.history.location);
-    }
-
-    componentWillUnmount() {
-        this.subscriptions.forEach((sub) => {
-            sub.dispose();
-        });
-
-        if (typeof this.unlisten === 'function') {
-            this.unlisten();
         }
     }
 
-    getDataProviderProps() {
-        const baseUrl = this.props.d2.system.systemInfo.contextPath
-        const apiUrl = this.props.d2.system.settings.api.baseUrl;
-        const versionString = apiUrl.split('/').pop()
-        const apiVersion = isNaN(parseInt(versionString, 10)) ? '' : versionString
-        
-        return { baseUrl, apiVersion }
+    componentDidMount() {
+        settingsActions.load()
+
+        this.subscriptions = []
+
+        this.subscriptions.push(
+            configOptionStore.subscribe(() => {
+                // Must force update here in order to redraw form fields that require config options
+                // TODO: Replace this with async select fields
+                this.forceUpdate()
+            })
+        )
+
+        this.subscriptions.push(
+            settingsActions.setCategory.subscribe(arg => {
+                const category = arg.data.key || arg.data || categoryOrder[0]
+                const searchResult = arg.data.settings || []
+                const currentSettings =
+                    category === 'search'
+                        ? searchResult
+                        : categories[category].settings
+
+                if (category !== 'search') {
+                    this.sidebarRef.current.clearSearchBox()
+                }
+
+                const pathname = `/${category}`
+                const search =
+                    category === 'search'
+                        ? `?${encodeURIComponent(
+                              arg.data.searchTerms.join(' ')
+                          )}`
+                        : ''
+
+                if (
+                    pathname !== this.history.location.pathname ||
+                    search !== this.history.location.search
+                ) {
+                    this.history.push({ pathname, search })
+                }
+
+                this.setState({
+                    category,
+                    currentSettings,
+                    searchText:
+                        category === 'search' ? this.state.searchText : '',
+                })
+            })
+        )
+
+        this.subscriptions.push(
+            settingsActions.showSnackbarMessage.subscribe(params => {
+                const message = params.data
+                this.setState({
+                    snackbarMessage: message,
+                    showSnackbar: !!message,
+                })
+            })
+        )
+
+        // Helper function for setting app state based on location
+        const navigate = location => {
+            const section = location.pathname.substr(1)
+            if (location.pathname === '/search') {
+                const search = decodeURIComponent(location.search.substr(1))
+                this.doSearch(search)
+            } else if (Object.keys(categories).includes(section)) {
+                settingsActions.setCategory(section)
+            } else {
+                this.history.replace(`/${categoryOrder[0]}`)
+                settingsActions.setCategory(categoryOrder[0])
+            }
+        }
+
+        // Listen for location changes and update app state as necessary
+        this.history = createHistory()
+        this.unlisten = this.history.listen((location, action) => {
+            if (action === 'POP') {
+                navigate(location)
+            }
+        })
+
+        // Set initial app state based on current location
+        navigate(this.history.location)
     }
 
-    closeSnackbar() {
-        this.setState({ showSnackbar: false });
+    componentWillUnmount() {
+        this.subscriptions.forEach(sub => {
+            sub.unsubscribe()
+        })
+
+        if (typeof this.unlisten === 'function') {
+            this.unlisten()
+        }
     }
 
-    doSearch(searchText) {
-        this.setState({ searchText });
-        settingsActions.searchSettings(searchText);
+    closeSnackbar = () => {
+        this.setState({ showSnackbar: false })
+    }
+
+    doSearch = searchText => {
+        this.setState({ searchText })
+        settingsActions.searchSettings(searchText)
     }
 
     render() {
-        const sections = Object.keys(categories).map((category) => {
-            const key = category;
-            const label = this.props.d2.i18n.getTranslation(categories[category].label);
-            const icon = categories[category].icon;
-            return { key, label, icon };
-        });
-        const setSidebar = (ref) => {
-            this.sidebar = ref;
-        };
+        const sections = Object.keys(categories).map(category => {
+            const key = category
+            const label = this.props.d2.i18n.getTranslation(
+                categories[category].label
+            )
+            const icon = categories[category].icon
+            return { key, label, icon }
+        })
 
         return (
-            <DataProvider {...this.getDataProviderProps()}>
-                <MuiThemeProvider muiTheme={appTheme}>
-                    <div className="app">
-                        <HeaderBar appName={this.props.d2.i18n.getTranslation('settings_app')} />
-                        <Snackbar
-                            message={this.state.snackbarMessage || ''}
-                            autoHideDuration={1250}
-                            open={this.state.showSnackbar}
-                            onRequestClose={this.closeSnackbar}
+            <MuiThemeProvider muiTheme={appTheme}>
+                <div>
+                    <Snackbar
+                        message={this.state.snackbarMessage || ''}
+                        autoHideDuration={1250}
+                        open={this.state.showSnackbar}
+                        onRequestClose={this.closeSnackbar}
+                    />
+                    <div className={styles.contentWrap}>
+                        <Sidebar
+                            sections={sections}
+                            onChangeSection={settingsActions.setCategory}
+                            currentSection={this.state.category}
+                            showSearchField
+                            searchFieldLabel={i18n.t('Search settings')}
+                            ref={this.sidebarRef}
+                            onChangeSearchText={this.doSearch}
+                            searchText={this.state.searchText}
                         />
-                        <div className="content-wrap">
-                            <Sidebar
-                                sections={sections}
-                                onChangeSection={settingsActions.setCategory}
-                                currentSection={this.state.category}
-                                showSearchField
-                                searchFieldLabel={this.props.d2.i18n.getTranslation('search_settings')}
-                                ref={setSidebar} // eslint-disable-line react/jsx-no-bind
-                                onChangeSearchText={this.doSearch}
-                                searchText={this.state.searchText}
+                        <form autoComplete="off" className={styles.contentArea}>
+                            <SettingsFields
+                                category={this.state.category}
+                                currentSettings={this.state.currentSettings}
                             />
-                            <form autoComplete="off" className="content-area">
-                                <SettingsFields category={this.state.category} currentSettings={this.state.currentSettings} />
-                            </form>
-                        </div>
+                        </form>
                     </div>
-                </MuiThemeProvider>
-            </DataProvider>
-        );
+                </div>
+            </MuiThemeProvider>
+        )
     }
 }
 
-AppComponent.propTypes = { d2: PropTypes.object.isRequired };
-AppComponent.contextTypes = { muiTheme: PropTypes.object };
-AppComponent.childContextTypes = { d2: PropTypes.object, muiTheme: PropTypes.object };
+AppComponent.propTypes = { d2: PropTypes.object.isRequired }
+AppComponent.contextTypes = { muiTheme: PropTypes.object }
+AppComponent.childContextTypes = {
+    d2: PropTypes.object,
+    muiTheme: PropTypes.object,
+}
 
-export default AppComponent;
+export default AppComponent

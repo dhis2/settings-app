@@ -1,3 +1,5 @@
+import i18n from '@dhis2/d2-i18n'
+
 export const categoryOrder = [
     'general',
     'server',
@@ -15,7 +17,7 @@ export const categories = {
     general: {
         label: 'general',
         icon: 'settings',
-        pageLabel: 'general_settings',
+        pageLabel: i18n.t('General settings'),
         settings: [
             'keyAnalyticsMaxLimit',
             'keySqlViewMaxLimit',
@@ -36,7 +38,7 @@ export const categories = {
     analytics: {
         label: 'analytics',
         icon: 'equalizer',
-        pageLabel: 'analytics_settings',
+        pageLabel: i18n.t('analytics_settings'),
         settings: [
             'keyAnalysisRelativePeriod',
             'keyHideDailyPeriods',
