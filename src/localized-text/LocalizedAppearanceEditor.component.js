@@ -76,10 +76,12 @@ class LocalizedTextEditor extends React.Component {
         super(props, context)
 
         this.state = {
-            locale: settingsStore.state.keyUiLocale,
-            localeName: LocalizedTextEditor.getLocaleName(
-                settingsStore.state.keyUiLocale
-            ),
+            locale: settingsStore.state && settingsStore.state.keyUiLocale,
+            localeName:
+                settingsStore.state &&
+                LocalizedTextEditor.getLocaleName(
+                    settingsStore.state.keyUiLocale
+                ),
             settings: null,
             error: false,
         }
@@ -93,6 +95,23 @@ class LocalizedTextEditor extends React.Component {
 
     componentDidMount() {
         this.getAppearanceSettings()
+        this.subscriptions = []
+        this.subscriptions.push(
+            settingsStore.subscribe(() => {
+                this.setState({
+                    locale: settingsStore.state.keyUiLocale,
+                    localeName: LocalizedTextEditor.getLocaleName(
+                        settingsStore.state.keyUiLocale
+                    ),
+                })
+            })
+        )
+    }
+
+    componentWillUnmount() {
+        if (Array.isArray(this.subscriptions)) {
+            this.subscriptions.forEach(sub => sub.unsubscribe())
+        }
     }
 
     getAppearanceSettings(code) {
