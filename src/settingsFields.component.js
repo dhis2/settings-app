@@ -111,7 +111,7 @@ function addConditionallyHiddenStyles(mapping) {
     }
 
     const { settingsKey, settingsValue } = mapping.hideWhen
-    const currentValue = settingsStore.state[settingsKey]
+    const currentValue = settingsStore.state && settingsStore.state[settingsKey]
 
     return settingsValue === currentValue ? { display: 'none' } : {}
 }
