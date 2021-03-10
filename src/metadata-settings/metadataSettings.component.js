@@ -90,7 +90,7 @@ class metadataSettings extends React.Component {
                 return Promise.resolve()
             })
             .then(this.sync)
-            .catch(error => {
+            .catch(() => {
                 this.setState({ isTaskRunning: false })
                 settingsActions.showSnackbarMessage(
                     this.getTranslation('version_not_created')
@@ -100,7 +100,6 @@ class metadataSettings extends React.Component {
     }
 
     syncSettings() {
-        /* eslint-disable complexity */
         this.d2.Api.getApi()
             .get('/systemSettings')
             .then(result => {
@@ -138,13 +137,12 @@ class metadataSettings extends React.Component {
                 }
                 return Promise.resolve()
             })
-            .catch(error => {
+            .catch(() => {
                 settingsActions.showSnackbarMessage(
                     this.getTranslation('error_fetching_settings')
                 )
                 return Promise.resolve()
             })
-        /* eslint-enable */
     }
 
     syncVersions() {
@@ -162,7 +160,9 @@ class metadataSettings extends React.Component {
                         return 0
                     })
                     versions.forEach(version => {
-                        version.importdate = version.importdate ? new Date(version.importdate).toLocaleString() : 'NA'; // eslint-disable-line
+                        version.importdate = version.importdate
+                            ? new Date(version.importdate).toLocaleString()
+                            : 'NA'
                     })
                     this.setState({
                         metadataVersions: versions,
@@ -171,7 +171,7 @@ class metadataSettings extends React.Component {
                     })
                     return Promise.resolve()
                 })
-                .catch(error => {
+                .catch(() => {
                     this.setState({ hasVersions: false })
                     return Promise.resolve()
                 })
@@ -180,7 +180,6 @@ class metadataSettings extends React.Component {
         return Promise.resolve()
     }
 
-    /* eslint-disable complexity */
     renderVersionList() {
         const styles = {
             inlineRight: {
@@ -388,9 +387,7 @@ class metadataSettings extends React.Component {
             </div>
         )
     }
-    /* eslint-enable complexity */
 
-    /* eslint-disable complexity */
     render() {
         const localeAppendage =
             this.state.locale === 'en' ? '' : this.state.locale
@@ -448,10 +445,9 @@ class metadataSettings extends React.Component {
             </div>
         )
     }
-    /* eslint-disable */
 }
 metadataSettings.contextTypes = {
     d2: PropTypes.object.isRequired,
-};
+}
 
-export default metadataSettings;
+export default metadataSettings

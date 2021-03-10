@@ -4,7 +4,6 @@ import {
     TableBody,
     TableCell,
     TableCellHead,
-    TableFoot,
     TableHead,
     TableRow,
     TableRowHead,
@@ -19,7 +18,6 @@ import FlatButton from 'material-ui/FlatButton'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import FontIcon from 'material-ui/FontIcon'
 import RaisedButton from 'material-ui/RaisedButton'
-import PropTypes from 'prop-types'
 import React from 'react'
 import MultiToggle from '../form-fields/multi-toggle'
 import TextField from '../form-fields/text-field'
@@ -53,7 +51,6 @@ const styles = {
     },
 }
 
-/* eslint-disable complexity */
 function generateSecret() {
     const alphabet = '0123456789abcdef'
     let uid = ''
@@ -65,17 +62,8 @@ function generateSecret() {
     }
     return uid
 }
-/* eslint-enable complexity */
 
 class OAuth2ClientEditor extends React.Component {
-    static propTypes = {
-        transitionUnmount: PropTypes.bool,
-    }
-
-    static defaultProps = {
-        transitionUnmount: false,
-    }
-
     constructor(props) {
         super(props)
 
@@ -156,7 +144,6 @@ class OAuth2ClientEditor extends React.Component {
                 oa2Actions.load()
                 this.setState({ showForm: false, saving: false })
             })
-            /* eslint-disable complexity */
             .catch(error => {
                 settingsActions.showSnackbarMessage(
                     this.getTranslation('failed_to_save_oauth2_client')
@@ -174,7 +161,6 @@ class OAuth2ClientEditor extends React.Component {
                         : error.message || error
                 log.warn(`Error when saving OAuth2 client: ${message}`)
             })
-        /* eslint-enable */
     }
 
     formUpdateAction(field, v) {
@@ -186,7 +172,6 @@ class OAuth2ClientEditor extends React.Component {
         this.forceUpdate()
     }
 
-    /* eslint-disable complexity */
     renderForm() {
         const d2 = this.context.d2
         const formFieldStyle = AppTheme.forms
@@ -196,7 +181,7 @@ class OAuth2ClientEditor extends React.Component {
             (this.clientModel && this.clientModel.grantTypes) ||
             []
         ).reduce((curr, prev) => {
-            curr[prev] = true // eslint-disable-line no-param-reassign
+            curr[prev] = true
             return curr
         }, {})
 
@@ -374,7 +359,6 @@ class OAuth2ClientEditor extends React.Component {
             </Dialog>
         )
     }
-    /* eslint-enable */
 
     renderList() {
         return (
@@ -392,7 +376,7 @@ class OAuth2ClientEditor extends React.Component {
                 </TableHead>
                 <TableBody>
                     {oa2ClientStore.state.map(row => (
-                        <TableRow>
+                        <TableRow key={row.authorization_code}>
                             <TableCell>{row.name}</TableCell>
                             <TableCell>{row.password}</TableCell>
                             <TableCell>{row.refresh_token}</TableCell>

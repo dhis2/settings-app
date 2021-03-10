@@ -10,9 +10,9 @@ const helpTextStyle = {
 
 class TextFieldComponent extends React.Component {
     static propTypes = {
-        value: PropTypes.string,
-        multiLine: PropTypes.bool,
         helpText: PropTypes.node,
+        multiLine: PropTypes.bool,
+        value: PropTypes.string,
     }
 
     static defaultProps = {

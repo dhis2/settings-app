@@ -211,10 +211,12 @@ class SettingsFields extends React.Component {
                     props: {
                         label: fieldBase.props.floatingLabelText,
                         name: mapping.name,
-                        isEnabled: settingsStore.state && Object.hasOwnProperty.call(
-                            settingsStore.state,
-                            key
-                        ),
+                        isEnabled:
+                            settingsStore.state &&
+                            Object.hasOwnProperty.call(
+                                settingsStore.state,
+                                key
+                            ),
                         value:
                             fieldBase.value === 'true' ||
                             fieldBase.value === true,

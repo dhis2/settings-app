@@ -96,15 +96,14 @@ class LocalizedTextEditor extends React.Component {
 
     componentDidMount() {
         this.getAppearanceSettings()
-        this.settingsStoreSubscription =
-            settingsStore.subscribe(() => {
-                this.setState({
-                    locale: settingsStore.state.keyUiLocale,
-                    localeName: LocalizedTextEditor.getLocaleName(
-                        settingsStore.state.keyUiLocale
-                    ),
-                })
+        this.settingsStoreSubscription = settingsStore.subscribe(() => {
+            this.setState({
+                locale: settingsStore.state.keyUiLocale,
+                localeName: LocalizedTextEditor.getLocaleName(
+                    settingsStore.state.keyUiLocale
+                ),
             })
+        })
     }
 
     componentWillUnmount() {

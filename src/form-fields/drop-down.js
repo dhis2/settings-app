@@ -5,20 +5,19 @@ import React from 'react'
 
 class DropDown extends React.Component {
     static propTypes = {
+        value: PropTypes.string.isRequired,
         defaultValue: PropTypes.oneOfType([
             PropTypes.string,
             PropTypes.number,
             PropTypes.bool,
         ]),
-        value: PropTypes.string.isRequired,
-        menuItems: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-        includeEmpty: PropTypes.bool,
         emptyLabel: PropTypes.string,
+        includeEmpty: PropTypes.bool,
+        menuItems: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
         noOptionsLabel: PropTypes.string,
-
-        onFocus: PropTypes.func,
         onBlur: PropTypes.func,
         onChange: PropTypes.func,
+        onFocus: PropTypes.func,
     }
 
     static defaultProps = {
@@ -60,7 +59,6 @@ class DropDown extends React.Component {
         ))
     }
 
-    /* eslint-disable complexity */
     render() {
         const {
             onFocus, onBlur, onChange, value, disabled, menuItems,  // eslint-disable-line
@@ -88,7 +86,6 @@ class DropDown extends React.Component {
             </SelectField>
         )
     }
-    /* eslint-enable */
 }
 
 export default DropDown

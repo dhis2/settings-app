@@ -9,8 +9,8 @@ class MultiToggle extends React.Component {
         items: PropTypes.arrayOf(
             PropTypes.shape({
                 name: PropTypes.string.isRequired,
-                value: PropTypes.bool,
                 text: PropTypes.string.isRequired,
+                value: PropTypes.bool,
             })
         ),
         style: PropTypes.object,
@@ -74,7 +74,7 @@ class MultiToggle extends React.Component {
                             value="true"
                             defaultChecked={item.value === true}
                             label={item.text}
-                            onCheck={togglor} // eslint-disable-line react/jsx-no-bind
+                            onCheck={togglor}
                             style={style}
                             labelPosition="right"
                         />

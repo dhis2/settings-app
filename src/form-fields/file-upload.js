@@ -10,14 +10,14 @@ import applyTranslateContext from '../Translate.HOC'
 
 class FileUpload extends React.Component {
     static propTypes = {
-        name: PropTypes.oneOf(['logo_front', 'logo_banner']).isRequired,
-        label: PropTypes.string.isRequired,
-        value: PropTypes.bool.isRequired,
         isEnabled: PropTypes.bool.isRequired,
+        label: PropTypes.string.isRequired,
+        name: PropTypes.oneOf(['logo_front', 'logo_banner']).isRequired,
+        value: PropTypes.bool.isRequired,
 
-        onFocus: PropTypes.func,
         onBlur: PropTypes.func,
         onChange: PropTypes.func,
+        onFocus: PropTypes.func,
     }
 
     static defaultProps = {
@@ -237,7 +237,7 @@ class FileUpload extends React.Component {
                     <input
                         type="file"
                         style={{ visibility: 'hidden', display: 'none' }}
-                        ref={setRef} // eslint-disable-line react/jsx-no-bind
+                        ref={setRef}
                         onChange={this.onUpload}
                     />
                 </div>
