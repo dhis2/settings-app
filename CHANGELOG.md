@@ -1,3 +1,10 @@
+## [29.5.5](https://github.com/dhis2/settings-app/compare/v29.5.4...v29.5.5) (2021-03-10)
+
+
+### Bug Fixes
+
+* update settings names [DHIS2-7630] ([ed6e787](https://github.com/dhis2/settings-app/commit/ed6e78789a57ea527fd4861cf0f6b5f73c2b8883))
+
 ## [29.5.4](https://github.com/dhis2/settings-app/compare/v29.5.3...v29.5.4) (2021-03-09)
 
 
