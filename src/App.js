@@ -125,7 +125,7 @@ const AppWrapper = () => {
     }))
     flags.unshift({
         id: 'dhis2',
-        displayName: d2.i18n.getTranslation('no_flag'),
+        displayName: i18n.t('No flag'),
     })
 
     const styles = (data.styles || []).map(style => ({

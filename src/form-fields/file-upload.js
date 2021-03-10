@@ -1,4 +1,4 @@
-import log from 'loglevel'
+import i18n from '@dhis2/d2-i18n'
 import Checkbox from 'material-ui/Checkbox'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
@@ -6,7 +6,6 @@ import LinearProgress from 'material-ui/LinearProgress'
 import PropTypes from 'prop-types'
 import React from 'react'
 import AppTheme from '../theme'
-import applyTranslateContext from '../Translate.HOC'
 
 class FileUpload extends React.Component {
     static propTypes = {
@@ -48,7 +47,6 @@ class FileUpload extends React.Component {
         } else if (this.state.uploading) {
             this.xhr.abort()
             this.setState({ uploading: false, progress: undefined })
-            log.info('File upload cancelled')
         }
     }
 
@@ -88,7 +86,6 @@ class FileUpload extends React.Component {
 
         api.post(['staticContent', this.props.name].join('/'), data)
             .then(() => {
-                log.info('File uploaded successfully')
                 this.props.onChange({ target: { value: true } })
                 this.setState({
                     uploading: false,
@@ -96,8 +93,7 @@ class FileUpload extends React.Component {
                     isEnabled: true,
                 })
             })
-            .catch(err => {
-                log.warn('File upload failed:', err)
+            .catch(() => {
                 this.props.onChange({ target: { value: false } })
                 this.setState({
                     uploading: false,
@@ -118,7 +114,7 @@ class FileUpload extends React.Component {
         return (
             <div>
                 <FlatButton
-                    label={this.getTranslation('cancel_upload')}
+                    label={i18n.t('Cancel upload')}
                     onClick={this.onClick}
                 />
                 <div style={progressStyle}>
@@ -156,12 +152,12 @@ class FileUpload extends React.Component {
             return (
                 <div>
                     <FlatButton
-                        label={this.getTranslation('replace_image')}
+                        label={i18n.t('Replace image')}
                         secondary
                         onClick={this.onClick}
                     />
                     <FlatButton
-                        label={this.getTranslation('preview_image')}
+                        label={i18n.t('Preview image')}
                         onClick={this.onPreviewClick}
                     />
                     <Dialog
@@ -183,7 +179,7 @@ class FileUpload extends React.Component {
 
         return (
             <FlatButton
-                label={this.getTranslation('upload_image')}
+                label={i18n.t('Upload image')}
                 primary
                 onClick={this.onClick}
             />
@@ -246,6 +242,4 @@ class FileUpload extends React.Component {
     }
 }
 
-const FileUploadWithTranslation = applyTranslateContext(FileUpload)
-
-export default FileUploadWithTranslation
+export default FileUpload

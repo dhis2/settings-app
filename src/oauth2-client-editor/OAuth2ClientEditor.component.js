@@ -12,7 +12,6 @@ import {
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
 import { isUrlArray, isRequired } from 'd2-ui/lib/forms/Validators'
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component'
-import log from 'loglevel'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
@@ -23,7 +22,6 @@ import MultiToggle from '../form-fields/multi-toggle'
 import TextField from '../form-fields/text-field'
 import settingsActions from '../settingsActions'
 import AppTheme from '../theme'
-import applyTranslateContext from '../Translate.HOC'
 import oa2Actions from './oauth2Client.actions'
 import oa2ClientStore from './oauth2Client.store'
 
@@ -139,27 +137,16 @@ class OAuth2ClientEditor extends React.Component {
                 }
 
                 settingsActions.showSnackbarMessage(
-                    this.getTranslation('oauth2_client_saved')
+                    i18n.t('OAuth2 client saved')
                 )
                 oa2Actions.load()
                 this.setState({ showForm: false, saving: false })
             })
-            .catch(error => {
+            .catch(() => {
                 settingsActions.showSnackbarMessage(
-                    this.getTranslation('failed_to_save_oauth2_client')
+                    i18n.t('Failed to save OAuth2 client')
                 )
                 this.setState({ saving: false })
-
-                const message =
-                    (error.messages || error.response) &&
-                    error.response.errorReports
-                        ? `\n - ${(
-                              error.messages || error.response.errorReports
-                          )
-                              .map(e => e.message)
-                              .join('\n - ')}`
-                        : error.message || error
-                log.warn(`Error when saving OAuth2 client: ${message}`)
             })
     }
 
@@ -212,7 +199,7 @@ class OAuth2ClientEditor extends React.Component {
                         if (list.size === 0) {
                             resolve()
                         } else {
-                            reject(d2.i18n.getTranslation('cid_already_taken'))
+                            reject(i18n.t('This client ID is already taken'))
                         }
                     })
             })
@@ -224,16 +211,14 @@ class OAuth2ClientEditor extends React.Component {
                 value: this.clientModel.name,
                 component: TextField,
                 props: {
-                    floatingLabelText: this.getTranslation('name'),
+                    floatingLabelText: i18n.t('Name'),
                     style: formFieldStyle,
                     changeEvent: 'onBlur',
                 },
                 validators: [
                     {
                         validator: isRequired,
-                        message: this.context.d2.i18n.getTranslation(
-                            isRequired.message
-                        ),
+                        message: i18n.t('Required'),
                     },
                 ],
             },
@@ -242,22 +227,18 @@ class OAuth2ClientEditor extends React.Component {
                 value: this.clientModel.cid,
                 component: TextField,
                 props: {
-                    floatingLabelText: this.getTranslation('client_id'),
+                    floatingLabelText: i18n.t('Client ID'),
                     style: formFieldStyle,
                     changeEvent: 'onBlur',
                 },
                 validators: [
                     {
                         validator: isRequired,
-                        message: this.context.d2.i18n.getTranslation(
-                            isRequired.message
-                        ),
+                        message: i18n.t('Required'),
                     },
                     {
                         validator: v => v.toString().trim().length > 0,
-                        message: this.context.d2.i18n.getTranslation(
-                            isRequired.message
-                        ),
+                        message: i18n.t('Required'),
                     },
                 ],
                 asyncValidators: [validateClientID],
@@ -267,7 +248,7 @@ class OAuth2ClientEditor extends React.Component {
                 value: this.clientModel && this.clientModel.secret,
                 component: TextField,
                 props: {
-                    floatingLabelText: this.getTranslation('client_secret'),
+                    floatingLabelText: i18n.t('Client Secret'),
                     disabled: true,
                     style: formFieldStyle,
                 },
@@ -277,21 +258,21 @@ class OAuth2ClientEditor extends React.Component {
                 component: MultiToggle,
                 style: formFieldStyle,
                 props: {
-                    label: this.getTranslation('grant_types'),
+                    label: i18n.t('Grant Types'),
                     items: [
                         {
                             name: 'password',
-                            text: this.getTranslation('password'),
+                            text: i18n.t('Password'),
                             value: grantTypes.password,
                         },
                         {
                             name: 'refresh_token',
-                            text: this.getTranslation('refresh_token'),
+                            text: i18n.t('Refresh token'),
                             value: grantTypes.refresh_token,
                         },
                         {
                             name: 'authorization_code',
-                            text: this.getTranslation('authorization_code'),
+                            text: i18n.t('Authorization code'),
                             value: grantTypes.authorization_code,
                         },
                     ],
@@ -302,8 +283,8 @@ class OAuth2ClientEditor extends React.Component {
                 value: (this.clientModel.redirectUris || []).join('\n'),
                 component: TextField,
                 props: {
-                    hintText: this.getTranslation('one_url_per_line'),
-                    floatingLabelText: this.getTranslation('redirect_uris'),
+                    hintText: i18n.t('One URL per line'),
+                    floatingLabelText: i18n.t('Redirect URIs'),
                     multiLine: true,
                     style: formFieldStyle,
                     changeEvent: 'onBlur',
@@ -311,8 +292,8 @@ class OAuth2ClientEditor extends React.Component {
                 validators: [
                     {
                         validator: isUrlArray,
-                        message: this.context.d2.i18n.getTranslation(
-                            isUrlArray.message
+                        message: i18n.t(
+                            'This field should contain a list of URLs'
                         ),
                     },
                 ],
@@ -321,8 +302,8 @@ class OAuth2ClientEditor extends React.Component {
 
         const headerText =
             this.clientModel.id === undefined
-                ? this.getTranslation('create_new_oauth2_client')
-                : this.getTranslation('edit_oauth2_client')
+                ? i18n.t('Create new OAuth2 Client')
+                : i18n.t('Edit OAuth2 Client')
         return (
             <Dialog
                 open
@@ -340,20 +321,20 @@ class OAuth2ClientEditor extends React.Component {
                     <RaisedButton
                         onClick={this.saveAction}
                         primary
-                        label={this.getTranslation('save')}
+                        label={i18n.t('Save')}
                     />
                     {this.clientModel.id !== undefined ? (
                         <FlatButton
                             onClick={this.deleteAction}
                             primary
                             style={styles.button}
-                            label={this.getTranslation('delete')}
+                            label={i18n.t('Delete')}
                         />
                     ) : undefined}
                     <FlatButton
                         onClick={this.cancelAction}
                         style={styles.buttonRight}
-                        label={this.getTranslation('cancel')}
+                        label={i18n.t('Cancel')}
                     />
                 </div>
             </Dialog>
@@ -415,7 +396,9 @@ class OAuth2ClientEditor extends React.Component {
                 )}
                 {this.state.isEmpty ? (
                     <div style={styles.empty}>
-                        {this.getTranslation('no_oauth2_clients_registered')}
+                        {i18n.t(
+                            'There are currently no OAuth2 clients registered'
+                        )}
                     </div>
                 ) : (
                     this.renderList()
@@ -426,8 +409,4 @@ class OAuth2ClientEditor extends React.Component {
     }
 }
 
-const OAuth2ClientEditorWithTranslation = applyTranslateContext(
-    OAuth2ClientEditor
-)
-
-export default OAuth2ClientEditorWithTranslation
+export default OAuth2ClientEditor
