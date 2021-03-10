@@ -211,7 +211,7 @@ class SettingsFields extends React.Component {
                     props: {
                         label: fieldBase.props.floatingLabelText,
                         name: mapping.name,
-                        isEnabled: Object.hasOwnProperty.call(
+                        isEnabled: settingsStore.state && Object.hasOwnProperty.call(
                             settingsStore.state,
                             key
                         ),
@@ -388,7 +388,7 @@ class SettingsFields extends React.Component {
                 <div style={styles.header}>
                     {categories[this.props.category]
                         ? categories[this.props.category].pageLabel
-                     : i18n.t('Search results')}
+                        : i18n.t('Search results')}
                 </div>
                 {this.renderFields(this.props.currentSettings)}
             </div>

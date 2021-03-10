@@ -5,10 +5,13 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-08T15:33:16.744Z\n"
-"PO-Revision-Date: 2021-03-08T15:33:16.744Z\n"
+"POT-Creation-Date: 2021-03-10T14:13:35.309Z\n"
+"PO-Revision-Date: 2021-03-10T14:13:35.309Z\n"
 
 msgid "Search settings"
+msgstr ""
+
+msgid "Select language"
 msgstr ""
 
 msgid "Name"
@@ -27,4 +30,14 @@ msgid "Edit"
 msgstr ""
 
 msgid "Delete"
+msgstr ""
+
+msgid "General settings"
+msgstr ""
+
+msgid "Search results"
+msgstr ""
+
+msgctxt "settings"
+msgid "analytics"
 msgstr ""

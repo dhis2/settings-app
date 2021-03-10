@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
 import CircularProgress from 'material-ui/CircularProgress'
 import PropTypes from 'prop-types'
@@ -20,7 +21,7 @@ import settingsStore from '../settingsStore'
  * When posting settings for a specific locale, we need to add a `locale` query parameter like so:
  * `/systemSettings/<key>?locale=<locale>`. To make this work a dedicated function has been created
  * in `src/settingsActions.js` called `saveLocalizedAppearanceSetting`. However, when we want to
- * update a default value, we need to omit the `locale` query parameter. Effectively his means that
+ * update a default value, we need to omit the `locale` query parameter. Effectively this means that
  * updating a default appearance setting is identical to updating a regular setting, so it can just
  * be handled by the `saveSetting` function.
  */
@@ -95,8 +96,7 @@ class LocalizedTextEditor extends React.Component {
 
     componentDidMount() {
         this.getAppearanceSettings()
-        this.subscriptions = []
-        this.subscriptions.push(
+        this.settingsStoreSubscription =
             settingsStore.subscribe(() => {
                 this.setState({
                     locale: settingsStore.state.keyUiLocale,
@@ -105,12 +105,11 @@ class LocalizedTextEditor extends React.Component {
                     ),
                 })
             })
-        )
     }
 
     componentWillUnmount() {
-        if (Array.isArray(this.subscriptions)) {
-            this.subscriptions.forEach(sub => sub.unsubscribe())
+        if (this.settingsStoreSubscription) {
+            this.settingsStoreSubscription.unsubscribe()
         }
     }
 
@@ -266,9 +265,7 @@ class LocalizedTextEditor extends React.Component {
                     <SelectField
                         menuItems={options}
                         value={this.state.locale || ''}
-                        floatingLabelText={this.getTranslation(
-                            'select_language'
-                        )}
+                        floatingLabelText={i18n.t('Select language')}
                         onChange={this.handleChange}
                     />
                     {this.state.locale &&

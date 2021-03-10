@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import {
     Table,
     TableBody,
@@ -9,7 +10,6 @@ import {
     TableRowHead,
     Button,
 } from '@dhis2/ui'
-import i18n from '@dhis2/d2-i18n'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
 import { isUrlArray, isRequired } from 'd2-ui/lib/forms/Validators'
 import LoadingMask from 'd2-ui/lib/loading-mask/LoadingMask.component'
@@ -90,7 +90,7 @@ class OAuth2ClientEditor extends React.Component {
     state = {
         showForm: false,
         isEmpty: true,
-        saving: false
+        saving: false,
     }
 
     componentDidMount() {
