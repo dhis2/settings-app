@@ -10,6 +10,8 @@ import settingsActions from '../settingsActions'
 import settingsKeyMapping from '../settingsKeyMapping'
 import settingsStore from '../settingsStore'
 
+const systemDefaultText = i18n.t('System default (fallback)')
+
 /**
  * To understand why this component works the way it does, some background knowledge is required:
  *
@@ -89,9 +91,6 @@ class LocalizedTextEditor extends React.Component {
 
         this.handleChange = this.handleChange.bind(this)
         this.saveSettingsKey = this.saveSettingsKey.bind(this)
-        this.getTranslation = context.d2.i18n.getTranslation.bind(
-            context.d2.i18n
-        )
     }
 
     componentDidMount() {
@@ -190,9 +189,7 @@ class LocalizedTextEditor extends React.Component {
 
         if (defaultValue) {
             return {
-                helpText: `${this.getTranslation(
-                    'default_value'
-                )}: ${defaultValue}`,
+                helpText: `${systemDefaultText}: ${defaultValue}`,
             }
         }
 
@@ -203,7 +200,9 @@ class LocalizedTextEditor extends React.Component {
                     style={styles.clickableHelpText}
                     onClick={this.switchToDefaultLocale}
                 >
-                    {this.getTranslation('set_main_value_first')}
+                    {i18n.t(
+                        'Set the main field value before adding a translation'
+                    )}
                 </span>
             ),
         }
@@ -221,7 +220,7 @@ class LocalizedTextEditor extends React.Component {
         if (this.state.error) {
             return (
                 <div style={styles.error}>
-                    {this.getTranslation('could_not_fetch_localized_settings')}
+                    {i18n.t('Could not fetch localized settings')}
                 </div>
             )
         }
@@ -231,11 +230,8 @@ class LocalizedTextEditor extends React.Component {
             value: this.state.settings[key] || '',
             component: TextField,
             props: {
-                floatingLabelText: `${this.getTranslation(
-                    settingsKeyMapping[key].label
-                )} - ${
-                    this.state.localeName ||
-                    this.getTranslation('system_default')
+                floatingLabelText: `${settingsKeyMapping[key].label} – ${
+                    this.state.localeName || systemDefaultText
                 }`,
                 changeEvent: 'onBlur',
                 style: styles.field,
@@ -252,7 +248,7 @@ class LocalizedTextEditor extends React.Component {
     render() {
         const systemDefaultOption = {
             id: SYSTEM_DEFAULT,
-            displayName: this.getTranslation('system_default'),
+            displayName: systemDefaultText,
         }
         const optionStoreState = configOptionStore.getState()
         const uiLocales = (optionStoreState && optionStoreState.uiLocales) || []

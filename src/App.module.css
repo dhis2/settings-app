@@ -1,5 +1,6 @@
 .contentWrap {
     display: flex;
+    background: #f3f3f3;
 }
 
 .contentArea {

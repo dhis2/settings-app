@@ -1,3 +1,5 @@
+import i18n from '@dhis2/d2-i18n'
+
 /**
  * This file provides information about DHIS2 system settings and configuration options that are not otherwise
  * available through the API.
@@ -317,30 +319,30 @@ const settingsKeyMapping = {
         ],
     },
     applicationTitle: {
-        label: 'application_title',
+        label: i18n.t('Application title'),
         appendLocale: true,
         multiLine: true,
     },
     keyApplicationIntro: {
-        label: 'application_introduction',
+        label: i18n.t('Application introduction'),
         description: 'allows_html',
         appendLocale: true,
         multiLine: true,
     },
     keyApplicationNotification: {
-        label: 'application_notification',
+        label: i18n.t('Application notification'),
         description: 'allows_html',
         appendLocale: true,
         multiLine: true,
     },
     keyApplicationFooter: {
-        label: 'application_left_footer',
+        label: i18n.t('Application left-side footer'),
         description: 'allows_html',
         appendLocale: true,
         multiLine: true,
     },
     keyApplicationRightFooter: {
-        label: 'application_right_footer',
+        label: i18n.t('Application right-side footer'),
         description: 'allows_html',
         appendLocale: true,
         multiLine: true,
