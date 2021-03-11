@@ -5,19 +5,58 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-10T15:51:14.392Z\n"
-"PO-Revision-Date: 2021-03-10T15:51:14.392Z\n"
+"POT-Creation-Date: 2021-03-11T11:11:35.731Z\n"
+"PO-Revision-Date: 2021-03-11T11:11:35.731Z\n"
 
 msgid "Failed to load: {{error}}"
+msgstr ""
+
+msgid "No flag"
 msgstr ""
 
 msgid "Search settings"
 msgstr ""
 
+msgid "Replace image"
+msgstr ""
+
+msgid "Preview image"
+msgstr ""
+
+msgid "Preview of image"
+msgstr ""
+
+msgid "Upload image"
+msgstr ""
+
+msgid "Cancel upload"
+msgstr ""
+
 msgid "Select language"
 msgstr ""
 
+msgid "OAuth2 client saved"
+msgstr ""
+
+msgid "Failed to save OAuth2 client"
+msgstr ""
+
+msgid "This client ID is already taken"
+msgstr ""
+
 msgid "Name"
+msgstr ""
+
+msgid "Required"
+msgstr ""
+
+msgid "Client ID"
+msgstr ""
+
+msgid "Client Secret"
+msgstr ""
+
+msgid "Grant Types"
 msgstr ""
 
 msgid "Password"
@@ -29,18 +68,65 @@ msgstr ""
 msgid "Authorization code"
 msgstr ""
 
-msgid "Edit"
+msgid "One URL per line"
+msgstr ""
+
+msgid "Redirect URIs"
+msgstr ""
+
+msgid "This field should contain a list of URLs"
+msgstr ""
+
+msgid "Create new OAuth2 Client"
+msgstr ""
+
+msgid "Edit OAuth2 Client"
+msgstr ""
+
+msgid "Save"
 msgstr ""
 
 msgid "Delete"
 msgstr ""
 
+msgid "Cancel"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr ""
+
 msgid "General settings"
 msgstr ""
 
-msgid "Search results"
+msgid "Analytics settings"
 msgstr ""
 
-msgctxt "settings"
-msgid "analytics"
+msgid "Server settings"
+msgstr ""
+
+msgid "Appearance settings"
+msgstr ""
+
+msgid "Email settings"
+msgstr ""
+
+msgid "Access settings"
+msgstr ""
+
+msgid "Calendar settings"
+msgstr ""
+
+msgid "Data import settings"
+msgstr ""
+
+msgid "Synchronization settings"
+msgstr ""
+
+msgid "OAuth2 Clients"
+msgstr ""
+
+msgid "Search results"
 msgstr ""

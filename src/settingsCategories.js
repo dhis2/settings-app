@@ -38,7 +38,7 @@ export const categories = {
     analytics: {
         label: 'analytics',
         icon: 'equalizer',
-        pageLabel: i18n.t('analytics_settings'),
+        pageLabel: i18n.t('Analytics settings'),
         settings: [
             'keyAnalysisRelativePeriod',
             'keyHideDailyPeriods',
@@ -58,7 +58,7 @@ export const categories = {
     server: {
         label: 'server',
         icon: 'business',
-        pageLabel: 'server_settings',
+        pageLabel: i18n.t('Server settings'),
         settings: [
             'keyDatabaseServerCpus',
             'keySystemNotificationsEmail',
@@ -70,7 +70,7 @@ export const categories = {
     appearance: {
         label: 'appearance',
         icon: 'looks',
-        pageLabel: 'appearance_settings',
+        pageLabel: i18n.t('Appearance settings'),
         settings: [
             'localizedText',
             'keyStyle',
@@ -93,7 +93,7 @@ export const categories = {
     email: {
         label: 'email',
         icon: 'email',
-        pageLabel: 'email_settings',
+        pageLabel: i18n.t('Email settings'),
         settings: [
             'keyEmailHostName',
             'keyEmailPort',
@@ -107,7 +107,7 @@ export const categories = {
     access: {
         label: 'access',
         icon: 'lock_open',
-        pageLabel: 'access_settings',
+        pageLabel: i18n.t('Access settings'),
         settings: [
             'selfRegistrationRole',
             'selfRegistrationOrgUnit',
@@ -127,13 +127,13 @@ export const categories = {
     calendar: {
         label: 'calendar',
         icon: 'date_range',
-        pageLabel: 'calendar_settings',
+        pageLabel: i18n.t('Calendar settings'),
         settings: ['keyCalendar', 'keyDateFormat'],
     },
     import: {
         label: 'import',
         icon: 'system_update_alt',
-        pageLabel: 'import_settings',
+        pageLabel: i18n.t('Data import settings'),
         settings: [
             'keyDataImportStrictPeriods',
             'keyDataImportStrictDataElements',
@@ -147,7 +147,7 @@ export const categories = {
     sync: {
         label: 'synchronization',
         icon: 'sync',
-        pageLabel: 'synchronization_settings',
+        pageLabel: i18n.t('Synchronization settings'),
         settings: [
             'keyRemoteInstanceUrl',
             'keyRemoteInstanceUsername',
@@ -158,7 +158,7 @@ export const categories = {
     oauth2: {
         label: 'oauth2_clients',
         icon: 'vpn_lock',
-        pageLabel: 'oauth2_clients',
+        pageLabel: i18n.t('OAuth2 Clients'),
         authority: 'F_OAUTH2_CLIENT_MANAGE',
         settings: ['oauth2clients'],
     },
