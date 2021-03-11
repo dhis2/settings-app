@@ -1,6 +1,6 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
-import { CenteredContent, CircularLoader } from '@dhis2/ui'
+import { CssVariables, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React from 'react'
 import App from './app.component'
 import 'material-design-icons-iconfont'
@@ -157,7 +157,12 @@ const AppWrapper = () => {
         userSettingsNoFallback: userSettings,
     })
 
-    return <App d2={d2} />
+    return (
+        <>
+            <CssVariables spacers colors />
+            <App d2={d2} />
+        </>
+    )
 }
 
 export default AppWrapper

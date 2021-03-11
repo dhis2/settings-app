@@ -120,7 +120,10 @@ class SettingsFields extends React.Component {
     componentDidMount() {
         this.subscriptions = []
         this.subscriptions.push(
-            settingsStore.subscribe(() => this.forceUpdate())
+            settingsStore.subscribe(() => {
+                console.log('settings store updated')
+                this.forceUpdate()
+            })
         )
     }
 
@@ -206,17 +209,18 @@ class SettingsFields extends React.Component {
                 })
 
             case 'staticContent':
+                if (!settingsStore.state) {
+                    return null
+                }
                 return Object.assign({}, fieldBase, {
                     component: FileUpload,
                     props: {
                         label: fieldBase.props.floatingLabelText,
                         name: mapping.name,
-                        isEnabled:
-                            settingsStore.state &&
-                            Object.hasOwnProperty.call(
-                                settingsStore.state,
-                                key
-                            ),
+                        isEnabled: Object.hasOwnProperty.call(
+                            settingsStore.state,
+                            key
+                        ),
                         value:
                             fieldBase.value === 'true' ||
                             fieldBase.value === true,
@@ -327,7 +331,7 @@ class SettingsFields extends React.Component {
 
                 return this.fieldForMapping({ mapping, fieldBase, key, d2 })
             })
-            .filter(f => !!f.name)
+            .filter(f => f && !!f.name)
             .map(field => {
                 const mapping = settingsKeyMapping[field.name]
                 const options = configOptionStore.getState()

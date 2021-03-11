@@ -1,11 +1,80 @@
+import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
+import {
+    Button,
+    LinearLoader,
+    CircularLoader,
+    Modal,
+    ModalTitle,
+    ModalContent,
+    CenteredContent,
+} from '@dhis2/ui'
+import { getInstance as getD2 } from 'd2'
 import Checkbox from 'material-ui/Checkbox'
-import Dialog from 'material-ui/Dialog'
-import FlatButton from 'material-ui/FlatButton'
-import LinearProgress from 'material-ui/LinearProgress'
 import PropTypes from 'prop-types'
 import React from 'react'
 import AppTheme from '../theme'
+import styles from './FileUpload.module.css'
+
+const Upload = ({ isEnabled, name, showDialog, onUpload, onPreview }) => {
+    const dialogImgStyle = {
+        maxWidth: '100%',
+        maxHeight: '70vh',
+        backgroundColor: 'var(--colors-grey700)',
+        // Ensure image alt is visible against background if image fails to load
+        color: 'white',
+    }
+    const { baseUrl, apiVersion } = useConfig()
+    const imgUrl = `${[baseUrl, 'api', apiVersion, 'staticContent', name].join(
+        '/'
+    )}?at=${new Date()}`
+
+    if (isEnabled) {
+        return (
+            <div>
+                <Button
+                    secondary
+                    small
+                    className={styles.replaceImageBtn}
+                    onClick={onUpload}
+                >
+                    {i18n.t('Replace image')}
+                </Button>
+                <Button small onClick={onPreview}>
+                    {i18n.t('Preview image')}
+                </Button>
+                {showDialog && (
+                    <Modal onClose={onPreview}>
+                        <ModalTitle>{i18n.t('Preview image')}</ModalTitle>
+                        <ModalContent>
+                            <CenteredContent>
+                                <img
+                                    style={dialogImgStyle}
+                                    src={imgUrl}
+                                    alt={i18n.t('Preview of image')}
+                                />
+                            </CenteredContent>
+                        </ModalContent>
+                    </Modal>
+                )}
+            </div>
+        )
+    }
+
+    return (
+        <Button primary small onClick={onUpload}>
+            {i18n.t('Upload image')}
+        </Button>
+    )
+}
+
+Upload.propTypes = {
+    isEnabled: PropTypes.bool.isRequired,
+    name: PropTypes.oneOf(['logo_front', 'logo_banner']).isRequired,
+    showDialog: PropTypes.bool.isRequired,
+    onPreview: PropTypes.func.isRequired,
+    onUpload: PropTypes.func.isRequired,
+}
 
 class FileUpload extends React.Component {
     static propTypes = {
@@ -13,25 +82,9 @@ class FileUpload extends React.Component {
         label: PropTypes.string.isRequired,
         name: PropTypes.oneOf(['logo_front', 'logo_banner']).isRequired,
         value: PropTypes.bool.isRequired,
-
         onBlur: PropTypes.func,
         onChange: PropTypes.func,
         onFocus: PropTypes.func,
-    }
-
-    static defaultProps = {
-        onFocus: undefined,
-        onBlur: undefined,
-        onChange: undefined,
-    }
-
-    constructor(props) {
-        super(props)
-
-        this.onClick = this.onClick.bind(this)
-        this.onPreviewClick = this.onPreviewClick.bind(this)
-        this.onToggle = this.onToggle.bind(this)
-        this.onUpload = this.onUpload.bind(this)
     }
 
     state = {
@@ -41,7 +94,7 @@ class FileUpload extends React.Component {
         showDialog: false,
     }
 
-    onClick(e) {
+    onClick = e => {
         if (this.fileInput && !this.state.uploading) {
             this.fileInput.click(e)
         } else if (this.state.uploading) {
@@ -50,15 +103,15 @@ class FileUpload extends React.Component {
         }
     }
 
-    onPreviewClick() {
+    onPreviewClick = () => {
         this.setState(state => ({ showDialog: !state.showDialog }))
     }
 
-    onToggle(e) {
+    onToggle = e => {
         this.props.onChange({ target: { value: e.target.checked } })
     }
 
-    onUpload(e) {
+    onUpload = async e => {
         if (e.target.files.length === 0) {
             return
         }
@@ -68,7 +121,8 @@ class FileUpload extends React.Component {
             progress: undefined,
         })
 
-        const api = this.context.d2.Api.getApi()
+        const d2 = await getD2()
+        const api = d2.Api.getApi()
         const xhr = new XMLHttpRequest()
         xhr.upload.onprogress = progress => {
             if (progress.lengthComputable) {
@@ -84,26 +138,25 @@ class FileUpload extends React.Component {
         const data = new FormData()
         data.append('file', e.target.files[0])
 
-        api.post(['staticContent', this.props.name].join('/'), data)
-            .then(() => {
-                this.props.onChange({ target: { value: true } })
-                this.setState({
-                    uploading: false,
-                    progress: undefined,
-                    isEnabled: true,
-                })
+        try {
+            await api.post(['staticContent', this.props.name].join('/'), data)
+            this.props.onChange({ target: { value: true } })
+            this.setState({
+                uploading: false,
+                progress: undefined,
+                isEnabled: true,
             })
-            .catch(() => {
-                this.props.onChange({ target: { value: false } })
-                this.setState({
-                    uploading: false,
-                    progress: undefined,
-                    isEnabled: false,
-                })
+        } catch {
+            this.props.onChange({ target: { value: false } })
+            this.setState({
+                uploading: false,
+                progress: undefined,
+                isEnabled: false,
             })
+        }
     }
 
-    renderUploading() {
+    renderUploading = () => {
         const progressStyle = {
             position: 'absolute',
             left: 0,
@@ -113,76 +166,17 @@ class FileUpload extends React.Component {
 
         return (
             <div>
-                <FlatButton
-                    label={i18n.t('Cancel upload')}
-                    onClick={this.onClick}
-                />
+                <Button onClick={this.onClick}>
+                    {i18n.t('Cancel upload')}
+                </Button>
                 <div style={progressStyle}>
-                    <LinearProgress
-                        mode={
-                            this.state.progress
-                                ? 'determinate'
-                                : 'indeterminate'
-                        }
-                        value={this.state.progress}
-                    />
+                    {this.state.progress ? (
+                        <LinearLoader amount={this.state.progress} />
+                    ) : (
+                        <CircularLoader />
+                    )}
                 </div>
             </div>
-        )
-    }
-
-    renderUpload() {
-        const bodyStyle = {
-            backgroundColor: AppTheme.rawTheme.palette.primary1Color,
-            textAlign: 'center',
-            overflow: 'auto',
-            padding: 48,
-        }
-        const dialogImgStyle = {
-            maxWidth: '100%',
-            maxHeight: '70vh',
-        }
-
-        const apiBase = this.context.d2.Api.getApi().baseUrl
-        const imgUrl = `${[apiBase, 'staticContent', this.props.name].join(
-            '/'
-        )}?at=${new Date()}`
-
-        if (this.state.isEnabled) {
-            return (
-                <div>
-                    <FlatButton
-                        label={i18n.t('Replace image')}
-                        secondary
-                        onClick={this.onClick}
-                    />
-                    <FlatButton
-                        label={i18n.t('Preview image')}
-                        onClick={this.onPreviewClick}
-                    />
-                    <Dialog
-                        open={this.state.showDialog}
-                        onRequestClose={this.onPreviewClick}
-                        autoDetectWindowHeight
-                        autoScrollBodyContent
-                        bodyStyle={bodyStyle}
-                    >
-                        <img
-                            style={dialogImgStyle}
-                            src={imgUrl}
-                            alt="preview"
-                        />
-                    </Dialog>
-                </div>
-            )
-        }
-
-        return (
-            <FlatButton
-                label={i18n.t('Upload image')}
-                primary
-                onClick={this.onClick}
-            />
         )
     }
 
@@ -227,9 +221,17 @@ class FileUpload extends React.Component {
                     />
                 </div>
                 <div style={btnStyle}>
-                    {this.state.uploading
-                        ? this.renderUploading()
-                        : this.renderUpload()}
+                    {this.state.uploading ? (
+                        this.renderUploading()
+                    ) : (
+                        <Upload
+                            isEnabled={this.state.isEnabled}
+                            name={this.props.name}
+                            showDialog={this.state.showDialog}
+                            onUpload={this.onClick}
+                            onPreview={this.onPreviewClick}
+                        />
+                    )}
                     <input
                         type="file"
                         style={{ visibility: 'hidden', display: 'none' }}
