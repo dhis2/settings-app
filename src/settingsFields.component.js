@@ -62,7 +62,7 @@ const styles = {
     },
 }
 
-function wrapUserSettingsOverride(d2, component, valueLabel) {
+function wrapUserSettingsOverride({ component, valueLabel }) {
     return class extends component {
         render() {
             const labelStyle = Object.assign({}, styles.userSettingsOverride)
@@ -70,14 +70,15 @@ function wrapUserSettingsOverride(d2, component, valueLabel) {
                 labelStyle.top = -8
             }
 
-            const labelText =
-                valueLabel !== undefined
-                    ? `${d2.i18n.getTranslation(
-                          'will_be_overridden_by_current_user_setting'
-                      )}: ${valueLabel}`
-                    : d2.i18n.getTranslation(
-                          'can_be_overridden_by_user_settings'
-                      )
+            const labelText = valueLabel
+                ? `${i18n.t(
+                      'This setting will be overridden by the current user setting: {{settingName}}',
+                      {
+                          settingName: valueLabel,
+                          nsSeparator: null,
+                      }
+                  )}`
+                : i18n.t('This setting can be overridden by user settings')
 
             return (
                 <div style={{ marginRight: 48 }}>
@@ -120,10 +121,7 @@ class SettingsFields extends React.Component {
     componentDidMount() {
         this.subscriptions = []
         this.subscriptions.push(
-            settingsStore.subscribe(() => {
-                console.log('settings store updated')
-                this.forceUpdate()
-            })
+            settingsStore.subscribe(() => this.forceUpdate())
         )
     }
 
@@ -344,31 +342,15 @@ class SettingsFields extends React.Component {
                         userSettingsNoFallback[field.name] !== null
                             ? userSettingsNoFallback[field.name]
                             : ''
-                    let component = field.component
-
-                    if (userSettingValue === '') {
-                        component = wrapUserSettingsOverride(d2, component)
-                    } else if (mapping.source) {
-                        const userSettingLabel = (
-                            (options && options[mapping.source]) ||
-                            []
-                        )
-                            .filter(opt => opt.id === userSettingValue)
-                            .map(opt => opt.displayName)
-                            .pop()
-
-                        component = wrapUserSettingsOverride(
-                            d2,
-                            component,
-                            userSettingLabel
-                        )
-                    } else {
-                        component = wrapUserSettingsOverride(
-                            d2,
-                            component,
-                            d2.i18n.getTranslation(userSettingValue)
-                        )
-                    }
+                    const component = wrapUserSettingsOverride({
+                        component: field.component,
+                        valueLabel: mapping.source
+                            ? ((options && options[mapping.source]) || [])
+                                  .filter(opt => opt.id === userSettingValue)
+                                  .map(opt => opt.displayName)
+                                  .pop()
+                            : userSettingValue,
+                    })
 
                     return Object.assign(field, { component })
                 }

@@ -71,8 +71,11 @@ const query = {
     dbLocales: {
         resource: 'locales/db',
     },
-    userSettings: {
+    userSettingsNoFallback: {
         resource: 'userSettings',
+        params: {
+            useFallback: false,
+        },
     },
 }
 
@@ -108,7 +111,7 @@ const AppWrapper = () => {
         organisationUnitLevels,
         userRoles,
         organisationUnits,
-        userSettings,
+        userSettingsNoFallback,
     } = data
 
     const startModules = (data.apps.modules || []).map(module => ({
@@ -154,7 +157,7 @@ const AppWrapper = () => {
         styles,
         uiLocales,
         dbLocales,
-        userSettingsNoFallback: userSettings,
+        userSettingsNoFallback,
     })
 
     return (
