@@ -1,3 +1,10 @@
+## [29.5.7](https://github.com/dhis2/settings-app/compare/v29.5.6...v29.5.7) (2021-03-11)
+
+
+### Bug Fixes
+
+* **deps:** upgrade headerbar ([ad7f670](https://github.com/dhis2/settings-app/commit/ad7f670408686655137b17dc9250b62a0d500cb8))
+
 ## [29.5.6](https://github.com/dhis2/settings-app/compare/v29.5.5...v29.5.6) (2021-03-11)
 
 
