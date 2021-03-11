@@ -5,7 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Snackbar from 'material-ui/Snackbar';
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 import { DataProvider } from '@dhis2/app-runtime'
-import { HeaderBar } from '@dhis2/ui-widgets'
+import { HeaderBar } from '@dhis2/ui'
 import SettingsFields from './settingsFields.component';
 import appTheme from './theme';
 import settingsActions from './settingsActions';
