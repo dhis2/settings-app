@@ -1,8 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
-import { Button } from '@dhis2/ui'
+import { Button, Card } from '@dhis2/ui'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
 import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators'
-import { Card, CardText } from 'material-ui/Card'
 import IconButton from 'material-ui/IconButton'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -16,6 +15,7 @@ import metadataSettings from './metadata-settings/metadataSettings.component'
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component'
 import settingsActions from './settingsActions'
 import { categories } from './settingsCategories'
+import classes from './SettingsFields.module.css'
 import settingsKeyMapping from './settingsKeyMapping'
 import settingsStore from './settingsStore'
 import AppTheme from './theme'
@@ -26,20 +26,6 @@ const styles = {
         fontWeight: 500,
         color: 'var(--colors-grey900)',
         padding: '24px 0 12px 16px',
-    },
-    card: {
-        marginTop: 8,
-        marginRight: '1rem',
-        padding: '0 1rem',
-    },
-    cardTitle: {
-        background: AppTheme.rawTheme.palette.primary2Color,
-        height: 62,
-    },
-    cardTitleText: {
-        fontSize: 28,
-        fontWeight: 100,
-        color: AppTheme.rawTheme.palette.alternateTextColor,
     },
     noHits: {
         padding: '1rem',
@@ -353,13 +339,11 @@ class SettingsFields extends React.Component {
             })
 
         return (
-            <Card style={styles.card} key={this.props.category}>
-                <CardText>
-                    <FormBuilder
-                        fields={fields}
-                        onUpdateField={settingsActions.saveKey}
-                    />
-                </CardText>
+            <Card className={classes.card} key={this.props.category}>
+                <FormBuilder
+                    fields={fields}
+                    onUpdateField={settingsActions.saveKey}
+                />
             </Card>
         )
     }

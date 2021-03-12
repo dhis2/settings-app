@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import { Card } from '@dhis2/ui'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
 import CircularProgress from 'material-ui/CircularProgress'
 import PropTypes from 'prop-types'
@@ -29,11 +30,8 @@ const systemDefaultText = i18n.t('System default (fallback)')
  */
 
 const styles = {
-    inset: {
-        padding: '0 16px 8px',
-        borderRadius: 2,
-        boxShadow: '0px 0px 5px rgba(0,0,0,0.15), 0px 2px 3px rgba(0,0,0,0.15)',
-        margin: '8px -12px 4px',
+    container: {
+        padding: '0 var(--spacers-dp16) var(--spacers-dp8)',
     },
     field: {
         width: '100%',
@@ -255,8 +253,8 @@ class LocalizedTextEditor extends React.Component {
         const options = [systemDefaultOption, ...uiLocales]
 
         return (
-            <div>
-                <div style={styles.inset}>
+            <Card>
+                <div style={styles.container}>
                     <SelectField
                         menuItems={options}
                         value={this.state.locale || ''}
@@ -266,7 +264,7 @@ class LocalizedTextEditor extends React.Component {
                     {this.state.locale &&
                         this.renderLocalizedAppearanceFields()}
                 </div>
-            </div>
+            </Card>
         )
     }
 }
