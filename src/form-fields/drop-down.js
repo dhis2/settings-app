@@ -44,10 +44,13 @@ class DropDown extends React.Component {
 
     renderMenuItems(menuItems) {
         if (this.props.includeEmpty) {
-            menuItems.unshift({
-                id: 'null',
-                displayName: this.props.emptyLabel,
-            })
+            menuItems = [
+                {
+                    id: 'null',
+                    displayName: this.props.emptyLabel,
+                },
+                ...menuItems,
+            ]
         }
 
         return menuItems.map(item => (
