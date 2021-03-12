@@ -119,18 +119,6 @@ class OAuth2ClientEditor extends Component {
             )
         }
 
-        if (clients.length === 0) {
-            return (
-                <CenteredContent>
-                    <p>
-                        {i18n.t(
-                            'There are currently no OAuth2 clients registered'
-                        )}
-                    </p>
-                </CenteredContent>
-            )
-        }
-
         return (
             <div className={styles.wrapper}>
                 <ClientsList

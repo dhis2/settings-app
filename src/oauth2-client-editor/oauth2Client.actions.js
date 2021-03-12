@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import { getInstance as getD2 } from 'd2'
 import Action from 'd2-ui/lib/action/Action'
 import settingsActions from '../settingsActions'
@@ -10,8 +11,8 @@ oa2Actions.load.subscribe(() => {
         d2.models.oAuth2Client
             .list({ paging: false, fields: ':all', order: 'displayName' })
             .then(oa2ClientCollection => {
-                const yes = d2.i18n.getTranslation('yes')
-                const no = d2.i18n.getTranslation('no')
+                const yes = i18n.t('Yes')
+                const no = i18n.t('No')
                 // Map grant types to object props in order to display them in the data table
                 oa2Store.setState(
                     oa2ClientCollection.toArray().map(oa2c =>
@@ -42,19 +43,13 @@ oa2Actions.delete.subscribe(e => {
         .delete()
         .then(() => {
             oa2Actions.load()
-            getD2().then(d2 => {
-                settingsActions.showSnackbarMessage(
-                    d2.i18n.getTranslation('oauth2_client_deleted')
-                )
-            })
+            settingsActions.showSnackbarMessage(i18n.t('OAuth2 client deleted'))
         })
         .catch(err => {
             console.error('Error when deleting OAuth2 client:', err)
-            getD2().then(d2 => {
-                settingsActions.showSnackbarMessage(
-                    d2.i18n.getTranslation('failed_to_save_oauth2_client')
-                )
-            })
+            settingsActions.showSnackbarMessage(
+                i18n.t('Failed to delete OAuth2 client')
+            )
         })
 })
 
