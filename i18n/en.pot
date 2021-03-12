@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-12T13:10:42.081Z\n"
-"PO-Revision-Date: 2021-03-12T13:10:42.081Z\n"
+"POT-Creation-Date: 2021-03-12T13:29:52.292Z\n"
+"PO-Revision-Date: 2021-03-12T13:29:52.292Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr ""
@@ -585,4 +585,37 @@ msgid "reCAPTCHA Site Key"
 msgstr ""
 
 msgid "reCAPTCHA Secret Key"
+msgstr ""
+
+msgid "Calendar"
+msgstr ""
+
+msgid "Coptic"
+msgstr ""
+
+msgid "Ethiopian"
+msgstr ""
+
+msgid "Gregorian"
+msgstr ""
+
+msgid "Islamic"
+msgstr ""
+
+msgid "ISO 8601"
+msgstr ""
+
+msgid "Julian"
+msgstr ""
+
+msgid "Nepali"
+msgstr ""
+
+msgid "Thai"
+msgstr ""
+
+msgid "Persian"
+msgstr ""
+
+msgid "Date format"
 msgstr ""

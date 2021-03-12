@@ -538,26 +538,26 @@ const settingsKeyMapping = {
     /* Category: Calendar                                                                                           */
     /* ============================================================================================================ */
     keyCalendar: {
-        label: 'calendar',
+        label: i18n.t('Calendar'),
         type: 'dropdown',
         options: {
-            coptic: 'coptic',
-            ethiopian: 'ethiopian',
-            gregorian: 'gregorian',
-            islamic: 'islamic',
-            iso8601: 'iso8601',
-            julian: 'julian',
-            nepali: 'nepali',
-            thai: 'thai',
-            persian: 'persian',
+            coptic: i18n.t('Coptic'),
+            ethiopian: i18n.t('Ethiopian'),
+            gregorian: i18n.t('Gregorian'),
+            islamic: i18n.t('Islamic'),
+            iso8601: i18n.t('ISO 8601'),
+            julian: i18n.t('Julian'),
+            nepali: i18n.t('Nepali'),
+            thai: i18n.t('Thai'),
+            persian: i18n.t('Persian'),
         },
     },
     keyDateFormat: {
-        label: 'date_format',
+        label: i18n.t('Date format'),
         type: 'dropdown',
         options: {
-            'yyyy-MM-dd': 'yyyy-MM-dd',
-            'dd-MM-yyyy': 'dd-MM-yyyy',
+            'yyyy-MM-dd': '1981-03-31 (yyyy-MM-dd)',
+            'dd-MM-yyyy': '31-03-1981 (dd-MM-yyyy)',
         },
     },
     /* ============================================================================================================ */
