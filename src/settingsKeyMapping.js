@@ -601,32 +601,18 @@ const settingsKeyMapping = {
     /* Category: Synchronization                                                                                    */
     /* ============================================================================================================ */
     keyRemoteInstanceUrl: {
-        label: 'remote_server_url',
+        label: i18n.t('Remote server URL'),
         validators: ['url'],
     },
     keyRemoteInstanceUsername: {
-        label: 'remote_server_username',
+        label: i18n.t('Remote server username'),
     },
     keyRemoteInstancePassword: {
-        label: 'remote_server_password',
+        label: i18n.t('Remote server password'),
         type: 'password',
     },
     keyMetadataDataVersioning: {
-        label: 'keyVersionEnabled',
         type: 'metadataSettings',
-    },
-    keyVersionEnabled: {
-        label: 'keyVersionEnabled',
-        type: 'checkbox',
-    },
-    keyStopMetadataSync: {
-        label: 'keyStopMetadataSync',
-        type: 'checkbox',
-    },
-    createVersionButton: {
-        label: 'create_metadata_version',
-        type: 'postButton',
-        uri: '/metadata/version/create',
     },
     /* ============================================================================================================ */
     /* Category: oAuth2 clients                                                                                     */

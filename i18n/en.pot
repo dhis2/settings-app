@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-12T13:34:11.254Z\n"
-"PO-Revision-Date: 2021-03-12T13:34:11.254Z\n"
+"POT-Creation-Date: 2021-03-12T16:33:49.961Z\n"
+"PO-Revision-Date: 2021-03-12T16:33:49.961Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr ""
@@ -44,10 +44,34 @@ msgstr ""
 msgid "Select language"
 msgstr ""
 
-msgid "OAuth2 client saved"
+msgid "Create new version"
 msgstr ""
 
-msgid "Failed to save OAuth2 client"
+msgid "Best effort"
+msgstr ""
+
+msgid "Atomic"
+msgstr ""
+
+msgid "Master version:"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Last sync attempt"
+msgstr ""
+
+msgid "Failed"
+msgstr ""
+
+msgid "Enable Versioning for metadata sync"
+msgstr ""
+
+msgid "Don't sync metadata if DHIS versions differ"
+msgstr ""
+
+msgid "Metadata Versioning"
 msgstr ""
 
 msgid "This client ID is already taken"
@@ -95,40 +119,76 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-msgid "Delete"
-msgstr ""
-
 msgid "Cancel"
 msgstr ""
 
 msgid "Edit"
 msgstr ""
 
+msgid "Delete"
+msgstr ""
+
+msgid "OAuth2 client saved"
+msgstr ""
+
+msgid "Failed to save OAuth2 client"
+msgstr ""
+
 msgid "There are currently no OAuth2 clients registered"
+msgstr ""
+
+msgid "Add OAuth2 client"
+msgstr ""
+
+msgid "General"
 msgstr ""
 
 msgid "General settings"
 msgstr ""
 
+msgid "Analytics"
+msgstr ""
+
 msgid "Analytics settings"
+msgstr ""
+
+msgid "Server"
 msgstr ""
 
 msgid "Server settings"
 msgstr ""
 
+msgid "Appearance"
+msgstr ""
+
 msgid "Appearance settings"
+msgstr ""
+
+msgid "Email"
 msgstr ""
 
 msgid "Email settings"
 msgstr ""
 
+msgid "Access"
+msgstr ""
+
 msgid "Access settings"
+msgstr ""
+
+msgid "Calendar"
 msgstr ""
 
 msgid "Calendar settings"
 msgstr ""
 
+msgid "Data Import"
+msgstr ""
+
 msgid "Data import settings"
+msgstr ""
+
+msgid "Synchronization"
 msgstr ""
 
 msgid "Synchronization settings"
@@ -491,9 +551,6 @@ msgstr ""
 msgid "Comma"
 msgstr ""
 
-msgid "None"
-msgstr ""
-
 msgid "Require authority to add to view object lists"
 msgstr ""
 
@@ -587,9 +644,6 @@ msgstr ""
 msgid "reCAPTCHA Secret Key"
 msgstr ""
 
-msgid "Calendar"
-msgstr ""
-
 msgid "Coptic"
 msgstr ""
 
@@ -639,4 +693,13 @@ msgid "Require category option combo to be specified"
 msgstr ""
 
 msgid "Require attribute option combo to be specified"
+msgstr ""
+
+msgid "Remote server URL"
+msgstr ""
+
+msgid "Remote server username"
+msgstr ""
+
+msgid "Remote server password"
 msgstr ""
