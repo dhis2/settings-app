@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-12T10:45:18.376Z\n"
-"PO-Revision-Date: 2021-03-12T10:45:18.376Z\n"
+"POT-Creation-Date: 2021-03-12T12:36:07.824Z\n"
+"PO-Revision-Date: 2021-03-12T12:36:07.824Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr ""
@@ -146,6 +146,285 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
+msgid "Maximum number of analytics records"
+msgstr ""
+
+msgid "Unlimited"
+msgstr ""
+
+msgid "Maximum number of SQL view records"
+msgstr ""
+
+msgid "Infrastructural indicators"
+msgstr ""
+
+msgid "Infrastructural data elements"
+msgstr ""
+
+msgid "Infrastructural period type"
+msgstr ""
+
+msgid "Daily"
+msgstr ""
+
+msgid "Weekly"
+msgstr ""
+
+msgid "Monthly"
+msgstr ""
+
+msgid "Bi-monthly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr ""
+
+msgid "Six-monthly"
+msgstr ""
+
+msgid "Six-monthly April"
+msgstr ""
+
+msgid "Yearly"
+msgstr ""
+
+msgid "Financial-April"
+msgstr ""
+
+msgid "Financial-July"
+msgstr ""
+
+msgid "Financial-Oct"
+msgstr ""
+
+msgid "Feedback recipients"
+msgstr ""
+
+msgid "No message recipients"
+msgstr ""
+
+msgid "Max offline organisation unit levels"
+msgstr ""
+
+msgid "Data analysis std dev factor"
+msgstr ""
+
+msgid "Phone number area code"
+msgstr ""
+
+msgid "Enable multi-organisation unit forms"
+msgstr ""
+
+msgid "Acceptance required before approval"
+msgstr ""
+
+msgid "Gather analytical object statistics in dashboard views"
+msgstr ""
+
+msgid "Include passive dashboard views in usage analytics statistics"
+msgstr ""
+
+msgid "Default relative period for analysis"
+msgstr ""
+
+msgid "This month"
+msgstr ""
+
+msgid "Last month"
+msgstr ""
+
+msgid "This bi-month"
+msgstr ""
+
+msgid "Last bi-month"
+msgstr ""
+
+msgid "This quarter"
+msgstr ""
+
+msgid "Last quarter"
+msgstr ""
+
+msgid "This six-month"
+msgstr ""
+
+msgid "Last six-month"
+msgstr ""
+
+msgid "Months this year"
+msgstr ""
+
+msgid "Quarters this year"
+msgstr ""
+
+msgid "This year"
+msgstr ""
+
+msgid "Months last year"
+msgstr ""
+
+msgid "Quarters last year"
+msgstr ""
+
+msgid "Last year"
+msgstr ""
+
+msgid "Last 5 years"
+msgstr ""
+
+msgid "Last 12 months"
+msgstr ""
+
+msgid "Last 6 months"
+msgstr ""
+
+msgid "Last 3 months"
+msgstr ""
+
+msgid "Last 6 bi-months"
+msgstr ""
+
+msgid "Last 4 quarters"
+msgstr ""
+
+msgid "Last 2 six-months"
+msgstr ""
+
+msgid "This financial year"
+msgstr ""
+
+msgid "Last financial year"
+msgstr ""
+
+msgid "Last 5 financial years"
+msgstr ""
+
+msgid "This week"
+msgstr ""
+
+msgid "Last week"
+msgstr ""
+
+msgid "Last 4 weeks"
+msgstr ""
+
+msgid "Last 12 weeks"
+msgstr ""
+
+msgid "Last 52 weeks"
+msgstr ""
+
+msgid "Hide daily periods"
+msgstr ""
+
+msgid "Hidden period types in analytics apps"
+msgstr ""
+
+msgid "Hide weekly periods"
+msgstr ""
+
+msgid "Hide monthly periods"
+msgstr ""
+
+msgid "Hide bimonthly periods"
+msgstr ""
+
+msgid "Financial year relative period start month"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "Cache strategy"
+msgstr ""
+
+msgid "No cache"
+msgstr ""
+
+msgid "Cache for 15 minutes"
+msgstr ""
+
+msgid "Cache for 30 minutes"
+msgstr ""
+
+msgid "Cache for one hour"
+msgstr ""
+
+msgid "Cache until 6AM tomorrow"
+msgstr ""
+
+msgid "Cache for two weeks"
+msgstr ""
+
+msgid "Cacheability"
+msgstr ""
+
+msgid "Public"
+msgstr ""
+
+msgid "Private"
+msgstr ""
+
+msgid "Analytics cache mode"
+msgstr ""
+
+msgid "Progressive"
+msgstr ""
+
+msgid "Fixed"
+msgstr ""
+
+msgid "Max number of years to hide unapproved data in analytics"
+msgstr ""
+
+msgid "Never check approval"
+msgstr ""
+
+msgid "Check approval for all data"
+msgstr ""
+
+msgid "Current year only"
+msgstr ""
+
+msgid "Last 2 years"
+msgstr ""
+
+msgid "Last 3 years"
+msgstr ""
+
+msgid "Last 4 years"
+msgstr ""
+
+msgid "Last 6 years"
+msgstr ""
+
+msgid "Last 7 years"
+msgstr ""
+
+msgid "Last 8 years"
+msgstr ""
+
+msgid "Last 9 years"
+msgstr ""
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "Respect category option start and end date in analytics table export"
+msgstr ""
+
+msgid "Put analytics in maintenance mode"
+msgstr ""
+
+msgid "Caching factor"
+msgstr ""
+
 msgid "Application title"
 msgstr ""
 
@@ -182,7 +461,19 @@ msgstr ""
 msgid "Property to display in analysis modules"
 msgstr ""
 
+msgid "Short name"
+msgstr ""
+
 msgid "Default digit group separator to display in analysis modules"
+msgstr ""
+
+msgid "Space"
+msgstr ""
+
+msgid "Comma"
+msgstr ""
+
+msgid "None"
 msgstr ""
 
 msgid "Require authority to add to view object lists"
@@ -201,4 +492,7 @@ msgid "Allow users to open dashboard favorite in relevant app"
 msgstr ""
 
 msgid "Allow users to show dashboard favorite interpretations and details"
+msgstr ""
+
+msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""

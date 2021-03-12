@@ -151,49 +151,91 @@ const settingsKeyMapping = {
         },
     },
     keyHideDailyPeriods: {
-        label: 'key_hide_daily_periods',
-        sectionLabel: 'hidden_period_types_in_analytics_apps',
+        label: i18n.t('Hide daily periods'),
+        sectionLabel: i18n.t('Hidden period types in analytics apps'),
         type: 'checkbox',
     },
     keyHideWeeklyPeriods: {
-        label: 'key_hide_weekly_periods',
+        label: i18n.t('Hide weekly periods'),
         type: 'checkbox',
     },
     keyHideMonthlyPeriods: {
-        label: 'key_hide_monthly_periods',
+        label: i18n.t('Hide monthly periods'),
         type: 'checkbox',
     },
     keyHideBiMonthlyPeriods: {
-        label: 'key_hide_bi_monthly_periods',
+        label: i18n.t('Hide bimonthly periods'),
         type: 'checkbox',
     },
     analyticsFinancialYearStart: {
-        label: 'analytics_financial_year_start',
+        label: i18n.t('Financial year relative period start month'),
         type: 'dropdown',
         options: {
-            FINANCIAL_YEAR_APRIL: 'APRIL',
-            FINANCIAL_YEAR_JULY: 'JULY',
-            FINANCIAL_YEAR_OCTOBER: 'OCTOBER',
+            FINANCIAL_YEAR_APRIL: i18n.t('April'),
+            FINANCIAL_YEAR_JULY: i18n.t('July'),
+            FINANCIAL_YEAR_OCTOBER: i18n.t('October'),
+        },
+    },
+    keyCacheStrategy: {
+        label: i18n.t('Cache strategy'),
+        type: 'dropdown',
+        options: {
+            NO_CACHE: i18n.t('No cache'),
+            CACHE_15_MINUTES: i18n.t('Cache for 15 minutes'),
+            CACHE_30_MINUTES: i18n.t('Cache for 30 minutes'),
+            CACHE_1_HOUR: i18n.t('Cache for one hour'),
+            CACHE_6AM_TOMORROW: i18n.t('Cache until 6AM tomorrow'),
+            CACHE_TWO_WEEKS: i18n.t('Cache for two weeks'),
         },
     },
     keyCacheability: {
-        label: 'cacheability',
+        label: i18n.t('Cacheability'),
         type: 'dropdown',
         options: {
-            PUBLIC: 'public',
-            PRIVATE: 'private',
+            PUBLIC: i18n.t('Public'),
+            PRIVATE: i18n.t('Private'),
         },
     },
     keyAnalyticsCacheTtlMode: {
-        label: 'key_analytics_cache_ttl_mode',
+        label: i18n.t('Analytics cache mode'),
         type: 'dropdown',
         options: {
-            PROGRESSIVE: 'progressive',
-            FIXED: 'fixed',
+            PROGRESSIVE: i18n.t('Progressive'),
+            FIXED: i18n.t('Fixed'),
         },
     },
+    keyIgnoreAnalyticsApprovalYearThreshold: {
+        label: i18n.t(
+            'Max number of years to hide unapproved data in analytics'
+        ),
+        type: 'dropdown',
+        options: {
+            '-1': i18n.t('Never check approval'),
+            0: i18n.t('Check approval for all data'),
+            1: i18n.t('Current year only'),
+            2: i18n.t('Last 2 years'),
+            3: i18n.t('Last 3 years'),
+            4: i18n.t('Last 4 years'),
+            5: i18n.t('Last 5 years'),
+            6: i18n.t('Last 6 years'),
+            7: i18n.t('Last 7 years'),
+            8: i18n.t('Last 8 years'),
+            9: i18n.t('Last 9 years'),
+            10: i18n.t('Last 10 years'),
+        },
+    },
+    keyRespectMetaDataStartEndDatesInAnalyticsTableExport: {
+        label: i18n.t(
+            'Respect category option start and end date in analytics table export'
+        ),
+        type: 'checkbox',
+    },
+    keyAnalyticsMaintenanceMode: {
+        label: i18n.t('Put analytics in maintenance mode'),
+        type: 'checkbox',
+    },
     keyAnalyticsCacheProgressiveTtlFactor: {
-        label: 'key_analytics_cache_progressive_ttl_factor',
+        label: i18n.t('Caching factor'),
         type: 'dropdown',
         options: {
             1: '1',
@@ -214,50 +256,6 @@ const settingsKeyMapping = {
             settingsKey: 'keyAnalyticsCacheTtlMode',
             settingsValue: 'FIXED',
         },
-    },
-    keyCacheStrategy: {
-        label: 'cache_strategy',
-        type: 'dropdown',
-        options: {
-            NO_CACHE: 'no_cache',
-            CACHE_15_MINUTES: 'cache_for_15_minutes',
-            CACHE_30_MINUTES: 'cache_for_30_minutes',
-            CACHE_1_HOUR: 'cache_for_one_hour',
-            CACHE_6AM_TOMORROW: 'cache_until_6am_tomorrow',
-            CACHE_TWO_WEEKS: 'cache_for_two_weeks',
-        },
-    },
-    keyIgnoreAnalyticsApprovalYearThreshold: {
-        label: 'max_number_of_years_to_hide_unapproved_data_in_analytics',
-        type: 'dropdown',
-        options: {
-            '-1': 'never_check_approval',
-            0: 'check_approval_for_all_data',
-            1: 'current_year_only',
-            2: 'last_2_years',
-            3: 'last_3_years',
-            4: 'last_4_years',
-            5: 'last_5_years',
-            6: 'last_6_years',
-            7: 'last_7_years',
-            8: 'last_8_years',
-            9: 'last_9_years',
-            10: 'last_10_years',
-        },
-    },
-    keySkipDataTypeValidationInAnalyticsTableExport: {
-        label: 'skip_data_type_validation_in_analytics_table_export',
-        type: 'checkbox',
-    },
-    keyRespectMetaDataStartEndDatesInAnalyticsTableExport: {
-        label:
-            'respect_category_option_start_and_end_date_in_analytics_table_export',
-        type: 'checkbox',
-    },
-    keyAnalyticsMaintenanceMode: {
-        // Analytics
-        label: 'put_analytics_in_maintenance_mode',
-        type: 'checkbox',
     },
     /* ============================================================================================================ */
     /* Category: Server                                                                                             */
