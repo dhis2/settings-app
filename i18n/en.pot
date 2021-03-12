@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-11T11:11:35.731Z\n"
-"PO-Revision-Date: 2021-03-11T11:11:35.731Z\n"
+"POT-Creation-Date: 2021-03-12T10:45:18.376Z\n"
+"PO-Revision-Date: 2021-03-12T10:45:18.376Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr ""
@@ -30,6 +30,15 @@ msgid "Upload image"
 msgstr ""
 
 msgid "Cancel upload"
+msgstr ""
+
+msgid "System default (fallback)"
+msgstr ""
+
+msgid "Set the main field value before adding a translation"
+msgstr ""
+
+msgid "Could not fetch localized settings"
 msgstr ""
 
 msgid "Select language"
@@ -128,5 +137,68 @@ msgstr ""
 msgid "OAuth2 Clients"
 msgstr ""
 
+msgid "This setting will be overridden by the current user setting: {{settingName}}"
+msgstr ""
+
+msgid "This setting can be overridden by user settings"
+msgstr ""
+
 msgid "Search results"
+msgstr ""
+
+msgid "Application title"
+msgstr ""
+
+msgid "Application introduction"
+msgstr ""
+
+msgid "Application notification"
+msgstr ""
+
+msgid "Application left-side footer"
+msgstr ""
+
+msgid "Application right-side footer"
+msgstr ""
+
+msgid "Style"
+msgstr ""
+
+msgid "Start page"
+msgstr ""
+
+msgid "Help page link"
+msgstr ""
+
+msgid "Flag"
+msgstr ""
+
+msgid "Interface language"
+msgstr ""
+
+msgid "Database language"
+msgstr ""
+
+msgid "Property to display in analysis modules"
+msgstr ""
+
+msgid "Default digit group separator to display in analysis modules"
+msgstr ""
+
+msgid "Require authority to add to view object lists"
+msgstr ""
+
+msgid "Custom login page logo"
+msgstr ""
+
+msgid "Custom top menu logo"
+msgstr ""
+
+msgid "Allow users to switch dashboard favorite view type"
+msgstr ""
+
+msgid "Allow users to open dashboard favorite in relevant app"
+msgstr ""
+
+msgid "Allow users to show dashboard favorite interpretations and details"
 msgstr ""

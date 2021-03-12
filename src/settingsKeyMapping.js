@@ -1,17 +1,21 @@
 import i18n from '@dhis2/d2-i18n'
 
+const canBeOverridenLabel = i18n.t(
+    'This setting can be overridden by user settings'
+)
+
+const formatNumber = value => new Intl.NumberFormat(i18n.language).format(value)
+
 /**
  * This file provides information about DHIS2 system settings and configuration options that are not otherwise
  * available through the API.
- * </p>
- * Each system settings key is mapped to an I18N label and (optional) description. In addition, certain special system
+ *
+ * Each system settings key is mapped to an i18n label. In addition, certain special system
  * settings that are not actually saved as system settings but rather as system configuration options are described
  * here as well. This concerns any key that has a "configuration" property which is set to `true`.
- * </p>
+ *
  * Settings that have an `appendLocale: true` property, are localizable settings. When these settings are saved, the
  * code of the specified locale, such as "fr" or "ar_IQ" is appended to the key name.
- *
- * @type {{settingsKey: {label: string, description: string, configuration: boolean, appendLocale: boolean}}}
  */
 const settingsKeyMapping = {
     /* ============================================================================================================ */
@@ -19,155 +23,131 @@ const settingsKeyMapping = {
     /* ============================================================================================================ */
     keyAnalyticsMaxLimit: {
         // Analytics
-        label: 'analytics_max_limit',
+        label: i18n.t('Maximum number of analytics records'),
         type: 'dropdown',
         options: {
-            50000: 50000,
-            100000: 100000,
-            200000: 200000,
-            0: 'unlimited',
+            50000: formatNumber(50000),
+            100000: formatNumber(100000),
+            200000: formatNumber(200000),
+            0: i18n.t('Unlimited'),
         },
     },
     keySqlViewMaxLimit: {
-        label: 'sql_view_max_limit',
+        label: i18n.t('Maximum number of SQL view records'),
         type: 'dropdown',
         options: {
-            '-1': 'sql_view_max_limit_unlimited',
-            50000: 'sql_view_max_limit_50000',
-            100000: 'sql_view_max_limit_100000',
-            200000: 'sql_view_max_limit_200000',
+            '-1': i18n.t('Unlimited'),
+            50000: formatNumber(50000),
+            100000: formatNumber(100000),
+            200000: formatNumber(200000),
         },
     },
     infrastructuralIndicators: {
-        label: 'infrastructural_indicators',
+        label: i18n.t('Infrastructural indicators'),
         configuration: true,
         type: 'dropdown',
         source: 'indicatorGroups',
     },
     infrastructuralDataElements: {
-        label: 'infrastructural_data_elements',
+        label: i18n.t('Infrastructural data elements'),
         configuration: true,
         type: 'dropdown',
         source: 'dataElementGroups',
     },
     infrastructuralPeriodType: {
-        label: 'infrastructural_period_type',
+        label: i18n.t('Infrastructural period type'),
         configuration: true,
         type: 'dropdown',
         options: {
-            Daily: 'Daily',
-            Weekly: 'Weekly',
-            Monthly: 'Monthly',
-            BiMonthly: 'BiMonthly',
-            Quarterly: 'Quarterly',
-            SixMonthly: 'SixMonthly',
-            SixMonthlyApril: 'SixMonthlyApril',
-            Yearly: 'yearly',
-            FinancialApril: 'FinancialApril',
-            FinancialJuly: 'FinancialJuly',
-            FinancialOct: 'FinancialOct',
+            Daily: i18n.t('Daily'),
+            Weekly: i18n.t('Weekly'),
+            Monthly: i18n.t('Monthly'),
+            BiMonthly: i18n.t('Bi-monthly'),
+            Quarterly: i18n.t('Quarterly'),
+            SixMonthly: i18n.t('Six-monthly'),
+            SixMonthlyApril: i18n.t('Six-monthly April'),
+            Yearly: i18n.t('Yearly'),
+            FinancialApril: i18n.t('Financial-April'),
+            FinancialJuly: i18n.t('Financial-July'),
+            FinancialOct: i18n.t('Financial-Oct'),
         },
     },
     feedbackRecipients: {
-        label: 'feedback_recipients',
+        label: i18n.t('Feedback recipients'),
         configuration: true,
         type: 'dropdown',
         source: 'userGroups',
         includeEmpty: true,
-        emptyLabel: 'no_feedback_recipients',
+        emptyLabel: i18n.t('No message recipients'),
     },
     offlineOrganisationUnitLevel: {
-        label: 'max_levels_to_offline',
-        description: 'relative_to_current_user',
+        label: i18n.t('Max offline organisation unit levels'),
         configuration: true,
         type: 'dropdown',
         source: 'organisationUnitLevels',
     },
     factorDeviation: {
-        label: 'data_analysis_factor',
+        label: i18n.t('Data analysis std dev factor'),
         validators: ['positive_number'],
     },
     phoneNumberAreaCode: {
-        label: 'phone_number_area_code',
+        label: i18n.t('Phone number area code'),
         validators: ['number'],
     },
-    helpPageLink: {
-        label: 'help_page_link',
-        validators: ['relative_url'],
-    },
     multiOrganisationUnitForms: {
-        label: 'multi_organisation_unit_forms',
-        type: 'checkbox',
-    },
-    omitIndicatorsZeroNumeratorDataMart: {
-        label: 'omit_indicators_zero_numerator_data_mart',
-        type: 'checkbox',
-    },
-    keyAnalyticsMaintenanceMode: {
-        // Analytics
-        label: 'put_analytics_in_maintenance_mode',
-        type: 'checkbox',
-    },
-    keyHideUnapprovedDataInAnalytics: {
-        label: 'hide_unapproved_data_in_analytics',
+        label: i18n.t('Enable multi-organisation unit forms'),
         type: 'checkbox',
     },
     keyAcceptanceRequiredForApproval: {
-        label: 'acceptance_required_before_approval',
+        label: i18n.t('Acceptance required before approval'),
         type: 'checkbox',
     },
-    recaptchaSecret: {
-        label: 'recaptcha_secret_label',
-        type: 'password',
-    },
-    recaptchaSite: {
-        type: 'password',
-        label: 'recaptcha_site_label',
-    },
     keyGatherAnalyticalObjectStatisticsInDashboardViews: {
-        label: 'gather_analytical_object_statistics_in_dashboard_views',
+        label: i18n.t('Gather analytical object statistics in dashboard views'),
         type: 'checkbox',
     },
     keyCountPassiveDashboardViewsInUsageAnalytics: {
-        label: 'count_passive_dashboard_views_in_usage_analytics',
+        label: i18n.t(
+            'Include passive dashboard views in usage analytics statistics'
+        ),
         type: 'checkbox',
     },
     /* ============================================================================================================ */
     /* Category: Analytics                                                                                          */
     /* ============================================================================================================ */
     keyAnalysisRelativePeriod: {
-        label: 'default_analysis_relative_period',
+        label: i18n.t('Default relative period for analysis'),
         type: 'dropdown',
         options: {
-            THIS_MONTH: 'THIS_MONTH',
-            LAST_MONTH: 'LAST_MONTH',
-            THIS_BIMONTH: 'THIS_BIMONTH',
-            LAST_BIMONTH: 'LAST_BIMONTH',
-            THIS_QUARTER: 'THIS_QUARTER',
-            LAST_QUARTER: 'LAST_QUARTER',
-            THIS_SIX_MONTH: 'THIS_SIX_MONTH',
-            LAST_SIX_MONTH: 'LAST_SIX_MONTH',
-            MONTHS_THIS_YEAR: 'MONTHS_THIS_YEAR',
-            QUARTERS_THIS_YEAR: 'QUARTERS_THIS_YEAR',
-            THIS_YEAR: 'THIS_YEAR',
-            MONTHS_LAST_YEAR: 'MONTHS_LAST_YEAR',
-            QUARTERS_LAST_YEAR: 'QUARTERS_LAST_YEAR',
-            LAST_YEAR: 'LAST_YEAR',
-            LAST_5_YEARS: 'LAST_5_YEARS',
-            LAST_12_MONTHS: 'LAST_12_MONTHS',
-            LAST_6_MONTHS: 'LAST_6_MONTHS',
-            LAST_3_MONTHS: 'LAST_3_MONTHS',
-            LAST_6_BIMONTHS: 'LAST_6_BIMONTHS',
-            LAST_4_QUARTERS: 'LAST_4_QUARTERS',
-            LAST_2_SIXMONTHS: 'LAST_2_SIXMONTHS',
-            THIS_FINANCIAL_YEAR: 'THIS_FINANCIAL_YEAR',
-            LAST_FINANCIAL_YEAR: 'LAST_FINANCIAL_YEAR',
-            LAST_5_FINANCIAL_YEARS: 'LAST_5_FINANCIAL_YEARS',
-            THIS_WEEK: 'THIS_WEEK',
-            LAST_WEEK: 'LAST_WEEK',
-            LAST_4_WEEKS: 'LAST_4_WEEKS',
-            LAST_12_WEEKS: 'LAST_12_WEEKS',
-            LAST_52_WEEKS: 'LAST_52_WEEKS',
+            THIS_MONTH: i18n.t('This month'),
+            LAST_MONTH: i18n.t('Last month'),
+            THIS_BIMONTH: i18n.t('This bi-month'),
+            LAST_BIMONTH: i18n.t('Last bi-month'),
+            THIS_QUARTER: i18n.t('This quarter'),
+            LAST_QUARTER: i18n.t('Last quarter'),
+            THIS_SIX_MONTH: i18n.t('This six-month'),
+            LAST_SIX_MONTH: i18n.t('Last six-month'),
+            MONTHS_THIS_YEAR: i18n.t('Months this year'),
+            QUARTERS_THIS_YEAR: i18n.t('Quarters this year'),
+            THIS_YEAR: i18n.t('This year'),
+            MONTHS_LAST_YEAR: i18n.t('Months last year'),
+            QUARTERS_LAST_YEAR: i18n.t('Quarters last year'),
+            LAST_YEAR: i18n.t('Last year'),
+            LAST_5_YEARS: i18n.t('Last 5 years'),
+            LAST_12_MONTHS: i18n.t('Last 12 months'),
+            LAST_6_MONTHS: i18n.t('Last 6 months'),
+            LAST_3_MONTHS: i18n.t('Last 3 months'),
+            LAST_6_BIMONTHS: i18n.t('Last 6 bi-months'),
+            LAST_4_QUARTERS: i18n.t('Last 4 quarters'),
+            LAST_2_SIXMONTHS: i18n.t('Last 2 six-months'),
+            THIS_FINANCIAL_YEAR: i18n.t('This financial year'),
+            LAST_FINANCIAL_YEAR: i18n.t('Last financial year'),
+            LAST_5_FINANCIAL_YEARS: i18n.t('Last 5 financial years'),
+            THIS_WEEK: i18n.t('This week'),
+            LAST_WEEK: i18n.t('Last week'),
+            LAST_4_WEEKS: i18n.t('Last 4 weeks'),
+            LAST_12_WEEKS: i18n.t('Last 12 weeks'),
+            LAST_52_WEEKS: i18n.t('Last 52 weeks'),
         },
     },
     keyHideDailyPeriods: {
@@ -274,6 +254,11 @@ const settingsKeyMapping = {
             'respect_category_option_start_and_end_date_in_analytics_table_export',
         type: 'checkbox',
     },
+    keyAnalyticsMaintenanceMode: {
+        // Analytics
+        label: 'put_analytics_in_maintenance_mode',
+        type: 'checkbox',
+    },
     /* ============================================================================================================ */
     /* Category: Server                                                                                             */
     /* ============================================================================================================ */
@@ -311,11 +296,11 @@ const settingsKeyMapping = {
     localizedText: {
         type: 'localizedAppearance',
         searchLabels: [
-            'application_title',
-            'application_introduction',
-            'application_notification',
-            'application_left_footer',
-            'application_right_footer',
+            i18n.t('Application title'),
+            i18n.t('Application introduction'),
+            i18n.t('Application notification'),
+            i18n.t('Application left-side footer'),
+            i18n.t('Application right-side footer'),
         ],
     },
     applicationTitle: {
@@ -325,107 +310,111 @@ const settingsKeyMapping = {
     },
     keyApplicationIntro: {
         label: i18n.t('Application introduction'),
-        description: 'allows_html',
         appendLocale: true,
         multiLine: true,
     },
     keyApplicationNotification: {
         label: i18n.t('Application notification'),
-        description: 'allows_html',
         appendLocale: true,
         multiLine: true,
     },
     keyApplicationFooter: {
         label: i18n.t('Application left-side footer'),
-        description: 'allows_html',
         appendLocale: true,
         multiLine: true,
     },
     keyApplicationRightFooter: {
         label: i18n.t('Application right-side footer'),
-        description: 'allows_html',
         appendLocale: true,
         multiLine: true,
     },
     keyStyle: {
-        label: 'style',
+        label: i18n.t('Style'),
         type: 'dropdown',
         includeEmpty: false,
         userSettingsOverride: true,
-        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
+        searchLabels: [i18n.t('Style'), canBeOverridenLabel],
         source: 'styles',
     },
     startModule: {
-        label: 'start_page',
+        label: i18n.t('Start page'),
         type: 'dropdown',
         source: 'startModules',
     },
+    helpPageLink: {
+        label: i18n.t('Help page link'),
+        validators: ['relative_url'],
+    },
     keyFlag: {
-        label: 'flag',
+        label: i18n.t('Flag'),
         type: 'dropdown',
         source: 'flags',
     },
     keyUiLocale: {
-        label: 'ui_locale',
+        label: i18n.t('Interface language'),
         type: 'dropdown',
         userSettingsOverride: true,
-        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
+        searchLabels: [i18n.t('Style'), canBeOverridenLabel],
         source: 'uiLocales',
     },
     keyDbLocale: {
-        label: 'db_locale',
+        label: i18n.t('Database language'),
         type: 'dropdown',
         userSettingsOverride: true,
-        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
+        searchLabels: [i18n.t('Style'), canBeOverridenLabel],
         source: 'dbLocales',
     },
     keyAnalysisDisplayProperty: {
-        label: 'analysis_display_property',
+        label: i18n.t('Property to display in analysis modules'),
         type: 'dropdown',
         userSettingsOverride: true,
-        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
+        searchLabels: [i18n.t('Style'), canBeOverridenLabel],
         options: {
-            name: 'name',
-            shortName: 'short_name',
+            name: i18n.t('Name'),
+            shortName: i18n.t('Short name'),
         },
     },
     keyAnalysisDigitGroupSeparator: {
-        label: 'analysis_digit_group_separator',
+        label: i18n.t(
+            'Default digit group separator to display in analysis modules'
+        ),
         type: 'dropdown',
         options: {
-            SPACE: 'space',
-            COMMA: 'comma',
-            NONE: 'none',
+            SPACE: i18n.t('Space'),
+            COMMA: i18n.t('Comma'),
+            NONE: i18n.t('None'),
         },
     },
     keyRequireAddToView: {
-        label: 'require_authority_to_add_to_view_object_lists',
+        label: i18n.t('Require authority to add to view object lists'),
         type: 'checkbox',
     },
     keyUseCustomLogoFront: {
-        label: 'custom_login_page_logo',
+        label: i18n.t('Custom login page logo'),
         type: 'staticContent',
         name: 'logo_front',
     },
     keyUseCustomLogoBanner: {
-        label: 'custom_top_menu_logo',
+        label: i18n.t('Custom top menu logo'),
         type: 'staticContent',
         name: 'logo_banner',
     },
     keyDashboardContextMenuItemSwitchViewType: {
-        label: 'dashboard_context_menu_item_switch_view_type',
+        label: i18n.t('Allow users to switch dashboard favorite view type'),
         type: 'checkbox',
     },
     keyDashboardContextMenuItemOpenInRelevantApp: {
-        label: 'dashboard_context_menu_open_in_relevant_app',
+        label: i18n.t('Allow users to open dashboard favorite in relevant app'),
         type: 'checkbox',
     },
     keyDashboardContextMenuItemShowInterpretationsAndDetails: {
-        label: 'dashboard_context_menu_item_show_interpretations_and_details',
+        label: i18n.t(
+            'Allow users to show dashboard favorite interpretations and details'
+        ),
         type: 'checkbox',
     },
     keyDashboardContextMenuItemViewFullscreen: {
-        label: 'dashboard_context_menu_item_view_full_screen',
+        label: i18n.t('Allow users to view dashboard items in fullscreen'),
         type: 'checkbox',
     },
     /* ============================================================================================================ */
@@ -436,9 +425,9 @@ const settingsKeyMapping = {
         label: 'port',
         type: 'dropdown',
         options: {
-            587: 587,
-            465: 465,
-            25: 25,
+            587: '587',
+            465: '465',
+            25: '25',
         },
     },
     keyEmailUsername: {
@@ -519,10 +508,10 @@ const settingsKeyMapping = {
         label: 'min_chars_in_password',
         type: 'dropdown',
         options: {
-            8: 8,
-            10: 10,
-            12: 12,
-            14: 14,
+            8: '8',
+            10: '10',
+            12: '12',
+            14: '14',
         },
     },
     corsWhitelist: {
@@ -535,6 +524,14 @@ const settingsKeyMapping = {
     keyGoogleMapsApiKey: {
         label: 'google_maps_api_key',
         type: 'password',
+    },
+    recaptchaSecret: {
+        label: 'recaptcha_secret_label',
+        type: 'password',
+    },
+    recaptchaSite: {
+        type: 'password',
+        label: 'recaptcha_site_label',
     },
     /* ============================================================================================================ */
     /* Category: Calendar                                                                                           */
