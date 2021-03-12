@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-12T12:43:03.313Z\n"
-"PO-Revision-Date: 2021-03-12T12:43:03.313Z\n"
+"POT-Creation-Date: 2021-03-12T13:10:42.081Z\n"
+"PO-Revision-Date: 2021-03-12T13:10:42.081Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr ""
@@ -513,4 +513,76 @@ msgid "Allow users to show dashboard favorite interpretations and details"
 msgstr ""
 
 msgid "Allow users to view dashboard items in fullscreen"
+msgstr ""
+
+msgid "Host name"
+msgstr ""
+
+msgid "Port"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "TLS"
+msgstr ""
+
+msgid "Email sender"
+msgstr ""
+
+msgid "Send me a test email"
+msgstr ""
+
+msgid "Self registration account user role"
+msgstr ""
+
+msgid "Disable self registration"
+msgstr ""
+
+msgid "Self registration account organisation unit"
+msgstr ""
+
+msgid "Do not require recaptcha for self registration"
+msgstr ""
+
+msgid "Enable user account recovery"
+msgstr ""
+
+msgid "Lock user account temporarily after multiple failed login attempts"
+msgstr ""
+
+msgid "Allow users to grant own user roles"
+msgstr ""
+
+msgid "Allow assigning object to related objects during add or update"
+msgstr ""
+
+msgid "Require user account password change"
+msgstr ""
+
+msgid "Never"
+msgstr ""
+
+msgid "3 months"
+msgstr ""
+
+msgid "6 months"
+msgstr ""
+
+msgid "12 months"
+msgstr ""
+
+msgid "Enable password expiry alerts"
+msgstr ""
+
+msgid "Minimum characters in password"
+msgstr ""
+
+msgid "CORS whitelist"
+msgstr ""
+
+msgid "reCAPTCHA Site Key"
+msgstr ""
+
+msgid "reCAPTCHA Secret Key"
 msgstr ""

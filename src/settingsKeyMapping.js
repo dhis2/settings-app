@@ -422,9 +422,9 @@ const settingsKeyMapping = {
     /* ============================================================================================================ */
     /* Category: Email                                                                                              */
     /* ============================================================================================================ */
-    keyEmailHostName: { label: 'host_name' },
+    keyEmailHostName: { label: i18n.t('Host name') },
     keyEmailPort: {
-        label: 'port',
+        label: i18n.t('Port'),
         type: 'dropdown',
         options: {
             587: '587',
@@ -433,22 +433,22 @@ const settingsKeyMapping = {
         },
     },
     keyEmailUsername: {
-        label: 'username',
+        label: i18n.t('Username'),
     },
     keyEmailPassword: {
-        label: 'password',
+        label: i18n.t('Password'),
         type: 'password',
     },
     keyEmailTls: {
-        label: 'tls',
+        label: i18n.t('TLS'),
         type: 'checkbox',
     },
     keyEmailSender: {
-        label: 'email_sender',
+        label: i18n.t('Email sender'),
         validators: ['email'],
     },
     emailTestButton: {
-        label: 'send_test_email',
+        label: i18n.t('Send me a test email'),
         type: 'postButton',
         uri: '/email/test',
     },
@@ -456,58 +456,61 @@ const settingsKeyMapping = {
     /* Category: Access                                                                                             */
     /* ============================================================================================================ */
     selfRegistrationRole: {
-        label: 'self_registration_account_user_role',
+        label: i18n.t('Self registration account user role'),
         configuration: true,
         type: 'dropdown',
         source: 'userRoles',
         includeEmpty: true,
-        emptyLabel: 'disable_self_registration',
-    },
-    keySelfRegistrationNoRecaptcha: {
-        label: 'do_not_require_recaptcha_for_self_registration',
-        type: 'checkbox',
+        emptyLabel: i18n.t('Disable self registration'),
     },
     selfRegistrationOrgUnit: {
-        label: 'self_registration_account_organisation_unit',
+        label: i18n.t('Self registration account organisation unit'),
         configuration: true,
         type: 'dropdown',
         source: 'organisationUnits',
         includeEmpty: true,
-        emptyLabel: 'disable_self_registration',
+        emptyLabel: i18n.t('Disable self registration'),
+    },
+    keySelfRegistrationNoRecaptcha: {
+        label: i18n.t('Do not require recaptcha for self registration'),
+        type: 'checkbox',
     },
     keyAccountRecovery: {
-        label: 'enable_user_account_recovery',
+        label: i18n.t('Enable user account recovery'),
         type: 'checkbox',
     },
     keyLockMultipleFailedLogins: {
-        label:
-            'lock_user_account_temporarily_after_multiple_failed_login_attempts',
+        label: i18n.t(
+            'Lock user account temporarily after multiple failed login attempts'
+        ),
         type: 'checkbox',
     },
     keyCanGrantOwnUserAuthorityGroups: {
-        label: 'allow_users_to_grant_own_user_roles',
+        label: i18n.t('Allow users to grant own user roles'),
         type: 'checkbox',
     },
     keyAllowObjectAssignment: {
-        label: 'allow_assigning_object_to_related_objects_during_add_or_update',
-        type: 'checkbox',
-    },
-    credentialsExpiryAlert: {
-        label: 'enable_password_expiry_alerts',
+        label: i18n.t(
+            'Allow assigning object to related objects during add or update'
+        ),
         type: 'checkbox',
     },
     credentialsExpires: {
-        label: 'user_credentials_expires',
+        label: i18n.t('Require user account password change'),
         type: 'dropdown',
         options: {
-            0: 'never',
-            3: '3_months',
-            6: '6_months',
-            12: '12_months',
+            0: i18n.t('Never'),
+            3: i18n.t('3 months'),
+            6: i18n.t('6 months'),
+            12: i18n.t('12 months'),
         },
     },
+    credentialsExpiryAlert: {
+        label: i18n.t('Enable password expiry alerts'),
+        type: 'checkbox',
+    },
     minPasswordLength: {
-        label: 'min_chars_in_password',
+        label: i18n.t('Minimum characters in password'),
         type: 'dropdown',
         options: {
             8: '8',
@@ -517,19 +520,19 @@ const settingsKeyMapping = {
         },
     },
     corsWhitelist: {
-        label: 'cors_whitelist',
+        label: i18n.t('CORS whitelist'),
         configuration: true,
         multiLine: true,
-        hintText: 'one_url_per_line',
+        hintText: i18n.t('One URL per line'),
         validators: ['url_array'],
     },
-    recaptchaSecret: {
-        label: 'recaptcha_secret_label',
+    recaptchaSite: {
+        label: i18n.t('reCAPTCHA Site Key'),
         type: 'password',
     },
-    recaptchaSite: {
+    recaptchaSecret: {
+        label: i18n.t('reCAPTCHA Secret Key'),
         type: 'password',
-        label: 'recaptcha_site_label',
     },
     /* ============================================================================================================ */
     /* Category: Calendar                                                                                           */
