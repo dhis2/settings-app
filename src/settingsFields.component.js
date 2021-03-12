@@ -23,8 +23,8 @@ import AppTheme from './theme'
 const styles = {
     header: {
         fontSize: 24,
-        fontWeight: 300,
-        color: AppTheme.rawTheme.palette.textColor,
+        fontWeight: 500,
+        color: 'var(--colors-grey900)',
         padding: '24px 0 12px 16px',
     },
     card: {
