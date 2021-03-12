@@ -561,6 +561,43 @@ const settingsKeyMapping = {
         },
     },
     /* ============================================================================================================ */
+    /* Category: Data Import                                                                                        */
+    /* ============================================================================================================ */
+    keyDataImportStrictPeriods: {
+        label: i18n.t('Require periods to match period type of data set'),
+        type: 'checkbox',
+    },
+    keyDataImportStrictDataElements: {
+        label: i18n.t('Require data elements to be part of data set'),
+        type: 'checkbox',
+    },
+    keyDataImportStrictCategoryOptionCombos: {
+        label: i18n.t(
+            'Require category option combos to match category combo of data element'
+        ),
+        type: 'checkbox',
+    },
+    keyDataImportStrictOrganisationUnits: {
+        label: i18n.t(
+            'Require organisation units to match assignment of data set'
+        ),
+        type: 'checkbox',
+    },
+    keyDataImportStrictAttributeOptionCombos: {
+        label: i18n.t(
+            'Require attribute option combos to match category combo of data set'
+        ),
+        type: 'checkbox',
+    },
+    keyDataImportRequireCategoryOptionCombo: {
+        label: i18n.t('Require category option combo to be specified'),
+        type: 'checkbox',
+    },
+    keyDataImportRequireAttributeOptionCombo: {
+        label: i18n.t('Require attribute option combo to be specified'),
+        type: 'checkbox',
+    },
+    /* ============================================================================================================ */
     /* Category: Synchronization                                                                                    */
     /* ============================================================================================================ */
     keyRemoteInstanceUrl: {
@@ -590,37 +627,6 @@ const settingsKeyMapping = {
         label: 'create_metadata_version',
         type: 'postButton',
         uri: '/metadata/version/create',
-    },
-    /* ============================================================================================================ */
-    /* Category: Data Import                                                                                        */
-    /* ============================================================================================================ */
-    keyDataImportStrictPeriods: {
-        label: 'require_periods_to_match_period_type',
-        type: 'checkbox',
-    },
-    keyDataImportStrictDataElements: {
-        label: 'require_data_elements_to_be_part_of_data_set',
-        type: 'checkbox',
-    },
-    keyDataImportStrictCategoryOptionCombos: {
-        label: 'require_category_option_combos_to_match',
-        type: 'checkbox',
-    },
-    keyDataImportStrictOrganisationUnits: {
-        label: 'require_organisation_units_to_match_assignment',
-        type: 'checkbox',
-    },
-    keyDataImportStrictAttributeOptionCombos: {
-        label: 'require_attribute_option_combos_to_match',
-        type: 'checkbox',
-    },
-    keyDataImportRequireCategoryOptionCombo: {
-        label: 'require_category_option_combo_to_be_specified',
-        type: 'checkbox',
-    },
-    keyDataImportRequireAttributeOptionCombo: {
-        label: 'require_attribute_option_combo_to_be_specified',
-        type: 'checkbox',
     },
     /* ============================================================================================================ */
     /* Category: oAuth2 clients                                                                                     */

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-12T13:29:52.292Z\n"
-"PO-Revision-Date: 2021-03-12T13:29:52.292Z\n"
+"POT-Creation-Date: 2021-03-12T13:34:11.254Z\n"
+"PO-Revision-Date: 2021-03-12T13:34:11.254Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr ""
@@ -618,4 +618,25 @@ msgid "Persian"
 msgstr ""
 
 msgid "Date format"
+msgstr ""
+
+msgid "Require periods to match period type of data set"
+msgstr ""
+
+msgid "Require data elements to be part of data set"
+msgstr ""
+
+msgid "Require category option combos to match category combo of data element"
+msgstr ""
+
+msgid "Require organisation units to match assignment of data set"
+msgstr ""
+
+msgid "Require attribute option combos to match category combo of data set"
+msgstr ""
+
+msgid "Require category option combo to be specified"
+msgstr ""
+
+msgid "Require attribute option combo to be specified"
 msgstr ""
