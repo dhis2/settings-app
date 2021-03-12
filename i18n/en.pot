@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-12T12:36:07.824Z\n"
-"PO-Revision-Date: 2021-03-12T12:36:07.824Z\n"
+"POT-Creation-Date: 2021-03-12T12:43:03.313Z\n"
+"PO-Revision-Date: 2021-03-12T12:43:03.313Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr ""
@@ -423,6 +423,24 @@ msgid "Put analytics in maintenance mode"
 msgstr ""
 
 msgid "Caching factor"
+msgstr ""
+
+msgid "Number of database server CPUs"
+msgstr ""
+
+msgid "Automatic (detect based on web server)"
+msgstr ""
+
+msgid "System notifications email address"
+msgstr ""
+
+msgid "Google Analytics (Universal Analytics) key"
+msgstr ""
+
+msgid "Google Maps API key"
+msgstr ""
+
+msgid "Bing Maps API key"
 msgstr ""
 
 msgid "Application title"

@@ -261,10 +261,10 @@ const settingsKeyMapping = {
     /* Category: Server                                                                                             */
     /* ============================================================================================================ */
     keyDatabaseServerCpus: {
-        label: 'no_of_database_server_cpus',
+        label: i18n.t('Number of database server CPUs'),
         type: 'dropdown',
         options: {
-            0: 'detect_based_on_web_server',
+            0: i18n.t('Automatic (detect based on web server)'),
             1: '1',
             2: '2',
             3: '3',
@@ -278,14 +278,18 @@ const settingsKeyMapping = {
         },
     },
     keySystemNotificationsEmail: {
-        label: 'system_notifications_email_address',
+        label: i18n.t('System notifications email address'),
         validators: ['email'],
     },
     googleAnalyticsUA: {
-        label: 'google_analytics_ua_key',
+        label: i18n.t('Google Analytics (Universal Analytics) key'),
+    },
+    keyGoogleMapsApiKey: {
+        label: i18n.t('Google Maps API key'),
+        type: 'password',
     },
     keyBingMapsApiKey: {
-        label: 'key_bing_maps_api_key',
+        label: i18n.t('Bing Maps API key'),
         type: 'password',
     },
     /* ============================================================================================================ */
@@ -518,10 +522,6 @@ const settingsKeyMapping = {
         multiLine: true,
         hintText: 'one_url_per_line',
         validators: ['url_array'],
-    },
-    keyGoogleMapsApiKey: {
-        label: 'google_maps_api_key',
-        type: 'password',
     },
     recaptchaSecret: {
         label: 'recaptcha_secret_label',
