@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-12T16:46:55.502Z\n"
-"PO-Revision-Date: 2021-03-12T16:46:55.502Z\n"
+"POT-Creation-Date: 2021-03-12T17:23:00.564Z\n"
+"PO-Revision-Date: 2021-03-12T17:23:00.564Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr ""
@@ -44,6 +44,15 @@ msgstr ""
 msgid "Select language"
 msgstr ""
 
+msgid "Version created"
+msgstr ""
+
+msgid "Failed to create version"
+msgstr ""
+
+msgid "Error fetching settings"
+msgstr ""
+
 msgid "Create new version"
 msgstr ""
 
@@ -63,6 +72,9 @@ msgid "Last sync attempt"
 msgstr ""
 
 msgid "Failed"
+msgstr ""
+
+msgid "No versions exist"
 msgstr ""
 
 msgid "Enable Versioning for metadata sync"
@@ -152,6 +164,9 @@ msgstr ""
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Settings updated"
+msgstr ""
+
 msgid "General"
 msgstr ""
 
@@ -216,6 +231,9 @@ msgid "This setting can be overridden by user settings"
 msgstr ""
 
 msgid "No options"
+msgstr ""
+
+msgid "No settings matched the search term"
 msgstr ""
 
 msgid "Search results"

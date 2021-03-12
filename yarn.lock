@@ -106,6 +106,16 @@
     browserslist "^4.14.5"
     semver "^6.3.0"
 
+"@babel/helper-compilation-targets@^7.13.10":
+  version "7.13.10"
+  resolved "https://registry.yarnpkg.com/@babel/helper-compilation-targets/-/helper-compilation-targets-7.13.10.tgz#1310a1678cb8427c07a753750da4f8ce442bdd0c"
+  integrity sha512-/Xju7Qg1GQO4mHZ/Kcs6Au7gfafgZnwm+a7sy/ow/tV1sHeraRUHbjdat8/UvDor4Tez+siGKDk6zIKtCPKVJA==
+  dependencies:
+    "@babel/compat-data" "^7.13.8"
+    "@babel/helper-validator-option" "^7.12.17"
+    browserslist "^4.14.5"
+    semver "^6.3.0"
+
 "@babel/helper-create-class-features-plugin@^7.12.1", "@babel/helper-create-class-features-plugin@^7.13.0":
   version "7.13.8"
   resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.13.8.tgz#0367bd0a7505156ce018ca464f7ac91ba58c1a04"
@@ -987,12 +997,12 @@
     semver "^5.5.0"
 
 "@babel/preset-env@^7.12.1", "@babel/preset-env@^7.8.4", "@babel/preset-env@^7.9.0":
-  version "7.13.9"
-  resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.13.9.tgz#3ee5f233316b10d066d7f379c6d1e13a96853654"
-  integrity sha512-mcsHUlh2rIhViqMG823JpscLMesRt3QbMsv1+jhopXEb3W2wXvQ9QoiOlZI9ZbR3XqPtaFpZwEZKYqGJnGMZTQ==
+  version "7.13.10"
+  resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.13.10.tgz#b5cde31d5fe77ab2a6ab3d453b59041a1b3a5252"
+  integrity sha512-nOsTScuoRghRtUsRr/c69d042ysfPHcu+KOB4A9aAO9eJYqrkat+LF8G1yp1HD18QiwixT2CisZTr/0b3YZPXQ==
   dependencies:
     "@babel/compat-data" "^7.13.8"
-    "@babel/helper-compilation-targets" "^7.13.8"
+    "@babel/helper-compilation-targets" "^7.13.10"
     "@babel/helper-plugin-utils" "^7.13.0"
     "@babel/helper-validator-option" "^7.12.17"
     "@babel/plugin-proposal-async-generator-functions" "^7.13.8"
@@ -11524,7 +11534,12 @@ react-final-form@^6.5.1:
   dependencies:
     "@babel/runtime" "^7.12.1"
 
-react-is@^16.8.1, react-is@^16.8.4:
+react-is@^16.8.1:
+  version "16.8.4"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
+  integrity sha512-PVadd+WaUDOAciICm/J1waJaSvgq+4rHE/K70j0PFqKhkTBsPv/82UGQJNXAngz1fOQLLxI6z1sEDmJDQhCTAA==
+
+react-is@^16.8.4:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==

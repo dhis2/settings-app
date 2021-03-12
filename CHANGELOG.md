@@ -1,3 +1,31 @@
+## [29.5.7](https://github.com/dhis2/settings-app/compare/v29.5.6...v29.5.7) (2021-03-11)
+
+
+### Bug Fixes
+
+* **deps:** upgrade headerbar ([ad7f670](https://github.com/dhis2/settings-app/commit/ad7f670408686655137b17dc9250b62a0d500cb8))
+
+## [29.5.6](https://github.com/dhis2/settings-app/compare/v29.5.5...v29.5.6) (2021-03-11)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([117f29e](https://github.com/dhis2/settings-app/commit/117f29e2f0a6892af78aacbb3600cee7efff1303))
+
+## [29.5.5](https://github.com/dhis2/settings-app/compare/v29.5.4...v29.5.5) (2021-03-10)
+
+
+### Bug Fixes
+
+* update settings names [DHIS2-7630] ([ed6e787](https://github.com/dhis2/settings-app/commit/ed6e78789a57ea527fd4861cf0f6b5f73c2b8883))
+
+## [29.5.4](https://github.com/dhis2/settings-app/compare/v29.5.3...v29.5.4) (2021-03-09)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([d462807](https://github.com/dhis2/settings-app/commit/d46280769911160e2dd2a6847091cc8b07556656))
+
 ## [29.5.3](https://github.com/dhis2/settings-app/compare/v29.5.2...v29.5.3) (2021-03-01)
 
 
