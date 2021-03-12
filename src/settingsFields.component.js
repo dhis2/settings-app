@@ -157,21 +157,16 @@ class SettingsFields extends React.Component {
                                   configOptionStore.state[mapping.source]) ||
                               []
                             : Object.entries(mapping.options).map(
-                                  ([id, option]) => {
-                                      // TODO: Rename `option` param to `displayName` and remove below
-                                      const displayName = !isNaN(option)
-                                          ? option
-                                          : d2.i18n.getTranslation(option)
-                                      return { id, displayName }
-                                  }
+                                  ([id, displayName]) => ({
+                                      id,
+                                      displayName,
+                                  })
                               ),
                         includeEmpty: !!mapping.includeEmpty,
                         emptyLabel:
-                            (mapping.includeEmpty &&
-                                mapping.emptyLabel &&
-                                d2.i18n.getTranslation(mapping.emptyLabel)) ||
+                            (mapping.includeEmpty && mapping.emptyLabel) ||
                             undefined,
-                        noOptionsLabel: d2.i18n.getTranslation('no_options'),
+                        noOptionsLabel: i18n.t('No options'),
                     }),
                 })
 
@@ -181,8 +176,7 @@ class SettingsFields extends React.Component {
                     props: {
                         label: fieldBase.props.floatingLabelText,
                         sectionLabel:
-                            (mapping.sectionLabel &&
-                                d2.i18n.getTranslation(mapping.sectionLabel)) ||
+                            (mapping.sectionLabel && mapping.sectionLabel) ||
                             undefined,
                         style: fieldBase.props.style,
                         onCheck: (e, v) => {
@@ -261,9 +255,7 @@ class SettingsFields extends React.Component {
         if (settings.length === 0) {
             return (
                 <div style={styles.noHits}>
-                    {d2.i18n.getTranslation(
-                        'no_settings_matched_the_search_term'
-                    )}
+                    {i18n.t('No settings matched the search term')}
                 </div>
             )
         }
@@ -279,9 +271,7 @@ class SettingsFields extends React.Component {
                         if (wordToValidatorMap.has(name)) {
                             validators.push({
                                 validator: wordToValidatorMap.get(name),
-                                message: d2.i18n.getTranslation(
-                                    wordToValidatorMap.get(name).message
-                                ),
+                                message: wordToValidatorMap.get(name).message,
                             })
                         }
                     })
@@ -293,16 +283,12 @@ class SettingsFields extends React.Component {
                         (settingsStore.state && settingsStore.state[key]) || '',
                     component: TextField,
                     props: {
-                        floatingLabelText: d2.i18n.getTranslation(
-                            mapping.label
-                        ),
+                        floatingLabelText: mapping.label,
                         style: {
                             width: '100%',
                             ...addConditionallyHiddenStyles(mapping),
                         },
-                        hintText:
-                            mapping.hintText &&
-                            d2.i18n.getTranslation(mapping.hintText),
+                        hintText: mapping.hintText,
                     },
                     validators,
                 }

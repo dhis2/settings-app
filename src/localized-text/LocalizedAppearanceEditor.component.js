@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { Card } from '@dhis2/ui'
+import { Card, CircularLoader, CenteredContent } from '@dhis2/ui'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
 import CircularProgress from 'material-ui/CircularProgress'
 import PropTypes from 'prop-types'
@@ -261,8 +261,13 @@ class LocalizedTextEditor extends React.Component {
                         floatingLabelText={i18n.t('Select language')}
                         onChange={this.handleChange}
                     />
-                    {this.state.locale &&
-                        this.renderLocalizedAppearanceFields()}
+                    {this.state.locale ? (
+                        this.renderLocalizedAppearanceFields()
+                    ) : (
+                        <CenteredContent>
+                            <CircularLoader />
+                        </CenteredContent>
+                    )}
                 </div>
             </Card>
         )

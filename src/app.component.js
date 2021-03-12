@@ -142,9 +142,7 @@ class AppComponent extends React.Component {
     render() {
         const sections = Object.keys(categories).map(category => {
             const key = category
-            const label = this.props.d2.i18n.getTranslation(
-                categories[category].label
-            )
+            const label = categories[category].label
             const icon = categories[category].icon
             return { key, label, icon }
         })

@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import { getInstance as getD2 } from 'd2'
 import Action from 'd2-ui/lib/action/Action'
 import { Observable } from 'rxjs'
@@ -23,9 +24,7 @@ const saveLocalizedAppearanceSetting = (d2, key, value, locale) => {
     return api
         .post(url)
         .then(() => {
-            settingsActions.showSnackbarMessage(
-                d2.i18n.getTranslation('settings_updated')
-            )
+            settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
         })
         .catch(err => {
             console.error('Failed to save localized setting:', err)
@@ -36,9 +35,7 @@ const saveConfiguration = (d2, key, value) =>
     d2.system.configuration
         .set(key, value)
         .then(() => {
-            settingsActions.showSnackbarMessage(
-                d2.i18n.getTranslation('settings_updated')
-            )
+            settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
         })
         .catch(err => {
             console.error('Failed to save configuration:', err)
@@ -48,9 +45,7 @@ const saveSetting = (d2, key, value) =>
     d2.system.settings
         .set(key, value)
         .then(() => {
-            settingsActions.showSnackbarMessage(
-                d2.i18n.getTranslation('settings_updated')
-            )
+            settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
         })
         .catch(err => {
             console.error('Failed to save setting:', err)
@@ -156,18 +151,13 @@ const settingsSearchMap = Observable.fromPromise(
                                     .filter(label =>
                                         d2.i18n.isTranslated(label)
                                     )
-                                    .map(label => [
-                                        d2.i18n.getTranslation(label),
-                                        settingsKey,
-                                    ])
+                                    .map(label => [label, settingsKey])
                             )
                         }
 
                         return translatedKeyValueMap.concat([
                             [
-                                d2.i18n.getTranslation(
-                                    settingsKeyMapping[settingsKey].label
-                                ),
+                                settingsKeyMapping[settingsKey].label,
                                 settingsKey,
                             ],
                         ])

@@ -32,10 +32,6 @@ class MetadataSettings extends Component {
         this.stopMetadataSyncKey = 'keyStopMetadataSync'
         this.createVersionKey = 'createVersionButton'
 
-        this.getTranslation = context.d2.i18n.getTranslation.bind(
-            context.d2.i18n
-        )
-
         this.onSelectTransactionType = this.onSelectTransactionType.bind(this)
         this.onToggleVersioning = this.onToggleVersioning.bind(this)
         this.onToggleStopSync = this.onToggleStopSync.bind(this)
@@ -84,16 +80,14 @@ class MetadataSettings extends Component {
             .then(() => {
                 this.setState({ isTaskRunning: false })
                 settingsActions.load(true)
-                settingsActions.showSnackbarMessage(
-                    this.getTranslation('version_created')
-                )
+                settingsActions.showSnackbarMessage(i18n.t('Version created'))
                 return Promise.resolve()
             })
             .then(this.sync)
             .catch(() => {
                 this.setState({ isTaskRunning: false })
                 settingsActions.showSnackbarMessage(
-                    this.getTranslation('version_not_created')
+                    i18n.t('Failed to create version')
                 )
                 return Promise.resolve()
             })
@@ -137,7 +131,7 @@ class MetadataSettings extends Component {
             }
         } catch {
             settingsActions.showSnackbarMessage(
-                this.getTranslation('error_fetching_settings')
+                i18n.t('Error fetching settings')
             )
         }
     }
@@ -370,7 +364,7 @@ class MetadataSettings extends Component {
                         this.state.hasVersions ? styles.hidden : styles.visible
                     }
                 >
-                    <h4>{this.getTranslation('no_versions_exist')}</h4>
+                    <h4>{i18n.t('No versions exist')}</h4>
                 </div>
             </div>
         )
