@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import { Button } from '@dhis2/ui'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
 import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators'
 import { Card, CardText } from 'material-ui/Card'
@@ -9,7 +10,6 @@ import configOptionStore from './configOptionStore'
 import Checkbox from './form-fields/check-box'
 import SelectField from './form-fields/drop-down'
 import FileUpload from './form-fields/file-upload'
-import RaisedButton from './form-fields/raised-button'
 import TextField from './form-fields/text-field'
 import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component'
 import metadataSettings from './metadata-settings/metadataSettings.component'
@@ -170,16 +170,15 @@ class SettingsFields extends React.Component {
                             ? (configOptionStore.state &&
                                   configOptionStore.state[mapping.source]) ||
                               []
-                            : Object.keys(mapping.options).map(id => {
-                                  const displayName = !isNaN(
-                                      mapping.options[id]
-                                  )
-                                      ? mapping.options[id]
-                                      : d2.i18n.getTranslation(
-                                            mapping.options[id]
-                                        )
-                                  return { id, displayName }
-                              }),
+                            : Object.entries(mapping.options).map(
+                                  ([id, option]) => {
+                                      // TODO: Rename `option` param to `displayName` and remove below
+                                      const displayName = !isNaN(option)
+                                          ? option
+                                          : d2.i18n.getTranslation(option)
+                                      return { id, displayName }
+                                  }
+                              ),
                         includeEmpty: !!mapping.includeEmpty,
                         emptyLabel:
                             (mapping.includeEmpty &&
@@ -232,9 +231,9 @@ class SettingsFields extends React.Component {
 
             case 'postButton':
                 return Object.assign({}, fieldBase, {
-                    component: RaisedButton,
+                    component: Button,
                     props: {
-                        label: fieldBase.props.floatingLabelText,
+                        children: fieldBase.props.floatingLabelText,
                         onClick: () => {
                             d2.Api.getApi()
                                 .post(mapping.uri)
@@ -249,11 +248,6 @@ class SettingsFields extends React.Component {
                                         error.message
                                     )
                                 })
-                        },
-                        style: {
-                            minWidth: 'initial',
-                            maxWidth: 'initial',
-                            marginTop: '1em',
                         },
                     },
                 })
