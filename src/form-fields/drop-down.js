@@ -68,9 +68,7 @@ class DropDown extends React.Component {
             includeEmpty, emptyLabel, noOptionsLabel, isRequired,   // eslint-disable-line
             ...other
         } = this.props
-        const menuItemArray =
-            (Array.isArray(menuItems) && menuItems) || menuItems.toArray()
-        const hasOptions = menuItemArray.length > 0
+        const hasOptions = menuItems.length > 0
         return (
             <SelectField
                 value={hasOptions ? this.props.value : 1}
@@ -79,7 +77,7 @@ class DropDown extends React.Component {
                 {...other}
             >
                 {hasOptions ? (
-                    this.renderMenuItems(menuItemArray)
+                    this.renderMenuItems(menuItems)
                 ) : (
                     <MenuItem
                         value={1}
