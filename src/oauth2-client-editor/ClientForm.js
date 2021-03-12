@@ -7,11 +7,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import MultiToggle from '../form-fields/multi-toggle'
 import TextField from '../form-fields/text-field'
-import AppTheme from '../theme'
 import styles from './ClientForm.module.css'
 
-const formFieldStyle = AppTheme.forms
-formFieldStyle.width = '100%'
+const formFieldStyle = {
+    width: '100%',
+}
 
 const validateClientID = async v => {
     const d2 = await getD2()
