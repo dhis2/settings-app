@@ -63,6 +63,7 @@ const translateValidatorMessage = validatorMessage => {
         case 'value_should_be_an_email':
             return i18n.t('This field should be an email')
     }
+    return validatorMessage
 }
 
 function wrapUserSettingsOverride({ component, valueLabel }) {
