@@ -48,6 +48,23 @@ const styles = {
     },
 }
 
+const translateValidatorMessage = validatorMessage => {
+    switch (validatorMessage) {
+        case 'value_required':
+            return i18n.t('This field is required')
+        case 'value_should_be_a_url':
+            return i18n.t('This field should be a URL')
+        case 'value_should_be_list_of_urls':
+            return i18n.t('This field should contain a list of URLs')
+        case 'value_should_be_a_number':
+            return i18n.t('This field should be a number')
+        case 'value_should_be_a_positive_number':
+            return i18n.t('This field should be a positive number')
+        case 'value_should_be_an_email':
+            return i18n.t('This field should be an email')
+    }
+}
+
 function wrapUserSettingsOverride({ component, valueLabel }) {
     return class extends component {
         render() {
@@ -269,9 +286,12 @@ class SettingsFields extends React.Component {
                 if (mapping.validators) {
                     mapping.validators.forEach(name => {
                         if (wordToValidatorMap.has(name)) {
+                            const validator = wordToValidatorMap.get(name)
                             validators.push({
-                                validator: wordToValidatorMap.get(name),
-                                message: wordToValidatorMap.get(name).message,
+                                validator,
+                                message: translateValidatorMessage(
+                                    validator.message
+                                ),
                             })
                         }
                     })

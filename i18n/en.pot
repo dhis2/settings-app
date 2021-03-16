@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-12T17:23:00.564Z\n"
-"PO-Revision-Date: 2021-03-12T17:23:00.564Z\n"
+"POT-Creation-Date: 2021-03-16T11:10:22.254Z\n"
+"PO-Revision-Date: 2021-03-16T11:10:22.254Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr ""
@@ -222,6 +222,21 @@ msgid "Synchronization settings"
 msgstr ""
 
 msgid "OAuth2 Clients"
+msgstr ""
+
+msgid "This field is required"
+msgstr ""
+
+msgid "This field should be a URL"
+msgstr ""
+
+msgid "This field should be a number"
+msgstr ""
+
+msgid "This field should be a positive number"
+msgstr ""
+
+msgid "This field should be an email"
 msgstr ""
 
 msgid "This setting will be overridden by the current user setting: {{settingName}}"
