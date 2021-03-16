@@ -612,6 +612,7 @@ const settingsKeyMapping = {
         type: 'password',
     },
     keyMetadataDataVersioning: {
+        label: i18n.t('Metadata Versioning'),
         type: 'metadataSettings',
     },
     /* ============================================================================================================ */
