@@ -1,21 +1,5 @@
-node_modules*/
-.sass-cache
-*.iml
-.idea
-
-.jshintignore
-.jshintrc
-dev-jquery-auth.js
-dev_manifest.webapp
-
-build/
-target/
-manifest.webapp
-
-.DS_Store
-
-*.zip
-npm-debug.log
-yarn-error.log
-*.pot
-*.po
+# DHIS2 Platform
+node_modules
+.d2
+src/locales
+build

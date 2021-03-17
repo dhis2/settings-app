@@ -1,36 +1,37 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
-import CircularProgress from 'material-ui/CircularProgress';
-import TextField from '../form-fields/text-field';
-import SelectField from '../form-fields/drop-down';
-import settingsStore from '../settingsStore';
-import settingsActions from '../settingsActions';
-import configOptionStore from '../configOptionStore';
-import settingsKeyMapping from '../settingsKeyMapping';
+import i18n from '@dhis2/d2-i18n'
+import { Card, CircularLoader, CenteredContent } from '@dhis2/ui'
+import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
+import CircularProgress from 'material-ui/CircularProgress'
+import PropTypes from 'prop-types'
+import React from 'react'
+import configOptionStore from '../configOptionStore'
+import SelectField from '../form-fields/drop-down'
+import TextField from '../form-fields/text-field'
+import settingsActions from '../settingsActions'
+import settingsKeyMapping from '../settingsKeyMapping'
+import settingsStore from '../settingsStore'
+
+const systemDefaultText = i18n.t('System default (fallback)')
 
 /**
  * To understand why this component works the way it does, some background knowledge is required:
- * 
+ *
  * The default values of these appearance settings cannot be fetched via `/systemSettings/<key>`
  * because this keyed endpoint applies translation. However, the default values for the appearance
  * settings can be obtained when calling `/systemSettings`, because this endpoint doesn't apply
  * translations. As such, the default values are already present in the `settingsStore`.
- * 
+ *
  * When posting settings for a specific locale, we need to add a `locale` query parameter like so:
  * `/systemSettings/<key>?locale=<locale>`. To make this work a dedicated function has been created
  * in `src/settingsActions.js` called `saveLocalizedAppearanceSetting`. However, when we want to
- * update a default value, we need to omit the `locale` query parameter. Effectively his means that
+ * update a default value, we need to omit the `locale` query parameter. Effectively this means that
  * updating a default appearance setting is identical to updating a regular setting, so it can just
  * be handled by the `saveSetting` function.
  */
 
 const styles = {
-    inset: {
-        padding: '0 16px 8px',
-        borderRadius: 2,
-        boxShadow: '0px 0px 5px rgba(0,0,0,0.15), 0px 2px 3px rgba(0,0,0,0.15)',
-        margin: '8px -12px 4px',
+    container: {
+        padding: '0 var(--spacers-dp16) var(--spacers-dp8)',
     },
     field: {
         width: '100%',
@@ -48,8 +49,8 @@ const styles = {
         textDecoration: 'underline',
         cursor: 'pointer',
     },
-};
-const SYSTEM_DEFAULT = '@@__SYSTEM_DEFAULT__@@';
+}
+const SYSTEM_DEFAULT = '@@__SYSTEM_DEFAULT__@@'
 
 const LOCALIZED_SETTING_KEYS = [
     'applicationTitle',
@@ -57,76 +58,111 @@ const LOCALIZED_SETTING_KEYS = [
     'keyApplicationNotification',
     'keyApplicationFooter',
     'keyApplicationRightFooter',
-];
+]
 
 class LocalizedTextEditor extends React.Component {
     static getLocaleName(code) {
-        return (configOptionStore.state &&
-            configOptionStore.getState().uiLocales
-                .filter(locale => locale.id === code)
-                .map(locale => locale.displayName)
-                .pop()) || '';
+        return (
+            (configOptionStore.state &&
+                configOptionStore
+                    .getState()
+                    .uiLocales.filter(locale => locale.id === code)
+                    .map(locale => locale.displayName)
+                    .pop()) ||
+            ''
+        )
     }
 
     constructor(props, context) {
-        super(props, context);
+        super(props, context)
 
         this.state = {
-            locale: settingsStore.state.keyUiLocale,
-            localeName: LocalizedTextEditor.getLocaleName(settingsStore.state.keyUiLocale),
+            locale: settingsStore.state && settingsStore.state.keyUiLocale,
+            localeName:
+                settingsStore.state &&
+                LocalizedTextEditor.getLocaleName(
+                    settingsStore.state.keyUiLocale
+                ),
             settings: null,
             error: false,
-        };
+        }
 
-        this.handleChange = this.handleChange.bind(this);
-        this.saveSettingsKey = this.saveSettingsKey.bind(this);
-        this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
+        this.handleChange = this.handleChange.bind(this)
+        this.saveSettingsKey = this.saveSettingsKey.bind(this)
     }
 
     componentDidMount() {
-        this.getAppearanceSettings();
+        this.getAppearanceSettings()
+        this.settingsStoreSubscription = settingsStore.subscribe(() => {
+            this.setState({
+                locale: settingsStore.state.keyUiLocale,
+                localeName: LocalizedTextEditor.getLocaleName(
+                    settingsStore.state.keyUiLocale
+                ),
+            })
+        })
+    }
+
+    componentWillUnmount() {
+        if (this.settingsStoreSubscription) {
+            this.settingsStoreSubscription.unsubscribe()
+        }
     }
 
     getAppearanceSettings(code) {
         const locale = code || this.state.locale
-        const promise = locale === SYSTEM_DEFAULT
-            ? Promise.resolve(LOCALIZED_SETTING_KEYS.map(key => settingsStore.state[key]))
-            : this.fetchLocalizedAppearanceSettings(locale);
-        
-        promise.then(values => {
-            const settings = LOCALIZED_SETTING_KEYS.reduce((acc, key, i) => {
-                acc[key] = values[i];
-                return acc;
-            }, {});
+        const promise =
+            locale === SYSTEM_DEFAULT
+                ? Promise.resolve(
+                      LOCALIZED_SETTING_KEYS.map(
+                          key => settingsStore.state[key]
+                      )
+                  )
+                : this.fetchLocalizedAppearanceSettings(locale)
 
-            this.setState({ settings, error: false });
-        }).catch(() => {
-            this.setState({ error: true, settings: null });
-        })
+        promise
+            .then(values => {
+                const settings = LOCALIZED_SETTING_KEYS.reduce(
+                    (acc, key, i) => {
+                        acc[key] = values[i]
+                        return acc
+                    },
+                    {}
+                )
+
+                this.setState({ settings, error: false })
+            })
+            .catch(() => {
+                this.setState({ error: true, settings: null })
+            })
     }
 
     fetchLocalizedAppearanceSettings(locale) {
-        const api = this.context.d2.Api.getApi();
-        
-        return Promise.all(LOCALIZED_SETTING_KEYS.map(key => 
-            api.get(`systemSettings/${key}`, { locale }).then(json => json[key])
-        ));
+        const api = this.context.d2.Api.getApi()
+
+        return Promise.all(
+            LOCALIZED_SETTING_KEYS.map(key =>
+                api
+                    .get(`systemSettings/${key}`, { locale })
+                    .then(json => json[key])
+            )
+        )
     }
 
     handleChange(e) {
-        const code = e.target.value;
+        const code = e.target.value
 
         this.setState({
             locale: code,
             localeName: LocalizedTextEditor.getLocaleName(code),
             settings: null,
-        });
+        })
 
-        this.getAppearanceSettings(code);
+        this.getAppearanceSettings(code)
     }
 
     switchToDefaultLocale = () => {
-        this.handleChange({target: { value: SYSTEM_DEFAULT}})
+        this.handleChange({ target: { value: SYSTEM_DEFAULT } })
     }
 
     saveSettingsKey(key, value) {
@@ -134,32 +170,37 @@ class LocalizedTextEditor extends React.Component {
             settings: {
                 ...this.state.settings,
                 [key]: value,
-            }
+            },
         })
-        const locale = this.state.locale === SYSTEM_DEFAULT ? null : this.state.locale;
-        settingsActions.saveKey(key, value, locale);
+        const locale =
+            this.state.locale === SYSTEM_DEFAULT ? null : this.state.locale
+        settingsActions.saveKey(key, value, locale)
     }
 
-    createFieldHelpTextProps = (fieldKey) => {
+    createFieldHelpTextProps = fieldKey => {
         const defaultValue = settingsStore.state[fieldKey]
         const { locale } = this.state
 
         if (locale === SYSTEM_DEFAULT) {
-            return null;
+            return null
         }
 
         if (defaultValue) {
             return {
-                helpText: `${this.getTranslation('default_value')}: ${defaultValue}`
-            };
+                helpText: `${systemDefaultText}: ${defaultValue}`,
+            }
         }
 
         return {
             disabled: true,
             helpText: (
-                // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-                <span style={styles.clickableHelpText} onClick={this.switchToDefaultLocale}>
-                    {this.getTranslation('set_main_value_first')}
+                <span
+                    style={styles.clickableHelpText}
+                    onClick={this.switchToDefaultLocale}
+                >
+                    {i18n.t(
+                        'Set the main field value before adding a translation'
+                    )}
                 </span>
             ),
         }
@@ -167,15 +208,19 @@ class LocalizedTextEditor extends React.Component {
 
     renderLocalizedAppearanceFields() {
         if (!this.state.settings && !this.state.error) {
-            return <div style={styles.loaderWrap}><CircularProgress /></div>;
+            return (
+                <div style={styles.loaderWrap}>
+                    <CircularProgress />
+                </div>
+            )
         }
 
         if (this.state.error) {
             return (
                 <div style={styles.error}>
-                    {this.getTranslation('could_not_fetch_localized_settings')}
+                    {i18n.t('Could not fetch localized settings')}
                 </div>
-            );
+            )
         }
 
         const fields = LOCALIZED_SETTING_KEYS.map(key => ({
@@ -183,44 +228,54 @@ class LocalizedTextEditor extends React.Component {
             value: this.state.settings[key] || '',
             component: TextField,
             props: {
-                floatingLabelText: `${this.getTranslation(settingsKeyMapping[key].label)} - ${(this.state.localeName || this.getTranslation('system_default'))}`,
+                floatingLabelText: `${settingsKeyMapping[key].label} – ${
+                    this.state.localeName || systemDefaultText
+                }`,
                 changeEvent: 'onBlur',
                 style: styles.field,
                 multiLine: true,
                 ...this.createFieldHelpTextProps(key),
             },
-        }));
+        }))
 
-        return <FormBuilder fields={fields} onUpdateField={this.saveSettingsKey} />
+        return (
+            <FormBuilder fields={fields} onUpdateField={this.saveSettingsKey} />
+        )
     }
 
     render() {
         const systemDefaultOption = {
-            id: SYSTEM_DEFAULT, 
-            displayName: this.getTranslation('system_default')
-        };
-        const optionStoreState = configOptionStore.getState();
-        const uiLocales = (optionStoreState && optionStoreState.uiLocales) || [];
-        const options = [ systemDefaultOption, ...uiLocales ];
+            id: SYSTEM_DEFAULT,
+            displayName: systemDefaultText,
+        }
+        const optionStoreState = configOptionStore.getState()
+        const uiLocales = (optionStoreState && optionStoreState.uiLocales) || []
+        const options = [systemDefaultOption, ...uiLocales]
 
         return (
-            <div>
-                <div style={styles.inset}>
+            <Card>
+                <div style={styles.container}>
                     <SelectField
                         menuItems={options}
                         value={this.state.locale || ''}
-                        floatingLabelText={this.getTranslation('select_language')}
+                        floatingLabelText={i18n.t('Select language')}
                         onChange={this.handleChange}
                     />
-                    { this.state.locale && this.renderLocalizedAppearanceFields() }
+                    {this.state.locale ? (
+                        this.renderLocalizedAppearanceFields()
+                    ) : (
+                        <CenteredContent>
+                            <CircularLoader />
+                        </CenteredContent>
+                    )}
                 </div>
-            </div>
-        );
+            </Card>
+        )
     }
 }
 
 LocalizedTextEditor.contextTypes = {
     d2: PropTypes.object.isRequired,
-};
+}
 
-export default LocalizedTextEditor;
+export default LocalizedTextEditor

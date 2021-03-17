@@ -1,21 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
-import RaisedButton from 'material-ui/RaisedButton';
-import { RadioButtonGroup, RadioButton } from 'material-ui/RadioButton';
-import CircularProgress from 'material-ui/CircularProgress';
-import { Table, Column, Cell } from 'fixed-data-table';
-import log from 'loglevel';
-import Checkbox from '../form-fields/check-box';
-import settingsActions from '../settingsActions';
-import settingsStore from '../settingsStore';
-import settingsKeyMapping from '../settingsKeyMapping';
+import i18n from '@dhis2/d2-i18n'
+import { Button } from '@dhis2/ui'
+import { getInstance as getD2 } from 'd2'
+import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
+import { Table, Column, Cell } from 'fixed-data-table'
+import CircularProgress from 'material-ui/CircularProgress'
+import { RadioButtonGroup, RadioButton } from 'material-ui/RadioButton'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import Checkbox from '../form-fields/check-box'
+import settingsActions from '../settingsActions'
+import settingsStore from '../settingsStore'
+import 'fixed-data-table/dist/fixed-data-table.css'
 
-require('fixed-data-table/dist/fixed-data-table.css');
-
-class metadataSettings extends React.Component {
+class MetadataSettings extends Component {
     constructor(props, context) {
-        super(props, context);
+        super(props, context)
 
         this.state = {
             metadataVersions: [],
@@ -28,138 +27,146 @@ class metadataSettings extends React.Component {
             isLocalInstance: false,
             hasVersions: false,
             isTaskRunning: false,
-        };
-        this.d2 = context.d2;
-        this.getTranslation = context.d2.i18n.getTranslation.bind(context.d2.i18n);
-        this.onSelectTransactionType = this.onSelectTransactionType.bind(this);
-        this.syncVersions = this.syncVersions.bind(this);
-        this.syncSettings = this.syncSettings.bind(this);
-        this.createVersion = this.createVersion.bind(this);
-        this.onToggleVersioning = this.onToggleVersioning.bind(this);
-        this.onToggleStopSync = this.onToggleStopSync.bind(this);
-        this.saveSettingsKey = 'keyVersionEnabled';
-        this.stopMetadataSyncKey = 'keyStopMetadataSync';
-        this.createVersionKey = 'createVersionButton';
+        }
+        this.saveSettingsKey = 'keyVersionEnabled'
+        this.stopMetadataSyncKey = 'keyStopMetadataSync'
+        this.createVersionKey = 'createVersionButton'
+
+        this.onSelectTransactionType = this.onSelectTransactionType.bind(this)
+        this.onToggleVersioning = this.onToggleVersioning.bind(this)
+        this.onToggleStopSync = this.onToggleStopSync.bind(this)
     }
 
     componentDidMount() {
-        this.subscriptions = [];
-        this.subscriptions.push(settingsStore.subscribe((settings) => {
-            this.setState({ isVersioningEnabled: settings[this.saveSettingsKey] === 'true' }, () => {
-                this.syncVersions();
-                this.syncVersions()
-                    .then(this.syncSettings);
-            });
-        }));
+        this.subscriptions = []
+        this.subscriptions.push(
+            settingsStore.subscribe(settings => {
+                this.setState(
+                    {
+                        isVersioningEnabled:
+                            settings[this.saveSettingsKey] === 'true',
+                    },
+                    () => {
+                        this.syncVersions().then(this.syncSettings)
+                    }
+                )
+            })
+        )
     }
 
     componentWillUnmount() {
-        this.subscriptions.forEach(sub => sub.unsubscribe());
+        this.subscriptions.forEach(sub => sub.unsubscribe())
     }
 
     onSelectTransactionType(event, value) {
-        this.setState({ selectedTransactionType: value });
+        this.setState({ selectedTransactionType: value })
     }
 
     onToggleVersioning(e, v) {
-        settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false');
+        settingsActions.saveKey(this.saveSettingsKey, v ? 'true' : 'false')
     }
 
     onToggleStopSync(e, v) {
-        settingsActions.saveKey(this.stopMetadataSyncKey, v ? 'true' : 'false');
+        settingsActions.saveKey(this.stopMetadataSyncKey, v ? 'true' : 'false')
     }
 
-    createVersion() {
-        const mapping = settingsKeyMapping[this.createVersionKey];
-        this.setState({ isTaskRunning: true });
-        this.d2.Api.getApi().post(`${mapping.uri}?type=${this.state.selectedTransactionType}`)
+    createVersion = async () => {
+        this.setState({ isTaskRunning: true })
+        const d2 = await getD2()
+        d2.Api.getApi()
+            .post(
+                `/metadata/version/create?type=${this.state.selectedTransactionType}`
+            )
             .then(() => {
-                this.setState({ isTaskRunning: false });
-                settingsActions.load(true);
-                settingsActions.showSnackbarMessage(this.getTranslation('version_created'));
-                return Promise.resolve();
+                this.setState({ isTaskRunning: false })
+                settingsActions.load(true)
+                settingsActions.showSnackbarMessage(i18n.t('Version created'))
+                return Promise.resolve()
             })
             .then(this.sync)
-            .catch((error) => {
-                this.setState({ isTaskRunning: false });
-                log.warn('Error creating version:', error);
-                settingsActions.showSnackbarMessage(this.getTranslation('version_not_created'));
-                return Promise.resolve();
-            });
-    }
-
-    syncSettings() {
-        /* eslint-disable complexity */
-        this.d2.Api.getApi().get('/systemSettings')
-            .then((result) => {
-                this.setState({
-                    lastFailedTime: (result.keyMetadataLastFailedTime ? result.keyMetadataLastFailedTime : null),
-                    isVersioningEnabled: result.keyVersionEnabled,
-                    hqInstanceUrl: result.keyRemoteInstanceUrl,
-                    remoteVersionName: result.keyRemoteMetadataVersion,
-                    lastFailedVersion: (result.keyMetadataFailedVersion ? result.keyMetadataFailedVersion : null),
-                    isSchedulerEnabled: (result.keySchedTasks !== undefined),
-                });
-
-                if (this.state.hqInstanceUrl !== undefined && this.state.hqInstanceUrl.length !== 0) {
-                    this.setState({
-                        isLocalInstance: true,
-                        masterVersionName: this.state.remoteVersionName,
-                        isLastSyncValid: this.state.lastFailedTime != null,
-                    });
-                } else {
-                    this.setState({
-                        isLocalInstance: false,
-                        masterVersionName: (
-                            this.state.metadataVersions !== undefined && this.state.metadataVersions.length !== 0
-                                ? this.state.metadataVersions[0].name
-                                : null
-                        ),
-                    });
-                }
-                return Promise.resolve();
+            .catch(() => {
+                this.setState({ isTaskRunning: false })
+                settingsActions.showSnackbarMessage(
+                    i18n.t('Failed to create version')
+                )
+                return Promise.resolve()
             })
-            .catch((error) => {
-                log.warn('Error:', error);
-                settingsActions.showSnackbarMessage(this.getTranslation('error_fetching_settings'));
-                return Promise.resolve();
-            });
-        /* eslint-enable */
     }
 
-    syncVersions() {
-        if (this.state.isVersioningEnabled === true) {
-            return this.d2.Api.getApi().get('/metadata/versions')
-                .then((result) => {
-                    const versions = result.metadataversions.sort((a, b) => {
-                        if (a.created < b.created) {
-                            return 1;
-                        } else if (a.created > b.created) {
-                            return -1;
-                        }
+    syncSettings = async () => {
+        const d2 = await getD2()
+        try {
+            const result = await d2.Api.getApi().get('/systemSettings')
+            this.setState({
+                lastFailedTime: result.keyMetadataLastFailedTime
+                    ? result.keyMetadataLastFailedTime
+                    : null,
+                isVersioningEnabled: result.keyVersionEnabled,
+                hqInstanceUrl: result.keyRemoteInstanceUrl,
+                remoteVersionName: result.keyRemoteMetadataVersion,
+                lastFailedVersion: result.keyMetadataFailedVersion
+                    ? result.keyMetadataFailedVersion
+                    : null,
+                isSchedulerEnabled: result.keySchedTasks !== undefined,
+            })
 
-                        return 0;
-                    });
-                    versions.forEach((version) => {
-                        version.importdate = version.importdate ? new Date(version.importdate).toLocaleString() : 'NA'; // eslint-disable-line
-                    });
-                    this.setState({
-                        metadataVersions: versions,
-                        hasVersions: (versions !== undefined && versions.length !== 0),
-                    });
-                    return Promise.resolve();
+            if (
+                this.state.hqInstanceUrl !== undefined &&
+                this.state.hqInstanceUrl.length !== 0
+            ) {
+                this.setState({
+                    isLocalInstance: true,
+                    masterVersionName: this.state.remoteVersionName,
+                    isLastSyncValid: this.state.lastFailedTime != null,
                 })
-                .catch((error) => {
-                    log.error('Error:', error);
-                    this.setState({ hasVersions: false });
-                    return Promise.resolve();
-                });
+            } else {
+                this.setState({
+                    isLocalInstance: false,
+                    masterVersionName:
+                        this.state.metadataVersions !== undefined &&
+                        this.state.metadataVersions.length !== 0
+                            ? this.state.metadataVersions[0].name
+                            : null,
+                })
+            }
+        } catch {
+            settingsActions.showSnackbarMessage(
+                i18n.t('Error fetching settings')
+            )
+        }
+    }
+
+    syncVersions = async () => {
+        if (!this.state.isVersioningEnabled) {
+            return
         }
 
-        return Promise.resolve();
+        const d2 = await getD2()
+        try {
+            const result = await d2.Api.getApi().get('/metadata/versions')
+            const versions = result.metadataversions.sort((a, b) => {
+                if (a.created < b.created) {
+                    return 1
+                } else if (a.created > b.created) {
+                    return -1
+                }
+
+                return 0
+            })
+            versions.forEach(version => {
+                version.importdate = version.importdate
+                    ? new Date(version.importdate).toLocaleString()
+                    : 'NA'
+            })
+            this.setState({
+                metadataVersions: versions,
+                hasVersions: versions !== undefined && versions.length !== 0,
+            })
+        } catch {
+            this.setState({ hasVersions: false })
+        }
     }
 
-    /* eslint-disable complexity */
     renderVersionList() {
         const styles = {
             inlineRight: {
@@ -178,18 +185,31 @@ class metadataSettings extends React.Component {
                 top: '-7px',
                 float: 'left',
             },
-        };
+        }
 
-        const fieldGetter = (field, filter = x => x) => ({ rowIndex, ...props }) => (
-            <Cell {...props}>{filter(this.state.metadataVersions[rowIndex][field])}</Cell>
-        );
+        const fieldGetter = (field, filter = x => x) => ({
+            rowIndex,
+            ...props
+        }) => (
+            <Cell {...props}>
+                {filter(this.state.metadataVersions[rowIndex][field])}
+            </Cell>
+        )
 
-        const dateFmt = str => new Date(str).toLocaleString();
+        const dateFmt = str => new Date(str).toLocaleString()
 
         return (
             <div>
-                <h3>{this.getTranslation('create_metadata_version')}</h3>
-                <div>
+                <h3
+                    style={{
+                        fontSize: '16px',
+                        marginTop: '16px',
+                        marginBottom: '8px',
+                    }}
+                >
+                    {i18n.t('Create new version')}
+                </h3>
+                <div style={{ maxWidth: '600px' }}>
                     <div style={{ display: 'inline-block' }}>
                         <RadioButtonGroup
                             name="version_types"
@@ -199,54 +219,89 @@ class metadataSettings extends React.Component {
                         >
                             <RadioButton
                                 value="BEST_EFFORT"
-                                label={this.getTranslation('version_type_best_effort')}
+                                label={i18n.t('Best effort')}
                                 disabled={this.state.isTaskRunning}
                             />
                             <RadioButton
                                 value="ATOMIC"
-                                label={this.getTranslation('version_type_atomic')}
+                                label={i18n.t('Atomic')}
                                 disabled={this.state.isTaskRunning}
                             />
                         </RadioButtonGroup>
                     </div>
 
                     <div style={styles.inlineRight}>
-                        {this.state.isTaskRunning &&
-                        <CircularProgress style={styles.inlineProgressIcon} size={0.5} />}
-                        <RaisedButton
-                            label={this.getTranslation('create_metadata_version')}
+                        {this.state.isTaskRunning && (
+                            <CircularProgress
+                                style={styles.inlineProgressIcon}
+                                size={0.5}
+                            />
+                        )}
+                        <Button
                             onClick={this.createVersion}
                             disabled={this.state.isTaskRunning}
-                        />
+                        >
+                            {i18n.t('Create new version')}
+                        </Button>
                     </div>
                 </div>
 
-                <div style={this.state.hasVersions ? styles.visible : styles.hidden}>
-                    <div style={{ display: 'inline-block', float: 'left' }}>
-                        <span style={{ fontSize: '1.17em', fontWeight: 'bold', marginRight: 8 }}>
-                            {this.getTranslation('master_version')}:
+                <div
+                    style={
+                        this.state.hasVersions ? styles.visible : styles.hidden
+                    }
+                >
+                    <dl style={{ display: 'inline-block', margin: 0 }}>
+                        <dt
+                            style={{
+                                display: 'inline-block',
+                                fontSize: '16px',
+                                fontWeight: 'bold',
+                            }}
+                        >
+                            {i18n.t('Master version:', { nsSeparator: null })}
+                        </dt>
+                        <dd style={{ display: 'inline-block' }}>
+                            {this.state.masterVersionName || i18n.t('None')}
+                        </dd>
+                    </dl>
+                    <div
+                        style={
+                            this.state.isLocalInstance &&
+                            this.state.isLastSyncValid
+                                ? styles.inlineRight
+                                : styles.hidden
+                        }
+                    >
+                        <span style={{ fontStyle: 'italic' }}>
+                            {i18n.t('Last sync attempt')}
                         </span>
-                        {this.state.masterVersionName || this.getTranslation('none')}
-                    </div>
-
-                    <div style={this.state.isLocalInstance ? styles.inlineRight : styles.hidden}>
-                        <div style={this.state.isLastSyncValid ? styles.inlineRight : styles.hidden}>
-                            <span style={{ fontStyle: 'italic' }}>
-                                {this.getTranslation('last_sync_attempt')}:
+                        <span>{this.state.lastFailedVersion}</span>
+                        <span>
+                            {' | '}
+                            <span style={{ color: 'var(--colors-red500)' }}>
+                                {i18n.t('Failed')}
                             </span>
-                            <span>{this.state.lastFailedVersion}</span>
-                            <span> | <span style={{ color: 'red' }}>{this.getTranslation('failed')}</span>
-                                | {new Date(this.state.lastFailedTime).toLocaleString()}</span>
-                        </div>
+                            {' | '}
+                            {new Date(
+                                this.state.lastFailedTime
+                            ).toLocaleString()}
+                        </span>
                     </div>
                 </div>
 
-                <div style={this.state.isLocalInstance ? styles.visible : styles.hidden}>
+                <div
+                    style={
+                        this.state.isLocalInstance
+                            ? styles.visible
+                            : styles.hidden
+                    }
+                >
                     <Table
                         rowHeight={50}
                         rowsCount={this.state.metadataVersions.length}
                         width={670}
-                        maxHeight={(50 * 6)}
+                        maxHeight={50 * 6}
                         headerHeight={50}
                     >
                         <Column
@@ -272,12 +327,18 @@ class metadataSettings extends React.Component {
                     </Table>
                 </div>
 
-                <div style={this.state.isLocalInstance ? styles.hidden : styles.visible}>
+                <div
+                    style={
+                        this.state.isLocalInstance
+                            ? styles.hidden
+                            : styles.visible
+                    }
+                >
                     <Table
                         rowHeight={50}
                         rowsCount={this.state.metadataVersions.length}
                         width={670}
-                        maxHeight={(50 * 6)}
+                        maxHeight={50 * 6}
                         headerHeight={50}
                     >
                         <Column
@@ -298,55 +359,79 @@ class metadataSettings extends React.Component {
                     </Table>
                 </div>
 
-                <div style={this.state.hasVersions ? styles.hidden : styles.visible}>
-                    <h4>{this.getTranslation('no_versions_exist')}</h4>
+                <div
+                    style={
+                        this.state.hasVersions ? styles.hidden : styles.visible
+                    }
+                >
+                    <h4>{i18n.t('No versions exist')}</h4>
                 </div>
-
             </div>
-        );
+        )
     }
-    /* eslint-enable complexity */
 
-    /* eslint-disable complexity */
     render() {
-        const localeAppendage = this.state.locale === 'en' ? '' : this.state.locale;
+        const localeAppendage =
+            this.state.locale === 'en' ? '' : this.state.locale
         const checkboxFields = [
             {
                 name: 'keyVersionEnabled',
-                value: (settingsStore.state && settingsStore.state[this.saveSettingsKey + localeAppendage]) || '',
+                value:
+                    (settingsStore.state &&
+                        settingsStore.state[
+                            this.saveSettingsKey + localeAppendage
+                        ]) ||
+                    '',
                 component: Checkbox,
                 props: {
-                    label: this.getTranslation('keyVersionEnabled'),
-                    checked: ((settingsStore.state && settingsStore.state[this.saveSettingsKey])) === 'true',
+                    label: i18n.t('Enable Versioning for metadata sync'),
+                    checked:
+                        (settingsStore.state &&
+                            settingsStore.state[this.saveSettingsKey]) ===
+                        'true',
                     onCheck: this.onToggleVersioning,
                     disabled: this.state.isTaskRunning,
                 },
             },
             {
                 name: 'keyStopMetadataSync',
-                value: (settingsStore.state && settingsStore.state[this.stopMetadataSyncKey + localeAppendage]) || '',
+                value:
+                    (settingsStore.state &&
+                        settingsStore.state[
+                            this.stopMetadataSyncKey + localeAppendage
+                        ]) ||
+                    '',
                 component: Checkbox,
                 props: {
-                    label: this.getTranslation('keyStopMetadataSync'),
-                    checked: ((settingsStore.state && settingsStore.state[this.stopMetadataSyncKey])) === 'true',
+                    label: i18n.t(
+                        `Don't sync metadata if DHIS versions differ`
+                    ),
+                    checked:
+                        (settingsStore.state &&
+                            settingsStore.state[this.stopMetadataSyncKey]) ===
+                        'true',
                     onCheck: this.onToggleStopSync,
                 },
             },
-        ];
+        ]
 
         return (
             <div style={{ paddingTop: '2rem' }}>
-                <h2>{this.getTranslation('metadata_versioning')}</h2>
-                <FormBuilder fields={checkboxFields} onUpdateField={settingsActions.saveKey} />
-
-                {this.state.isVersioningEnabled === true ? this.renderVersionList() : null}
+                <h2 style={{ fontSize: '22px' }}>
+                    {i18n.t('Metadata Versioning')}
+                </h2>
+                <FormBuilder
+                    fields={checkboxFields}
+                    onUpdateField={settingsActions.saveKey}
+                />
+                {this.state.isVersioningEnabled && this.renderVersionList()}
             </div>
-        );
+        )
     }
-    /* eslint-disable */
 }
-metadataSettings.contextTypes = {
-    d2: PropTypes.object.isRequired,
-};
 
-export default metadataSettings;
+MetadataSettings.contextTypes = {
+    d2: PropTypes.object.isRequired,
+}
+
+export default MetadataSettings

@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Checkbox from 'material-ui/Checkbox';
+import CheckboxMaterial from 'material-ui/Checkbox'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 const sectionLabelStyle = {
     color: 'rgba(0, 0, 0, 0.3)',
@@ -8,35 +8,44 @@ const sectionLabelStyle = {
     margin: '16px 0 6px 0',
 }
 
-/* eslint-disable react/prefer-stateless-function */
-class CheckBox extends React.Component {
+class Checkbox extends React.Component {
     render() {
-        const { errorText, errorStyle, onChange, sectionLabel, value, ...other } = this.props
+        /* eslint-disable no-unused-vars */
+        const {
+            errorText,
+            errorStyle,
+            onChange,
+            sectionLabel,
+            value,
+            ...other
+        } = this.props
+        /* eslint-enable no-unused-vars */
 
         return (
             <div style={{ marginTop: 12, marginBottom: 12 }}>
-                {sectionLabel && <p style={sectionLabelStyle}>{sectionLabel}</p>}
-                <Checkbox onCheck={onChange} checked={value === 'true'} {...other} />
+                {sectionLabel && (
+                    <p style={sectionLabelStyle}>{sectionLabel}</p>
+                )}
+                <CheckboxMaterial
+                    onCheck={onChange}
+                    checked={value === 'true'}
+                    {...other}
+                />
             </div>
         )
     }
 }
-/* eslint-enable */
 
-CheckBox.propTypes = {
+Checkbox.propTypes = {
     onChange: PropTypes.func.isRequired,
-    value: PropTypes.string,
+    errorStyle: PropTypes.object,
     errorText: PropTypes.string,
     sectionLabel: PropTypes.string,
-    errorStyle: PropTypes.object,
+    value: PropTypes.string,
+}
 
-};
-
-CheckBox.defaultProps = {
+Checkbox.defaultProps = {
     value: 'false',
-    errorText: undefined,
-    errorStyle: undefined,
-    sectionLabel: undefined,
-};
+}
 
-export default CheckBox;
+export default Checkbox

@@ -1,15 +1,21 @@
+import i18n from '@dhis2/d2-i18n'
+
+const canBeOverridenLabel = i18n.t(
+    'This setting can be overridden by user settings'
+)
+
+const formatNumber = value => new Intl.NumberFormat(i18n.language).format(value)
+
 /**
  * This file provides information about DHIS2 system settings and configuration options that are not otherwise
  * available through the API.
- * </p>
- * Each system settings key is mapped to an I18N label and (optional) description. In addition, certain special system
+ *
+ * Each system settings key is mapped to an i18n label. In addition, certain special system
  * settings that are not actually saved as system settings but rather as system configuration options are described
  * here as well. This concerns any key that has a "configuration" property which is set to `true`.
- * </p>
+ *
  * Settings that have an `appendLocale: true` property, are localizable settings. When these settings are saved, the
  * code of the specified locale, such as "fr" or "ar_IQ" is appended to the key name.
- *
- * @type {{settingsKey: {label: string, description: string, configuration: boolean, appendLocale: boolean}}}
  */
 const settingsKeyMapping = {
     /* ============================================================================================================ */
@@ -17,201 +23,219 @@ const settingsKeyMapping = {
     /* ============================================================================================================ */
     keyAnalyticsMaxLimit: {
         // Analytics
-        label: 'analytics_max_limit',
+        label: i18n.t('Maximum number of analytics records'),
         type: 'dropdown',
         options: {
-            50000: 50000,
-            100000: 100000,
-            200000: 200000,
-            0: 'unlimited',
+            50000: formatNumber(50000),
+            100000: formatNumber(100000),
+            200000: formatNumber(200000),
+            0: i18n.t('Unlimited'),
         },
     },
     keySqlViewMaxLimit: {
-        label: 'sql_view_max_limit',
+        label: i18n.t('Maximum number of SQL view records'),
         type: 'dropdown',
         options: {
-            '-1': 'sql_view_max_limit_unlimited',
-            50000: 'sql_view_max_limit_50000',
-            100000: 'sql_view_max_limit_100000',
-            200000: 'sql_view_max_limit_200000',
+            '-1': i18n.t('Unlimited'),
+            50000: formatNumber(50000),
+            100000: formatNumber(100000),
+            200000: formatNumber(200000),
         },
     },
     infrastructuralIndicators: {
-        label: 'infrastructural_indicators',
+        label: i18n.t('Infrastructural indicators'),
         configuration: true,
         type: 'dropdown',
         source: 'indicatorGroups',
     },
     infrastructuralDataElements: {
-        label: 'infrastructural_data_elements',
+        label: i18n.t('Infrastructural data elements'),
         configuration: true,
         type: 'dropdown',
         source: 'dataElementGroups',
     },
     infrastructuralPeriodType: {
-        label: 'infrastructural_period_type',
+        label: i18n.t('Infrastructural period type'),
         configuration: true,
         type: 'dropdown',
         options: {
-            Daily: 'Daily',
-            Weekly: 'Weekly',
-            Monthly: 'Monthly',
-            BiMonthly: 'BiMonthly',
-            Quarterly: 'Quarterly',
-            SixMonthly: 'SixMonthly',
-            SixMonthlyApril: 'SixMonthlyApril',
-            Yearly: 'yearly',
-            FinancialApril: 'FinancialApril',
-            FinancialJuly: 'FinancialJuly',
-            FinancialOct: 'FinancialOct',
+            Daily: i18n.t('Daily'),
+            Weekly: i18n.t('Weekly'),
+            Monthly: i18n.t('Monthly'),
+            BiMonthly: i18n.t('Bi-monthly'),
+            Quarterly: i18n.t('Quarterly'),
+            SixMonthly: i18n.t('Six-monthly'),
+            SixMonthlyApril: i18n.t('Six-monthly April'),
+            Yearly: i18n.t('Yearly'),
+            FinancialApril: i18n.t('Financial-April'),
+            FinancialJuly: i18n.t('Financial-July'),
+            FinancialOct: i18n.t('Financial-Oct'),
         },
     },
     feedbackRecipients: {
-        label: 'feedback_recipients',
+        label: i18n.t('Feedback recipients'),
         configuration: true,
         type: 'dropdown',
         source: 'userGroups',
         includeEmpty: true,
-        emptyLabel: 'no_feedback_recipients',
+        emptyLabel: i18n.t('No message recipients'),
     },
     offlineOrganisationUnitLevel: {
-        label: 'max_levels_to_offline',
-        description: 'relative_to_current_user',
+        label: i18n.t('Max offline organisation unit levels'),
         configuration: true,
         type: 'dropdown',
         source: 'organisationUnitLevels',
     },
     factorDeviation: {
-        label: 'data_analysis_factor',
+        label: i18n.t('Data analysis std dev factor'),
         validators: ['positive_number'],
     },
     phoneNumberAreaCode: {
-        label: 'phone_number_area_code',
+        label: i18n.t('Phone number area code'),
         validators: ['number'],
     },
-    helpPageLink: {
-        label: 'help_page_link',
-        validators: ['relative_url'],
-    },
     multiOrganisationUnitForms: {
-        label: 'multi_organisation_unit_forms',
-        type: 'checkbox',
-    },
-    omitIndicatorsZeroNumeratorDataMart: {
-        label: 'omit_indicators_zero_numerator_data_mart',
-        type: 'checkbox',
-    },
-    keyAnalyticsMaintenanceMode: {
-        // Analytics
-        label: 'put_analytics_in_maintenance_mode',
-        type: 'checkbox',
-    },
-    keyHideUnapprovedDataInAnalytics: {
-        label: 'hide_unapproved_data_in_analytics',
+        label: i18n.t('Enable multi-organisation unit forms'),
         type: 'checkbox',
     },
     keyAcceptanceRequiredForApproval: {
-        label: 'acceptance_required_before_approval',
+        label: i18n.t('Acceptance required before approval'),
         type: 'checkbox',
     },
-    recaptchaSecret: {
-        label: 'recaptcha_secret_label',
-        type: 'password',
-    },
-    recaptchaSite: {
-        type: 'password',
-        label: 'recaptcha_site_label',
-    },
     keyGatherAnalyticalObjectStatisticsInDashboardViews: {
-        label: 'gather_analytical_object_statistics_in_dashboard_views',
+        label: i18n.t('Gather analytical object statistics in dashboard views'),
         type: 'checkbox',
     },
     keyCountPassiveDashboardViewsInUsageAnalytics: {
-        label: 'count_passive_dashboard_views_in_usage_analytics',
+        label: i18n.t(
+            'Include passive dashboard views in usage analytics statistics'
+        ),
         type: 'checkbox',
     },
     /* ============================================================================================================ */
     /* Category: Analytics                                                                                          */
     /* ============================================================================================================ */
     keyAnalysisRelativePeriod: {
-        label: 'default_analysis_relative_period',
+        label: i18n.t('Default relative period for analysis'),
         type: 'dropdown',
         options: {
-            THIS_MONTH: 'THIS_MONTH',
-            LAST_MONTH: 'LAST_MONTH',
-            THIS_BIMONTH: 'THIS_BIMONTH',
-            LAST_BIMONTH: 'LAST_BIMONTH',
-            THIS_QUARTER: 'THIS_QUARTER',
-            LAST_QUARTER: 'LAST_QUARTER',
-            THIS_SIX_MONTH: 'THIS_SIX_MONTH',
-            LAST_SIX_MONTH: 'LAST_SIX_MONTH',
-            MONTHS_THIS_YEAR: 'MONTHS_THIS_YEAR',
-            QUARTERS_THIS_YEAR: 'QUARTERS_THIS_YEAR',
-            THIS_YEAR: 'THIS_YEAR',
-            MONTHS_LAST_YEAR: 'MONTHS_LAST_YEAR',
-            QUARTERS_LAST_YEAR: 'QUARTERS_LAST_YEAR',
-            LAST_YEAR: 'LAST_YEAR',
-            LAST_5_YEARS: 'LAST_5_YEARS',
-            LAST_12_MONTHS: 'LAST_12_MONTHS',
-            LAST_6_MONTHS: 'LAST_6_MONTHS',
-            LAST_3_MONTHS: 'LAST_3_MONTHS',
-            LAST_6_BIMONTHS: 'LAST_6_BIMONTHS',
-            LAST_4_QUARTERS: 'LAST_4_QUARTERS',
-            LAST_2_SIXMONTHS: 'LAST_2_SIXMONTHS',
-            THIS_FINANCIAL_YEAR: 'THIS_FINANCIAL_YEAR',
-            LAST_FINANCIAL_YEAR: 'LAST_FINANCIAL_YEAR',
-            LAST_5_FINANCIAL_YEARS: 'LAST_5_FINANCIAL_YEARS',
-            THIS_WEEK: 'THIS_WEEK',
-            LAST_WEEK: 'LAST_WEEK',
-            LAST_4_WEEKS: 'LAST_4_WEEKS',
-            LAST_12_WEEKS: 'LAST_12_WEEKS',
-            LAST_52_WEEKS: 'LAST_52_WEEKS',
+            THIS_MONTH: i18n.t('This month'),
+            LAST_MONTH: i18n.t('Last month'),
+            THIS_BIMONTH: i18n.t('This bi-month'),
+            LAST_BIMONTH: i18n.t('Last bi-month'),
+            THIS_QUARTER: i18n.t('This quarter'),
+            LAST_QUARTER: i18n.t('Last quarter'),
+            THIS_SIX_MONTH: i18n.t('This six-month'),
+            LAST_SIX_MONTH: i18n.t('Last six-month'),
+            MONTHS_THIS_YEAR: i18n.t('Months this year'),
+            QUARTERS_THIS_YEAR: i18n.t('Quarters this year'),
+            THIS_YEAR: i18n.t('This year'),
+            MONTHS_LAST_YEAR: i18n.t('Months last year'),
+            QUARTERS_LAST_YEAR: i18n.t('Quarters last year'),
+            LAST_YEAR: i18n.t('Last year'),
+            LAST_5_YEARS: i18n.t('Last 5 years'),
+            LAST_12_MONTHS: i18n.t('Last 12 months'),
+            LAST_6_MONTHS: i18n.t('Last 6 months'),
+            LAST_3_MONTHS: i18n.t('Last 3 months'),
+            LAST_6_BIMONTHS: i18n.t('Last 6 bi-months'),
+            LAST_4_QUARTERS: i18n.t('Last 4 quarters'),
+            LAST_2_SIXMONTHS: i18n.t('Last 2 six-months'),
+            THIS_FINANCIAL_YEAR: i18n.t('This financial year'),
+            LAST_FINANCIAL_YEAR: i18n.t('Last financial year'),
+            LAST_5_FINANCIAL_YEARS: i18n.t('Last 5 financial years'),
+            THIS_WEEK: i18n.t('This week'),
+            LAST_WEEK: i18n.t('Last week'),
+            LAST_4_WEEKS: i18n.t('Last 4 weeks'),
+            LAST_12_WEEKS: i18n.t('Last 12 weeks'),
+            LAST_52_WEEKS: i18n.t('Last 52 weeks'),
         },
     },
     keyHideDailyPeriods: {
-        label: 'key_hide_daily_periods',
-        sectionLabel: 'hidden_period_types_in_analytics_apps',
+        label: i18n.t('Hide daily periods'),
+        sectionLabel: i18n.t('Hidden period types in analytics apps'),
         type: 'checkbox',
     },
     keyHideWeeklyPeriods: {
-        label: 'key_hide_weekly_periods',
+        label: i18n.t('Hide weekly periods'),
         type: 'checkbox',
     },
     keyHideMonthlyPeriods: {
-        label: 'key_hide_monthly_periods',
+        label: i18n.t('Hide monthly periods'),
         type: 'checkbox',
     },
     keyHideBiMonthlyPeriods: {
-        label: 'key_hide_bi_monthly_periods',
+        label: i18n.t('Hide bimonthly periods'),
         type: 'checkbox',
     },
     analyticsFinancialYearStart: {
-        label: 'analytics_financial_year_start',
+        label: i18n.t('Financial year relative period start month'),
         type: 'dropdown',
         options: {
-            FINANCIAL_YEAR_APRIL: 'APRIL',
-            FINANCIAL_YEAR_JULY: 'JULY',
-            FINANCIAL_YEAR_OCTOBER: 'OCTOBER',
+            FINANCIAL_YEAR_APRIL: i18n.t('April'),
+            FINANCIAL_YEAR_JULY: i18n.t('July'),
+            FINANCIAL_YEAR_OCTOBER: i18n.t('October'),
+        },
+    },
+    keyCacheStrategy: {
+        label: i18n.t('Cache strategy'),
+        type: 'dropdown',
+        options: {
+            NO_CACHE: i18n.t('No cache'),
+            CACHE_15_MINUTES: i18n.t('Cache for 15 minutes'),
+            CACHE_30_MINUTES: i18n.t('Cache for 30 minutes'),
+            CACHE_1_HOUR: i18n.t('Cache for one hour'),
+            CACHE_6AM_TOMORROW: i18n.t('Cache until 6AM tomorrow'),
+            CACHE_TWO_WEEKS: i18n.t('Cache for two weeks'),
         },
     },
     keyCacheability: {
-        label: 'cacheability',
+        label: i18n.t('Cacheability'),
         type: 'dropdown',
         options: {
-            PUBLIC: 'public',
-            PRIVATE: 'private',
+            PUBLIC: i18n.t('Public'),
+            PRIVATE: i18n.t('Private'),
         },
     },
     keyAnalyticsCacheTtlMode: {
-        label: 'key_analytics_cache_ttl_mode',
+        label: i18n.t('Analytics cache mode'),
         type: 'dropdown',
         options: {
-            PROGRESSIVE: 'progressive',
-            FIXED: 'fixed',
+            PROGRESSIVE: i18n.t('Progressive'),
+            FIXED: i18n.t('Fixed'),
         },
     },
+    keyIgnoreAnalyticsApprovalYearThreshold: {
+        label: i18n.t(
+            'Max number of years to hide unapproved data in analytics'
+        ),
+        type: 'dropdown',
+        options: {
+            '-1': i18n.t('Never check approval'),
+            0: i18n.t('Check approval for all data'),
+            1: i18n.t('Current year only'),
+            2: i18n.t('Last 2 years'),
+            3: i18n.t('Last 3 years'),
+            4: i18n.t('Last 4 years'),
+            5: i18n.t('Last 5 years'),
+            6: i18n.t('Last 6 years'),
+            7: i18n.t('Last 7 years'),
+            8: i18n.t('Last 8 years'),
+            9: i18n.t('Last 9 years'),
+            10: i18n.t('Last 10 years'),
+        },
+    },
+    keyRespectMetaDataStartEndDatesInAnalyticsTableExport: {
+        label: i18n.t(
+            'Respect category option start and end date in analytics table export'
+        ),
+        type: 'checkbox',
+    },
+    keyAnalyticsMaintenanceMode: {
+        label: i18n.t('Put analytics in maintenance mode'),
+        type: 'checkbox',
+    },
     keyAnalyticsCacheProgressiveTtlFactor: {
-        label: 'key_analytics_cache_progressive_ttl_factor',
+        label: i18n.t('Caching factor'),
         type: 'dropdown',
         options: {
             1: '1',
@@ -233,74 +257,39 @@ const settingsKeyMapping = {
             settingsValue: 'FIXED',
         },
     },
-    keyCacheStrategy: {
-        label: 'cache_strategy',
-        type: 'dropdown',
-        options: {
-            NO_CACHE: 'no_cache',
-            CACHE_15_MINUTES: 'cache_for_15_minutes',
-            CACHE_30_MINUTES: 'cache_for_30_minutes',
-            CACHE_1_HOUR: 'cache_for_one_hour',
-            CACHE_6AM_TOMORROW: 'cache_until_6am_tomorrow',
-            CACHE_TWO_WEEKS: 'cache_for_two_weeks',
-        },
-    },
-    keyIgnoreAnalyticsApprovalYearThreshold: {
-        label: 'max_number_of_years_to_hide_unapproved_data_in_analytics',
-        type: 'dropdown',
-        options: {
-            '-1': 'never_check_approval',
-            0: 'check_approval_for_all_data',
-            1: 'current_year_only',
-            2: 'last_2_years',
-            3: 'last_3_years',
-            4: 'last_4_years',
-            5: 'last_5_years',
-            6: 'last_6_years',
-            7: 'last_7_years',
-            8: 'last_8_years',
-            9: 'last_9_years',
-            10: 'last_10_years',
-        },
-    },
-    keySkipDataTypeValidationInAnalyticsTableExport: {
-        label: 'skip_data_type_validation_in_analytics_table_export',
-        type: 'checkbox',
-    },
-    keyRespectMetaDataStartEndDatesInAnalyticsTableExport: {
-        label:
-            'respect_category_option_start_and_end_date_in_analytics_table_export',
-        type: 'checkbox',
-    },
     /* ============================================================================================================ */
     /* Category: Server                                                                                             */
     /* ============================================================================================================ */
     keyDatabaseServerCpus: {
-        label: 'no_of_database_server_cpus',
+        label: i18n.t('Number of database server CPUs'),
         type: 'dropdown',
         options: {
-            0: 'detect_based_on_web_server',
+            0: i18n.t('Automatic (detect based on web server)'),
             1: '1',
             2: '2',
             3: '3',
             4: '4',
-            5: '5', // eslint-disable-line
+            5: '5',
             6: '6',
             7: '7',
             8: '8',
             16: '16',
-            32: '32', // eslint-disable-line
+            32: '32',
         },
     },
     keySystemNotificationsEmail: {
-        label: 'system_notifications_email_address',
+        label: i18n.t('System notifications email address'),
         validators: ['email'],
     },
     googleAnalyticsUA: {
-        label: 'google_analytics_ua_key',
+        label: i18n.t('Google Analytics (Universal Analytics) key'),
+    },
+    keyGoogleMapsApiKey: {
+        label: i18n.t('Google Maps API key'),
+        type: 'password',
     },
     keyBingMapsApiKey: {
-        label: 'key_bing_maps_api_key',
+        label: i18n.t('Bing Maps API key'),
         type: 'password',
     },
     /* ============================================================================================================ */
@@ -309,153 +298,157 @@ const settingsKeyMapping = {
     localizedText: {
         type: 'localizedAppearance',
         searchLabels: [
-            'application_title',
-            'application_introduction',
-            'application_notification',
-            'application_left_footer',
-            'application_right_footer',
+            i18n.t('Application title'),
+            i18n.t('Application introduction'),
+            i18n.t('Application notification'),
+            i18n.t('Application left-side footer'),
+            i18n.t('Application right-side footer'),
         ],
     },
     applicationTitle: {
-        label: 'application_title',
+        label: i18n.t('Application title'),
         appendLocale: true,
         multiLine: true,
     },
     keyApplicationIntro: {
-        label: 'application_introduction',
-        description: 'allows_html',
+        label: i18n.t('Application introduction'),
         appendLocale: true,
         multiLine: true,
     },
     keyApplicationNotification: {
-        label: 'application_notification',
-        description: 'allows_html',
+        label: i18n.t('Application notification'),
         appendLocale: true,
         multiLine: true,
     },
     keyApplicationFooter: {
-        label: 'application_left_footer',
-        description: 'allows_html',
+        label: i18n.t('Application left-side footer'),
         appendLocale: true,
         multiLine: true,
     },
     keyApplicationRightFooter: {
-        label: 'application_right_footer',
-        description: 'allows_html',
+        label: i18n.t('Application right-side footer'),
         appendLocale: true,
         multiLine: true,
     },
     keyStyle: {
-        label: 'style',
+        label: i18n.t('Style'),
         type: 'dropdown',
         includeEmpty: false,
         userSettingsOverride: true,
-        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
+        searchLabels: [i18n.t('Style'), canBeOverridenLabel],
         source: 'styles',
     },
     startModule: {
-        label: 'start_page',
+        label: i18n.t('Start page'),
         type: 'dropdown',
         source: 'startModules',
     },
+    helpPageLink: {
+        label: i18n.t('Help page link'),
+        validators: ['relative_url'],
+    },
     keyFlag: {
-        label: 'flag',
+        label: i18n.t('Flag'),
         type: 'dropdown',
         source: 'flags',
     },
     keyUiLocale: {
-        label: 'ui_locale',
+        label: i18n.t('Interface language'),
         type: 'dropdown',
         userSettingsOverride: true,
-        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
+        searchLabels: [i18n.t('Style'), canBeOverridenLabel],
         source: 'uiLocales',
     },
     keyDbLocale: {
-        label: 'db_locale',
+        label: i18n.t('Database language'),
         type: 'dropdown',
         userSettingsOverride: true,
-        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
+        searchLabels: [i18n.t('Style'), canBeOverridenLabel],
         source: 'dbLocales',
     },
     keyAnalysisDisplayProperty: {
-        label: 'analysis_display_property',
+        label: i18n.t('Property to display in analysis modules'),
         type: 'dropdown',
         userSettingsOverride: true,
-        searchLabels: ['style', 'can_be_overridden_by_user_settings'],
+        searchLabels: [i18n.t('Style'), canBeOverridenLabel],
         options: {
-            name: 'name',
-            shortName: 'short_name',
+            name: i18n.t('Name'),
+            shortName: i18n.t('Short name'),
         },
     },
     keyAnalysisDigitGroupSeparator: {
-        label: 'analysis_digit_group_separator',
+        label: i18n.t(
+            'Default digit group separator to display in analysis modules'
+        ),
         type: 'dropdown',
         options: {
-            SPACE: 'space',
-            COMMA: 'comma',
-            NONE: 'none',
+            SPACE: i18n.t('Space'),
+            COMMA: i18n.t('Comma'),
+            NONE: i18n.t('None'),
         },
     },
     keyRequireAddToView: {
-        label: 'require_authority_to_add_to_view_object_lists',
+        label: i18n.t('Require authority to add to view object lists'),
         type: 'checkbox',
     },
     keyUseCustomLogoFront: {
-        label: 'custom_login_page_logo',
+        label: i18n.t('Custom login page logo'),
         type: 'staticContent',
         name: 'logo_front',
     },
     keyUseCustomLogoBanner: {
-        label: 'custom_top_menu_logo',
+        label: i18n.t('Custom top menu logo'),
         type: 'staticContent',
         name: 'logo_banner',
     },
     keyDashboardContextMenuItemSwitchViewType: {
-        label: 'dashboard_context_menu_item_switch_view_type',
+        label: i18n.t('Allow users to switch dashboard favorite view type'),
         type: 'checkbox',
     },
     keyDashboardContextMenuItemOpenInRelevantApp: {
-        label: 'dashboard_context_menu_open_in_relevant_app',
+        label: i18n.t('Allow users to open dashboard favorite in relevant app'),
         type: 'checkbox',
     },
     keyDashboardContextMenuItemShowInterpretationsAndDetails: {
-        label: 'dashboard_context_menu_item_show_interpretations_and_details',
+        label: i18n.t(
+            'Allow users to show dashboard favorite interpretations and details'
+        ),
         type: 'checkbox',
     },
     keyDashboardContextMenuItemViewFullscreen: {
-        label: 'dashboard_context_menu_item_view_full_screen',
+        label: i18n.t('Allow users to view dashboard items in fullscreen'),
         type: 'checkbox',
     },
     /* ============================================================================================================ */
     /* Category: Email                                                                                              */
     /* ============================================================================================================ */
-    keyEmailHostName: { label: 'host_name' },
+    keyEmailHostName: { label: i18n.t('Host name') },
     keyEmailPort: {
-        label: 'port',
+        label: i18n.t('Port'),
         type: 'dropdown',
         options: {
-            587: 587,
-            465: 465,
-            25: 25,
+            587: '587',
+            465: '465',
+            25: '25',
         },
     },
     keyEmailUsername: {
-        label: 'username',
+        label: i18n.t('Username'),
     },
     keyEmailPassword: {
-        label: 'password',
+        label: i18n.t('Password'),
         type: 'password',
     },
     keyEmailTls: {
-        label: 'tls',
+        label: i18n.t('TLS'),
         type: 'checkbox',
     },
     keyEmailSender: {
-        label: 'email_sender',
+        label: i18n.t('Email sender'),
         validators: ['email'],
     },
     emailTestButton: {
-        label: 'send_test_email',
+        label: i18n.t('Send me a test email'),
         type: 'postButton',
         uri: '/email/test',
     },
@@ -463,164 +456,164 @@ const settingsKeyMapping = {
     /* Category: Access                                                                                             */
     /* ============================================================================================================ */
     selfRegistrationRole: {
-        label: 'self_registration_account_user_role',
+        label: i18n.t('Self registration account user role'),
         configuration: true,
         type: 'dropdown',
         source: 'userRoles',
         includeEmpty: true,
-        emptyLabel: 'disable_self_registration',
-    },
-    keySelfRegistrationNoRecaptcha: {
-        label: 'do_not_require_recaptcha_for_self_registration',
-        type: 'checkbox',
+        emptyLabel: i18n.t('Disable self registration'),
     },
     selfRegistrationOrgUnit: {
-        label: 'self_registration_account_organisation_unit',
+        label: i18n.t('Self registration account organisation unit'),
         configuration: true,
         type: 'dropdown',
         source: 'organisationUnits',
         includeEmpty: true,
-        emptyLabel: 'disable_self_registration',
+        emptyLabel: i18n.t('Disable self registration'),
+    },
+    keySelfRegistrationNoRecaptcha: {
+        label: i18n.t('Do not require recaptcha for self registration'),
+        type: 'checkbox',
     },
     keyAccountRecovery: {
-        label: 'enable_user_account_recovery',
+        label: i18n.t('Enable user account recovery'),
         type: 'checkbox',
     },
     keyLockMultipleFailedLogins: {
-        label:
-            'lock_user_account_temporarily_after_multiple_failed_login_attempts',
+        label: i18n.t(
+            'Lock user account temporarily after multiple failed login attempts'
+        ),
         type: 'checkbox',
     },
     keyCanGrantOwnUserAuthorityGroups: {
-        label: 'allow_users_to_grant_own_user_roles',
+        label: i18n.t('Allow users to grant own user roles'),
         type: 'checkbox',
     },
     keyAllowObjectAssignment: {
-        label: 'allow_assigning_object_to_related_objects_during_add_or_update',
-        type: 'checkbox',
-    },
-    credentialsExpiryAlert: {
-        label: 'enable_password_expiry_alerts',
+        label: i18n.t(
+            'Allow assigning object to related objects during add or update'
+        ),
         type: 'checkbox',
     },
     credentialsExpires: {
-        label: 'user_credentials_expires',
+        label: i18n.t('Require user account password change'),
         type: 'dropdown',
         options: {
-            0: 'never',
-            3: '3_months',
-            6: '6_months',
-            12: '12_months',
+            0: i18n.t('Never'),
+            3: i18n.t('3 months'),
+            6: i18n.t('6 months'),
+            12: i18n.t('12 months'),
         },
     },
+    credentialsExpiryAlert: {
+        label: i18n.t('Enable password expiry alerts'),
+        type: 'checkbox',
+    },
     minPasswordLength: {
-        label: 'min_chars_in_password',
+        label: i18n.t('Minimum characters in password'),
         type: 'dropdown',
         options: {
-            8: 8,
-            10: 10,
-            12: 12,
-            14: 14,
+            8: '8',
+            10: '10',
+            12: '12',
+            14: '14',
         },
     },
     corsWhitelist: {
-        label: 'cors_whitelist',
+        label: i18n.t('CORS whitelist'),
         configuration: true,
         multiLine: true,
-        hintText: 'one_url_per_line',
+        hintText: i18n.t('One URL per line'),
         validators: ['url_array'],
     },
-    keyGoogleMapsApiKey: {
-        label: 'google_maps_api_key',
+    recaptchaSite: {
+        label: i18n.t('reCAPTCHA Site Key'),
+        type: 'password',
+    },
+    recaptchaSecret: {
+        label: i18n.t('reCAPTCHA Secret Key'),
         type: 'password',
     },
     /* ============================================================================================================ */
     /* Category: Calendar                                                                                           */
     /* ============================================================================================================ */
     keyCalendar: {
-        label: 'calendar',
+        label: i18n.t('Calendar'),
         type: 'dropdown',
         options: {
-            coptic: 'coptic',
-            ethiopian: 'ethiopian',
-            gregorian: 'gregorian',
-            islamic: 'islamic',
-            iso8601: 'iso8601',
-            julian: 'julian',
-            nepali: 'nepali',
-            thai: 'thai',
-            persian: 'persian',
+            coptic: i18n.t('Coptic'),
+            ethiopian: i18n.t('Ethiopian'),
+            gregorian: i18n.t('Gregorian'),
+            islamic: i18n.t('Islamic'),
+            iso8601: i18n.t('ISO 8601'),
+            julian: i18n.t('Julian'),
+            nepali: i18n.t('Nepali'),
+            thai: i18n.t('Thai'),
+            persian: i18n.t('Persian'),
         },
     },
     keyDateFormat: {
-        label: 'date_format',
+        label: i18n.t('Date format'),
         type: 'dropdown',
         options: {
-            'yyyy-MM-dd': 'yyyy-MM-dd',
-            'dd-MM-yyyy': 'dd-MM-yyyy',
+            'yyyy-MM-dd': '1981-03-31 (yyyy-MM-dd)',
+            'dd-MM-yyyy': '31-03-1981 (dd-MM-yyyy)',
         },
-    },
-    /* ============================================================================================================ */
-    /* Category: Synchronization                                                                                    */
-    /* ============================================================================================================ */
-    keyRemoteInstanceUrl: {
-        label: 'remote_server_url',
-        validators: ['url'],
-    },
-    keyRemoteInstanceUsername: {
-        label: 'remote_server_username',
-    },
-    keyRemoteInstancePassword: {
-        label: 'remote_server_password',
-        type: 'password',
-    },
-    keyMetadataDataVersioning: {
-        label: 'keyVersionEnabled',
-        type: 'metadataSettings',
-    },
-    keyVersionEnabled: {
-        label: 'keyVersionEnabled',
-        type: 'checkbox',
-    },
-    keyStopMetadataSync: {
-        label: 'keyStopMetadataSync',
-        type: 'checkbox',
-    },
-    createVersionButton: {
-        label: 'create_metadata_version',
-        type: 'postButton',
-        uri: '/metadata/version/create',
     },
     /* ============================================================================================================ */
     /* Category: Data Import                                                                                        */
     /* ============================================================================================================ */
     keyDataImportStrictPeriods: {
-        label: 'require_periods_to_match_period_type',
+        label: i18n.t('Require periods to match period type of data set'),
         type: 'checkbox',
     },
     keyDataImportStrictDataElements: {
-        label: 'require_data_elements_to_be_part_of_data_set',
+        label: i18n.t('Require data elements to be part of data set'),
         type: 'checkbox',
     },
     keyDataImportStrictCategoryOptionCombos: {
-        label: 'require_category_option_combos_to_match',
+        label: i18n.t(
+            'Require category option combos to match category combo of data element'
+        ),
         type: 'checkbox',
     },
     keyDataImportStrictOrganisationUnits: {
-        label: 'require_organisation_units_to_match_assignment',
+        label: i18n.t(
+            'Require organisation units to match assignment of data set'
+        ),
         type: 'checkbox',
     },
     keyDataImportStrictAttributeOptionCombos: {
-        label: 'require_attribute_option_combos_to_match',
+        label: i18n.t(
+            'Require attribute option combos to match category combo of data set'
+        ),
         type: 'checkbox',
     },
     keyDataImportRequireCategoryOptionCombo: {
-        label: 'require_category_option_combo_to_be_specified',
+        label: i18n.t('Require category option combo to be specified'),
         type: 'checkbox',
     },
     keyDataImportRequireAttributeOptionCombo: {
-        label: 'require_attribute_option_combo_to_be_specified',
+        label: i18n.t('Require attribute option combo to be specified'),
         type: 'checkbox',
+    },
+    /* ============================================================================================================ */
+    /* Category: Synchronization                                                                                    */
+    /* ============================================================================================================ */
+    keyRemoteInstanceUrl: {
+        label: i18n.t('Remote server URL'),
+        validators: ['url'],
+    },
+    keyRemoteInstanceUsername: {
+        label: i18n.t('Remote server username'),
+    },
+    keyRemoteInstancePassword: {
+        label: i18n.t('Remote server password'),
+        type: 'password',
+    },
+    keyMetadataDataVersioning: {
+        label: i18n.t('Metadata Versioning'),
+        type: 'metadataSettings',
     },
     /* ============================================================================================================ */
     /* Category: oAuth2 clients                                                                                     */

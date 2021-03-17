@@ -1,0 +1,10 @@
+.contentWrap {
+    display: flex;
+    background: var(--colors-grey100);
+}
+
+.contentArea {
+    flex-grow: 1;
+    margin-bottom: 64px;
+    padding-left: var(--spacers-dp24);
+}

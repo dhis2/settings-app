@@ -1,45 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import log from 'loglevel';
-import { Card, CardText } from 'material-ui/Card';
-import IconButton from 'material-ui/IconButton';
-import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators';
-import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component';
-import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component';
-import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component';
-import metadataSettings from './metadata-settings/metadataSettings.component';
-import RaisedButton from './form-fields/raised-button';
-import SelectField from './form-fields/drop-down';
-import Checkbox from './form-fields/check-box';
-import FileUpload from './form-fields/file-upload';
-import TextField from './form-fields/text-field';
-import AppTheme from './theme';
-import settingsActions from './settingsActions';
-import settingsStore from './settingsStore';
-import settingsKeyMapping from './settingsKeyMapping';
-import { categories } from './settingsCategories';
-import configOptionStore from './configOptionStore';
+import i18n from '@dhis2/d2-i18n'
+import { Button, Card } from '@dhis2/ui'
+import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
+import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators'
+import IconButton from 'material-ui/IconButton'
+import PropTypes from 'prop-types'
+import React from 'react'
+import configOptionStore from './configOptionStore'
+import Checkbox from './form-fields/check-box'
+import SelectField from './form-fields/drop-down'
+import FileUpload from './form-fields/file-upload'
+import TextField from './form-fields/text-field'
+import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component'
+import metadataSettings from './metadata-settings/metadataSettings.component'
+import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component'
+import settingsActions from './settingsActions'
+import { categories } from './settingsCategories'
+import classes from './SettingsFields.module.css'
+import settingsKeyMapping from './settingsKeyMapping'
+import settingsStore from './settingsStore'
+import AppTheme from './theme'
 
 const styles = {
     header: {
         fontSize: 24,
-        fontWeight: 300,
-        color: AppTheme.rawTheme.palette.textColor,
+        fontWeight: 500,
+        color: 'var(--colors-grey900)',
         padding: '24px 0 12px 16px',
-    },
-    card: {
-        marginTop: 8,
-        marginRight: '1rem',
-        padding: '0 1rem',
-    },
-    cardTitle: {
-        background: AppTheme.rawTheme.palette.primary2Color,
-        height: 62,
-    },
-    cardTitleText: {
-        fontSize: 28,
-        fontWeight: 100,
-        color: AppTheme.rawTheme.palette.alternateTextColor,
     },
     noHits: {
         padding: '1rem',
@@ -60,19 +46,43 @@ const styles = {
         top: -6,
         marginLeft: 16,
     },
-};
+}
 
-function wrapUserSettingsOverride(d2, component, valueLabel) {
+const translateValidatorMessage = validatorMessage => {
+    switch (validatorMessage) {
+        case 'value_required':
+            return i18n.t('This field is required')
+        case 'value_should_be_a_url':
+            return i18n.t('This field should be a URL')
+        case 'value_should_be_list_of_urls':
+            return i18n.t('This field should contain a list of URLs')
+        case 'value_should_be_a_number':
+            return i18n.t('This field should be a number')
+        case 'value_should_be_a_positive_number':
+            return i18n.t('This field should be a positive number')
+        case 'value_should_be_an_email':
+            return i18n.t('This field should be an email')
+    }
+    return validatorMessage
+}
+
+function wrapUserSettingsOverride({ component, valueLabel }) {
     return class extends component {
         render() {
-            const labelStyle = Object.assign({}, styles.userSettingsOverride);
+            const labelStyle = Object.assign({}, styles.userSettingsOverride)
             if (component === Checkbox) {
-                labelStyle.top = -8;
+                labelStyle.top = -8
             }
 
-            const labelText = valueLabel !== undefined
-                ? `${d2.i18n.getTranslation('will_be_overridden_by_current_user_setting')}: ${valueLabel}`
-                : d2.i18n.getTranslation('can_be_overridden_by_user_settings');
+            const labelText = valueLabel
+                ? `${i18n.t(
+                      'This setting will be overridden by the current user setting: {{settingName}}',
+                      {
+                          settingName: valueLabel,
+                          nsSeparator: null,
+                      }
+                  )}`
+                : i18n.t('This setting can be overridden by user settings')
 
             return (
                 <div style={{ marginRight: 48 }}>
@@ -82,14 +92,22 @@ function wrapUserSettingsOverride(d2, component, valueLabel) {
                             iconClassName="material-icons"
                             tooltip={labelText}
                             tooltipPosition="bottom-left"
-                            iconStyle={{ color: AppTheme.rawTheme.palette.primary1Color }}
-                            tooltipStyles={{ fontSize: '.75rem', marginRight: 32, marginTop: -32 }}
-                        >info_outline</IconButton>
+                            iconStyle={{
+                                color: AppTheme.rawTheme.palette.primary1Color,
+                            }}
+                            tooltipStyles={{
+                                fontSize: '.75rem',
+                                marginRight: 32,
+                                marginTop: -32,
+                            }}
+                        >
+                            info_outline
+                        </IconButton>
                     </div>
                 </div>
-            );
+            )
         }
-    };
+    }
 }
 
 function addConditionallyHiddenStyles(mapping) {
@@ -98,235 +116,265 @@ function addConditionallyHiddenStyles(mapping) {
     }
 
     const { settingsKey, settingsValue } = mapping.hideWhen
-    const currentValue = settingsStore.state[settingsKey]
+    const currentValue = settingsStore.state && settingsStore.state[settingsKey]
 
     return settingsValue === currentValue ? { display: 'none' } : {}
 }
 
 class SettingsFields extends React.Component {
     componentDidMount() {
-        this.subscriptions = [];
-        this.subscriptions.push(settingsStore.subscribe(() => this.forceUpdate()));
+        this.subscriptions = []
+        this.subscriptions.push(
+            settingsStore.subscribe(() => this.forceUpdate())
+        )
     }
 
     shouldComponentUpdate(nextProps) {
-        return nextProps.currentSettings.join(',') !== this.props.currentSettings.join(',');
+        return (
+            nextProps.currentSettings.join(',') !==
+            this.props.currentSettings.join(',')
+        )
     }
 
     componentWillUnmount() {
         if (Array.isArray(this.subscriptions)) {
-            this.subscriptions.forEach(sub => sub.unsubscribe());
+            this.subscriptions.forEach(sub => sub.unsubscribe())
+        }
+    }
+
+    fieldForMapping({ mapping, fieldBase, key, d2 }) {
+        switch (mapping.type) {
+            case 'textfield':
+            case undefined:
+                return Object.assign({}, fieldBase, {
+                    props: Object.assign({}, fieldBase.props, {
+                        changeEvent: 'onBlur',
+                        multiLine: !!mapping.multiLine,
+                    }),
+                })
+
+            case 'password':
+                return Object.assign({}, fieldBase, {
+                    props: Object.assign({}, fieldBase.props, {
+                        type: 'password',
+                        changeEvent: 'onBlur',
+                        autoComplete: 'new-password',
+                    }),
+                })
+
+            case 'dropdown':
+                if (mapping.includeEmpty && fieldBase.value === '') {
+                    fieldBase.value = 'null'
+                }
+
+                return Object.assign({}, fieldBase, {
+                    component: SelectField,
+                    props: Object.assign({}, fieldBase.props, {
+                        menuItems: mapping.source
+                            ? (configOptionStore.state &&
+                                  configOptionStore.state[mapping.source]) ||
+                              []
+                            : Object.entries(mapping.options).map(
+                                  ([id, displayName]) => ({
+                                      id,
+                                      displayName,
+                                  })
+                              ),
+                        includeEmpty: !!mapping.includeEmpty,
+                        emptyLabel:
+                            (mapping.includeEmpty && mapping.emptyLabel) ||
+                            undefined,
+                        noOptionsLabel: i18n.t('No options'),
+                    }),
+                })
+
+            case 'checkbox':
+                return Object.assign({}, fieldBase, {
+                    component: Checkbox,
+                    props: {
+                        label: fieldBase.props.floatingLabelText,
+                        sectionLabel:
+                            (mapping.sectionLabel && mapping.sectionLabel) ||
+                            undefined,
+                        style: fieldBase.props.style,
+                        onCheck: (e, v) => {
+                            settingsActions.saveKey(key, v ? 'true' : 'false')
+                        },
+                    },
+                })
+
+            case 'staticContent':
+                if (!settingsStore.state) {
+                    return null
+                }
+                return Object.assign({}, fieldBase, {
+                    component: FileUpload,
+                    props: {
+                        label: fieldBase.props.floatingLabelText,
+                        name: mapping.name,
+                        isEnabled: Object.hasOwnProperty.call(
+                            settingsStore.state,
+                            key
+                        ),
+                        value:
+                            fieldBase.value === 'true' ||
+                            fieldBase.value === true,
+                    },
+                })
+
+            case 'oauth2clients':
+                return Object.assign({}, fieldBase, {
+                    component: Oauth2ClientEditor,
+                })
+
+            case 'postButton':
+                return Object.assign({}, fieldBase, {
+                    component: Button,
+                    props: {
+                        children: fieldBase.props.floatingLabelText,
+                        onClick: () => {
+                            d2.Api.getApi()
+                                .post(mapping.uri)
+                                .then(result => {
+                                    settingsActions.load(true)
+                                    settingsActions.showSnackbarMessage(
+                                        result.message
+                                    )
+                                })
+                                .catch(error => {
+                                    settingsActions.showSnackbarMessage(
+                                        error.message
+                                    )
+                                })
+                        },
+                    },
+                })
+
+            case 'localizedAppearance':
+                return Object.assign({}, fieldBase, {
+                    component: LocalizedAppearance,
+                })
+
+            case 'metadataSettings':
+                return Object.assign({}, fieldBase, {
+                    component: metadataSettings,
+                })
+
+            default:
+                console.warn(
+                    `Unknown control type "${mapping.type}" encountered for field "${key}"`
+                )
+                return {}
         }
     }
 
     renderFields(settings) {
-        const d2 = this.context.d2;
+        const d2 = this.context.d2
         if (settings.length === 0) {
             return (
                 <div style={styles.noHits}>
-                    { d2.i18n.getTranslation('no_settings_matched_the_search_term') }
+                    {i18n.t('No settings matched the search term')}
                 </div>
-            );
+            )
         }
 
-        /* eslint-disable complexity */
         const fields = settings
-            .map((key) => {
-                const mapping = settingsKeyMapping[key];
+            .map(key => {
+                const mapping = settingsKeyMapping[key]
 
                 // Base config, common for all component types
-                const validators = [];
+                const validators = []
                 if (mapping.validators) {
-                    mapping.validators.forEach((name) => {
+                    mapping.validators.forEach(name => {
                         if (wordToValidatorMap.has(name)) {
+                            const validator = wordToValidatorMap.get(name)
                             validators.push({
-                                validator: wordToValidatorMap.get(name),
-                                message: d2.i18n.getTranslation(wordToValidatorMap.get(name).message),
-                            });
+                                validator,
+                                message: translateValidatorMessage(
+                                    validator.message
+                                ),
+                            })
                         }
-                    });
+                    })
                 }
 
                 const fieldBase = {
                     name: key,
-                    value: (settingsStore.state && settingsStore.state[key]) || '',
+                    value:
+                        (settingsStore.state && settingsStore.state[key]) || '',
                     component: TextField,
                     props: {
-                        floatingLabelText: d2.i18n.getTranslation(mapping.label),
-                        style: { width: '100%', ...addConditionallyHiddenStyles(mapping) },
-                        hintText: mapping.hintText && d2.i18n.getTranslation(mapping.hintText),
+                        floatingLabelText: mapping.label,
+                        style: {
+                            width: '100%',
+                            ...addConditionallyHiddenStyles(mapping),
+                        },
+                        hintText: mapping.hintText,
                     },
                     validators,
-                };
-
-                switch (mapping.type) {
-                case 'textfield':
-                case undefined:
-                    return Object.assign({}, fieldBase, {
-                        props: Object.assign({}, fieldBase.props, {
-                            changeEvent: 'onBlur',
-                            multiLine: !!mapping.multiLine,
-                        }),
-                    });
-
-                case 'password':
-                    return Object.assign({}, fieldBase, {
-                        props: Object.assign({}, fieldBase.props, {
-                            type: 'password',
-                            changeEvent: 'onBlur',
-                            autoComplete: 'new-password',
-                        }),
-                    });
-
-                case 'dropdown':
-                    if (mapping.includeEmpty && fieldBase.value === '') {
-                        fieldBase.value = 'null';
-                    }
-
-                    return Object.assign({}, fieldBase, {
-                        component: SelectField,
-                        props: Object.assign({}, fieldBase.props, {
-                            menuItems: mapping.source
-                                ? (configOptionStore.state && configOptionStore.state[mapping.source]) || []
-                                : Object.keys(mapping.options).map((id) => {
-                                    const displayName = !isNaN(mapping.options[id]) ?
-                                        mapping.options[id] :
-                                        d2.i18n.getTranslation(mapping.options[id]);
-                                    return { id, displayName };
-                                }),
-                            includeEmpty: !!mapping.includeEmpty,
-                            emptyLabel: (
-                                (mapping.includeEmpty &&
-                                mapping.emptyLabel && d2.i18n.getTranslation(mapping.emptyLabel)) || undefined
-                            ),
-                            noOptionsLabel: d2.i18n.getTranslation('no_options'),
-                        }),
-                    });
-
-                case 'checkbox':
-                    return Object.assign({}, fieldBase, {
-                        component: Checkbox,
-                        props: {
-                            label: fieldBase.props.floatingLabelText,
-                            sectionLabel: (mapping.sectionLabel && d2.i18n.getTranslation(mapping.sectionLabel) ) || undefined,
-                            style: fieldBase.props.style,
-                            onCheck: (e, v) => {
-                                settingsActions.saveKey(key, v ? 'true' : 'false');
-                            },
-                        },
-                    });
-
-                case 'staticContent':
-                    return Object.assign({}, fieldBase, {
-                        component: FileUpload,
-                        props: {
-                            label: fieldBase.props.floatingLabelText,
-                            name: mapping.name,
-                            isEnabled: settingsStore.state.hasOwnProperty(key),
-                            value: fieldBase.value === 'true' || fieldBase.value === true,
-                        },
-                    });
-
-                case 'oauth2clients':
-                    return Object.assign({}, fieldBase, {
-                        component: Oauth2ClientEditor,
-                    });
-
-                case 'postButton':
-                    return Object.assign({}, fieldBase, {
-                        component: RaisedButton,
-                        props: {
-                            label: fieldBase.props.floatingLabelText,
-                            onClick: () => {
-                                d2.Api.getApi().post(mapping.uri)
-                                    .then((result) => {
-                                        log.info((result && result.message) || 'Ok');
-                                        settingsActions.load(true);
-                                        settingsActions.showSnackbarMessage(result.message);
-                                    }).catch((error) => {
-                                        log.warn('Error when performing API query:', error.message);
-                                        settingsActions.showSnackbarMessage(error.message);
-                                    });
-                            },
-                            style: { minWidth: 'initial', maxWidth: 'initial', marginTop: '1em' },
-                        },
-                    });
-
-                case 'localizedAppearance':
-                    return Object.assign({}, fieldBase, {
-                        component: LocalizedAppearance,
-                    });
-
-                case 'metadataSettings':
-                    return Object.assign({}, fieldBase, {
-                        component: metadataSettings,
-                    });
-
-                default:
-                    log.warn(`Unknown control type "${mapping.type}" encountered for field "${key}"`);
-                    return {};
                 }
+
+                return this.fieldForMapping({ mapping, fieldBase, key, d2 })
             })
-            .filter(f => !!f.name)
-            .map((field) => {
-                const mapping = settingsKeyMapping[field.name];
-                const options = configOptionStore.getState();
+            .filter(f => f && !!f.name)
+            .map(field => {
+                const mapping = settingsKeyMapping[field.name]
+                const options = configOptionStore.getState()
 
                 if (mapping.userSettingsOverride) {
-                    const userSettingsNoFallback = (options && options.userSettingsNoFallback) || {};
-                    const userSettingValue = userSettingsNoFallback && userSettingsNoFallback[field.name] !== null
-                        ? userSettingsNoFallback[field.name]
-                        : '';
-                    let component = field.component;
+                    const userSettingsNoFallback =
+                        (options && options.userSettingsNoFallback) || {}
+                    const userSettingValue =
+                        userSettingsNoFallback &&
+                        userSettingsNoFallback[field.name] !== null
+                            ? userSettingsNoFallback[field.name]
+                            : ''
+                    const component = wrapUserSettingsOverride({
+                        component: field.component,
+                        valueLabel: mapping.source
+                            ? ((options && options[mapping.source]) || [])
+                                  .filter(opt => opt.id === userSettingValue)
+                                  .map(opt => opt.displayName)
+                                  .pop()
+                            : userSettingValue,
+                    })
 
-                    if (userSettingValue === '') {
-                        component = wrapUserSettingsOverride(d2, component);
-                    } else if (mapping.source) {
-                        const userSettingLabel = ((options && options[mapping.source]) || [])
-                            .filter(opt => opt.id === userSettingValue)
-                            .map(opt => opt.displayName)
-                            .pop();
-
-                        component = wrapUserSettingsOverride(d2, component, userSettingLabel);
-                    } else {
-                        component = wrapUserSettingsOverride(d2, component, d2.i18n.getTranslation(userSettingValue));
-                    }
-
-                    return Object.assign(field, { component });
+                    return Object.assign(field, { component })
                 }
 
-                return field;
-            });
-        /* eslint-enable complexity */
+                return field
+            })
 
         return (
-            <Card style={styles.card} key={this.props.category}>
-                <CardText>
-                    <FormBuilder fields={fields} onUpdateField={settingsActions.saveKey} />
-                </CardText>
+            <Card className={classes.card} key={this.props.category}>
+                <FormBuilder
+                    fields={fields}
+                    onUpdateField={settingsActions.saveKey}
+                />
             </Card>
-        );
+        )
     }
 
     render() {
         return (
             <div className="content-area">
-                <div style={styles.header}>{categories[this.props.category] ?
-                    this.context.d2.i18n.getTranslation(categories[this.props.category].pageLabel) :
-                    this.context.d2.i18n.getTranslation('search_results')}
+                <div style={styles.header}>
+                    {categories[this.props.category]
+                        ? categories[this.props.category].pageLabel
+                        : i18n.t('Search results')}
                 </div>
                 {this.renderFields(this.props.currentSettings)}
             </div>
-        );
+        )
     }
 }
 
 SettingsFields.propTypes = {
     category: PropTypes.string.isRequired,
     currentSettings: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+}
 SettingsFields.contextTypes = {
     d2: PropTypes.object.isRequired,
-};
+}
 
-export default SettingsFields;
+export default SettingsFields
