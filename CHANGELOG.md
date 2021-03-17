@@ -1,3 +1,10 @@
+# [29.6.0](https://github.com/dhis2/settings-app/compare/v29.5.8...v29.6.0) (2021-03-17)
+
+
+### Features
+
+* port to app-platform ([#800](https://github.com/dhis2/settings-app/issues/800)) ([56e9299](https://github.com/dhis2/settings-app/commit/56e9299e0f35b433b13c255f608e800c4420374f))
+
 ## [29.5.8](https://github.com/dhis2/settings-app/compare/v29.5.7...v29.5.8) (2021-03-13)
 
 
