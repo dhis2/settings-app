@@ -1,3 +1,10 @@
+## [29.6.2](https://github.com/dhis2/settings-app/compare/v29.6.1...v29.6.2) (2021-03-18)
+
+
+### Bug Fixes
+
+* update transifex config ([#810](https://github.com/dhis2/settings-app/issues/810)) ([ea0ee25](https://github.com/dhis2/settings-app/commit/ea0ee258e8d2aa46fc632b7ab1fd169e1ea144cc))
+
 ## [29.6.1](https://github.com/dhis2/settings-app/compare/v29.6.0...v29.6.1) (2021-03-18)
 
 
