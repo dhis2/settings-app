@@ -1,753 +1,762 @@
+# 
+# Translators:
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "POT-Creation-Date: 2021-03-16T11:10:22.254Z\n"
-"PO-Revision-Date: 2021-03-16T11:10:22.254Z\n"
+"PO-Revision-Date: 2021-03-18 19:32+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lo\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid ""
+msgid "Failed to load: {{error}}"
 msgstr ""
 
-msgid ""
+msgid "No flag"
 msgstr ""
 
-msgid ""
+msgid "Search settings"
 msgstr ""
 
-msgid ""
+msgid "Replace image"
 msgstr ""
 
-msgid ""
+msgid "Preview image"
 msgstr ""
 
-msgid ""
+msgid "Preview of image"
 msgstr ""
 
-msgid ""
+msgid "Upload image"
 msgstr ""
 
-msgid ""
+msgid "Cancel upload"
 msgstr ""
 
-msgid ""
+msgid "System default (fallback)"
 msgstr ""
 
-msgid ""
+msgid "Set the main field value before adding a translation"
 msgstr ""
 
-msgid ""
+msgid "Could not fetch localized settings"
 msgstr ""
 
-msgid ""
+msgid "Select language"
 msgstr ""
 
-msgid ""
+msgid "Version created"
 msgstr ""
 
-msgid ""
+msgid "Failed to create version"
 msgstr ""
 
-msgid ""
+msgid "Error fetching settings"
 msgstr ""
 
-msgid ""
+msgid "Create new version"
 msgstr ""
 
-msgid ""
+msgid "Best effort"
 msgstr ""
 
-msgid ""
+msgid "Atomic"
 msgstr ""
 
-msgid ""
+msgid "Master version:"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "None"
+msgstr "ບໍ່ມີ"
 
-msgid ""
+msgid "Last sync attempt"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Failed"
+msgstr "Failed"
 
-msgid ""
+msgid "No versions exist"
 msgstr ""
 
-msgid ""
+msgid "Enable Versioning for metadata sync"
 msgstr ""
 
-msgid ""
+msgid "Don't sync metadata if DHIS versions differ"
 msgstr ""
 
-msgid ""
+msgid "Metadata Versioning"
 msgstr ""
 
-msgid ""
+msgid "This client ID is already taken"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Name"
+msgstr "ຊື່"
 
-msgid ""
-msgstr ""
+msgid "Required"
+msgstr "ຕ້ອງການ"
 
-msgid ""
+msgid "Client ID"
 msgstr ""
 
-msgid ""
+msgid "Client Secret"
 msgstr ""
 
-msgid ""
+msgid "Grant Types"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Password"
+msgstr "ລະຫັດຜ່ານ"
 
-msgid ""
+msgid "Refresh token"
 msgstr ""
 
-msgid ""
+msgid "Authorization code"
 msgstr ""
 
-msgid ""
+msgid "One URL per line"
 msgstr ""
 
-msgid ""
+msgid "Redirect URIs"
 msgstr ""
 
-msgid ""
+msgid "This field should contain a list of URLs"
 msgstr ""
 
-msgid ""
+msgid "Create new OAuth2 Client"
 msgstr ""
 
-msgid ""
+msgid "Edit OAuth2 Client"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Save"
+msgstr "ບັນທຶກ"
 
-msgid ""
-msgstr ""
+msgid "Cancel"
+msgstr "Cancel"
 
-msgid ""
+msgid "There are currently no OAuth2 clients registered"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Edit"
+msgstr "ແກ້ໄຂ"
 
-msgid ""
-msgstr ""
+msgid "Delete"
+msgstr "ລົບ"
 
-msgid ""
+msgid "OAuth2 client saved"
 msgstr ""
 
-msgid ""
+msgid "Failed to save OAuth2 client"
 msgstr ""
 
-msgid ""
+msgid "Add OAuth2 client"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Yes"
+msgstr "Yes"
 
-msgid ""
-msgstr ""
+msgid "No"
+msgstr "No"
 
-msgid ""
+msgid "OAuth2 client deleted"
 msgstr ""
 
-msgid ""
+msgid "Failed to delete OAuth2 client"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Settings updated"
+msgstr "ການຕັ້ງຄ່ານີ້ໄດ້ຖືກບັນທຶກ"
 
-msgid ""
-msgstr ""
+msgid "General"
+msgstr "ທົ່ວໄປ"
 
-msgid ""
-msgstr ""
+msgid "General settings"
+msgstr "General"
 
-msgid ""
+msgid "Analytics"
 msgstr ""
 
-msgid ""
+msgid "Analytics settings"
 msgstr ""
 
-msgid ""
+msgid "Server"
 msgstr ""
 
-msgid ""
+msgid "Server settings"
 msgstr ""
 
-msgid ""
+msgid "Appearance"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Appearance settings"
+msgstr "Appearance"
 
-msgid ""
-msgstr ""
+msgid "Email"
+msgstr "ອີເມວ"
 
-msgid ""
-msgstr ""
+msgid "Email settings"
+msgstr "Email"
 
-msgid ""
-msgstr ""
+msgid "Access"
+msgstr "Access"
 
-msgid ""
-msgstr ""
+msgid "Access settings"
+msgstr "Access"
 
-msgid ""
+msgid "Calendar"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Calendar settings"
+msgstr "Calendar"
 
-msgid ""
+msgid "Data Import"
 msgstr ""
 
-msgid ""
+msgid "Data import settings"
 msgstr ""
 
-msgid ""
+msgid "Synchronization"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Synchronization settings"
+msgstr "Synchronization"
 
-msgid ""
+msgid "OAuth2 Clients"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "This field is required"
+msgstr "This field is required"
 
-msgid ""
+msgid "This field should be a URL"
 msgstr ""
 
-msgid ""
+msgid "This field should be a number"
 msgstr ""
 
-msgid ""
+msgid "This field should be a positive number"
 msgstr ""
 
-msgid ""
+msgid "This field should be an email"
 msgstr ""
 
 msgid ""
+"This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
 
-msgid ""
+msgid "This setting can be overridden by user settings"
 msgstr ""
 
-msgid ""
+msgid "No options"
 msgstr ""
 
-msgid ""
+msgid "No settings matched the search term"
 msgstr ""
 
-msgid ""
+msgid "Search results"
 msgstr ""
 
-msgid ""
+msgid "Maximum number of analytics records"
 msgstr ""
 
-msgid ""
+msgid "Unlimited"
 msgstr ""
 
-msgid ""
+msgid "Maximum number of SQL view records"
 msgstr ""
 
-msgid ""
+msgid "Infrastructural indicators"
 msgstr ""
 
-msgid ""
+msgid "Infrastructural data elements"
 msgstr ""
 
-msgid ""
+msgid "Infrastructural period type"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Daily"
+msgstr "ທຸກໆມື້"
 
-msgid ""
-msgstr ""
+msgid "Weekly"
+msgstr "ເປັນອາທິດ"
 
-msgid ""
-msgstr ""
+msgid "Monthly"
+msgstr "ລາຍເດືອນ"
 
-msgid ""
-msgstr ""
+msgid "Bi-monthly"
+msgstr "ທຸກໆສອງເດືອນ"
 
-msgid ""
-msgstr ""
+msgid "Quarterly"
+msgstr "ໄຕມາດ"
 
-msgid ""
-msgstr ""
+msgid "Six-monthly"
+msgstr "ແຕ່ລະ 6 ເດືອນ"
 
-msgid ""
-msgstr ""
+msgid "Six-monthly April"
+msgstr "ແຕ່ລະຫົກເດືອນ ແລະ ເດືອນເມສາ"
 
-msgid ""
-msgstr ""
+msgid "Yearly"
+msgstr "ລາຍປີ"
 
-msgid ""
+msgid "Financial-April"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Financial-July"
+msgstr "ສົກປີງົບປະມານ ແຕ່ ເດືອນ 7"
 
-msgid ""
+msgid "Financial-Oct"
 msgstr ""
 
-msgid ""
+msgid "Feedback recipients"
 msgstr ""
 
-msgid ""
+msgid "No message recipients"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Max offline organisation unit levels"
+msgstr "Maximum offline organisation unit levels"
 
-msgid ""
+msgid "Data analysis std dev factor"
 msgstr ""
 
-msgid ""
+msgid "Phone number area code"
 msgstr ""
 
-msgid ""
+msgid "Enable multi-organisation unit forms"
 msgstr ""
 
-msgid ""
+msgid "Acceptance required before approval"
 msgstr ""
 
-msgid ""
+msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
 
-msgid ""
+msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
 
-msgid ""
+msgid "Default relative period for analysis"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "This month"
+msgstr "ເດືອນນີ້"
 
-msgid ""
-msgstr ""
+msgid "Last month"
+msgstr "ເດືອນຜ່ານມາ"
 
-msgid ""
-msgstr ""
+msgid "This bi-month"
+msgstr "ສອງເດືອນນີ້"
 
-msgid ""
-msgstr ""
+msgid "Last bi-month"
+msgstr "ສອງເດືອນກ່ອນທ້າຍປີ"
 
-msgid ""
-msgstr ""
+msgid "This quarter"
+msgstr "ໄຕມານີ້"
 
-msgid ""
-msgstr ""
+msgid "Last quarter"
+msgstr "ໄຕມາດຜ່ານມາ"
 
-msgid ""
-msgstr ""
+msgid "This six-month"
+msgstr "6 ເດືອນນີ້"
 
-msgid ""
-msgstr ""
+msgid "Last six-month"
+msgstr "6 ເດືອນຜ່ານມາ"
 
-msgid ""
-msgstr ""
+msgid "Months this year"
+msgstr "​ເດືອນ​ໃນ​ປີ"
 
-msgid ""
-msgstr ""
+msgid "Quarters this year"
+msgstr "​ໄຕຼມາດ​ໃນ​ປີ"
 
-msgid ""
-msgstr ""
+msgid "This year"
+msgstr "ປີນີ້"
 
-msgid ""
-msgstr ""
+msgid "Months last year"
+msgstr "​ເດືອນ​ໃນປີ​ຜ່ານ​ມາ"
 
-msgid ""
-msgstr ""
+msgid "Quarters last year"
+msgstr "​ໄຕຼມາດ​ໃນ​ປີ​ຜ່ານ​ມາ"
 
-msgid ""
-msgstr ""
+msgid "Last year"
+msgstr "ປີກາຍ"
 
-msgid ""
-msgstr ""
+msgid "Last 5 years"
+msgstr "5 ປີຍ້ອນຫຼັງ"
 
-msgid ""
-msgstr ""
+msgid "Last 12 months"
+msgstr "12 ເດືອນຍ້ອນຫຼັງ"
 
-msgid ""
-msgstr ""
+msgid "Last 6 months"
+msgstr "6 ເດືອນຜ່ານມາ"
 
-msgid ""
-msgstr ""
+msgid "Last 3 months"
+msgstr "3 ເດືອນຍ້ອນຫຼັງ"
 
-msgid ""
-msgstr ""
+msgid "Last 6 bi-months"
+msgstr "6 ຂອງສອງເດືອນສຸດທ້າຍ"
 
-msgid ""
-msgstr ""
+msgid "Last 4 quarters"
+msgstr "4 ໄຕມາດຍ້ອນຫຼັງ"
 
-msgid ""
-msgstr ""
+msgid "Last 2 six-months"
+msgstr "ລວມ 6 ເດືອນ 2 ຄັ້ງທີ່ຜ່ານມາ"
 
-msgid ""
-msgstr ""
+msgid "This financial year"
+msgstr "ສົກປີງົບປະມານຂອງປິນີ້"
 
-msgid ""
-msgstr ""
+msgid "Last financial year"
+msgstr "​ສົກ​ປີ​ງົບ​ປະ​ມານ​ປີ​ກາຍ"
 
-msgid ""
-msgstr ""
+msgid "Last 5 financial years"
+msgstr "​ສົກ​ປິ​ງົບ​ປະ​ມານ 5ປີ​ຜ່ານ​ມາ"
 
-msgid ""
-msgstr ""
+msgid "This week"
+msgstr "ທິດນີ້"
 
-msgid ""
-msgstr ""
+msgid "Last week"
+msgstr "ອາທິດທີ່ຜ່ານມາ"
 
-msgid ""
-msgstr ""
+msgid "Last 4 weeks"
+msgstr "4 ອາທິດຍ້ອນຫຼັງ"
 
-msgid ""
-msgstr ""
+msgid "Last 12 weeks"
+msgstr "12 ອາທິດຍ້ອນຫຼັງ"
 
-msgid ""
-msgstr ""
+msgid "Last 52 weeks"
+msgstr "52 ອາທິດຜ່ານມາ"
 
-msgid ""
+msgid "Hide daily periods"
 msgstr ""
 
-msgid ""
+msgid "Hidden period types in analytics apps"
 msgstr ""
 
-msgid ""
+msgid "Hide weekly periods"
 msgstr ""
 
-msgid ""
+msgid "Hide monthly periods"
 msgstr ""
 
-msgid ""
+msgid "Hide bimonthly periods"
 msgstr ""
 
-msgid ""
+msgid "Financial year relative period start month"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "April"
+msgstr "ເມສາ"
 
-msgid ""
-msgstr ""
+msgid "July"
+msgstr "ກໍລະກົດ"
 
-msgid ""
-msgstr ""
+msgid "October"
+msgstr "ຕຸລາ"
 
-msgid ""
-msgstr ""
+msgid "Cache strategy"
+msgstr "Cache strategy"
 
-msgid ""
-msgstr ""
+msgid "No cache"
+msgstr "No cache"
 
-msgid ""
+msgid "Cache for 15 minutes"
 msgstr ""
 
-msgid ""
+msgid "Cache for 30 minutes"
 msgstr ""
 
-msgid ""
+msgid "Cache for one hour"
 msgstr ""
 
-msgid ""
+msgid "Cache until 6AM tomorrow"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Cache for two weeks"
+msgstr "Cache for two weeks"
 
-msgid ""
+msgid "Cacheability"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Public"
+msgstr "ສາທາລະນະ"
 
-msgid ""
+msgid "Private"
 msgstr ""
 
-msgid ""
+msgid "Analytics cache mode"
 msgstr ""
 
-msgid ""
+msgid "Progressive"
 msgstr ""
 
-msgid ""
+msgid "Fixed"
 msgstr ""
 
-msgid ""
+msgid "Max number of years to hide unapproved data in analytics"
 msgstr ""
 
-msgid ""
+msgid "Never check approval"
 msgstr ""
 
-msgid ""
+msgid "Check approval for all data"
 msgstr ""
 
-msgid ""
+msgid "Current year only"
 msgstr ""
 
-msgid ""
+msgid "Last 2 years"
 msgstr ""
 
-msgid ""
+msgid "Last 3 years"
 msgstr ""
 
-msgid ""
+msgid "Last 4 years"
 msgstr ""
 
-msgid ""
+msgid "Last 6 years"
 msgstr ""
 
-msgid ""
+msgid "Last 7 years"
 msgstr ""
 
-msgid ""
+msgid "Last 8 years"
 msgstr ""
 
-msgid ""
+msgid "Last 9 years"
 msgstr ""
 
-msgid ""
+msgid "Last 10 years"
 msgstr ""
 
-msgid ""
+msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
-msgid ""
+msgid "Put analytics in maintenance mode"
 msgstr ""
 
-msgid ""
+msgid "Caching factor"
 msgstr ""
 
-msgid ""
+msgid "Number of database server CPUs"
 msgstr ""
 
-msgid ""
+msgid "Automatic (detect based on web server)"
 msgstr ""
 
-msgid ""
+msgid "System notifications email address"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Google Analytics (Universal Analytics) key"
+msgstr "Google Analytics (Universal Analytics) Key"
 
-msgid ""
+msgid "Google Maps API key"
 msgstr ""
 
-msgid ""
+msgid "Bing Maps API key"
 msgstr ""
 
-msgid ""
+msgid "Application title"
 msgstr ""
 
-msgid ""
+msgid "Application introduction"
 msgstr ""
 
-msgid ""
+msgid "Application notification"
 msgstr ""
 
-msgid ""
+msgid "Application left-side footer"
 msgstr ""
 
-msgid ""
+msgid "Application right-side footer"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Style"
+msgstr "ລັກສະນະ"
 
-msgid ""
+msgid "Start page"
 msgstr ""
 
-msgid ""
+msgid "Help page link"
 msgstr ""
 
-msgid ""
+msgid "Flag"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Interface language"
+msgstr "ພາສາສະແດງຜົນ"
 
-msgid ""
-msgstr ""
+msgid "Database language"
+msgstr "ພາສາຂໍ້ມູນໃນລະບົບ"
 
-msgid ""
-msgstr ""
+msgid "Property to display in analysis modules"
+msgstr "ສື່ງທີ່ສາມາດນໍາສະເໜີ ໃນໂມດູນຂອງການວິໄຈ"
 
-msgid ""
-msgstr ""
+msgid "Short name"
+msgstr "ຊື່ສັ້ນ"
 
-msgid ""
+msgid "Default digit group separator to display in analysis modules"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Space"
+msgstr "ຍະຫວ່າງ"
 
-msgid ""
-msgstr ""
+msgid "Comma"
+msgstr "ຈຸດ"
 
-msgid ""
+msgid "Require authority to add to view object lists"
 msgstr ""
 
-msgid ""
+msgid "Custom login page logo"
 msgstr ""
 
-msgid ""
+msgid "Custom top menu logo"
 msgstr ""
 
-msgid ""
+msgid "Allow users to switch dashboard favorite view type"
 msgstr ""
 
-msgid ""
+msgid "Allow users to open dashboard favorite in relevant app"
 msgstr ""
 
-msgid ""
+msgid "Allow users to show dashboard favorite interpretations and details"
 msgstr ""
 
-msgid ""
+msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""
 
-msgid ""
+msgid "Host name"
 msgstr ""
 
-msgid ""
+msgid "Port"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Username"
+msgstr "ຊື່ຜູ້ໃຊ້"
 
-msgid ""
+msgid "TLS"
 msgstr ""
 
-msgid ""
+msgid "Email sender"
 msgstr ""
 
-msgid ""
+msgid "Send me a test email"
 msgstr ""
 
-msgid ""
+msgid "Self registration account user role"
 msgstr ""
 
-msgid ""
+msgid "Disable self registration"
 msgstr ""
 
-msgid ""
+msgid "Self registration account organisation unit"
 msgstr ""
 
-msgid ""
+msgid "Do not require recaptcha for self registration"
 msgstr ""
 
-msgid ""
+msgid "Enable user account recovery"
 msgstr ""
 
-msgid ""
+msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
 
-msgid ""
+msgid "Allow users to grant own user roles"
 msgstr ""
 
-msgid ""
+msgid "Allow assigning object to related objects during add or update"
 msgstr ""
 
-msgid ""
+msgid "Require user account password change"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Never"
+msgstr "Never"
 
-msgid ""
+msgid "3 months"
 msgstr ""
 
-msgid ""
+msgid "6 months"
 msgstr ""
 
-msgid ""
+msgid "12 months"
 msgstr ""
 
-msgid ""
+msgid "Enable password expiry alerts"
 msgstr ""
 
-msgid ""
+msgid "Minimum characters in password"
 msgstr ""
 
-msgid ""
+msgid "CORS whitelist"
 msgstr ""
 
-msgid ""
+msgid "reCAPTCHA Site Key"
 msgstr ""
 
-msgid ""
+msgid "reCAPTCHA Secret Key"
 msgstr ""
 
-msgid ""
+msgid "Coptic"
 msgstr ""
 
-msgid ""
+msgid "Ethiopian"
 msgstr ""
 
-msgid ""
+msgid "Gregorian"
 msgstr ""
 
-msgid ""
+msgid "Islamic"
 msgstr ""
 
-msgid ""
+msgid "ISO 8601"
 msgstr ""
 
-msgid ""
+msgid "Julian"
 msgstr ""
 
-msgid ""
+msgid "Nepali"
 msgstr ""
 
-msgid ""
+msgid "Thai"
 msgstr ""
 
-msgid ""
+msgid "Persian"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Date format"
+msgstr "Date Format"
 
-msgid ""
+msgid "Require periods to match period type of data set"
 msgstr ""
 
-msgid ""
+msgid "Require data elements to be part of data set"
 msgstr ""
 
-msgid ""
+msgid "Require category option combos to match category combo of data element"
 msgstr ""
 
-msgid ""
+msgid "Require organisation units to match assignment of data set"
 msgstr ""
 
-msgid ""
+msgid "Require attribute option combos to match category combo of data set"
 msgstr ""
 
-msgid ""
+msgid "Require category option combo to be specified"
 msgstr ""
 
-msgid ""
+msgid "Require attribute option combo to be specified"
 msgstr ""
 
-msgid ""
+msgid "Remote server URL"
 msgstr ""
 
-msgid ""
+msgid "Remote server username"
 msgstr ""
 
-msgid ""
+msgid "Remote server password"
 msgstr ""

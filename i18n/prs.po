@@ -1,753 +1,761 @@
+# 
+# Translators:
+# phil_dhis2, 2021
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "POT-Creation-Date: 2021-03-16T11:10:22.254Z\n"
-"PO-Revision-Date: 2021-03-16T11:10:22.254Z\n"
+"PO-Revision-Date: 2021-03-18 19:32+0000\n"
+"Last-Translator: phil_dhis2, 2021\n"
+"Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid ""
+msgid "Failed to load: {{error}}"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "No flag"
+msgstr "عدم پرچم"
 
-msgid ""
-msgstr ""
+msgid "Search settings"
+msgstr "تنظیمات جستجو"
 
-msgid ""
-msgstr ""
+msgid "Replace image"
+msgstr "تغیر تصویر"
 
-msgid ""
-msgstr ""
+msgid "Preview image"
+msgstr "نمایش تصویر"
 
-msgid ""
+msgid "Preview of image"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Upload image"
+msgstr "اضافه کردن تصویر"
 
-msgid ""
-msgstr ""
+msgid "Cancel upload"
+msgstr "لغو اپلود"
 
-msgid ""
+msgid "System default (fallback)"
 msgstr ""
 
-msgid ""
+msgid "Set the main field value before adding a translation"
 msgstr ""
 
-msgid ""
+msgid "Could not fetch localized settings"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Select language"
+msgstr "انتخاب لسان"
 
-msgid ""
+msgid "Version created"
 msgstr ""
 
-msgid ""
+msgid "Failed to create version"
 msgstr ""
 
-msgid ""
+msgid "Error fetching settings"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Create new version"
+msgstr "ایجاد نسخه جدید"
 
-msgid ""
+msgid "Best effort"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Atomic"
+msgstr "اتمیک"
 
-msgid ""
+msgid "Master version:"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "None"
+msgstr "هیچ‌کدام"
 
-msgid ""
-msgstr ""
+msgid "Last sync attempt"
+msgstr "آخرین کوشش هم سازی"
 
-msgid ""
-msgstr ""
+msgid "Failed"
+msgstr "ناکام"
 
-msgid ""
-msgstr ""
+msgid "No versions exist"
+msgstr "هیچ نسخه وجود ندارد"
 
-msgid ""
-msgstr ""
+msgid "Enable Versioning for metadata sync"
+msgstr "فعال سازی نسخه برای هم سازی میتا دیتا"
 
-msgid ""
-msgstr ""
+msgid "Don't sync metadata if DHIS versions differ"
+msgstr "اگر نسخه DHIS فرق میکرد هیچ وقت دیتا را هم سازی نکنید"
 
-msgid ""
-msgstr ""
+msgid "Metadata Versioning"
+msgstr "نسخه میتا دیتا"
 
-msgid ""
-msgstr ""
+msgid "This client ID is already taken"
+msgstr "آی دی این استفاده کننده قبلا گرفته شده"
 
-msgid ""
-msgstr ""
+msgid "Name"
+msgstr "نام"
 
-msgid ""
-msgstr ""
+msgid "Required"
+msgstr "ضروری"
 
-msgid ""
-msgstr ""
+msgid "Client ID"
+msgstr "هویت مشتری"
 
-msgid ""
-msgstr ""
+msgid "Client Secret"
+msgstr "رمز مشتری"
 
-msgid ""
-msgstr ""
+msgid "Grant Types"
+msgstr "نوع اعانه"
 
-msgid ""
-msgstr ""
+msgid "Password"
+msgstr "کلید رمز"
 
-msgid ""
-msgstr ""
+msgid "Refresh token"
+msgstr "علامت تجدید قوا"
 
-msgid ""
-msgstr ""
+msgid "Authorization code"
+msgstr "کود صلاحیت"
 
-msgid ""
-msgstr ""
+msgid "One URL per line"
+msgstr "یک URI در یک خط"
 
-msgid ""
-msgstr ""
+msgid "Redirect URIs"
+msgstr "یو آر ال های غیر مستقیم"
 
-msgid ""
-msgstr ""
+msgid "This field should contain a list of URLs"
+msgstr "این بخش باید شامل لیست URLs باشد"
 
-msgid ""
-msgstr ""
+msgid "Create new OAuth2 Client"
+msgstr "ایجاد مشتری جدید او ای یووت 2"
 
-msgid ""
-msgstr ""
+msgid "Edit OAuth2 Client"
+msgstr "تصحیح مشتری او ای یووت 2"
 
-msgid ""
-msgstr ""
+msgid "Save"
+msgstr "ذخیره"
 
-msgid ""
-msgstr ""
+msgid "Cancel"
+msgstr "انصراف"
 
-msgid ""
-msgstr ""
+msgid "There are currently no OAuth2 clients registered"
+msgstr "فعلآ هیچ OAuth2 clients راجستر نشده است"
 
-msgid ""
-msgstr ""
+msgid "Edit"
+msgstr "تجدید"
 
-msgid ""
-msgstr ""
+msgid "Delete"
+msgstr "حذف"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 client saved"
+msgstr "ثبت OAuth2 client"
 
-msgid ""
-msgstr ""
+msgid "Failed to save OAuth2 client"
+msgstr "ثبت OAuth2 client به ناکامی انجامید"
 
-msgid ""
+msgid "Add OAuth2 client"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Yes"
+msgstr "بلی"
 
-msgid ""
-msgstr ""
+msgid "No"
+msgstr "نخیر"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 client deleted"
+msgstr "خذف OAuth2 client"
 
-msgid ""
+msgid "Failed to delete OAuth2 client"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Settings updated"
+msgstr "تنظیمات تجدید گردید"
 
-msgid ""
-msgstr ""
+msgid "General"
+msgstr "عمومی"
 
-msgid ""
-msgstr ""
+msgid "General settings"
+msgstr "تنظیمات عمومی"
 
-msgid ""
-msgstr ""
+msgid "Analytics"
+msgstr "تجزیه و تحلیل"
 
-msgid ""
-msgstr ""
+msgid "Analytics settings"
+msgstr "تنظیمات انالیتیکس"
 
-msgid ""
-msgstr ""
+msgid "Server"
+msgstr "سرور"
 
-msgid ""
-msgstr ""
+msgid "Server settings"
+msgstr "تنظیمات سرور"
 
-msgid ""
-msgstr ""
+msgid "Appearance"
+msgstr "ظاهر"
 
-msgid ""
-msgstr ""
+msgid "Appearance settings"
+msgstr "تنظیمات نمایش"
 
-msgid ""
-msgstr ""
+msgid "Email"
+msgstr "برېښنالیک"
 
-msgid ""
-msgstr ""
+msgid "Email settings"
+msgstr "تنظیمات ایمیل"
 
-msgid ""
-msgstr ""
+msgid "Access"
+msgstr "دسترسی"
 
-msgid ""
-msgstr ""
+msgid "Access settings"
+msgstr "تنظیمات دسترسی"
 
-msgid ""
-msgstr ""
+msgid "Calendar"
+msgstr "تقویم"
 
-msgid ""
-msgstr ""
+msgid "Calendar settings"
+msgstr "تنظیمات تقویم"
 
-msgid ""
-msgstr ""
+msgid "Data Import"
+msgstr "انتقال دیتا"
 
-msgid ""
-msgstr ""
+msgid "Data import settings"
+msgstr "تنظیمات وارد کردن اطلاعات"
 
-msgid ""
-msgstr ""
+msgid "Synchronization"
+msgstr "همگاه سازی"
 
-msgid ""
-msgstr ""
+msgid "Synchronization settings"
+msgstr "تنظیمات همگاه سازی"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 Clients"
+msgstr "مشتریان او ای یووت 2"
 
-msgid ""
-msgstr ""
+msgid "This field is required"
+msgstr "این بخش لازمی میباشد"
 
-msgid ""
+msgid "This field should be a URL"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "This field should be a number"
+msgstr "این بخش باید ارقام باشد"
 
-msgid ""
-msgstr ""
+msgid "This field should be a positive number"
+msgstr "این بخش باید ارقام مثبت باشد"
 
-msgid ""
+msgid "This field should be an email"
 msgstr ""
 
 msgid ""
+"This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "This setting can be overridden by user settings"
+msgstr "این تنظیمات باید توسط تنظیمات استفاده کنند تجدید شود"
 
-msgid ""
+msgid "No options"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "No settings matched the search term"
+msgstr "هیچ تنظیمات به جستجو مطابق نکرد"
 
-msgid ""
-msgstr ""
+msgid "Search results"
+msgstr "نتایج جستجو"
 
-msgid ""
-msgstr ""
+msgid "Maximum number of analytics records"
+msgstr "تعداد اعظمی ریکارد های انالتیکس"
 
-msgid ""
-msgstr ""
+msgid "Unlimited"
+msgstr "محدود ناشده"
 
-msgid ""
+msgid "Maximum number of SQL view records"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Infrastructural indicators"
+msgstr "شاخص های بنیادی"
 
-msgid ""
-msgstr ""
+msgid "Infrastructural data elements"
+msgstr "عناصر اطلاعات بنیادی"
 
-msgid ""
-msgstr ""
+msgid "Infrastructural period type"
+msgstr "نوع معیاد بنیادی"
 
-msgid ""
-msgstr ""
+msgid "Daily"
+msgstr "روزنه"
 
-msgid ""
-msgstr ""
+msgid "Weekly"
+msgstr "هفته وار"
 
-msgid ""
-msgstr ""
+msgid "Monthly"
+msgstr "ماهانه"
 
-msgid ""
-msgstr ""
+msgid "Bi-monthly"
+msgstr "دوبار در- ماه"
 
-msgid ""
-msgstr ""
+msgid "Quarterly"
+msgstr "سه ماهه"
 
-msgid ""
-msgstr ""
+msgid "Six-monthly"
+msgstr "شش-ماهه"
 
-msgid ""
-msgstr ""
+msgid "Six-monthly April"
+msgstr "شش-ماهه اپریل"
 
-msgid ""
-msgstr ""
+msgid "Yearly"
+msgstr "سالانه"
 
-msgid ""
-msgstr ""
+msgid "Financial-April"
+msgstr "مالی- آپریل"
 
-msgid ""
-msgstr ""
+msgid "Financial-July"
+msgstr "مالی - جولای"
 
-msgid ""
-msgstr ""
+msgid "Financial-Oct"
+msgstr "مالی - اکتوبر"
 
-msgid ""
-msgstr ""
+msgid "Feedback recipients"
+msgstr "دریافت کننده نظریات"
 
-msgid ""
-msgstr ""
+msgid "No message recipients"
+msgstr "عدم دریافت کننده پیام"
 
-msgid ""
-msgstr ""
+msgid "Max offline organisation unit levels"
+msgstr "سطوح واحد سازمان در آفلاین"
 
-msgid ""
-msgstr ""
+msgid "Data analysis std dev factor"
+msgstr "فکتور انکشاف استندرد تحلیل اطلاعات"
 
-msgid ""
-msgstr ""
+msgid "Phone number area code"
+msgstr "شماره تیلفون و کود ساحه"
 
-msgid ""
-msgstr ""
+msgid "Enable multi-organisation unit forms"
+msgstr "فعال سازی فورمه های واحد های سازمان چند گانه"
 
-msgid ""
-msgstr ""
+msgid "Acceptance required before approval"
+msgstr "پذیرش قبل از منظوری نیاز است"
 
-msgid ""
+msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
 
-msgid ""
+msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Default relative period for analysis"
+msgstr "معیاد مربوطه برای تحلیل"
 
-msgid ""
-msgstr ""
+msgid "This month"
+msgstr "ماه جاری"
 
-msgid ""
-msgstr ""
+msgid "Last month"
+msgstr "ماه گذشته"
 
-msgid ""
-msgstr ""
+msgid "This bi-month"
+msgstr "دوبار در ماه جاری"
 
-msgid ""
-msgstr ""
+msgid "Last bi-month"
+msgstr "دوبار در ماه گذشته"
 
-msgid ""
-msgstr ""
+msgid "This quarter"
+msgstr "سه ماهه جاری"
 
-msgid ""
-msgstr ""
+msgid "Last quarter"
+msgstr "سه ماهه آخیر"
 
-msgid ""
-msgstr ""
+msgid "This six-month"
+msgstr "شش-ماه جاری"
 
-msgid ""
-msgstr ""
+msgid "Last six-month"
+msgstr "شش-ماهه گذشته"
 
-msgid ""
-msgstr ""
+msgid "Months this year"
+msgstr "ماه های سال هذا"
 
-msgid ""
-msgstr ""
+msgid "Quarters this year"
+msgstr "ربع های سال هذا"
 
-msgid ""
-msgstr ""
+msgid "This year"
+msgstr "سال جاری"
 
-msgid ""
-msgstr ""
+msgid "Months last year"
+msgstr "ماه های سال گذشته"
 
-msgid ""
-msgstr ""
+msgid "Quarters last year"
+msgstr "ربع های سال گذشته"
 
-msgid ""
-msgstr ""
+msgid "Last year"
+msgstr "سال گذشته"
 
-msgid ""
-msgstr ""
+msgid "Last 5 years"
+msgstr "5 سال گذشته"
 
-msgid ""
-msgstr ""
+msgid "Last 12 months"
+msgstr "12 ماهه گذشته"
 
-msgid ""
-msgstr ""
+msgid "Last 6 months"
+msgstr "6 ماه گذشته"
 
-msgid ""
-msgstr ""
+msgid "Last 3 months"
+msgstr "3 ماهه گذشته"
 
-msgid ""
-msgstr ""
+msgid "Last 6 bi-months"
+msgstr "دروبار در شش-ماه گذشته"
 
-msgid ""
-msgstr ""
+msgid "Last 4 quarters"
+msgstr "4 سه ماهه آخیر"
 
-msgid ""
-msgstr ""
+msgid "Last 2 six-months"
+msgstr "2 شش-ماهه گذشته"
 
-msgid ""
-msgstr ""
+msgid "This financial year"
+msgstr "سال مالی جاری"
 
-msgid ""
-msgstr ""
+msgid "Last financial year"
+msgstr "سال گذشته مالی"
 
-msgid ""
-msgstr ""
+msgid "Last 5 financial years"
+msgstr "5 سال گذشته مالی"
 
-msgid ""
-msgstr ""
+msgid "This week"
+msgstr "هفته جاری"
 
-msgid ""
-msgstr ""
+msgid "Last week"
+msgstr "هفته گذشته"
 
-msgid ""
-msgstr ""
+msgid "Last 4 weeks"
+msgstr "4 هفته گذشته"
 
-msgid ""
-msgstr ""
+msgid "Last 12 weeks"
+msgstr "12 هفته گذشته"
 
-msgid ""
-msgstr ""
+msgid "Last 52 weeks"
+msgstr "52 هفته گذشته"
 
-msgid ""
+msgid "Hide daily periods"
 msgstr ""
 
-msgid ""
+msgid "Hidden period types in analytics apps"
 msgstr ""
 
-msgid ""
+msgid "Hide weekly periods"
 msgstr ""
 
-msgid ""
+msgid "Hide monthly periods"
 msgstr ""
 
-msgid ""
+msgid "Hide bimonthly periods"
 msgstr ""
 
-msgid ""
+msgid "Financial year relative period start month"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "April"
+msgstr "آپریل"
 
-msgid ""
-msgstr ""
+msgid "July"
+msgstr "جولای"
 
-msgid ""
-msgstr ""
+msgid "October"
+msgstr "اکتبر"
 
-msgid ""
-msgstr ""
+msgid "Cache strategy"
+msgstr "استراتیژی ذخیره"
 
-msgid ""
-msgstr ""
+msgid "No cache"
+msgstr "عدم ذخیره"
 
-msgid ""
-msgstr ""
+msgid "Cache for 15 minutes"
+msgstr "ذخیره برای 15 دقیقه"
 
-msgid ""
-msgstr ""
+msgid "Cache for 30 minutes"
+msgstr "ذخیره برای 30 دقیقه"
 
-msgid ""
-msgstr ""
+msgid "Cache for one hour"
+msgstr "ذخیره برای یک ساعت"
 
-msgid ""
+msgid "Cache until 6AM tomorrow"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Cache for two weeks"
+msgstr "ذخیره برای دو هفته"
 
-msgid ""
-msgstr ""
+msgid "Cacheability"
+msgstr "استراتیژی ذخیره"
 
-msgid ""
-msgstr ""
+msgid "Public"
+msgstr "عام"
 
-msgid ""
-msgstr ""
+msgid "Private"
+msgstr "خاص"
 
-msgid ""
+msgid "Analytics cache mode"
 msgstr ""
 
-msgid ""
+msgid "Progressive"
 msgstr ""
 
-msgid ""
+msgid "Fixed"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Max number of years to hide unapproved data in analytics"
+msgstr "پنهان سازی اطلاعات منظوری ناشده در انالیتیکس"
 
-msgid ""
-msgstr ""
+msgid "Never check approval"
+msgstr "هیچگاه تایید را چک نکنید"
 
-msgid ""
-msgstr ""
+msgid "Check approval for all data"
+msgstr "چیک کردن تایید برای همه دیتا"
 
-msgid ""
-msgstr ""
+msgid "Current year only"
+msgstr "تنها سال جاری"
 
-msgid ""
-msgstr ""
+msgid "Last 2 years"
+msgstr "2 سال آخیر"
 
-msgid ""
-msgstr ""
+msgid "Last 3 years"
+msgstr "3 سال آخیر"
 
-msgid ""
-msgstr ""
+msgid "Last 4 years"
+msgstr "4 سال آخیر"
 
-msgid ""
-msgstr ""
+msgid "Last 6 years"
+msgstr "6 سال آخیر"
 
-msgid ""
-msgstr ""
+msgid "Last 7 years"
+msgstr "7 سال آخیر"
 
-msgid ""
-msgstr ""
+msgid "Last 8 years"
+msgstr "8 سال آخیر"
 
-msgid ""
-msgstr ""
+msgid "Last 9 years"
+msgstr "9 سال آخیر"
 
-msgid ""
-msgstr ""
+msgid "Last 10 years"
+msgstr "10 سال آخیر"
 
-msgid ""
-msgstr ""
+msgid "Respect category option start and end date in analytics table export"
+msgstr "تاریخ آغاز و ختم گزینه کتگوری انتخاب شده به انالتیکس انتقال گردید"
 
-msgid ""
-msgstr ""
+msgid "Put analytics in maintenance mode"
+msgstr "گذاشتن شیوه تحلیل در حالت حفظ و مراقبت"
 
-msgid ""
+msgid "Caching factor"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Number of database server CPUs"
+msgstr "تعداد دیتابس های که سی پی یو تغذیه مینماید"
 
-msgid ""
-msgstr ""
+msgid "Automatic (detect based on web server)"
+msgstr "اتومات (تشخیص به اساس ویب سرفر)"
 
-msgid ""
-msgstr ""
+msgid "System notifications email address"
+msgstr "ایمیل آدرس اطلاعیه سیستم"
 
-msgid ""
-msgstr ""
+msgid "Google Analytics (Universal Analytics) key"
+msgstr "کلیدی تحلیلی گوگل (تحلیل جهانی)"
 
-msgid ""
-msgstr ""
+msgid "Google Maps API key"
+msgstr "Google Maps API key"
 
-msgid ""
+msgid "Bing Maps API key"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Application title"
+msgstr "عنوان درخواستی"
 
-msgid ""
-msgstr ""
+msgid "Application introduction"
+msgstr "معرفی برنامه"
 
-msgid ""
-msgstr ""
+msgid "Application notification"
+msgstr "اعلامیه درخواستی"
 
-msgid ""
-msgstr ""
+msgid "Application left-side footer"
+msgstr "طرف چپ پاورقی درخواستی"
 
-msgid ""
-msgstr ""
+msgid "Application right-side footer"
+msgstr "طرف راست پاورقی درخواستی"
 
-msgid ""
-msgstr ""
+msgid "Style"
+msgstr "استایل"
 
-msgid ""
-msgstr ""
+msgid "Start page"
+msgstr "صحفه آغاز"
 
-msgid ""
-msgstr ""
+msgid "Help page link"
+msgstr "لینک صفحه کمک"
 
-msgid ""
-msgstr ""
+msgid "Flag"
+msgstr "پرچم"
 
-msgid ""
-msgstr ""
+msgid "Interface language"
+msgstr "زبان صفه های اپلیکیشن"
 
-msgid ""
-msgstr ""
+msgid "Database language"
+msgstr "زبان دیتابیس"
 
-msgid ""
-msgstr ""
+msgid "Property to display in analysis modules"
+msgstr "ویژگی که در مادیول تحلیل به نمایش بیاید"
 
-msgid ""
-msgstr ""
+msgid "Short name"
+msgstr "نام کوتاه"
 
-msgid ""
-msgstr ""
+msgid "Default digit group separator to display in analysis modules"
+msgstr "پیش فرض گروپ جداسازی ارقام بخاطر نمایش در بخش تحلیل"
 
-msgid ""
-msgstr ""
+msgid "Space"
+msgstr "فاصله"
 
-msgid ""
-msgstr ""
+msgid "Comma"
+msgstr "کامه"
 
-msgid ""
-msgstr ""
+msgid "Require authority to add to view object lists"
+msgstr "نیاز به صلاحیت جهت افزایش و نمایش لست های موضوع میباشد"
 
-msgid ""
-msgstr ""
+msgid "Custom login page logo"
+msgstr "لوگوی صفحه مروج داخل شدن به  سیستم"
 
-msgid ""
-msgstr ""
+msgid "Custom top menu logo"
+msgstr "لوگوی مروج مینوی بالا"
 
-msgid ""
+msgid "Allow users to switch dashboard favorite view type"
 msgstr ""
 
-msgid ""
+msgid "Allow users to open dashboard favorite in relevant app"
 msgstr ""
 
-msgid ""
+msgid "Allow users to show dashboard favorite interpretations and details"
 msgstr ""
 
-msgid ""
+msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Host name"
+msgstr "نام میزبان"
 
-msgid ""
-msgstr ""
+msgid "Port"
+msgstr "پورت"
 
-msgid ""
-msgstr ""
+msgid "Username"
+msgstr "نام کاربر"
 
-msgid ""
-msgstr ""
+msgid "TLS"
+msgstr "تی ال س"
 
-msgid ""
-msgstr ""
+msgid "Email sender"
+msgstr "ارسال کننده ایمیل"
 
-msgid ""
-msgstr ""
+msgid "Send me a test email"
+msgstr "یک ایمیل آزمایشی ارسال نمائید"
 
-msgid ""
-msgstr ""
+msgid "Self registration account user role"
+msgstr "نقش استفاده کننده حساب ثبت و راجستر خویشتن"
 
-msgid ""
-msgstr ""
+msgid "Disable self registration"
+msgstr "عدم اجازه ثبت و راجستر خویشتن"
 
-msgid ""
-msgstr ""
+msgid "Self registration account organisation unit"
+msgstr "واحد سازمان حساب ثبت و راجستر خویشتن"
 
-msgid ""
-msgstr ""
+msgid "Do not require recaptcha for self registration"
+msgstr "عدم نیاز به باز پس گیری مجدد برای ثبت و راجستر خویشتن"
 
-msgid ""
-msgstr ""
+msgid "Enable user account recovery"
+msgstr "فعال سازی بازگیری مجدد حساب استفاده کننده"
 
-msgid ""
-msgstr ""
+msgid "Lock user account temporarily after multiple failed login attempts"
+msgstr "بعد از چند بار وارد کردن رمز اشتباه بسته نموده استفاده کننده"
 
-msgid ""
-msgstr ""
+msgid "Allow users to grant own user roles"
+msgstr "اجازه استفاده کننده گان جهت تصدیق نقش های خود استفاده کننده"
 
-msgid ""
-msgstr ""
+msgid "Allow assigning object to related objects during add or update"
+msgstr "اجازه تعین موضوع به موضوعات مربوطه هنگام افزایش و تجدید"
 
-msgid ""
-msgstr ""
+msgid "Require user account password change"
+msgstr "به تغیر کلید رمز حساب استفاده کننده نیاز است"
 
-msgid ""
-msgstr ""
+msgid "Never"
+msgstr "هیچ گاه"
 
-msgid ""
-msgstr ""
+msgid "3 months"
+msgstr "3 ماهه"
 
-msgid ""
-msgstr ""
+msgid "6 months"
+msgstr "6 ماهه"
 
-msgid ""
-msgstr ""
+msgid "12 months"
+msgstr "12 ماهه"
 
-msgid ""
+msgid "Enable password expiry alerts"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Minimum characters in password"
+msgstr "کمترین کلمه در رمز"
 
-msgid ""
-msgstr ""
+msgid "CORS whitelist"
+msgstr "لست کورس"
 
-msgid ""
+msgid "reCAPTCHA Site Key"
 msgstr ""
 
-msgid ""
+msgid "reCAPTCHA Secret Key"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Coptic"
+msgstr "قبطی"
 
-msgid ""
-msgstr ""
+msgid "Ethiopian"
+msgstr "ایتوپیایی"
 
-msgid ""
-msgstr ""
+msgid "Gregorian"
+msgstr "میلادی"
 
-msgid ""
-msgstr ""
+msgid "Islamic"
+msgstr "اسلامی"
 
-msgid ""
-msgstr ""
+msgid "ISO 8601"
+msgstr "سازمان بین المللی استندرد 8601"
 
-msgid ""
-msgstr ""
+msgid "Julian"
+msgstr "جولیان"
 
-msgid ""
-msgstr ""
+msgid "Nepali"
+msgstr "نیپال"
 
-msgid ""
-msgstr ""
+msgid "Thai"
+msgstr "تایلندی"
 
-msgid ""
+msgid "Persian"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Date format"
+msgstr "فارمت اطلاعات"
 
-msgid ""
-msgstr ""
+msgid "Require periods to match period type of data set"
+msgstr "دوره برای مطابقت نوع دوره دیتاسیت لازمی است"
 
-msgid ""
+msgid "Require data elements to be part of data set"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Require category option combos to match category combo of data element"
+msgstr "گزینه ترکیب کتگوری برای مطابقت کتگوری ترکیبی دیتا ایلمنت لازمی است"
 
-msgid ""
-msgstr ""
+msgid "Require organisation units to match assignment of data set"
+msgstr "واحد سازمان برای مطابقت هر دیتاسیت لازمی است"
 
-msgid ""
-msgstr ""
+msgid "Require attribute option combos to match category combo of data set"
+msgstr "گزینه ترکیبی مشخصه برای مطابقت ترکیب کتگوری دیتاسیت لازمی است"
 
-msgid ""
-msgstr ""
+msgid "Require category option combo to be specified"
+msgstr "مشخص کردن گزینه ترکیب کتگوری لازمی است"
 
-msgid ""
-msgstr ""
+msgid "Require attribute option combo to be specified"
+msgstr "مشخص کردن گزینه ترکیب مشخصه لازمی است"
 
-msgid ""
-msgstr ""
+msgid "Remote server URL"
+msgstr "سرفر از راه دور یو آر ال"
 
-msgid ""
-msgstr ""
+msgid "Remote server username"
+msgstr "اسم استفاده کننده سرفر از راه داور"
 
-msgid ""
-msgstr ""
+msgid "Remote server password"
+msgstr "کلید رمز سرفر از راه دور"

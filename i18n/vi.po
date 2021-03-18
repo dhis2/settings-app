@@ -1,753 +1,772 @@
+# 
+# Translators:
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2021
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "POT-Creation-Date: 2021-03-16T11:10:22.254Z\n"
-"PO-Revision-Date: 2021-03-16T11:10:22.254Z\n"
+"PO-Revision-Date: 2021-03-18 19:32+0000\n"
+"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
+"Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid ""
+msgid "Failed to load: {{error}}"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "No flag"
+msgstr "Không có cờ"
 
-msgid ""
-msgstr ""
+msgid "Search settings"
+msgstr "Cài đặt tìm kiếm"
 
-msgid ""
-msgstr ""
+msgid "Replace image"
+msgstr "Thay hình"
 
-msgid ""
-msgstr ""
+msgid "Preview image"
+msgstr "Ảnh xem thử"
 
-msgid ""
+msgid "Preview of image"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Upload image"
+msgstr "Tải ảnh lên"
 
-msgid ""
-msgstr ""
+msgid "Cancel upload"
+msgstr "Hủy bỏ tải lên"
 
-msgid ""
+msgid "System default (fallback)"
 msgstr ""
 
-msgid ""
+msgid "Set the main field value before adding a translation"
 msgstr ""
 
-msgid ""
+msgid "Could not fetch localized settings"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Select language"
+msgstr "Chọn ngôn ngữ"
 
-msgid ""
+msgid "Version created"
 msgstr ""
 
-msgid ""
+msgid "Failed to create version"
 msgstr ""
 
-msgid ""
+msgid "Error fetching settings"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Create new version"
+msgstr "Tạo phiên bản"
 
-msgid ""
+msgid "Best effort"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Atomic"
+msgstr "Phiên bản nguyên tử"
 
-msgid ""
+msgid "Master version:"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "None"
+msgstr "Không"
 
-msgid ""
-msgstr ""
+msgid "Last sync attempt"
+msgstr "Lần đồng bộ cuối"
 
-msgid ""
-msgstr ""
+msgid "Failed"
+msgstr "KHÔNG THÀNH CÔNG"
 
-msgid ""
-msgstr ""
+msgid "No versions exist"
+msgstr "Không tồn tại phiên bản"
 
-msgid ""
-msgstr ""
+msgid "Enable Versioning for metadata sync"
+msgstr "Kích hoạt phiên bản cho đồng bộ siêu dữ liệu"
 
-msgid ""
-msgstr ""
+msgid "Don't sync metadata if DHIS versions differ"
+msgstr "Không đồng bộ siêu dữ liệu nếu khác phiên bản DHIS"
 
-msgid ""
-msgstr ""
+msgid "Metadata Versioning"
+msgstr "Phiên bản siêu dữ liệu"
 
-msgid ""
-msgstr ""
+msgid "This client ID is already taken"
+msgstr "Ký hiệu nhận dạng (ID) máy khách này đã được sử dụng"
 
-msgid ""
-msgstr ""
+msgid "Name"
+msgstr "Tên"
 
-msgid ""
-msgstr ""
+msgid "Required"
+msgstr "Bắt buộc"
 
-msgid ""
-msgstr ""
+msgid "Client ID"
+msgstr "Ký hiệu nhận dạng máy khách"
 
-msgid ""
-msgstr ""
+msgid "Client Secret"
+msgstr "Bí mật máy khách"
 
-msgid ""
-msgstr ""
+msgid "Grant Types"
+msgstr "Loại Cấp quyền"
 
-msgid ""
-msgstr ""
+msgid "Password"
+msgstr "Mật khẩu"
 
-msgid ""
-msgstr ""
+msgid "Refresh token"
+msgstr "Nạp lại Cờ"
 
-msgid ""
-msgstr ""
+msgid "Authorization code"
+msgstr "Mã quyền"
 
-msgid ""
-msgstr ""
+msgid "One URL per line"
+msgstr "Mỗi dòng một URL"
 
-msgid ""
-msgstr ""
+msgid "Redirect URIs"
+msgstr "Chuyển hướng URIs"
 
-msgid ""
-msgstr ""
+msgid "This field should contain a list of URLs"
+msgstr "Trường này phải chứa danh sách đường dẫn liên kết (URL)"
 
-msgid ""
-msgstr ""
+msgid "Create new OAuth2 Client"
+msgstr "Tạo máy khách OAuth2"
 
-msgid ""
-msgstr ""
+msgid "Edit OAuth2 Client"
+msgstr "Sửa máy khách OAuth2"
 
-msgid ""
-msgstr ""
+msgid "Save"
+msgstr "Lưu lại"
 
-msgid ""
-msgstr ""
+msgid "Cancel"
+msgstr "Hủy"
 
-msgid ""
-msgstr ""
+msgid "There are currently no OAuth2 clients registered"
+msgstr "Hiện không có máy khách OAuth2 được đăng ký"
 
-msgid ""
-msgstr ""
+msgid "Edit"
+msgstr "Chỉnh sửa"
 
-msgid ""
-msgstr ""
+msgid "Delete"
+msgstr "Xóa"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 client saved"
+msgstr "Máy khách OAuth2 đã lưu"
 
-msgid ""
-msgstr ""
+msgid "Failed to save OAuth2 client"
+msgstr "Lưu máy khách OAuth2 KHÔNG THÀNH CÔNG"
 
-msgid ""
+msgid "Add OAuth2 client"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Yes"
+msgstr "Có"
 
-msgid ""
-msgstr ""
+msgid "No"
+msgstr "Không"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 client deleted"
+msgstr "Máy khách OAuth2 đã xóa"
 
-msgid ""
+msgid "Failed to delete OAuth2 client"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Settings updated"
+msgstr "Cài đặt đã được cập nhật"
 
-msgid ""
-msgstr ""
+msgid "General"
+msgstr "Tổng quan"
 
-msgid ""
-msgstr ""
+msgid "General settings"
+msgstr "Cài đặt chung"
 
-msgid ""
-msgstr ""
+msgid "Analytics"
+msgstr "Phân tích"
 
-msgid ""
-msgstr ""
+msgid "Analytics settings"
+msgstr "Cài đặt phân tích"
 
-msgid ""
-msgstr ""
+msgid "Server"
+msgstr "Máy chủ"
 
-msgid ""
-msgstr ""
+msgid "Server settings"
+msgstr "Cài đặt máy chủ"
 
-msgid ""
-msgstr ""
+msgid "Appearance"
+msgstr "Giao diện"
 
-msgid ""
-msgstr ""
+msgid "Appearance settings"
+msgstr "Cài đặt giao diện"
 
-msgid ""
-msgstr ""
+msgid "Email"
+msgstr "Thư điện tử (Email)"
 
-msgid ""
-msgstr ""
+msgid "Email settings"
+msgstr "Cài đặt email"
 
-msgid ""
-msgstr ""
+msgid "Access"
+msgstr "Truy xuất"
 
-msgid ""
-msgstr ""
+msgid "Access settings"
+msgstr "Cài đặt truy xuất"
 
-msgid ""
-msgstr ""
+msgid "Calendar"
+msgstr "Lịch"
 
-msgid ""
-msgstr ""
+msgid "Calendar settings"
+msgstr "Cài đặt lịch"
 
-msgid ""
-msgstr ""
+msgid "Data Import"
+msgstr "Nhập dữ liệu"
 
-msgid ""
-msgstr ""
+msgid "Data import settings"
+msgstr "Cài đặt nhập dữ liệu"
 
-msgid ""
-msgstr ""
+msgid "Synchronization"
+msgstr "Đồng bộ"
 
-msgid ""
-msgstr ""
+msgid "Synchronization settings"
+msgstr "Cài đặt đồng bộ"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 Clients"
+msgstr "Máy khách OAuth2"
 
-msgid ""
-msgstr ""
+msgid "This field is required"
+msgstr "Trường này yêu cầu"
 
-msgid ""
+msgid "This field should be a URL"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "This field should be a number"
+msgstr "Trường này phải là số"
 
-msgid ""
-msgstr ""
+msgid "This field should be a positive number"
+msgstr "Trường này phải là số dương"
 
-msgid ""
+msgid "This field should be an email"
 msgstr ""
 
 msgid ""
+"This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "This setting can be overridden by user settings"
+msgstr "Cài đặt này có thể bị mất hiệu lực bởi cài đặt của người dùng"
 
-msgid ""
+msgid "No options"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "No settings matched the search term"
+msgstr "Không tìm thấy cài đặt"
 
-msgid ""
-msgstr ""
+msgid "Search results"
+msgstr "Kết quả tìm kiếm"
 
-msgid ""
-msgstr ""
+msgid "Maximum number of analytics records"
+msgstr "Số bản ghi phân tích tối đa"
 
-msgid ""
-msgstr ""
+msgid "Unlimited"
+msgstr "Không hạn chế"
 
-msgid ""
+msgid "Maximum number of SQL view records"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Infrastructural indicators"
+msgstr "Chỉ số hạ tầng"
 
-msgid ""
-msgstr ""
+msgid "Infrastructural data elements"
+msgstr "Phần tử dữ liệu hạ tầng"
 
-msgid ""
-msgstr ""
+msgid "Infrastructural period type"
+msgstr "Loại thời điểm hạ tầng"
 
-msgid ""
-msgstr ""
+msgid "Daily"
+msgstr "Hàng ngày"
 
-msgid ""
-msgstr ""
+msgid "Weekly"
+msgstr "Hàng tuần"
 
-msgid ""
-msgstr ""
+msgid "Monthly"
+msgstr "Hàng tháng"
 
-msgid ""
-msgstr ""
+msgid "Bi-monthly"
+msgstr "Hàng 2 tháng"
 
-msgid ""
-msgstr ""
+msgid "Quarterly"
+msgstr "Hàng quý"
 
-msgid ""
-msgstr ""
+msgid "Six-monthly"
+msgstr "Hàng 6 tháng"
 
-msgid ""
-msgstr ""
+msgid "Six-monthly April"
+msgstr "Hàng 6 tháng - tháng 4"
 
-msgid ""
-msgstr ""
+msgid "Yearly"
+msgstr "Một năm"
 
-msgid ""
-msgstr ""
+msgid "Financial-April"
+msgstr "Năm tài chính - tháng 4"
 
-msgid ""
-msgstr ""
+msgid "Financial-July"
+msgstr "Năm tài chính - tháng 7"
 
-msgid ""
-msgstr ""
+msgid "Financial-Oct"
+msgstr "Năm tài chính - tháng 10"
 
-msgid ""
-msgstr ""
+msgid "Feedback recipients"
+msgstr "Người nhận phản hồi"
 
-msgid ""
-msgstr ""
+msgid "No message recipients"
+msgstr "Người không nhận phản hồi"
 
-msgid ""
-msgstr ""
+msgid "Max offline organisation unit levels"
+msgstr "Số tuyến đơn vị lớn nhất hoạt động khi offline"
 
-msgid ""
-msgstr ""
+msgid "Data analysis std dev factor"
+msgstr "Hệ số độ lệch chuẩn phân tích dữ liệu"
 
-msgid ""
-msgstr ""
+msgid "Phone number area code"
+msgstr "Mã vùng điện thoại"
 
-msgid ""
-msgstr ""
+msgid "Enable multi-organisation unit forms"
+msgstr "Cho phép hiển thị nhiều đơn vị trong 1 biểu nhập dữ liệu"
 
-msgid ""
-msgstr ""
+msgid "Acceptance required before approval"
+msgstr "Tiếp Nhận Dữ Liệu trước khi Duyệt Dữ Liệu"
 
-msgid ""
+msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
 
-msgid ""
+msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Default relative period for analysis"
+msgstr "Thời điểm tương đối mặc định cho phân tích dữ liệu"
 
-msgid ""
-msgstr ""
+msgid "This month"
+msgstr "Tháng này"
 
-msgid ""
-msgstr ""
+msgid "Last month"
+msgstr "Tháng trước"
 
-msgid ""
-msgstr ""
+msgid "This bi-month"
+msgstr "Lần Hai-Tháng này"
 
-msgid ""
-msgstr ""
+msgid "Last bi-month"
+msgstr "Kỳ 2 tháng trước"
 
-msgid ""
-msgstr ""
+msgid "This quarter"
+msgstr "Quý này"
 
-msgid ""
-msgstr ""
+msgid "Last quarter"
+msgstr "Quý trước"
 
-msgid ""
-msgstr ""
+msgid "This six-month"
+msgstr "6 tháng này"
 
-msgid ""
-msgstr ""
+msgid "Last six-month"
+msgstr "6 tháng trước"
 
-msgid ""
-msgstr ""
+msgid "Months this year"
+msgstr "Tháng năm nay"
 
-msgid ""
-msgstr ""
+msgid "Quarters this year"
+msgstr "Quý năm nay"
 
-msgid ""
-msgstr ""
+msgid "This year"
+msgstr "Năm nay"
 
-msgid ""
-msgstr ""
+msgid "Months last year"
+msgstr "Tháng năm ngoái"
 
-msgid ""
-msgstr ""
+msgid "Quarters last year"
+msgstr "Quý năm trước"
 
-msgid ""
-msgstr ""
+msgid "Last year"
+msgstr "Năm ngoái"
 
-msgid ""
-msgstr ""
+msgid "Last 5 years"
+msgstr "5 năm trước"
 
-msgid ""
-msgstr ""
+msgid "Last 12 months"
+msgstr "Trong 12 tháng trước"
 
-msgid ""
-msgstr ""
+msgid "Last 6 months"
+msgstr "6 tháng trước"
 
-msgid ""
-msgstr ""
+msgid "Last 3 months"
+msgstr "3 tháng trước"
 
-msgid ""
-msgstr ""
+msgid "Last 6 bi-months"
+msgstr "6 kỳ 2 tháng trước"
 
-msgid ""
-msgstr ""
+msgid "Last 4 quarters"
+msgstr "4 quý trước"
 
-msgid ""
-msgstr ""
+msgid "Last 2 six-months"
+msgstr "2 lần sáu-tháng trước"
 
-msgid ""
-msgstr ""
+msgid "This financial year"
+msgstr "Năm tài chính này"
 
-msgid ""
-msgstr ""
+msgid "Last financial year"
+msgstr "Năm tài chính trước"
 
-msgid ""
-msgstr ""
+msgid "Last 5 financial years"
+msgstr "5 năm tài chính trước"
 
-msgid ""
-msgstr ""
+msgid "This week"
+msgstr "Tuần này"
 
-msgid ""
-msgstr ""
+msgid "Last week"
+msgstr "Tuần trước"
 
-msgid ""
-msgstr ""
+msgid "Last 4 weeks"
+msgstr "4 tuần trước"
 
-msgid ""
-msgstr ""
+msgid "Last 12 weeks"
+msgstr "12 tuần trước"
 
-msgid ""
-msgstr ""
+msgid "Last 52 weeks"
+msgstr "52 tuần trước"
 
-msgid ""
+msgid "Hide daily periods"
 msgstr ""
 
-msgid ""
+msgid "Hidden period types in analytics apps"
 msgstr ""
 
-msgid ""
+msgid "Hide weekly periods"
 msgstr ""
 
-msgid ""
+msgid "Hide monthly periods"
 msgstr ""
 
-msgid ""
+msgid "Hide bimonthly periods"
 msgstr ""
 
-msgid ""
+msgid "Financial year relative period start month"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "April"
+msgstr "Tháng tư"
 
-msgid ""
-msgstr ""
+msgid "July"
+msgstr "Tháng bảy"
 
-msgid ""
-msgstr ""
+msgid "October"
+msgstr "Tháng mười"
 
-msgid ""
-msgstr ""
+msgid "Cache strategy"
+msgstr "Chiến lược cho bộ nhớ cache"
 
-msgid ""
-msgstr ""
+msgid "No cache"
+msgstr "Không lưu cache"
 
-msgid ""
-msgstr ""
+msgid "Cache for 15 minutes"
+msgstr "Lưu trữ tạm trong 15 phút"
 
-msgid ""
-msgstr ""
+msgid "Cache for 30 minutes"
+msgstr "Lưu trữ tạm trong vòng 30 phút"
 
-msgid ""
-msgstr ""
+msgid "Cache for one hour"
+msgstr "Lưu cache trong 1 giờ"
 
-msgid ""
+msgid "Cache until 6AM tomorrow"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Cache for two weeks"
+msgstr "Lưu cache trong 2 tuần"
 
-msgid ""
-msgstr ""
+msgid "Cacheability"
+msgstr "Khả năng lưu trữ tạm"
 
-msgid ""
-msgstr ""
+msgid "Public"
+msgstr "Công khai"
 
-msgid ""
-msgstr ""
+msgid "Private"
+msgstr "Cá nhân"
 
-msgid ""
+msgid "Analytics cache mode"
 msgstr ""
 
-msgid ""
+msgid "Progressive"
 msgstr ""
 
-msgid ""
+msgid "Fixed"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Max number of years to hide unapproved data in analytics"
+msgstr "Số năm lớn nhất để ẩn dữ liệu chưa duyệt trong phân tích"
 
-msgid ""
-msgstr ""
+msgid "Never check approval"
+msgstr "Không bao giờ kiểm tra duyệt dữ liệu"
 
-msgid ""
-msgstr ""
+msgid "Check approval for all data"
+msgstr "Kiểm tra duyệt tất cả dữ liệu"
 
-msgid ""
-msgstr ""
+msgid "Current year only"
+msgstr "Chỉ năm hiện tại"
 
-msgid ""
-msgstr ""
+msgid "Last 2 years"
+msgstr "2 năm trước"
 
-msgid ""
-msgstr ""
+msgid "Last 3 years"
+msgstr "3 năm trước"
 
-msgid ""
-msgstr ""
+msgid "Last 4 years"
+msgstr "4 năm trước"
 
-msgid ""
-msgstr ""
+msgid "Last 6 years"
+msgstr "6 năm trước"
 
-msgid ""
-msgstr ""
+msgid "Last 7 years"
+msgstr "7 năm trước"
 
-msgid ""
-msgstr ""
+msgid "Last 8 years"
+msgstr "8 năm trước"
 
-msgid ""
-msgstr ""
+msgid "Last 9 years"
+msgstr "9 năm trước"
 
-msgid ""
-msgstr ""
+msgid "Last 10 years"
+msgstr "10 năm trước"
 
-msgid ""
+msgid "Respect category option start and end date in analytics table export"
 msgstr ""
+"Xuất bản phân tích theo ngày bắt đầu và ngày kết thúc của Tùy chọn phân loại"
 
-msgid ""
-msgstr ""
+msgid "Put analytics in maintenance mode"
+msgstr "Đặt chức năng xuất bảng giá trị phân tích trong chế độ bảo trì"
 
-msgid ""
+msgid "Caching factor"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Number of database server CPUs"
+msgstr "Số bộ vi xử lý máy chủ cơ sở dữ liệu (CPUs)"
 
-msgid ""
-msgstr ""
+msgid "Automatic (detect based on web server)"
+msgstr "Tự động (giám sát dựa trên máy chủ mạng)"
 
-msgid ""
-msgstr ""
+msgid "System notifications email address"
+msgstr "Địa chỉ email thông báo hệ thống"
 
-msgid ""
-msgstr ""
+msgid "Google Analytics (Universal Analytics) key"
+msgstr "Khóa phân tích Google (Universal Analytics)"
 
-msgid ""
-msgstr ""
+msgid "Google Maps API key"
+msgstr "Khóa API bản đồ Google"
 
-msgid ""
+msgid "Bing Maps API key"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Application title"
+msgstr "Tiêu đề ứng dụng"
 
-msgid ""
-msgstr ""
+msgid "Application introduction"
+msgstr "Giới thiệu ứng dụng"
 
-msgid ""
-msgstr ""
+msgid "Application notification"
+msgstr "Thông báo ứng dụng"
 
-msgid ""
-msgstr ""
+msgid "Application left-side footer"
+msgstr "Nhãn hiển thị ở cuối trang bên trái ứng dụng"
 
-msgid ""
-msgstr ""
+msgid "Application right-side footer"
+msgstr "Nhãn hiển thị ở cuối trang bên phải ứng dụng"
 
-msgid ""
-msgstr ""
+msgid "Style"
+msgstr "Kiểu dáng"
 
-msgid ""
-msgstr ""
+msgid "Start page"
+msgstr "Trang khởi động"
 
-msgid ""
-msgstr ""
+msgid "Help page link"
+msgstr "Đường dẫn liên kết trang hỗ trợ"
 
-msgid ""
-msgstr ""
+msgid "Flag"
+msgstr "Cờ"
 
-msgid ""
-msgstr ""
+msgid "Interface language"
+msgstr "Ngôn ngữ giao diện"
 
-msgid ""
-msgstr ""
+msgid "Database language"
+msgstr "Ngôn ngữ cơ sở dữ liệu"
 
-msgid ""
-msgstr ""
+msgid "Property to display in analysis modules"
+msgstr "Thuộc tính hiện trong các chức năng phân tích dữ liệu"
 
-msgid ""
-msgstr ""
+msgid "Short name"
+msgstr "Tên rút gọn"
 
-msgid ""
+msgid "Default digit group separator to display in analysis modules"
 msgstr ""
+"Khoảng cách nhóm các chữ số mặc định hiển thị trong chương trình phân tích "
+"dữ liệu"
 
-msgid ""
-msgstr ""
+msgid "Space"
+msgstr "Khoảng trắng"
 
-msgid ""
-msgstr ""
+msgid "Comma"
+msgstr "Dấu phẩy"
 
-msgid ""
-msgstr ""
+msgid "Require authority to add to view object lists"
+msgstr "Yêu cầu thêm quyền để xem danh sách đối tượng"
 
-msgid ""
-msgstr ""
+msgid "Custom login page logo"
+msgstr "Thiết lập biểu tượng trang đăng nhập"
 
-msgid ""
-msgstr ""
+msgid "Custom top menu logo"
+msgstr "Thiết lập biểu tượng danh mục trên đầu trang"
 
-msgid ""
+msgid "Allow users to switch dashboard favorite view type"
 msgstr ""
 
-msgid ""
+msgid "Allow users to open dashboard favorite in relevant app"
 msgstr ""
 
-msgid ""
+msgid "Allow users to show dashboard favorite interpretations and details"
 msgstr ""
 
-msgid ""
+msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Host name"
+msgstr "Địa chỉ máy chủ"
 
-msgid ""
-msgstr ""
+msgid "Port"
+msgstr "Cổng"
 
-msgid ""
-msgstr ""
+msgid "Username"
+msgstr "Tên đăng nhập"
 
-msgid ""
+msgid "TLS"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Email sender"
+msgstr "Người gửi email"
 
-msgid ""
-msgstr ""
+msgid "Send me a test email"
+msgstr "Gửi tôi thư điện tử để kiểm định"
 
-msgid ""
-msgstr ""
+msgid "Self registration account user role"
+msgstr "Vai trò (quyền) của người dùng được cấp khi tự đăng ký tài khoảng"
 
-msgid ""
-msgstr ""
+msgid "Disable self registration"
+msgstr "Tắt chức năng tự đăng ký tài khoảng"
 
-msgid ""
-msgstr ""
+msgid "Self registration account organisation unit"
+msgstr "Đơn vị gán cho người dùng tự đăng ký tài khoảng"
 
-msgid ""
-msgstr ""
+msgid "Do not require recaptcha for self registration"
+msgstr "Không yêu cầu gõ lại ký tự xác minh khi tự đăng ký tài khoảng"
 
-msgid ""
-msgstr ""
+msgid "Enable user account recovery"
+msgstr "Cho phép phục hồi tài khoảng"
 
-msgid ""
+msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
+"Khóa tạm thời tài khoảng người dùng sau nhiều lần thử đăng nhập không thành "
+"công"
 
-msgid ""
-msgstr ""
+msgid "Allow users to grant own user roles"
+msgstr "Cho phép người dùng cung cấp phân quyền cho người dùng khác"
 
-msgid ""
-msgstr ""
+msgid "Allow assigning object to related objects during add or update"
+msgstr "Cho phép gán đối tượng liên quan trong khi thêm hoặc cập nhật"
 
-msgid ""
-msgstr ""
+msgid "Require user account password change"
+msgstr "Yêu cầu thay đổi mật khẩu tài khoảng"
 
-msgid ""
-msgstr ""
+msgid "Never"
+msgstr "Chưa bao giờ"
 
-msgid ""
-msgstr ""
+msgid "3 months"
+msgstr "3 tháng"
 
-msgid ""
-msgstr ""
+msgid "6 months"
+msgstr "6 tháng"
 
-msgid ""
-msgstr ""
+msgid "12 months"
+msgstr "12 tháng"
 
-msgid ""
+msgid "Enable password expiry alerts"
 msgstr ""
 
-msgid ""
+msgid "Minimum characters in password"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "CORS whitelist"
+msgstr "Danh sách tuyển chọn CORS"
 
-msgid ""
+msgid "reCAPTCHA Site Key"
 msgstr ""
 
-msgid ""
+msgid "reCAPTCHA Secret Key"
 msgstr ""
 
-msgid ""
+msgid "Coptic"
 msgstr ""
 
-msgid ""
+msgid "Ethiopian"
 msgstr ""
 
-msgid ""
+msgid "Gregorian"
 msgstr ""
 
-msgid ""
+msgid "Islamic"
 msgstr ""
 
-msgid ""
+msgid "ISO 8601"
 msgstr ""
 
-msgid ""
+msgid "Julian"
 msgstr ""
 
-msgid ""
+msgid "Nepali"
 msgstr ""
 
-msgid ""
+msgid "Thai"
 msgstr ""
 
-msgid ""
+msgid "Persian"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Date format"
+msgstr "Định dạng ngày"
 
-msgid ""
-msgstr ""
+msgid "Require periods to match period type of data set"
+msgstr "Yêu cầu Thời Điểm phù hợp với Loại Thời Điểm của Tập Dữ Liệu"
 
-msgid ""
+msgid "Require data elements to be part of data set"
 msgstr ""
 
-msgid ""
+msgid "Require category option combos to match category combo of data element"
 msgstr ""
+"Yêu cầu Tổ Hợp Tùy Chọn Phân Loại phù hợp với Tổ Hợp Phân Loại của Phần Tử "
+"Dữ Liệu"
 
-msgid ""
-msgstr ""
+msgid "Require organisation units to match assignment of data set"
+msgstr "Yêu cầu Đơn Vị phù hợp với việc gán Tập Dữ Liệu"
 
-msgid ""
+msgid "Require attribute option combos to match category combo of data set"
 msgstr ""
+"Yêu cầu Tổ Hợp Tùy Chọn Thuộc Tính phù hợp với Tổ Hợp Phân Loại của Tập Dữ "
+"Liệu"
 
-msgid ""
-msgstr ""
+msgid "Require category option combo to be specified"
+msgstr "Yêu cầu Tổ Hợp Tùy Chọn Phân Loại được ghi rõ"
 
-msgid ""
-msgstr ""
+msgid "Require attribute option combo to be specified"
+msgstr "Yêu cầu Tổ Hợp Tùy chọn Thuộc Tính được ghi rõ"
 
-msgid ""
-msgstr ""
+msgid "Remote server URL"
+msgstr "Địa chỉ mạng máy chủ từ xa (URL)"
 
-msgid ""
-msgstr ""
+msgid "Remote server username"
+msgstr "Tên đăng nhập máy chủ từ xa"
 
-msgid ""
-msgstr ""
+msgid "Remote server password"
+msgstr "Mật khẩu máy chủ từ xa"

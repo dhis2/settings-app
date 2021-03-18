@@ -1,753 +1,775 @@
+# 
+# Translators:
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "POT-Creation-Date: 2021-03-16T11:10:22.254Z\n"
-"PO-Revision-Date: 2021-03-16T11:10:22.254Z\n"
+"PO-Revision-Date: 2021-03-18 19:32+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-msgid ""
+msgid "Failed to load: {{error}}"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "No flag"
+msgstr "Нет флага"
 
-msgid ""
-msgstr ""
+msgid "Search settings"
+msgstr "Настройки поиска"
 
-msgid ""
-msgstr ""
+msgid "Replace image"
+msgstr "Заменить изображение"
 
-msgid ""
-msgstr ""
+msgid "Preview image"
+msgstr "Предварительный просмотр изображения"
 
-msgid ""
+msgid "Preview of image"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Upload image"
+msgstr "Загрузить изображение"
 
-msgid ""
-msgstr ""
+msgid "Cancel upload"
+msgstr "Отменить загрузку"
 
-msgid ""
+msgid "System default (fallback)"
 msgstr ""
 
-msgid ""
+msgid "Set the main field value before adding a translation"
 msgstr ""
 
-msgid ""
+msgid "Could not fetch localized settings"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Select language"
+msgstr "Выбрать язык"
 
-msgid ""
+msgid "Version created"
 msgstr ""
 
-msgid ""
+msgid "Failed to create version"
 msgstr ""
 
-msgid ""
+msgid "Error fetching settings"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Create new version"
+msgstr "Создать новую версию"
 
-msgid ""
+msgid "Best effort"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Atomic"
+msgstr "Атомарный"
 
-msgid ""
+msgid "Master version:"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "None"
+msgstr "Не известное значение"
 
-msgid ""
-msgstr ""
+msgid "Last sync attempt"
+msgstr "Последняя попытка синхронизации"
 
-msgid ""
-msgstr ""
+msgid "Failed"
+msgstr "Сбой"
 
-msgid ""
-msgstr ""
+msgid "No versions exist"
+msgstr "Версии не существуют"
 
-msgid ""
-msgstr ""
+msgid "Enable Versioning for metadata sync"
+msgstr "Включить управление версиями для синхронизации метаданных"
 
-msgid ""
-msgstr ""
+msgid "Don't sync metadata if DHIS versions differ"
+msgstr "Не синхронизировать метаданные, если версии DHIS отличаются"
 
-msgid ""
-msgstr ""
+msgid "Metadata Versioning"
+msgstr "Управление версиями метаданных"
 
-msgid ""
-msgstr ""
+msgid "This client ID is already taken"
+msgstr "Этот ID клиента уже занят"
 
-msgid ""
-msgstr ""
+msgid "Name"
+msgstr "Название"
 
-msgid ""
-msgstr ""
+msgid "Required"
+msgstr "Обязательный"
 
-msgid ""
-msgstr ""
+msgid "Client ID"
+msgstr "ID клиента"
 
-msgid ""
-msgstr ""
+msgid "Client Secret"
+msgstr "Секрет клиента"
 
-msgid ""
-msgstr ""
+msgid "Grant Types"
+msgstr "Виды полномочий"
 
-msgid ""
-msgstr ""
+msgid "Password"
+msgstr "Пароль"
 
-msgid ""
-msgstr ""
+msgid "Refresh token"
+msgstr "Обновить токен"
 
-msgid ""
-msgstr ""
+msgid "Authorization code"
+msgstr "Код авторизации"
 
-msgid ""
+msgid "One URL per line"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Redirect URIs"
+msgstr "Перенаправить URI"
 
-msgid ""
-msgstr ""
+msgid "This field should contain a list of URLs"
+msgstr "Это поле должно содержать список URL"
 
-msgid ""
-msgstr ""
+msgid "Create new OAuth2 Client"
+msgstr "Создать новый клиент OAuth2"
 
-msgid ""
-msgstr ""
+msgid "Edit OAuth2 Client"
+msgstr "Редактировать клиент OAuth2"
 
-msgid ""
-msgstr ""
+msgid "Save"
+msgstr "Сохранить"
 
-msgid ""
-msgstr ""
+msgid "Cancel"
+msgstr "Отмена"
 
-msgid ""
-msgstr ""
+msgid "There are currently no OAuth2 clients registered"
+msgstr "На данный момент нет зарегистрированных клиентов OAuth2"
 
-msgid ""
-msgstr ""
+msgid "Edit"
+msgstr "Редактировать"
 
-msgid ""
-msgstr ""
+msgid "Delete"
+msgstr "Удалить"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 client saved"
+msgstr "Клиент OAuth2 сохранен"
 
-msgid ""
-msgstr ""
+msgid "Failed to save OAuth2 client"
+msgstr "Не удалось сохранить клиент OAuth2"
 
-msgid ""
+msgid "Add OAuth2 client"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Yes"
+msgstr "Да"
 
-msgid ""
-msgstr ""
+msgid "No"
+msgstr "Нет"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 client deleted"
+msgstr "Клиент OAuth2 удален"
 
-msgid ""
+msgid "Failed to delete OAuth2 client"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Settings updated"
+msgstr "Настройки обновлены"
 
-msgid ""
-msgstr ""
+msgid "General"
+msgstr "Общие"
 
-msgid ""
-msgstr ""
+msgid "General settings"
+msgstr "Общие настройки"
 
-msgid ""
-msgstr ""
+msgid "Analytics"
+msgstr "Аналитика"
 
-msgid ""
-msgstr ""
+msgid "Analytics settings"
+msgstr "Настройки аналитики"
 
-msgid ""
-msgstr ""
+msgid "Server"
+msgstr "Сервер"
 
-msgid ""
-msgstr ""
+msgid "Server settings"
+msgstr "Настройки сервера"
 
-msgid ""
-msgstr ""
+msgid "Appearance"
+msgstr "Внешний вид"
 
-msgid ""
-msgstr ""
+msgid "Appearance settings"
+msgstr "Настройки внешнего вида"
 
-msgid ""
-msgstr ""
+msgid "Email"
+msgstr "адрес электронной почты"
 
-msgid ""
-msgstr ""
+msgid "Email settings"
+msgstr "Настройки электронной почты"
 
-msgid ""
-msgstr ""
+msgid "Access"
+msgstr "Доступ"
 
-msgid ""
-msgstr ""
+msgid "Access settings"
+msgstr "Настройки доступа"
 
-msgid ""
-msgstr ""
+msgid "Calendar"
+msgstr "Календарь"
 
-msgid ""
-msgstr ""
+msgid "Calendar settings"
+msgstr "Настройки календаря"
 
-msgid ""
-msgstr ""
+msgid "Data Import"
+msgstr "Импорт данных"
 
-msgid ""
-msgstr ""
+msgid "Data import settings"
+msgstr "Настройки импорта данных"
 
-msgid ""
-msgstr ""
+msgid "Synchronization"
+msgstr "Синхронизация"
 
-msgid ""
-msgstr ""
+msgid "Synchronization settings"
+msgstr "Настройки синхронизации"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 Clients"
+msgstr "Клиенты OAuth2"
 
-msgid ""
-msgstr ""
+msgid "This field is required"
+msgstr "Это поле обязательно к заполнению"
 
-msgid ""
+msgid "This field should be a URL"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "This field should be a number"
+msgstr "Это поле должно содержать число"
 
-msgid ""
-msgstr ""
+msgid "This field should be a positive number"
+msgstr "Это поле должно содержать положительное число"
 
-msgid ""
+msgid "This field should be an email"
 msgstr ""
 
 msgid ""
+"This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "This setting can be overridden by user settings"
+msgstr "Этот настройка может быть переопределена пользовательской настройкой"
 
-msgid ""
+msgid "No options"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "No settings matched the search term"
+msgstr "Настройки не соответствуют поисковому запросу"
 
-msgid ""
-msgstr ""
+msgid "Search results"
+msgstr "Результаты поиска"
 
-msgid ""
-msgstr ""
+msgid "Maximum number of analytics records"
+msgstr "Максимальное количество аналитических записей"
 
-msgid ""
-msgstr ""
+msgid "Unlimited"
+msgstr "Неограничено"
 
-msgid ""
-msgstr ""
+msgid "Maximum number of SQL view records"
+msgstr "Максимальное количество строк представления SQL"
 
-msgid ""
-msgstr ""
+msgid "Infrastructural indicators"
+msgstr "Инфраструктурные показатели"
 
-msgid ""
-msgstr ""
+msgid "Infrastructural data elements"
+msgstr "Инфраструктурные элементы данных"
 
-msgid ""
-msgstr ""
+msgid "Infrastructural period type"
+msgstr "Инфраструктурные типы периодов"
 
-msgid ""
-msgstr ""
+msgid "Daily"
+msgstr "Ежедневно"
 
-msgid ""
-msgstr ""
+msgid "Weekly"
+msgstr "Еженедельно"
 
-msgid ""
-msgstr ""
+msgid "Monthly"
+msgstr "Ежемесячно"
 
-msgid ""
-msgstr ""
+msgid "Bi-monthly"
+msgstr "Раз в два месяца"
 
-msgid ""
-msgstr ""
+msgid "Quarterly"
+msgstr "Ежеквартально"
 
-msgid ""
-msgstr ""
+msgid "Six-monthly"
+msgstr "Раз в полугодие"
 
-msgid ""
-msgstr ""
+msgid "Six-monthly April"
+msgstr "Полугодовой-Апрель"
 
-msgid ""
-msgstr ""
+msgid "Yearly"
+msgstr "Ежегодно"
 
-msgid ""
-msgstr ""
+msgid "Financial-April"
+msgstr "Финансовый-апрель"
 
-msgid ""
-msgstr ""
+msgid "Financial-July"
+msgstr "Финансовый-июль"
 
-msgid ""
-msgstr ""
+msgid "Financial-Oct"
+msgstr "Финансовый - октябрь"
 
-msgid ""
-msgstr ""
+msgid "Feedback recipients"
+msgstr "Отзывы получателей/реципиентов"
 
-msgid ""
-msgstr ""
+msgid "No message recipients"
+msgstr "Нет сообщений получателей"
 
-msgid ""
-msgstr ""
+msgid "Max offline organisation unit levels"
+msgstr "Максимальные уровни офлайн организаций"
 
-msgid ""
-msgstr ""
+msgid "Data analysis std dev factor"
+msgstr "Анализ данных, фактор стан.нар"
 
-msgid ""
-msgstr ""
+msgid "Phone number area code"
+msgstr "региональный код номера телефона"
 
-msgid ""
-msgstr ""
+msgid "Enable multi-organisation unit forms"
+msgstr "Включить форму мультиорганизационных отделов"
 
-msgid ""
-msgstr ""
+msgid "Acceptance required before approval"
+msgstr "Требуется принятие до утверждения"
 
-msgid ""
+msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
 
-msgid ""
+msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Default relative period for analysis"
+msgstr "Относительный период по умолчанию для анализа"
 
-msgid ""
-msgstr ""
+msgid "This month"
+msgstr "Этот месяц"
 
-msgid ""
-msgstr ""
+msgid "Last month"
+msgstr "Последний месяц"
 
-msgid ""
-msgstr ""
+msgid "This bi-month"
+msgstr "Этот период по два месяца"
 
-msgid ""
-msgstr ""
+msgid "Last bi-month"
+msgstr "Прошлый двухмесячный период"
 
-msgid ""
-msgstr ""
+msgid "This quarter"
+msgstr "Этот квартал"
 
-msgid ""
-msgstr ""
+msgid "Last quarter"
+msgstr "Последний квартал"
 
-msgid ""
-msgstr ""
+msgid "This six-month"
+msgstr "Это полугодие"
 
-msgid ""
-msgstr ""
+msgid "Last six-month"
+msgstr "Прошлое полугодие"
 
-msgid ""
-msgstr ""
+msgid "Months this year"
+msgstr "Месяцы этого года"
 
-msgid ""
-msgstr ""
+msgid "Quarters this year"
+msgstr "Кварталы этого года"
 
-msgid ""
-msgstr ""
+msgid "This year"
+msgstr "Этот год"
 
-msgid ""
-msgstr ""
+msgid "Months last year"
+msgstr "Месяцы последнего года"
 
-msgid ""
-msgstr ""
+msgid "Quarters last year"
+msgstr "Кварталы последнего года"
 
-msgid ""
-msgstr ""
+msgid "Last year"
+msgstr "Прошлый год"
 
-msgid ""
-msgstr ""
+msgid "Last 5 years"
+msgstr "Прошлые 5 лет"
 
-msgid ""
-msgstr ""
+msgid "Last 12 months"
+msgstr "Прошлые 12 месяцев"
 
-msgid ""
-msgstr ""
+msgid "Last 6 months"
+msgstr "Последние 6 месяцев"
 
-msgid ""
-msgstr ""
+msgid "Last 3 months"
+msgstr "Прошлые 3 месяца"
 
-msgid ""
-msgstr ""
+msgid "Last 6 bi-months"
+msgstr "Последние 6 двухмесячных периодов"
 
-msgid ""
-msgstr ""
+msgid "Last 4 quarters"
+msgstr "Прошлые 4 квартала"
 
-msgid ""
-msgstr ""
+msgid "Last 2 six-months"
+msgstr "Последние два полугодия"
 
-msgid ""
-msgstr ""
+msgid "This financial year"
+msgstr "Этот финансовый год"
 
-msgid ""
-msgstr ""
+msgid "Last financial year"
+msgstr "Прошлый финансовый год"
 
-msgid ""
-msgstr ""
+msgid "Last 5 financial years"
+msgstr "Прошлые 5 финансовых лет"
 
-msgid ""
-msgstr ""
+msgid "This week"
+msgstr "Эта неделя"
 
-msgid ""
-msgstr ""
+msgid "Last week"
+msgstr "Прошлая неделя"
 
-msgid ""
-msgstr ""
+msgid "Last 4 weeks"
+msgstr "Прошлые 4 недели"
 
-msgid ""
-msgstr ""
+msgid "Last 12 weeks"
+msgstr "Прошлые 12 недель"
 
-msgid ""
-msgstr ""
+msgid "Last 52 weeks"
+msgstr "Последние 52 недели"
 
-msgid ""
-msgstr ""
+msgid "Hide daily periods"
+msgstr "Скрыть дневные периоды"
 
-msgid ""
+msgid "Hidden period types in analytics apps"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Hide weekly periods"
+msgstr "Скрыть недельные периоды"
 
-msgid ""
-msgstr ""
+msgid "Hide monthly periods"
+msgstr "Скрыть месячные периоды"
 
-msgid ""
-msgstr ""
+msgid "Hide bimonthly periods"
+msgstr "Скрыть два месячных периода"
 
-msgid ""
-msgstr ""
+msgid "Financial year relative period start month"
+msgstr "Начало mесяца относительного периода финансового года"
 
-msgid ""
-msgstr ""
+msgid "April"
+msgstr "Апрель"
 
-msgid ""
-msgstr ""
+msgid "July"
+msgstr "Июль"
 
-msgid ""
-msgstr ""
+msgid "October"
+msgstr "Октябрь"
 
-msgid ""
-msgstr ""
+msgid "Cache strategy"
+msgstr "Стратегия кеширования"
 
-msgid ""
-msgstr ""
+msgid "No cache"
+msgstr "Не кешировать"
 
-msgid ""
-msgstr ""
+msgid "Cache for 15 minutes"
+msgstr "Кэшировать на 15 минут"
 
-msgid ""
-msgstr ""
+msgid "Cache for 30 minutes"
+msgstr "Кэшировать на 30 минут"
 
-msgid ""
-msgstr ""
+msgid "Cache for one hour"
+msgstr "Кешировать на 1 час"
 
-msgid ""
+msgid "Cache until 6AM tomorrow"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Cache for two weeks"
+msgstr "Кешировать на 2 недели"
 
-msgid ""
-msgstr ""
+msgid "Cacheability"
+msgstr "Кэширование"
 
-msgid ""
-msgstr ""
+msgid "Public"
+msgstr "Общедоступный"
 
-msgid ""
-msgstr ""
+msgid "Private"
+msgstr "Личный"
 
-msgid ""
+msgid "Analytics cache mode"
 msgstr ""
 
-msgid ""
+msgid "Progressive"
 msgstr ""
 
-msgid ""
+msgid "Fixed"
 msgstr ""
 
-msgid ""
+msgid "Max number of years to hide unapproved data in analytics"
 msgstr ""
+"Максимальное количество лет для скрытия неподтвержденные данные в аналитике"
 
-msgid ""
-msgstr ""
+msgid "Never check approval"
+msgstr "Никогда не проверять подтвержение"
 
-msgid ""
-msgstr ""
+msgid "Check approval for all data"
+msgstr "Проверьте подтверждение для всех данных"
 
-msgid ""
-msgstr ""
+msgid "Current year only"
+msgstr "Только текущий год"
 
-msgid ""
-msgstr ""
+msgid "Last 2 years"
+msgstr "Последние 2 года"
 
-msgid ""
-msgstr ""
+msgid "Last 3 years"
+msgstr "Последние 3 года"
 
-msgid ""
-msgstr ""
+msgid "Last 4 years"
+msgstr "Последние 4 года"
 
-msgid ""
-msgstr ""
+msgid "Last 6 years"
+msgstr "Последние 6 лет"
 
-msgid ""
-msgstr ""
+msgid "Last 7 years"
+msgstr "Последние 7 лет"
 
-msgid ""
-msgstr ""
+msgid "Last 8 years"
+msgstr "Последние 8 лет"
 
-msgid ""
-msgstr ""
+msgid "Last 9 years"
+msgstr "Последние 9 лет"
 
-msgid ""
-msgstr ""
+msgid "Last 10 years"
+msgstr "Последние 10 лет"
 
-msgid ""
+msgid "Respect category option start and end date in analytics table export"
 msgstr ""
+"Учитывать дату начала и окончания опции категории при экспорте таблицы "
+"аналитики"
 
-msgid ""
-msgstr ""
+msgid "Put analytics in maintenance mode"
+msgstr "Перевести аналитику в режим обслуживания"
 
-msgid ""
+msgid "Caching factor"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Number of database server CPUs"
+msgstr "Количество процессоров сервера базы данных"
 
-msgid ""
-msgstr ""
+msgid "Automatic (detect based on web server)"
+msgstr "Автоматически (определено на основе веб-сервера)"
 
-msgid ""
-msgstr ""
+msgid "System notifications email address"
+msgstr "Адрес электронной почты для системных уведомлений"
 
-msgid ""
-msgstr ""
+msgid "Google Analytics (Universal Analytics) key"
+msgstr "Ключ Google Analytics (Universal Analytics)"
 
-msgid ""
-msgstr ""
+msgid "Google Maps API key"
+msgstr "API Ключ Google Maps"
 
-msgid ""
+msgid "Bing Maps API key"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Application title"
+msgstr "Название анкеты"
 
-msgid ""
-msgstr ""
+msgid "Application introduction"
+msgstr "Введение анкеты"
 
-msgid ""
-msgstr ""
+msgid "Application notification"
+msgstr "Извещение о заявке"
 
-msgid ""
-msgstr ""
+msgid "Application left-side footer"
+msgstr "Левый футер (колонтитул) приложения"
 
-msgid ""
-msgstr ""
+msgid "Application right-side footer"
+msgstr "Правый футер (колонтитул) приложения"
 
-msgid ""
-msgstr ""
+msgid "Style"
+msgstr "Стиль"
 
-msgid ""
-msgstr ""
+msgid "Start page"
+msgstr "Стартовая страница"
 
-msgid ""
-msgstr ""
+msgid "Help page link"
+msgstr "Ссылка на страницу справки"
 
-msgid ""
-msgstr ""
+msgid "Flag"
+msgstr "Флаг"
 
-msgid ""
-msgstr ""
+msgid "Interface language"
+msgstr "Язык интерфейса"
 
-msgid ""
-msgstr ""
+msgid "Database language"
+msgstr "Язык базы данных"
 
-msgid ""
-msgstr ""
+msgid "Property to display in analysis modules"
+msgstr "Свойство для отображения в модулях анализа"
 
-msgid ""
-msgstr ""
+msgid "Short name"
+msgstr "Короткое название"
 
-msgid ""
-msgstr ""
+msgid "Default digit group separator to display in analysis modules"
+msgstr "Разделитель групп цифр по умолчанию для отображения в модулях анализа"
 
-msgid ""
-msgstr ""
+msgid "Space"
+msgstr "Пробел"
 
-msgid ""
-msgstr ""
+msgid "Comma"
+msgstr "Запятая"
 
-msgid ""
-msgstr ""
+msgid "Require authority to add to view object lists"
+msgstr "Требовать полномочия для добавления для просмотра списков объектов"
 
-msgid ""
-msgstr ""
+msgid "Custom login page logo"
+msgstr "Пользовательский логотип страницы входа"
 
-msgid ""
-msgstr ""
+msgid "Custom top menu logo"
+msgstr "Пользовательский логотип верхнего меню"
 
-msgid ""
+msgid "Allow users to switch dashboard favorite view type"
 msgstr ""
 
-msgid ""
+msgid "Allow users to open dashboard favorite in relevant app"
 msgstr ""
 
-msgid ""
+msgid "Allow users to show dashboard favorite interpretations and details"
 msgstr ""
 
-msgid ""
+msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Host name"
+msgstr "Имя хоста"
 
-msgid ""
-msgstr ""
+msgid "Port"
+msgstr "Порт"
 
-msgid ""
-msgstr ""
+msgid "Username"
+msgstr "Имя пользователя"
 
-msgid ""
+msgid "TLS"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Email sender"
+msgstr "Отправитель электронного письма"
 
-msgid ""
-msgstr ""
+msgid "Send me a test email"
+msgstr "Отправить мне тестовое письмо"
 
-msgid ""
-msgstr ""
+msgid "Self registration account user role"
+msgstr "Роль саморегистрации пользователя аккаунта"
 
-msgid ""
-msgstr ""
+msgid "Disable self registration"
+msgstr "Отключить самостоятельную регистрацию"
 
-msgid ""
-msgstr ""
+msgid "Self registration account organisation unit"
+msgstr "Саморегистрация аккаунта организации/отдела"
 
-msgid ""
-msgstr ""
+msgid "Do not require recaptcha for self registration"
+msgstr "Не требовать повторной ввода «капчи» для самостоятельной регистрации"
 
-msgid ""
-msgstr ""
+msgid "Enable user account recovery"
+msgstr "Включить возврат аккаунта пользователя"
 
-msgid ""
+msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
+"Временно заблокировать учетную запись пользователя после нескольких "
+"неудачных попыток входа"
 
-msgid ""
-msgstr ""
+msgid "Allow users to grant own user roles"
+msgstr "Разрешить пользователям назначать собственные роли"
 
-msgid ""
+msgid "Allow assigning object to related objects during add or update"
 msgstr ""
+"Разрешить присваивать объект связанным объектам во время добавления или "
+"обновления"
 
-msgid ""
-msgstr ""
+msgid "Require user account password change"
+msgstr "Требовать смены пароля учетной записи пользователя"
 
-msgid ""
-msgstr ""
+msgid "Never"
+msgstr "Никогда"
 
-msgid ""
-msgstr ""
+msgid "3 months"
+msgstr "3 месяца"
 
-msgid ""
-msgstr ""
+msgid "6 months"
+msgstr "6 месяцев"
 
-msgid ""
-msgstr ""
+msgid "12 months"
+msgstr "12 месяцев"
 
-msgid ""
-msgstr ""
+msgid "Enable password expiry alerts"
+msgstr "Включить оповещения истечения срока действия пароля"
 
-msgid ""
-msgstr ""
+msgid "Minimum characters in password"
+msgstr "Минимальное количество символов в пароле"
 
-msgid ""
-msgstr ""
+msgid "CORS whitelist"
+msgstr "Белый список CORS"
 
-msgid ""
-msgstr ""
+msgid "reCAPTCHA Site Key"
+msgstr "Ключ сайта reCAPTCHA"
 
-msgid ""
-msgstr ""
+msgid "reCAPTCHA Secret Key"
+msgstr "Секретный ключ reCAPTCHA"
 
-msgid ""
-msgstr ""
+msgid "Coptic"
+msgstr "Коптский"
 
-msgid ""
-msgstr ""
+msgid "Ethiopian"
+msgstr "Эфиопский"
 
-msgid ""
-msgstr ""
+msgid "Gregorian"
+msgstr "Григорианский"
 
-msgid ""
-msgstr ""
+msgid "Islamic"
+msgstr "Исламский"
 
-msgid ""
+msgid "ISO 8601"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Julian"
+msgstr "Юлианский"
 
-msgid ""
-msgstr ""
+msgid "Nepali"
+msgstr "Непальский"
 
-msgid ""
-msgstr ""
+msgid "Thai"
+msgstr "Тайский"
 
-msgid ""
-msgstr ""
+msgid "Persian"
+msgstr "Персидский"
 
-msgid ""
-msgstr ""
+msgid "Date format"
+msgstr "Формат даты"
 
-msgid ""
-msgstr ""
+msgid "Require periods to match period type of data set"
+msgstr "Требовать, чтобы периоды соответствовали типу периода набора данных"
 
-msgid ""
-msgstr ""
+msgid "Require data elements to be part of data set"
+msgstr "Требовать, чтобы элементы данных были частью набора данных"
 
-msgid ""
+msgid "Require category option combos to match category combo of data element"
 msgstr ""
+"Требовать соответствия комбинаций опции категории комбинациям категории "
+"элемента данных"
 
-msgid ""
+msgid "Require organisation units to match assignment of data set"
 msgstr ""
+"Требовать, чтобы организационные единицы соответствовали назначению набора "
+"данных"
 
-msgid ""
+msgid "Require attribute option combos to match category combo of data set"
 msgstr ""
+"Требовать соответствия комбинаций опции атрибута комбинациям категории "
+"набора данных"
 
-msgid ""
-msgstr ""
+msgid "Require category option combo to be specified"
+msgstr "Требовать указание комбинации опции категории"
 
-msgid ""
-msgstr ""
+msgid "Require attribute option combo to be specified"
+msgstr "Требовать указание комбинации опции атрибута"
 
-msgid ""
-msgstr ""
+msgid "Remote server URL"
+msgstr "URL удаленного сервера"
 
-msgid ""
-msgstr ""
+msgid "Remote server username"
+msgstr "Имя пользователя на удаленном сервере"
 
-msgid ""
-msgstr ""
+msgid "Remote server password"
+msgstr "Пароль на удаленном сервере"
