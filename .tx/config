@@ -2,7 +2,7 @@
 host = https://www.transifex.com
 lang_map = fa_AF: prs, uz@Cyrl: uz, uz@Latn: uz_Latn
 
-[app-settings-app.i18n-module-en-properties]
+[app-settings-app.en-pot]
 file_filter = i18n/<lang>.po
 minimum_perc = 0
 source_file = i18n/en.pot
