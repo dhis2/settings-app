@@ -402,16 +402,16 @@ const settingsKeyMapping = {
         name: 'logo_banner',
     },
     keyDashboardContextMenuItemSwitchViewType: {
-        label: i18n.t('Allow users to switch dashboard favorite view type'),
+        label: i18n.t('Allow users to switch dashboard items view type'),
         type: 'checkbox',
     },
     keyDashboardContextMenuItemOpenInRelevantApp: {
-        label: i18n.t('Allow users to open dashboard favorite in relevant app'),
+        label: i18n.t('Allow users to open dashboard items in relevant app'),
         type: 'checkbox',
     },
     keyDashboardContextMenuItemShowInterpretationsAndDetails: {
         label: i18n.t(
-            'Allow users to show dashboard favorite interpretations and details'
+            'Allow users to show dashboard items interpretations and details'
         ),
         type: 'checkbox',
     },
