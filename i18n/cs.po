@@ -1,753 +1,780 @@
+# 
+# Translators:
+# trendspotter, 2021
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "POT-Creation-Date: 2021-03-16T11:10:22.254Z\n"
-"PO-Revision-Date: 2021-03-16T11:10:22.254Z\n"
+"PO-Revision-Date: 2021-03-18 19:32+0000\n"
+"Last-Translator: trendspotter, 2021\n"
+"Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-msgid ""
-msgstr ""
+msgid "Failed to load: {{error}}"
+msgstr "Načtení se nezdařilo: {{error}}"
 
-msgid ""
-msgstr ""
+msgid "No flag"
+msgstr "Žádná vlajka"
 
-msgid ""
-msgstr ""
+msgid "Search settings"
+msgstr "Nastavení vyhledávání"
 
-msgid ""
-msgstr ""
+msgid "Replace image"
+msgstr "Vyměnit obrázek"
 
-msgid ""
-msgstr ""
+msgid "Preview image"
+msgstr "Náhled obrázku"
 
-msgid ""
-msgstr ""
+msgid "Preview of image"
+msgstr "Náhled obrázku"
 
-msgid ""
-msgstr ""
+msgid "Upload image"
+msgstr "Nahrát obrázek"
 
-msgid ""
-msgstr ""
+msgid "Cancel upload"
+msgstr "Zrušit nahrávání"
 
-msgid ""
-msgstr ""
+msgid "System default (fallback)"
+msgstr "Výchozí nastavení systému (záložní)"
 
-msgid ""
-msgstr ""
+msgid "Set the main field value before adding a translation"
+msgstr "Před přidáním překladu nastavte hodnotu hlavního pole"
 
-msgid ""
-msgstr ""
+msgid "Could not fetch localized settings"
+msgstr "Nelze načíst lokalizované nastavení"
 
-msgid ""
-msgstr ""
+msgid "Select language"
+msgstr "Vybrat jazyk"
 
-msgid ""
-msgstr ""
+msgid "Version created"
+msgstr "Verze vytvořena"
 
-msgid ""
-msgstr ""
+msgid "Failed to create version"
+msgstr "Nepodařilo se vytvořit verzi"
 
-msgid ""
-msgstr ""
+msgid "Error fetching settings"
+msgstr "Při načítání nastavení došlo k chybě"
 
-msgid ""
-msgstr ""
+msgid "Create new version"
+msgstr "Vytvořit novou verzi"
 
-msgid ""
-msgstr ""
+msgid "Best effort"
+msgstr "Nejlepší úsilí"
 
-msgid ""
-msgstr ""
+msgid "Atomic"
+msgstr "Atomic"
 
-msgid ""
-msgstr ""
+msgid "Master version:"
+msgstr "Hlavní verze:"
 
-msgid ""
-msgstr ""
+msgid "None"
+msgstr "Žádný"
 
-msgid ""
-msgstr ""
+msgid "Last sync attempt"
+msgstr "Poslední pokus o synchronizaci"
 
-msgid ""
-msgstr ""
+msgid "Failed"
+msgstr "Selhalo"
 
-msgid ""
-msgstr ""
+msgid "No versions exist"
+msgstr "Neexistují žádné verze"
 
-msgid ""
-msgstr ""
+msgid "Enable Versioning for metadata sync"
+msgstr "Povolit správu verzí pro synchronizaci metadat"
 
-msgid ""
-msgstr ""
+msgid "Don't sync metadata if DHIS versions differ"
+msgstr "Nesynchronizovat metadata, pokud se liší verze DHIS"
 
-msgid ""
-msgstr ""
+msgid "Metadata Versioning"
+msgstr "Správa verzí metadat"
 
-msgid ""
-msgstr ""
+msgid "This client ID is already taken"
+msgstr "Toto ID klienta je již obsazeno"
 
-msgid ""
-msgstr ""
+msgid "Name"
+msgstr "Název"
 
-msgid ""
-msgstr ""
+msgid "Required"
+msgstr "Vyžadováno"
 
-msgid ""
-msgstr ""
+msgid "Client ID"
+msgstr "Client ID"
 
-msgid ""
-msgstr ""
+msgid "Client Secret"
+msgstr "Tajemství klienta"
 
-msgid ""
-msgstr ""
+msgid "Grant Types"
+msgstr "Druhy grantů"
 
-msgid ""
-msgstr ""
+msgid "Password"
+msgstr "Heslo"
 
-msgid ""
-msgstr ""
+msgid "Refresh token"
+msgstr "Obnovit token"
 
-msgid ""
-msgstr ""
+msgid "Authorization code"
+msgstr "Autorizační kód"
 
-msgid ""
-msgstr ""
+msgid "One URL per line"
+msgstr "Jedna adresa URL na řádek"
 
-msgid ""
-msgstr ""
+msgid "Redirect URIs"
+msgstr "Přesměrování URI"
 
-msgid ""
-msgstr ""
+msgid "This field should contain a list of URLs"
+msgstr "Toto pole by mělo obsahovat seznam adres URL"
 
-msgid ""
-msgstr ""
+msgid "Create new OAuth2 Client"
+msgstr "Vytvořit nového klienta OAuth2"
 
-msgid ""
-msgstr ""
+msgid "Edit OAuth2 Client"
+msgstr "Upravit klienta OAuth2"
 
-msgid ""
-msgstr ""
+msgid "Save"
+msgstr "Uložit"
 
-msgid ""
-msgstr ""
+msgid "Cancel"
+msgstr "Zrušit"
 
-msgid ""
-msgstr ""
+msgid "There are currently no OAuth2 clients registered"
+msgstr "Momentálně nejsou registrováni žádní klienti OAuth2"
 
-msgid ""
-msgstr ""
+msgid "Edit"
+msgstr "Upravit"
 
-msgid ""
-msgstr ""
+msgid "Delete"
+msgstr "Smazat"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 client saved"
+msgstr "Klient OAuth2 uložen"
 
-msgid ""
-msgstr ""
+msgid "Failed to save OAuth2 client"
+msgstr "Uložení klienta OAuth2 se nezdařilo"
 
-msgid ""
-msgstr ""
+msgid "Add OAuth2 client"
+msgstr "Přidat klienta OAuth2"
 
-msgid ""
-msgstr ""
+msgid "Yes"
+msgstr "Ano"
 
-msgid ""
-msgstr ""
+msgid "No"
+msgstr "Ne"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 client deleted"
+msgstr "Klient OAuth2 odstraněn"
 
-msgid ""
-msgstr ""
+msgid "Failed to delete OAuth2 client"
+msgstr "Odstranění klienta OAuth2 se nezdařilo"
 
-msgid ""
-msgstr ""
+msgid "Settings updated"
+msgstr "nastavení aktualizováno"
 
-msgid ""
-msgstr ""
+msgid "General"
+msgstr "Všeobecné"
 
-msgid ""
-msgstr ""
+msgid "General settings"
+msgstr "Obecné nastavení"
 
-msgid ""
-msgstr ""
+msgid "Analytics"
+msgstr "Analytika"
 
-msgid ""
-msgstr ""
+msgid "Analytics settings"
+msgstr "Nastavení Analytiky"
 
-msgid ""
-msgstr ""
+msgid "Server"
+msgstr "Server"
 
-msgid ""
-msgstr ""
+msgid "Server settings"
+msgstr "Nastavení serveru"
 
-msgid ""
-msgstr ""
+msgid "Appearance"
+msgstr "Vzhled"
 
-msgid ""
-msgstr ""
+msgid "Appearance settings"
+msgstr "Nastavení vzhledu"
 
-msgid ""
-msgstr ""
+msgid "Email"
+msgstr "E-mail"
 
-msgid ""
-msgstr ""
+msgid "Email settings"
+msgstr "Nastavení e-mailu"
 
-msgid ""
-msgstr ""
+msgid "Access"
+msgstr "Přístup"
 
-msgid ""
-msgstr ""
+msgid "Access settings"
+msgstr "Nastavení přístupu"
 
-msgid ""
-msgstr ""
+msgid "Calendar"
+msgstr "Kalendář"
 
-msgid ""
-msgstr ""
+msgid "Calendar settings"
+msgstr "Nastavení kalendáře"
 
-msgid ""
-msgstr ""
+msgid "Data Import"
+msgstr "Import dat"
 
-msgid ""
-msgstr ""
+msgid "Data import settings"
+msgstr "Nastavení importu dat"
 
-msgid ""
-msgstr ""
+msgid "Synchronization"
+msgstr "Synchronizace"
 
-msgid ""
-msgstr ""
+msgid "Synchronization settings"
+msgstr "Nastavení synchronizace"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 Clients"
+msgstr "Klienti OAuth2"
 
-msgid ""
-msgstr ""
+msgid "This field is required"
+msgstr "Toto pole je povinné"
 
-msgid ""
-msgstr ""
+msgid "This field should be a URL"
+msgstr "Toto pole by mělo být URL"
 
-msgid ""
-msgstr ""
+msgid "This field should be a number"
+msgstr "Toto pole by mělo být číslo"
 
-msgid ""
-msgstr ""
+msgid "This field should be a positive number"
+msgstr "Toto pole by mělo být kladné číslo"
 
-msgid ""
-msgstr ""
+msgid "This field should be an email"
+msgstr "Toto pole by měl být e-mail"
 
 msgid ""
+"This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
+"Toto nastavení bude přepsáno aktuálním uživatelským nastavením: "
+"{{settingName}}"
 
-msgid ""
-msgstr ""
+msgid "This setting can be overridden by user settings"
+msgstr "Toto nastavení lze přepsat uživatelským nastavením"
 
-msgid ""
-msgstr ""
+msgid "No options"
+msgstr "Žádné možnosti"
 
-msgid ""
-msgstr ""
+msgid "No settings matched the search term"
+msgstr "Hledanému výrazu neodpovídá žádná nastavení"
 
-msgid ""
-msgstr ""
+msgid "Search results"
+msgstr "Výsledky vyhledávání"
 
-msgid ""
-msgstr ""
+msgid "Maximum number of analytics records"
+msgstr "Maximální počet analytických záznamů"
 
-msgid ""
-msgstr ""
+msgid "Unlimited"
+msgstr "Neomezeno"
 
-msgid ""
-msgstr ""
+msgid "Maximum number of SQL view records"
+msgstr "Maximální počet záznamů SQL pohledů"
 
-msgid ""
-msgstr ""
+msgid "Infrastructural indicators"
+msgstr "Indikátory infrastruktury"
 
-msgid ""
-msgstr ""
+msgid "Infrastructural data elements"
+msgstr "Infrastrukturní datové prvky"
 
-msgid ""
-msgstr ""
+msgid "Infrastructural period type"
+msgstr "Typ období infrastruktury"
 
-msgid ""
-msgstr ""
+msgid "Daily"
+msgstr "Denně"
 
-msgid ""
-msgstr ""
+msgid "Weekly"
+msgstr "Týdně"
 
-msgid ""
-msgstr ""
+msgid "Monthly"
+msgstr "Měsíčně"
 
-msgid ""
-msgstr ""
+msgid "Bi-monthly"
+msgstr "Dva měsíce"
 
-msgid ""
-msgstr ""
+msgid "Quarterly"
+msgstr "Čtvrtletně"
 
-msgid ""
-msgstr ""
+msgid "Six-monthly"
+msgstr "Šestiměsíční"
 
-msgid ""
-msgstr ""
+msgid "Six-monthly April"
+msgstr "Duben šest měsíců"
 
-msgid ""
-msgstr ""
+msgid "Yearly"
+msgstr "Ročně"
 
-msgid ""
-msgstr ""
+msgid "Financial-April"
+msgstr "Finanční - Duben"
 
-msgid ""
-msgstr ""
+msgid "Financial-July"
+msgstr "Finanční - Červenec"
 
-msgid ""
-msgstr ""
+msgid "Financial-Oct"
+msgstr "Finanční - Říjen"
 
-msgid ""
-msgstr ""
+msgid "Feedback recipients"
+msgstr "Příjemci zpětné vazby"
 
-msgid ""
-msgstr ""
+msgid "No message recipients"
+msgstr "Žádní příjemci zpráv"
 
-msgid ""
-msgstr ""
+msgid "Max offline organisation unit levels"
+msgstr "Maximální počet offline organizačních jednotek"
 
-msgid ""
-msgstr ""
+msgid "Data analysis std dev factor"
+msgstr "Faktor standardního vývoje datové analýzy"
 
-msgid ""
-msgstr ""
+msgid "Phone number area code"
+msgstr "Předčíslí telefonního čísla"
 
-msgid ""
-msgstr ""
+msgid "Enable multi-organisation unit forms"
+msgstr "Povolit formuláře jednotek s více organizacemi"
 
-msgid ""
-msgstr ""
+msgid "Acceptance required before approval"
+msgstr "Před schválením je vyžadován souhlas"
 
-msgid ""
+msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
+"Shromažďujte statistiky analytických objektů v zobrazeních ovládacích panelů"
 
-msgid ""
+msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
+"Zahrnout pasivní zobrazení ovládacího panelu do statistik analytiky využití"
 
-msgid ""
-msgstr ""
+msgid "Default relative period for analysis"
+msgstr "Výchozí relativní období pro analýzu"
 
-msgid ""
-msgstr ""
+msgid "This month"
+msgstr "Tento měsíc"
 
-msgid ""
-msgstr ""
+msgid "Last month"
+msgstr "Minulý měsíc"
 
-msgid ""
-msgstr ""
+msgid "This bi-month"
+msgstr "Tyto dva měsíce"
 
-msgid ""
-msgstr ""
+msgid "Last bi-month"
+msgstr "Poslední dva měsíce"
 
-msgid ""
-msgstr ""
+msgid "This quarter"
+msgstr "Toto čtvrtletí"
 
-msgid ""
-msgstr ""
+msgid "Last quarter"
+msgstr "Poslední čtvrtletí"
 
-msgid ""
-msgstr ""
+msgid "This six-month"
+msgstr "Těchto šest měsíců"
 
-msgid ""
-msgstr ""
+msgid "Last six-month"
+msgstr "Poslední půlrok"
 
-msgid ""
-msgstr ""
+msgid "Months this year"
+msgstr "Měsíce tohoto roku"
 
-msgid ""
-msgstr ""
+msgid "Quarters this year"
+msgstr "Čtvrtletí tohoto roku"
 
-msgid ""
-msgstr ""
+msgid "This year"
+msgstr "Tento rok"
 
-msgid ""
-msgstr ""
+msgid "Months last year"
+msgstr "Měsíců minulého roku"
 
-msgid ""
-msgstr ""
+msgid "Quarters last year"
+msgstr "Čtvrtletí v loňském roce"
 
-msgid ""
-msgstr ""
+msgid "Last year"
+msgstr "Poslední rok"
 
-msgid ""
-msgstr ""
+msgid "Last 5 years"
+msgstr "Posledních 5 let"
 
-msgid ""
-msgstr ""
+msgid "Last 12 months"
+msgstr "Posledních 12 měsíců"
 
-msgid ""
-msgstr ""
+msgid "Last 6 months"
+msgstr "Posledních 6 měsíců"
 
-msgid ""
-msgstr ""
+msgid "Last 3 months"
+msgstr "Poslední 3 měsíce"
 
-msgid ""
-msgstr ""
+msgid "Last 6 bi-months"
+msgstr "Posledních 6 dvou-měsíců"
 
-msgid ""
-msgstr ""
+msgid "Last 4 quarters"
+msgstr "Poslední 4 čtvrtletí "
 
-msgid ""
-msgstr ""
+msgid "Last 2 six-months"
+msgstr "Poslední 2 šestiměsíce"
 
-msgid ""
-msgstr ""
+msgid "This financial year"
+msgstr "Tento finanční rok"
 
-msgid ""
-msgstr ""
+msgid "Last financial year"
+msgstr "Poslední finanční rok"
 
-msgid ""
-msgstr ""
+msgid "Last 5 financial years"
+msgstr "Posledních 5 finančních roků"
 
-msgid ""
-msgstr ""
+msgid "This week"
+msgstr "Tento týden"
 
-msgid ""
-msgstr ""
+msgid "Last week"
+msgstr "Minulý týden"
 
-msgid ""
-msgstr ""
+msgid "Last 4 weeks"
+msgstr "Poslední 4 týdny"
 
-msgid ""
-msgstr ""
+msgid "Last 12 weeks"
+msgstr "Posledních 12 týdnů"
 
-msgid ""
-msgstr ""
+msgid "Last 52 weeks"
+msgstr "Posledních 52 týdnů"
 
-msgid ""
-msgstr ""
+msgid "Hide daily periods"
+msgstr "Skrýt denní období"
 
-msgid ""
-msgstr ""
+msgid "Hidden period types in analytics apps"
+msgstr "Skryté typy období v analytických aplikacích"
 
-msgid ""
-msgstr ""
+msgid "Hide weekly periods"
+msgstr "Skrýt týdenní období"
 
-msgid ""
-msgstr ""
+msgid "Hide monthly periods"
+msgstr "Skrýt měsíční období"
 
-msgid ""
-msgstr ""
+msgid "Hide bimonthly periods"
+msgstr "Skrýt dvouměsíční období"
 
-msgid ""
-msgstr ""
+msgid "Financial year relative period start month"
+msgstr "Počáteční měsíc relativního období finančního roku"
 
-msgid ""
-msgstr ""
+msgid "April"
+msgstr "Duben"
 
-msgid ""
-msgstr ""
+msgid "July"
+msgstr "Červenec"
 
-msgid ""
-msgstr ""
+msgid "October"
+msgstr "Říjen"
 
-msgid ""
-msgstr ""
+msgid "Cache strategy"
+msgstr "Strategie mezipaměti"
 
-msgid ""
-msgstr ""
+msgid "No cache"
+msgstr "Žádná mezipaměť"
 
-msgid ""
-msgstr ""
+msgid "Cache for 15 minutes"
+msgstr "Vyrovnávací paměť na 15 minut"
 
-msgid ""
-msgstr ""
+msgid "Cache for 30 minutes"
+msgstr "Vyrovnávací paměť po dobu 30 minut"
 
-msgid ""
-msgstr ""
+msgid "Cache for one hour"
+msgstr "Vyrovnávací paměť po dobu jedné hodiny"
 
-msgid ""
-msgstr ""
+msgid "Cache until 6AM tomorrow"
+msgstr "Uložit do mezipaměti do zítra 6:00 h"
 
-msgid ""
-msgstr ""
+msgid "Cache for two weeks"
+msgstr "Vyrovnávací paměť  po dobu dvou týdnů"
 
-msgid ""
-msgstr ""
+msgid "Cacheability"
+msgstr "Schopnost ukládání do mezipaměti"
 
-msgid ""
-msgstr ""
+msgid "Public"
+msgstr "Veřejné"
 
-msgid ""
-msgstr ""
+msgid "Private"
+msgstr "Soukromé"
 
-msgid ""
-msgstr ""
+msgid "Analytics cache mode"
+msgstr "Režim mezipaměti služby Analytiky"
 
-msgid ""
-msgstr ""
+msgid "Progressive"
+msgstr "Progresivní"
 
-msgid ""
-msgstr ""
+msgid "Fixed"
+msgstr "Pevné"
 
-msgid ""
-msgstr ""
+msgid "Max number of years to hide unapproved data in analytics"
+msgstr "Maximální počet let pro skrytí neschválených dat v analytice"
 
-msgid ""
-msgstr ""
+msgid "Never check approval"
+msgstr "Nikdy nekontrolovat schválení"
 
-msgid ""
-msgstr ""
+msgid "Check approval for all data"
+msgstr "Zkontrolujte schválení pro všechna data"
 
-msgid ""
-msgstr ""
+msgid "Current year only"
+msgstr "Pouze aktuální rok"
 
-msgid ""
-msgstr ""
+msgid "Last 2 years"
+msgstr "Poslední 2 roky"
 
-msgid ""
-msgstr ""
+msgid "Last 3 years"
+msgstr "Poslední 3 roky"
 
-msgid ""
-msgstr ""
+msgid "Last 4 years"
+msgstr "Poslední 4 roky"
 
-msgid ""
-msgstr ""
+msgid "Last 6 years"
+msgstr "Posledních 6 let"
 
-msgid ""
-msgstr ""
+msgid "Last 7 years"
+msgstr "Posledních 7 let"
 
-msgid ""
-msgstr ""
+msgid "Last 8 years"
+msgstr "Posledních 8 let"
 
-msgid ""
-msgstr ""
+msgid "Last 9 years"
+msgstr "Posledních 9 let"
 
-msgid ""
-msgstr ""
+msgid "Last 10 years"
+msgstr "Posledních 10 let"
 
-msgid ""
+msgid "Respect category option start and end date in analytics table export"
 msgstr ""
+"Při exportu analytické tabulky respektujte počáteční a koncové datum "
+"možnosti kategorie"
 
-msgid ""
-msgstr ""
+msgid "Put analytics in maintenance mode"
+msgstr "Přepnout analytiku do režimu údržby"
 
-msgid ""
-msgstr ""
+msgid "Caching factor"
+msgstr "Faktor ukládání do mezipaměti"
 
-msgid ""
-msgstr ""
+msgid "Number of database server CPUs"
+msgstr "Počet procesorů databázového serveru"
 
-msgid ""
-msgstr ""
+msgid "Automatic (detect based on web server)"
+msgstr "Automaticky (detekovat na základě webového serveru)"
 
-msgid ""
-msgstr ""
+msgid "System notifications email address"
+msgstr "E-mailová adresa systémových oznámení"
 
-msgid ""
-msgstr ""
+msgid "Google Analytics (Universal Analytics) key"
+msgstr "Klíč Google Analytics (Universal Analytics)"
 
-msgid ""
-msgstr ""
+msgid "Google Maps API key"
+msgstr "Klíč rozhraní Google Maps API"
 
-msgid ""
-msgstr ""
+msgid "Bing Maps API key"
+msgstr "Klíč API Bing Maps"
 
-msgid ""
-msgstr ""
+msgid "Application title"
+msgstr "Název aplikace"
 
-msgid ""
-msgstr ""
+msgid "Application introduction"
+msgstr "Představení aplikace"
 
-msgid ""
-msgstr ""
+msgid "Application notification"
+msgstr "Oznámení aplikace"
 
-msgid ""
-msgstr ""
+msgid "Application left-side footer"
+msgstr "Zápatí levé strany aplikace"
 
-msgid ""
-msgstr ""
+msgid "Application right-side footer"
+msgstr "Zápatí na pravé straně aplikace"
 
-msgid ""
-msgstr ""
+msgid "Style"
+msgstr "Styl"
 
-msgid ""
-msgstr ""
+msgid "Start page"
+msgstr "Úvodní stránka"
 
-msgid ""
-msgstr ""
+msgid "Help page link"
+msgstr "Odkaz na stránku nápovědy"
 
-msgid ""
-msgstr ""
+msgid "Flag"
+msgstr "Vlajka"
 
-msgid ""
-msgstr ""
+msgid "Interface language"
+msgstr "Jazyk rozhraní"
 
-msgid ""
-msgstr ""
+msgid "Database language"
+msgstr "Jazyk databáze"
 
-msgid ""
-msgstr ""
+msgid "Property to display in analysis modules"
+msgstr "Vlastnost k zobrazení v analytických modulech"
 
-msgid ""
-msgstr ""
+msgid "Short name"
+msgstr "Krátký název"
 
-msgid ""
-msgstr ""
+msgid "Default digit group separator to display in analysis modules"
+msgstr "Výchozí oddělovač skupin číslic pro zobrazení v analytických modulech"
 
-msgid ""
-msgstr ""
+msgid "Space"
+msgstr "Mezera"
 
-msgid ""
-msgstr ""
+msgid "Comma"
+msgstr "Čárka"
 
-msgid ""
-msgstr ""
+msgid "Require authority to add to view object lists"
+msgstr "Vyžadovat oprávnění k přidání k zobrazení seznamů objektů"
 
-msgid ""
-msgstr ""
+msgid "Custom login page logo"
+msgstr "Vlastní logo přihlašovací stránky"
 
-msgid ""
-msgstr ""
+msgid "Custom top menu logo"
+msgstr "Vlastní logo horní nabídky"
 
-msgid ""
+msgid "Allow users to switch dashboard favorite view type"
 msgstr ""
+"Umožnit uživatelům přepínat oblíbený typ zobrazení na ovládacím panelu"
 
-msgid ""
+msgid "Allow users to open dashboard favorite in relevant app"
 msgstr ""
+"Umožnit uživatelům otevřít oblíbeý ovládací panel v příslušné aplikaci"
 
-msgid ""
+msgid "Allow users to show dashboard favorite interpretations and details"
 msgstr ""
+"Umožnit uživatelům zobrazit na ovládacím panelu oblíbené interpretace a "
+"podrobnosti"
 
-msgid ""
+msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""
+"Umožněte uživatelům prohlížet položky ovládacího panelu na celé obrazovce"
 
-msgid ""
-msgstr ""
+msgid "Host name"
+msgstr "Název hostitele"
 
-msgid ""
-msgstr ""
+msgid "Port"
+msgstr "Port"
 
-msgid ""
-msgstr ""
+msgid "Username"
+msgstr "Uživatelské jméno"
 
-msgid ""
-msgstr ""
+msgid "TLS"
+msgstr "TLS"
 
-msgid ""
-msgstr ""
+msgid "Email sender"
+msgstr "Odesílateli e-mailu"
 
-msgid ""
-msgstr ""
+msgid "Send me a test email"
+msgstr "Zašlete mi zkušební e-mail"
 
-msgid ""
-msgstr ""
+msgid "Self registration account user role"
+msgstr "Uživatelská role účtu pro vlastní registraci"
 
-msgid ""
-msgstr ""
+msgid "Disable self registration"
+msgstr "Zakázat vlastní registraci"
 
-msgid ""
-msgstr ""
+msgid "Self registration account organisation unit"
+msgstr "Organizační jednotka pro vlastní registraci účtu"
 
-msgid ""
-msgstr ""
+msgid "Do not require recaptcha for self registration"
+msgstr "Pro vlastní registraci nevyžadujte recaptcha"
 
-msgid ""
-msgstr ""
+msgid "Enable user account recovery"
+msgstr "Povolit obnovení uživatelského účtu"
 
-msgid ""
+msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
+"Po několika neúspěšných pokusech o přihlášení dočasně uzamknout uživatelský "
+"účet"
 
-msgid ""
-msgstr ""
+msgid "Allow users to grant own user roles"
+msgstr "Povolit uživatelům přidělit vlastní uživatelské role"
 
-msgid ""
+msgid "Allow assigning object to related objects during add or update"
 msgstr ""
+"Během přidávání nebo aktualizace povolte přiřazení objektu k souvisejícím "
+"objektům"
 
-msgid ""
-msgstr ""
+msgid "Require user account password change"
+msgstr "Vyžadovat změnu hesla uživatelského účtu"
 
-msgid ""
-msgstr ""
+msgid "Never"
+msgstr "Nikdy"
 
-msgid ""
-msgstr ""
+msgid "3 months"
+msgstr "3 měsíce"
 
-msgid ""
-msgstr ""
+msgid "6 months"
+msgstr "6 měsíců"
 
-msgid ""
-msgstr ""
+msgid "12 months"
+msgstr "12 měsíců"
 
-msgid ""
-msgstr ""
+msgid "Enable password expiry alerts"
+msgstr "Povolit upozornění na vypršení platnosti hesla"
 
-msgid ""
-msgstr ""
+msgid "Minimum characters in password"
+msgstr "Minimální počet znaků v hesle"
 
-msgid ""
-msgstr ""
+msgid "CORS whitelist"
+msgstr "Seznam povolených CORS"
 
-msgid ""
-msgstr ""
+msgid "reCAPTCHA Site Key"
+msgstr "Klíč webu reCAPTCHA"
 
-msgid ""
-msgstr ""
+msgid "reCAPTCHA Secret Key"
+msgstr "tajný klíč reCAPTCHA"
 
-msgid ""
-msgstr ""
+msgid "Coptic"
+msgstr "Coptic"
 
-msgid ""
-msgstr ""
+msgid "Ethiopian"
+msgstr "Etiopský"
 
-msgid ""
-msgstr ""
+msgid "Gregorian"
+msgstr "gregoriánský"
 
-msgid ""
-msgstr ""
+msgid "Islamic"
+msgstr "islámský"
 
-msgid ""
-msgstr ""
+msgid "ISO 8601"
+msgstr "ISO 8601"
 
-msgid ""
-msgstr ""
+msgid "Julian"
+msgstr "Juliánský"
 
-msgid ""
-msgstr ""
+msgid "Nepali"
+msgstr "Nepali"
 
-msgid ""
-msgstr ""
+msgid "Thai"
+msgstr "Thai"
 
-msgid ""
-msgstr ""
+msgid "Persian"
+msgstr "Peršan"
 
-msgid ""
-msgstr ""
+msgid "Date format"
+msgstr "Formát data"
 
-msgid ""
-msgstr ""
+msgid "Require periods to match period type of data set"
+msgstr "Vyžadovat období, aby odpovídala typu období datové sady"
 
-msgid ""
-msgstr ""
+msgid "Require data elements to be part of data set"
+msgstr "Vyžadovat, aby datové prvky byly součástí datové sady"
 
-msgid ""
+msgid "Require category option combos to match category combo of data element"
 msgstr ""
+"Vyžadovat kombinace možností kategorie, aby odpovídala kombinaci kategorií "
+"datového prvku"
 
-msgid ""
-msgstr ""
+msgid "Require organisation units to match assignment of data set"
+msgstr "Vyžadovat, aby organizační jednotky odpovídaly přiřazení datové sady"
 
-msgid ""
+msgid "Require attribute option combos to match category combo of data set"
 msgstr ""
+"Vyžadovat kombinace atributů atributů, aby odpovídaly kombinaci kategorií "
+"datové sady"
 
-msgid ""
-msgstr ""
+msgid "Require category option combo to be specified"
+msgstr "Vyžadovat zadání kombinace možnosti kategorie"
 
-msgid ""
-msgstr ""
+msgid "Require attribute option combo to be specified"
+msgstr "Vyžadovat zadání kombinace možností atributů"
 
-msgid ""
-msgstr ""
+msgid "Remote server URL"
+msgstr "Adresa URL vzdáleného serveru"
 
-msgid ""
-msgstr ""
+msgid "Remote server username"
+msgstr "Uživatelské jméno vzdáleného serveru"
 
-msgid ""
-msgstr ""
+msgid "Remote server password"
+msgstr "Heslo vzdáleného serveru"

@@ -1,753 +1,775 @@
+# 
+# Translators:
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "POT-Creation-Date: 2021-03-16T11:10:22.254Z\n"
-"PO-Revision-Date: 2021-03-16T11:10:22.254Z\n"
+"PO-Revision-Date: 2021-03-18 19:32+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Language-Team: Pushto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ps\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid ""
+msgid "Failed to load: {{error}}"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "No flag"
+msgstr "بیرغ نشته"
 
-msgid ""
-msgstr ""
+msgid "Search settings"
+msgstr "د لټون تنظیمات"
 
-msgid ""
-msgstr ""
+msgid "Replace image"
+msgstr "انځور ته بدلون ورکړئ"
 
-msgid ""
-msgstr ""
+msgid "Preview image"
+msgstr "انځور ښکاره کړئ"
 
-msgid ""
+msgid "Preview of image"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Upload image"
+msgstr "انځور آپلوډ یا اضافه کړئ"
 
-msgid ""
-msgstr ""
+msgid "Cancel upload"
+msgstr "رد یې کړئ"
 
-msgid ""
+msgid "System default (fallback)"
 msgstr ""
 
-msgid ""
+msgid "Set the main field value before adding a translation"
 msgstr ""
 
-msgid ""
+msgid "Could not fetch localized settings"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Select language"
+msgstr "ژبه انتخاب کړی"
 
-msgid ""
+msgid "Version created"
 msgstr ""
 
-msgid ""
+msgid "Failed to create version"
 msgstr ""
 
-msgid ""
+msgid "Error fetching settings"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Create new version"
+msgstr "نوی ویرژن جوړ کړئ"
 
-msgid ""
+msgid "Best effort"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Atomic"
+msgstr "اټومیک"
 
-msgid ""
+msgid "Master version:"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "None"
+msgstr "هېڅ یو"
 
-msgid ""
-msgstr ""
+msgid "Last sync attempt"
+msgstr "د یو شان والي وروستۍ هڅه"
 
-msgid ""
-msgstr ""
+msgid "Failed"
+msgstr "ناکام شوي"
 
-msgid ""
-msgstr ""
+msgid "No versions exist"
+msgstr "هېڅ ډول نسخې شتون نه لري"
 
-msgid ""
-msgstr ""
+msgid "Enable Versioning for metadata sync"
+msgstr "د میټا ډاټا د یو شان والي په موخه نسخه فعاله کړئ"
 
-msgid ""
-msgstr ""
+msgid "Don't sync metadata if DHIS versions differ"
+msgstr "د DHIS نسخو د توپیر په صورت کې هېڅکله هم میټا ډاټا یو شان نه کړئ"
 
-msgid ""
-msgstr ""
+msgid "Metadata Versioning"
+msgstr "د میټا ډاټا نسخه"
 
-msgid ""
-msgstr ""
+msgid "This client ID is already taken"
+msgstr "د دغه مراجعه کاروونکي آيي ډي له وړاندې اخیستل شوې ده"
 
-msgid ""
-msgstr ""
+msgid "Name"
+msgstr "نوم"
 
-msgid ""
-msgstr ""
+msgid "Required"
+msgstr "اړین دي"
 
-msgid ""
-msgstr ""
+msgid "Client ID"
+msgstr "د مراجعه کوونکي ID"
 
-msgid ""
-msgstr ""
+msgid "Client Secret"
+msgstr "د مراجعه کوونکي راز"
 
-msgid ""
-msgstr ""
+msgid "Grant Types"
+msgstr "د ډولونو رکول"
 
-msgid ""
-msgstr ""
+msgid "Password"
+msgstr "پټنوم"
 
-msgid ""
-msgstr ""
+msgid "Refresh token"
+msgstr "د بیا تازه کولو نښه"
 
-msgid ""
-msgstr ""
+msgid "Authorization code"
+msgstr "د رسمي اجازې کوډ"
 
-msgid ""
-msgstr ""
+msgid "One URL per line"
+msgstr "په هره کرښه کې یو URL"
 
-msgid ""
-msgstr ""
+msgid "Redirect URIs"
+msgstr "د URIs بیاځلي رهنمايي کول"
 
-msgid ""
-msgstr ""
+msgid "This field should contain a list of URLs"
+msgstr "دا ساحه یا برخه باید د URLs یو لېسټ ولري"
 
-msgid ""
-msgstr ""
+msgid "Create new OAuth2 Client"
+msgstr "د مراجعه کوونکي نوی OAuth2 جوړ کړئ"
 
-msgid ""
-msgstr ""
+msgid "Edit OAuth2 Client"
+msgstr "د مراجعه کوونکي OAuth2 تصحیح کړئ"
 
-msgid ""
-msgstr ""
+msgid "Save"
+msgstr "ثبت یې کړئ [ ژباړه - ثبت کړئ ]"
 
-msgid ""
-msgstr ""
+msgid "Cancel"
+msgstr "رد یې کړئ [ ژباړه ـ ردول ]"
 
-msgid ""
-msgstr ""
+msgid "There are currently no OAuth2 clients registered"
+msgstr "اوسمهال د OAuth2 هېڅ مراجعین نه دي راجسټر شوي"
 
-msgid ""
-msgstr ""
+msgid "Edit"
+msgstr "درست یې کړئ"
 
-msgid ""
-msgstr ""
+msgid "Delete"
+msgstr "خذف یې کړئ"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 client saved"
+msgstr "د OAuth2 مراجعین ثبت شو"
 
-msgid ""
-msgstr ""
+msgid "Failed to save OAuth2 client"
+msgstr "د مراجعه کوونکي نوی OAuth2 ثبتول ناکامی سړه مخ شو"
 
-msgid ""
+msgid "Add OAuth2 client"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Yes"
+msgstr "هو"
 
-msgid ""
-msgstr ""
+msgid "No"
+msgstr "نه"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 client deleted"
+msgstr "د OAuth2 مراجعین حذف شو"
 
-msgid ""
+msgid "Failed to delete OAuth2 client"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Settings updated"
+msgstr "تنظیمات تجدید شول"
 
-msgid ""
-msgstr ""
+msgid "General"
+msgstr "عمومي"
 
-msgid ""
-msgstr ""
+msgid "General settings"
+msgstr "عمومي تنظیمات"
 
-msgid ""
-msgstr ""
+msgid "Analytics"
+msgstr "تحلیلي"
 
-msgid ""
-msgstr ""
+msgid "Analytics settings"
+msgstr "د Analytics ترتیبات"
 
-msgid ""
-msgstr ""
+msgid "Server"
+msgstr "سرور"
 
-msgid ""
-msgstr ""
+msgid "Server settings"
+msgstr "د سرور تنظیمات"
 
-msgid ""
-msgstr ""
+msgid "Appearance"
+msgstr "ظاهري ډول"
 
-msgid ""
-msgstr ""
+msgid "Appearance settings"
+msgstr "د ظاهرېدو تنظیمات."
 
-msgid ""
-msgstr ""
+msgid "Email"
+msgstr "ایمیل"
 
-msgid ""
-msgstr ""
+msgid "Email settings"
+msgstr "د برېښنالیک تنظیمات."
 
-msgid ""
-msgstr ""
+msgid "Access"
+msgstr "لاس رسی"
 
-msgid ""
-msgstr ""
+msgid "Access settings"
+msgstr "د لاسرسي تنظیمات"
 
-msgid ""
-msgstr ""
+msgid "Calendar"
+msgstr "کلیز"
 
-msgid ""
-msgstr ""
+msgid "Calendar settings"
+msgstr "د کلیز تنظیمات"
 
-msgid ""
-msgstr ""
+msgid "Data Import"
+msgstr "ډاټا یا مالومات ولېږدوئ"
 
-msgid ""
-msgstr ""
+msgid "Data import settings"
+msgstr "د برېښنالیک ترتیبات"
 
-msgid ""
-msgstr ""
+msgid "Synchronization"
+msgstr "هم مهاله کول"
 
-msgid ""
-msgstr ""
+msgid "Synchronization settings"
+msgstr "په هم مهال وخت کې د پېښو د همغږۍ تنظیمات"
 
-msgid ""
-msgstr ""
+msgid "OAuth2 Clients"
+msgstr "د OAuth2 مراجعین"
 
-msgid ""
-msgstr ""
+msgid "This field is required"
+msgstr "دا ساحه اړینه ده"
 
-msgid ""
+msgid "This field should be a URL"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "This field should be a number"
+msgstr "دا ساحه یا برخه باید یوه شمېره وي"
 
-msgid ""
-msgstr ""
+msgid "This field should be a positive number"
+msgstr "دا ساحه یا برخه باید یوه مثبته شمېره وي"
 
-msgid ""
+msgid "This field should be an email"
 msgstr ""
 
 msgid ""
+"This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "This setting can be overridden by user settings"
+msgstr "دغه تنظیم د کاروونکي د تنظیماتو په وسیله نوي کېدای شي"
 
-msgid ""
+msgid "No options"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "No settings matched the search term"
+msgstr "د لټون د مطلب سره هېڅ ډول تنظیمات مطابقت نه لري"
 
-msgid ""
-msgstr ""
+msgid "Search results"
+msgstr "پایلې ولټوئ"
 
-msgid ""
-msgstr ""
+msgid "Maximum number of analytics records"
+msgstr "د تحلیلي سوابقو یا ریکارډونو نهايي شمېر"
 
-msgid ""
-msgstr ""
+msgid "Unlimited"
+msgstr "غېرې محدود دی"
 
-msgid ""
+msgid "Maximum number of SQL view records"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Infrastructural indicators"
+msgstr "د زېربنا شاخصونه"
 
-msgid ""
-msgstr ""
+msgid "Infrastructural data elements"
+msgstr "د زېربنايي مالوماتو (ډاټا) برخې"
 
-msgid ""
-msgstr ""
+msgid "Infrastructural period type"
+msgstr "د زېربنايي مودې ډول"
 
-msgid ""
-msgstr ""
+msgid "Daily"
+msgstr "ورځني [ د مودې ډول ]"
 
-msgid ""
-msgstr ""
+msgid "Weekly"
+msgstr "اوونیز"
 
-msgid ""
-msgstr ""
+msgid "Monthly"
+msgstr "میاشتنۍ"
 
-msgid ""
-msgstr ""
+msgid "Bi-monthly"
+msgstr "دوه میاشتنۍ"
 
-msgid ""
-msgstr ""
+msgid "Quarterly"
+msgstr "درې میاشتنۍ"
 
-msgid ""
-msgstr ""
+msgid "Six-monthly"
+msgstr "شپږ- میاشتنۍ"
 
-msgid ""
-msgstr ""
+msgid "Six-monthly April"
+msgstr "شپږ - د اپرېل میاشتنۍ"
 
-msgid ""
-msgstr ""
+msgid "Yearly"
+msgstr "کلنۍ"
 
-msgid ""
-msgstr ""
+msgid "Financial-April"
+msgstr "مالي - اپرېل"
 
-msgid ""
-msgstr ""
+msgid "Financial-July"
+msgstr "مالي - جولای"
 
-msgid ""
-msgstr ""
+msgid "Financial-Oct"
+msgstr "مالي - اکتوبر"
 
-msgid ""
-msgstr ""
+msgid "Feedback recipients"
+msgstr "د نظر ترلاسه کوونکي"
 
-msgid ""
-msgstr ""
+msgid "No message recipients"
+msgstr "د پېغام هېڅ ترلاسه کوونکي نه لري"
 
-msgid ""
-msgstr ""
+msgid "Max offline organisation unit levels"
+msgstr "د ماکس د لیکې څخه د باندې د سازمان د واحد سطحې"
 
-msgid ""
-msgstr ""
+msgid "Data analysis std dev factor"
+msgstr "مالومات (ډاټا) د std dev عامل تحلیلوي"
 
-msgid ""
-msgstr ""
+msgid "Phone number area code"
+msgstr "د ساحوي کوډ سره ګرځنده ټلیفون شمېره"
 
-msgid ""
-msgstr ""
+msgid "Enable multi-organisation unit forms"
+msgstr "د ګڼو سازمانونو د واحد ډولونو ته توان ورکوي"
 
-msgid ""
-msgstr ""
+msgid "Acceptance required before approval"
+msgstr "د منظور نه وړاندې باید ومنل شي"
 
-msgid ""
+msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
 
-msgid ""
+msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Default relative period for analysis"
+msgstr "د تحلیل اړونده اصلي موده"
 
-msgid ""
-msgstr ""
+msgid "This month"
+msgstr "ماه هذا"
 
-msgid ""
-msgstr ""
+msgid "Last month"
+msgstr "تېره میاشت"
 
-msgid ""
-msgstr ""
+msgid "This bi-month"
+msgstr "این دوماهه"
 
-msgid ""
-msgstr ""
+msgid "Last bi-month"
+msgstr "تېرې دوه میاشتې"
 
-msgid ""
-msgstr ""
+msgid "This quarter"
+msgstr "ربع هذا"
 
-msgid ""
-msgstr ""
+msgid "Last quarter"
+msgstr "تېره ربعه"
 
-msgid ""
-msgstr ""
+msgid "This six-month"
+msgstr "شش ماه هذا"
 
-msgid ""
-msgstr ""
+msgid "Last six-month"
+msgstr "تېرې شپږ میاشتې [ تېرې ـ شپږ ـ میاشتې ]"
 
-msgid ""
-msgstr ""
+msgid "Months this year"
+msgstr "د روان کال میاشتې"
 
-msgid ""
-msgstr ""
+msgid "Quarters this year"
+msgstr "د سږ کال ربعې"
 
-msgid ""
-msgstr ""
+msgid "This year"
+msgstr "روان کال"
 
-msgid ""
-msgstr ""
+msgid "Months last year"
+msgstr "د تېر کال میاشتې"
 
-msgid ""
-msgstr ""
+msgid "Quarters last year"
+msgstr "د تېر کال ربعې"
 
-msgid ""
-msgstr ""
+msgid "Last year"
+msgstr "تېر کال"
 
-msgid ""
-msgstr ""
+msgid "Last 5 years"
+msgstr "تېر 5 کلونه"
 
-msgid ""
-msgstr ""
+msgid "Last 12 months"
+msgstr "تېرې 12 میاشتې"
 
-msgid ""
-msgstr ""
+msgid "Last 6 months"
+msgstr "تېرې شپږ میاشتې"
 
-msgid ""
-msgstr ""
+msgid "Last 3 months"
+msgstr "تېرې 3 میاشتې"
 
-msgid ""
-msgstr ""
+msgid "Last 6 bi-months"
+msgstr "په تېرو شپږو میاشتو کې ډوه ځلې"
 
-msgid ""
-msgstr ""
+msgid "Last 4 quarters"
+msgstr "تېرې 4ربعې"
 
-msgid ""
-msgstr ""
+msgid "Last 2 six-months"
+msgstr "تېرې دوه شپږ میاشتې"
 
-msgid ""
-msgstr ""
+msgid "This financial year"
+msgstr "سږنۍ مالي کال"
 
-msgid ""
-msgstr ""
+msgid "Last financial year"
+msgstr "تېر مالي کال"
 
-msgid ""
-msgstr ""
+msgid "Last 5 financial years"
+msgstr "تېر 5 مالي کلونه"
 
-msgid ""
-msgstr ""
+msgid "This week"
+msgstr "هفته هذا"
 
-msgid ""
-msgstr ""
+msgid "Last week"
+msgstr "تېره اونۍ"
 
-msgid ""
-msgstr ""
+msgid "Last 4 weeks"
+msgstr "تېرې 4 اونۍ"
 
-msgid ""
-msgstr ""
+msgid "Last 12 weeks"
+msgstr "تېرو 12 اونۍ"
 
-msgid ""
-msgstr ""
+msgid "Last 52 weeks"
+msgstr "تېرې دوه پنځوس اونۍ"
 
-msgid ""
+msgid "Hide daily periods"
 msgstr ""
 
-msgid ""
+msgid "Hidden period types in analytics apps"
 msgstr ""
 
-msgid ""
+msgid "Hide weekly periods"
 msgstr ""
 
-msgid ""
+msgid "Hide monthly periods"
 msgstr ""
 
-msgid ""
+msgid "Hide bimonthly periods"
 msgstr ""
 
-msgid ""
+msgid "Financial year relative period start month"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "April"
+msgstr "اپرېل"
 
-msgid ""
-msgstr ""
+msgid "July"
+msgstr "جولای"
 
-msgid ""
-msgstr ""
+msgid "October"
+msgstr "اکتوبر"
 
-msgid ""
-msgstr ""
+msgid "Cache strategy"
+msgstr "د ساتنې ستراتیژي"
 
-msgid ""
-msgstr ""
+msgid "No cache"
+msgstr "د ساتنې هېڅ ځای نه لري"
 
-msgid ""
-msgstr ""
+msgid "Cache for 15 minutes"
+msgstr "تر 15 دقیقه پورې یې وساتئ"
 
-msgid ""
-msgstr ""
+msgid "Cache for 30 minutes"
+msgstr "تر 30 دقیقع پورې یې وساتئ"
 
-msgid ""
-msgstr ""
+msgid "Cache for one hour"
+msgstr "تر سوه ساعت پورې یې وساتئ"
 
-msgid ""
+msgid "Cache until 6AM tomorrow"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Cache for two weeks"
+msgstr "تر دوو اونیو پورې یې وساتئ"
 
-msgid ""
-msgstr ""
+msgid "Cacheability"
+msgstr "د ساتلو ستراتیژي"
 
-msgid ""
-msgstr ""
+msgid "Public"
+msgstr "عمومي"
 
-msgid ""
-msgstr ""
+msgid "Private"
+msgstr "خصوصي"
 
-msgid ""
+msgid "Analytics cache mode"
 msgstr ""
 
-msgid ""
+msgid "Progressive"
 msgstr ""
 
-msgid ""
+msgid "Fixed"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Max number of years to hide unapproved data in analytics"
+msgstr "د تحلیل په ترڅ کې نامنظور شوي مالومات (ډاټا) پټ کړئ"
 
-msgid ""
-msgstr ""
+msgid "Never check approval"
+msgstr "منظوري هېڅ کله هم مه چېک کوئ"
 
-msgid ""
-msgstr ""
+msgid "Check approval for all data"
+msgstr "د ټولو مالوماتو یا ډاټا لپاره منظوري چېک کړئ"
 
-msgid ""
-msgstr ""
+msgid "Current year only"
+msgstr "یوازې روان کال"
 
-msgid ""
-msgstr ""
+msgid "Last 2 years"
+msgstr "وروستي دوه کلونه"
 
-msgid ""
-msgstr ""
+msgid "Last 3 years"
+msgstr "وروستي درې کلونه"
 
-msgid ""
-msgstr ""
+msgid "Last 4 years"
+msgstr "وروستي څلور کلونه"
 
-msgid ""
-msgstr ""
+msgid "Last 6 years"
+msgstr "وروستي شپږ کلونه"
 
-msgid ""
-msgstr ""
+msgid "Last 7 years"
+msgstr "وروستي اوه کلونه"
 
-msgid ""
-msgstr ""
+msgid "Last 8 years"
+msgstr "وروستي اته کلونه"
 
-msgid ""
-msgstr ""
+msgid "Last 9 years"
+msgstr "وروستي نه (۹) کلونه"
 
-msgid ""
-msgstr ""
+msgid "Last 10 years"
+msgstr "لس کلونه"
 
-msgid ""
+msgid "Respect category option start and end date in analytics table export"
 msgstr ""
+"د لېږد په تحلیلي جدول کې د پیل او پای نېټې د کټګورۍ انتخاب په پام کې ونیسئ"
 
-msgid ""
-msgstr ""
+msgid "Put analytics in maintenance mode"
+msgstr "څېړنې یا تحلیلونه د څارنې په بڼه ځای پر ځای کړئ"
 
-msgid ""
+msgid "Caching factor"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Number of database server CPUs"
+msgstr "د CPUs د ډاټابیس د سرور نمبر"
 
-msgid ""
-msgstr ""
+msgid "Automatic (detect based on web server)"
+msgstr "اتومات (د وېب پاڼې د سرور پر اساس کشفول)"
 
-msgid ""
-msgstr ""
+msgid "System notifications email address"
+msgstr "د سیسټم د خپرتیاوو د برېښنالیک ادرس"
 
-msgid ""
-msgstr ""
+msgid "Google Analytics (Universal Analytics) key"
+msgstr "د ګوګل د څېړنو (عمومي څېړنو) کلي"
 
-msgid ""
-msgstr ""
+msgid "Google Maps API key"
+msgstr "د ګوګل د نخشو د API کلي"
 
-msgid ""
+msgid "Bing Maps API key"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Application title"
+msgstr "د اپلیکېشن نوم"
 
-msgid ""
-msgstr ""
+msgid "Application introduction"
+msgstr "د اپلیکېشن پېژندګلوي"
 
-msgid ""
-msgstr ""
+msgid "Application notification"
+msgstr "د سیسټم خبرتیا"
 
-msgid ""
-msgstr ""
+msgid "Application left-side footer"
+msgstr "د کیڼ لوري د لاندینۍ برخې اپلیکېشن"
 
-msgid ""
-msgstr ""
+msgid "Application right-side footer"
+msgstr "د ښي لوري د لاندینۍ برخې اپلیکېشن"
 
-msgid ""
-msgstr ""
+msgid "Style"
+msgstr "طرز یا ډول"
 
-msgid ""
-msgstr ""
+msgid "Start page"
+msgstr "پاڼه پیل کړئ"
 
-msgid ""
-msgstr ""
+msgid "Help page link"
+msgstr "د مرستندویه پاڼې لینک"
 
-msgid ""
-msgstr ""
+msgid "Flag"
+msgstr "بیرغ"
 
-msgid ""
-msgstr ""
+msgid "Interface language"
+msgstr "د انټرنېټ ژبه"
 
-msgid ""
-msgstr ""
+msgid "Database language"
+msgstr "د ډاټابیس ژبه"
 
-msgid ""
-msgstr ""
+msgid "Property to display in analysis modules"
+msgstr "هغه مالکیت یا ځانګړتیا چې په څېړنیز لارښود یا ماډیولونو کې ښودل کیږي"
 
-msgid ""
-msgstr ""
+msgid "Short name"
+msgstr "لنډ نوم"
 
-msgid ""
-msgstr ""
+msgid "Default digit group separator to display in analysis modules"
+msgstr "د تحلیل په نمونو کې د ښکاره کېدو په موخه د اصلي عدد د ګروپ بېلوونکی"
 
-msgid ""
-msgstr ""
+msgid "Space"
+msgstr "فاصله یا واټن"
 
-msgid ""
-msgstr ""
+msgid "Comma"
+msgstr "کامه (،)"
 
-msgid ""
-msgstr ""
+msgid "Require authority to add to view object lists"
+msgstr "باید د اقلامو د لېسټ د کتلو او اضافه کولو واک ولري"
 
-msgid ""
-msgstr ""
+msgid "Custom login page logo"
+msgstr "د سیسټم پاڼې ته د ننوتو فرمایشي لوګو"
 
-msgid ""
-msgstr ""
+msgid "Custom top menu logo"
+msgstr "د مینو د سر فرمایشي لوګو"
 
-msgid ""
+msgid "Allow users to switch dashboard favorite view type"
 msgstr ""
 
-msgid ""
+msgid "Allow users to open dashboard favorite in relevant app"
 msgstr ""
 
-msgid ""
+msgid "Allow users to show dashboard favorite interpretations and details"
 msgstr ""
 
-msgid ""
+msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Host name"
+msgstr "د کوربه نوم"
 
-msgid ""
-msgstr ""
+msgid "Port"
+msgstr "د ننوتو لار"
 
-msgid ""
-msgstr ""
+msgid "Username"
+msgstr "کارېدونکی نوم"
 
-msgid ""
-msgstr ""
+msgid "TLS"
+msgstr "TLS"
 
-msgid ""
-msgstr ""
+msgid "Email sender"
+msgstr "د برېښنالیک لېږونکی"
 
-msgid ""
-msgstr ""
+msgid "Send me a test email"
+msgstr "ما ته یو ازمایښتي برېښنالیک راولېږئ"
 
-msgid ""
-msgstr ""
+msgid "Self registration account user role"
+msgstr "په خپل سر د حساب په ثبتولو کې د کاروونکي رول"
 
-msgid ""
-msgstr ""
+msgid "Disable self registration"
+msgstr "د خودی راجستړ غیر فعال"
 
-msgid ""
-msgstr ""
+msgid "Self registration account organisation unit"
+msgstr "په خپل سر د حساب د ثبت لپاره د سازمان واحد"
 
-msgid ""
-msgstr ""
+msgid "Do not require recaptcha for self registration"
+msgstr "په خپل سر ثبت لپاره recaptcha ته اړتیا نه لري"
 
-msgid ""
-msgstr ""
+msgid "Enable user account recovery"
+msgstr "د حساب کاروونکي ته د بېرته ترلاسه کولو توان ورکوي"
 
-msgid ""
+msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
+"سیسټم ته د ننوتلو په موخه د څو پر له پسې هڅو څخه وروسته د لنډې مودې لپاره د "
+"کاروونکي حساب بند کړئ"
 
-msgid ""
-msgstr ""
+msgid "Allow users to grant own user roles"
+msgstr "کاروونکو ته اجازه ورکړئ چې د خپل کاروونکي دندې ورکړي"
 
-msgid ""
+msgid "Allow assigning object to related objects during add or update"
 msgstr ""
+"د اضافه کولو یا تجدید پرمهال اړندو اقلامو سره د یوې برخې د سپارلو اجازه "
+"ورکوي"
 
-msgid ""
-msgstr ""
+msgid "Require user account password change"
+msgstr "د کاروونکي حساب پټ نوم بدلولو ته اړتیا لري"
 
-msgid ""
-msgstr ""
+msgid "Never"
+msgstr "هېڅکله نه"
 
-msgid ""
-msgstr ""
+msgid "3 months"
+msgstr "درې میاشتې"
 
-msgid ""
-msgstr ""
+msgid "6 months"
+msgstr "شپږ میاشتې"
 
-msgid ""
-msgstr ""
+msgid "12 months"
+msgstr "دولس میاشتې"
 
-msgid ""
-msgstr ""
+msgid "Enable password expiry alerts"
+msgstr "Enable password expiry alerts"
 
-msgid ""
-msgstr ""
+msgid "Minimum characters in password"
+msgstr "په پټ نوم کې تر ټولو کم حروف"
 
-msgid ""
-msgstr ""
+msgid "CORS whitelist"
+msgstr "د CORS سپین لېسټ"
 
-msgid ""
+msgid "reCAPTCHA Site Key"
 msgstr ""
 
-msgid ""
+msgid "reCAPTCHA Secret Key"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Coptic"
+msgstr "کوفټیک کلیز"
 
-msgid ""
-msgstr ""
+msgid "Ethiopian"
+msgstr "ایتوفیايي کلیز"
 
-msgid ""
-msgstr ""
+msgid "Gregorian"
+msgstr "ګریګورین کلیز"
 
-msgid ""
-msgstr ""
+msgid "Islamic"
+msgstr "اسلامي کلیز"
 
-msgid ""
-msgstr ""
+msgid "ISO 8601"
+msgstr "د ISO ۸۶۰۱ کلیز"
 
-msgid ""
-msgstr ""
+msgid "Julian"
+msgstr "رومي کلیز"
 
-msgid ""
-msgstr ""
+msgid "Nepali"
+msgstr "نېپالي کلیز"
 
-msgid ""
-msgstr ""
+msgid "Thai"
+msgstr "تایلنډي کلیز"
 
-msgid ""
+msgid "Persian"
 msgstr ""
 
-msgid ""
-msgstr ""
+msgid "Date format"
+msgstr "د نېټې فارمټ"
 
-msgid ""
+msgid "Require periods to match period type of data set"
 msgstr ""
+"د ډاټا یا مالوماتو د ټولګې د مودې د ډول سره د مطابقت په موخه مودو ته اړتیا "
+"لیدل کیږي"
 
-msgid ""
+msgid "Require data elements to be part of data set"
 msgstr ""
 
-msgid ""
+msgid "Require category option combos to match category combo of data element"
 msgstr ""
+"د ډاټا یا مالوماتو د برخې د ترکیبي کټګورۍ سره د مطابقت په موخه د کټګورۍ د "
+"ترکیب انتخاب لازم دی."
 
-msgid ""
+msgid "Require organisation units to match assignment of data set"
 msgstr ""
+"د ډاټا یا مالوماتو د ټولګې سره د مطابقت په منظور د سازمان واحدونو ته اړتیا "
+"لیدل کیږي."
 
-msgid ""
+msgid "Require attribute option combos to match category combo of data set"
 msgstr ""
+"د ډاټا یا مالوماتو د ټولګې د کټګورۍ د ترکیب سره د مطابقت لپاره د ترکیبي "
+"ځانګړتیا اړینه ده."
 
-msgid ""
-msgstr ""
+msgid "Require category option combo to be specified"
+msgstr "د کټګورۍ د ترکیب انتخاب باید مشخص کړای شي"
 
-msgid ""
-msgstr ""
+msgid "Require attribute option combo to be specified"
+msgstr "د اړتیا وړ ځانګړتیا د ترکیب انتخاب باید مشخص کړل شي"
 
-msgid ""
-msgstr ""
+msgid "Remote server URL"
+msgstr "د URL د لرې واټن سرور"
 
-msgid ""
-msgstr ""
+msgid "Remote server username"
+msgstr "د لرې واټن د سرور کاروونکی نوم"
 
-msgid ""
-msgstr ""
+msgid "Remote server password"
+msgstr "د لرې واټن د سرور پټ نوم"

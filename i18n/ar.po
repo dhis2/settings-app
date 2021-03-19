@@ -1,0 +1,763 @@
+# 
+# Translators:
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
+# Hamza Assada <7amza.it@gmail.com>, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2021-03-16T11:10:22.254Z\n"
+"PO-Revision-Date: 2021-03-18 19:32+0000\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2021\n"
+"Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+msgid "Failed to load: {{error}}"
+msgstr ""
+
+msgid "No flag"
+msgstr "لا يوجد علم"
+
+msgid "Search settings"
+msgstr "إعدادات البحث"
+
+msgid "Replace image"
+msgstr "استبدال الصورة"
+
+msgid "Preview image"
+msgstr "معاينة الصور"
+
+msgid "Preview of image"
+msgstr ""
+
+msgid "Upload image"
+msgstr "تحميل الصورة"
+
+msgid "Cancel upload"
+msgstr "إلغاء التحميل"
+
+msgid "System default (fallback)"
+msgstr "النظام الافتراضي (تراجع)"
+
+msgid "Set the main field value before adding a translation"
+msgstr "قم بتعيين قيمة الحقل الرئيسي قبل إضافة الترجمة"
+
+msgid "Could not fetch localized settings"
+msgstr "تعذر جلب الإعدادات المحلية"
+
+msgid "Select language"
+msgstr "اختر اللغة"
+
+msgid "Version created"
+msgstr ""
+
+msgid "Failed to create version"
+msgstr ""
+
+msgid "Error fetching settings"
+msgstr ""
+
+msgid "Create new version"
+msgstr "إنشاء إصدار جديد"
+
+msgid "Best effort"
+msgstr ""
+
+msgid "Atomic"
+msgstr "الذري"
+
+msgid "Master version:"
+msgstr ""
+
+msgid "None"
+msgstr "لا شيء"
+
+msgid "Last sync attempt"
+msgstr "آخر محاولة للمزامنة"
+
+msgid "Failed"
+msgstr "فشل"
+
+msgid "No versions exist"
+msgstr "لا توجد إصدارات"
+
+msgid "Enable Versioning for metadata sync"
+msgstr "تمكين الإصدار لمزامنة البيانات الوصفية"
+
+msgid "Don't sync metadata if DHIS versions differ"
+msgstr "لا تقم بمزامنة البيانات الوصفية إذا كانت إصدارات DHIS مختلفة"
+
+msgid "Metadata Versioning"
+msgstr "إصدار البيانات الوصفية"
+
+msgid "This client ID is already taken"
+msgstr "تم أخذ رقم تعريف العميل هذا بالفعل"
+
+msgid "Name"
+msgstr "الإسم"
+
+msgid "Required"
+msgstr "مطلوب"
+
+msgid "Client ID"
+msgstr "معرف العميل"
+
+msgid "Client Secret"
+msgstr "كلمة سر العميل"
+
+msgid "Grant Types"
+msgstr "أنواع المنح"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "Refresh token"
+msgstr "تحديث الرمز"
+
+msgid "Authorization code"
+msgstr "رمز المصادقة"
+
+msgid "One URL per line"
+msgstr "عنوان URL واحد لكل صف"
+
+msgid "Redirect URIs"
+msgstr "إعادة توجيه URIs"
+
+msgid "This field should contain a list of URLs"
+msgstr "يجب أن يحتوي هذا الحقل على قائمة بعناوين URLs"
+
+msgid "Create new OAuth2 Client"
+msgstr "إنشاء عميل OAuth2 جديد"
+
+msgid "Edit OAuth2 Client"
+msgstr "تعديل عميل OAuth2"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr "لا يوجد حاليا عملاء OAuth2 مسجلين"
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "OAuth2 client saved"
+msgstr "تم حفظ عميل OAuth2"
+
+msgid "Failed to save OAuth2 client"
+msgstr "فشل في حفظ العميل OAuth2"
+
+msgid "Add OAuth2 client"
+msgstr ""
+
+msgid "Yes"
+msgstr "نعم"
+
+msgid "No"
+msgstr "لا"
+
+msgid "OAuth2 client deleted"
+msgstr "تم حذف عميل OAuth2"
+
+msgid "Failed to delete OAuth2 client"
+msgstr ""
+
+msgid "Settings updated"
+msgstr "تم تحديث الإعدادات"
+
+msgid "General"
+msgstr "عام"
+
+msgid "General settings"
+msgstr "الإعدادات العامة"
+
+msgid "Analytics"
+msgstr "التحليلات"
+
+msgid "Analytics settings"
+msgstr "إعدادات التحليلات"
+
+msgid "Server"
+msgstr "الخادم"
+
+msgid "Server settings"
+msgstr "إعدادات الخادم"
+
+msgid "Appearance"
+msgstr "المظهر"
+
+msgid "Appearance settings"
+msgstr "إعدادات المظهر"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Email settings"
+msgstr "إعدادات البريد الإلكتروني"
+
+msgid "Access"
+msgstr "الوصول"
+
+msgid "Access settings"
+msgstr "إعدادات الوصول"
+
+msgid "Calendar"
+msgstr "التقويم"
+
+msgid "Calendar settings"
+msgstr "إعدادات التقويم"
+
+msgid "Data Import"
+msgstr "استيراد البيانات"
+
+msgid "Data import settings"
+msgstr "إعدادات استيراد البيانات"
+
+msgid "Synchronization"
+msgstr "مزامنة"
+
+msgid "Synchronization settings"
+msgstr "إعدادات المزامنة"
+
+msgid "OAuth2 Clients"
+msgstr "عملاء OAuth2"
+
+msgid "This field is required"
+msgstr "هذا الحقل مطلوب"
+
+msgid "This field should be a URL"
+msgstr ""
+
+msgid "This field should be a number"
+msgstr "يجب أن يكون هذا الحقل عدداً"
+
+msgid "This field should be a positive number"
+msgstr "يجب أن يكون هذا الحقل عدداً موجباً"
+
+msgid "This field should be an email"
+msgstr ""
+
+msgid ""
+"This setting will be overridden by the current user setting: {{settingName}}"
+msgstr ""
+
+msgid "This setting can be overridden by user settings"
+msgstr "يمكن تجاوز هذا الإعداد بواسطة إعدادات المستخدم"
+
+msgid "No options"
+msgstr ""
+
+msgid "No settings matched the search term"
+msgstr "لم تتطابق أي إعدادات مع عبارة البحث"
+
+msgid "Search results"
+msgstr "نتائج البحث"
+
+msgid "Maximum number of analytics records"
+msgstr "الحد الأعلى لعدد سجلات التحليلات"
+
+msgid "Unlimited"
+msgstr "غير محدود"
+
+msgid "Maximum number of SQL view records"
+msgstr "الحد الأقصى لعدد سجلات الـ  SQL view"
+
+msgid "Infrastructural indicators"
+msgstr "مؤشرات البنية التحتية"
+
+msgid "Infrastructural data elements"
+msgstr "عناصر بيانات البنية التحتية"
+
+msgid "Infrastructural period type"
+msgstr "نوع فترة البنية التحتية"
+
+msgid "Daily"
+msgstr "يومي"
+
+msgid "Weekly"
+msgstr "أسبوعي"
+
+msgid "Monthly"
+msgstr "شهري"
+
+msgid "Bi-monthly"
+msgstr "كل شهرين"
+
+msgid "Quarterly"
+msgstr "ربعي"
+
+msgid "Six-monthly"
+msgstr "كل ستة-أشهر"
+
+msgid "Six-monthly April"
+msgstr "نصف سنوي، كل ستة أشهر، ابريل"
+
+msgid "Yearly"
+msgstr "سنوي"
+
+msgid "Financial-April"
+msgstr "الأمور المالية-نيسان"
+
+msgid "Financial-July"
+msgstr "الأمور المالية-تموز"
+
+msgid "Financial-Oct"
+msgstr "الأمور المالية-تشرين الأول"
+
+msgid "Feedback recipients"
+msgstr "مستلمو التغذية الراجعة"
+
+msgid "No message recipients"
+msgstr "لا يوجد مستلمون للرسالة"
+
+msgid "Max offline organisation unit levels"
+msgstr "الحد الأعلى لمستويات الوحدة التنظيمية غير المتصلة"
+
+msgid "Data analysis std dev factor"
+msgstr "تحليل بيانات عامل الانحراف المعياري"
+
+msgid "Phone number area code"
+msgstr "رمز منطقة رقم الهاتف"
+
+msgid "Enable multi-organisation unit forms"
+msgstr "تمكين نماذج وحدات تنظيمية متعددة"
+
+msgid "Acceptance required before approval"
+msgstr "القبول مطلوب قبل الموافقة"
+
+msgid "Gather analytical object statistics in dashboard views"
+msgstr ""
+
+msgid "Include passive dashboard views in usage analytics statistics"
+msgstr ""
+
+msgid "Default relative period for analysis"
+msgstr "الفترة الزمنية النسبية الافتراضية للتحليل"
+
+msgid "This month"
+msgstr "الشهر الحالي"
+
+msgid "Last month"
+msgstr "الشهر الماضي"
+
+msgid "This bi-month"
+msgstr "الشهران المزدوجان الحاليان"
+
+msgid "Last bi-month"
+msgstr "آخر شهرين مزدوجين"
+
+msgid "This quarter"
+msgstr "ربع السنة الحالي"
+
+msgid "Last quarter"
+msgstr "ربع السنة الماضي"
+
+msgid "This six-month"
+msgstr "الستة أشهر الحالية"
+
+msgid "Last six-month"
+msgstr "آخر ستة-أشهر"
+
+msgid "Months this year"
+msgstr "أشهر السنة الحالية"
+
+msgid "Quarters this year"
+msgstr "أرباع السنة الحالية"
+
+msgid "This year"
+msgstr "السنة الحالية"
+
+msgid "Months last year"
+msgstr "أشهر السنة الماضية"
+
+msgid "Quarters last year"
+msgstr "أرباع السنة الماضية"
+
+msgid "Last year"
+msgstr "السنة الماضية"
+
+msgid "Last 5 years"
+msgstr "آخر 5 سنوات"
+
+msgid "Last 12 months"
+msgstr "آخر 12 شهر"
+
+msgid "Last 6 months"
+msgstr "آخر 6 أشهر"
+
+msgid "Last 3 months"
+msgstr "آخر 3 أشهر"
+
+msgid "Last 6 bi-months"
+msgstr "آخر 6 أشهر مزدوجة"
+
+msgid "Last 4 quarters"
+msgstr "آخر 4 أرباع السنة"
+
+msgid "Last 2 six-months"
+msgstr "آخر فترتي ستة أشهر (نصفي سنة)"
+
+msgid "This financial year"
+msgstr "السنة المالية الحالية"
+
+msgid "Last financial year"
+msgstr "السنة المالية الماضية"
+
+msgid "Last 5 financial years"
+msgstr "آخر 5 سنوات مالية"
+
+msgid "This week"
+msgstr "هذا الأسبوع"
+
+msgid "Last week"
+msgstr "الأسبوع الماضي"
+
+msgid "Last 4 weeks"
+msgstr "آخر 4 أسابيع"
+
+msgid "Last 12 weeks"
+msgstr "آخر 12 أسبوع"
+
+msgid "Last 52 weeks"
+msgstr "آخر 52 أسبوع"
+
+msgid "Hide daily periods"
+msgstr "إخفاء الفترات اليومية"
+
+msgid "Hidden period types in analytics apps"
+msgstr "أنواع الفترة المخفية في تطبيقات التحليلات"
+
+msgid "Hide weekly periods"
+msgstr "إخفاء الفترات الأسبوعية"
+
+msgid "Hide monthly periods"
+msgstr "إخفاء الفترات الشهرية"
+
+msgid "Hide bimonthly periods"
+msgstr "إخفاء فترات كل شهرين"
+
+msgid "Financial year relative period start month"
+msgstr "شهر بداية الفترة الزمنية النسبية للسنة المالية"
+
+msgid "April"
+msgstr "ابريل"
+
+msgid "July"
+msgstr "يوليو"
+
+msgid "October"
+msgstr "اكتوبر"
+
+msgid "Cache strategy"
+msgstr "إستراتيجية ذاكرة التخزين المؤقت"
+
+msgid "No cache"
+msgstr "لا توجد ذاكرة تخزين مؤقت"
+
+msgid "Cache for 15 minutes"
+msgstr "ذاكرة التخزين المؤقت لمدة 15 دقيقة"
+
+msgid "Cache for 30 minutes"
+msgstr "ذاكرة التخزين المؤقت لمدة 30 دقيقة"
+
+msgid "Cache for one hour"
+msgstr "ذاكرة التخزين المؤقت لمدة ساعة واحدة"
+
+msgid "Cache until 6AM tomorrow"
+msgstr ""
+
+msgid "Cache for two weeks"
+msgstr "ذاكرة التخزين المؤقت لمدة أسبوعين"
+
+msgid "Cacheability"
+msgstr "سعة ذاكرة التخزين المؤقت"
+
+msgid "Public"
+msgstr "عام"
+
+msgid "Private"
+msgstr "خاص"
+
+msgid "Analytics cache mode"
+msgstr ""
+
+msgid "Progressive"
+msgstr ""
+
+msgid "Fixed"
+msgstr ""
+
+msgid "Max number of years to hide unapproved data in analytics"
+msgstr "أقصى عدد من السنوات لإخفاء البيانات غير الموافق عليها في التحليلات"
+
+msgid "Never check approval"
+msgstr "عدم التحقق من الموافقة أبداً"
+
+msgid "Check approval for all data"
+msgstr "تحقق من الموافقة على جميع البيانات"
+
+msgid "Current year only"
+msgstr "السنة الحالية فقط"
+
+msgid "Last 2 years"
+msgstr "آخر سنتين"
+
+msgid "Last 3 years"
+msgstr "آخر 3 سنوات"
+
+msgid "Last 4 years"
+msgstr "آخر 4 سنوات"
+
+msgid "Last 6 years"
+msgstr "آخر 6 سنوات"
+
+msgid "Last 7 years"
+msgstr "آخر 7 سنوات"
+
+msgid "Last 8 years"
+msgstr "آخر 8 سنوات"
+
+msgid "Last 9 years"
+msgstr "آخر 9 سنوات"
+
+msgid "Last 10 years"
+msgstr "آخر 10 سنوات"
+
+msgid "Respect category option start and end date in analytics table export"
+msgstr "مراعاة خيار الفئة في تاريخ البداية والنهاية في تصدير جدول التحليلات"
+
+msgid "Put analytics in maintenance mode"
+msgstr "وضع التحليلات في وضع الضبط"
+
+msgid "Caching factor"
+msgstr ""
+
+msgid "Number of database server CPUs"
+msgstr "عدد وحدات المعالجة المركزية لخادم قاعدة البيانات"
+
+msgid "Automatic (detect based on web server)"
+msgstr "تلقائي (الكشف بالاعتماد على خادم الويب)"
+
+msgid "System notifications email address"
+msgstr "عنوان البريد الإلكتروني لإشعارات النظام"
+
+msgid "Google Analytics (Universal Analytics) key"
+msgstr "مفتاح تحليلات غوغل (التحليلات العالمية)"
+
+msgid "Google Maps API key"
+msgstr "خرائط غوغل مفتاح API"
+
+msgid "Bing Maps API key"
+msgstr ""
+
+msgid "Application title"
+msgstr "عنوان التطبيق"
+
+msgid "Application introduction"
+msgstr "مقدمة التطبيق"
+
+msgid "Application notification"
+msgstr "إشعارات التطبيقات"
+
+msgid "Application left-side footer"
+msgstr "تذييل الجانب الأيسر للتطبيق"
+
+msgid "Application right-side footer"
+msgstr "تذييل الجانب الأيمن للتطبيق"
+
+msgid "Style"
+msgstr "المظهر"
+
+msgid "Start page"
+msgstr "صفحة البداية"
+
+msgid "Help page link"
+msgstr "رابط صفحة المساعدة"
+
+msgid "Flag"
+msgstr "علم"
+
+msgid "Interface language"
+msgstr "لغة الواجهة"
+
+msgid "Database language"
+msgstr "لغة قاعدة البيانات"
+
+msgid "Property to display in analysis modules"
+msgstr "الخاصية التي يتم عرضها في الوحدات التحليلية"
+
+msgid "Short name"
+msgstr "الاسم المختصر"
+
+msgid "Default digit group separator to display in analysis modules"
+msgstr "فاصل مجموعة الخانات الافتراضي لعرضه في الوحدات البرمجية للتحليل"
+
+msgid "Space"
+msgstr "مسافة"
+
+msgid "Comma"
+msgstr "فاصلة"
+
+msgid "Require authority to add to view object lists"
+msgstr "يتطلب صلاحية إضافة لعرض قوائم العناصر"
+
+msgid "Custom login page logo"
+msgstr "شعار مخصص لصفحة تسجيل الدخول"
+
+msgid "Custom top menu logo"
+msgstr "شعار مخصص للقائمة العليا"
+
+msgid "Allow users to switch dashboard favorite view type"
+msgstr ""
+
+msgid "Allow users to open dashboard favorite in relevant app"
+msgstr ""
+
+msgid "Allow users to show dashboard favorite interpretations and details"
+msgstr ""
+
+msgid "Allow users to view dashboard items in fullscreen"
+msgstr ""
+
+msgid "Host name"
+msgstr "اسم المضيف"
+
+msgid "Port"
+msgstr "المنفذ"
+
+msgid "Username"
+msgstr "اسم المستخدم"
+
+msgid "TLS"
+msgstr "TLS"
+
+msgid "Email sender"
+msgstr "مرسل البريد الإلكتروني"
+
+msgid "Send me a test email"
+msgstr "أرسل لي رسالة بريد إلكتروني اختبارية"
+
+msgid "Self registration account user role"
+msgstr "دور المستخدم لحساب التسجيل الذاتي"
+
+msgid "Disable self registration"
+msgstr "تعطيل التسجيل الذاتي"
+
+msgid "Self registration account organisation unit"
+msgstr "الوحدة التنظيمية التي يتم تعيينها لحساب تسجيل ذاتي"
+
+msgid "Do not require recaptcha for self registration"
+msgstr "لا يطلب رمز التحقق بالنسبة للتسجيل الذاتي"
+
+msgid "Enable user account recovery"
+msgstr "تمكين استرداد حساب المستخدم"
+
+msgid "Lock user account temporarily after multiple failed login attempts"
+msgstr "تم قفل حساب المستخدم مؤقتا بعد عدة محاولات لتسجيل الدخول الفاشلة"
+
+msgid "Allow users to grant own user roles"
+msgstr "السماح للمستخدمين بمنح أنفسهم أدوار مستخدمين"
+
+msgid "Allow assigning object to related objects during add or update"
+msgstr "السماح بإسناد عنصر إلى العناصر ذوي الصلة خلال الإضافة أو التحديث"
+
+msgid "Require user account password change"
+msgstr "طلب تغيير كلمة مرور حساب المستخدم"
+
+msgid "Never"
+msgstr "مطلقاً"
+
+msgid "3 months"
+msgstr "3 أشهر"
+
+msgid "6 months"
+msgstr "6 أشهر"
+
+msgid "12 months"
+msgstr "12 شهر"
+
+msgid "Enable password expiry alerts"
+msgstr "تمكين تنبيهات انتهاء صلاحية كلمة المرور"
+
+msgid "Minimum characters in password"
+msgstr "الحد الأدنى من المحارف في كلمة المرور"
+
+msgid "CORS whitelist"
+msgstr "CORS القائمة البيضاء"
+
+msgid "reCAPTCHA Site Key"
+msgstr "مفتاح صفحة reCAPTCHA "
+
+msgid "reCAPTCHA Secret Key"
+msgstr "مفتاح reCAPTCHA السري"
+
+msgid "Coptic"
+msgstr "قبطي"
+
+msgid "Ethiopian"
+msgstr "إثيوبي"
+
+msgid "Gregorian"
+msgstr "الغريغوري"
+
+msgid "Islamic"
+msgstr "إسلامي"
+
+msgid "ISO 8601"
+msgstr "آيزو 8601"
+
+msgid "Julian"
+msgstr "جولياني"
+
+msgid "Nepali"
+msgstr "نيبالي"
+
+msgid "Thai"
+msgstr "تايلاندي"
+
+msgid "Persian"
+msgstr "فارسي"
+
+msgid "Date format"
+msgstr "صيغة التاريخ"
+
+msgid "Require periods to match period type of data set"
+msgstr "تتطلب فترات زمنية لتطابق نوع الفترة الزمنية من حزمة البيانات"
+
+msgid "Require data elements to be part of data set"
+msgstr "مطلوب أن تكون عناصر البيانات جزءاً من حزمة بيانات"
+
+msgid "Require category option combos to match category combo of data element"
+msgstr "يتطلب مطابقة أمزجة خيارات الفئة لمزيج فئات عناصر البيانات"
+
+msgid "Require organisation units to match assignment of data set"
+msgstr "يتوجب على الوحدات التنظيمية مطابقة إسناد حزمة البيانات"
+
+msgid "Require attribute option combos to match category combo of data set"
+msgstr "يتطلب مطابقة أمزجة خيارات الخاصية لمزيج فئات حزم البيانات"
+
+msgid "Require category option combo to be specified"
+msgstr "يتطلب تحديد مزيج خيارات الفئة"
+
+msgid "Require attribute option combo to be specified"
+msgstr "يتطلب تحديد مزيج خيارات الخاصية"
+
+msgid "Remote server URL"
+msgstr "عنوان URL للخادم البعيد"
+
+msgid "Remote server username"
+msgstr "اسم المستخدم للخادم البعيد"
+
+msgid "Remote server password"
+msgstr "كلمة مرور الخادم البعيد"
