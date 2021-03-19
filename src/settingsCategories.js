@@ -51,6 +51,10 @@ export const categories = {
             'keyIgnoreAnalyticsApprovalYearThreshold',
             'keyRespectMetaDataStartEndDatesInAnalyticsTableExport',
             'keyAnalyticsMaintenanceMode',
+            'keyDashboardContextMenuItemSwitchViewType',
+            'keyDashboardContextMenuItemOpenInRelevantApp',
+            'keyDashboardContextMenuItemShowInterpretationsAndDetails',
+            'keyDashboardContextMenuItemViewFullscreen',
         ],
     },
     server: {
@@ -82,10 +86,6 @@ export const categories = {
             'keyRequireAddToView',
             'keyUseCustomLogoFront',
             'keyUseCustomLogoBanner',
-            'keyDashboardContextMenuItemSwitchViewType',
-            'keyDashboardContextMenuItemOpenInRelevantApp',
-            'keyDashboardContextMenuItemShowInterpretationsAndDetails',
-            'keyDashboardContextMenuItemViewFullscreen',
         ],
     },
     email: {
