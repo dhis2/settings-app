@@ -1,3 +1,10 @@
+## [29.6.4](https://github.com/dhis2/settings-app/compare/v29.6.3...v29.6.4) (2021-03-19)
+
+
+### Bug Fixes
+
+* move dashboard behaviour-related settings ([#814](https://github.com/dhis2/settings-app/issues/814)) ([703e73a](https://github.com/dhis2/settings-app/commit/703e73a6c0082a78190563056bcb8fcd291cffe7))
+
 ## [29.6.3](https://github.com/dhis2/settings-app/compare/v29.6.2...v29.6.3) (2021-03-19)
 
 
