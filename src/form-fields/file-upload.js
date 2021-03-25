@@ -112,6 +112,15 @@ class FileUpload extends React.Component {
     }
 
     onUpload = async e => {
+        // TODO: Remove once React is updated to version 17. In React 16 and
+        // earlier, SyntheticEvent objects are pooled for performance reasons -
+        // event properties are set to null once the event handler returns
+        // unless event.persist is called(). This optimisation was removed in
+        // React 17 as it does not improve performance on modern browsers. See
+        // https://reactjs.org/docs/legacy-event-pooling.html and
+        // https://reactjs.org/blog/2020/08/10/react-v17-rc.html#no-event-pooling.
+        e.persist()
+
         if (e.target.files.length === 0) {
             return
         }
@@ -188,7 +197,6 @@ class FileUpload extends React.Component {
             display: 'block',
             whiteSpace: 'nowrap',
         }
-
         const checkStyle = {
             display: 'inline-block',
             whiteSpace: 'nowrap',
@@ -196,7 +204,6 @@ class FileUpload extends React.Component {
             paddingTop: 8,
             paddingBottom: 8,
         }
-
         const btnStyle = {
             display: 'inline-block',
             position: 'absolute',
