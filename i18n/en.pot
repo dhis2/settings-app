@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-16T11:10:22.254Z\n"
-"PO-Revision-Date: 2021-03-16T11:10:22.254Z\n"
+"POT-Creation-Date: 2021-03-25T22:14:19.666Z\n"
+"PO-Revision-Date: 2021-03-25T22:14:19.666Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr ""
@@ -27,6 +27,12 @@ msgid "Preview of image"
 msgstr ""
 
 msgid "Upload image"
+msgstr ""
+
+msgid "File uploaded successfully"
+msgstr ""
+
+msgid "Error uploading file: {{error}}"
 msgstr ""
 
 msgid "Cancel upload"
@@ -608,13 +614,13 @@ msgstr ""
 msgid "Custom top menu logo"
 msgstr ""
 
-msgid "Allow users to switch dashboard favorite view type"
+msgid "Allow users to switch dashboard items view type"
 msgstr ""
 
-msgid "Allow users to open dashboard favorite in relevant app"
+msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
 
-msgid "Allow users to show dashboard favorite interpretations and details"
+msgid "Allow users to show dashboard items interpretations and details"
 msgstr ""
 
 msgid "Allow users to view dashboard items in fullscreen"

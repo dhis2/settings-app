@@ -1,4 +1,4 @@
-import { useConfig } from '@dhis2/app-runtime'
+import { useConfig, useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Button,
@@ -78,6 +78,7 @@ Upload.propTypes = {
 
 class FileUpload extends React.Component {
     static propTypes = {
+        alert: PropTypes.object.isRequired,
         isEnabled: PropTypes.bool.isRequired,
         label: PropTypes.string.isRequired,
         name: PropTypes.oneOf(['logo_front', 'logo_banner']).isRequired,
@@ -149,18 +150,28 @@ class FileUpload extends React.Component {
 
         try {
             await api.post(['staticContent', this.props.name].join('/'), data)
+            this.props.alert.show({
+                message: i18n.t('File uploaded successfully'),
+                success: true,
+            })
             this.props.onChange({ target: { value: true } })
             this.setState({
                 uploading: false,
                 progress: undefined,
                 isEnabled: true,
             })
-        } catch {
+        } catch (error) {
+            this.props.alert.show({
+                message: i18n.t('Error uploading file: {{error}}', {
+                    error: error.httpStatus || error.message,
+                    nsSeparator: null,
+                }),
+                critical: true,
+            })
             this.props.onChange({ target: { value: false } })
             this.setState({
                 uploading: false,
                 progress: undefined,
-                isEnabled: false,
             })
         }
     }
@@ -251,4 +262,14 @@ class FileUpload extends React.Component {
     }
 }
 
-export default FileUpload
+const withAlerts = Component => {
+    return function ComponentWithAlerts(props) {
+        const alert = useAlert(
+            ({ message }) => message,
+            options => options
+        )
+        return <Component {...props} alert={alert} />
+    }
+}
+
+export default withAlerts(FileUpload)
