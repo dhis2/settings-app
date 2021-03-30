@@ -355,7 +355,6 @@ class SettingsFields extends React.Component {
         return (
             <Card className={classes.card} key={this.props.category}>
                 <FormBuilder
-                    key={settingsStore.state}
                     fields={fields}
                     onUpdateField={settingsActions.saveKey}
                 />
