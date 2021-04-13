@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-16T11:10:22.254Z\n"
+"POT-Creation-Date: 2021-03-25T22:14:19.666Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2021\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -38,6 +38,12 @@ msgstr ""
 
 msgid "Upload image"
 msgstr "Carregar Imagem"
+
+msgid "File uploaded successfully"
+msgstr ""
+
+msgid "Error uploading file: {{error}}"
+msgstr ""
 
 msgid "Cancel upload"
 msgstr "Cancelar upload"
@@ -622,13 +628,13 @@ msgstr "Logótipo personalizado da página de início de sessão"
 msgid "Custom top menu logo"
 msgstr "Logótipo personalizado do menu superior"
 
-msgid "Allow users to switch dashboard favorite view type"
+msgid "Allow users to switch dashboard items view type"
 msgstr ""
 
-msgid "Allow users to open dashboard favorite in relevant app"
+msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
 
-msgid "Allow users to show dashboard favorite interpretations and details"
+msgid "Allow users to show dashboard items interpretations and details"
 msgstr ""
 
 msgid "Allow users to view dashboard items in fullscreen"

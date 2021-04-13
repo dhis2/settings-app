@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-16T11:10:22.254Z\n"
+"POT-Creation-Date: 2021-03-25T22:14:19.666Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Pushto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
@@ -36,6 +36,12 @@ msgstr ""
 
 msgid "Upload image"
 msgstr "انځور آپلوډ یا اضافه کړئ"
+
+msgid "File uploaded successfully"
+msgstr ""
+
+msgid "Error uploading file: {{error}}"
+msgstr ""
 
 msgid "Cancel upload"
 msgstr "رد یې کړئ"
@@ -618,13 +624,13 @@ msgstr "د سیسټم پاڼې ته د ننوتو فرمایشي لوګو"
 msgid "Custom top menu logo"
 msgstr "د مینو د سر فرمایشي لوګو"
 
-msgid "Allow users to switch dashboard favorite view type"
+msgid "Allow users to switch dashboard items view type"
 msgstr ""
 
-msgid "Allow users to open dashboard favorite in relevant app"
+msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
 
-msgid "Allow users to show dashboard favorite interpretations and details"
+msgid "Allow users to show dashboard items interpretations and details"
 msgstr ""
 
 msgid "Allow users to view dashboard items in fullscreen"
