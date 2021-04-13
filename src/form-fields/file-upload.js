@@ -1,4 +1,4 @@
-import { useConfig } from '@dhis2/app-runtime'
+import { useConfig, useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Button,
@@ -78,6 +78,7 @@ Upload.propTypes = {
 
 class FileUpload extends React.Component {
     static propTypes = {
+        alert: PropTypes.object.isRequired,
         isEnabled: PropTypes.bool.isRequired,
         label: PropTypes.string.isRequired,
         name: PropTypes.oneOf(['logo_front', 'logo_banner']).isRequired,
@@ -112,7 +113,8 @@ class FileUpload extends React.Component {
     }
 
     onUpload = async e => {
-        if (e.target.files.length === 0) {
+        const { files } = e.target
+        if (files.length === 0) {
             return
         }
 
@@ -136,7 +138,7 @@ class FileUpload extends React.Component {
         this.xhr = xhr
 
         const data = new FormData()
-        data.append('file', e.target.files[0])
+        data.append('file', files[0])
 
         try {
             await api.post(['staticContent', this.props.name].join('/'), data)
@@ -146,12 +148,18 @@ class FileUpload extends React.Component {
                 progress: undefined,
                 isEnabled: true,
             })
-        } catch {
+        } catch (error) {
+            this.props.alert.show({
+                message: i18n.t('Error uploading file: {{error}}', {
+                    error: error.httpStatus || error.message,
+                    nsSeparator: null,
+                }),
+                critical: true,
+            })
             this.props.onChange({ target: { value: false } })
             this.setState({
                 uploading: false,
                 progress: undefined,
-                isEnabled: false,
             })
         }
     }
@@ -188,7 +196,6 @@ class FileUpload extends React.Component {
             display: 'block',
             whiteSpace: 'nowrap',
         }
-
         const checkStyle = {
             display: 'inline-block',
             whiteSpace: 'nowrap',
@@ -196,7 +203,6 @@ class FileUpload extends React.Component {
             paddingTop: 8,
             paddingBottom: 8,
         }
-
         const btnStyle = {
             display: 'inline-block',
             position: 'absolute',
@@ -244,4 +250,14 @@ class FileUpload extends React.Component {
     }
 }
 
-export default FileUpload
+const withAlerts = Component => {
+    return function ComponentWithAlerts(props) {
+        const alert = useAlert(
+            ({ message }) => message,
+            options => options
+        )
+        return <Component {...props} alert={alert} />
+    }
+}
+
+export default withAlerts(FileUpload)

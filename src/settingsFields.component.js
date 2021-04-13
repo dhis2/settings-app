@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { Button, Card } from '@dhis2/ui'
+import { Button, Card, CenteredContent, CircularLoader } from '@dhis2/ui'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
 import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators'
 import IconButton from 'material-ui/IconButton'
@@ -204,9 +204,6 @@ class SettingsFields extends React.Component {
                 })
 
             case 'staticContent':
-                if (!settingsStore.state) {
-                    return null
-                }
                 return Object.assign({}, fieldBase, {
                     component: FileUpload,
                     props: {
@@ -264,7 +261,7 @@ class SettingsFields extends React.Component {
                 console.warn(
                     `Unknown control type "${mapping.type}" encountered for field "${key}"`
                 )
-                return {}
+                return null
         }
     }
 
@@ -275,6 +272,16 @@ class SettingsFields extends React.Component {
                 <div style={styles.noHits}>
                     {i18n.t('No settings matched the search term')}
                 </div>
+            )
+        }
+
+        if (!settingsStore.state) {
+            return (
+                <Card className={classes.card} key={this.props.category}>
+                    <CenteredContent>
+                        <CircularLoader />
+                    </CenteredContent>
+                </Card>
             )
         }
 
