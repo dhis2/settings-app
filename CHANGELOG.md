@@ -1,3 +1,10 @@
+## [29.6.8](https://github.com/dhis2/settings-app/compare/v29.6.7...v29.6.8) (2021-04-13)
+
+
+### Bug Fixes
+
+* show alert if custom logo upload fails ([#825](https://github.com/dhis2/settings-app/issues/825)) ([4e90713](https://github.com/dhis2/settings-app/commit/4e90713800297d89a34493fd7ea7c86299af0ed5))
+
 ## [29.6.7](https://github.com/dhis2/settings-app/compare/v29.6.6...v29.6.7) (2021-03-29)
 
 
