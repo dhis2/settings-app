@@ -142,10 +142,6 @@ class FileUpload extends React.Component {
 
         try {
             await api.post(['staticContent', this.props.name].join('/'), data)
-            this.props.alert.show({
-                message: i18n.t('File uploaded successfully'),
-                success: true,
-            })
             this.props.onChange({ target: { value: true } })
             this.setState({
                 uploading: false,
