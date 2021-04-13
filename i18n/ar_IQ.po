@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-16T11:10:22.254Z\n"
+"POT-Creation-Date: 2021-03-25T22:14:19.666Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2021\n"
 "Language-Team: Arabic (Iraq) (https://www.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
@@ -34,6 +34,12 @@ msgid "Preview of image"
 msgstr ""
 
 msgid "Upload image"
+msgstr ""
+
+msgid "File uploaded successfully"
+msgstr ""
+
+msgid "Error uploading file: {{error}}"
 msgstr ""
 
 msgid "Cancel upload"
@@ -616,13 +622,13 @@ msgstr ""
 msgid "Custom top menu logo"
 msgstr ""
 
-msgid "Allow users to switch dashboard favorite view type"
+msgid "Allow users to switch dashboard items view type"
 msgstr ""
 
-msgid "Allow users to open dashboard favorite in relevant app"
+msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
 
-msgid "Allow users to show dashboard favorite interpretations and details"
+msgid "Allow users to show dashboard items interpretations and details"
 msgstr ""
 
 msgid "Allow users to view dashboard items in fullscreen"
