@@ -633,6 +633,7 @@ msgstr ""
 
 msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
+"Umožněte uživatelům otevřít položky ovládacího panelu v příslušné aplikaci"
 
 msgid "Allow users to show dashboard items interpretations and details"
 msgstr ""
