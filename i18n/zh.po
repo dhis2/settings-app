@@ -40,10 +40,10 @@ msgid "Upload image"
 msgstr "上传图像"
 
 msgid "File uploaded successfully"
-msgstr ""
+msgstr "文件上传成功"
 
 msgid "Error uploading file: {{error}}"
-msgstr ""
+msgstr "上传文件时出错：{{error}}"
 
 msgid "Cancel upload"
 msgstr "取消上传"
@@ -626,13 +626,13 @@ msgid "Custom top menu logo"
 msgstr "定制顶部菜单logo"
 
 msgid "Allow users to switch dashboard items view type"
-msgstr ""
+msgstr "允许用户切换仪表板项目的视图类型"
 
 msgid "Allow users to open dashboard items in relevant app"
-msgstr ""
+msgstr "允许用户在相关应用中打开仪表板项目"
 
 msgid "Allow users to show dashboard items interpretations and details"
-msgstr ""
+msgstr "允许用户显示仪表板项目的解释和详细信息"
 
 msgid "Allow users to view dashboard items in fullscreen"
 msgstr "允许用户全屏查看仪表板项目"
