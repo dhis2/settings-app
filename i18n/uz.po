@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Failed to load: {{error}}"
-msgstr ""
+msgstr "Бклаб бўлмади: {{error}}"
 
 msgid "No flag"
 msgstr "Байроқ йўқ"
@@ -31,16 +31,16 @@ msgid "Preview image"
 msgstr "Расмни олдиндан кўздан кечириш"
 
 msgid "Preview of image"
-msgstr ""
+msgstr "Расмни олдиндан кўриш"
 
 msgid "Upload image"
 msgstr "Расмни юклаш"
 
 msgid "File uploaded successfully"
-msgstr ""
+msgstr "Файл муваффақиятли юкланди"
 
 msgid "Error uploading file: {{error}}"
-msgstr ""
+msgstr "Файлни юклашда хатолик юз берди: {{error}}"
 
 msgid "Cancel upload"
 msgstr "Юкланишни бекор қилиш"
@@ -59,25 +59,25 @@ msgid "Select language"
 msgstr "Тилни танланг"
 
 msgid "Version created"
-msgstr ""
+msgstr "Версия яратилди"
 
 msgid "Failed to create version"
-msgstr ""
+msgstr "Версия яратиш амалга ошмади"
 
 msgid "Error fetching settings"
-msgstr ""
+msgstr "Созламаларни юклаб олишда хатолик юз берди"
 
 msgid "Create new version"
 msgstr "Янги вариантни яратинг"
 
 msgid "Best effort"
-msgstr ""
+msgstr "Яхши ҳаракат"
 
 msgid "Atomic"
 msgstr "Атомик"
 
 msgid "Master version:"
-msgstr ""
+msgstr "Асосий вариант:"
 
 msgid "None"
 msgstr "Йўқ"
@@ -166,7 +166,7 @@ msgid "Failed to save OAuth2 client"
 msgstr "OAuth2 мижоз сақланиши амалга ошмади"
 
 msgid "Add OAuth2 client"
-msgstr ""
+msgstr "OAuth2 клиентини қўшиш"
 
 msgid "Yes"
 msgstr "Ҳа"
@@ -178,7 +178,7 @@ msgid "OAuth2 client deleted"
 msgstr "OAuth2 мижоз ўчирилди"
 
 msgid "Failed to delete OAuth2 client"
-msgstr ""
+msgstr "OAuth2 клиентини ўчириш амалга ошмади"
 
 msgid "Settings updated"
 msgstr "Созламалар янгиланди"
@@ -244,7 +244,7 @@ msgid "This field is required"
 msgstr "Ушбу қатор тўлдирилиши шарт"
 
 msgid "This field should be a URL"
-msgstr ""
+msgstr "Ушбу сатрда URL бўлиши лозим"
 
 msgid "This field should be a number"
 msgstr "Ушбу майдонда рақам бўлиши лозим"
@@ -253,17 +253,19 @@ msgid "This field should be a positive number"
 msgstr "Ушбу майдонда мусбат рақам бўлиши лозим"
 
 msgid "This field should be an email"
-msgstr ""
+msgstr "Ушбу сатрда email бўлиши лозим"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
+"Ушбу параметр жорий фойдаланувчи параметрлари юзасидан қайта кўриб чиқилади:"
+" {{settingName}}"
 
 msgid "This setting can be overridden by user settings"
 msgstr "Ушбу параметр фойдаланувчи созламалари билан бекор қилиниши мумкин"
 
 msgid "No options"
-msgstr ""
+msgstr "Вариант йўқ"
 
 msgid "No settings matched the search term"
 msgstr "Қидирув сўзига ҳеч қандай ахборот топилмади"
@@ -348,6 +350,7 @@ msgstr "Аналитик статистикани объектлар кўрин�
 
 msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
+"Фойдаланиш статистикасига асбоблар панелининг пассив кўринишини қўшинг "
 
 msgid "Default relative period for analysis"
 msgstr "Таҳлил қилиш учун стандарт боғлиқ давр"
@@ -482,7 +485,7 @@ msgid "Cache for one hour"
 msgstr "Бир соат давомида кешлаш"
 
 msgid "Cache until 6AM tomorrow"
-msgstr ""
+msgstr "Кеш сақланиши эрталабги соат 6:00 гача"
 
 msgid "Cache for two weeks"
 msgstr "Икки ҳафтага кешлаш"
@@ -568,7 +571,7 @@ msgid "Google Maps API key"
 msgstr "Google харита иловаси калитини қидириш"
 
 msgid "Bing Maps API key"
-msgstr ""
+msgstr "Bing хариталари API калити"
 
 msgid "Application title"
 msgstr "Илова номи"
@@ -629,15 +632,23 @@ msgstr "Юқори менюда ишлатиладиган логотип"
 
 msgid "Allow users to switch dashboard items view type"
 msgstr ""
+"Фойдаланувчиларга бошқарув панели элементлари кўриниши турини алмаштиришга "
+"рухсат беринг"
 
 msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
+"Фойдаланувчиларгатегишли иловада бошқарув панели элементларини очишга рухсат"
+" бериш"
 
 msgid "Allow users to show dashboard items interpretations and details"
 msgstr ""
+"Фойдаланувчиларга асбоблар панели элементларининг талқинлари ва "
+"тафсилотларини кўрсатишга рухсат беринг"
 
 msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""
+"Фойдаланувчиларга бошқарув панелидаги нарсаларни тўлиқ экрандда кўришга "
+"рухсат беринг"
 
 msgid "Host name"
 msgstr "Хост номи"
