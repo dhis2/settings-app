@@ -1,3 +1,10 @@
+# [29.7.0](https://github.com/dhis2/settings-app/compare/v29.6.14...v29.7.0) (2021-05-26)
+
+
+### Features
+
+* hide biweekly periods ([67842b0](https://github.com/dhis2/settings-app/commit/67842b08d8ed05a2352ab8a3f2cab8ab893fe384))
+
 ## [29.6.14](https://github.com/dhis2/settings-app/compare/v29.6.13...v29.6.14) (2021-05-18)
 
 
