@@ -159,6 +159,10 @@ const settingsKeyMapping = {
         label: i18n.t('Hide weekly periods'),
         type: 'checkbox',
     },
+    keyHideBiWeeklyPeriods: {
+        label: i18n.t('Hide biweekly periods'),
+        type: 'checkbox',
+    },
     keyHideMonthlyPeriods: {
         label: i18n.t('Hide monthly periods'),
         type: 'checkbox',

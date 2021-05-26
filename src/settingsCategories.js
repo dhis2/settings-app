@@ -43,6 +43,7 @@ export const categories = {
             'keyAnalysisRelativePeriod',
             'keyHideDailyPeriods',
             'keyHideWeeklyPeriods',
+            'keyHideBiWeeklyPeriods',
             'keyHideMonthlyPeriods',
             'keyHideBiMonthlyPeriods',
             'analyticsFinancialYearStart',
