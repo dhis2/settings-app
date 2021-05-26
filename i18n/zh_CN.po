@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-25T22:14:19.666Z\n"
+"POT-Creation-Date: 2021-05-19T08:58:48.266Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -36,9 +36,6 @@ msgstr ""
 
 msgid "Upload image"
 msgstr "上传图像"
-
-msgid "File uploaded successfully"
-msgstr ""
 
 msgid "Error uploading file: {{error}}"
 msgstr ""
@@ -445,6 +442,9 @@ msgstr "在分析应用中隐藏期间类型"
 
 msgid "Hide weekly periods"
 msgstr "隐藏每周期间"
+
+msgid "Hide biweekly periods"
+msgstr ""
 
 msgid "Hide monthly periods"
 msgstr "隐藏每月期间"

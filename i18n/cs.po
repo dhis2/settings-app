@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-25T22:14:19.666Z\n"
+"POT-Creation-Date: 2021-05-19T08:58:48.266Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: trendspotter, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -35,9 +35,6 @@ msgstr "Náhled obrázku"
 
 msgid "Upload image"
 msgstr "Nahrát obrázek"
-
-msgid "File uploaded successfully"
-msgstr ""
 
 msgid "Error uploading file: {{error}}"
 msgstr ""
@@ -448,6 +445,9 @@ msgstr "Skryté typy období v analytických aplikacích"
 
 msgid "Hide weekly periods"
 msgstr "Skrýt týdenní období"
+
+msgid "Hide biweekly periods"
+msgstr ""
 
 msgid "Hide monthly periods"
 msgstr "Skrýt měsíční období"
