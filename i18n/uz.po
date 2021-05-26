@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-25T22:14:19.666Z\n"
+"POT-Creation-Date: 2021-05-19T08:58:48.266Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -35,9 +35,6 @@ msgstr "Расмни олдиндан кўриш"
 
 msgid "Upload image"
 msgstr "Расмни юклаш"
-
-msgid "File uploaded successfully"
-msgstr "Файл муваффақиятли юкланди"
 
 msgid "Error uploading file: {{error}}"
 msgstr "Файлни юклашда хатолик юз берди: {{error}}"
@@ -450,6 +447,9 @@ msgstr "Аналитика иловасиларида давр турларин�
 
 msgid "Hide weekly periods"
 msgstr "Ҳафталик даврларни беркитиш"
+
+msgid "Hide biweekly periods"
+msgstr ""
 
 msgid "Hide monthly periods"
 msgstr "Ойлик даврларни беркитиш"

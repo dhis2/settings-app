@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-25T22:14:19.666Z\n"
+"POT-Creation-Date: 2021-05-19T08:58:48.266Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -35,9 +35,6 @@ msgstr ""
 
 msgid "Upload image"
 msgstr "Rasmni yuklash"
-
-msgid "File uploaded successfully"
-msgstr ""
 
 msgid "Error uploading file: {{error}}"
 msgstr ""
@@ -446,6 +443,9 @@ msgstr "Аnalitika ilovasilarida davr turlarini berkitish"
 
 msgid "Hide weekly periods"
 msgstr "Haftalik davrlarni berkitish"
+
+msgid "Hide biweekly periods"
+msgstr ""
 
 msgid "Hide monthly periods"
 msgstr "Oylik davrlarni berkitish"

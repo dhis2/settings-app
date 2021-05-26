@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-03-25T22:14:19.666Z\n"
+"POT-Creation-Date: 2021-05-19T08:58:48.266Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -37,9 +37,6 @@ msgstr ""
 
 msgid "Upload image"
 msgstr "تحميل الصورة"
-
-msgid "File uploaded successfully"
-msgstr ""
 
 msgid "Error uploading file: {{error}}"
 msgstr ""
@@ -446,6 +443,9 @@ msgstr "أنواع الفترة المخفية في تطبيقات التحلي�
 
 msgid "Hide weekly periods"
 msgstr "إخفاء الفترات الأسبوعية"
+
+msgid "Hide biweekly periods"
+msgstr ""
 
 msgid "Hide monthly periods"
 msgstr "إخفاء الفترات الشهرية"
