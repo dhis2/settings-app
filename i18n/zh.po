@@ -446,7 +446,7 @@ msgid "Hide weekly periods"
 msgstr "隐藏每周期间"
 
 msgid "Hide biweekly periods"
-msgstr ""
+msgstr "隐藏期间每两周"
 
 msgid "Hide monthly periods"
 msgstr "隐藏每月期间"
