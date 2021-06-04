@@ -22,25 +22,25 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Failed to load: {{error}}"
-msgstr ""
+msgstr "Échec du chargement : {{error}}"
 
 msgid "No flag"
 msgstr "Pas de Drapeau"
 
 msgid "Search settings"
-msgstr ""
+msgstr "Paramètres de recherche"
 
 msgid "Replace image"
-msgstr ""
+msgstr "Remplacer l'image"
 
 msgid "Preview image"
-msgstr ""
+msgstr "Aperçu de l'image"
 
 msgid "Preview of image"
-msgstr ""
+msgstr "Aperçu de l'image"
 
 msgid "Upload image"
-msgstr ""
+msgstr "Télécharger une image"
 
 msgid "Error uploading file: {{error}}"
 msgstr ""
