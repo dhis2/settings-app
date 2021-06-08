@@ -37,7 +37,7 @@ msgid "Upload image"
 msgstr "Nahrát obrázek"
 
 msgid "Error uploading file: {{error}}"
-msgstr ""
+msgstr "Chyba při nahrávání souboru: {{error}}"
 
 msgid "Cancel upload"
 msgstr "Zrušit nahrávání"
@@ -447,7 +447,7 @@ msgid "Hide weekly periods"
 msgstr "Skrýt týdenní období"
 
 msgid "Hide biweekly periods"
-msgstr ""
+msgstr "Skrýt čtrnáctidenní období"
 
 msgid "Hide monthly periods"
 msgstr "Skrýt měsíční období"
@@ -629,7 +629,7 @@ msgid "Custom top menu logo"
 msgstr "Vlastní logo horní nabídky"
 
 msgid "Allow users to switch dashboard items view type"
-msgstr ""
+msgstr "Povolit uživatelům přepínat typ zobrazení položek ovládacího panelu"
 
 msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
@@ -637,6 +637,8 @@ msgstr ""
 
 msgid "Allow users to show dashboard items interpretations and details"
 msgstr ""
+"Umožněte uživatelům zobrazovat interpretace a podrobnosti položek ovládacího"
+" panelu"
 
 msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""
