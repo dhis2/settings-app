@@ -43,67 +43,68 @@ msgid "Upload image"
 msgstr "Télécharger une image"
 
 msgid "Error uploading file: {{error}}"
-msgstr ""
+msgstr "Erreur lors de l'importation du fichier : {{error}}"
 
 msgid "Cancel upload"
-msgstr ""
+msgstr "Annuler le téléchargement"
 
 msgid "System default (fallback)"
 msgstr ""
 
 msgid "Set the main field value before adding a translation"
-msgstr ""
+msgstr "Définir la valeur du champ principal avant d'ajouter une traduction"
 
 msgid "Could not fetch localized settings"
-msgstr ""
+msgstr "Impossible de récupérer les paramètres localisés"
 
 msgid "Select language"
-msgstr ""
+msgstr "Choisir la langue"
 
 msgid "Version created"
-msgstr ""
+msgstr "Version créée"
 
 msgid "Failed to create version"
-msgstr ""
+msgstr "Échec de la création de la version"
 
 msgid "Error fetching settings"
-msgstr ""
+msgstr "Erreur lors de la récupération des paramètres"
 
 msgid "Create new version"
-msgstr ""
+msgstr "Créer une nouvelle version"
 
 msgid "Best effort"
-msgstr ""
+msgstr "Meilleur effort"
 
 msgid "Atomic"
-msgstr ""
+msgstr "Atomique"
 
 msgid "Master version:"
-msgstr ""
+msgstr "Version principale:"
 
 msgid "None"
 msgstr "Aucun"
 
 msgid "Last sync attempt"
-msgstr ""
+msgstr "Dernière tentative de synchronisation"
 
 msgid "Failed"
 msgstr "Echoué"
 
 msgid "No versions exist"
-msgstr ""
+msgstr "Aucune version n'existe"
 
 msgid "Enable Versioning for metadata sync"
 msgstr ""
+"Activer la gestion des versions pour la synchronisation des métadonnées"
 
 msgid "Don't sync metadata if DHIS versions differ"
-msgstr ""
+msgstr "Ne pas synchroniser les métadonnées si les versions DHIS diffèrent"
 
 msgid "Metadata Versioning"
-msgstr ""
+msgstr "Gestion des versions des métadonnées"
 
 msgid "This client ID is already taken"
-msgstr ""
+msgstr "Cet identifiant client est déjà pris"
 
 msgid "Name"
 msgstr "Nom"
@@ -112,37 +113,37 @@ msgid "Required"
 msgstr "Obligatoire"
 
 msgid "Client ID"
-msgstr ""
+msgstr "Identifiant du client"
 
 msgid "Client Secret"
-msgstr ""
+msgstr "Secret du client"
 
 msgid "Grant Types"
-msgstr ""
+msgstr "Types de permissions"
 
 msgid "Password"
 msgstr "Mot de passe"
 
 msgid "Refresh token"
-msgstr ""
+msgstr "Actualiser le Token"
 
 msgid "Authorization code"
-msgstr ""
+msgstr "Code d'autorisation"
 
 msgid "One URL per line"
-msgstr ""
+msgstr "Une URL par ligne"
 
 msgid "Redirect URIs"
-msgstr ""
+msgstr "URL de redirection"
 
 msgid "This field should contain a list of URLs"
-msgstr ""
+msgstr "Ce champ doit contenir une liste d'URL"
 
 msgid "Create new OAuth2 Client"
-msgstr ""
+msgstr "Créer un nouveau client OAuth2"
 
 msgid "Edit OAuth2 Client"
-msgstr ""
+msgstr "Modifier le client OAuth2"
 
 msgid "Save"
 msgstr "Enregistrer"
@@ -151,7 +152,7 @@ msgid "Cancel"
 msgstr "Annuler"
 
 msgid "There are currently no OAuth2 clients registered"
-msgstr ""
+msgstr "Il n'y a actuellement aucun client OAuth2 enregistré"
 
 msgid "Edit"
 msgstr "Modifier"
@@ -160,13 +161,13 @@ msgid "Delete"
 msgstr "Supprimer"
 
 msgid "OAuth2 client saved"
-msgstr ""
+msgstr "Client OAuth2 enregistré"
 
 msgid "Failed to save OAuth2 client"
-msgstr ""
+msgstr "Échec de l'enregistrement du client OAuth2"
 
 msgid "Add OAuth2 client"
-msgstr ""
+msgstr "Ajouter un client OAuth2"
 
 msgid "Yes"
 msgstr "Oui"
@@ -175,10 +176,10 @@ msgid "No"
 msgstr "Non"
 
 msgid "OAuth2 client deleted"
-msgstr ""
+msgstr "Client OAuth2 supprimé"
 
 msgid "Failed to delete OAuth2 client"
-msgstr ""
+msgstr "Échec de la suppression du client OAuth2"
 
 msgid "Settings updated"
 msgstr "Paramètres mis à jour"
@@ -196,7 +197,7 @@ msgid "Analytics settings"
 msgstr "Paramètres d'analyse"
 
 msgid "Server"
-msgstr ""
+msgstr "Serveur"
 
 msgid "Server settings"
 msgstr "Paramètres du serveur"
@@ -229,44 +230,46 @@ msgid "Data Import"
 msgstr "Importation de données"
 
 msgid "Data import settings"
-msgstr ""
+msgstr "Paramètres d'importation de données"
 
 msgid "Synchronization"
-msgstr ""
+msgstr "Synchronisation"
 
 msgid "Synchronization settings"
 msgstr "Synchronisation"
 
 msgid "OAuth2 Clients"
-msgstr ""
+msgstr "Clients OAuth2"
 
 msgid "This field is required"
 msgstr "Ce champs est requis"
 
 msgid "This field should be a URL"
-msgstr ""
+msgstr "Ce champ doit être une URL"
 
 msgid "This field should be a number"
-msgstr ""
+msgstr "Ce champ doit être un nombre"
 
 msgid "This field should be a positive number"
-msgstr ""
+msgstr "Ce champ doit être un nombre positif"
 
 msgid "This field should be an email"
-msgstr ""
+msgstr "Ce champ doit être un e-mail"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
+"Ce paramètre sera remplacé par le paramètre utilisateur actuel : "
+"{{settingName}}"
 
 msgid "This setting can be overridden by user settings"
-msgstr ""
+msgstr "Ce paramètre peut être remplacé par les paramètres utilisateur"
 
 msgid "No options"
-msgstr ""
+msgstr "Aucune option"
 
 msgid "No settings matched the search term"
-msgstr ""
+msgstr "Aucun paramètre ne correspond au terme de la recherche"
 
 msgid "Search results"
 msgstr "Résultats de la recherche"
@@ -278,10 +281,10 @@ msgid "Unlimited"
 msgstr "Unlimited"
 
 msgid "Maximum number of SQL view records"
-msgstr ""
+msgstr "Nombre maximal d'enregistrements de vue SQL"
 
 msgid "Infrastructural indicators"
-msgstr ""
+msgstr "Indicateurs d'infrastructure"
 
 msgid "Infrastructural data elements"
 msgstr "Infrastructures éléments de données"
@@ -341,10 +344,12 @@ msgid "Enable multi-organisation unit forms"
 msgstr "Activer les formulaires multi-unités d'organisation"
 
 msgid "Acceptance required before approval"
-msgstr ""
+msgstr "Acceptation requise avant approbation"
 
 msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
+"Recueillir des statistiques d'objets analytiques dans les vues de tableau de"
+" bord"
 
 msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
