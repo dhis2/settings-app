@@ -28,22 +28,22 @@ msgid "Search settings"
 msgstr ""
 
 msgid "Replace image"
-msgstr ""
+msgstr "Попередній перегляд зображення"
 
 msgid "Preview image"
-msgstr ""
+msgstr "Попередній перегляд зображення"
 
 msgid "Preview of image"
-msgstr ""
+msgstr "Попередній перегляд зображення"
 
 msgid "Upload image"
-msgstr ""
+msgstr "Завантажити зображення"
 
 msgid "Error uploading file: {{error}}"
-msgstr ""
+msgstr "Помилка при завантаженні зображення: {{error}}"
 
 msgid "Cancel upload"
-msgstr ""
+msgstr "Відмінити завантаження"
 
 msgid "System default (fallback)"
 msgstr ""
@@ -55,7 +55,7 @@ msgid "Could not fetch localized settings"
 msgstr ""
 
 msgid "Select language"
-msgstr ""
+msgstr "Обрати мову"
 
 msgid "Version created"
 msgstr ""
@@ -82,10 +82,10 @@ msgid "None"
 msgstr "Жодного"
 
 msgid "Last sync attempt"
-msgstr ""
+msgstr "Спроба останньої синхронізації"
 
 msgid "Failed"
-msgstr ""
+msgstr "Помилка"
 
 msgid "No versions exist"
 msgstr ""
@@ -106,7 +106,7 @@ msgid "Name"
 msgstr "Ім'я"
 
 msgid "Required"
-msgstr "Обов'язкове"
+msgstr "Обов'язкове поле"
 
 msgid "Client ID"
 msgstr ""
@@ -193,7 +193,7 @@ msgid "Analytics settings"
 msgstr ""
 
 msgid "Server"
-msgstr ""
+msgstr "Сервер"
 
 msgid "Server settings"
 msgstr "Налаштування сервера"
@@ -205,13 +205,13 @@ msgid "Appearance settings"
 msgstr "Налаштування зовнішнього вигляду"
 
 msgid "Email"
-msgstr ""
+msgstr "Електронна пошта"
 
 msgid "Email settings"
 msgstr "Налаштування електронної пошти"
 
 msgid "Access"
-msgstr ""
+msgstr "Доступ"
 
 msgid "Access settings"
 msgstr "Налаштування доступу"
@@ -229,7 +229,7 @@ msgid "Data import settings"
 msgstr ""
 
 msgid "Synchronization"
-msgstr ""
+msgstr "Синхронізація"
 
 msgid "Synchronization settings"
 msgstr "Налаштування синхронізації"
@@ -241,16 +241,16 @@ msgid "This field is required"
 msgstr "Обов'язкове поле"
 
 msgid "This field should be a URL"
-msgstr ""
+msgstr "Це поле повинно містити веб-адресу"
 
 msgid "This field should be a number"
-msgstr ""
+msgstr "Це поле повинно включати цифри"
 
 msgid "This field should be a positive number"
 msgstr ""
 
 msgid "This field should be an email"
-msgstr ""
+msgstr "Це поле повинно включати адресу електронної пошти"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
@@ -266,7 +266,7 @@ msgid "No settings matched the search term"
 msgstr ""
 
 msgid "Search results"
-msgstr ""
+msgstr "Результати пошуку"
 
 msgid "Maximum number of analytics records"
 msgstr ""
@@ -470,7 +470,7 @@ msgid "Cache strategy"
 msgstr "Стратегія кешування"
 
 msgid "No cache"
-msgstr "Немає кеша"
+msgstr "Немає кешу"
 
 msgid "Cache for 15 minutes"
 msgstr ""
