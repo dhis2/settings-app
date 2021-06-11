@@ -737,7 +737,7 @@ msgid "Persian"
 msgstr ""
 
 msgid "Date format"
-msgstr ""
+msgstr "Формат дати"
 
 msgid "Require periods to match period type of data set"
 msgstr ""
