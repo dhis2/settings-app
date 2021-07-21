@@ -79,7 +79,7 @@ function wrapUserSettingsOverride({ component, valueLabel }) {
                       'This setting will be overridden by the current user setting: {{settingName}}',
                       {
                           settingName: valueLabel,
-                          nsSeparator: null,
+                          nsSeparator: '-:-',
                       }
                   )}`
                 : i18n.t('This setting can be overridden by user settings')

@@ -259,7 +259,7 @@ class MetadataSettings extends Component {
                                 fontWeight: 'bold',
                             }}
                         >
-                            {i18n.t('Master version:', { nsSeparator: null })}
+                            {i18n.t('Master version:', { nsSeparator: '-:-' })}
                         </dt>
                         <dd style={{ display: 'inline-block' }}>
                             {this.state.masterVersionName || i18n.t('None')}

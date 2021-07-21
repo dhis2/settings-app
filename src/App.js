@@ -89,7 +89,7 @@ const AppWrapper = () => {
                 <p>
                     {i18n.t('Failed to load: {{error}}', {
                         error: error.message,
-                        nsSeparator: null,
+                        nsSeparator: '-:-',
                     })}
                 </p>
             </CenteredContent>

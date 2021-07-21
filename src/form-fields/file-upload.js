@@ -152,7 +152,7 @@ class FileUpload extends React.Component {
             this.props.alert.show({
                 message: i18n.t('Error uploading file: {{error}}', {
                     error: error.httpStatus || error.message,
-                    nsSeparator: null,
+                    nsSeparator: '-:-',
                 }),
                 critical: true,
             })
