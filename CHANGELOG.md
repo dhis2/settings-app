@@ -1,3 +1,10 @@
+## [29.7.7](https://github.com/dhis2/settings-app/compare/v29.7.6...v29.7.7) (2021-07-21)
+
+
+### Bug Fixes
+
+* use '-:-' instead of null as i18n namespace separator ([#879](https://github.com/dhis2/settings-app/issues/879)) ([5107417](https://github.com/dhis2/settings-app/commit/510741709a80213d79c1d4b373c140dcf4f8c808))
+
 ## [29.7.6](https://github.com/dhis2/settings-app/compare/v29.7.5...v29.7.6) (2021-06-24)
 
 
