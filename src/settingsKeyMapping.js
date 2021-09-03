@@ -261,6 +261,18 @@ const settingsKeyMapping = {
             settingsValue: 'FIXED',
         },
     },
+    orgUnitMapDefaultGroupSet: {
+        label: i18n.t('Default org unit group set in org unit map layers'),
+        configuration: true,
+        type: 'dropdown',
+        source: 'organisationUnitGroupSets',
+    },
+    orgUnitMapDefaultLevel: {
+        label: i18n.t('Default org unit level in org unit map layers'),
+        configuration: true,
+        type: 'dropdown',
+        source: 'organisationUnitLevels',
+    },
     /* ============================================================================================================ */
     /* Category: Server                                                                                             */
     /* ============================================================================================================ */
