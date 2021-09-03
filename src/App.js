@@ -40,6 +40,13 @@ const query = {
             order: 'level:asc',
         },
     },
+    organisationUnitGroupSets: {
+        resource: 'organisationUnitGroupSets',
+        params: {
+            paging: false,
+            fields: 'id,displayName',
+        },
+    },
     userRoles: {
         resource: 'userRoles',
         params: {
@@ -109,6 +116,7 @@ const AppWrapper = () => {
         dataElementGroups,
         userGroups,
         organisationUnitLevels,
+        organisationUnitGroupSets,
         userRoles,
         organisationUnits,
         userSettingsNoFallback,
@@ -150,6 +158,8 @@ const AppWrapper = () => {
         dataElementGroups: dataElementGroups.dataElementGroups,
         userGroups: userGroups.userGroups,
         organisationUnitLevels: organisationUnitLevels.organisationUnitLevels,
+        organisationUnitGroupSets:
+            organisationUnitGroupSets.organisationUnitGroupSets,
         userRoles: userRoles.userRoles,
         organisationUnits: organisationUnits.organisationUnits,
         startModules,
