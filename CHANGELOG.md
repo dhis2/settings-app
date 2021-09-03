@@ -1,3 +1,10 @@
+# [29.8.0](https://github.com/dhis2/settings-app/compare/v29.7.9...v29.8.0) (2021-09-03)
+
+
+### Features
+
+* **analytics:** add default org unit group set and level for maps ([faf6c59](https://github.com/dhis2/settings-app/commit/faf6c5997bad52f45a37968ba3d4f23b5139d759))
+
 ## [29.7.9](https://github.com/dhis2/settings-app/compare/v29.7.8...v29.7.9) (2021-08-31)
 
 
