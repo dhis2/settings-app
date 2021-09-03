@@ -58,6 +58,8 @@ export const categories = {
             'keyDashboardContextMenuItemOpenInRelevantApp',
             'keyDashboardContextMenuItemShowInterpretationsAndDetails',
             'keyDashboardContextMenuItemViewFullscreen',
+            'orgUnitMapDefaultGroupSet',
+            'orgUnitMapDefaultLevel',
         ],
     },
     server: {
