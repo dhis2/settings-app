@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
-# phil_dhis2, 2021
 # Wanda <wanda@frontlineaids.org>, 2021
+# phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # Nadiia <semchuk@aph.org.ua>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-05-19T08:58:48.266Z\n"
-"PO-Revision-Date: 2021-03-18 19:32+0000\n"
+"PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: Nadiia <semchuk@aph.org.ua>, 2021\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -106,7 +106,7 @@ msgid "Name"
 msgstr "Ім'я"
 
 msgid "Required"
-msgstr "Обов'язкове поле"
+msgstr "Обов'язково"
 
 msgid "Client ID"
 msgstr ""
@@ -196,7 +196,7 @@ msgid "Server"
 msgstr "Сервер"
 
 msgid "Server settings"
-msgstr "Налаштування сервера"
+msgstr "Налаштування серверу"
 
 msgid "Appearance"
 msgstr ""
@@ -374,7 +374,7 @@ msgid "Last six-month"
 msgstr "Останнє півріччя"
 
 msgid "Months this year"
-msgstr "Місяців поточного року"
+msgstr "Місяці поточного року"
 
 msgid "Quarters this year"
 msgstr "Квартали поточного року"
@@ -383,7 +383,7 @@ msgid "This year"
 msgstr "Поточний рік"
 
 msgid "Months last year"
-msgstr "Місяців минулого року"
+msgstr "Місяці минулого року"
 
 msgid "Quarters last year"
 msgstr "Квартали минулого року"
@@ -602,7 +602,7 @@ msgid "Database language"
 msgstr "Мова бази даних"
 
 msgid "Property to display in analysis modules"
-msgstr "Властивість для відображення у модулях аналізу"
+msgstr "Характеристика відображення у модулях аналізу"
 
 msgid "Short name"
 msgstr "Коротке ім'я"
