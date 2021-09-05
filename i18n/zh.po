@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-05-19T08:58:48.266Z\n"
-"PO-Revision-Date: 2021-03-18 19:32+0000\n"
+"PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgid "Preview image"
 msgstr "预览图像"
 
 msgid "Preview of image"
-msgstr "图片预览"
+msgstr "图像预览"
 
 msgid "Upload image"
 msgstr "上传图像"
@@ -58,13 +58,13 @@ msgid "Select language"
 msgstr "选择语言"
 
 msgid "Version created"
-msgstr "版本已建立"
+msgstr "已创建版本"
 
 msgid "Failed to create version"
-msgstr "创建版本失败"
+msgstr "无法创建版本"
 
 msgid "Error fetching settings"
-msgstr "提取设置时出错"
+msgstr "获取设置时出错"
 
 msgid "Create new version"
 msgstr "创建新版本"
@@ -85,7 +85,7 @@ msgid "Last sync attempt"
 msgstr "最近尝试同步"
 
 msgid "Failed"
-msgstr "Failed"
+msgstr "失败"
 
 msgid "No versions exist"
 msgstr "没有版本"
@@ -151,7 +151,7 @@ msgid "There are currently no OAuth2 clients registered"
 msgstr "当前没有OAuth2 客户端注册"
 
 msgid "Edit"
-msgstr "编辑<br>"
+msgstr "编辑"
 
 msgid "Delete"
 msgstr "删除"
@@ -163,19 +163,19 @@ msgid "Failed to save OAuth2 client"
 msgstr "保存OAth2客户失败"
 
 msgid "Add OAuth2 client"
-msgstr "添加OAuth2客户端"
+msgstr "添加 OAuth2 客户端"
 
 msgid "Yes"
-msgstr "Yes"
+msgstr "是的"
 
 msgid "No"
-msgstr "No"
+msgstr "不"
 
 msgid "OAuth2 client deleted"
 msgstr "OAth2客户已经删除"
 
 msgid "Failed to delete OAuth2 client"
-msgstr "无法删除OAuth2客户端"
+msgstr "无法删除 OAuth2 客户端"
 
 msgid "Settings updated"
 msgstr "设置已经更新"
@@ -187,7 +187,7 @@ msgid "General settings"
 msgstr "常规设置"
 
 msgid "Analytics"
-msgstr "Analytics"
+msgstr "分析工具"
 
 msgid "Analytics settings"
 msgstr "分析设置"
@@ -241,7 +241,7 @@ msgid "This field is required"
 msgstr "这个字段是必填的"
 
 msgid "This field should be a URL"
-msgstr "该字段应为网址"
+msgstr "此字段应为 URL"
 
 msgid "This field should be a number"
 msgstr "该字段应该是一个数字"
@@ -250,17 +250,17 @@ msgid "This field should be a positive number"
 msgstr "该字段应该是一个正数"
 
 msgid "This field should be an email"
-msgstr "该字段应为电子邮件"
+msgstr "此字段应为电子邮件"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
-msgstr "当前用户设置将覆盖此设置：{{settingName}}"
+msgstr "此设置将被当前用户设置覆盖：{{settingName}}"
 
 msgid "This setting can be overridden by user settings"
 msgstr "该设置可以被用户设置覆盖"
 
 msgid "No options"
-msgstr "没有选择"
+msgstr "没有选项"
 
 msgid "No settings matched the search term"
 msgstr "没有设置满足搜索条件"
@@ -398,13 +398,13 @@ msgid "Last 12 months"
 msgstr "最近12月"
 
 msgid "Last 6 months"
-msgstr "最近6个月"
+msgstr "最近六个月"
 
 msgid "Last 3 months"
 msgstr "最近3个月"
 
 msgid "Last 6 bi-months"
-msgstr "最近6个两月"
+msgstr "最近6个俩月"
 
 msgid "Last 4 quarters"
 msgstr "最近4个季度"
@@ -458,13 +458,13 @@ msgid "Financial year relative period start month"
 msgstr "财政年相对期间起始月份"
 
 msgid "April"
-msgstr "4月"
+msgstr "四月"
 
 msgid "July"
-msgstr "7月"
+msgstr "七月"
 
 msgid "October"
-msgstr "10月"
+msgstr "十月"
 
 msgid "Cache strategy"
 msgstr "缓冲策略"
@@ -482,7 +482,7 @@ msgid "Cache for one hour"
 msgstr "缓存一小时"
 
 msgid "Cache until 6AM tomorrow"
-msgstr "缓存到明天凌晨6点"
+msgstr "缓存到明天早上 6 点"
 
 msgid "Cache for two weeks"
 msgstr "缓冲两周"
@@ -566,7 +566,7 @@ msgid "Google Maps API key"
 msgstr "Google Maps API key"
 
 msgid "Bing Maps API key"
-msgstr "Bing Maps API密钥"
+msgstr "必应地图 API 密钥"
 
 msgid "Application title"
 msgstr "应用标题"
@@ -626,7 +626,7 @@ msgid "Custom top menu logo"
 msgstr "定制顶部菜单logo"
 
 msgid "Allow users to switch dashboard items view type"
-msgstr "允许用户切换仪表板项目的视图类型"
+msgstr "允许用户切换仪表板项目视图类型"
 
 msgid "Allow users to open dashboard items in relevant app"
 msgstr "允许用户在相关应用中打开仪表板项目"
@@ -728,7 +728,7 @@ msgid "Julian"
 msgstr "朱利安"
 
 msgid "Nepali"
-msgstr "尼泊尔文"
+msgstr "尼泊尔语"
 
 msgid "Thai"
 msgstr "泰国"

@@ -1,7 +1,7 @@
 # 
 # Translators:
-# Carwoto Sa'an <carwoto@gmail.com>, 2021
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2021
+# Carwoto Sa'an <carwoto@gmail.com>, 2021
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021
@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-05-19T08:58:48.266Z\n"
-"PO-Revision-Date: 2021-03-18 19:32+0000\n"
+"PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
@@ -167,7 +167,7 @@ msgid "Add OAuth2 client"
 msgstr ""
 
 msgid "Yes"
-msgstr "Ya"
+msgstr "Iya"
 
 msgid "No"
 msgstr "Tidak"
@@ -297,13 +297,13 @@ msgid "Monthly"
 msgstr "Bulanan"
 
 msgid "Bi-monthly"
-msgstr "Dwiwulanan"
+msgstr "Dua bulanan"
 
 msgid "Quarterly"
 msgstr "Triwulanan"
 
 msgid "Six-monthly"
-msgstr "Semester"
+msgstr "Enam bulanan"
 
 msgid "Six-monthly April"
 msgstr "Semester April"
@@ -390,7 +390,7 @@ msgid "Quarters last year"
 msgstr ""
 
 msgid "Last year"
-msgstr "Tahun kemarin"
+msgstr "Tahun lalu"
 
 msgid "Last 5 years"
 msgstr "5 tahun terakhir"
@@ -414,10 +414,10 @@ msgid "Last 2 six-months"
 msgstr "2 semester terakhir"
 
 msgid "This financial year"
-msgstr "Tahun finansial ini"
+msgstr "Anggaran tahun ini"
 
 msgid "Last financial year"
-msgstr "Tahun finansial kemarin"
+msgstr "Anggaran tahun lalu"
 
 msgid "Last 5 financial years"
 msgstr "5 tahun finansial terakhir"
@@ -645,7 +645,7 @@ msgid "Port"
 msgstr ""
 
 msgid "Username"
-msgstr "User name"
+msgstr "Nama pengguna"
 
 msgid "TLS"
 msgstr ""
