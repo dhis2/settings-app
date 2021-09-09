@@ -1,3 +1,10 @@
+# [29.9.0](https://github.com/dhis2/settings-app/compare/v29.8.0...v29.9.0) (2021-09-09)
+
+
+### Features
+
+* **analytics:** facility map layer settings ([f3c5548](https://github.com/dhis2/settings-app/commit/f3c5548f87d62e1f6a4c4e72099d144ccad3919b))
+
 # [29.8.0](https://github.com/dhis2/settings-app/compare/v29.7.9...v29.8.0) (2021-09-03)
 
 
