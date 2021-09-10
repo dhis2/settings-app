@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-05-19T08:58:48.266Z\n"
+"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
@@ -545,6 +545,12 @@ msgid "Put analytics in maintenance mode"
 msgstr "گذاشتن شیوه تحلیل در حالت حفظ و مراقبت"
 
 msgid "Caching factor"
+msgstr ""
+
+msgid "Org unit group set in facility map layers"
+msgstr ""
+
+msgid "Org unit level in facility map layers"
 msgstr ""
 
 msgid "Number of database server CPUs"
