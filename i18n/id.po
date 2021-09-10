@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-05-19T08:58:48.266Z\n"
+"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -549,6 +549,12 @@ msgid "Put analytics in maintenance mode"
 msgstr ""
 
 msgid "Caching factor"
+msgstr ""
+
+msgid "Org unit group set in facility map layers"
+msgstr ""
+
+msgid "Org unit level in facility map layers"
 msgstr ""
 
 msgid "Number of database server CPUs"
