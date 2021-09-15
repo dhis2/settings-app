@@ -551,10 +551,10 @@ msgid "Caching factor"
 msgstr "缓冲因子"
 
 msgid "Org unit group set in facility map layers"
-msgstr ""
+msgstr "在机构设施地图图层中设置的组织机构组"
 
 msgid "Org unit level in facility map layers"
-msgstr ""
+msgstr "设施地图图层中的组织机构级别"
 
 msgid "Number of database server CPUs"
 msgstr "数据库服务器cpu数量"
