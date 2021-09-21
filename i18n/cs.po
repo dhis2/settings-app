@@ -554,10 +554,10 @@ msgid "Caching factor"
 msgstr "Faktor ukládání do mezipaměti"
 
 msgid "Org unit group set in facility map layers"
-msgstr ""
+msgstr "Sada skupiny organizačních jednotek ve vrstvách mapy zařízení"
 
 msgid "Org unit level in facility map layers"
-msgstr ""
+msgstr "Úroveň organizační jednotky ve vrstvách mapy zařízení"
 
 msgid "Number of database server CPUs"
 msgstr "Počet procesorů databázového serveru"
