@@ -1,3 +1,10 @@
+## [29.9.4](https://github.com/dhis2/settings-app/compare/v29.9.3...v29.9.4) (2021-10-28)
+
+
+### Bug Fixes
+
+* update category order, add new relative period ([03b4c31](https://github.com/dhis2/settings-app/commit/03b4c31bb68d6c5848ef0a6abe6c43c91b935ee8))
+
 ## [29.9.3](https://github.com/dhis2/settings-app/compare/v29.9.2...v29.9.3) (2021-09-21)
 
 
