@@ -2,6 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 
 export const categoryOrder = [
     'general',
+    'analytics',
     'server',
     'appearance',
     'email',
@@ -9,7 +10,6 @@ export const categoryOrder = [
     'calendar',
     'import',
     'sync',
-    'monitoring',
     'oauth2',
 ]
 
