@@ -82,6 +82,7 @@ export const categories = {
             'localizedText',
             'keyStyle',
             'startModule',
+            'startModuleEnableLightweight',
             'helpPageLink',
             'keyFlag',
             'keyUiLocale',
