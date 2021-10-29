@@ -1,3 +1,10 @@
+# [29.10.0](https://github.com/dhis2/settings-app/compare/v29.9.4...v29.10.0) (2021-10-29)
+
+
+### Features
+
+* add setting startModuleEnableLightweight ([8eb1445](https://github.com/dhis2/settings-app/commit/8eb1445ce5845c30aaafc35d986698e38ee77152))
+
 ## [29.9.4](https://github.com/dhis2/settings-app/compare/v29.9.3...v29.9.4) (2021-10-28)
 
 
