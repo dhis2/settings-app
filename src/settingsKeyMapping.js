@@ -359,6 +359,10 @@ const settingsKeyMapping = {
         type: 'dropdown',
         source: 'startModules',
     },
+    startModuleEnableLightweight: {
+        label: i18n.t('Enable light-weight start page'),
+        type: 'checkbox',
+    },
     helpPageLink: {
         label: i18n.t('Help page link'),
         validators: ['relative_url'],
