@@ -7,13 +7,14 @@
 # Bram Piot <bram.piot@gmail.com>, 2021
 # Yao Selom Saka <ysaka@hispwca.org>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2021
+# tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2021\n"
+"Last-Translator: tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -355,7 +356,7 @@ msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
 
 msgid "Default relative period for analysis"
-msgstr ""
+msgstr "Période relative par défaut pour l'analyse"
 
 msgid "This month"
 msgstr "Ce mois-ci"
@@ -523,37 +524,37 @@ msgid "Check approval for all data"
 msgstr ""
 
 msgid "Current year only"
-msgstr ""
+msgstr "Année en cours uniquement"
 
 msgid "Last 2 years"
-msgstr ""
+msgstr "2 dernières années"
 
 msgid "Last 3 years"
-msgstr ""
+msgstr "3 dernières années"
 
 msgid "Last 4 years"
-msgstr ""
+msgstr "4 dernières années"
 
 msgid "Last 6 years"
-msgstr ""
+msgstr "6 dernières années"
 
 msgid "Last 7 years"
-msgstr ""
+msgstr "7 dernières années"
 
 msgid "Last 8 years"
-msgstr ""
+msgstr "8 dernières années"
 
 msgid "Last 9 years"
-msgstr ""
+msgstr "9 dernières années"
 
 msgid "Last 10 years"
-msgstr ""
+msgstr "10 dernières années"
 
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
 msgid "Put analytics in maintenance mode"
-msgstr ""
+msgstr "Placer les analyses en mode de maintenance"
 
 msgid "Caching factor"
 msgstr ""
@@ -565,13 +566,13 @@ msgid "Org unit level in facility map layers"
 msgstr ""
 
 msgid "Number of database server CPUs"
-msgstr ""
+msgstr "Nombre d'UC de serveur de base de données"
 
 msgid "Automatic (detect based on web server)"
-msgstr ""
+msgstr "Automatique (détection basée sur le serveur Web)"
 
 msgid "System notifications email address"
-msgstr ""
+msgstr "Adresse e-mail des notifications du système"
 
 msgid "Google Analytics (Universal Analytics) key"
 msgstr "Clé de Google Analytics (Universal Analytics)"
@@ -592,10 +593,10 @@ msgid "Application notification"
 msgstr "Notification de l'application"
 
 msgid "Application left-side footer"
-msgstr ""
+msgstr "Bas de page gauche de l'application"
 
 msgid "Application right-side footer"
-msgstr ""
+msgstr "Bas de page droit de l'application"
 
 msgid "Style"
 msgstr "Style"
@@ -604,7 +605,7 @@ msgid "Start page"
 msgstr "Page d'accueil"
 
 msgid "Help page link"
-msgstr ""
+msgstr "Lien vers la page d'aide"
 
 msgid "Flag"
 msgstr "Drapeau"
@@ -632,12 +633,13 @@ msgstr "Virgule"
 
 msgid "Require authority to add to view object lists"
 msgstr ""
+"Autorisation requise pour ajouter des éléments aux listes des objets de vue"
 
 msgid "Custom login page logo"
-msgstr ""
+msgstr "Logo personnalisé de la page de connexion"
 
 msgid "Custom top menu logo"
-msgstr ""
+msgstr "Logo personnalisé du menu supérieur"
 
 msgid "Allow users to switch dashboard items view type"
 msgstr ""
@@ -664,10 +666,10 @@ msgid "TLS"
 msgstr "TLS"
 
 msgid "Email sender"
-msgstr ""
+msgstr "Expéditeur de l'e-mail"
 
 msgid "Send me a test email"
-msgstr ""
+msgstr "M'envoyer un e-mail de test"
 
 msgid "Self registration account user role"
 msgstr "Rôle d'utilisateur des des comptes auto-inscrits"
@@ -692,6 +694,8 @@ msgstr "Allow users to grant own user roles"
 
 msgid "Allow assigning object to related objects during add or update"
 msgstr ""
+"Permet l'attribution d'un objet à des objets liés pendant un ajout ou une "
+"mise à jour"
 
 msgid "Require user account password change"
 msgstr "Require user account password change"
@@ -700,13 +704,13 @@ msgid "Never"
 msgstr "Jamais"
 
 msgid "3 months"
-msgstr ""
+msgstr "3 mois"
 
 msgid "6 months"
-msgstr ""
+msgstr "6 mois"
 
 msgid "12 months"
-msgstr ""
+msgstr "12 mois"
 
 msgid "Enable password expiry alerts"
 msgstr ""
@@ -715,7 +719,7 @@ msgid "Minimum characters in password"
 msgstr ""
 
 msgid "CORS whitelist"
-msgstr ""
+msgstr "Liste verte CORS"
 
 msgid "reCAPTCHA Site Key"
 msgstr ""
@@ -755,30 +759,38 @@ msgstr "Format de date"
 
 msgid "Require periods to match period type of data set"
 msgstr ""
+"Les périodes doivent correspondre au type de période de l'ensemble de "
+"données"
 
 msgid "Require data elements to be part of data set"
-msgstr ""
+msgstr "Les éléments de données doivent faire partie de l'ensemble de données"
 
 msgid "Require category option combos to match category combo of data element"
 msgstr ""
+"Nécessité de combinaisons d'options de catégorie correspondant à la "
+"combinaison de catégories d'élément de données"
 
 msgid "Require organisation units to match assignment of data set"
 msgstr ""
+"Les unités d'organisation doivent correspondre à l'attribution de l'ensemble"
+" de données"
 
 msgid "Require attribute option combos to match category combo of data set"
 msgstr ""
+"Les combinaisons d'options d'attribut doivent correspondre à la combinaison "
+"de catégories de l'ensemble de données"
 
 msgid "Require category option combo to be specified"
-msgstr ""
+msgstr "La combinaison d'options de catégorie doit être précisée"
 
 msgid "Require attribute option combo to be specified"
-msgstr ""
+msgstr "La combinaison d'options d'attribut doit être précisée"
 
 msgid "Remote server URL"
-msgstr ""
+msgstr "URL de serveur distant"
 
 msgid "Remote server username"
-msgstr ""
+msgstr "Nom d'utilisateur de serveur distant"
 
 msgid "Remote server password"
-msgstr ""
+msgstr "Mot de passe de serveur distant"
