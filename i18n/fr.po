@@ -50,7 +50,7 @@ msgid "Cancel upload"
 msgstr "Annuler le téléchargement"
 
 msgid "System default (fallback)"
-msgstr ""
+msgstr "Valeur système par défaut (secours)"
 
 msgid "Set the main field value before adding a translation"
 msgstr "Définir la valeur du champ principal avant d'ajouter une traduction"
@@ -446,25 +446,25 @@ msgid "Last 52 weeks"
 msgstr "52 dernières semaines"
 
 msgid "Hide daily periods"
-msgstr ""
+msgstr "Masquer les périodes quotidiennes"
 
 msgid "Hidden period types in analytics apps"
-msgstr ""
+msgstr "Types de périodes masquées dans les applications d'analyses"
 
 msgid "Hide weekly periods"
-msgstr ""
+msgstr "Masquer les périodes hebdomadaires"
 
 msgid "Hide biweekly periods"
 msgstr ""
 
 msgid "Hide monthly periods"
-msgstr ""
+msgstr "Masquer les périodes mensuelles"
 
 msgid "Hide bimonthly periods"
-msgstr ""
+msgstr "Masquer les périodes bimensuelles"
 
 msgid "Financial year relative period start month"
-msgstr ""
+msgstr "Mois de départ de la période relative à l'année financière"
 
 msgid "April"
 msgstr "Avril"
@@ -497,31 +497,33 @@ msgid "Cache for two weeks"
 msgstr "Cache pendant 2 semaines"
 
 msgid "Cacheability"
-msgstr ""
+msgstr "Capacité de mise en cache"
 
 msgid "Public"
 msgstr "Public"
 
 msgid "Private"
-msgstr ""
+msgstr "Privé"
 
 msgid "Analytics cache mode"
-msgstr ""
+msgstr "Mode cache pour les analyses"
 
 msgid "Progressive"
-msgstr ""
+msgstr "Progressif"
 
 msgid "Fixed"
-msgstr ""
+msgstr "Fixe"
 
 msgid "Max number of years to hide unapproved data in analytics"
 msgstr ""
+"Nombre max. d'années pour masquer des données non approuvées dans des "
+"analyses"
 
 msgid "Never check approval"
-msgstr ""
+msgstr "Ne jamais vérifier l'approbation"
 
 msgid "Check approval for all data"
-msgstr ""
+msgstr "Vérifier l'approbation pour toutes les données"
 
 msgid "Current year only"
 msgstr "Année en cours uniquement"
@@ -552,12 +554,14 @@ msgstr "10 dernières années"
 
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
+"Respecter les dates de début et de fin de l'option de catégorie dans "
+"l'exportation de tables analytiques"
 
 msgid "Put analytics in maintenance mode"
 msgstr "Placer les analyses en mode de maintenance"
 
 msgid "Caching factor"
-msgstr ""
+msgstr "Facteur de mise en cache"
 
 msgid "Org unit group set in facility map layers"
 msgstr ""
@@ -578,7 +582,7 @@ msgid "Google Analytics (Universal Analytics) key"
 msgstr "Clé de Google Analytics (Universal Analytics)"
 
 msgid "Google Maps API key"
-msgstr ""
+msgstr "Clé API Google Maps"
 
 msgid "Bing Maps API key"
 msgstr ""
@@ -624,6 +628,8 @@ msgstr "Nom court"
 
 msgid "Default digit group separator to display in analysis modules"
 msgstr ""
+"Séparateur de groupes de chiffres par défaut à afficher dans les modules "
+"d'analyse"
 
 msgid "Space"
 msgstr "Espace"
@@ -675,7 +681,7 @@ msgid "Self registration account user role"
 msgstr "Rôle d'utilisateur des des comptes auto-inscrits"
 
 msgid "Disable self registration"
-msgstr ""
+msgstr "Désactiver l'auto-inscription"
 
 msgid "Self registration account organisation unit"
 msgstr "L'unité d'organisation des comptes auto-inscrits"
@@ -688,6 +694,8 @@ msgstr "Permettre la restauration de compte utilisateur"
 
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
+"Verrouiller temporairement le compte de l'utilisateur après plusieurs "
+"tentatives de connexion infructueuses"
 
 msgid "Allow users to grant own user roles"
 msgstr "Allow users to grant own user roles"
@@ -713,19 +721,19 @@ msgid "12 months"
 msgstr "12 mois"
 
 msgid "Enable password expiry alerts"
-msgstr ""
+msgstr "Activer les alertes d'expiration de mot de passe"
 
 msgid "Minimum characters in password"
-msgstr ""
+msgstr "Nombre min. de caractères dans un mot de passe"
 
 msgid "CORS whitelist"
 msgstr "Liste verte CORS"
 
 msgid "reCAPTCHA Site Key"
-msgstr ""
+msgstr "Clé du site reCAPTCHA"
 
 msgid "reCAPTCHA Secret Key"
-msgstr ""
+msgstr "Clé secrète reCAPTCHA"
 
 msgid "Coptic"
 msgstr "copte"
