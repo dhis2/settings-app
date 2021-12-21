@@ -60,6 +60,7 @@ export const categories = {
             'keyDashboardContextMenuItemViewFullscreen',
             'facilityOrgUnitGroupSet',
             'facilityOrgUnitLevel',
+            'keyDefaultBaseMap',
         ],
     },
     server: {

@@ -47,6 +47,14 @@ const query = {
             fields: 'id,displayName',
         },
     },
+    basemaps: {
+        resource: 'externalMapLayers',
+        params: {
+            paging: false,
+            fields: 'id,displayName',
+            filter: ['mapLayerPosition:eq:BASEMAP'],
+        },
+    },
     userRoles: {
         resource: 'userRoles',
         params: {
@@ -112,6 +120,7 @@ const AppWrapper = () => {
     }
 
     const {
+        basemaps,
         indicatorGroups,
         dataElementGroups,
         userGroups,
@@ -160,6 +169,7 @@ const AppWrapper = () => {
         organisationUnitLevels: organisationUnitLevels.organisationUnitLevels,
         organisationUnitGroupSets:
             organisationUnitGroupSets.organisationUnitGroupSets,
+        basemaps: basemaps.externalMapLayers,
         userRoles: userRoles.userRoles,
         organisationUnits: organisationUnits.organisationUnits,
         startModules,

@@ -121,6 +121,20 @@ function addConditionallyHiddenStyles(mapping) {
     return settingsValue === currentValue ? { display: 'none' } : {}
 }
 
+function getMenuItems(mapping) {
+    const sourceMenuItems =
+        (configOptionStore.state && configOptionStore.state[mapping.source]) ||
+        []
+
+    const optionsMenuItems = Object.entries(mapping.options || []).map(
+        ([id, displayName]) => ({
+            id,
+            displayName,
+        })
+    )
+    return sourceMenuItems.concat(optionsMenuItems)
+}
+
 class SettingsFields extends React.Component {
     componentDidMount() {
         this.subscriptions = []
@@ -170,16 +184,7 @@ class SettingsFields extends React.Component {
                 return Object.assign({}, fieldBase, {
                     component: SelectField,
                     props: Object.assign({}, fieldBase.props, {
-                        menuItems: mapping.source
-                            ? (configOptionStore.state &&
-                                  configOptionStore.state[mapping.source]) ||
-                              []
-                            : Object.entries(mapping.options).map(
-                                  ([id, displayName]) => ({
-                                      id,
-                                      displayName,
-                                  })
-                              ),
+                        menuItems: getMenuItems(mapping),
                         includeEmpty: !!mapping.includeEmpty,
                         emptyLabel:
                             (mapping.includeEmpty && mapping.emptyLabel) ||
