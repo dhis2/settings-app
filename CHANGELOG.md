@@ -1,3 +1,10 @@
+# [29.11.0](https://github.com/dhis2/settings-app/compare/v29.10.2...v29.11.0) (2021-12-22)
+
+
+### Features
+
+* add dropdown for default basemap ([545e2fb](https://github.com/dhis2/settings-app/commit/545e2fb60b2e2450523c3fc39517fe8f4511b35f))
+
 ## [29.10.2](https://github.com/dhis2/settings-app/compare/v29.10.1...v29.10.2) (2021-11-27)
 
 
