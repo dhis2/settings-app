@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2021
+# Karoline Tufte Lien <karoline@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2021\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -347,78 +347,6 @@ msgstr "Inkluder passive dashbordvisninger i statistikk over bruksanalyse"
 msgid "Default relative period for analysis"
 msgstr "Standard relativ periode for analyse"
 
-msgid "This month"
-msgstr "Denne måneden"
-
-msgid "Last month"
-msgstr "Forrige måned"
-
-msgid "This bi-month"
-msgstr "Denne tomåneden"
-
-msgid "Last bi-month"
-msgstr "Siste tomåned"
-
-msgid "This quarter"
-msgstr "Dette kvartalet"
-
-msgid "Last quarter"
-msgstr "Siste kvartal"
-
-msgid "This six-month"
-msgstr "Dette halvåret"
-
-msgid "Last six-month"
-msgstr "Siste halvår"
-
-msgid "Months this year"
-msgstr "Måneder i år"
-
-msgid "Quarters this year"
-msgstr "Kvartaler i år"
-
-msgid "This year"
-msgstr "Dette året"
-
-msgid "Months last year"
-msgstr "Måneder i fjor"
-
-msgid "Quarters last year"
-msgstr "Kvartal i fjor"
-
-msgid "Last year"
-msgstr "Forrige år"
-
-msgid "Last 5 years"
-msgstr "Siste 5 år"
-
-msgid "Last 12 months"
-msgstr "Siste 12 måneder"
-
-msgid "Last 6 months"
-msgstr "Siste 6 måneder"
-
-msgid "Last 3 months"
-msgstr "Siste 3 måneder"
-
-msgid "Last 6 bi-months"
-msgstr "Siste 6 tomåneder"
-
-msgid "Last 4 quarters"
-msgstr "Siste 4 kvartaler"
-
-msgid "Last 2 six-months"
-msgstr "Siste 2 halvår"
-
-msgid "This financial year"
-msgstr "Dette regnskapsåret"
-
-msgid "Last financial year"
-msgstr "Siste regnskapsår"
-
-msgid "Last 5 financial years"
-msgstr "Siste 5 regnskapsår"
-
 msgid "This week"
 msgstr "Denne uken"
 
@@ -433,6 +361,81 @@ msgstr "Siste 12 uker"
 
 msgid "Last 52 weeks"
 msgstr "Siste 52 uker"
+
+msgid "This month"
+msgstr "Denne måneden"
+
+msgid "Last month"
+msgstr "Forrige måned"
+
+msgid "Months this year"
+msgstr "Måneder i år"
+
+msgid "Months last year"
+msgstr "Måneder i fjor"
+
+msgid "Last 3 months"
+msgstr "Siste 3 måneder"
+
+msgid "Last 6 months"
+msgstr "Siste 6 måneder"
+
+msgid "Last 12 months"
+msgstr "Siste 12 måneder"
+
+msgid "This bi-month"
+msgstr "Denne tomåneden"
+
+msgid "Last bi-month"
+msgstr "Siste tomåned"
+
+msgid "Last 6 bi-months"
+msgstr "Siste 6 tomåneder"
+
+msgid "This quarter"
+msgstr "Dette kvartalet"
+
+msgid "Last quarter"
+msgstr "Siste kvartal"
+
+msgid "Quarters this year"
+msgstr "Kvartaler i år"
+
+msgid "Quarters last year"
+msgstr "Kvartal i fjor"
+
+msgid "Last 4 quarters"
+msgstr "Siste 4 kvartaler"
+
+msgid "This six-month"
+msgstr "Dette halvåret"
+
+msgid "Last six-month"
+msgstr "Siste halvår"
+
+msgid "Last 2 six-months"
+msgstr "Siste 2 halvår"
+
+msgid "This year"
+msgstr "Dette året"
+
+msgid "Last year"
+msgstr "Forrige år"
+
+msgid "Last 5 years"
+msgstr "Siste 5 år"
+
+msgid "Last 10 years"
+msgstr "Siste 10 år"
+
+msgid "This financial year"
+msgstr "Dette regnskapsåret"
+
+msgid "Last financial year"
+msgstr "Siste regnskapsår"
+
+msgid "Last 5 financial years"
+msgstr "Siste 5 regnskapsår"
 
 msgid "Hide daily periods"
 msgstr "Skjul daglige perioder"
@@ -536,9 +539,6 @@ msgstr "Siste 8 år"
 msgid "Last 9 years"
 msgstr "Siste 9 år"
 
-msgid "Last 10 years"
-msgstr "Siste 10 år"
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 "Respekter kategori-alternativets start- og sluttdato i eksport av "
@@ -555,6 +555,33 @@ msgstr ""
 
 msgid "Org unit level in facility map layers"
 msgstr ""
+
+msgid "Default basemap"
+msgstr ""
+
+msgid "OSM Light"
+msgstr "OSM tynn"
+
+msgid "OSM Detailed"
+msgstr "OSM Detaljert"
+
+msgid "Google Streets"
+msgstr "Google Streets"
+
+msgid "Google Hybrid"
+msgstr "Google Hybrid"
+
+msgid "Bing Road"
+msgstr "Bing Vei"
+
+msgid "Bing Dark"
+msgstr "Bing Mørk"
+
+msgid "Bing Aerial"
+msgstr "Bing Flyfoto"
+
+msgid "Bing Aerial Labels"
+msgstr "Bing Flyfoto Etiketter"
 
 msgid "Number of database server CPUs"
 msgstr "Antall databaseserver CPUs"
@@ -594,6 +621,9 @@ msgstr "Stil"
 
 msgid "Start page"
 msgstr "Startside"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "Link til hjelpeside"

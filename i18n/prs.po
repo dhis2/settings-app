@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
@@ -346,78 +346,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr "معیاد مربوطه برای تحلیل"
 
-msgid "This month"
-msgstr "ماه جاری"
-
-msgid "Last month"
-msgstr "ماه گذشته"
-
-msgid "This bi-month"
-msgstr "دوبار در ماه جاری"
-
-msgid "Last bi-month"
-msgstr "دوبار در ماه گذشته"
-
-msgid "This quarter"
-msgstr "سه ماهه جاری"
-
-msgid "Last quarter"
-msgstr "سه ماهه آخیر"
-
-msgid "This six-month"
-msgstr "شش-ماه جاری"
-
-msgid "Last six-month"
-msgstr "شش-ماهه گذشته"
-
-msgid "Months this year"
-msgstr "ماه های سال هذا"
-
-msgid "Quarters this year"
-msgstr "ربع های سال هذا"
-
-msgid "This year"
-msgstr "سال جاری"
-
-msgid "Months last year"
-msgstr "ماه های سال گذشته"
-
-msgid "Quarters last year"
-msgstr "ربع های سال گذشته"
-
-msgid "Last year"
-msgstr "سال گذشته"
-
-msgid "Last 5 years"
-msgstr "5 سال گذشته"
-
-msgid "Last 12 months"
-msgstr "12 ماهه گذشته"
-
-msgid "Last 6 months"
-msgstr "6 ماه گذشته"
-
-msgid "Last 3 months"
-msgstr "3 ماهه گذشته"
-
-msgid "Last 6 bi-months"
-msgstr "دروبار در شش-ماه گذشته"
-
-msgid "Last 4 quarters"
-msgstr "4 سه ماهه آخیر"
-
-msgid "Last 2 six-months"
-msgstr "2 شش-ماهه گذشته"
-
-msgid "This financial year"
-msgstr "سال مالی جاری"
-
-msgid "Last financial year"
-msgstr "سال گذشته مالی"
-
-msgid "Last 5 financial years"
-msgstr "5 سال گذشته مالی"
-
 msgid "This week"
 msgstr "هفته جاری"
 
@@ -432,6 +360,81 @@ msgstr "12 هفته گذشته"
 
 msgid "Last 52 weeks"
 msgstr "52 هفته گذشته"
+
+msgid "This month"
+msgstr "ماه جاری"
+
+msgid "Last month"
+msgstr "ماه گذشته"
+
+msgid "Months this year"
+msgstr "ماه های سال هذا"
+
+msgid "Months last year"
+msgstr "ماه های سال گذشته"
+
+msgid "Last 3 months"
+msgstr "3 ماهه گذشته"
+
+msgid "Last 6 months"
+msgstr "6 ماه گذشته"
+
+msgid "Last 12 months"
+msgstr "12 ماهه گذشته"
+
+msgid "This bi-month"
+msgstr "دوبار در ماه جاری"
+
+msgid "Last bi-month"
+msgstr "دوبار در ماه گذشته"
+
+msgid "Last 6 bi-months"
+msgstr "دروبار در شش-ماه گذشته"
+
+msgid "This quarter"
+msgstr "سه ماهه جاری"
+
+msgid "Last quarter"
+msgstr "سه ماهه آخیر"
+
+msgid "Quarters this year"
+msgstr "ربع های سال هذا"
+
+msgid "Quarters last year"
+msgstr "ربع های سال گذشته"
+
+msgid "Last 4 quarters"
+msgstr "4 سه ماهه آخیر"
+
+msgid "This six-month"
+msgstr "شش-ماه جاری"
+
+msgid "Last six-month"
+msgstr "شش-ماهه گذشته"
+
+msgid "Last 2 six-months"
+msgstr "2 شش-ماهه گذشته"
+
+msgid "This year"
+msgstr "سال جاری"
+
+msgid "Last year"
+msgstr "سال گذشته"
+
+msgid "Last 5 years"
+msgstr "5 سال گذشته"
+
+msgid "Last 10 years"
+msgstr "10 سال آخیر"
+
+msgid "This financial year"
+msgstr "سال مالی جاری"
+
+msgid "Last financial year"
+msgstr "سال گذشته مالی"
+
+msgid "Last 5 financial years"
+msgstr "5 سال گذشته مالی"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -535,9 +538,6 @@ msgstr "8 سال آخیر"
 msgid "Last 9 years"
 msgstr "9 سال آخیر"
 
-msgid "Last 10 years"
-msgstr "10 سال آخیر"
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr "تاریخ آغاز و ختم گزینه کتگوری انتخاب شده به انالتیکس انتقال گردید"
 
@@ -551,6 +551,33 @@ msgid "Org unit group set in facility map layers"
 msgstr ""
 
 msgid "Org unit level in facility map layers"
+msgstr ""
+
+msgid "Default basemap"
+msgstr ""
+
+msgid "OSM Light"
+msgstr "روشنی OSM"
+
+msgid "OSM Detailed"
+msgstr ""
+
+msgid "Google Streets"
+msgstr "د ګوګل واټونه"
+
+msgid "Google Hybrid"
+msgstr "د ګوګل هایبرېډ"
+
+msgid "Bing Road"
+msgstr ""
+
+msgid "Bing Dark"
+msgstr ""
+
+msgid "Bing Aerial"
+msgstr ""
+
+msgid "Bing Aerial Labels"
 msgstr ""
 
 msgid "Number of database server CPUs"
@@ -591,6 +618,9 @@ msgstr "استایل"
 
 msgid "Start page"
 msgstr "صحفه آغاز"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "لینک صفحه کمک"

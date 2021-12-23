@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -352,78 +352,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr "Таҳлил қилиш учун стандарт боғлиқ давр"
 
-msgid "This month"
-msgstr "Ушбу ой"
-
-msgid "Last month"
-msgstr "Охирги ой"
-
-msgid "This bi-month"
-msgstr "Ушбу жуфт ой"
-
-msgid "Last bi-month"
-msgstr "Охирги жуфт ой"
-
-msgid "This quarter"
-msgstr "Ушбу квартал"
-
-msgid "Last quarter"
-msgstr "Охирги квартал"
-
-msgid "This six-month"
-msgstr "Ушбу ярим йиллик"
-
-msgid "Last six-month"
-msgstr "Охирги ярим йиллик"
-
-msgid "Months this year"
-msgstr "Ойлар ушбу йилда"
-
-msgid "Quarters this year"
-msgstr "Ушбу йилдаги кварталлар"
-
-msgid "This year"
-msgstr "Ушбу йил"
-
-msgid "Months last year"
-msgstr "Ўтган йилдаги ойлар"
-
-msgid "Quarters last year"
-msgstr "Ўтган йилдаги чораклар"
-
-msgid "Last year"
-msgstr "Охирги йил"
-
-msgid "Last 5 years"
-msgstr "Охирги 5 йил"
-
-msgid "Last 12 months"
-msgstr "Охирги 12 ой"
-
-msgid "Last 6 months"
-msgstr "Охирги ярим йиллик"
-
-msgid "Last 3 months"
-msgstr "Охирги 3 ой"
-
-msgid "Last 6 bi-months"
-msgstr "Охирги ярим йиллик жуфт ойлар"
-
-msgid "Last 4 quarters"
-msgstr "Охирги 4 квартал"
-
-msgid "Last 2 six-months"
-msgstr "Охирги 2 та ярим йиллик"
-
-msgid "This financial year"
-msgstr "Ушбу молиявий йил"
-
-msgid "Last financial year"
-msgstr "Охирги молиявий йил"
-
-msgid "Last 5 financial years"
-msgstr "Охирги 5 молиявий йиллар"
-
 msgid "This week"
 msgstr "Ушбу ҳафта"
 
@@ -438,6 +366,81 @@ msgstr "Охирги 12 ҳафта"
 
 msgid "Last 52 weeks"
 msgstr "Охирги 52 ҳафта"
+
+msgid "This month"
+msgstr "Ушбу ой"
+
+msgid "Last month"
+msgstr "Охирги ой"
+
+msgid "Months this year"
+msgstr "Ойлар ушбу йилда"
+
+msgid "Months last year"
+msgstr "Ўтган йилдаги ойлар"
+
+msgid "Last 3 months"
+msgstr "Охирги 3 ой"
+
+msgid "Last 6 months"
+msgstr "Охирги ярим йиллик"
+
+msgid "Last 12 months"
+msgstr "Охирги 12 ой"
+
+msgid "This bi-month"
+msgstr "Ушбу жуфт ой"
+
+msgid "Last bi-month"
+msgstr "Охирги жуфт ой"
+
+msgid "Last 6 bi-months"
+msgstr "Охирги ярим йиллик жуфт ойлар"
+
+msgid "This quarter"
+msgstr "Ушбу квартал"
+
+msgid "Last quarter"
+msgstr "Охирги квартал"
+
+msgid "Quarters this year"
+msgstr "Ушбу йилдаги кварталлар"
+
+msgid "Quarters last year"
+msgstr "Ўтган йилдаги чораклар"
+
+msgid "Last 4 quarters"
+msgstr "Охирги 4 квартал"
+
+msgid "This six-month"
+msgstr "Ушбу ярим йиллик"
+
+msgid "Last six-month"
+msgstr "Охирги ярим йиллик"
+
+msgid "Last 2 six-months"
+msgstr "Охирги 2 та ярим йиллик"
+
+msgid "This year"
+msgstr "Ушбу йил"
+
+msgid "Last year"
+msgstr "Охирги йил"
+
+msgid "Last 5 years"
+msgstr "Охирги 5 йил"
+
+msgid "Last 10 years"
+msgstr "Охирги 10 йил"
+
+msgid "This financial year"
+msgstr "Ушбу молиявий йил"
+
+msgid "Last financial year"
+msgstr "Охирги молиявий йил"
+
+msgid "Last 5 financial years"
+msgstr "Охирги 5 молиявий йиллар"
 
 msgid "Hide daily periods"
 msgstr "Кундалик даврларни беркитиш"
@@ -541,9 +544,6 @@ msgstr "Охирги 8 йил"
 msgid "Last 9 years"
 msgstr "Охирги 9 йил"
 
-msgid "Last 10 years"
-msgstr "Охирги 10 йил"
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 "Аналитик жадвал экспортида категория вариантининг бошланиш ва тугаш санасига"
@@ -560,6 +560,33 @@ msgstr ""
 
 msgid "Org unit level in facility map layers"
 msgstr ""
+
+msgid "Default basemap"
+msgstr ""
+
+msgid "OSM Light"
+msgstr "OSM манба"
+
+msgid "OSM Detailed"
+msgstr "OSM Батафсил"
+
+msgid "Google Streets"
+msgstr "Google Streets"
+
+msgid "Google Hybrid"
+msgstr "Google Hybrid"
+
+msgid "Bing Road"
+msgstr "Йўл"
+
+msgid "Bing Dark"
+msgstr "Тўқ рангли мўйқалам"
+
+msgid "Bing Aerial"
+msgstr "Гибрид кўриниш"
+
+msgid "Bing Aerial Labels"
+msgstr "Қатлам белгилари"
 
 msgid "Number of database server CPUs"
 msgstr "Маълумотлар базаси серверида жараёнлар сони"
@@ -599,6 +626,9 @@ msgstr "Услуб"
 
 msgid "Start page"
 msgstr "Бош саҳифа"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "Ёрдамчи саҳифага ҳавола"

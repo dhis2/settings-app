@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Pashto (https://www.transifex.com/hisp-uio/teams/100509/ps/)\n"
@@ -347,78 +347,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr "د تحلیل اړونده اصلي موده"
 
-msgid "This month"
-msgstr "ماه هذا"
-
-msgid "Last month"
-msgstr "تېره میاشت"
-
-msgid "This bi-month"
-msgstr "این دوماهه"
-
-msgid "Last bi-month"
-msgstr "تېرې دوه میاشتې"
-
-msgid "This quarter"
-msgstr "ربع هذا"
-
-msgid "Last quarter"
-msgstr "تېره ربعه"
-
-msgid "This six-month"
-msgstr "شش ماه هذا"
-
-msgid "Last six-month"
-msgstr "تېرې شپږ میاشتې [ تېرې ـ شپږ ـ میاشتې ]"
-
-msgid "Months this year"
-msgstr "د روان کال میاشتې"
-
-msgid "Quarters this year"
-msgstr "د سږ کال ربعې"
-
-msgid "This year"
-msgstr "روان کال"
-
-msgid "Months last year"
-msgstr "د تېر کال میاشتې"
-
-msgid "Quarters last year"
-msgstr "د تېر کال ربعې"
-
-msgid "Last year"
-msgstr "تېر کال"
-
-msgid "Last 5 years"
-msgstr "تېر 5 کلونه"
-
-msgid "Last 12 months"
-msgstr "تېرې 12 میاشتې"
-
-msgid "Last 6 months"
-msgstr "تېرې شپږ میاشتې"
-
-msgid "Last 3 months"
-msgstr "تېرې 3 میاشتې"
-
-msgid "Last 6 bi-months"
-msgstr "په تېرو شپږو میاشتو کې ډوه ځلې"
-
-msgid "Last 4 quarters"
-msgstr "تېرې 4ربعې"
-
-msgid "Last 2 six-months"
-msgstr "تېرې دوه شپږ میاشتې"
-
-msgid "This financial year"
-msgstr "سږنۍ مالي کال"
-
-msgid "Last financial year"
-msgstr "تېر مالي کال"
-
-msgid "Last 5 financial years"
-msgstr "تېر 5 مالي کلونه"
-
 msgid "This week"
 msgstr "هفته هذا"
 
@@ -433,6 +361,81 @@ msgstr "تېرو 12 اونۍ"
 
 msgid "Last 52 weeks"
 msgstr "تېرې دوه پنځوس اونۍ"
+
+msgid "This month"
+msgstr "ماه هذا"
+
+msgid "Last month"
+msgstr "تېره میاشت"
+
+msgid "Months this year"
+msgstr "د روان کال میاشتې"
+
+msgid "Months last year"
+msgstr "د تېر کال میاشتې"
+
+msgid "Last 3 months"
+msgstr "تېرې 3 میاشتې"
+
+msgid "Last 6 months"
+msgstr "تېرې شپږ میاشتې"
+
+msgid "Last 12 months"
+msgstr "تېرې 12 میاشتې"
+
+msgid "This bi-month"
+msgstr "این دوماهه"
+
+msgid "Last bi-month"
+msgstr "تېرې دوه میاشتې"
+
+msgid "Last 6 bi-months"
+msgstr "په تېرو شپږو میاشتو کې ډوه ځلې"
+
+msgid "This quarter"
+msgstr "ربع هذا"
+
+msgid "Last quarter"
+msgstr "تېره ربعه"
+
+msgid "Quarters this year"
+msgstr "د سږ کال ربعې"
+
+msgid "Quarters last year"
+msgstr "د تېر کال ربعې"
+
+msgid "Last 4 quarters"
+msgstr "تېرې 4ربعې"
+
+msgid "This six-month"
+msgstr "شش ماه هذا"
+
+msgid "Last six-month"
+msgstr "تېرې شپږ میاشتې [ تېرې ـ شپږ ـ میاشتې ]"
+
+msgid "Last 2 six-months"
+msgstr "تېرې دوه شپږ میاشتې"
+
+msgid "This year"
+msgstr "روان کال"
+
+msgid "Last year"
+msgstr "تېر کال"
+
+msgid "Last 5 years"
+msgstr "تېر 5 کلونه"
+
+msgid "Last 10 years"
+msgstr "لس کلونه"
+
+msgid "This financial year"
+msgstr "سږنۍ مالي کال"
+
+msgid "Last financial year"
+msgstr "تېر مالي کال"
+
+msgid "Last 5 financial years"
+msgstr "تېر 5 مالي کلونه"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -536,9 +539,6 @@ msgstr "وروستي اته کلونه"
 msgid "Last 9 years"
 msgstr "وروستي نه (۹) کلونه"
 
-msgid "Last 10 years"
-msgstr "لس کلونه"
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 "د لېږد په تحلیلي جدول کې د پیل او پای نېټې د کټګورۍ انتخاب په پام کې ونیسئ"
@@ -553,6 +553,33 @@ msgid "Org unit group set in facility map layers"
 msgstr ""
 
 msgid "Org unit level in facility map layers"
+msgstr ""
+
+msgid "Default basemap"
+msgstr ""
+
+msgid "OSM Light"
+msgstr "د OSM څراغ"
+
+msgid "OSM Detailed"
+msgstr ""
+
+msgid "Google Streets"
+msgstr "سرک  های گوگل"
+
+msgid "Google Hybrid"
+msgstr "چندگانه گوگل"
+
+msgid "Bing Road"
+msgstr ""
+
+msgid "Bing Dark"
+msgstr ""
+
+msgid "Bing Aerial"
+msgstr ""
+
+msgid "Bing Aerial Labels"
 msgstr ""
 
 msgid "Number of database server CPUs"
@@ -593,6 +620,9 @@ msgstr "طرز یا ډول"
 
 msgid "Start page"
 msgstr "پاڼه پیل کړئ"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "د مرستندویه پاڼې لینک"

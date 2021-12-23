@@ -5,13 +5,14 @@
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021
+# Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021\n"
+"Last-Translator: Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -350,78 +351,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr ""
 
-msgid "This month"
-msgstr "Bulan ini"
-
-msgid "Last month"
-msgstr "Bulan lalu"
-
-msgid "This bi-month"
-msgstr "2 bulan ini"
-
-msgid "Last bi-month"
-msgstr "Dwiwulan terakhir"
-
-msgid "This quarter"
-msgstr "Triwulan ini"
-
-msgid "Last quarter"
-msgstr "Triwulan yang lalu"
-
-msgid "This six-month"
-msgstr "6 bulan ini"
-
-msgid "Last six-month"
-msgstr "Semester lalu"
-
-msgid "Months this year"
-msgstr "Bulanan tahun ini"
-
-msgid "Quarters this year"
-msgstr "Triwulanan tahun ini"
-
-msgid "This year"
-msgstr "Tahun ini"
-
-msgid "Months last year"
-msgstr "Bulanan tahun lalu"
-
-msgid "Quarters last year"
-msgstr ""
-
-msgid "Last year"
-msgstr "Tahun kemarin"
-
-msgid "Last 5 years"
-msgstr "5 tahun terakhir"
-
-msgid "Last 12 months"
-msgstr "12 bulan terakhir"
-
-msgid "Last 6 months"
-msgstr "6 bulan terakhir"
-
-msgid "Last 3 months"
-msgstr "3 bulan terakhir"
-
-msgid "Last 6 bi-months"
-msgstr "6 dwiwulan terakhir"
-
-msgid "Last 4 quarters"
-msgstr "4 triwulan terakhir"
-
-msgid "Last 2 six-months"
-msgstr "2 semester terakhir"
-
-msgid "This financial year"
-msgstr "Tahun finansial ini"
-
-msgid "Last financial year"
-msgstr "Tahun finansial kemarin"
-
-msgid "Last 5 financial years"
-msgstr "5 tahun finansial terakhir"
-
 msgid "This week"
 msgstr "Minggu ini"
 
@@ -436,6 +365,81 @@ msgstr "12 minggu terakhir"
 
 msgid "Last 52 weeks"
 msgstr "52 minggu terakhir"
+
+msgid "This month"
+msgstr "Bulan ini"
+
+msgid "Last month"
+msgstr "Bulan lalu"
+
+msgid "Months this year"
+msgstr "Bulanan tahun ini"
+
+msgid "Months last year"
+msgstr "Bulanan tahun lalu"
+
+msgid "Last 3 months"
+msgstr "3 bulan terakhir"
+
+msgid "Last 6 months"
+msgstr "6 bulan terakhir"
+
+msgid "Last 12 months"
+msgstr "12 bulan terakhir"
+
+msgid "This bi-month"
+msgstr "2 bulan ini"
+
+msgid "Last bi-month"
+msgstr "Dwiwulan terakhir"
+
+msgid "Last 6 bi-months"
+msgstr "6 dwiwulan terakhir"
+
+msgid "This quarter"
+msgstr "Triwulan ini"
+
+msgid "Last quarter"
+msgstr "Triwulan yang lalu"
+
+msgid "Quarters this year"
+msgstr "Triwulanan tahun ini"
+
+msgid "Quarters last year"
+msgstr ""
+
+msgid "Last 4 quarters"
+msgstr "4 triwulan terakhir"
+
+msgid "This six-month"
+msgstr "6 bulan ini"
+
+msgid "Last six-month"
+msgstr "Semester lalu"
+
+msgid "Last 2 six-months"
+msgstr "2 semester terakhir"
+
+msgid "This year"
+msgstr "Tahun ini"
+
+msgid "Last year"
+msgstr "Tahun kemarin"
+
+msgid "Last 5 years"
+msgstr "5 tahun terakhir"
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "This financial year"
+msgstr "Tahun finansial ini"
+
+msgid "Last financial year"
+msgstr "Tahun finansial kemarin"
+
+msgid "Last 5 financial years"
+msgstr "5 tahun finansial terakhir"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -539,9 +543,6 @@ msgstr ""
 msgid "Last 9 years"
 msgstr ""
 
-msgid "Last 10 years"
-msgstr ""
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
@@ -555,6 +556,33 @@ msgid "Org unit group set in facility map layers"
 msgstr ""
 
 msgid "Org unit level in facility map layers"
+msgstr ""
+
+msgid "Default basemap"
+msgstr ""
+
+msgid "OSM Light"
+msgstr ""
+
+msgid "OSM Detailed"
+msgstr ""
+
+msgid "Google Streets"
+msgstr "Google Streets"
+
+msgid "Google Hybrid"
+msgstr "Google Hybrid"
+
+msgid "Bing Road"
+msgstr ""
+
+msgid "Bing Dark"
+msgstr "Bing Dark"
+
+msgid "Bing Aerial"
+msgstr ""
+
+msgid "Bing Aerial Labels"
 msgstr ""
 
 msgid "Number of database server CPUs"
@@ -595,6 +623,9 @@ msgstr "Gaya"
 
 msgid "Start page"
 msgstr "Halaman muka"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr ""

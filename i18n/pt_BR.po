@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
@@ -347,78 +347,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr ""
 
-msgid "This month"
-msgstr ""
-
-msgid "Last month"
-msgstr "Mês passado"
-
-msgid "This bi-month"
-msgstr ""
-
-msgid "Last bi-month"
-msgstr ""
-
-msgid "This quarter"
-msgstr ""
-
-msgid "Last quarter"
-msgstr "Último trimestre"
-
-msgid "This six-month"
-msgstr ""
-
-msgid "Last six-month"
-msgstr "Últimos 6 meses"
-
-msgid "Months this year"
-msgstr "Meses deste ano"
-
-msgid "Quarters this year"
-msgstr "Trimestres deste ano"
-
-msgid "This year"
-msgstr "Este ano"
-
-msgid "Months last year"
-msgstr "Meses do ano passado"
-
-msgid "Quarters last year"
-msgstr "Trimestres do ano passado"
-
-msgid "Last year"
-msgstr "Ano passado"
-
-msgid "Last 5 years"
-msgstr "Últimos 5 anos"
-
-msgid "Last 12 months"
-msgstr "Últimos 12 meses"
-
-msgid "Last 6 months"
-msgstr "Últimos 6 meses"
-
-msgid "Last 3 months"
-msgstr "Últimos 3 meses"
-
-msgid "Last 6 bi-months"
-msgstr "Últimos 6 bi-meses"
-
-msgid "Last 4 quarters"
-msgstr "Últimos 4 trimestresÚltimo 4 trimestre"
-
-msgid "Last 2 six-months"
-msgstr "Último 2 seis-meses"
-
-msgid "This financial year"
-msgstr ""
-
-msgid "Last financial year"
-msgstr "último ano financeiro"
-
-msgid "Last 5 financial years"
-msgstr "Últimos 5 anos financeiros"
-
 msgid "This week"
 msgstr ""
 
@@ -433,6 +361,81 @@ msgstr "Últimoas 12 semanas"
 
 msgid "Last 52 weeks"
 msgstr ""
+
+msgid "This month"
+msgstr ""
+
+msgid "Last month"
+msgstr "Mês passado"
+
+msgid "Months this year"
+msgstr "Meses deste ano"
+
+msgid "Months last year"
+msgstr "Meses do ano passado"
+
+msgid "Last 3 months"
+msgstr "Últimos 3 meses"
+
+msgid "Last 6 months"
+msgstr "Últimos 6 meses"
+
+msgid "Last 12 months"
+msgstr "Últimos 12 meses"
+
+msgid "This bi-month"
+msgstr ""
+
+msgid "Last bi-month"
+msgstr ""
+
+msgid "Last 6 bi-months"
+msgstr "Últimos 6 bi-meses"
+
+msgid "This quarter"
+msgstr ""
+
+msgid "Last quarter"
+msgstr "Último trimestre"
+
+msgid "Quarters this year"
+msgstr "Trimestres deste ano"
+
+msgid "Quarters last year"
+msgstr "Trimestres do ano passado"
+
+msgid "Last 4 quarters"
+msgstr "Últimos 4 trimestresÚltimo 4 trimestre"
+
+msgid "This six-month"
+msgstr ""
+
+msgid "Last six-month"
+msgstr "Últimos 6 meses"
+
+msgid "Last 2 six-months"
+msgstr "Último 2 seis-meses"
+
+msgid "This year"
+msgstr "Este ano"
+
+msgid "Last year"
+msgstr "Ano passado"
+
+msgid "Last 5 years"
+msgstr "Últimos 5 anos"
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "This financial year"
+msgstr ""
+
+msgid "Last financial year"
+msgstr "último ano financeiro"
+
+msgid "Last 5 financial years"
+msgstr "Últimos 5 anos financeiros"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -536,9 +539,6 @@ msgstr ""
 msgid "Last 9 years"
 msgstr ""
 
-msgid "Last 10 years"
-msgstr ""
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
@@ -552,6 +552,33 @@ msgid "Org unit group set in facility map layers"
 msgstr ""
 
 msgid "Org unit level in facility map layers"
+msgstr ""
+
+msgid "Default basemap"
+msgstr ""
+
+msgid "OSM Light"
+msgstr ""
+
+msgid "OSM Detailed"
+msgstr ""
+
+msgid "Google Streets"
+msgstr ""
+
+msgid "Google Hybrid"
+msgstr ""
+
+msgid "Bing Road"
+msgstr ""
+
+msgid "Bing Dark"
+msgstr ""
+
+msgid "Bing Aerial"
+msgstr ""
+
+msgid "Bing Aerial Labels"
 msgstr ""
 
 msgid "Number of database server CPUs"
@@ -592,6 +619,9 @@ msgstr "Estilo"
 
 msgid "Start page"
 msgstr "Página inicial"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2021\n"
 "Language-Team: Arabic (Iraq) (https://www.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
@@ -346,78 +346,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr ""
 
-msgid "This month"
-msgstr "الشهر الحالي"
-
-msgid "Last month"
-msgstr "الشهر الماضي"
-
-msgid "This bi-month"
-msgstr "الشهران المزدوجان الحاليان"
-
-msgid "Last bi-month"
-msgstr "آخر شهرين مزدوجين"
-
-msgid "This quarter"
-msgstr "ربع السنة الحالي"
-
-msgid "Last quarter"
-msgstr "ربع السنة الماضي"
-
-msgid "This six-month"
-msgstr "نصف السنة الحالي (فترة من ستة أشهر)"
-
-msgid "Last six-month"
-msgstr "آخر ستة أشهر"
-
-msgid "Months this year"
-msgstr "أشهر السنة الحالية"
-
-msgid "Quarters this year"
-msgstr "أرباع السنة الحالية"
-
-msgid "This year"
-msgstr "السنة الحالية"
-
-msgid "Months last year"
-msgstr ""
-
-msgid "Quarters last year"
-msgstr ""
-
-msgid "Last year"
-msgstr "السنة الماضية"
-
-msgid "Last 5 years"
-msgstr "آخر 5 سنوات"
-
-msgid "Last 12 months"
-msgstr "آخر 12 شهر"
-
-msgid "Last 6 months"
-msgstr "آخر 6 أشهر"
-
-msgid "Last 3 months"
-msgstr "آخر 3 أشهر"
-
-msgid "Last 6 bi-months"
-msgstr "آخر 6 أشهر مزدوجة"
-
-msgid "Last 4 quarters"
-msgstr "آخر 4 أرباع السنة"
-
-msgid "Last 2 six-months"
-msgstr "آخر 2 ستة أشهر"
-
-msgid "This financial year"
-msgstr "السنة المالية الحالية"
-
-msgid "Last financial year"
-msgstr "السنة المالية الماضية"
-
-msgid "Last 5 financial years"
-msgstr "آخر 5 سنوات مالية"
-
 msgid "This week"
 msgstr "الأسبوع الحالي"
 
@@ -432,6 +360,81 @@ msgstr "آخر 12 أسبوع"
 
 msgid "Last 52 weeks"
 msgstr "آخر 52 أسبوع"
+
+msgid "This month"
+msgstr "الشهر الحالي"
+
+msgid "Last month"
+msgstr "الشهر الماضي"
+
+msgid "Months this year"
+msgstr "أشهر السنة الحالية"
+
+msgid "Months last year"
+msgstr ""
+
+msgid "Last 3 months"
+msgstr "آخر 3 أشهر"
+
+msgid "Last 6 months"
+msgstr "آخر 6 أشهر"
+
+msgid "Last 12 months"
+msgstr "آخر 12 شهر"
+
+msgid "This bi-month"
+msgstr "الشهران المزدوجان الحاليان"
+
+msgid "Last bi-month"
+msgstr "آخر شهرين مزدوجين"
+
+msgid "Last 6 bi-months"
+msgstr "آخر 6 أشهر مزدوجة"
+
+msgid "This quarter"
+msgstr "ربع السنة الحالي"
+
+msgid "Last quarter"
+msgstr "ربع السنة الماضي"
+
+msgid "Quarters this year"
+msgstr "أرباع السنة الحالية"
+
+msgid "Quarters last year"
+msgstr ""
+
+msgid "Last 4 quarters"
+msgstr "آخر 4 أرباع السنة"
+
+msgid "This six-month"
+msgstr "نصف السنة الحالي (فترة من ستة أشهر)"
+
+msgid "Last six-month"
+msgstr "آخر ستة أشهر"
+
+msgid "Last 2 six-months"
+msgstr "آخر 2 ستة أشهر"
+
+msgid "This year"
+msgstr "السنة الحالية"
+
+msgid "Last year"
+msgstr "السنة الماضية"
+
+msgid "Last 5 years"
+msgstr "آخر 5 سنوات"
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "This financial year"
+msgstr "السنة المالية الحالية"
+
+msgid "Last financial year"
+msgstr "السنة المالية الماضية"
+
+msgid "Last 5 financial years"
+msgstr "آخر 5 سنوات مالية"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -535,9 +538,6 @@ msgstr ""
 msgid "Last 9 years"
 msgstr ""
 
-msgid "Last 10 years"
-msgstr ""
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
@@ -551,6 +551,33 @@ msgid "Org unit group set in facility map layers"
 msgstr ""
 
 msgid "Org unit level in facility map layers"
+msgstr ""
+
+msgid "Default basemap"
+msgstr ""
+
+msgid "OSM Light"
+msgstr ""
+
+msgid "OSM Detailed"
+msgstr ""
+
+msgid "Google Streets"
+msgstr ""
+
+msgid "Google Hybrid"
+msgstr ""
+
+msgid "Bing Road"
+msgstr ""
+
+msgid "Bing Dark"
+msgstr ""
+
+msgid "Bing Aerial"
+msgstr ""
+
+msgid "Bing Aerial Labels"
 msgstr ""
 
 msgid "Number of database server CPUs"
@@ -590,6 +617,9 @@ msgid "Style"
 msgstr "المظهر"
 
 msgid "Start page"
+msgstr ""
+
+msgid "Enable light-weight start page"
 msgstr ""
 
 msgid "Help page link"
