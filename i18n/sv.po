@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
@@ -347,78 +347,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr ""
 
-msgid "This month"
-msgstr "Den här månaden"
-
-msgid "Last month"
-msgstr "Förra månaden"
-
-msgid "This bi-month"
-msgstr "Denna bi-månaders"
-
-msgid "Last bi-month"
-msgstr "Senast bi månad"
-
-msgid "This quarter"
-msgstr "detta kvartal"
-
-msgid "Last quarter"
-msgstr "Förra kvartalet"
-
-msgid "This six-month"
-msgstr "Denna sexmånaders"
-
-msgid "Last six-month"
-msgstr "Senast sex månader"
-
-msgid "Months this year"
-msgstr "Månader i år"
-
-msgid "Quarters this year"
-msgstr "Kvartalen i år"
-
-msgid "This year"
-msgstr "Det här året"
-
-msgid "Months last year"
-msgstr "Månader förra året"
-
-msgid "Quarters last year"
-msgstr "Kvartal förra året"
-
-msgid "Last year"
-msgstr "Förra året"
-
-msgid "Last 5 years"
-msgstr "Senaste 5 år"
-
-msgid "Last 12 months"
-msgstr "Senaste 12 månaderna"
-
-msgid "Last 6 months"
-msgstr "Senaste 6 månaderna"
-
-msgid "Last 3 months"
-msgstr "Senaste 3 månaderna"
-
-msgid "Last 6 bi-months"
-msgstr "Senaste 6 bi-månader"
-
-msgid "Last 4 quarters"
-msgstr "Senaste 4 kvartal"
-
-msgid "Last 2 six-months"
-msgstr "Senaste 2 sex månader"
-
-msgid "This financial year"
-msgstr "Detta räkenskapsår"
-
-msgid "Last financial year"
-msgstr "Föregående räkenskapsår"
-
-msgid "Last 5 financial years"
-msgstr "Senaste 5 räkenskapsåren"
-
 msgid "This week"
 msgstr "Denna vecka"
 
@@ -433,6 +361,81 @@ msgstr "Senast 12 veckor"
 
 msgid "Last 52 weeks"
 msgstr "Senast 52 veckor"
+
+msgid "This month"
+msgstr "Den här månaden"
+
+msgid "Last month"
+msgstr "Förra månaden"
+
+msgid "Months this year"
+msgstr "Månader i år"
+
+msgid "Months last year"
+msgstr "Månader förra året"
+
+msgid "Last 3 months"
+msgstr "Senaste 3 månaderna"
+
+msgid "Last 6 months"
+msgstr "Senaste 6 månaderna"
+
+msgid "Last 12 months"
+msgstr "Senaste 12 månaderna"
+
+msgid "This bi-month"
+msgstr "Denna bi-månaders"
+
+msgid "Last bi-month"
+msgstr "Senast bi månad"
+
+msgid "Last 6 bi-months"
+msgstr "Senaste 6 bi-månader"
+
+msgid "This quarter"
+msgstr "detta kvartal"
+
+msgid "Last quarter"
+msgstr "Förra kvartalet"
+
+msgid "Quarters this year"
+msgstr "Kvartalen i år"
+
+msgid "Quarters last year"
+msgstr "Kvartal förra året"
+
+msgid "Last 4 quarters"
+msgstr "Senaste 4 kvartal"
+
+msgid "This six-month"
+msgstr "Denna sexmånaders"
+
+msgid "Last six-month"
+msgstr "Senast sex månader"
+
+msgid "Last 2 six-months"
+msgstr "Senaste 2 sex månader"
+
+msgid "This year"
+msgstr "Det här året"
+
+msgid "Last year"
+msgstr "Förra året"
+
+msgid "Last 5 years"
+msgstr "Senaste 5 år"
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "This financial year"
+msgstr "Detta räkenskapsår"
+
+msgid "Last financial year"
+msgstr "Föregående räkenskapsår"
+
+msgid "Last 5 financial years"
+msgstr "Senaste 5 räkenskapsåren"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -536,9 +539,6 @@ msgstr ""
 msgid "Last 9 years"
 msgstr ""
 
-msgid "Last 10 years"
-msgstr ""
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
@@ -552,6 +552,33 @@ msgid "Org unit group set in facility map layers"
 msgstr ""
 
 msgid "Org unit level in facility map layers"
+msgstr ""
+
+msgid "Default basemap"
+msgstr ""
+
+msgid "OSM Light"
+msgstr "OSM Ljus"
+
+msgid "OSM Detailed"
+msgstr ""
+
+msgid "Google Streets"
+msgstr ""
+
+msgid "Google Hybrid"
+msgstr ""
+
+msgid "Bing Road"
+msgstr ""
+
+msgid "Bing Dark"
+msgstr ""
+
+msgid "Bing Aerial"
+msgstr ""
+
+msgid "Bing Aerial Labels"
 msgstr ""
 
 msgid "Number of database server CPUs"
@@ -591,6 +618,9 @@ msgid "Style"
 msgstr "Stil"
 
 msgid "Start page"
+msgstr ""
+
+msgid "Enable light-weight start page"
 msgstr ""
 
 msgid "Help page link"

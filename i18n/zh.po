@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -349,78 +349,6 @@ msgstr "在使用情况分析统计信息中包括被动仪表板视图"
 msgid "Default relative period for analysis"
 msgstr "缺省的系统分析相对期间类型"
 
-msgid "This month"
-msgstr "本月"
-
-msgid "Last month"
-msgstr "上月"
-
-msgid "This bi-month"
-msgstr "本双月"
-
-msgid "Last bi-month"
-msgstr "最近两个月"
-
-msgid "This quarter"
-msgstr "本季度"
-
-msgid "Last quarter"
-msgstr "最近一季"
-
-msgid "This six-month"
-msgstr "本六个月"
-
-msgid "Last six-month"
-msgstr "最近六个月"
-
-msgid "Months this year"
-msgstr "今年的月份"
-
-msgid "Quarters this year"
-msgstr "今年的季度"
-
-msgid "This year"
-msgstr "今年"
-
-msgid "Months last year"
-msgstr "去年的月份"
-
-msgid "Quarters last year"
-msgstr "去年的季度"
-
-msgid "Last year"
-msgstr "去年"
-
-msgid "Last 5 years"
-msgstr "最近5年"
-
-msgid "Last 12 months"
-msgstr "最近12月"
-
-msgid "Last 6 months"
-msgstr "最近6个月"
-
-msgid "Last 3 months"
-msgstr "最近3个月"
-
-msgid "Last 6 bi-months"
-msgstr "最近6个两月"
-
-msgid "Last 4 quarters"
-msgstr "最近4个季度"
-
-msgid "Last 2 six-months"
-msgstr "最近2个半年"
-
-msgid "This financial year"
-msgstr "本财年"
-
-msgid "Last financial year"
-msgstr "上一财政年"
-
-msgid "Last 5 financial years"
-msgstr "最近5个财政年"
-
 msgid "This week"
 msgstr "本年"
 
@@ -435,6 +363,81 @@ msgstr "最近12周"
 
 msgid "Last 52 weeks"
 msgstr "最近52周"
+
+msgid "This month"
+msgstr "本月"
+
+msgid "Last month"
+msgstr "上月"
+
+msgid "Months this year"
+msgstr "今年的月份"
+
+msgid "Months last year"
+msgstr "去年的月份"
+
+msgid "Last 3 months"
+msgstr "最近3个月"
+
+msgid "Last 6 months"
+msgstr "最近6个月"
+
+msgid "Last 12 months"
+msgstr "最近12月"
+
+msgid "This bi-month"
+msgstr "本双月"
+
+msgid "Last bi-month"
+msgstr "最近两个月"
+
+msgid "Last 6 bi-months"
+msgstr "最近6个两月"
+
+msgid "This quarter"
+msgstr "本季度"
+
+msgid "Last quarter"
+msgstr "最近一季"
+
+msgid "Quarters this year"
+msgstr "今年的季度"
+
+msgid "Quarters last year"
+msgstr "去年的季度"
+
+msgid "Last 4 quarters"
+msgstr "最近4个季度"
+
+msgid "This six-month"
+msgstr "本六个月"
+
+msgid "Last six-month"
+msgstr "最近六个月"
+
+msgid "Last 2 six-months"
+msgstr "最近2个半年"
+
+msgid "This year"
+msgstr "今年"
+
+msgid "Last year"
+msgstr "去年"
+
+msgid "Last 5 years"
+msgstr "最近5年"
+
+msgid "Last 10 years"
+msgstr "最近10年"
+
+msgid "This financial year"
+msgstr "本财年"
+
+msgid "Last financial year"
+msgstr "上一财政年"
+
+msgid "Last 5 financial years"
+msgstr "最近5个财政年"
 
 msgid "Hide daily periods"
 msgstr "隐藏每日期间"
@@ -538,9 +541,6 @@ msgstr "最近8年"
 msgid "Last 9 years"
 msgstr "最近9年"
 
-msgid "Last 10 years"
-msgstr "最近10年"
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr "分析表导出包括各自分类选项的起始日期"
 
@@ -555,6 +555,33 @@ msgstr "在机构设施地图图层中设置的组织机构组"
 
 msgid "Org unit level in facility map layers"
 msgstr "设施地图图层中的组织机构级别"
+
+msgid "Default basemap"
+msgstr ""
+
+msgid "OSM Light"
+msgstr "OSM轻量"
+
+msgid "OSM Detailed"
+msgstr "OSM详细图"
+
+msgid "Google Streets"
+msgstr "谷歌街道"
+
+msgid "Google Hybrid"
+msgstr "谷歌杂合"
+
+msgid "Bing Road"
+msgstr "Bing道路"
+
+msgid "Bing Dark"
+msgstr "Bing夜图"
+
+msgid "Bing Aerial"
+msgstr "Bing空间图"
+
+msgid "Bing Aerial Labels"
+msgstr "Bing空间标示图"
 
 msgid "Number of database server CPUs"
 msgstr "数据库服务器cpu数量"
@@ -594,6 +621,9 @@ msgstr "风格"
 
 msgid "Start page"
 msgstr "开始页面"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "帮助手册地址"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: trendspotter <jirka.p@volny.cz>, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -350,78 +350,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr "Výchozí relativní období pro analýzu"
 
-msgid "This month"
-msgstr "Tento měsíc"
-
-msgid "Last month"
-msgstr "Minulý měsíc"
-
-msgid "This bi-month"
-msgstr "Tyto dva měsíce"
-
-msgid "Last bi-month"
-msgstr "Poslední dva měsíce"
-
-msgid "This quarter"
-msgstr "Toto čtvrtletí"
-
-msgid "Last quarter"
-msgstr "Poslední čtvrtletí"
-
-msgid "This six-month"
-msgstr "Těchto šest měsíců"
-
-msgid "Last six-month"
-msgstr "Poslední půlrok"
-
-msgid "Months this year"
-msgstr "Měsíce tohoto roku"
-
-msgid "Quarters this year"
-msgstr "Čtvrtletí tohoto roku"
-
-msgid "This year"
-msgstr "Tento rok"
-
-msgid "Months last year"
-msgstr "Měsíců minulého roku"
-
-msgid "Quarters last year"
-msgstr "Čtvrtletí v loňském roce"
-
-msgid "Last year"
-msgstr "Poslední rok"
-
-msgid "Last 5 years"
-msgstr "Posledních 5 let"
-
-msgid "Last 12 months"
-msgstr "Posledních 12 měsíců"
-
-msgid "Last 6 months"
-msgstr "Posledních 6 měsíců"
-
-msgid "Last 3 months"
-msgstr "Poslední 3 měsíce"
-
-msgid "Last 6 bi-months"
-msgstr "Posledních 6 dvou-měsíců"
-
-msgid "Last 4 quarters"
-msgstr "Poslední 4 čtvrtletí "
-
-msgid "Last 2 six-months"
-msgstr "Poslední 2 šestiměsíce"
-
-msgid "This financial year"
-msgstr "Tento finanční rok"
-
-msgid "Last financial year"
-msgstr "Poslední finanční rok"
-
-msgid "Last 5 financial years"
-msgstr "Posledních 5 finančních roků"
-
 msgid "This week"
 msgstr "Tento týden"
 
@@ -436,6 +364,81 @@ msgstr "Posledních 12 týdnů"
 
 msgid "Last 52 weeks"
 msgstr "Posledních 52 týdnů"
+
+msgid "This month"
+msgstr "Tento měsíc"
+
+msgid "Last month"
+msgstr "Minulý měsíc"
+
+msgid "Months this year"
+msgstr "Měsíce tohoto roku"
+
+msgid "Months last year"
+msgstr "Měsíců minulého roku"
+
+msgid "Last 3 months"
+msgstr "Poslední 3 měsíce"
+
+msgid "Last 6 months"
+msgstr "Posledních 6 měsíců"
+
+msgid "Last 12 months"
+msgstr "Posledních 12 měsíců"
+
+msgid "This bi-month"
+msgstr "Tyto dva měsíce"
+
+msgid "Last bi-month"
+msgstr "Poslední dva měsíce"
+
+msgid "Last 6 bi-months"
+msgstr "Posledních 6 dvou-měsíců"
+
+msgid "This quarter"
+msgstr "Toto čtvrtletí"
+
+msgid "Last quarter"
+msgstr "Poslední čtvrtletí"
+
+msgid "Quarters this year"
+msgstr "Čtvrtletí tohoto roku"
+
+msgid "Quarters last year"
+msgstr "Čtvrtletí v loňském roce"
+
+msgid "Last 4 quarters"
+msgstr "Poslední 4 čtvrtletí "
+
+msgid "This six-month"
+msgstr "Těchto šest měsíců"
+
+msgid "Last six-month"
+msgstr "Poslední půlrok"
+
+msgid "Last 2 six-months"
+msgstr "Poslední 2 šestiměsíce"
+
+msgid "This year"
+msgstr "Tento rok"
+
+msgid "Last year"
+msgstr "Poslední rok"
+
+msgid "Last 5 years"
+msgstr "Posledních 5 let"
+
+msgid "Last 10 years"
+msgstr "Posledních 10 let"
+
+msgid "This financial year"
+msgstr "Tento finanční rok"
+
+msgid "Last financial year"
+msgstr "Poslední finanční rok"
+
+msgid "Last 5 financial years"
+msgstr "Posledních 5 finančních roků"
 
 msgid "Hide daily periods"
 msgstr "Skrýt denní období"
@@ -539,9 +542,6 @@ msgstr "Posledních 8 let"
 msgid "Last 9 years"
 msgstr "Posledních 9 let"
 
-msgid "Last 10 years"
-msgstr "Posledních 10 let"
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 "Při exportu analytické tabulky respektujte počáteční a koncové datum "
@@ -558,6 +558,33 @@ msgstr "Sada skupiny organizačních jednotek ve vrstvách mapy zařízení"
 
 msgid "Org unit level in facility map layers"
 msgstr "Úroveň organizační jednotky ve vrstvách mapy zařízení"
+
+msgid "Default basemap"
+msgstr ""
+
+msgid "OSM Light"
+msgstr "OSM Light"
+
+msgid "OSM Detailed"
+msgstr "OSM Detailed"
+
+msgid "Google Streets"
+msgstr "Google Streets"
+
+msgid "Google Hybrid"
+msgstr "Google Hybrid"
+
+msgid "Bing Road"
+msgstr "Bing Road"
+
+msgid "Bing Dark"
+msgstr "Bing Dark"
+
+msgid "Bing Aerial"
+msgstr "Bing Aerial"
+
+msgid "Bing Aerial Labels"
+msgstr "Bing Aerial Labels"
 
 msgid "Number of database server CPUs"
 msgstr "Počet procesorů databázového serveru"
@@ -597,6 +624,9 @@ msgstr "Styl"
 
 msgid "Start page"
 msgstr "Úvodní stránka"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "Odkaz na stránku nápovědy"

@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -349,78 +349,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr "Período relativo por defecto para el análisis"
 
-msgid "This month"
-msgstr "Este mes"
-
-msgid "Last month"
-msgstr "Mes anterior"
-
-msgid "This bi-month"
-msgstr "Este bimestre"
-
-msgid "Last bi-month"
-msgstr "Bimestre anterior"
-
-msgid "This quarter"
-msgstr "Este trimestre"
-
-msgid "Last quarter"
-msgstr "El trimestre pasado"
-
-msgid "This six-month"
-msgstr "Este semestre"
-
-msgid "Last six-month"
-msgstr "Último semestre"
-
-msgid "Months this year"
-msgstr "Meses este año"
-
-msgid "Quarters this year"
-msgstr "Trimestres de este año"
-
-msgid "This year"
-msgstr "Este año"
-
-msgid "Months last year"
-msgstr "Meses el año pasado"
-
-msgid "Quarters last year"
-msgstr "Trimestres el año pasado"
-
-msgid "Last year"
-msgstr "El año pasado"
-
-msgid "Last 5 years"
-msgstr "Últimos 5 años"
-
-msgid "Last 12 months"
-msgstr "Ultimos 12 meses"
-
-msgid "Last 6 months"
-msgstr "Últimos 6 meses"
-
-msgid "Last 3 months"
-msgstr "Últimos 3 meses"
-
-msgid "Last 6 bi-months"
-msgstr "Últimos 6 bimestres"
-
-msgid "Last 4 quarters"
-msgstr "Últimos 4 trimestres"
-
-msgid "Last 2 six-months"
-msgstr "Últimos 2 semestres"
-
-msgid "This financial year"
-msgstr "Este año fiscal"
-
-msgid "Last financial year"
-msgstr "Último ejercicio financiero"
-
-msgid "Last 5 financial years"
-msgstr "Últimos 5 ejercicios financieros"
-
 msgid "This week"
 msgstr "Esta semana"
 
@@ -435,6 +363,81 @@ msgstr "Últimas 12 semanas"
 
 msgid "Last 52 weeks"
 msgstr "Últimas 52 semanas"
+
+msgid "This month"
+msgstr "Este mes"
+
+msgid "Last month"
+msgstr "Mes anterior"
+
+msgid "Months this year"
+msgstr "Meses este año"
+
+msgid "Months last year"
+msgstr "Meses el año pasado"
+
+msgid "Last 3 months"
+msgstr "Últimos 3 meses"
+
+msgid "Last 6 months"
+msgstr "Últimos 6 meses"
+
+msgid "Last 12 months"
+msgstr "Ultimos 12 meses"
+
+msgid "This bi-month"
+msgstr "Este bimestre"
+
+msgid "Last bi-month"
+msgstr "Bimestre anterior"
+
+msgid "Last 6 bi-months"
+msgstr "Últimos 6 bimestres"
+
+msgid "This quarter"
+msgstr "Este trimestre"
+
+msgid "Last quarter"
+msgstr "El trimestre pasado"
+
+msgid "Quarters this year"
+msgstr "Trimestres de este año"
+
+msgid "Quarters last year"
+msgstr "Trimestres el año pasado"
+
+msgid "Last 4 quarters"
+msgstr "Últimos 4 trimestres"
+
+msgid "This six-month"
+msgstr "Este semestre"
+
+msgid "Last six-month"
+msgstr "Último semestre"
+
+msgid "Last 2 six-months"
+msgstr "Últimos 2 semestres"
+
+msgid "This year"
+msgstr "Este año"
+
+msgid "Last year"
+msgstr "El año pasado"
+
+msgid "Last 5 years"
+msgstr "Últimos 5 años"
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "This financial year"
+msgstr "Este año fiscal"
+
+msgid "Last financial year"
+msgstr "Último ejercicio financiero"
+
+msgid "Last 5 financial years"
+msgstr "Últimos 5 ejercicios financieros"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -538,9 +541,6 @@ msgstr ""
 msgid "Last 9 years"
 msgstr ""
 
-msgid "Last 10 years"
-msgstr ""
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
@@ -554,6 +554,33 @@ msgid "Org unit group set in facility map layers"
 msgstr ""
 
 msgid "Org unit level in facility map layers"
+msgstr ""
+
+msgid "Default basemap"
+msgstr ""
+
+msgid "OSM Light"
+msgstr "OSM Sencillo"
+
+msgid "OSM Detailed"
+msgstr ""
+
+msgid "Google Streets"
+msgstr "Google Calles"
+
+msgid "Google Hybrid"
+msgstr "Google Híbrido"
+
+msgid "Bing Road"
+msgstr ""
+
+msgid "Bing Dark"
+msgstr ""
+
+msgid "Bing Aerial"
+msgstr ""
+
+msgid "Bing Aerial Labels"
 msgstr ""
 
 msgid "Number of database server CPUs"
@@ -594,6 +621,9 @@ msgstr "Estilo"
 
 msgid "Start page"
 msgstr "Pagina inicial"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "Enlace de la página de ayuda"

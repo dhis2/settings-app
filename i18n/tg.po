@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Tajik (https://www.transifex.com/hisp-uio/teams/100509/tg/)\n"
@@ -347,78 +347,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr ""
 
-msgid "This month"
-msgstr ""
-
-msgid "Last month"
-msgstr "Моҳи гузашта"
-
-msgid "This bi-month"
-msgstr ""
-
-msgid "Last bi-month"
-msgstr "Думоҳаи охир"
-
-msgid "This quarter"
-msgstr ""
-
-msgid "Last quarter"
-msgstr "Семоҳаи охир"
-
-msgid "This six-month"
-msgstr ""
-
-msgid "Last six-month"
-msgstr "Шашмоҳаи охир"
-
-msgid "Months this year"
-msgstr "Моҳҳо дар ин сол"
-
-msgid "Quarters this year"
-msgstr "Семоҳаҳои ин сол"
-
-msgid "This year"
-msgstr "Имсол"
-
-msgid "Months last year"
-msgstr "Моҳҳо дар соли гузашта"
-
-msgid "Quarters last year"
-msgstr "Семоҳаҳо дар соли гузашта"
-
-msgid "Last year"
-msgstr "Соли гузашта"
-
-msgid "Last 5 years"
-msgstr "5 соли охир"
-
-msgid "Last 12 months"
-msgstr "12 моҳи охир"
-
-msgid "Last 6 months"
-msgstr "6 моҳи охир"
-
-msgid "Last 3 months"
-msgstr "3 моҳи охир"
-
-msgid "Last 6 bi-months"
-msgstr "6 думоҳаи охир"
-
-msgid "Last 4 quarters"
-msgstr "4 семоҳаи охир"
-
-msgid "Last 2 six-months"
-msgstr "2 шашмоҳаи охир"
-
-msgid "This financial year"
-msgstr ""
-
-msgid "Last financial year"
-msgstr "Соли молиявии гузашта"
-
-msgid "Last 5 financial years"
-msgstr "5 соли молиявии гузашта"
-
 msgid "This week"
 msgstr ""
 
@@ -433,6 +361,81 @@ msgstr "12 ҳафтаи охир"
 
 msgid "Last 52 weeks"
 msgstr ""
+
+msgid "This month"
+msgstr ""
+
+msgid "Last month"
+msgstr "Моҳи гузашта"
+
+msgid "Months this year"
+msgstr "Моҳҳо дар ин сол"
+
+msgid "Months last year"
+msgstr "Моҳҳо дар соли гузашта"
+
+msgid "Last 3 months"
+msgstr "3 моҳи охир"
+
+msgid "Last 6 months"
+msgstr "6 моҳи охир"
+
+msgid "Last 12 months"
+msgstr "12 моҳи охир"
+
+msgid "This bi-month"
+msgstr ""
+
+msgid "Last bi-month"
+msgstr "Думоҳаи охир"
+
+msgid "Last 6 bi-months"
+msgstr "6 думоҳаи охир"
+
+msgid "This quarter"
+msgstr ""
+
+msgid "Last quarter"
+msgstr "Семоҳаи охир"
+
+msgid "Quarters this year"
+msgstr "Семоҳаҳои ин сол"
+
+msgid "Quarters last year"
+msgstr "Семоҳаҳо дар соли гузашта"
+
+msgid "Last 4 quarters"
+msgstr "4 семоҳаи охир"
+
+msgid "This six-month"
+msgstr ""
+
+msgid "Last six-month"
+msgstr "Шашмоҳаи охир"
+
+msgid "Last 2 six-months"
+msgstr "2 шашмоҳаи охир"
+
+msgid "This year"
+msgstr "Имсол"
+
+msgid "Last year"
+msgstr "Соли гузашта"
+
+msgid "Last 5 years"
+msgstr "5 соли охир"
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "This financial year"
+msgstr ""
+
+msgid "Last financial year"
+msgstr "Соли молиявии гузашта"
+
+msgid "Last 5 financial years"
+msgstr "5 соли молиявии гузашта"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -536,9 +539,6 @@ msgstr ""
 msgid "Last 9 years"
 msgstr ""
 
-msgid "Last 10 years"
-msgstr ""
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
@@ -552,6 +552,33 @@ msgid "Org unit group set in facility map layers"
 msgstr ""
 
 msgid "Org unit level in facility map layers"
+msgstr ""
+
+msgid "Default basemap"
+msgstr ""
+
+msgid "OSM Light"
+msgstr ""
+
+msgid "OSM Detailed"
+msgstr ""
+
+msgid "Google Streets"
+msgstr ""
+
+msgid "Google Hybrid"
+msgstr ""
+
+msgid "Bing Road"
+msgstr ""
+
+msgid "Bing Dark"
+msgstr ""
+
+msgid "Bing Aerial"
+msgstr ""
+
+msgid "Bing Aerial Labels"
 msgstr ""
 
 msgid "Number of database server CPUs"
@@ -592,6 +619,9 @@ msgstr "Услуб"
 
 msgid "Start page"
 msgstr "Саҳифаи оғоз"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr ""
