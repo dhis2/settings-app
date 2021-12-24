@@ -559,13 +559,13 @@ msgid "Default basemap"
 msgstr ""
 
 msgid "OSM Light"
-msgstr ""
+msgstr "OSM Light"
 
 msgid "OSM Detailed"
-msgstr ""
+msgstr "OSM مفصل"
 
 msgid "Google Streets"
-msgstr ""
+msgstr "الشوارع بحسب غوغل"
 
 msgid "Google Hybrid"
 msgstr "Google Hybrid"
@@ -577,7 +577,7 @@ msgid "Bing Dark"
 msgstr "Bing داكن"
 
 msgid "Bing Aerial"
-msgstr ""
+msgstr "Bing جوي"
 
 msgid "Bing Aerial Labels"
 msgstr ""
