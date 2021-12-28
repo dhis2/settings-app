@@ -557,7 +557,7 @@ msgid "Org unit level in facility map layers"
 msgstr "设施地图图层中的组织机构级别"
 
 msgid "Default basemap"
-msgstr ""
+msgstr "默认底图"
 
 msgid "OSM Light"
 msgstr "OSM轻量"
@@ -623,7 +623,7 @@ msgid "Start page"
 msgstr "开始页面"
 
 msgid "Enable light-weight start page"
-msgstr ""
+msgstr "启用轻量级起始页"
 
 msgid "Help page link"
 msgstr "帮助手册地址"
