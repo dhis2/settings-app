@@ -132,7 +132,7 @@ function getMenuItems(mapping) {
             displayName,
         })
     )
-    return sourceMenuItems.concat(optionsMenuItems)
+    return optionsMenuItems.concat(sourceMenuItems)
 }
 
 class SettingsFields extends React.Component {
