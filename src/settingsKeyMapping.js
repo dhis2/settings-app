@@ -281,8 +281,6 @@ const settingsKeyMapping = {
         options: {
             osmLight: i18n.t('OSM Light'),
             openStreetMap: i18n.t('OSM Detailed'),
-            googleStreets: i18n.t('Google Streets'),
-            googleHybrid: i18n.t('Google Hybrid'),
             bingLight: i18n.t('Bing Road'),
             bingDark: i18n.t('Bing Dark'),
             bingAerial: i18n.t('Bing Aerial'),

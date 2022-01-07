@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
-"PO-Revision-Date: 2021-12-21T13:28:29.175Z\n"
+"POT-Creation-Date: 2022-01-07T14:50:03.382Z\n"
+"PO-Revision-Date: 2022-01-07T14:50:03.382Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -553,12 +553,6 @@ msgstr "OSM Light"
 
 msgid "OSM Detailed"
 msgstr "OSM Detailed"
-
-msgid "Google Streets"
-msgstr "Google Streets"
-
-msgid "Google Hybrid"
-msgstr "Google Hybrid"
 
 msgid "Bing Road"
 msgstr "Bing Road"
