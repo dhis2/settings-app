@@ -1,3 +1,10 @@
+## [29.11.4](https://github.com/dhis2/settings-app/compare/v29.11.3...v29.11.4) (2022-01-07)
+
+
+### Bug Fixes
+
+* put the internal maps before the external, and remove Google ([0b36509](https://github.com/dhis2/settings-app/commit/0b36509cc8c8d8cec56a826f21eb74cf3fe34206))
+
 ## [29.11.3](https://github.com/dhis2/settings-app/compare/v29.11.2...v29.11.3) (2021-12-28)
 
 
