@@ -3,9 +3,9 @@
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # phil_dhis2, 2021
 # Edem Kossi <ekossi@hispwca.org>, 2021
+# Bram Piot <bram.piot@gmail.com>, 2021
 # Yao Selom Saka <ysaka@hispwca.org>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2021
-# Bram Piot <bram.piot@gmail.com>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # tx_e2f_frfr r6 <tx_e2f_frfr_r661@ate2f.com>, 2021
 # tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021
@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-12-21T13:28:29.175Z\n"
+"POT-Creation-Date: 2022-01-07T14:50:03.382Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -578,12 +578,6 @@ msgstr "OSM Light"
 
 msgid "OSM Detailed"
 msgstr "OSM détaillée"
-
-msgid "Google Streets"
-msgstr "Google Streets"
-
-msgid "Google Hybrid"
-msgstr "Google Hybride"
 
 msgid "Bing Road"
 msgstr "Bing Route"
