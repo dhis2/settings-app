@@ -1,13 +1,13 @@
 # 
 # Translators:
-# trendspotter <jirka.p@volny.cz>, 2021
+# trendspotter <jirka.p@volny.cz>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-01-07T14:50:03.382Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: trendspotter <jirka.p@volny.cz>, 2021\n"
+"Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -560,7 +560,7 @@ msgid "Org unit level in facility map layers"
 msgstr "Úroveň organizační jednotky ve vrstvách mapy zařízení"
 
 msgid "Default basemap"
-msgstr ""
+msgstr "Výchozí základní mapa"
 
 msgid "OSM Light"
 msgstr "OSM Light"
@@ -620,7 +620,7 @@ msgid "Start page"
 msgstr "Úvodní stránka"
 
 msgid "Enable light-weight start page"
-msgstr ""
+msgstr "Povolit odlehčenou úvodní stránku"
 
 msgid "Help page link"
 msgstr "Odkaz na stránku nápovědy"
