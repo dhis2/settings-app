@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2022-01-25T16:51:23.907Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -348,78 +348,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr "Thời điểm tương đối mặc định cho phân tích dữ liệu"
 
-msgid "This month"
-msgstr "Tháng này"
-
-msgid "Last month"
-msgstr "Tháng trước"
-
-msgid "This bi-month"
-msgstr "Lần Hai-Tháng này"
-
-msgid "Last bi-month"
-msgstr "Kỳ 2 tháng trước"
-
-msgid "This quarter"
-msgstr "Quý này"
-
-msgid "Last quarter"
-msgstr "Quý trước"
-
-msgid "This six-month"
-msgstr "6 tháng này"
-
-msgid "Last six-month"
-msgstr "6 tháng trước"
-
-msgid "Months this year"
-msgstr "Tháng năm nay"
-
-msgid "Quarters this year"
-msgstr "Quý năm nay"
-
-msgid "This year"
-msgstr "Năm nay"
-
-msgid "Months last year"
-msgstr "Tháng năm ngoái"
-
-msgid "Quarters last year"
-msgstr "Quý năm trước"
-
-msgid "Last year"
-msgstr "Năm ngoái"
-
-msgid "Last 5 years"
-msgstr "5 năm trước"
-
-msgid "Last 12 months"
-msgstr "Trong 12 tháng trước"
-
-msgid "Last 6 months"
-msgstr "6 tháng trước"
-
-msgid "Last 3 months"
-msgstr "3 tháng trước"
-
-msgid "Last 6 bi-months"
-msgstr "6 kỳ 2 tháng trước"
-
-msgid "Last 4 quarters"
-msgstr "4 quý trước"
-
-msgid "Last 2 six-months"
-msgstr "2 lần sáu-tháng trước"
-
-msgid "This financial year"
-msgstr "Năm tài chính này"
-
-msgid "Last financial year"
-msgstr "Năm tài chính trước"
-
-msgid "Last 5 financial years"
-msgstr "5 năm tài chính trước"
-
 msgid "This week"
 msgstr "Tuần này"
 
@@ -434,6 +362,81 @@ msgstr "12 tuần trước"
 
 msgid "Last 52 weeks"
 msgstr "52 tuần trước"
+
+msgid "This month"
+msgstr "Tháng này"
+
+msgid "Last month"
+msgstr "Tháng trước"
+
+msgid "Months this year"
+msgstr "Tháng năm nay"
+
+msgid "Months last year"
+msgstr "Tháng năm ngoái"
+
+msgid "Last 3 months"
+msgstr "3 tháng trước"
+
+msgid "Last 6 months"
+msgstr "6 tháng trước"
+
+msgid "Last 12 months"
+msgstr "Trong 12 tháng trước"
+
+msgid "This bi-month"
+msgstr "Lần Hai-Tháng này"
+
+msgid "Last bi-month"
+msgstr "Kỳ 2 tháng trước"
+
+msgid "Last 6 bi-months"
+msgstr "6 kỳ 2 tháng trước"
+
+msgid "This quarter"
+msgstr "Quý này"
+
+msgid "Last quarter"
+msgstr "Quý trước"
+
+msgid "Quarters this year"
+msgstr "Quý năm nay"
+
+msgid "Quarters last year"
+msgstr "Quý năm trước"
+
+msgid "Last 4 quarters"
+msgstr "4 quý trước"
+
+msgid "This six-month"
+msgstr "6 tháng này"
+
+msgid "Last six-month"
+msgstr "6 tháng trước"
+
+msgid "Last 2 six-months"
+msgstr "2 lần sáu-tháng trước"
+
+msgid "This year"
+msgstr "Năm nay"
+
+msgid "Last year"
+msgstr "Năm ngoái"
+
+msgid "Last 5 years"
+msgstr "5 năm trước"
+
+msgid "Last 10 years"
+msgstr "10 năm trước"
+
+msgid "This financial year"
+msgstr "Năm tài chính này"
+
+msgid "Last financial year"
+msgstr "Năm tài chính trước"
+
+msgid "Last 5 financial years"
+msgstr "5 năm tài chính trước"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -537,15 +540,15 @@ msgstr "8 năm trước"
 msgid "Last 9 years"
 msgstr "9 năm trước"
 
-msgid "Last 10 years"
-msgstr "10 năm trước"
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 "Xuất bản phân tích theo ngày bắt đầu và ngày kết thúc của Tùy chọn phân loại"
 
 msgid "Put analytics in maintenance mode"
 msgstr "Đặt chức năng xuất bảng giá trị phân tích trong chế độ bảo trì"
+
+msgid "Include zero data values in analytics tables"
+msgstr ""
 
 msgid "Caching factor"
 msgstr ""
@@ -594,6 +597,9 @@ msgstr "Kiểu dáng"
 
 msgid "Start page"
 msgstr "Trang khởi động"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "Đường dẫn liên kết trang hỗ trợ"

@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2022-01-25T16:51:23.907Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2021\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -349,78 +349,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr "Período relativo padrão para análise"
 
-msgid "This month"
-msgstr "Este mês"
-
-msgid "Last month"
-msgstr "Último mês"
-
-msgid "This bi-month"
-msgstr "Este bi-mês"
-
-msgid "Last bi-month"
-msgstr "Último bimestre"
-
-msgid "This quarter"
-msgstr "Este Trimestre"
-
-msgid "Last quarter"
-msgstr "Último trimestre"
-
-msgid "This six-month"
-msgstr "Estes seis meses"
-
-msgid "Last six-month"
-msgstr "Último semestre"
-
-msgid "Months this year"
-msgstr "Meses deste ano"
-
-msgid "Quarters this year"
-msgstr "Trimestres deste ano"
-
-msgid "This year"
-msgstr "Este ano"
-
-msgid "Months last year"
-msgstr "Meses do ano passado"
-
-msgid "Quarters last year"
-msgstr "Trimestres do ano passado"
-
-msgid "Last year"
-msgstr "Último ano"
-
-msgid "Last 5 years"
-msgstr "Últimos cinco anos"
-
-msgid "Last 12 months"
-msgstr "Últimos doze meses"
-
-msgid "Last 6 months"
-msgstr "Últimos seis meses"
-
-msgid "Last 3 months"
-msgstr "Últimos três meses"
-
-msgid "Last 6 bi-months"
-msgstr "Últimos seis bi-meses"
-
-msgid "Last 4 quarters"
-msgstr "Últimos quatro trimestres"
-
-msgid "Last 2 six-months"
-msgstr "Dois últimos seis-meses"
-
-msgid "This financial year"
-msgstr "Ano financeiro"
-
-msgid "Last financial year"
-msgstr "Último ano fiscal"
-
-msgid "Last 5 financial years"
-msgstr "Últimos cinco anos fiscais"
-
 msgid "This week"
 msgstr "Esta semana"
 
@@ -435,6 +363,81 @@ msgstr "Últimas doze semanas"
 
 msgid "Last 52 weeks"
 msgstr "Últimas 52 semanas"
+
+msgid "This month"
+msgstr "Este mês"
+
+msgid "Last month"
+msgstr "Último mês"
+
+msgid "Months this year"
+msgstr "Meses deste ano"
+
+msgid "Months last year"
+msgstr "Meses do ano passado"
+
+msgid "Last 3 months"
+msgstr "Últimos três meses"
+
+msgid "Last 6 months"
+msgstr "Últimos seis meses"
+
+msgid "Last 12 months"
+msgstr "Últimos doze meses"
+
+msgid "This bi-month"
+msgstr "Este bi-mês"
+
+msgid "Last bi-month"
+msgstr "Último bimestre"
+
+msgid "Last 6 bi-months"
+msgstr "Últimos seis bi-meses"
+
+msgid "This quarter"
+msgstr "Este Trimestre"
+
+msgid "Last quarter"
+msgstr "Último trimestre"
+
+msgid "Quarters this year"
+msgstr "Trimestres deste ano"
+
+msgid "Quarters last year"
+msgstr "Trimestres do ano passado"
+
+msgid "Last 4 quarters"
+msgstr "Últimos quatro trimestres"
+
+msgid "This six-month"
+msgstr "Estes seis meses"
+
+msgid "Last six-month"
+msgstr "Último semestre"
+
+msgid "Last 2 six-months"
+msgstr "Dois últimos seis-meses"
+
+msgid "This year"
+msgstr "Este ano"
+
+msgid "Last year"
+msgstr "Último ano"
+
+msgid "Last 5 years"
+msgstr "Últimos cinco anos"
+
+msgid "Last 10 years"
+msgstr "Últimos 10 anos"
+
+msgid "This financial year"
+msgstr "Ano financeiro"
+
+msgid "Last financial year"
+msgstr "Último ano fiscal"
+
+msgid "Last 5 financial years"
+msgstr "Últimos cinco anos fiscais"
 
 msgid "Hide daily periods"
 msgstr "Ocultar períodos diários"
@@ -538,9 +541,6 @@ msgstr "Últimos 8 anos"
 msgid "Last 9 years"
 msgstr "Últimos 9 anos"
 
-msgid "Last 10 years"
-msgstr "Últimos 10 anos"
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 "Respeite a data de início e término da opção de categoria na exportação da "
@@ -548,6 +548,9 @@ msgstr ""
 
 msgid "Put analytics in maintenance mode"
 msgstr "Coloque a análise no modo de manutenção"
+
+msgid "Include zero data values in analytics tables"
+msgstr ""
 
 msgid "Caching factor"
 msgstr "Factor de cache"
@@ -596,6 +599,9 @@ msgstr "Estilo"
 
 msgid "Start page"
 msgstr "Página inicial"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "Link da página de ajuda"

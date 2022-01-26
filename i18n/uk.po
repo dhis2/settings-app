@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2022-01-25T16:51:23.907Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: Nadiia <semchuk@aph.org.ua>, 2021\n"
 "Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -349,78 +349,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr ""
 
-msgid "This month"
-msgstr "Поточний місяць"
-
-msgid "Last month"
-msgstr "Останній місяць"
-
-msgid "This bi-month"
-msgstr "Поточний двомісячний період"
-
-msgid "Last bi-month"
-msgstr "Останні два місяці"
-
-msgid "This quarter"
-msgstr "Поточний квартал"
-
-msgid "Last quarter"
-msgstr "Минулий квартал"
-
-msgid "This six-month"
-msgstr "Поточне півріччя"
-
-msgid "Last six-month"
-msgstr "Останнє півріччя"
-
-msgid "Months this year"
-msgstr "Місяці поточного року"
-
-msgid "Quarters this year"
-msgstr "Квартали поточного року"
-
-msgid "This year"
-msgstr "Поточний рік"
-
-msgid "Months last year"
-msgstr "Місяці минулого року"
-
-msgid "Quarters last year"
-msgstr "Квартали минулого року"
-
-msgid "Last year"
-msgstr "Минулий рік"
-
-msgid "Last 5 years"
-msgstr "Останні 5 років"
-
-msgid "Last 12 months"
-msgstr "Останні 12 місяців"
-
-msgid "Last 6 months"
-msgstr "Останні 6 місяців"
-
-msgid "Last 3 months"
-msgstr "Останні 3 місяці"
-
-msgid "Last 6 bi-months"
-msgstr "Останні 6 двомісячних періоди"
-
-msgid "Last 4 quarters"
-msgstr "Останні 4 квартали"
-
-msgid "Last 2 six-months"
-msgstr "Останні 2 півріччя"
-
-msgid "This financial year"
-msgstr "Поточний фінансовий рік"
-
-msgid "Last financial year"
-msgstr "Минулий фінансовий рік"
-
-msgid "Last 5 financial years"
-msgstr "Останні 5 фінансових років"
-
 msgid "This week"
 msgstr "Поточний тиждень"
 
@@ -435,6 +363,81 @@ msgstr "Останні 12 тижнів"
 
 msgid "Last 52 weeks"
 msgstr "Останні 52 тижні"
+
+msgid "This month"
+msgstr "Поточний місяць"
+
+msgid "Last month"
+msgstr "Останній місяць"
+
+msgid "Months this year"
+msgstr "Місяці поточного року"
+
+msgid "Months last year"
+msgstr "Місяці минулого року"
+
+msgid "Last 3 months"
+msgstr "Останні 3 місяці"
+
+msgid "Last 6 months"
+msgstr "Останні 6 місяців"
+
+msgid "Last 12 months"
+msgstr "Останні 12 місяців"
+
+msgid "This bi-month"
+msgstr "Поточний двомісячний період"
+
+msgid "Last bi-month"
+msgstr "Останні два місяці"
+
+msgid "Last 6 bi-months"
+msgstr "Останні 6 двомісячних періоди"
+
+msgid "This quarter"
+msgstr "Поточний квартал"
+
+msgid "Last quarter"
+msgstr "Минулий квартал"
+
+msgid "Quarters this year"
+msgstr "Квартали поточного року"
+
+msgid "Quarters last year"
+msgstr "Квартали минулого року"
+
+msgid "Last 4 quarters"
+msgstr "Останні 4 квартали"
+
+msgid "This six-month"
+msgstr "Поточне півріччя"
+
+msgid "Last six-month"
+msgstr "Останнє півріччя"
+
+msgid "Last 2 six-months"
+msgstr "Останні 2 півріччя"
+
+msgid "This year"
+msgstr "Поточний рік"
+
+msgid "Last year"
+msgstr "Минулий рік"
+
+msgid "Last 5 years"
+msgstr "Останні 5 років"
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "This financial year"
+msgstr "Поточний фінансовий рік"
+
+msgid "Last financial year"
+msgstr "Минулий фінансовий рік"
+
+msgid "Last 5 financial years"
+msgstr "Останні 5 фінансових років"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -538,13 +541,13 @@ msgstr ""
 msgid "Last 9 years"
 msgstr ""
 
-msgid "Last 10 years"
-msgstr ""
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
 msgid "Put analytics in maintenance mode"
+msgstr ""
+
+msgid "Include zero data values in analytics tables"
 msgstr ""
 
 msgid "Caching factor"
@@ -593,6 +596,9 @@ msgid "Style"
 msgstr "Стиль"
 
 msgid "Start page"
+msgstr ""
+
+msgid "Enable light-weight start page"
 msgstr ""
 
 msgid "Help page link"

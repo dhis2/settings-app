@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2022-01-25T16:51:23.907Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -348,78 +348,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr ""
 
-msgid "This month"
-msgstr "ເດືອນນີ້"
-
-msgid "Last month"
-msgstr "ເດືອນຜ່ານມາ"
-
-msgid "This bi-month"
-msgstr "ສອງເດືອນນີ້"
-
-msgid "Last bi-month"
-msgstr "ສອງເດືອນກ່ອນທ້າຍປີ"
-
-msgid "This quarter"
-msgstr "ໄຕມານີ້"
-
-msgid "Last quarter"
-msgstr "ໄຕມາດຜ່ານມາ"
-
-msgid "This six-month"
-msgstr "6 ເດືອນນີ້"
-
-msgid "Last six-month"
-msgstr "6 ເດືອນຜ່ານມາ"
-
-msgid "Months this year"
-msgstr "​ເດືອນ​ໃນ​ປີ"
-
-msgid "Quarters this year"
-msgstr "​ໄຕຼມາດ​ໃນ​ປີ"
-
-msgid "This year"
-msgstr "ປີນີ້"
-
-msgid "Months last year"
-msgstr "​ເດືອນ​ໃນປີ​ຜ່ານ​ມາ"
-
-msgid "Quarters last year"
-msgstr "​ໄຕຼມາດ​ໃນ​ປີ​ຜ່ານ​ມາ"
-
-msgid "Last year"
-msgstr "ປີກາຍ"
-
-msgid "Last 5 years"
-msgstr "5 ປີຍ້ອນຫຼັງ"
-
-msgid "Last 12 months"
-msgstr "12 ເດືອນຍ້ອນຫຼັງ"
-
-msgid "Last 6 months"
-msgstr "6 ເດືອນຜ່ານມາ"
-
-msgid "Last 3 months"
-msgstr "3 ເດືອນຍ້ອນຫຼັງ"
-
-msgid "Last 6 bi-months"
-msgstr "6 ຂອງສອງເດືອນສຸດທ້າຍ"
-
-msgid "Last 4 quarters"
-msgstr "4 ໄຕມາດຍ້ອນຫຼັງ"
-
-msgid "Last 2 six-months"
-msgstr "ລວມ 6 ເດືອນ 2 ຄັ້ງທີ່ຜ່ານມາ"
-
-msgid "This financial year"
-msgstr "ສົກປີງົບປະມານຂອງປິນີ້"
-
-msgid "Last financial year"
-msgstr "​ສົກ​ປີ​ງົບ​ປະ​ມານ​ປີ​ກາຍ"
-
-msgid "Last 5 financial years"
-msgstr "​ສົກ​ປິ​ງົບ​ປະ​ມານ 5ປີ​ຜ່ານ​ມາ"
-
 msgid "This week"
 msgstr "ທິດນີ້"
 
@@ -434,6 +362,81 @@ msgstr "12 ອາທິດຍ້ອນຫຼັງ"
 
 msgid "Last 52 weeks"
 msgstr "52 ອາທິດຜ່ານມາ"
+
+msgid "This month"
+msgstr "ເດືອນນີ້"
+
+msgid "Last month"
+msgstr "ເດືອນຜ່ານມາ"
+
+msgid "Months this year"
+msgstr "​ເດືອນ​ໃນ​ປີ"
+
+msgid "Months last year"
+msgstr "​ເດືອນ​ໃນປີ​ຜ່ານ​ມາ"
+
+msgid "Last 3 months"
+msgstr "3 ເດືອນຍ້ອນຫຼັງ"
+
+msgid "Last 6 months"
+msgstr "6 ເດືອນຜ່ານມາ"
+
+msgid "Last 12 months"
+msgstr "12 ເດືອນຍ້ອນຫຼັງ"
+
+msgid "This bi-month"
+msgstr "ສອງເດືອນນີ້"
+
+msgid "Last bi-month"
+msgstr "ສອງເດືອນກ່ອນທ້າຍປີ"
+
+msgid "Last 6 bi-months"
+msgstr "6 ຂອງສອງເດືອນສຸດທ້າຍ"
+
+msgid "This quarter"
+msgstr "ໄຕມານີ້"
+
+msgid "Last quarter"
+msgstr "ໄຕມາດຜ່ານມາ"
+
+msgid "Quarters this year"
+msgstr "​ໄຕຼມາດ​ໃນ​ປີ"
+
+msgid "Quarters last year"
+msgstr "​ໄຕຼມາດ​ໃນ​ປີ​ຜ່ານ​ມາ"
+
+msgid "Last 4 quarters"
+msgstr "4 ໄຕມາດຍ້ອນຫຼັງ"
+
+msgid "This six-month"
+msgstr "6 ເດືອນນີ້"
+
+msgid "Last six-month"
+msgstr "6 ເດືອນຜ່ານມາ"
+
+msgid "Last 2 six-months"
+msgstr "ລວມ 6 ເດືອນ 2 ຄັ້ງທີ່ຜ່ານມາ"
+
+msgid "This year"
+msgstr "ປີນີ້"
+
+msgid "Last year"
+msgstr "ປີກາຍ"
+
+msgid "Last 5 years"
+msgstr "5 ປີຍ້ອນຫຼັງ"
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "This financial year"
+msgstr "ສົກປີງົບປະມານຂອງປິນີ້"
+
+msgid "Last financial year"
+msgstr "​ສົກ​ປີ​ງົບ​ປະ​ມານ​ປີ​ກາຍ"
+
+msgid "Last 5 financial years"
+msgstr "​ສົກ​ປິ​ງົບ​ປະ​ມານ 5ປີ​ຜ່ານ​ມາ"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -537,13 +540,13 @@ msgstr ""
 msgid "Last 9 years"
 msgstr ""
 
-msgid "Last 10 years"
-msgstr ""
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
 msgid "Put analytics in maintenance mode"
+msgstr ""
+
+msgid "Include zero data values in analytics tables"
 msgstr ""
 
 msgid "Caching factor"
@@ -592,6 +595,9 @@ msgid "Style"
 msgstr "ລັກສະນະ"
 
 msgid "Start page"
+msgstr ""
+
+msgid "Enable light-weight start page"
 msgstr ""
 
 msgid "Help page link"

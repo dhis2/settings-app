@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2022-01-25T16:51:23.907Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -358,78 +358,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr "Période relative par défaut pour l'analyse"
 
-msgid "This month"
-msgstr "Ce mois"
-
-msgid "Last month"
-msgstr "Le mois dernier"
-
-msgid "This bi-month"
-msgstr "Ces 2 dernières semaines"
-
-msgid "Last bi-month"
-msgstr "Dernier bi-mestre"
-
-msgid "This quarter"
-msgstr "Ce trimestre"
-
-msgid "Last quarter"
-msgstr "Trimestre précédent"
-
-msgid "This six-month"
-msgstr "Ce semestre"
-
-msgid "Last six-month"
-msgstr "Dernier semestre"
-
-msgid "Months this year"
-msgstr "Mois cette année"
-
-msgid "Quarters this year"
-msgstr "Trimestres cette année"
-
-msgid "This year"
-msgstr "Année en cours"
-
-msgid "Months last year"
-msgstr "Mois de l'année passée"
-
-msgid "Quarters last year"
-msgstr "Trimestres de l'année passée"
-
-msgid "Last year"
-msgstr "L'année passée"
-
-msgid "Last 5 years"
-msgstr "5 dernières années"
-
-msgid "Last 12 months"
-msgstr "12 derniers mois"
-
-msgid "Last 6 months"
-msgstr "6 derniers mois"
-
-msgid "Last 3 months"
-msgstr "3 derniers mois"
-
-msgid "Last 6 bi-months"
-msgstr "6 derniers bimestres"
-
-msgid "Last 4 quarters"
-msgstr "4 derniers trimestres"
-
-msgid "Last 2 six-months"
-msgstr "2 derniers semestres"
-
-msgid "This financial year"
-msgstr "Année fiscale en cours"
-
-msgid "Last financial year"
-msgstr "Dernière année financière"
-
-msgid "Last 5 financial years"
-msgstr "5 dernières années financières"
-
 msgid "This week"
 msgstr "Cette semaine"
 
@@ -444,6 +372,81 @@ msgstr "12 dernières semaines"
 
 msgid "Last 52 weeks"
 msgstr "52 dernières semaines"
+
+msgid "This month"
+msgstr "Ce mois"
+
+msgid "Last month"
+msgstr "Le mois dernier"
+
+msgid "Months this year"
+msgstr "Mois cette année"
+
+msgid "Months last year"
+msgstr "Mois de l'année passée"
+
+msgid "Last 3 months"
+msgstr "3 derniers mois"
+
+msgid "Last 6 months"
+msgstr "6 derniers mois"
+
+msgid "Last 12 months"
+msgstr "12 derniers mois"
+
+msgid "This bi-month"
+msgstr "Ces 2 dernières semaines"
+
+msgid "Last bi-month"
+msgstr "Dernier bi-mestre"
+
+msgid "Last 6 bi-months"
+msgstr "6 derniers bimestres"
+
+msgid "This quarter"
+msgstr "Ce trimestre"
+
+msgid "Last quarter"
+msgstr "Trimestre précédent"
+
+msgid "Quarters this year"
+msgstr "Trimestres cette année"
+
+msgid "Quarters last year"
+msgstr "Trimestres de l'année passée"
+
+msgid "Last 4 quarters"
+msgstr "4 derniers trimestres"
+
+msgid "This six-month"
+msgstr "Ce semestre"
+
+msgid "Last six-month"
+msgstr "Dernier semestre"
+
+msgid "Last 2 six-months"
+msgstr "2 derniers semestres"
+
+msgid "This year"
+msgstr "Année en cours"
+
+msgid "Last year"
+msgstr "L'année passée"
+
+msgid "Last 5 years"
+msgstr "5 dernières années"
+
+msgid "Last 10 years"
+msgstr "10 dernières années"
+
+msgid "This financial year"
+msgstr "Année fiscale en cours"
+
+msgid "Last financial year"
+msgstr "Dernière année financière"
+
+msgid "Last 5 financial years"
+msgstr "5 dernières années financières"
 
 msgid "Hide daily periods"
 msgstr "Masquer les périodes quotidiennes"
@@ -549,9 +552,6 @@ msgstr "8 dernières années"
 msgid "Last 9 years"
 msgstr "9 dernières années"
 
-msgid "Last 10 years"
-msgstr "10 dernières années"
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 "Respecter les dates de début et de fin de l'option de catégorie dans "
@@ -559,6 +559,9 @@ msgstr ""
 
 msgid "Put analytics in maintenance mode"
 msgstr "Placer les analyses en mode de maintenance"
+
+msgid "Include zero data values in analytics tables"
+msgstr ""
 
 msgid "Caching factor"
 msgstr "Facteur de mise en cache"
@@ -607,6 +610,9 @@ msgstr "Style"
 
 msgid "Start page"
 msgstr "Page d'accueil"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "Lien vers la page d'aide"
