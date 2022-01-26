@@ -210,6 +210,10 @@ const settingsKeyMapping = {
             FIXED: 'fixed',
         },
     },
+    keyIncludeZeroValuesInAnalytics: {
+        label: 'key_include_zero_values_in_analytics_table_export',
+        type: 'checkbox',
+    },
     keyAnalyticsCacheProgressiveTtlFactor: {
         label: 'key_analytics_cache_progressive_ttl_factor',
         type: 'dropdown',

@@ -51,6 +51,7 @@ export const categories = {
             'keyIgnoreAnalyticsApprovalYearThreshold',
             'keyRespectMetaDataStartEndDatesInAnalyticsTableExport',
             'keyAnalyticsMaintenanceMode',
+            'keyIncludeZeroValuesInAnalytics',
             'keyDashboardContextMenuItemSwitchViewType',
             'keyDashboardContextMenuItemOpenInRelevantApp',
             'keyDashboardContextMenuItemShowInterpretationsAndDetails',
