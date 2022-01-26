@@ -1,3 +1,10 @@
+# [29.12.0](https://github.com/dhis2/settings-app/compare/v29.11.6...v29.12.0) (2022-01-26)
+
+
+### Features
+
+* zero data values in analytics tables setting ([#933](https://github.com/dhis2/settings-app/issues/933)) ([abbfad5](https://github.com/dhis2/settings-app/commit/abbfad5beb2227a3b2a2440028df85b06889a456))
+
 ## [29.11.6](https://github.com/dhis2/settings-app/compare/v29.11.5...v29.11.6) (2022-01-20)
 
 
