@@ -211,7 +211,7 @@ const settingsKeyMapping = {
         },
     },
     keyIncludeZeroValuesInAnalytics: {
-        label: 'key_skip_zero_values_in_analytics_table_export',
+        label: 'key_include_zero_values_in_analytics_table_export',
         type: 'checkbox',
     },
     keyAnalyticsCacheProgressiveTtlFactor: {
