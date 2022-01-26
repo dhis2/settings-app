@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2022-01-25T16:51:23.907Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -348,78 +348,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr "الفترة الزمنية النسبية الافتراضية للتحليل"
 
-msgid "This month"
-msgstr "الشهر الحالي"
-
-msgid "Last month"
-msgstr "الشهر الماضي"
-
-msgid "This bi-month"
-msgstr "الشهران المزدوجان الحاليان"
-
-msgid "Last bi-month"
-msgstr "آخر شهرين مزدوجين"
-
-msgid "This quarter"
-msgstr "ربع السنة الحالي"
-
-msgid "Last quarter"
-msgstr "ربع السنة الماضي"
-
-msgid "This six-month"
-msgstr "الستة أشهر الحالية"
-
-msgid "Last six-month"
-msgstr "آخر ستة-أشهر"
-
-msgid "Months this year"
-msgstr "أشهر السنة الحالية"
-
-msgid "Quarters this year"
-msgstr "أرباع السنة الحالية"
-
-msgid "This year"
-msgstr "السنة الحالية"
-
-msgid "Months last year"
-msgstr "أشهر السنة الماضية"
-
-msgid "Quarters last year"
-msgstr "أرباع السنة الماضية"
-
-msgid "Last year"
-msgstr "السنة الماضية"
-
-msgid "Last 5 years"
-msgstr "آخر 5 سنوات"
-
-msgid "Last 12 months"
-msgstr "آخر 12 شهر"
-
-msgid "Last 6 months"
-msgstr "آخر 6 أشهر"
-
-msgid "Last 3 months"
-msgstr "آخر 3 أشهر"
-
-msgid "Last 6 bi-months"
-msgstr "آخر 6 أشهر مزدوجة"
-
-msgid "Last 4 quarters"
-msgstr "آخر 4 أرباع السنة"
-
-msgid "Last 2 six-months"
-msgstr "آخر فترتي ستة أشهر (نصفي سنة)"
-
-msgid "This financial year"
-msgstr "السنة المالية الحالية"
-
-msgid "Last financial year"
-msgstr "السنة المالية الماضية"
-
-msgid "Last 5 financial years"
-msgstr "آخر 5 سنوات مالية"
-
 msgid "This week"
 msgstr "هذا الأسبوع"
 
@@ -434,6 +362,81 @@ msgstr "آخر 12 أسبوع"
 
 msgid "Last 52 weeks"
 msgstr "آخر 52 أسبوع"
+
+msgid "This month"
+msgstr "الشهر الحالي"
+
+msgid "Last month"
+msgstr "الشهر الماضي"
+
+msgid "Months this year"
+msgstr "أشهر السنة الحالية"
+
+msgid "Months last year"
+msgstr "أشهر السنة الماضية"
+
+msgid "Last 3 months"
+msgstr "آخر 3 أشهر"
+
+msgid "Last 6 months"
+msgstr "آخر 6 أشهر"
+
+msgid "Last 12 months"
+msgstr "آخر 12 شهر"
+
+msgid "This bi-month"
+msgstr "الشهران المزدوجان الحاليان"
+
+msgid "Last bi-month"
+msgstr "آخر شهرين مزدوجين"
+
+msgid "Last 6 bi-months"
+msgstr "آخر 6 أشهر مزدوجة"
+
+msgid "This quarter"
+msgstr "ربع السنة الحالي"
+
+msgid "Last quarter"
+msgstr "ربع السنة الماضي"
+
+msgid "Quarters this year"
+msgstr "أرباع السنة الحالية"
+
+msgid "Quarters last year"
+msgstr "أرباع السنة الماضية"
+
+msgid "Last 4 quarters"
+msgstr "آخر 4 أرباع السنة"
+
+msgid "This six-month"
+msgstr "الستة أشهر الحالية"
+
+msgid "Last six-month"
+msgstr "آخر ستة-أشهر"
+
+msgid "Last 2 six-months"
+msgstr "آخر فترتي ستة أشهر (نصفي سنة)"
+
+msgid "This year"
+msgstr "السنة الحالية"
+
+msgid "Last year"
+msgstr "السنة الماضية"
+
+msgid "Last 5 years"
+msgstr "آخر 5 سنوات"
+
+msgid "Last 10 years"
+msgstr "آخر 10 سنوات"
+
+msgid "This financial year"
+msgstr "السنة المالية الحالية"
+
+msgid "Last financial year"
+msgstr "السنة المالية الماضية"
+
+msgid "Last 5 financial years"
+msgstr "آخر 5 سنوات مالية"
 
 msgid "Hide daily periods"
 msgstr "إخفاء الفترات اليومية"
@@ -537,14 +540,14 @@ msgstr "آخر 8 سنوات"
 msgid "Last 9 years"
 msgstr "آخر 9 سنوات"
 
-msgid "Last 10 years"
-msgstr "آخر 10 سنوات"
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr "مراعاة خيار الفئة في تاريخ البداية والنهاية في تصدير جدول التحليلات"
 
 msgid "Put analytics in maintenance mode"
 msgstr "وضع التحليلات في وضع الضبط"
+
+msgid "Include zero data values in analytics tables"
+msgstr ""
 
 msgid "Caching factor"
 msgstr ""
@@ -593,6 +596,9 @@ msgstr "المظهر"
 
 msgid "Start page"
 msgstr "صفحة البداية"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "رابط صفحة المساعدة"

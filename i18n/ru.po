@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2022-01-25T16:51:23.907Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -347,78 +347,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr "Относительный период по умолчанию для анализа"
 
-msgid "This month"
-msgstr "Этот месяц"
-
-msgid "Last month"
-msgstr "Последний месяц"
-
-msgid "This bi-month"
-msgstr "Этот период по два месяца"
-
-msgid "Last bi-month"
-msgstr "Прошлый двухмесячный период"
-
-msgid "This quarter"
-msgstr "Этот квартал"
-
-msgid "Last quarter"
-msgstr "Последний квартал"
-
-msgid "This six-month"
-msgstr "Это полугодие"
-
-msgid "Last six-month"
-msgstr "Прошлое полугодие"
-
-msgid "Months this year"
-msgstr "Месяцы этого года"
-
-msgid "Quarters this year"
-msgstr "Кварталы этого года"
-
-msgid "This year"
-msgstr "Этот год"
-
-msgid "Months last year"
-msgstr "Месяцы последнего года"
-
-msgid "Quarters last year"
-msgstr "Кварталы последнего года"
-
-msgid "Last year"
-msgstr "Прошлый год"
-
-msgid "Last 5 years"
-msgstr "Прошлые 5 лет"
-
-msgid "Last 12 months"
-msgstr "Прошлые 12 месяцев"
-
-msgid "Last 6 months"
-msgstr "Последние 6 месяцев"
-
-msgid "Last 3 months"
-msgstr "Прошлые 3 месяца"
-
-msgid "Last 6 bi-months"
-msgstr "Последние 6 двухмесячных периодов"
-
-msgid "Last 4 quarters"
-msgstr "Прошлые 4 квартала"
-
-msgid "Last 2 six-months"
-msgstr "Последние два полугодия"
-
-msgid "This financial year"
-msgstr "Этот финансовый год"
-
-msgid "Last financial year"
-msgstr "Прошлый финансовый год"
-
-msgid "Last 5 financial years"
-msgstr "Прошлые 5 финансовых лет"
-
 msgid "This week"
 msgstr "Эта неделя"
 
@@ -433,6 +361,81 @@ msgstr "Прошлые 12 недель"
 
 msgid "Last 52 weeks"
 msgstr "Последние 52 недели"
+
+msgid "This month"
+msgstr "Этот месяц"
+
+msgid "Last month"
+msgstr "Последний месяц"
+
+msgid "Months this year"
+msgstr "Месяцы этого года"
+
+msgid "Months last year"
+msgstr "Месяцы последнего года"
+
+msgid "Last 3 months"
+msgstr "Прошлые 3 месяца"
+
+msgid "Last 6 months"
+msgstr "Последние 6 месяцев"
+
+msgid "Last 12 months"
+msgstr "Прошлые 12 месяцев"
+
+msgid "This bi-month"
+msgstr "Этот период по два месяца"
+
+msgid "Last bi-month"
+msgstr "Прошлый двухмесячный период"
+
+msgid "Last 6 bi-months"
+msgstr "Последние 6 двухмесячных периодов"
+
+msgid "This quarter"
+msgstr "Этот квартал"
+
+msgid "Last quarter"
+msgstr "Последний квартал"
+
+msgid "Quarters this year"
+msgstr "Кварталы этого года"
+
+msgid "Quarters last year"
+msgstr "Кварталы последнего года"
+
+msgid "Last 4 quarters"
+msgstr "Прошлые 4 квартала"
+
+msgid "This six-month"
+msgstr "Это полугодие"
+
+msgid "Last six-month"
+msgstr "Прошлое полугодие"
+
+msgid "Last 2 six-months"
+msgstr "Последние два полугодия"
+
+msgid "This year"
+msgstr "Этот год"
+
+msgid "Last year"
+msgstr "Прошлый год"
+
+msgid "Last 5 years"
+msgstr "Прошлые 5 лет"
+
+msgid "Last 10 years"
+msgstr "Последние 10 лет"
+
+msgid "This financial year"
+msgstr "Этот финансовый год"
+
+msgid "Last financial year"
+msgstr "Прошлый финансовый год"
+
+msgid "Last 5 financial years"
+msgstr "Прошлые 5 финансовых лет"
 
 msgid "Hide daily periods"
 msgstr "Скрыть дневные периоды"
@@ -537,9 +540,6 @@ msgstr "Последние 8 лет"
 msgid "Last 9 years"
 msgstr "Последние 9 лет"
 
-msgid "Last 10 years"
-msgstr "Последние 10 лет"
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 "Учитывать дату начала и окончания опции категории при экспорте таблицы "
@@ -547,6 +547,9 @@ msgstr ""
 
 msgid "Put analytics in maintenance mode"
 msgstr "Перевести аналитику в режим обслуживания"
+
+msgid "Include zero data values in analytics tables"
+msgstr ""
 
 msgid "Caching factor"
 msgstr ""
@@ -595,6 +598,9 @@ msgstr "Стиль"
 
 msgid "Start page"
 msgstr "Стартовая страница"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "Ссылка на страницу справки"

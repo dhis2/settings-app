@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2022-01-25T16:51:23.907Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -347,78 +347,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr "تجزیہ کیلئے پہلے سے طے شدہ رشتہ دار دور"
 
-msgid "This month"
-msgstr "اس مہینے"
-
-msgid "Last month"
-msgstr "آخری ماہ"
-
-msgid "This bi-month"
-msgstr "یہ دو ماہ"
-
-msgid "Last bi-month"
-msgstr "آخری دو ماہ"
-
-msgid "This quarter"
-msgstr "اس سہ ماہی"
-
-msgid "Last quarter"
-msgstr "آخری سہ ماہ"
-
-msgid "This six-month"
-msgstr "یہ چھ ماہ"
-
-msgid "Last six-month"
-msgstr "آخری ۶ ماہ"
-
-msgid "Months this year"
-msgstr "ماہ اس سال"
-
-msgid "Quarters this year"
-msgstr "سہ ماہی اس سال"
-
-msgid "This year"
-msgstr "اس سال"
-
-msgid "Months last year"
-msgstr "ماہ آخری سال"
-
-msgid "Quarters last year"
-msgstr "سہ ماہی آخری سال"
-
-msgid "Last year"
-msgstr "آخری سال"
-
-msgid "Last 5 years"
-msgstr "آخری ۵ سال"
-
-msgid "Last 12 months"
-msgstr "آخری ۱۲ ماہ"
-
-msgid "Last 6 months"
-msgstr "آخری ۶ ماہ"
-
-msgid "Last 3 months"
-msgstr "آخری ۳ ماہ"
-
-msgid "Last 6 bi-months"
-msgstr "آخری ۶ دو ماہانہ"
-
-msgid "Last 4 quarters"
-msgstr "آخری ۴ سہ ماہی"
-
-msgid "Last 2 six-months"
-msgstr "آخری ۲ چھ ماہ"
-
-msgid "This financial year"
-msgstr "اس مالیاتی سال"
-
-msgid "Last financial year"
-msgstr "آخری مالیاتی سال"
-
-msgid "Last 5 financial years"
-msgstr "آخری ۵ مالیاتی سال"
-
 msgid "This week"
 msgstr "اس ہفتے"
 
@@ -433,6 +361,81 @@ msgstr "آخری ۱۲ ہفتے"
 
 msgid "Last 52 weeks"
 msgstr "آخری ۵۲ ہفتے"
+
+msgid "This month"
+msgstr "اس مہینے"
+
+msgid "Last month"
+msgstr "آخری ماہ"
+
+msgid "Months this year"
+msgstr "ماہ اس سال"
+
+msgid "Months last year"
+msgstr "ماہ آخری سال"
+
+msgid "Last 3 months"
+msgstr "آخری ۳ ماہ"
+
+msgid "Last 6 months"
+msgstr "آخری ۶ ماہ"
+
+msgid "Last 12 months"
+msgstr "آخری ۱۲ ماہ"
+
+msgid "This bi-month"
+msgstr "یہ دو ماہ"
+
+msgid "Last bi-month"
+msgstr "آخری دو ماہ"
+
+msgid "Last 6 bi-months"
+msgstr "آخری ۶ دو ماہانہ"
+
+msgid "This quarter"
+msgstr "اس سہ ماہی"
+
+msgid "Last quarter"
+msgstr "آخری سہ ماہ"
+
+msgid "Quarters this year"
+msgstr "سہ ماہی اس سال"
+
+msgid "Quarters last year"
+msgstr "سہ ماہی آخری سال"
+
+msgid "Last 4 quarters"
+msgstr "آخری ۴ سہ ماہی"
+
+msgid "This six-month"
+msgstr "یہ چھ ماہ"
+
+msgid "Last six-month"
+msgstr "آخری ۶ ماہ"
+
+msgid "Last 2 six-months"
+msgstr "آخری ۲ چھ ماہ"
+
+msgid "This year"
+msgstr "اس سال"
+
+msgid "Last year"
+msgstr "آخری سال"
+
+msgid "Last 5 years"
+msgstr "آخری ۵ سال"
+
+msgid "Last 10 years"
+msgstr "آخری 10 سال"
+
+msgid "This financial year"
+msgstr "اس مالیاتی سال"
+
+msgid "Last financial year"
+msgstr "آخری مالیاتی سال"
+
+msgid "Last 5 financial years"
+msgstr "آخری ۵ مالیاتی سال"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -538,9 +541,6 @@ msgstr "گزشتہ 8 سال"
 msgid "Last 9 years"
 msgstr "گزشتہ 9 سال"
 
-msgid "Last 10 years"
-msgstr "آخری 10 سال"
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 "تجزیاتی ٹیبل ایکسپورٹ میں دریافت کرنے والے قسم کے اختیارات شروع اور اختتامی "
@@ -548,6 +548,9 @@ msgstr ""
 
 msgid "Put analytics in maintenance mode"
 msgstr "تجزیہ موڈ میں تجزیات رکھو"
+
+msgid "Include zero data values in analytics tables"
+msgstr ""
 
 msgid "Caching factor"
 msgstr ""
@@ -596,6 +599,9 @@ msgstr "سٹائل"
 
 msgid "Start page"
 msgstr "صفحہ آغاز"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "مدد کے صفحے کا لنک"

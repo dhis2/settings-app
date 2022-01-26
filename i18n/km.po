@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2022-01-25T16:51:23.907Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Khmer (https://www.transifex.com/hisp-uio/teams/100509/km/)\n"
@@ -347,78 +347,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr ""
 
-msgid "This month"
-msgstr ""
-
-msgid "Last month"
-msgstr ""
-
-msgid "This bi-month"
-msgstr ""
-
-msgid "Last bi-month"
-msgstr ""
-
-msgid "This quarter"
-msgstr ""
-
-msgid "Last quarter"
-msgstr ""
-
-msgid "This six-month"
-msgstr ""
-
-msgid "Last six-month"
-msgstr ""
-
-msgid "Months this year"
-msgstr ""
-
-msgid "Quarters this year"
-msgstr ""
-
-msgid "This year"
-msgstr ""
-
-msgid "Months last year"
-msgstr ""
-
-msgid "Quarters last year"
-msgstr ""
-
-msgid "Last year"
-msgstr ""
-
-msgid "Last 5 years"
-msgstr ""
-
-msgid "Last 12 months"
-msgstr ""
-
-msgid "Last 6 months"
-msgstr ""
-
-msgid "Last 3 months"
-msgstr ""
-
-msgid "Last 6 bi-months"
-msgstr ""
-
-msgid "Last 4 quarters"
-msgstr ""
-
-msgid "Last 2 six-months"
-msgstr ""
-
-msgid "This financial year"
-msgstr ""
-
-msgid "Last financial year"
-msgstr ""
-
-msgid "Last 5 financial years"
-msgstr ""
-
 msgid "This week"
 msgstr ""
 
@@ -432,6 +360,81 @@ msgid "Last 12 weeks"
 msgstr ""
 
 msgid "Last 52 weeks"
+msgstr ""
+
+msgid "This month"
+msgstr ""
+
+msgid "Last month"
+msgstr ""
+
+msgid "Months this year"
+msgstr ""
+
+msgid "Months last year"
+msgstr ""
+
+msgid "Last 3 months"
+msgstr ""
+
+msgid "Last 6 months"
+msgstr ""
+
+msgid "Last 12 months"
+msgstr ""
+
+msgid "This bi-month"
+msgstr ""
+
+msgid "Last bi-month"
+msgstr ""
+
+msgid "Last 6 bi-months"
+msgstr ""
+
+msgid "This quarter"
+msgstr ""
+
+msgid "Last quarter"
+msgstr ""
+
+msgid "Quarters this year"
+msgstr ""
+
+msgid "Quarters last year"
+msgstr ""
+
+msgid "Last 4 quarters"
+msgstr ""
+
+msgid "This six-month"
+msgstr ""
+
+msgid "Last six-month"
+msgstr ""
+
+msgid "Last 2 six-months"
+msgstr ""
+
+msgid "This year"
+msgstr ""
+
+msgid "Last year"
+msgstr ""
+
+msgid "Last 5 years"
+msgstr ""
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "This financial year"
+msgstr ""
+
+msgid "Last financial year"
+msgstr ""
+
+msgid "Last 5 financial years"
 msgstr ""
 
 msgid "Hide daily periods"
@@ -536,13 +539,13 @@ msgstr ""
 msgid "Last 9 years"
 msgstr ""
 
-msgid "Last 10 years"
-msgstr ""
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
 msgid "Put analytics in maintenance mode"
+msgstr ""
+
+msgid "Include zero data values in analytics tables"
 msgstr ""
 
 msgid "Caching factor"
@@ -591,6 +594,9 @@ msgid "Style"
 msgstr "​រចនាបទ"
 
 msgid "Start page"
+msgstr ""
+
+msgid "Enable light-weight start page"
 msgstr ""
 
 msgid "Help page link"

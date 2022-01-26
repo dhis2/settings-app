@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2022-01-25T16:51:23.907Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Tetum (Tetun) (https://www.transifex.com/hisp-uio/teams/100509/tet/)\n"
@@ -347,78 +347,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr ""
 
-msgid "This month"
-msgstr ""
-
-msgid "Last month"
-msgstr "Fulan kotuk"
-
-msgid "This bi-month"
-msgstr ""
-
-msgid "Last bi-month"
-msgstr "Bimensal kotuk"
-
-msgid "This quarter"
-msgstr ""
-
-msgid "Last quarter"
-msgstr "Trimestre kotuk"
-
-msgid "This six-month"
-msgstr ""
-
-msgid "Last six-month"
-msgstr "Fulan-nén ikus"
-
-msgid "Months this year"
-msgstr "Fulan sira tinan ida ne'e"
-
-msgid "Quarters this year"
-msgstr "Trimestres sira tinan ida ne'e"
-
-msgid "This year"
-msgstr "Tina ida ne'e"
-
-msgid "Months last year"
-msgstr "Fulan sira tinan kotuk"
-
-msgid "Quarters last year"
-msgstr "Trimestres tinan kotuk"
-
-msgid "Last year"
-msgstr "Tinan kotuk"
-
-msgid "Last 5 years"
-msgstr "Tinan 5 kotuk"
-
-msgid "Last 12 months"
-msgstr "Fulan 12 ikus"
-
-msgid "Last 6 months"
-msgstr "Fulan 6 ikus"
-
-msgid "Last 3 months"
-msgstr "Fulan 3 ikus"
-
-msgid "Last 6 bi-months"
-msgstr "Bimensal 6 ikus liu"
-
-msgid "Last 4 quarters"
-msgstr "Trimestre 4 ikus liu"
-
-msgid "Last 2 six-months"
-msgstr "Fulan-nén 2 ikus"
-
-msgid "This financial year"
-msgstr "Tinan finanseiru ida ne'e"
-
-msgid "Last financial year"
-msgstr "Tinan finanseiru kotuk"
-
-msgid "Last 5 financial years"
-msgstr "Tinan finanseiru 5 ikus"
-
 msgid "This week"
 msgstr ""
 
@@ -433,6 +361,81 @@ msgstr "Semana 12 ikus"
 
 msgid "Last 52 weeks"
 msgstr "Semana 52 ikus"
+
+msgid "This month"
+msgstr ""
+
+msgid "Last month"
+msgstr "Fulan kotuk"
+
+msgid "Months this year"
+msgstr "Fulan sira tinan ida ne'e"
+
+msgid "Months last year"
+msgstr "Fulan sira tinan kotuk"
+
+msgid "Last 3 months"
+msgstr "Fulan 3 ikus"
+
+msgid "Last 6 months"
+msgstr "Fulan 6 ikus"
+
+msgid "Last 12 months"
+msgstr "Fulan 12 ikus"
+
+msgid "This bi-month"
+msgstr ""
+
+msgid "Last bi-month"
+msgstr "Bimensal kotuk"
+
+msgid "Last 6 bi-months"
+msgstr "Bimensal 6 ikus liu"
+
+msgid "This quarter"
+msgstr ""
+
+msgid "Last quarter"
+msgstr "Trimestre kotuk"
+
+msgid "Quarters this year"
+msgstr "Trimestres sira tinan ida ne'e"
+
+msgid "Quarters last year"
+msgstr "Trimestres tinan kotuk"
+
+msgid "Last 4 quarters"
+msgstr "Trimestre 4 ikus liu"
+
+msgid "This six-month"
+msgstr ""
+
+msgid "Last six-month"
+msgstr "Fulan-nén ikus"
+
+msgid "Last 2 six-months"
+msgstr "Fulan-nén 2 ikus"
+
+msgid "This year"
+msgstr "Tina ida ne'e"
+
+msgid "Last year"
+msgstr "Tinan kotuk"
+
+msgid "Last 5 years"
+msgstr "Tinan 5 kotuk"
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "This financial year"
+msgstr "Tinan finanseiru ida ne'e"
+
+msgid "Last financial year"
+msgstr "Tinan finanseiru kotuk"
+
+msgid "Last 5 financial years"
+msgstr "Tinan finanseiru 5 ikus"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -536,13 +539,13 @@ msgstr ""
 msgid "Last 9 years"
 msgstr ""
 
-msgid "Last 10 years"
-msgstr ""
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
 msgid "Put analytics in maintenance mode"
+msgstr ""
+
+msgid "Include zero data values in analytics tables"
 msgstr ""
 
 msgid "Caching factor"
@@ -591,6 +594,9 @@ msgid "Style"
 msgstr "Estilu"
 
 msgid "Start page"
+msgstr ""
+
+msgid "Enable light-weight start page"
 msgstr ""
 
 msgid "Help page link"

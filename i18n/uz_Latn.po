@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2022-01-25T16:51:23.907Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -348,78 +348,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr "Tahlil qilish uchun standart bogʼliq davr"
 
-msgid "This month"
-msgstr "Ушбу ой"
-
-msgid "Last month"
-msgstr "Охирги ой"
-
-msgid "This bi-month"
-msgstr "Ушбу жуфт ой"
-
-msgid "Last bi-month"
-msgstr "Oxirgi juft oy"
-
-msgid "This quarter"
-msgstr "Ушбу квартал"
-
-msgid "Last quarter"
-msgstr "Охирги квартал"
-
-msgid "This six-month"
-msgstr "Ушбу ярим йиллик"
-
-msgid "Last six-month"
-msgstr "Oxirgi yarim yillik"
-
-msgid "Months this year"
-msgstr "Oylar ushbu yilda"
-
-msgid "Quarters this year"
-msgstr "Ushbu yildagi kvartallar"
-
-msgid "This year"
-msgstr "Ушбу йил"
-
-msgid "Months last year"
-msgstr "Oʼtgan yildagi oylar"
-
-msgid "Quarters last year"
-msgstr "Oʼtgan yildagi choraklar"
-
-msgid "Last year"
-msgstr "Охирги йил"
-
-msgid "Last 5 years"
-msgstr "Охирги 5 йил"
-
-msgid "Last 12 months"
-msgstr "Охирги 12 ой"
-
-msgid "Last 6 months"
-msgstr "Oxirgi yarim yillik"
-
-msgid "Last 3 months"
-msgstr "Охирги 3 ой"
-
-msgid "Last 6 bi-months"
-msgstr "Oxirgi yarim yillik juft oylar"
-
-msgid "Last 4 quarters"
-msgstr "Охирги 4 квартал"
-
-msgid "Last 2 six-months"
-msgstr "Oxirgi 2 ta yarim yillik"
-
-msgid "This financial year"
-msgstr "Ушбу молиявий йил"
-
-msgid "Last financial year"
-msgstr "Охирги молиявий йил"
-
-msgid "Last 5 financial years"
-msgstr "Охирги 5 молиявий йиллар"
-
 msgid "This week"
 msgstr "Ушбу ҳафта"
 
@@ -434,6 +362,81 @@ msgstr "Охирги 12 ҳафта"
 
 msgid "Last 52 weeks"
 msgstr "Охирги 52 ҳафта"
+
+msgid "This month"
+msgstr "Ушбу ой"
+
+msgid "Last month"
+msgstr "Охирги ой"
+
+msgid "Months this year"
+msgstr "Oylar ushbu yilda"
+
+msgid "Months last year"
+msgstr "Oʼtgan yildagi oylar"
+
+msgid "Last 3 months"
+msgstr "Охирги 3 ой"
+
+msgid "Last 6 months"
+msgstr "Oxirgi yarim yillik"
+
+msgid "Last 12 months"
+msgstr "Охирги 12 ой"
+
+msgid "This bi-month"
+msgstr "Ушбу жуфт ой"
+
+msgid "Last bi-month"
+msgstr "Oxirgi juft oy"
+
+msgid "Last 6 bi-months"
+msgstr "Oxirgi yarim yillik juft oylar"
+
+msgid "This quarter"
+msgstr "Ушбу квартал"
+
+msgid "Last quarter"
+msgstr "Охирги квартал"
+
+msgid "Quarters this year"
+msgstr "Ushbu yildagi kvartallar"
+
+msgid "Quarters last year"
+msgstr "Oʼtgan yildagi choraklar"
+
+msgid "Last 4 quarters"
+msgstr "Охирги 4 квартал"
+
+msgid "This six-month"
+msgstr "Ушбу ярим йиллик"
+
+msgid "Last six-month"
+msgstr "Oxirgi yarim yillik"
+
+msgid "Last 2 six-months"
+msgstr "Oxirgi 2 ta yarim yillik"
+
+msgid "This year"
+msgstr "Ушбу йил"
+
+msgid "Last year"
+msgstr "Охирги йил"
+
+msgid "Last 5 years"
+msgstr "Охирги 5 йил"
+
+msgid "Last 10 years"
+msgstr "Oxirgi 10 yil"
+
+msgid "This financial year"
+msgstr "Ушбу молиявий йил"
+
+msgid "Last financial year"
+msgstr "Охирги молиявий йил"
+
+msgid "Last 5 financial years"
+msgstr "Охирги 5 молиявий йиллар"
 
 msgid "Hide daily periods"
 msgstr "Kundalik davrlarni berkitish"
@@ -538,9 +541,6 @@ msgstr "Oxirgi 8 yil"
 msgid "Last 9 years"
 msgstr "Oxirgi 9 yil"
 
-msgid "Last 10 years"
-msgstr "Oxirgi 10 yil"
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 "Аnalitik jadval eksportida kategoriya variantining boshlanish va tugash "
@@ -548,6 +548,9 @@ msgstr ""
 
 msgid "Put analytics in maintenance mode"
 msgstr "Аnalitikani texnik rejimga oʼtkazing"
+
+msgid "Include zero data values in analytics tables"
+msgstr ""
 
 msgid "Caching factor"
 msgstr "Keshlash omili"
@@ -596,6 +599,9 @@ msgstr "Услуб"
 
 msgid "Start page"
 msgstr "Bosh sahifa"
+
+msgid "Enable light-weight start page"
+msgstr ""
 
 msgid "Help page link"
 msgstr "Yordamchi sahifaga havola"

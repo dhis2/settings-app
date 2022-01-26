@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-09-07T07:04:15.160Z\n"
+"POT-Creation-Date: 2022-01-25T16:51:23.907Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
@@ -346,78 +346,6 @@ msgstr ""
 msgid "Default relative period for analysis"
 msgstr ""
 
-msgid "This month"
-msgstr ""
-
-msgid "Last month"
-msgstr "ယခင်လ"
-
-msgid "This bi-month"
-msgstr ""
-
-msgid "Last bi-month"
-msgstr "လွန်ခဲ့သော ၆လက"
-
-msgid "This quarter"
-msgstr ""
-
-msgid "Last quarter"
-msgstr "လွန်ခဲ့သော ၃လက"
-
-msgid "This six-month"
-msgstr ""
-
-msgid "Last six-month"
-msgstr "လွန်ခဲ့သော ၆လက"
-
-msgid "Months this year"
-msgstr ""
-
-msgid "Quarters this year"
-msgstr "Quarters this year"
-
-msgid "This year"
-msgstr "ဒီနှစ်"
-
-msgid "Months last year"
-msgstr ""
-
-msgid "Quarters last year"
-msgstr ""
-
-msgid "Last year"
-msgstr "ယခင်နှစ်"
-
-msgid "Last 5 years"
-msgstr "လွန်ခဲ့သော ၅ နှစ်"
-
-msgid "Last 12 months"
-msgstr "လွန်ခဲ့သော ၁၂လ"
-
-msgid "Last 6 months"
-msgstr "Last 6 months"
-
-msgid "Last 3 months"
-msgstr "လွန်ခဲ့သော ၁၂လ"
-
-msgid "Last 6 bi-months"
-msgstr "လွန်ခဲ့သော ၆လ(၂ကြိမ်)"
-
-msgid "Last 4 quarters"
-msgstr "လွန်ခဲ့သော ၁၂လက"
-
-msgid "Last 2 six-months"
-msgstr "လွန်ခဲ့သော ၆လ(၂ကြိမ်)"
-
-msgid "This financial year"
-msgstr ""
-
-msgid "Last financial year"
-msgstr ""
-
-msgid "Last 5 financial years"
-msgstr ""
-
 msgid "This week"
 msgstr ""
 
@@ -431,6 +359,81 @@ msgid "Last 12 weeks"
 msgstr ""
 
 msgid "Last 52 weeks"
+msgstr ""
+
+msgid "This month"
+msgstr ""
+
+msgid "Last month"
+msgstr "ယခင်လ"
+
+msgid "Months this year"
+msgstr ""
+
+msgid "Months last year"
+msgstr ""
+
+msgid "Last 3 months"
+msgstr "လွန်ခဲ့သော ၁၂လ"
+
+msgid "Last 6 months"
+msgstr "Last 6 months"
+
+msgid "Last 12 months"
+msgstr "လွန်ခဲ့သော ၁၂လ"
+
+msgid "This bi-month"
+msgstr ""
+
+msgid "Last bi-month"
+msgstr "လွန်ခဲ့သော ၆လက"
+
+msgid "Last 6 bi-months"
+msgstr "လွန်ခဲ့သော ၆လ(၂ကြိမ်)"
+
+msgid "This quarter"
+msgstr ""
+
+msgid "Last quarter"
+msgstr "လွန်ခဲ့သော ၃လက"
+
+msgid "Quarters this year"
+msgstr "Quarters this year"
+
+msgid "Quarters last year"
+msgstr ""
+
+msgid "Last 4 quarters"
+msgstr "လွန်ခဲ့သော ၁၂လက"
+
+msgid "This six-month"
+msgstr ""
+
+msgid "Last six-month"
+msgstr "လွန်ခဲ့သော ၆လက"
+
+msgid "Last 2 six-months"
+msgstr "လွန်ခဲ့သော ၆လ(၂ကြိမ်)"
+
+msgid "This year"
+msgstr "ဒီနှစ်"
+
+msgid "Last year"
+msgstr "ယခင်နှစ်"
+
+msgid "Last 5 years"
+msgstr "လွန်ခဲ့သော ၅ နှစ်"
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "This financial year"
+msgstr ""
+
+msgid "Last financial year"
+msgstr ""
+
+msgid "Last 5 financial years"
 msgstr ""
 
 msgid "Hide daily periods"
@@ -535,13 +538,13 @@ msgstr ""
 msgid "Last 9 years"
 msgstr ""
 
-msgid "Last 10 years"
-msgstr ""
-
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
 msgid "Put analytics in maintenance mode"
+msgstr ""
+
+msgid "Include zero data values in analytics tables"
 msgstr ""
 
 msgid "Caching factor"
@@ -590,6 +593,9 @@ msgid "Style"
 msgstr "ပုံစံ"
 
 msgid "Start page"
+msgstr ""
+
+msgid "Enable light-weight start page"
 msgstr ""
 
 msgid "Help page link"
