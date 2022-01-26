@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-07T14:50:03.382Z\n"
-"PO-Revision-Date: 2022-01-07T14:50:03.382Z\n"
+"POT-Creation-Date: 2022-01-25T16:41:32.567Z\n"
+"PO-Revision-Date: 2022-01-25T16:41:32.567Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -535,6 +535,9 @@ msgstr "Respect category option start and end date in analytics table export"
 
 msgid "Put analytics in maintenance mode"
 msgstr "Put analytics in maintenance mode"
+
+msgid "Include zero data values in analytics tables"
+msgstr "Include zero data values in analytics tables"
 
 msgid "Caching factor"
 msgstr "Caching factor"
