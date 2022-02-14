@@ -551,7 +551,7 @@ msgid "Put analytics in maintenance mode"
 msgstr "Přepnout analytiku do režimu údržby"
 
 msgid "Include zero data values in analytics tables"
-msgstr ""
+msgstr "Zahrnout nulové hodnoty dat do analytických tabulek"
 
 msgid "Caching factor"
 msgstr "Faktor ukládání do mezipaměti"
