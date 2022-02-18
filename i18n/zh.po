@@ -548,7 +548,7 @@ msgid "Put analytics in maintenance mode"
 msgstr "置分析为维护模式"
 
 msgid "Include zero data values in analytics tables"
-msgstr ""
+msgstr "在分析表中包含零数据值"
 
 msgid "Caching factor"
 msgstr "缓冲因子"
