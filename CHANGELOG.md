@@ -1,3 +1,10 @@
+# [29.13.0](https://github.com/dhis2/settings-app/compare/v29.12.4...v29.13.0) (2022-03-02)
+
+
+### Features
+
+* system update notifications setting ([#950](https://github.com/dhis2/settings-app/issues/950)) ([4a07f19](https://github.com/dhis2/settings-app/commit/4a07f193b71ef186af71ab032e63a84c65686a17))
+
 ## [29.12.4](https://github.com/dhis2/settings-app/compare/v29.12.3...v29.12.4) (2022-02-18)
 
 
