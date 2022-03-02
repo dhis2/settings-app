@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-01-25T16:41:32.567Z\n"
-"PO-Revision-Date: 2022-01-25T16:41:32.567Z\n"
+"POT-Creation-Date: 2022-03-02T11:22:59.328Z\n"
+"PO-Revision-Date: 2022-03-02T11:22:59.328Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -313,6 +313,12 @@ msgstr "Feedback recipients"
 
 msgid "No message recipients"
 msgstr "No message recipients"
+
+msgid "System update notification recipients"
+msgstr "System update notification recipients"
+
+msgid "No update notification recipients"
+msgstr "No update notification recipients"
 
 msgid "Max offline organisation unit levels"
 msgstr "Max offline organisation unit levels"
