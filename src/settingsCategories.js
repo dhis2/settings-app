@@ -26,6 +26,7 @@ export const categories = {
             'infrastructuralPeriodType',
             'keyAnalysisRelativePeriod',
             'feedbackRecipients',
+            'systemUpdateNotificationRecipients',
             'offlineOrganisationUnitLevel',
             'factorDeviation',
             'phoneNumberAreaCode',

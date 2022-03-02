@@ -80,6 +80,14 @@ const settingsKeyMapping = {
         includeEmpty: true,
         emptyLabel: i18n.t('No message recipients'),
     },
+    systemUpdateNotificationRecipients: {
+        label: i18n.t('System update notification recipients'),
+        configuration: true,
+        type: 'dropdown',
+        source: 'userGroups',
+        includeEmpty: true,
+        emptyLabel: i18n.t('No update notification recipients'),
+    },
     offlineOrganisationUnitLevel: {
         label: i18n.t('Max offline organisation unit levels'),
         configuration: true,
