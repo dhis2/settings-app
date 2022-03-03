@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-01-25T16:41:32.567Z\n"
+"POT-Creation-Date: 2022-03-02T11:22:59.328Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -332,6 +332,12 @@ msgstr "Commentaires des bénéficiaires"
 
 msgid "No message recipients"
 msgstr "Pas de destinataires du message"
+
+msgid "System update notification recipients"
+msgstr ""
+
+msgid "No update notification recipients"
+msgstr ""
 
 msgid "Max offline organisation unit levels"
 msgstr "Niveau maximum d'unité d'organisation en offline"
