@@ -326,10 +326,10 @@ msgid "No message recipients"
 msgstr "无反馈接收者"
 
 msgid "System update notification recipients"
-msgstr ""
+msgstr "系统更新通知收件人"
 
 msgid "No update notification recipients"
-msgstr ""
+msgstr "没有更新通知收件人"
 
 msgid "Max offline organisation unit levels"
 msgstr "离线的最大机构等级"
