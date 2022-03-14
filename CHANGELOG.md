@@ -1,3 +1,10 @@
+## [29.13.4](https://github.com/dhis2/settings-app/compare/v29.13.3...v29.13.4) (2022-03-14)
+
+
+### Bug Fixes
+
+* indicate OSMLight as default ([758c783](https://github.com/dhis2/settings-app/commit/758c78301d38759fa6b89dc7b226162f3122f566))
+
 ## [29.13.3](https://github.com/dhis2/settings-app/compare/v29.13.2...v29.13.3) (2022-03-08)
 
 
