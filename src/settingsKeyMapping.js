@@ -291,7 +291,7 @@ const settingsKeyMapping = {
         type: 'dropdown',
         source: 'basemaps',
         options: {
-            osmLight: i18n.t('OSM Light'),
+            osmLight: i18n.t('OSM Light (default)'),
             openStreetMap: i18n.t('OSM Detailed'),
             bingLight: i18n.t('Bing Road'),
             bingDark: i18n.t('Bing Dark'),
