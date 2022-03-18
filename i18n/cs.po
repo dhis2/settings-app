@@ -325,10 +325,10 @@ msgid "No message recipients"
 msgstr "Žádní příjemci zpráv"
 
 msgid "System update notification recipients"
-msgstr ""
+msgstr "Příjemci oznámení o aktualizaci systému"
 
 msgid "No update notification recipients"
-msgstr ""
+msgstr "Žádní příjemci oznámení o aktualizaci"
 
 msgid "Max offline organisation unit levels"
 msgstr "Maximální počet offline organizačních jednotek"
@@ -572,7 +572,7 @@ msgid "Default basemap"
 msgstr "Výchozí základní mapa"
 
 msgid "OSM Light (default)"
-msgstr ""
+msgstr "OSM Light (výchozí)"
 
 msgid "OSM Detailed"
 msgstr "OSM Detailed"
