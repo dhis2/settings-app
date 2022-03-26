@@ -569,7 +569,7 @@ msgid "Default basemap"
 msgstr "默认底图"
 
 msgid "OSM Light (default)"
-msgstr ""
+msgstr "OSM 简化（默认）"
 
 msgid "OSM Detailed"
 msgstr "OSM详细图"
