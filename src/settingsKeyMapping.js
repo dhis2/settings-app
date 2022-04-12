@@ -29,6 +29,8 @@ const settingsKeyMapping = {
             50000: formatNumber(50000),
             100000: formatNumber(100000),
             200000: formatNumber(200000),
+            500000: formatNumber(500000),
+            1000000: formatNumber(1000000),
             0: i18n.t('Unlimited'),
         },
     },
@@ -40,6 +42,8 @@ const settingsKeyMapping = {
             50000: formatNumber(50000),
             100000: formatNumber(100000),
             200000: formatNumber(200000),
+            500000: formatNumber(500000),
+            1000000: formatNumber(1000000),
         },
     },
     infrastructuralIndicators: {
