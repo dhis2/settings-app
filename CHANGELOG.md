@@ -1,3 +1,11 @@
+# [29.14.0](https://github.com/dhis2/settings-app/compare/v29.13.7...v29.14.0) (2022-04-12)
+
+
+### Features
+
+* add more options ([b158f56](https://github.com/dhis2/settings-app/commit/b158f565d983471333df37d5633ee80417fd54de))
+* add more options ([c07b0d3](https://github.com/dhis2/settings-app/commit/c07b0d33725cb82828c1fc77fd10da1d554592bf))
+
 ## [29.13.7](https://github.com/dhis2/settings-app/compare/v29.13.6...v29.13.7) (2022-03-26)
 
 
