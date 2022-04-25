@@ -1,3 +1,10 @@
+## [29.14.2](https://github.com/dhis2/settings-app/compare/v29.14.1...v29.14.2) (2022-04-25)
+
+
+### Bug Fixes
+
+* reorganise some analytics settings DHIS2-13110 ([#966](https://github.com/dhis2/settings-app/issues/966)) ([8c8aba9](https://github.com/dhis2/settings-app/commit/8c8aba9f78580ac8f18c8449b4acd3bfdf2bbe89))
+
 ## [29.14.1](https://github.com/dhis2/settings-app/compare/v29.14.0...v29.14.1) (2022-04-22)
 
 
