@@ -42,6 +42,8 @@ export const categories = {
         pageLabel: i18n.t('Analytics settings'),
         settings: [
             'keyAnalysisRelativePeriod',
+            'keyAnalysisDisplayProperty',
+            'keyAnalysisDigitGroupSeparator',
             'keyHideDailyPeriods',
             'keyHideWeeklyPeriods',
             'keyHideBiWeeklyPeriods',
@@ -90,8 +92,6 @@ export const categories = {
             'keyFlag',
             'keyUiLocale',
             'keyDbLocale',
-            'keyAnalysisDisplayProperty',
-            'keyAnalysisDigitGroupSeparator',
             'keyRequireAddToView',
             'keyUseCustomLogoFront',
             'keyUseCustomLogoBanner',
