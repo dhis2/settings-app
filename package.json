@@ -19,7 +19,7 @@
     },
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^8.0.1",
-        "@dhis2/cli-style": "^7.3.0"
+        "@dhis2/cli-style": "^10.4.1"
     },
     "dependencies": {
         "@dhis2/app-runtime": "^3.2.0",
