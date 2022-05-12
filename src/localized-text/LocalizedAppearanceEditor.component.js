@@ -66,8 +66,8 @@ class LocalizedTextEditor extends React.Component {
             (configOptionStore.state &&
                 configOptionStore
                     .getState()
-                    .uiLocales.filter(locale => locale.id === code)
-                    .map(locale => locale.displayName)
+                    .uiLocales.filter((locale) => locale.id === code)
+                    .map((locale) => locale.displayName)
                     .pop()) ||
             ''
         )
@@ -115,13 +115,13 @@ class LocalizedTextEditor extends React.Component {
             locale === SYSTEM_DEFAULT
                 ? Promise.resolve(
                       LOCALIZED_SETTING_KEYS.map(
-                          key => settingsStore.state[key]
+                          (key) => settingsStore.state[key]
                       )
                   )
                 : this.fetchLocalizedAppearanceSettings(locale)
 
         promise
-            .then(values => {
+            .then((values) => {
                 const settings = LOCALIZED_SETTING_KEYS.reduce(
                     (acc, key, i) => {
                         acc[key] = values[i]
@@ -141,10 +141,10 @@ class LocalizedTextEditor extends React.Component {
         const api = this.context.d2.Api.getApi()
 
         return Promise.all(
-            LOCALIZED_SETTING_KEYS.map(key =>
+            LOCALIZED_SETTING_KEYS.map((key) =>
                 api
                     .get(`systemSettings/${key}`, { locale })
-                    .then(json => json[key])
+                    .then((json) => json[key])
             )
         )
     }
@@ -177,7 +177,7 @@ class LocalizedTextEditor extends React.Component {
         settingsActions.saveKey(key, value, locale)
     }
 
-    createFieldHelpTextProps = fieldKey => {
+    createFieldHelpTextProps = (fieldKey) => {
         const defaultValue = settingsStore.state[fieldKey]
         const { locale } = this.state
 
@@ -223,7 +223,7 @@ class LocalizedTextEditor extends React.Component {
             )
         }
 
-        const fields = LOCALIZED_SETTING_KEYS.map(key => ({
+        const fields = LOCALIZED_SETTING_KEYS.map((key) => ({
             name: key,
             value: this.state.settings[key] || '',
             component: TextField,

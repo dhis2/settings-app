@@ -26,7 +26,7 @@ const saveLocalizedAppearanceSetting = (d2, key, value, locale) => {
         .then(() => {
             settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
         })
-        .catch(err => {
+        .catch((err) => {
             console.error('Failed to save localized setting:', err)
         })
 }
@@ -37,7 +37,7 @@ const saveConfiguration = (d2, key, value) =>
         .then(() => {
             settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
         })
-        .catch(err => {
+        .catch((err) => {
             console.error('Failed to save configuration:', err)
         })
 
@@ -47,15 +47,15 @@ const saveSetting = (d2, key, value) =>
         .then(() => {
             settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
         })
-        .catch(err => {
+        .catch((err) => {
             console.error('Failed to save setting:', err)
         })
 
-settingsActions.saveKey.subscribe(args => {
+settingsActions.saveKey.subscribe((args) => {
     const [key, value, locale] = args.data
     const mapping = settingsKeyMapping[key]
 
-    getD2().then(d2 => {
+    getD2().then((d2) => {
         const isLocalisedAppearanceSetting = mapping.appendLocale && locale
 
         if (isLocalisedAppearanceSetting) {
@@ -74,18 +74,18 @@ settingsActions.saveKey.subscribe(args => {
 })
 
 const settingsSearchMap = Observable.fromPromise(
-    new Promise(resolve => {
-        settingsActions.load.subscribe(args => {
-            getD2().then(d2 => {
+    new Promise((resolve) => {
+        settingsActions.load.subscribe((args) => {
+            getD2().then((d2) => {
                 // Get current settings and configuration
                 Promise.all([
                     d2.system.settings.all(),
                     d2.system.configuration.all(args.data === true),
                 ]).then(
-                    results => {
+                    (results) => {
                         const cfg = Object.keys(results[1])
-                            .filter(key => key !== 'systemId')
-                            .map(key => {
+                            .filter((key) => key !== 'systemId')
+                            .map((key) => {
                                 const value = results[1][key]
                                 return { key, value }
                             })
@@ -106,12 +106,12 @@ const settingsSearchMap = Observable.fromPromise(
                                 return prev
                             }, {})
                         cfg.corsWhitelist = (results[1].corsWhitelist || [])
-                            .filter(v => v.trim().length > 0)
+                            .filter((v) => v.trim().length > 0)
                             .sort()
                             .join('\n')
                         // Stupid fix for the fact that old controllers will save numbers as numbers,
                         // even though the API only allows string values, which creates a silly mismatch!
-                        Object.keys(results[0]).forEach(key => {
+                        Object.keys(results[0]).forEach((key) => {
                             const v = results[0][key]
                             results[0][key] =
                                 v !== null && !isNaN(v) ? v.toString() : v
@@ -120,7 +120,7 @@ const settingsSearchMap = Observable.fromPromise(
                             Object.assign({}, results[0], cfg)
                         )
                     },
-                    error => {
+                    (error) => {
                         console.error('Failed to load system settings:', error)
                     }
                 )
@@ -128,13 +128,13 @@ const settingsSearchMap = Observable.fromPromise(
                 // Build the search index
                 const searchMapping = Object.keys(categories)
                     .filter(
-                        categoryKey =>
+                        (categoryKey) =>
                             !categories[categoryKey].authority ||
                             d2.currentUser.authorities.has(
                                 categories[categoryKey].authority
                             )
                     )
-                    .map(categoryKey => categories[categoryKey].settings)
+                    .map((categoryKey) => categories[categoryKey].settings)
                     .reduce(
                         (searchArray, categoryKeys) =>
                             searchArray.concat(categoryKeys),
@@ -148,8 +148,8 @@ const settingsSearchMap = Observable.fromPromise(
                         if (settingsKeyMapping[settingsKey].searchLabels) {
                             return translatedKeyValueMap.concat(
                                 settingsKeyMapping[settingsKey].searchLabels
-                                    .filter(label => label)
-                                    .map(label => [label, settingsKey])
+                                    .filter((label) => label)
+                                    .map((label) => [label, settingsKey])
                             )
                         }
 
@@ -169,16 +169,16 @@ const settingsSearchMap = Observable.fromPromise(
 
 function getSearchResultsFor(searchTerms) {
     return settingsSearchMap
-        .flatMap(val => Observable.from(val))
-        .filter(keyValue =>
-            searchTerms.every(term =>
+        .flatMap((val) => Observable.from(val))
+        .filter((keyValue) =>
+            searchTerms.every((term) =>
                 keyValue[0].toLowerCase().includes(term.toLowerCase())
             )
         )
         .map(([, value]) => value)
         .distinct()
         .reduce((acc, value) => acc.concat(value), [])
-        .map(results => {
+        .map((results) => {
             if (
                 searchTerms.length === 1 &&
                 Object.hasOwnProperty.call(settingsKeyMapping, searchTerms[0])
@@ -193,22 +193,22 @@ let searchTerms
 settingsActions.searchSettings
     .distinctUntilChanged()
     .debounceTime(150)
-    .map(action =>
+    .map((action) =>
         action.data
             .trim()
             .split(/\s+/)
-            .filter(t => t.length > 0)
+            .filter((t) => t.length > 0)
     )
-    .do(searchValue => {
+    .do((searchValue) => {
         searchTerms = searchValue
         if (searchValue.length === 0) {
             settingsActions.setCategory('general')
         }
     })
-    .filter(searchValue => searchValue.length)
-    .map(searchValue => getSearchResultsFor(searchValue))
+    .filter((searchValue) => searchValue.length)
+    .map((searchValue) => getSearchResultsFor(searchValue))
     .concatAll()
-    .subscribe(searchResultSettings => {
+    .subscribe((searchResultSettings) => {
         settingsActions.setCategory({
             key: 'search',
             settings: searchResultSettings,

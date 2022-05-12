@@ -48,7 +48,7 @@ class AppComponent extends React.Component {
         )
 
         this.subscriptions.push(
-            settingsActions.setCategory.subscribe(arg => {
+            settingsActions.setCategory.subscribe((arg) => {
                 const category = arg.data.key || arg.data || categoryOrder[0]
                 const searchResult = arg.data.settings || []
                 const currentSettings =
@@ -85,7 +85,7 @@ class AppComponent extends React.Component {
         )
 
         this.subscriptions.push(
-            settingsActions.showSnackbarMessage.subscribe(params => {
+            settingsActions.showSnackbarMessage.subscribe((params) => {
                 const message = params.data
                 this.setState({
                     snackbarMessage: message,
@@ -95,7 +95,7 @@ class AppComponent extends React.Component {
         )
 
         // Helper function for setting app state based on location
-        const navigate = location => {
+        const navigate = (location) => {
             const section = location.pathname.substr(1)
             if (location.pathname === '/search') {
                 const search = decodeURIComponent(location.search.substr(1))
@@ -121,7 +121,7 @@ class AppComponent extends React.Component {
     }
 
     componentWillUnmount() {
-        this.subscriptions.forEach(sub => {
+        this.subscriptions.forEach((sub) => {
             sub.unsubscribe()
         })
 
@@ -134,13 +134,13 @@ class AppComponent extends React.Component {
         this.setState({ showSnackbar: false })
     }
 
-    doSearch = searchText => {
+    doSearch = (searchText) => {
         this.setState({ searchText })
         settingsActions.searchSettings(searchText)
     }
 
     render() {
-        const sections = Object.keys(categories).map(category => {
+        const sections = Object.keys(categories).map((category) => {
             const key = category
             const label = categories[category].label
             const icon = categories[category].icon

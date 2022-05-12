@@ -95,7 +95,7 @@ class FileUpload extends React.Component {
         showDialog: false,
     }
 
-    onClick = e => {
+    onClick = (e) => {
         if (this.fileInput && !this.state.uploading) {
             this.fileInput.click(e)
         } else if (this.state.uploading) {
@@ -105,14 +105,14 @@ class FileUpload extends React.Component {
     }
 
     onPreviewClick = () => {
-        this.setState(state => ({ showDialog: !state.showDialog }))
+        this.setState((state) => ({ showDialog: !state.showDialog }))
     }
 
-    onToggle = e => {
+    onToggle = (e) => {
         this.props.onChange({ target: { value: e.target.checked } })
     }
 
-    onUpload = async e => {
+    onUpload = async (e) => {
         const { files } = e.target
         if (files.length === 0) {
             return
@@ -126,7 +126,7 @@ class FileUpload extends React.Component {
         const d2 = await getD2()
         const api = d2.Api.getApi()
         const xhr = new XMLHttpRequest()
-        xhr.upload.onprogress = progress => {
+        xhr.upload.onprogress = (progress) => {
             if (progress.lengthComputable) {
                 this.setState({
                     progress: (progress.loaded / progress.total) * 100,
@@ -189,7 +189,7 @@ class FileUpload extends React.Component {
     }
 
     render() {
-        const { onFocus, onBlur, onChange, ...other } = this.props; // eslint-disable-line
+        const { onFocus, onBlur, onChange, ...other } = this.props // eslint-disable-line
 
         const containerStyle = {
             position: 'relative',
@@ -209,7 +209,7 @@ class FileUpload extends React.Component {
             top: 2,
         }
 
-        const setRef = ref => {
+        const setRef = (ref) => {
             this.fileInput = ref
         }
 
@@ -250,11 +250,11 @@ class FileUpload extends React.Component {
     }
 }
 
-const withAlerts = Component => {
+const withAlerts = (Component) => {
     return function ComponentWithAlerts(props) {
         const alert = useAlert(
             ({ message }) => message,
-            options => options
+            (options) => options
         )
         return <Component {...props} alert={alert} />
     }

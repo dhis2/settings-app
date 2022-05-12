@@ -53,7 +53,7 @@ class DropDown extends React.Component {
             ]
         }
 
-        return menuItems.map(item => (
+        return menuItems.map((item) => (
             <MenuItem
                 key={item.id}
                 value={item.id}
@@ -64,8 +64,16 @@ class DropDown extends React.Component {
 
     render() {
         const {
-            onFocus, onBlur, onChange, value, disabled, menuItems,  // eslint-disable-line
-            includeEmpty, emptyLabel, noOptionsLabel, isRequired,   // eslint-disable-line
+            onFocus,
+            onBlur,
+            onChange,
+            value,
+            disabled,
+            menuItems, // eslint-disable-line
+            includeEmpty,
+            emptyLabel,
+            noOptionsLabel,
+            isRequired, // eslint-disable-line
             ...other
         } = this.props
         const hasOptions = menuItems.length > 0

@@ -13,7 +13,7 @@ const formFieldStyle = {
     width: '100%',
 }
 
-const validateClientID = async v => {
+const validateClientID = async (v) => {
     const d2 = await getD2()
     const list = await d2.models.oAuth2Clients.list({
         paging: false,
@@ -65,7 +65,7 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
                     message: i18n.t('Required'),
                 },
                 {
-                    validator: v => v.toString().trim().length > 0,
+                    validator: (v) => v.toString().trim().length > 0,
                     message: i18n.t('Required'),
                 },
             ],

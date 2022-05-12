@@ -40,7 +40,7 @@ class MetadataSettings extends Component {
     componentDidMount() {
         this.subscriptions = []
         this.subscriptions.push(
-            settingsStore.subscribe(settings => {
+            settingsStore.subscribe((settings) => {
                 this.setState(
                     {
                         isVersioningEnabled:
@@ -55,7 +55,7 @@ class MetadataSettings extends Component {
     }
 
     componentWillUnmount() {
-        this.subscriptions.forEach(sub => sub.unsubscribe())
+        this.subscriptions.forEach((sub) => sub.unsubscribe())
     }
 
     onSelectTransactionType(event, value) {
@@ -153,7 +153,7 @@ class MetadataSettings extends Component {
 
                 return 0
             })
-            versions.forEach(version => {
+            versions.forEach((version) => {
                 version.importdate = version.importdate
                     ? new Date(version.importdate).toLocaleString()
                     : 'NA'
@@ -187,16 +187,16 @@ class MetadataSettings extends Component {
             },
         }
 
-        const fieldGetter = (field, filter = x => x) => ({
-            rowIndex,
-            ...props
-        }) => (
-            <Cell {...props}>
-                {filter(this.state.metadataVersions[rowIndex][field])}
-            </Cell>
-        )
+        const fieldGetter =
+            (field, filter = (x) => x) =>
+            ({ rowIndex, ...props }) =>
+                (
+                    <Cell {...props}>
+                        {filter(this.state.metadataVersions[rowIndex][field])}
+                    </Cell>
+                )
 
-        const dateFmt = str => new Date(str).toLocaleString()
+        const dateFmt = (str) => new Date(str).toLocaleString()
 
         return (
             <div>

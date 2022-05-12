@@ -48,7 +48,7 @@ const styles = {
     },
 }
 
-const translateValidatorMessage = validatorMessage => {
+const translateValidatorMessage = (validatorMessage) => {
     switch (validatorMessage) {
         case 'value_required':
             return i18n.t('This field is required')
@@ -152,7 +152,7 @@ class SettingsFields extends React.Component {
 
     componentWillUnmount() {
         if (Array.isArray(this.subscriptions)) {
-            this.subscriptions.forEach(sub => sub.unsubscribe())
+            this.subscriptions.forEach((sub) => sub.unsubscribe())
         }
     }
 
@@ -237,13 +237,13 @@ class SettingsFields extends React.Component {
                         onClick: () => {
                             d2.Api.getApi()
                                 .post(mapping.uri)
-                                .then(result => {
+                                .then((result) => {
                                     settingsActions.load(true)
                                     settingsActions.showSnackbarMessage(
                                         result.message
                                     )
                                 })
-                                .catch(error => {
+                                .catch((error) => {
                                     settingsActions.showSnackbarMessage(
                                         error.message
                                     )
@@ -291,13 +291,13 @@ class SettingsFields extends React.Component {
         }
 
         const fields = settings
-            .map(key => {
+            .map((key) => {
                 const mapping = settingsKeyMapping[key]
 
                 // Base config, common for all component types
                 const validators = []
                 if (mapping.validators) {
-                    mapping.validators.forEach(name => {
+                    mapping.validators.forEach((name) => {
                         if (wordToValidatorMap.has(name)) {
                             const validator = wordToValidatorMap.get(name)
                             validators.push({
@@ -328,8 +328,8 @@ class SettingsFields extends React.Component {
 
                 return this.fieldForMapping({ mapping, fieldBase, key, d2 })
             })
-            .filter(f => f && !!f.name)
-            .map(field => {
+            .filter((f) => f && !!f.name)
+            .map((field) => {
                 const mapping = settingsKeyMapping[field.name]
                 const options = configOptionStore.getState()
 
@@ -345,8 +345,8 @@ class SettingsFields extends React.Component {
                         component: field.component,
                         valueLabel: mapping.source
                             ? ((options && options[mapping.source]) || [])
-                                  .filter(opt => opt.id === userSettingValue)
-                                  .map(opt => opt.displayName)
+                                  .filter((opt) => opt.id === userSettingValue)
+                                  .map((opt) => opt.displayName)
                                   .pop()
                             : userSettingValue,
                     })

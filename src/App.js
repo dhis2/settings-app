@@ -131,7 +131,7 @@ const AppWrapper = () => {
         userSettingsNoFallback,
     } = data
 
-    const startModules = (data.apps.modules || []).map(module => ({
+    const startModules = (data.apps.modules || []).map((module) => ({
         id:
             module.defaultAction.substr(0, 3) === '../'
                 ? module.name
@@ -139,7 +139,7 @@ const AppWrapper = () => {
         displayName: module.displayName || module.name,
     }))
 
-    const flags = (data.flags || []).map(flag => ({
+    const flags = (data.flags || []).map((flag) => ({
         id: flag.key,
         displayName: flag.name,
     }))
@@ -148,16 +148,16 @@ const AppWrapper = () => {
         displayName: i18n.t('No flag'),
     })
 
-    const styles = (data.styles || []).map(style => ({
+    const styles = (data.styles || []).map((style) => ({
         id: style.path,
         displayName: style.name,
     }))
 
-    const uiLocales = (data.uiLocales || []).map(locale => ({
+    const uiLocales = (data.uiLocales || []).map((locale) => ({
         id: locale.locale,
         displayName: locale.name,
     }))
-    const dbLocales = (data.dbLocales || []).map(locale => ({
+    const dbLocales = (data.dbLocales || []).map((locale) => ({
         id: locale.locale,
         displayName: locale.name,
     }))

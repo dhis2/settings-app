@@ -4,7 +4,8 @@ const canBeOverridenLabel = i18n.t(
     'This setting can be overridden by user settings'
 )
 
-const formatNumber = value => new Intl.NumberFormat(i18n.language).format(value)
+const formatNumber = (value) =>
+    new Intl.NumberFormat(i18n.language).format(value)
 
 /**
  * This file provides information about DHIS2 system settings and configuration options that are not otherwise

@@ -45,7 +45,7 @@ class OAuth2ClientEditor extends Component {
     }
 
     componentWillUnmount() {
-        this.subscriptions.forEach(sub => {
+        this.subscriptions.forEach((sub) => {
             sub.unsubscribe()
         })
     }
@@ -57,19 +57,19 @@ class OAuth2ClientEditor extends Component {
     }
 
     newAction = () => {
-        getD2().then(d2 => {
+        getD2().then((d2) => {
             this.clientModel = d2.models.oAuth2Client.create()
             this.clientModel.secret = generateSecret()
             this.setState({ showForm: true })
         })
     }
 
-    editAction = model => {
+    editAction = (model) => {
         this.clientModel = model
         this.setState({ showForm: true })
     }
 
-    deleteAction = model => {
+    deleteAction = (model) => {
         this.setState({ showForm: false, saving: true })
         oa2Actions.delete(model.id ? model : this.clientModel)
         this.clientModel = undefined
@@ -81,7 +81,7 @@ class OAuth2ClientEditor extends Component {
         this.setState({ saving: true })
         this.clientModel
             .save()
-            .then(importReport => {
+            .then((importReport) => {
                 if (importReport.status !== 'OK') {
                     throw new Error(importReport)
                 }
@@ -103,7 +103,7 @@ class OAuth2ClientEditor extends Component {
     formUpdateAction = (field, v) => {
         let value = v
         if (field === 'redirectUris') {
-            value = v.split('\n').filter(a => a.trim().length > 0)
+            value = v.split('\n').filter((a) => a.trim().length > 0)
         }
         this.clientModel[field] = value
         this.forceUpdate()
