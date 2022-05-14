@@ -203,7 +203,7 @@ msgid "Appearance settings"
 msgstr ""
 
 msgid "Email"
-msgstr ""
+msgstr "Emailadres"
 
 msgid "Email settings"
 msgstr ""
@@ -285,16 +285,16 @@ msgid "Infrastructural period type"
 msgstr ""
 
 msgid "Daily"
-msgstr ""
+msgstr "Dagelijks"
 
 msgid "Weekly"
-msgstr ""
+msgstr "Wekelijks"
 
 msgid "Monthly"
-msgstr ""
+msgstr "Maandelijks"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "Tweemaandelijks"
 
 msgid "Quarterly"
 msgstr ""
@@ -306,7 +306,7 @@ msgid "Six-monthly April"
 msgstr ""
 
 msgid "Yearly"
-msgstr ""
+msgstr "Jaarlijks"
 
 msgid "Financial-April"
 msgstr ""
