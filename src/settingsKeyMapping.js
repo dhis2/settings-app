@@ -23,6 +23,8 @@ const settingsKeyMapping = {
             50000: 50000,
             100000: 100000,
             200000: 200000,
+            500000: 500000,
+            1000000: 1000000,
             0: 'unlimited',
         },
     },
@@ -34,6 +36,8 @@ const settingsKeyMapping = {
             50000: 'sql_view_max_limit_50000',
             100000: 'sql_view_max_limit_100000',
             200000: 'sql_view_max_limit_200000',
+            500000: 'sql_view_max_limit_500000',
+            1000000: 'sql_view_max_limit_1000000',
         },
     },
     infrastructuralIndicators: {
@@ -200,7 +204,7 @@ const settingsKeyMapping = {
         options: {
             PROGRESSIVE: 'progressive',
             FIXED: 'fixed',
-        }
+        },
     },
     keyAnalyticsCacheProgressiveTtlFactor: {
         label: 'key_analytics_cache_progressive_ttl_factor',
@@ -223,7 +227,7 @@ const settingsKeyMapping = {
         hideWhen: {
             settingsKey: 'keyAnalyticsCacheTtlMode',
             settingsValue: 'FIXED',
-        }
+        },
     },
     keyCacheStrategy: {
         label: 'cache_strategy',
