@@ -215,7 +215,7 @@ msgid "Access settings"
 msgstr ""
 
 msgid "Calendar"
-msgstr ""
+msgstr "Kalender"
 
 msgid "Calendar settings"
 msgstr ""
@@ -258,7 +258,7 @@ msgid "This setting can be overridden by user settings"
 msgstr ""
 
 msgid "No options"
-msgstr ""
+msgstr "Geen opties"
 
 msgid "No settings matched the search term"
 msgstr ""
@@ -354,40 +354,40 @@ msgid "Default relative period for analysis"
 msgstr ""
 
 msgid "This week"
-msgstr ""
+msgstr "Deze week"
 
 msgid "Last week"
-msgstr ""
+msgstr "Laatste week"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "Laatste 4 weken"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "Laatste 12 weken"
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "Laatste 52 weken"
 
 msgid "This month"
-msgstr ""
+msgstr "Deze maand"
 
 msgid "Last month"
-msgstr ""
+msgstr "Laatste maand"
 
 msgid "Months this year"
-msgstr ""
+msgstr "Maanden dit jaar"
 
 msgid "Months last year"
 msgstr ""
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "Laatste 3 maanden"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "Laatste 6 maanden"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "Laatste 12 maanden"
 
 msgid "This bi-month"
 msgstr ""
@@ -399,49 +399,49 @@ msgid "Last 6 bi-months"
 msgstr ""
 
 msgid "This quarter"
-msgstr ""
+msgstr "Dit kwartier"
 
 msgid "Last quarter"
-msgstr ""
+msgstr "Laatste kwartier"
 
 msgid "Quarters this year"
-msgstr ""
+msgstr "Kwartieren dit jaar"
 
 msgid "Quarters last year"
 msgstr ""
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "Laatste 4 kwartieren"
 
 msgid "This six-month"
-msgstr ""
+msgstr "Dit halfjaar"
 
 msgid "Last six-month"
-msgstr ""
+msgstr "Laatste halfjaar"
 
 msgid "Last 2 six-months"
-msgstr ""
+msgstr "Laatste 2 halfjaren"
 
 msgid "This year"
-msgstr ""
+msgstr "Dit jaar"
 
 msgid "Last year"
-msgstr ""
+msgstr "Laatste jaar"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "Laatste 5 jaren"
 
 msgid "Last 10 years"
 msgstr ""
 
 msgid "This financial year"
-msgstr ""
+msgstr "Dit financieel jaar"
 
 msgid "Last financial year"
-msgstr ""
+msgstr "Laatste financieel jaar"
 
 msgid "Last 5 financial years"
-msgstr ""
+msgstr "Laatste 5 financiële jaren"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -681,7 +681,7 @@ msgid "Port"
 msgstr ""
 
 msgid "Username"
-msgstr ""
+msgstr "Gebruikersnaam"
 
 msgid "TLS"
 msgstr ""
@@ -720,7 +720,7 @@ msgid "Require user account password change"
 msgstr ""
 
 msgid "Never"
-msgstr ""
+msgstr "Nooit"
 
 msgid "3 months"
 msgstr ""
