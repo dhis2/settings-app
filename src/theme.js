@@ -1,6 +1,6 @@
 import { colors } from '@dhis2/ui'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import Spacing from 'material-ui/styles/spacing'
+import getMuiTheme from 'material-ui/styles/getMuiTheme.js'
+import Spacing from 'material-ui/styles/spacing.js'
 
 const theme = {
     spacing: Spacing,

@@ -1,10 +1,10 @@
 import i18n from '@dhis2/d2-i18n'
 import { getInstance as getD2 } from 'd2'
-import Action from 'd2-ui/lib/action/Action'
+import Action from 'd2-ui/lib/action/Action.js'
 import { Observable } from 'rxjs'
-import { categories } from './settingsCategories'
-import settingsKeyMapping from './settingsKeyMapping'
-import settingsStore from './settingsStore'
+import { categories } from './settingsCategories.js'
+import settingsKeyMapping from './settingsKeyMapping.js'
+import settingsStore from './settingsStore.js'
 
 /* eslint-disable max-params */
 

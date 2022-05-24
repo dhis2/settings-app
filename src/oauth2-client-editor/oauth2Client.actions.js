@@ -1,8 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import { getInstance as getD2 } from 'd2'
-import Action from 'd2-ui/lib/action/Action'
-import settingsActions from '../settingsActions'
-import oa2Store from './oauth2Client.store'
+import Action from 'd2-ui/lib/action/Action.js'
+import settingsActions from '../settingsActions.js'
+import oa2Store from './oauth2Client.store.js'
 
 const oa2Actions = Action.createActionsFromNames(['load', 'delete'])
 

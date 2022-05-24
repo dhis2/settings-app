@@ -2,10 +2,10 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import { CssVariables, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React from 'react'
-import App from './app.component'
+import App from './app.component.js'
 import 'material-design-icons-iconfont'
-import configOptionStore from './configOptionStore'
-import i18n from './locales'
+import configOptionStore from './configOptionStore.js'
+import i18n from './locales/index.js'
 
 const query = {
     indicatorGroups: {

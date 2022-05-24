@@ -1,12 +1,12 @@
 import i18n from '@dhis2/d2-i18n'
 import { Button, Modal, ModalTitle, ModalContent } from '@dhis2/ui'
 import { getInstance as getD2 } from 'd2'
-import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
-import { isUrlArray, isRequired } from 'd2-ui/lib/forms/Validators'
+import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component.js'
+import { isUrlArray, isRequired } from 'd2-ui/lib/forms/Validators.js'
 import PropTypes from 'prop-types'
 import React from 'react'
-import MultiToggle from '../form-fields/multi-toggle'
-import TextField from '../form-fields/text-field'
+import MultiToggle from '../form-fields/multi-toggle.js'
+import TextField from '../form-fields/text-field.js'
 import styles from './ClientForm.module.css'
 
 const formFieldStyle = {

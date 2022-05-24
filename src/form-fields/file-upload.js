@@ -13,7 +13,7 @@ import { getInstance as getD2 } from 'd2'
 import Checkbox from 'material-ui/Checkbox'
 import PropTypes from 'prop-types'
 import React from 'react'
-import AppTheme from '../theme'
+import AppTheme from '../theme.js'
 import styles from './FileUpload.module.css'
 
 const Upload = ({ isEnabled, name, showDialog, onUpload, onPreview }) => {

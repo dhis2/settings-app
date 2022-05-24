@@ -4,12 +4,12 @@ import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
 import CircularProgress from 'material-ui/CircularProgress'
 import PropTypes from 'prop-types'
 import React from 'react'
-import configOptionStore from '../configOptionStore'
-import SelectField from '../form-fields/drop-down'
-import TextField from '../form-fields/text-field'
-import settingsActions from '../settingsActions'
-import settingsKeyMapping from '../settingsKeyMapping'
-import settingsStore from '../settingsStore'
+import configOptionStore from '../configOptionStore.js'
+import SelectField from '../form-fields/drop-down.js'
+import TextField from '../form-fields/text-field.js'
+import settingsActions from '../settingsActions.js'
+import settingsKeyMapping from '../settingsKeyMapping.js'
+import settingsStore from '../settingsStore.js'
 
 const systemDefaultText = i18n.t('System default (fallback)')
 
