@@ -290,13 +290,13 @@ msgid "Weekly"
 msgstr ""
 
 msgid "Monthly"
-msgstr ""
+msgstr "Lunar"
 
 msgid "Bi-monthly"
 msgstr ""
 
 msgid "Quarterly"
-msgstr ""
+msgstr "Trimestrial"
 
 msgid "Six-monthly"
 msgstr ""
@@ -305,7 +305,7 @@ msgid "Six-monthly April"
 msgstr ""
 
 msgid "Yearly"
-msgstr ""
+msgstr "Anual"
 
 msgid "Financial-April"
 msgstr ""
@@ -353,13 +353,13 @@ msgid "Last week"
 msgstr "Săptămâna trecută"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "Ultimele 4 săptămâni"
 
 msgid "Last 12 weeks"
 msgstr ""
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "Ultimele 52 de săptămâni"
 
 msgid "This month"
 msgstr "Luna aceasta"
@@ -368,19 +368,19 @@ msgid "Last month"
 msgstr "Luna trecută"
 
 msgid "Months this year"
-msgstr ""
+msgstr "Luni în anul curent"
 
 msgid "Months last year"
-msgstr ""
+msgstr "Luni în anul trecut"
 
 msgid "Last 3 months"
 msgstr "Ultimele 3 luni"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "Ultimele 6 luni"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "Ultimele 12 luni"
 
 msgid "This bi-month"
 msgstr ""
@@ -395,34 +395,34 @@ msgid "This quarter"
 msgstr ""
 
 msgid "Last quarter"
-msgstr ""
+msgstr "Ultimul trimestru"
 
 msgid "Quarters this year"
-msgstr ""
+msgstr "Trimestre în anul curent"
 
 msgid "Quarters last year"
-msgstr ""
+msgstr "Trimestre, anul trecut"
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "Ultimele 4 trimestre"
 
 msgid "This six-month"
 msgstr ""
 
 msgid "Last six-month"
-msgstr ""
+msgstr "Ultimele șase luni"
 
 msgid "Last 2 six-months"
-msgstr ""
+msgstr "Ultimele 2 șase luni"
 
 msgid "This year"
 msgstr ""
 
 msgid "Last year"
-msgstr ""
+msgstr "Anul trecut"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "Ultimii 5 ani"
 
 msgid "Last 10 years"
 msgstr ""
@@ -431,10 +431,10 @@ msgid "This financial year"
 msgstr ""
 
 msgid "Last financial year"
-msgstr ""
+msgstr "Ultimul an financiar"
 
 msgid "Last 5 financial years"
-msgstr ""
+msgstr "Ultimii 5 ani financiari"
 
 msgid "Hide daily periods"
 msgstr ""
