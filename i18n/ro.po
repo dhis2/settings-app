@@ -142,7 +142,7 @@ msgid "Save"
 msgstr "salva"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Anulare"
 
 msgid "There are currently no OAuth2 clients registered"
 msgstr ""
@@ -356,7 +356,7 @@ msgid "Last 4 weeks"
 msgstr "Ultimele 4 săptămâni"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "Ultimele 12 săptămâni"
 
 msgid "Last 52 weeks"
 msgstr "Ultimele 52 de săptămâni"
