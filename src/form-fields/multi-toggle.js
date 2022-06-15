@@ -66,7 +66,7 @@ class MultiToggle extends React.Component {
                     {this.props.label}
                 </div>
                 {this.props.items.map((item) => {
-                    const togglor = this.onToggle.bind(null, item.name) // eslint-disable-line
+                    const togglor = this.onToggle.bind(null, item.name)
                     return (
                         <Checkbox
                             key={item.name}

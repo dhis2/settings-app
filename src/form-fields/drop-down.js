@@ -64,16 +64,18 @@ class DropDown extends React.Component {
 
     render() {
         const {
+            /* eslint-disable no-unused-vars, react/prop-types */
             onFocus,
             onBlur,
             onChange,
             value,
             disabled,
-            menuItems, // eslint-disable-line
+            menuItems,
             includeEmpty,
             emptyLabel,
             noOptionsLabel,
-            isRequired, // eslint-disable-line
+            isRequired,
+            /* eslint-enable no-unused-vars, react/prop-types */
             ...other
         } = this.props
         const hasOptions = menuItems.length > 0
