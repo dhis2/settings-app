@@ -1,24 +1,24 @@
 import i18n from '@dhis2/d2-i18n'
 import { Button, Card, CenteredContent, CircularLoader } from '@dhis2/ui'
-import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
-import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators'
+import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component.js'
+import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators.js'
 import IconButton from 'material-ui/IconButton'
 import PropTypes from 'prop-types'
 import React from 'react'
-import configOptionStore from './configOptionStore'
-import Checkbox from './form-fields/check-box'
-import SelectField from './form-fields/drop-down'
-import FileUpload from './form-fields/file-upload'
-import TextField from './form-fields/text-field'
-import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component'
-import metadataSettings from './metadata-settings/metadataSettings.component'
-import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component'
-import settingsActions from './settingsActions'
-import { categories } from './settingsCategories'
+import configOptionStore from './configOptionStore.js'
+import Checkbox from './form-fields/check-box.js'
+import SelectField from './form-fields/drop-down.js'
+import FileUpload from './form-fields/file-upload.js'
+import TextField from './form-fields/text-field.js'
+import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component.js'
+import metadataSettings from './metadata-settings/metadataSettings.component.js'
+import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component.js'
+import settingsActions from './settingsActions.js'
+import { categories } from './settingsCategories.js'
 import classes from './SettingsFields.module.css'
-import settingsKeyMapping from './settingsKeyMapping'
-import settingsStore from './settingsStore'
-import AppTheme from './theme'
+import settingsKeyMapping from './settingsKeyMapping.js'
+import settingsStore from './settingsStore.js'
+import AppTheme from './theme.js'
 
 const styles = {
     header: {
@@ -48,7 +48,7 @@ const styles = {
     },
 }
 
-const translateValidatorMessage = validatorMessage => {
+const translateValidatorMessage = (validatorMessage) => {
     switch (validatorMessage) {
         case 'value_required':
             return i18n.t('This field is required')
@@ -152,7 +152,7 @@ class SettingsFields extends React.Component {
 
     componentWillUnmount() {
         if (Array.isArray(this.subscriptions)) {
-            this.subscriptions.forEach(sub => sub.unsubscribe())
+            this.subscriptions.forEach((sub) => sub.unsubscribe())
         }
     }
 
@@ -237,13 +237,13 @@ class SettingsFields extends React.Component {
                         onClick: () => {
                             d2.Api.getApi()
                                 .post(mapping.uri)
-                                .then(result => {
+                                .then((result) => {
                                     settingsActions.load(true)
                                     settingsActions.showSnackbarMessage(
                                         result.message
                                     )
                                 })
-                                .catch(error => {
+                                .catch((error) => {
                                     settingsActions.showSnackbarMessage(
                                         error.message
                                     )
@@ -291,13 +291,13 @@ class SettingsFields extends React.Component {
         }
 
         const fields = settings
-            .map(key => {
+            .map((key) => {
                 const mapping = settingsKeyMapping[key]
 
                 // Base config, common for all component types
                 const validators = []
                 if (mapping.validators) {
-                    mapping.validators.forEach(name => {
+                    mapping.validators.forEach((name) => {
                         if (wordToValidatorMap.has(name)) {
                             const validator = wordToValidatorMap.get(name)
                             validators.push({
@@ -328,8 +328,8 @@ class SettingsFields extends React.Component {
 
                 return this.fieldForMapping({ mapping, fieldBase, key, d2 })
             })
-            .filter(f => f && !!f.name)
-            .map(field => {
+            .filter((f) => f && !!f.name)
+            .map((field) => {
                 const mapping = settingsKeyMapping[field.name]
                 const options = configOptionStore.getState()
 
@@ -345,8 +345,8 @@ class SettingsFields extends React.Component {
                         component: field.component,
                         valueLabel: mapping.source
                             ? ((options && options[mapping.source]) || [])
-                                  .filter(opt => opt.id === userSettingValue)
-                                  .map(opt => opt.displayName)
+                                  .filter((opt) => opt.id === userSettingValue)
+                                  .map((opt) => opt.displayName)
                                   .pop()
                             : userSettingValue,
                     })

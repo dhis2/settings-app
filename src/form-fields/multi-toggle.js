@@ -38,7 +38,7 @@ class MultiToggle extends React.Component {
 
     onToggle(value, event, checked) {
         this.setState(
-            oldState => {
+            (oldState) => {
                 if (checked) {
                     if (oldState.values.indexOf(value) === -1) {
                         oldState.values.push(value)
@@ -65,8 +65,8 @@ class MultiToggle extends React.Component {
                 <div style={{ marginTop: 16, marginBottom: 8 }}>
                     {this.props.label}
                 </div>
-                {this.props.items.map(item => {
-                    const togglor = this.onToggle.bind(null, item.name); // eslint-disable-line
+                {this.props.items.map((item) => {
+                    const togglor = this.onToggle.bind(null, item.name)
                     return (
                         <Checkbox
                             key={item.name}

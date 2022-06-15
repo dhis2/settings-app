@@ -40,7 +40,10 @@ class TextFieldComponent extends React.Component {
     }
 
     render() {
-        const { changeEvent, isRequired, defaultValue, helpText, ...other } = this.props; // eslint-disable-line
+        /* eslint-disable no-unused-vars, react/prop-types */
+        const { changeEvent, isRequired, defaultValue, helpText, ...other } =
+            this.props
+        /* eslint-enable no-unused-vars, react/prop-types */
         const errorStyle = {
             lineHeight: this.props.multiLine ? '48px' : '12px',
             marginTop: this.props.multiLine ? -16 : 0,

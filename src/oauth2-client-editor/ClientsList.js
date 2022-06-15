@@ -39,7 +39,7 @@ const ClientsList = ({ clients, onClientEdit, onClientDelete }) => {
                 </TableRowHead>
             </TableHead>
             <TableBody>
-                {clients.map(client => (
+                {clients.map((client) => (
                     <TableRow key={client.authorization_code}>
                         <TableCell>{client.name}</TableCell>
                         <TableCell>{client.password}</TableCell>
