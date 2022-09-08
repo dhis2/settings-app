@@ -24,7 +24,6 @@ export const categories = {
             'infrastructuralIndicators',
             'infrastructuralDataElements',
             'infrastructuralPeriodType',
-            'keyAnalysisRelativePeriod',
             'feedbackRecipients',
             'systemUpdateNotificationRecipients',
             'offlineOrganisationUnitLevel',
