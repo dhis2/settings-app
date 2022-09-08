@@ -1,3 +1,11 @@
+## [29.14.11](https://github.com/dhis2/settings-app/compare/v29.14.10...v29.14.11) (2022-09-08)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([29f8984](https://github.com/dhis2/settings-app/commit/29f898413bf88ade48184142455ad8b0dd8b5dc6))
+* remove duplicate entry of keyAnalysisRelativePeriod ([fabb8a6](https://github.com/dhis2/settings-app/commit/fabb8a63c61f663813dc5581d302b275f3662011))
+
 ## [29.14.10](https://github.com/dhis2/settings-app/compare/v29.14.9...v29.14.10) (2022-07-28)
 
 
