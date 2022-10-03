@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-03-14T13:17:46.441Z\n"
-"PO-Revision-Date: 2022-03-14T13:17:46.441Z\n"
+"POT-Creation-Date: 2022-10-03T13:02:47.948Z\n"
+"PO-Revision-Date: 2022-10-03T13:02:47.948Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -725,6 +725,9 @@ msgstr "12 months"
 msgid "Enable password expiry alerts"
 msgstr "Enable password expiry alerts"
 
+msgid "Amount of days before credential expiry reminder is sent"
+msgstr "Amount of days before credential expiry reminder is sent"
+
 msgid "Minimum characters in password"
 msgstr "Minimum characters in password"
 
@@ -796,3 +799,6 @@ msgstr "Remote server username"
 
 msgid "Remote server password"
 msgstr "Remote server password"
+
+msgid "This field should contain a round number between {{min}} and {{max}}"
+msgstr "This field should contain a round number between {{min}} and {{max}}"

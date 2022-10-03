@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import { createIntegerRangeValidator } from './validators/index.js'
 
 const canBeOverridenLabel = i18n.t(
     'This setting can be overridden by user settings'
@@ -559,6 +560,18 @@ const settingsKeyMapping = {
     credentialsExpiryAlert: {
         label: i18n.t('Enable password expiry alerts'),
         type: 'checkbox',
+    },
+    credentialsExpiresReminderInDays: {
+        label: i18n.t(
+            'Amount of days before credential expiry reminder is sent'
+        ),
+        type: 'textfield',
+        validators: [createIntegerRangeValidator(1, 28)],
+        inputType: 'number',
+        hideWhen: {
+            settingsKey: 'credentialsExpiryAlert',
+            settingsValue: 'false',
+        },
     },
     minPasswordLength: {
         label: i18n.t('Minimum characters in password'),
