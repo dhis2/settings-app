@@ -12,19 +12,16 @@ const isInteger = (value) => {
     )
 }
 
-export function createIntegerRangeValidator(min, max) {
-    function integerRangeValidator(value) {
-        if (!isInteger(value)) {
-            return false
-        }
-
-        const valueAsInt = parseInt(value)
-
-        return valueAsInt >= min && valueAsInt <= max
+export function credentialsExpiresReminderInDaysValidator(value) {
+    if (!isInteger(value)) {
+        return false
     }
-    integerRangeValidator.message = i18n.t(
-        'This field should contain a round number between {{min}} and {{max}}',
-        { min, max }
-    )
-    return integerRangeValidator
+
+    const valueAsInt = parseInt(value)
+
+    return valueAsInt >= 1 && valueAsInt <= 28
 }
+
+credentialsExpiresReminderInDaysValidator.message = i18n.t(
+    'This field should contain a round number between 1 and 28'
+)

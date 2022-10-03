@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { createIntegerRangeValidator } from './validators/index.js'
+import { credentialsExpiresReminderInDaysValidator } from './validators/index.js'
 
 const canBeOverridenLabel = i18n.t(
     'This setting can be overridden by user settings'
@@ -566,7 +566,7 @@ const settingsKeyMapping = {
             'Amount of days before credential expiry reminder is sent'
         ),
         type: 'textfield',
-        validators: [createIntegerRangeValidator(1, 28)],
+        validators: [credentialsExpiresReminderInDaysValidator],
         inputType: 'number',
         hideWhen: {
             settingsKey: 'credentialsExpiryAlert',
