@@ -53,14 +53,15 @@ const saveSetting = (d2, key, value) =>
 
 settingsActions.saveKey.subscribe(args => {
     const [key, value, locale] = args.data
+    // Can be undefined for some custom sections, i.e. 'keyStopMetadataSync'
     const mapping = settingsKeyMapping[key]
 
     getD2().then(d2 => {
-        const isLocalisedAppearanceSetting = mapping.appendLocale && locale
+        const isLocalisedAppearanceSetting = mapping?.appendLocale && locale
 
         if (isLocalisedAppearanceSetting) {
             saveLocalizedAppearanceSetting(d2, key, value, locale)
-        } else if (mapping.configuration) {
+        } else if (mapping?.configuration) {
             saveConfiguration(d2, key, value)
         } else {
             saveSetting(d2, key, value)
