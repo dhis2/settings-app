@@ -1,5 +1,4 @@
 import i18n from '@dhis2/d2-i18n'
-import { credentialsExpiresReminderInDaysValidator } from './validators/index.js'
 
 const canBeOverridenLabel = i18n.t(
     'This setting can be overridden by user settings'
@@ -558,16 +557,17 @@ const settingsKeyMapping = {
         },
     },
     credentialsExpiryAlert: {
-        label: i18n.t('Enable password expiry alerts'),
+        label: i18n.t('Send reminders to users before their password expires'),
         type: 'checkbox',
     },
     credentialsExpiresReminderInDays: {
         label: i18n.t(
-            'Amount of days before credential expiry reminder is sent'
+            'Number of days before password expiry to send reminder (0–28)'
         ),
         type: 'textfield',
-        validators: [credentialsExpiresReminderInDaysValidator],
         inputType: 'number',
+        minValue: 1,
+        maxValue: 28,
         hideWhen: {
             settingsKey: 'credentialsExpiryAlert',
             settingsValue: 'false',

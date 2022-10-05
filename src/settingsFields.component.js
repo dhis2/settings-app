@@ -297,23 +297,14 @@ class SettingsFields extends React.Component {
                 // Base config, common for all component types
                 const validators = []
                 if (mapping.validators) {
-                    mapping.validators.forEach((validator) => {
-                        if (
-                            typeof validator === 'string' &&
-                            wordToValidatorMap.has(validator)
-                        ) {
-                            const d2Validator =
-                                wordToValidatorMap.get(validator)
-                            validators.push({
-                                validator: d2Validator,
-                                message: translateValidatorMessage(
-                                    d2Validator.message
-                                ),
-                            })
-                        } else if (typeof validator === 'function') {
+                    mapping.validators.forEach((name) => {
+                        if (wordToValidatorMap.has(name)) {
+                            const validator = wordToValidatorMap.get(name)
                             validators.push({
                                 validator,
-                                message: validator.message,
+                                message: translateValidatorMessage(
+                                    validator.message
+                                ),
                             })
                         }
                     })
@@ -332,6 +323,8 @@ class SettingsFields extends React.Component {
                         },
                         hintText: mapping.hintText,
                         type: mapping.inputType,
+                        min: mapping.minValue,
+                        max: mapping.maxValue,
                     },
                     validators,
                 }
