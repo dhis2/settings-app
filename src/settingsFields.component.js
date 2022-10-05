@@ -156,6 +156,30 @@ class SettingsFields extends React.Component {
         }
     }
 
+    onUpdateField = (key, value) => {
+        // `true` if valid, error message string if invalid
+        const isValid = this.formRef.validateField(
+            this.formRef.getStateClone(),
+            key,
+            value
+        )
+
+        if (isValid === true) {
+            // Only POST if valid
+            settingsActions.saveKey(key, value)
+        } else {
+            // Update client-side state to invalid value
+            // to prevent the error UI from persisting when
+            // changing an invalid value back to the original value
+            settingsStore.state[key] = value
+            settingsStore.setState(settingsStore.state)
+        }
+    }
+
+    setFormRef = (form) => {
+        this.formRef = form
+    }
+
     fieldForMapping({ mapping, fieldBase, key, d2 }) {
         switch (mapping.type) {
             case 'textfield':
@@ -361,7 +385,8 @@ class SettingsFields extends React.Component {
             <Card className={classes.card} key={this.props.category}>
                 <FormBuilder
                     fields={fields}
-                    onUpdateField={settingsActions.saveKey}
+                    onUpdateField={this.onUpdateField}
+                    ref={this.setFormRef}
                 />
             </Card>
         )
