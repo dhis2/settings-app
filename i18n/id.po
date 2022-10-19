@@ -1,18 +1,18 @@
 # 
 # Translators:
-# Carwoto Sa'an <carwoto@gmail.com>, 2021
-# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2021
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021
-# Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021
+# Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2022
+# Carwoto Sa'an <carwoto@gmail.com>, 2022
+# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022
+# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-03-14T13:17:46.441Z\n"
-"PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2021\n"
+"PO-Revision-Date: 2022-10-15 22:32+0000\n"
+"Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -168,7 +168,7 @@ msgid "Add OAuth2 client"
 msgstr ""
 
 msgid "Yes"
-msgstr "Ya"
+msgstr "Iya"
 
 msgid "No"
 msgstr "Tidak"
@@ -298,13 +298,13 @@ msgid "Monthly"
 msgstr "Bulanan"
 
 msgid "Bi-monthly"
-msgstr "Dwiwulanan"
+msgstr "Dua bulanan"
 
 msgid "Quarterly"
 msgstr "Triwulanan"
 
 msgid "Six-monthly"
-msgstr "Semester"
+msgstr "Enam bulanan"
 
 msgid "Six-monthly April"
 msgstr "Semester April"
@@ -430,7 +430,7 @@ msgid "This year"
 msgstr "Tahun ini"
 
 msgid "Last year"
-msgstr "Tahun kemarin"
+msgstr "Tahun lalu"
 
 msgid "Last 5 years"
 msgstr "5 tahun terakhir"
@@ -439,10 +439,10 @@ msgid "Last 10 years"
 msgstr ""
 
 msgid "This financial year"
-msgstr "Tahun finansial ini"
+msgstr "Anggaran tahun ini"
 
 msgid "Last financial year"
-msgstr "Tahun finansial kemarin"
+msgstr "Anggaran tahun lalu"
 
 msgid "Last 5 financial years"
 msgstr "5 tahun finansial terakhir"
@@ -685,7 +685,7 @@ msgid "Port"
 msgstr ""
 
 msgid "Username"
-msgstr "User name"
+msgstr "Nama pengguna"
 
 msgid "TLS"
 msgstr ""
