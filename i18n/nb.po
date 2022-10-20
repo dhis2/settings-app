@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2021
-# Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# Karoline Tufte Lien <karoline@dhis2.org>, 2022
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-03-14T13:17:46.441Z\n"
-"PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2021\n"
+"PO-Revision-Date: 2022-10-15 22:32+0000\n"
+"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2022\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -258,7 +258,7 @@ msgid "This setting can be overridden by user settings"
 msgstr "Denne innstillingen kan bli overstyrt av brukerinnstillinger"
 
 msgid "No options"
-msgstr ""
+msgstr "Ingen alternativer"
 
 msgid "No settings matched the search term"
 msgstr "Ingen innstillinger samsvarte med søkeordet"
