@@ -87,7 +87,7 @@ msgid "Last sync attempt"
 msgstr ""
 
 msgid "Failed"
-msgstr ""
+msgstr "Gagal"
 
 msgid "No versions exist"
 msgstr ""
@@ -189,7 +189,7 @@ msgid "General settings"
 msgstr "Setting umum"
 
 msgid "Analytics"
-msgstr ""
+msgstr "Analitik"
 
 msgid "Analytics settings"
 msgstr ""
