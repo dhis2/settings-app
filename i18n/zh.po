@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Failed to load: {{error}}"
-msgstr ""
+msgstr "加载失败：{{error}}"
 
 msgid "No flag"
 msgstr "无标志"
@@ -34,13 +34,13 @@ msgid "Preview image"
 msgstr "预览图像"
 
 msgid "Preview of image"
-msgstr ""
+msgstr "图像预览"
 
 msgid "Upload image"
 msgstr "上传图像"
 
 msgid "Error uploading file: {{error}}"
-msgstr ""
+msgstr "上传文件时出错：{{error}}"
 
 msgid "Cancel upload"
 msgstr "取消上传"
@@ -58,19 +58,19 @@ msgid "Select language"
 msgstr "选择语言"
 
 msgid "Version created"
-msgstr ""
+msgstr "创建的版本"
 
 msgid "Failed to create version"
-msgstr ""
+msgstr "创建版本失败"
 
 msgid "Error fetching settings"
-msgstr ""
+msgstr "获取设置时出错"
 
 msgid "Create new version"
 msgstr "创建新版本"
 
 msgid "Best effort"
-msgstr ""
+msgstr "最大的努力"
 
 msgid "Atomic"
 msgstr "原子化"
@@ -163,7 +163,7 @@ msgid "Failed to save OAuth2 client"
 msgstr "保存OAth2客户失败"
 
 msgid "Add OAuth2 client"
-msgstr ""
+msgstr "添加 OAuth2 客户端"
 
 msgid "Yes"
 msgstr "是"
@@ -175,7 +175,7 @@ msgid "OAuth2 client deleted"
 msgstr "OAth2客户已经删除"
 
 msgid "Failed to delete OAuth2 client"
-msgstr ""
+msgstr "无法删除 OAuth2 客户端"
 
 msgid "Settings updated"
 msgstr "设置已经更新"
@@ -241,7 +241,7 @@ msgid "This field is required"
 msgstr "这个字段是必填的"
 
 msgid "This field should be a URL"
-msgstr ""
+msgstr "此字段应为 URL"
 
 msgid "This field should be a number"
 msgstr "该字段应该是一个数字"
@@ -250,17 +250,17 @@ msgid "This field should be a positive number"
 msgstr "该字段应该是一个正数"
 
 msgid "This field should be an email"
-msgstr ""
+msgstr "此字段应为电子邮件"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
-msgstr ""
+msgstr "此设置将被当前用户设置覆盖：{{settingName}}"
 
 msgid "This setting can be overridden by user settings"
 msgstr "该设置可以被用户设置覆盖"
 
 msgid "No options"
-msgstr ""
+msgstr "没有选项"
 
 msgid "No settings matched the search term"
 msgstr "没有设置满足搜索条件"
@@ -491,7 +491,7 @@ msgid "Cache for one hour"
 msgstr "缓存一小时"
 
 msgid "Cache until 6AM tomorrow"
-msgstr ""
+msgstr "缓存到明天早上 6 点"
 
 msgid "Cache for two weeks"
 msgstr "缓冲两周"
@@ -602,7 +602,7 @@ msgid "Google Maps API key"
 msgstr "Google Maps API key"
 
 msgid "Bing Maps API key"
-msgstr ""
+msgstr "必应地图 API 密钥"
 
 msgid "Application title"
 msgstr "应用标题"
@@ -665,16 +665,16 @@ msgid "Custom top menu logo"
 msgstr "定制顶部菜单logo"
 
 msgid "Allow users to switch dashboard items view type"
-msgstr ""
+msgstr "允许用户切换仪表板项目视图类型"
 
 msgid "Allow users to open dashboard items in relevant app"
-msgstr ""
+msgstr "允许用户在相关应用中打开仪表板项目"
 
 msgid "Allow users to show dashboard items interpretations and details"
-msgstr ""
+msgstr "允许用户显示仪表板项目的解释和详细信息"
 
 msgid "Allow users to view dashboard items in fullscreen"
-msgstr ""
+msgstr "允许用户全屏查看仪表板项目"
 
 msgid "Host name"
 msgstr "主机名"
@@ -764,16 +764,16 @@ msgid "ISO 8601"
 msgstr "ISO 8601"
 
 msgid "Julian"
-msgstr ""
+msgstr "朱利安"
 
 msgid "Nepali"
-msgstr ""
+msgstr "尼泊尔语"
 
 msgid "Thai"
 msgstr "泰国"
 
 msgid "Persian"
-msgstr ""
+msgstr "波斯语"
 
 msgid "Date format"
 msgstr "日期格式"
