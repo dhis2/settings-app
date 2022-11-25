@@ -3,18 +3,18 @@
 # Bram Piot <bram.piot@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Yayra Gomado <ygomado@hispwca.org>, 2022
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
 # Edem Kossi <ekossi@hispwca.org>, 2022
 # tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2022
 # phil_dhis2, 2022
 # tx_e2f_frfr r6 <tx_e2f_frfr_r661@ate2f.com>, 2022
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-03-14T13:17:46.441Z\n"
 "PO-Revision-Date: 2022-10-15 22:32+0000\n"
-"Last-Translator: tx_e2f_frfr r6 <tx_e2f_frfr_r661@ate2f.com>, 2022\n"
+"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -333,10 +333,10 @@ msgid "No message recipients"
 msgstr "Pas de destinataires du message"
 
 msgid "System update notification recipients"
-msgstr ""
+msgstr "Destinataires des notifications de mise à jour du système"
 
 msgid "No update notification recipients"
-msgstr ""
+msgstr "Aucune mise à jour des destinataires des notifications"
 
 msgid "Max offline organisation unit levels"
 msgstr "Niveau maximum d'unité d'organisation en offline"
@@ -360,6 +360,8 @@ msgstr ""
 
 msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
+"Inclure les vues passives du tableau de bord dans les statistiques d'analyse"
+" d'utilisation"
 
 msgid "Default relative period for analysis"
 msgstr "Période relative par défaut pour l’analyse"
@@ -464,7 +466,7 @@ msgid "Hide weekly periods"
 msgstr "Masquer les périodes hebdomadaires"
 
 msgid "Hide biweekly periods"
-msgstr ""
+msgstr "Masquer les périodes bihebdomadaires"
 
 msgid "Hide monthly periods"
 msgstr "Masquer les périodes mensuelles"
@@ -500,7 +502,7 @@ msgid "Cache for one hour"
 msgstr "Cache pendant 1 heure"
 
 msgid "Cache until 6AM tomorrow"
-msgstr ""
+msgstr "Cache jusqu'à 6 heures demain matin"
 
 msgid "Cache for two weeks"
 msgstr "Cache pendant 2 semaines"
@@ -567,22 +569,26 @@ msgid "Put analytics in maintenance mode"
 msgstr "Placer les analyses en mode de maintenance"
 
 msgid "Include zero data values in analytics tables"
-msgstr ""
+msgstr "Inclure des valeurs de données nulles dans les tableaux analytiques"
 
 msgid "Caching factor"
 msgstr "Facteur de mise en cache"
 
 msgid "Org unit group set in facility map layers"
 msgstr ""
+"Ensemble de groupes d'unités d'organisation dans les couches cartographiques"
+" des établissements"
 
 msgid "Org unit level in facility map layers"
 msgstr ""
+"Niveau d'unité d'organisation dans les couches cartographiques des "
+"établissements"
 
 msgid "Default basemap"
-msgstr ""
+msgstr "Basemap par défaut"
 
 msgid "OSM Light (default)"
-msgstr ""
+msgstr "OSM Light (par défaut)"
 
 msgid "OSM Detailed"
 msgstr "OSM détaillée"
@@ -615,7 +621,7 @@ msgid "Google Maps API key"
 msgstr "Clé API Google Maps"
 
 msgid "Bing Maps API key"
-msgstr ""
+msgstr "Clé API de Bing Maps"
 
 msgid "Application title"
 msgstr "Titre de l'application"
@@ -639,7 +645,7 @@ msgid "Start page"
 msgstr "Page d'accueil"
 
 msgid "Enable light-weight start page"
-msgstr ""
+msgstr "Activer une page de démarrage légère"
 
 msgid "Help page link"
 msgstr "Lien vers la page d’aide"
@@ -682,15 +688,23 @@ msgstr "Logo personnalisé du menu supérieur"
 
 msgid "Allow users to switch dashboard items view type"
 msgstr ""
+"Autoriser les utilisateurs à changer le type de vue des éléments du tableau "
+"de bord"
 
 msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
+"Autoriser les utilisateurs à ouvrir les éléments du tableau de bord dans "
+"l'application appropriée"
 
 msgid "Allow users to show dashboard items interpretations and details"
 msgstr ""
+"Autoriser les utilisateurs à afficher les interprétations et les détails des"
+" éléments du tableau de bord"
 
 msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""
+"Autoriser les utilisateurs à afficher les éléments du tableau de bord en "
+"mode plein écran"
 
 msgid "Host name"
 msgstr "Nom de l'hôte"
