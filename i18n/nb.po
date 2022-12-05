@@ -2,13 +2,14 @@
 # Translators:
 # Caroline Hesthagen Holen <caroline@devotta.no>, 2022
 # Karoline Tufte Lien <karoline@dhis2.org>, 2022
+# Thomas Zemp, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-03-30T09:47:23.342Z\n"
 "PO-Revision-Date: 2022-04-20 10:52+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2022\n"
+"Last-Translator: Thomas Zemp, 2022\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +33,7 @@ msgid "Preview image"
 msgstr "Forrige bilde"
 
 msgid "Preview of image"
-msgstr ""
+msgstr "Bildeforhåndsvisning"
 
 msgid "Upload image"
 msgstr "Last opp bilde"
@@ -161,7 +162,7 @@ msgid "Failed to save OAuth2 client"
 msgstr "Kunne ikke lagre OAuth2 klient"
 
 msgid "Add OAuth2 client"
-msgstr ""
+msgstr "Legg til OAuth2 klient"
 
 msgid "Yes"
 msgstr "Ja"
@@ -453,7 +454,7 @@ msgid "Hide weekly periods"
 msgstr "Skjul ukentlige perioder"
 
 msgid "Hide biweekly periods"
-msgstr ""
+msgstr "Skjul biukentlige perioder"
 
 msgid "Hide monthly periods"
 msgstr "Skjul månedlige perioder"
@@ -665,7 +666,7 @@ msgid "Custom top menu logo"
 msgstr "Egendefinert toppmeny-logo"
 
 msgid "Allow users to switch dashboard items view type"
-msgstr ""
+msgstr "Tillatt brukere å endre dashboardelementers visningsmodus"
 
 msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
