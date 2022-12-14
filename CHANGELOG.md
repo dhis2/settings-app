@@ -1,3 +1,10 @@
+## [29.14.18](https://github.com/dhis2/settings-app/compare/v29.14.17...v29.14.18) (2022-12-14)
+
+
+### Bug Fixes
+
+* ensure i18n is imported before translations [DHIS2-13859] ([#1106](https://github.com/dhis2/settings-app/issues/1106)) ([62adc61](https://github.com/dhis2/settings-app/commit/62adc61e0064bdbdd87acc18f563939b1a53d98a))
+
 ## [29.14.17](https://github.com/dhis2/settings-app/compare/v29.14.16...v29.14.17) (2022-12-06)
 
 
