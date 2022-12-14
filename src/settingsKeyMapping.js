@@ -1,4 +1,4 @@
-import i18n from './locales/index.js'
+import i18n from '@dhis2/d2-i18n'
 
 const canBeOverridenLabel = i18n.t(
     'This setting can be overridden by user settings'

@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
     Table,
@@ -11,7 +12,6 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import i18n from '../locales/index.js'
 import styles from './ClientsList.module.css'
 
 const ClientsList = ({ clients, onClientEdit, onClientDelete }) => {

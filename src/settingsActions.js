@@ -1,7 +1,7 @@
+import i18n from '@dhis2/d2-i18n'
 import { getInstance as getD2 } from 'd2'
 import Action from 'd2-ui/lib/action/Action.js'
 import { Observable } from 'rxjs'
-import i18n from './locales/index.js'
 import { categories } from './settingsCategories.js'
 import settingsKeyMapping from './settingsKeyMapping.js'
 import settingsStore from './settingsStore.js'
