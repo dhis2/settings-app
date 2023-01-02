@@ -1,3 +1,10 @@
+## [29.14.19](https://github.com/dhis2/settings-app/compare/v29.14.18...v29.14.19) (2023-01-02)
+
+
+### Bug Fixes
+
+* assume field is a default field type if no mapping is found ([#1068](https://github.com/dhis2/settings-app/issues/1068)) ([48ce0bd](https://github.com/dhis2/settings-app/commit/48ce0bd6b1b5b3573ff97b709bda8b515f8eb0f5))
+
 ## [29.14.18](https://github.com/dhis2/settings-app/compare/v29.14.17...v29.14.18) (2022-12-14)
 
 
