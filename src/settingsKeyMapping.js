@@ -602,6 +602,15 @@ const settingsKeyMapping = {
             thai: i18n.t('Thai'),
             persian: i18n.t('Persian'),
         },
+        showWarning: true,
+        warning: {
+            title: i18n.t('Change calendar setting'),
+            body: i18n.t(
+                'If you change the calendar setting after you have entered data, your instance can become unusable. If you have started to enter data, it is strongly recommended that you do not change your calendar setting.'
+            ),
+            cancel: i18n.t('Cancel'),
+            proceed: i18n.t('Yes, change calendar'),
+        },
     },
     keyDateFormat: {
         label: i18n.t('Date format'),
