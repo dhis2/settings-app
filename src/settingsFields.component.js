@@ -190,6 +190,9 @@ class SettingsFields extends React.Component {
                             (mapping.includeEmpty && mapping.emptyLabel) ||
                             undefined,
                         noOptionsLabel: i18n.t('No options'),
+                        warning:
+                            (mapping.showWarning && mapping.warning) ||
+                            undefined,
                     }),
                 })
 
