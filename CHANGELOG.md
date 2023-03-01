@@ -1,3 +1,10 @@
+## [29.14.20](https://github.com/dhis2/settings-app/compare/v29.14.19...v29.14.20) (2023-03-01)
+
+
+### Bug Fixes
+
+* add warning for calendar update [DHIS2-7422] ([#1120](https://github.com/dhis2/settings-app/issues/1120)) ([7c317d0](https://github.com/dhis2/settings-app/commit/7c317d08ab9182d221fd5451531602e9b925e704))
+
 ## [29.14.19](https://github.com/dhis2/settings-app/compare/v29.14.18...v29.14.19) (2023-01-02)
 
 
