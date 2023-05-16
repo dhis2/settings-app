@@ -325,6 +325,7 @@ class SettingsFields extends React.Component {
                             ...addConditionallyHiddenStyles(mapping),
                         },
                         hintText: mapping.hintText,
+                        helpText: mapping.helpText,
                     },
                     validators,
                 }
