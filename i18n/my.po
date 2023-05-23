@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2021
+# phil_dhis2, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-14T13:17:46.441Z\n"
-"PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
-"Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
+"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"PO-Revision-Date: 2023-05-22 19:09+0000\n"
+"Last-Translator: phil_dhis2, 2023\n"
+"Language-Team: Burmese (https://app.transifex.com/hisp-uio/teams/100509/my/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -770,6 +770,18 @@ msgid "Thai"
 msgstr ""
 
 msgid "Persian"
+msgstr ""
+
+msgid "Change calendar setting"
+msgstr ""
+
+msgid ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
+msgstr ""
+
+msgid "Yes, change calendar"
 msgstr ""
 
 msgid "Date format"

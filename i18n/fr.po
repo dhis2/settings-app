@@ -1,22 +1,21 @@
 # 
 # Translators:
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
-# phil_dhis2, 2021
-# Edem Kossi <ekossi@hispwca.org>, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Bram Piot <bram.piot@gmail.com>, 2021
-# Yayra Gomado <ygomado@hispwca.org>, 2021
-# tx_e2f_frfr r6 <tx_e2f_frfr_r661@ate2f.com>, 2021
-# tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
+# Bram Piot <bram.piot@gmail.com>, 2023
+# Edem Kossi <ekossi@hispwca.org>, 2023
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
+# tx_e2f_frfr r6 <tx_e2f_frfr_r661@ate2f.com>, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
+# phil_dhis2, 2023
+# tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2023
+# Yayra Gomado <ygomado@hispwca.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-14T13:17:46.441Z\n"
-"PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022\n"
-"Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
+"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"PO-Revision-Date: 2023-05-22 19:09+0000\n"
+"Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2023\n"
+"Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -112,7 +111,7 @@ msgid "Name"
 msgstr "Nom"
 
 msgid "Required"
-msgstr "Obligatoire"
+msgstr "Requis"
 
 msgid "Client ID"
 msgstr "Identifiant du client"
@@ -148,7 +147,7 @@ msgid "Edit OAuth2 Client"
 msgstr "Modifier le client OAuth2"
 
 msgid "Save"
-msgstr "Enregistrer"
+msgstr "Sauvegarder"
 
 msgid "Cancel"
 msgstr "Annuler"
@@ -223,7 +222,7 @@ msgid "Access settings"
 msgstr "Paramètres d'accès"
 
 msgid "Calendar"
-msgstr "Calendar"
+msgstr "Calendrier"
 
 msgid "Calendar settings"
 msgstr "Paramètres du calendrier"
@@ -313,7 +312,7 @@ msgid "Six-monthly"
 msgstr "Semestriel"
 
 msgid "Six-monthly April"
-msgstr "Six-mois avril"
+msgstr "Semestriel Avril"
 
 msgid "Yearly"
 msgstr "Annuel"
@@ -365,7 +364,7 @@ msgstr ""
 " d'utilisation"
 
 msgid "Default relative period for analysis"
-msgstr "Période relative par défaut pour l'analyse"
+msgstr "Période relative par défaut pour l’analyse"
 
 msgid "This week"
 msgstr "Cette semaine"
@@ -383,10 +382,10 @@ msgid "Last 52 weeks"
 msgstr "52 dernières semaines"
 
 msgid "This month"
-msgstr "Ce mois-ci"
+msgstr "Ce mois"
 
 msgid "Last month"
-msgstr "Le mois dernier"
+msgstr "Mois dernier"
 
 msgid "Months this year"
 msgstr "Mois cette année"
@@ -452,16 +451,16 @@ msgid "This financial year"
 msgstr "Année fiscale en cours"
 
 msgid "Last financial year"
-msgstr "Dernière année financière"
+msgstr "Année fiscale précédente"
 
 msgid "Last 5 financial years"
-msgstr "5 dernières années financières"
+msgstr "5 dernières années fiscales"
 
 msgid "Hide daily periods"
 msgstr "Masquer les périodes quotidiennes"
 
 msgid "Hidden period types in analytics apps"
-msgstr "Types de périodes masquées dans les applications d'analyses"
+msgstr "Types de périodes masquées dans les applications d’analyses"
 
 msgid "Hide weekly periods"
 msgstr "Masquer les périodes hebdomadaires"
@@ -476,7 +475,7 @@ msgid "Hide bimonthly periods"
 msgstr "Masquer les périodes bimensuelles"
 
 msgid "Financial year relative period start month"
-msgstr "Mois de départ de la période relative à l'année financière"
+msgstr "Mois de départ de la période relative à l’année financière"
 
 msgid "April"
 msgstr "Avril"
@@ -528,14 +527,14 @@ msgstr "Fixe"
 
 msgid "Max number of years to hide unapproved data in analytics"
 msgstr ""
-"Nombre max. d'années pour masquer des données non approuvées dans des "
+"Nombre max. d’années pour masquer des données non approuvées dans des "
 "analyses"
 
 msgid "Never check approval"
-msgstr "Ne jamais vérifier l'approbation"
+msgstr "Ne jamais vérifier l’approbation"
 
 msgid "Check approval for all data"
-msgstr "Vérifier l'approbation pour toutes les données"
+msgstr "Vérifier l’approbation pour toutes les données"
 
 msgid "Current year only"
 msgstr "Année en cours uniquement"
@@ -563,8 +562,8 @@ msgstr "9 dernières années"
 
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
-"Respecter les dates de début et de fin de l'option de catégorie dans "
-"l'exportation de tables analytiques"
+"Respecter les dates de début et de fin de l’option de catégorie dans "
+"l’exportation de tableaux analytiques"
 
 msgid "Put analytics in maintenance mode"
 msgstr "Placer les analyses en mode de maintenance"
@@ -577,8 +576,8 @@ msgstr "Facteur de mise en cache"
 
 msgid "Org unit group set in facility map layers"
 msgstr ""
-"Groupe d'unités d'organisation défini dans les couches cartographiques des "
-"établissements de santé"
+"Ensemble de groupes d'unités d'organisation dans les couches cartographiques"
+" des établissements"
 
 msgid "Org unit level in facility map layers"
 msgstr ""
@@ -607,7 +606,7 @@ msgid "Bing Aerial Labels"
 msgstr "Étiquettes Bing Satellite"
 
 msgid "Number of database server CPUs"
-msgstr "Nombre d'UC de serveur de base de données"
+msgstr "Nombre d’UC de serveur de base de données"
 
 msgid "Automatic (detect based on web server)"
 msgstr "Automatique (détection basée sur le serveur Web)"
@@ -634,10 +633,10 @@ msgid "Application notification"
 msgstr "Notification de l'application"
 
 msgid "Application left-side footer"
-msgstr "Bas de page gauche de l'application"
+msgstr "Bas de page gauche de l’application"
 
 msgid "Application right-side footer"
-msgstr "Bas de page droit de l'application"
+msgstr "Bas de page droit de l’application"
 
 msgid "Style"
 msgstr "Style"
@@ -649,7 +648,7 @@ msgid "Enable light-weight start page"
 msgstr "Activer une page de démarrage légère"
 
 msgid "Help page link"
-msgstr "Lien vers la page d'aide"
+msgstr "Lien vers la page d’aide"
 
 msgid "Flag"
 msgstr "Drapeau"
@@ -669,7 +668,7 @@ msgstr "Nom court"
 msgid "Default digit group separator to display in analysis modules"
 msgstr ""
 "Séparateur de groupes de chiffres par défaut à afficher dans les modules "
-"d'analyse"
+"d’analyse"
 
 msgid "Space"
 msgstr "Espace"
@@ -689,8 +688,8 @@ msgstr "Logo personnalisé du menu supérieur"
 
 msgid "Allow users to switch dashboard items view type"
 msgstr ""
-"Permettre aux utilisateurs de changer le type de vue des éléments du tableau"
-" de bord"
+"Autoriser les utilisateurs à changer le type de vue des éléments du tableau "
+"de bord"
 
 msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
@@ -720,16 +719,16 @@ msgid "TLS"
 msgstr "TLS"
 
 msgid "Email sender"
-msgstr "Expéditeur de l'e-mail"
+msgstr "Expéditeur de l’e-mail"
 
 msgid "Send me a test email"
-msgstr "M'envoyer un e-mail de test"
+msgstr "M’envoyer un e-mail de test"
 
 msgid "Self registration account user role"
 msgstr "Rôle d'utilisateur des des comptes auto-inscrits"
 
 msgid "Disable self registration"
-msgstr "Désactiver l'auto-inscription"
+msgstr "Désactiver l’auto-inscription"
 
 msgid "Self registration account organisation unit"
 msgstr "L'unité d'organisation des comptes auto-inscrits"
@@ -742,7 +741,7 @@ msgstr "Permettre la restauration de compte utilisateur"
 
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
-"Verrouiller temporairement le compte de l'utilisateur après plusieurs "
+"Verrouiller temporairement le compte de l’utilisateur après plusieurs "
 "tentatives de connexion infructueuses"
 
 msgid "Allow users to grant own user roles"
@@ -750,8 +749,8 @@ msgstr "Allow users to grant own user roles"
 
 msgid "Allow assigning object to related objects during add or update"
 msgstr ""
-"Permet l'attribution d'un objet à des objets liés pendant un ajout ou une "
-"mise à jour"
+"Permettre l’attribution d’un objet à des objets liés pendant un ajout ou une"
+" mise à jour"
 
 msgid "Require user account password change"
 msgstr "Require user account password change"
@@ -769,7 +768,7 @@ msgid "12 months"
 msgstr "12 mois"
 
 msgid "Enable password expiry alerts"
-msgstr "Activer les alertes d'expiration de mot de passe"
+msgstr "Activer les alertes d’expiration de mot de passe"
 
 msgid "Minimum characters in password"
 msgstr "Nombre min. de caractères dans un mot de passe"
@@ -810,43 +809,55 @@ msgstr "thaï"
 msgid "Persian"
 msgstr "Persan"
 
+msgid "Change calendar setting"
+msgstr ""
+
+msgid ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
+msgstr ""
+
+msgid "Yes, change calendar"
+msgstr ""
+
 msgid "Date format"
 msgstr "Format de date"
 
 msgid "Require periods to match period type of data set"
 msgstr ""
-"Les périodes doivent correspondre au type de période de l'ensemble de "
+"Les périodes doivent correspondre au type de période de l’ensemble de "
 "données"
 
 msgid "Require data elements to be part of data set"
-msgstr "Les éléments de données doivent faire partie de l'ensemble de données"
+msgstr "Les éléments de données doivent faire partie de l’ensemble de données"
 
 msgid "Require category option combos to match category combo of data element"
 msgstr ""
-"Nécessité de combinaisons d'options de catégorie correspondant à la "
-"combinaison de catégories d'élément de données"
+"Les combos d’options de catégorie doivent correspondre à la combinaison de "
+"catégories d’élément de données"
 
 msgid "Require organisation units to match assignment of data set"
 msgstr ""
-"Les unités d'organisation doivent correspondre à l'attribution de l'ensemble"
+"Les unités d’organisation doivent correspondre à l’attribution de l’ensemble"
 " de données"
 
 msgid "Require attribute option combos to match category combo of data set"
 msgstr ""
-"Les combinaisons d'options d'attribut doivent correspondre à la combinaison "
-"de catégories de l'ensemble de données"
+"Les combinaisons d’options d’attribut doivent correspondre à la combinaison "
+"de catégories de l’ensemble de données"
 
 msgid "Require category option combo to be specified"
-msgstr "La combinaison d'options de catégorie doit être précisée"
+msgstr "Le combo d’options de catégorie doit être précisé"
 
 msgid "Require attribute option combo to be specified"
-msgstr "La combinaison d'options d'attribut doit être précisée"
+msgstr "La combinaison d’options d’attribut doit être précisée"
 
 msgid "Remote server URL"
 msgstr "URL de serveur distant"
 
 msgid "Remote server username"
-msgstr "Nom d'utilisateur de serveur distant"
+msgstr "Nom d’utilisateur de serveur distant"
 
 msgid "Remote server password"
 msgstr "Mot de passe de serveur distant"
