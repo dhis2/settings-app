@@ -1,17 +1,18 @@
 # 
 # Translators:
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Ge Joao <gsimango@saudigitus.org>, 2021
+# David Júnior <davidjr.mondlane@gmail.com>, 2023
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
+# phil_dhis2, 2023
+# Ge Joao <gsimango@saudigitus.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-14T13:17:46.441Z\n"
-"PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2021\n"
-"Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
+"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"PO-Revision-Date: 2023-05-22 19:09+0000\n"
+"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2023\n"
+"Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -166,7 +167,7 @@ msgid "Add OAuth2 client"
 msgstr ""
 
 msgid "Yes"
-msgstr "Sim"
+msgstr "sim"
 
 msgid "No"
 msgstr "Não"
@@ -781,6 +782,18 @@ msgstr "Thai"
 
 msgid "Persian"
 msgstr "Persian"
+
+msgid "Change calendar setting"
+msgstr ""
+
+msgid ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
+msgstr ""
+
+msgid "Yes, change calendar"
+msgstr ""
 
 msgid "Date format"
 msgstr "Formato da data"

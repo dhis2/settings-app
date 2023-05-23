@@ -1,16 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2021
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2023
+# phil_dhis2, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-14T13:17:46.441Z\n"
-"PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
-"Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
+"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"PO-Revision-Date: 2023-05-22 19:09+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
+"Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -84,7 +84,7 @@ msgid "Last sync attempt"
 msgstr "Lần đồng bộ cuối"
 
 msgid "Failed"
-msgstr "KHÔNG THÀNH CÔNG"
+msgstr "Thất bại"
 
 msgid "No versions exist"
 msgstr "Không tồn tại phiên bản"
@@ -141,7 +141,7 @@ msgid "Edit OAuth2 Client"
 msgstr "Sửa máy khách OAuth2"
 
 msgid "Save"
-msgstr "Lưu lại"
+msgstr "Lưu"
 
 msgid "Cancel"
 msgstr "Hủy"
@@ -286,13 +286,13 @@ msgid "Infrastructural period type"
 msgstr "Loại thời điểm hạ tầng"
 
 msgid "Daily"
-msgstr "Hàng ngày"
+msgstr "Hàng Ngày"
 
 msgid "Weekly"
-msgstr "Hàng tuần"
+msgstr "Hàng Tuần"
 
 msgid "Monthly"
-msgstr "Hàng tháng"
+msgstr "Hàng Tháng"
 
 msgid "Bi-monthly"
 msgstr "Hàng 2 tháng"
@@ -301,13 +301,13 @@ msgid "Quarterly"
 msgstr "Hàng quý"
 
 msgid "Six-monthly"
-msgstr "Hàng 6 tháng"
+msgstr "Hàng 6-Tháng"
 
 msgid "Six-monthly April"
-msgstr "Hàng 6 tháng - tháng 4"
+msgstr "Hàng 6-Tháng bắt đầu Tháng Tư"
 
 msgid "Yearly"
-msgstr "Một năm"
+msgstr "Hàng Năm"
 
 msgid "Financial-April"
 msgstr "Năm tài chính - tháng 4"
@@ -361,13 +361,13 @@ msgid "Last week"
 msgstr "Tuần trước"
 
 msgid "Last 4 weeks"
-msgstr "4 tuần trước"
+msgstr "4 Tuần trước"
 
 msgid "Last 12 weeks"
-msgstr "12 tuần trước"
+msgstr "12 Tuần trước"
 
 msgid "Last 52 weeks"
-msgstr "52 tuần trước"
+msgstr "52 Tuần trước"
 
 msgid "This month"
 msgstr "Tháng này"
@@ -376,28 +376,28 @@ msgid "Last month"
 msgstr "Tháng trước"
 
 msgid "Months this year"
-msgstr "Tháng năm nay"
+msgstr "Các Tháng năm này"
 
 msgid "Months last year"
-msgstr "Tháng năm ngoái"
+msgstr "Các Tháng trong năm trước"
 
 msgid "Last 3 months"
-msgstr "3 tháng trước"
+msgstr "3 Tháng trước"
 
 msgid "Last 6 months"
-msgstr "6 tháng trước"
+msgstr "6 Tháng trước"
 
 msgid "Last 12 months"
-msgstr "Trong 12 tháng trước"
+msgstr "12 Tháng trước"
 
 msgid "This bi-month"
-msgstr "Lần Hai-Tháng này"
+msgstr "2-Tháng này"
 
 msgid "Last bi-month"
-msgstr "Kỳ 2 tháng trước"
+msgstr "2-Tháng trước"
 
 msgid "Last 6 bi-months"
-msgstr "6 kỳ 2 tháng trước"
+msgstr "6 kỳ 2-Tháng trước"
 
 msgid "This quarter"
 msgstr "Quý này"
@@ -406,43 +406,43 @@ msgid "Last quarter"
 msgstr "Quý trước"
 
 msgid "Quarters this year"
-msgstr "Quý năm nay"
+msgstr "Các Quý năm nay"
 
 msgid "Quarters last year"
 msgstr "Quý năm trước"
 
 msgid "Last 4 quarters"
-msgstr "4 quý trước"
+msgstr "4 Quý trước"
 
 msgid "This six-month"
-msgstr "6 tháng này"
+msgstr "6-Tháng này"
 
 msgid "Last six-month"
-msgstr "6 tháng trước"
+msgstr "6-Tháng trước"
 
 msgid "Last 2 six-months"
-msgstr "2 lần sáu-tháng trước"
+msgstr "2 kỳ 6-Tháng trước"
 
 msgid "This year"
 msgstr "Năm nay"
 
 msgid "Last year"
-msgstr "Năm ngoái"
+msgstr "Năm trước"
 
 msgid "Last 5 years"
-msgstr "5 năm trước"
+msgstr "5 Năm trước"
 
 msgid "Last 10 years"
 msgstr "10 năm trước"
 
 msgid "This financial year"
-msgstr "Năm tài chính này"
+msgstr "Năm Tài Chính này"
 
 msgid "Last financial year"
-msgstr "Năm tài chính trước"
+msgstr "Năm Tài Chính trước"
 
 msgid "Last 5 financial years"
-msgstr "5 năm tài chính trước"
+msgstr "5 Năm tài chính trước"
 
 msgid "Hide daily periods"
 msgstr ""
@@ -777,6 +777,18 @@ msgid "Thai"
 msgstr ""
 
 msgid "Persian"
+msgstr ""
+
+msgid "Change calendar setting"
+msgstr ""
+
+msgid ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
+msgstr ""
+
+msgid "Yes, change calendar"
 msgstr ""
 
 msgid "Date format"
