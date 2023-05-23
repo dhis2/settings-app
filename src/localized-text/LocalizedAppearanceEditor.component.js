@@ -260,6 +260,7 @@ class LocalizedTextEditor extends React.Component {
                         value={this.state.locale || ''}
                         floatingLabelText={i18n.t('Select language')}
                         onChange={this.handleChange}
+                        style={{ width: '100%' }}
                     />
                     {this.state.locale ? (
                         this.renderLocalizedAppearanceFields()

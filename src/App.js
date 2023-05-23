@@ -157,11 +157,17 @@ const AppWrapper = () => {
 
     const uiLocales = (data.uiLocales || []).map((locale) => ({
         id: locale.locale,
-        displayName: locale.name,
+        displayName:
+            locale.name === locale.displayName
+                ? locale.name
+                : `${locale.name} — ${locale.displayName}`,
     }))
     const dbLocales = (data.dbLocales || []).map((locale) => ({
         id: locale.locale,
-        displayName: locale.name,
+        displayName:
+            locale.name === locale.displayName
+                ? locale.name
+                : `${locale.name} — ${locale.displayName}`,
     }))
 
     configOptionStore.setState({
