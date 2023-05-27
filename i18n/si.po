@@ -82,7 +82,7 @@ msgid "Last sync attempt"
 msgstr ""
 
 msgid "Failed"
-msgstr ""
+msgstr "අසාර්ථකයි"
 
 msgid "No versions exist"
 msgstr ""
@@ -100,7 +100,7 @@ msgid "This client ID is already taken"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "නම"
 
 msgid "Required"
 msgstr ""
@@ -139,7 +139,7 @@ msgid "Edit OAuth2 Client"
 msgstr ""
 
 msgid "Save"
-msgstr ""
+msgstr "සුරකින්න"
 
 msgid "Cancel"
 msgstr ""
@@ -347,25 +347,25 @@ msgid "Default relative period for analysis"
 msgstr ""
 
 msgid "This week"
-msgstr ""
+msgstr "මෙම සතිය"
 
 msgid "Last week"
-msgstr ""
+msgstr "පසුගිය සතිය"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "පසුගිය සති 4"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "පසුගිය සති 12"
 
 msgid "Last 52 weeks"
-msgstr ""
+msgstr "පසුගිය සති 52"
 
 msgid "This month"
-msgstr ""
+msgstr "මෙම මාසය"
 
 msgid "Last month"
-msgstr ""
+msgstr "පසුගිය මාසය"
 
 msgid "Months this year"
 msgstr ""
@@ -374,13 +374,13 @@ msgid "Months last year"
 msgstr ""
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "පසුගිය මාස 3"
 
 msgid "Last 6 months"
-msgstr ""
+msgstr "පසුගිය මාස 6"
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "පසුගිය මාස 12"
 
 msgid "This bi-month"
 msgstr ""
@@ -416,16 +416,16 @@ msgid "Last 2 six-months"
 msgstr ""
 
 msgid "This year"
-msgstr ""
+msgstr "මෙම වසර"
 
 msgid "Last year"
-msgstr ""
+msgstr "පසුගිය වසර"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "පසුගිය 5 වසර"
 
 msgid "Last 10 years"
-msgstr ""
+msgstr "පසුගිය 10 වසර"
 
 msgid "This financial year"
 msgstr ""
