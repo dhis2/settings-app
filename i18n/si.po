@@ -115,7 +115,7 @@ msgid "Grant Types"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "රහස්‍ය පදය"
 
 msgid "Refresh token"
 msgstr ""
@@ -293,16 +293,16 @@ msgid "Monthly"
 msgstr "මාස්පතා"
 
 msgid "Bi-monthly"
-msgstr ""
+msgstr "දෙමසකට වරක්"
 
 msgid "Quarterly"
-msgstr ""
+msgstr "කාර්තු පතා"
 
 msgid "Six-monthly"
-msgstr ""
+msgstr "6 මසකට වරක්"
 
 msgid "Six-monthly April"
-msgstr ""
+msgstr "6 මසකට වරක් අප්‍රේල්"
 
 msgid "Yearly"
 msgstr "අවුරුදු පතා"
@@ -458,13 +458,13 @@ msgid "Financial year relative period start month"
 msgstr ""
 
 msgid "April"
-msgstr ""
+msgstr "අප්‍රේල්"
 
 msgid "July"
-msgstr ""
+msgstr "ජූලි"
 
 msgid "October"
-msgstr ""
+msgstr "ඔක්තෝබර්"
 
 msgid "Cache strategy"
 msgstr ""
