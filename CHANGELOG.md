@@ -1,3 +1,10 @@
+## [29.14.25](https://github.com/dhis2/settings-app/compare/v29.14.24...v29.14.25) (2023-05-29)
+
+
+### Bug Fixes
+
+* show help text for sender email field ([6d7dd29](https://github.com/dhis2/settings-app/commit/6d7dd2950be56c9896b8918d4aaaf95515618d89))
+
 ## [29.14.24](https://github.com/dhis2/settings-app/compare/v29.14.23...v29.14.24) (2023-05-28)
 
 
