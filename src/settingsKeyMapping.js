@@ -496,6 +496,7 @@ const settingsKeyMapping = {
     },
     keyEmailSender: {
         label: i18n.t('Email sender'),
+        helpText: i18n.t('The address that outgoing messages are sent from.'),
         validators: ['email'],
     },
     emailTestButton: {
