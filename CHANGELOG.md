@@ -1,3 +1,10 @@
+## [29.14.26](https://github.com/dhis2/settings-app/compare/v29.14.25...v29.14.26) (2023-05-31)
+
+
+### Bug Fixes
+
+* language display ([#1131](https://github.com/dhis2/settings-app/issues/1131)) ([796540d](https://github.com/dhis2/settings-app/commit/796540d3460634613282144c7f876b1170fcc72e))
+
 ## [29.14.25](https://github.com/dhis2/settings-app/compare/v29.14.24...v29.14.25) (2023-05-29)
 
 
