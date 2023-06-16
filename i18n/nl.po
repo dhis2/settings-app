@@ -131,7 +131,7 @@ msgid "Redirect URIs"
 msgstr ""
 
 msgid "This field should contain a list of URLs"
-msgstr ""
+msgstr "Dit veld moet een lijst met URL's bevatten"
 
 msgid "Create new OAuth2 Client"
 msgstr ""
@@ -176,7 +176,7 @@ msgid "Failed to delete OAuth2 client"
 msgstr ""
 
 msgid "Settings updated"
-msgstr ""
+msgstr "Instellingen bijgewerkt"
 
 msgid "General"
 msgstr ""
@@ -239,16 +239,16 @@ msgid "This field is required"
 msgstr "Dit veld is verplicht."
 
 msgid "This field should be a URL"
-msgstr ""
+msgstr "Dit veld moet een URL zijn"
 
 msgid "This field should be a number"
-msgstr ""
+msgstr "Dit veld moet een getal zijn"
 
 msgid "This field should be a positive number"
-msgstr ""
+msgstr "Dit veld moet een positief getal zijn"
 
 msgid "This field should be an email"
-msgstr ""
+msgstr "Dit veld moet een e-mail zijn"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
@@ -633,13 +633,13 @@ msgid "Flag"
 msgstr ""
 
 msgid "Interface language"
-msgstr ""
+msgstr "Interfacetaal"
 
 msgid "Database language"
-msgstr ""
+msgstr "Database taal"
 
 msgid "Property to display in analysis modules"
-msgstr ""
+msgstr "Eigenschap om weer te geven in analysemodules"
 
 msgid "Short name"
 msgstr "Korte naam"
