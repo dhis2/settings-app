@@ -3,15 +3,15 @@
 # phil_dhis2, 2022
 # 晓东 林 <13981924470@126.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
-# easylin <lin_xd@126.com>, 2022
+# easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-30T09:47:23.342Z\n"
+"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
 "PO-Revision-Date: 2022-04-20 10:52+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
-"Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -774,6 +774,18 @@ msgstr "泰国"
 
 msgid "Persian"
 msgstr "波斯语"
+
+msgid "Change calendar setting"
+msgstr "更改日历设置"
+
+msgid ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
+msgstr "输入数据后更改日历设置可能会使您的系统无法使用。如果您输入了数据，强烈建议您不要更改日历设置。"
+
+msgid "Yes, change calendar"
+msgstr "是的，更改日历"
 
 msgid "Date format"
 msgstr "日期格式"
