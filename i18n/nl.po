@@ -265,7 +265,7 @@ msgid "No settings matched the search term"
 msgstr ""
 
 msgid "Search results"
-msgstr ""
+msgstr "Zoekresultaten"
 
 msgid "Maximum number of analytics records"
 msgstr ""
