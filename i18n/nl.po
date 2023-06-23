@@ -649,10 +649,10 @@ msgid "Default digit group separator to display in analysis modules"
 msgstr ""
 
 msgid "Space"
-msgstr ""
+msgstr "Ruimte"
 
 msgid "Comma"
-msgstr ""
+msgstr "Komma"
 
 msgid "Require authority to add to view object lists"
 msgstr ""
