@@ -186,7 +186,7 @@ msgid "General settings"
 msgstr ""
 
 msgid "Analytics"
-msgstr ""
+msgstr "Analyse"
 
 msgid "Analytics settings"
 msgstr ""
@@ -373,7 +373,7 @@ msgid "Months this year"
 msgstr "Maanden dit jaar"
 
 msgid "Months last year"
-msgstr ""
+msgstr "Maanden vorig jaar"
 
 msgid "Last 3 months"
 msgstr "Laatste 3 maanden"
