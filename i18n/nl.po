@@ -116,7 +116,7 @@ msgid "Grant Types"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 msgid "Refresh token"
 msgstr ""
