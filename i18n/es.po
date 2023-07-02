@@ -4,15 +4,15 @@
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
-# Janeth Cruz, 2023
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
+# Janeth Cruz, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
 "PO-Revision-Date: 2022-04-20 10:52+0000\n"
-"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2023\n"
+"Last-Translator: Janeth Cruz, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,7 +96,7 @@ msgid "Enable Versioning for metadata sync"
 msgstr "Habilitar el control de versiones para la sincronización de metadatos"
 
 msgid "Don't sync metadata if DHIS versions differ"
-msgstr ""
+msgstr "No sincronizar metadatos si las versiones de DHIS difieren"
 
 msgid "Metadata Versioning"
 msgstr "Versión de metadatos"
@@ -192,7 +192,7 @@ msgid "Analytics"
 msgstr "Analíticas"
 
 msgid "Analytics settings"
-msgstr ""
+msgstr "Configuración de Analíticas"
 
 msgid "Server"
 msgstr "Servidor"
@@ -454,7 +454,7 @@ msgid "Hidden period types in analytics apps"
 msgstr ""
 
 msgid "Hide weekly periods"
-msgstr ""
+msgstr "Ocultar períodos semanales"
 
 msgid "Hide biweekly periods"
 msgstr ""
@@ -505,7 +505,7 @@ msgid "Public"
 msgstr "Público"
 
 msgid "Private"
-msgstr ""
+msgstr "Privado"
 
 msgid "Analytics cache mode"
 msgstr ""
@@ -517,7 +517,7 @@ msgid "Fixed"
 msgstr ""
 
 msgid "Max number of years to hide unapproved data in analytics"
-msgstr ""
+msgstr "Número máximo de años para ocultar datos no aprobados en análisis"
 
 msgid "Never check approval"
 msgstr ""
@@ -526,28 +526,28 @@ msgid "Check approval for all data"
 msgstr ""
 
 msgid "Current year only"
-msgstr ""
+msgstr "Solo año actual"
 
 msgid "Last 2 years"
-msgstr ""
+msgstr "Últimos 2 años"
 
 msgid "Last 3 years"
-msgstr ""
+msgstr "Últimos 3 años"
 
 msgid "Last 4 years"
-msgstr ""
+msgstr "Últimos 4 años"
 
 msgid "Last 6 years"
-msgstr ""
+msgstr "Últimos 6 años"
 
 msgid "Last 7 years"
-msgstr ""
+msgstr "Últimos 7 años"
 
 msgid "Last 8 years"
-msgstr ""
+msgstr "Últimos 8 años"
 
 msgid "Last 9 years"
-msgstr ""
+msgstr "Últimos 9 años"
 
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
@@ -752,7 +752,7 @@ msgid "reCAPTCHA Site Key"
 msgstr ""
 
 msgid "reCAPTCHA Secret Key"
-msgstr ""
+msgstr "reCAPTCHA Clave secreta"
 
 msgid "Coptic"
 msgstr "Copto"
