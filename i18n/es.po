@@ -96,7 +96,7 @@ msgid "Enable Versioning for metadata sync"
 msgstr "Habilitar el control de versiones para la sincronización de metadatos"
 
 msgid "Don't sync metadata if DHIS versions differ"
-msgstr ""
+msgstr "No sincronizar metadatos si las versiones de DHIS difieren"
 
 msgid "Metadata Versioning"
 msgstr "Versión de metadatos"
@@ -192,7 +192,7 @@ msgid "Analytics"
 msgstr "Analíticas"
 
 msgid "Analytics settings"
-msgstr ""
+msgstr "Configuración de Analíticas"
 
 msgid "Server"
 msgstr "Servidor"
@@ -448,7 +448,7 @@ msgid "Hidden period types in analytics apps"
 msgstr ""
 
 msgid "Hide weekly periods"
-msgstr ""
+msgstr "Ocultar períodos semanales"
 
 msgid "Hide biweekly periods"
 msgstr ""
@@ -499,7 +499,7 @@ msgid "Public"
 msgstr "Público"
 
 msgid "Private"
-msgstr ""
+msgstr "Privado"
 
 msgid "Analytics cache mode"
 msgstr ""
@@ -511,7 +511,7 @@ msgid "Fixed"
 msgstr ""
 
 msgid "Max number of years to hide unapproved data in analytics"
-msgstr ""
+msgstr "Número máximo de años para ocultar datos no aprobados en análisis"
 
 msgid "Never check approval"
 msgstr ""
@@ -520,28 +520,28 @@ msgid "Check approval for all data"
 msgstr ""
 
 msgid "Current year only"
-msgstr ""
+msgstr "Solo año actual"
 
 msgid "Last 2 years"
-msgstr ""
+msgstr "Últimos 2 años"
 
 msgid "Last 3 years"
-msgstr ""
+msgstr "Últimos 3 años"
 
 msgid "Last 4 years"
-msgstr ""
+msgstr "Últimos 4 años"
 
 msgid "Last 6 years"
-msgstr ""
+msgstr "Últimos 6 años"
 
 msgid "Last 7 years"
-msgstr ""
+msgstr "Últimos 7 años"
 
 msgid "Last 8 years"
-msgstr ""
+msgstr "Últimos 8 años"
 
 msgid "Last 9 years"
-msgstr ""
+msgstr "Últimos 9 años"
 
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
@@ -725,7 +725,7 @@ msgid "reCAPTCHA Site Key"
 msgstr ""
 
 msgid "reCAPTCHA Secret Key"
-msgstr ""
+msgstr "reCAPTCHA Clave secreta"
 
 msgid "Coptic"
 msgstr "Copto"
