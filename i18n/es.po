@@ -508,13 +508,13 @@ msgid "Private"
 msgstr "Privado"
 
 msgid "Analytics cache mode"
-msgstr ""
+msgstr "Modo cache de análisis"
 
 msgid "Progressive"
-msgstr ""
+msgstr "Progresivo"
 
 msgid "Fixed"
-msgstr ""
+msgstr "Fijo"
 
 msgid "Max number of years to hide unapproved data in analytics"
 msgstr "Número máximo de años para ocultar datos no aprobados en análisis"
