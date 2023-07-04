@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "Failed to load: {{error}}"
-msgstr ""
+msgstr "Error al cargar: {{error}}"
 
 msgid "No flag"
 msgstr "Sin bandera"
@@ -36,13 +36,13 @@ msgid "Preview image"
 msgstr "Vista previa de la imagen"
 
 msgid "Preview of image"
-msgstr ""
+msgstr "Vista previa de la imagen"
 
 msgid "Upload image"
 msgstr "Subir imagen"
 
 msgid "Error uploading file: {{error}}"
-msgstr ""
+msgstr "Error al subir el archivo: {{error}}"
 
 msgid "Cancel upload"
 msgstr "Cancelar la subida"
@@ -60,13 +60,13 @@ msgid "Select language"
 msgstr "Seleccionar idioma"
 
 msgid "Version created"
-msgstr ""
+msgstr "Versión creada"
 
 msgid "Failed to create version"
-msgstr ""
+msgstr "Error al crear versión"
 
 msgid "Error fetching settings"
-msgstr ""
+msgstr "Error al obtener la configuración"
 
 msgid "Create new version"
 msgstr "Crear nueva versión"
@@ -165,7 +165,7 @@ msgid "Failed to save OAuth2 client"
 msgstr "Error al guardar el cliente OAuth2"
 
 msgid "Add OAuth2 client"
-msgstr ""
+msgstr "Añadir cliente OAuth2"
 
 msgid "Yes"
 msgstr "Sí"
@@ -177,7 +177,7 @@ msgid "OAuth2 client deleted"
 msgstr "Cliente OAuth2 eliminado"
 
 msgid "Failed to delete OAuth2 client"
-msgstr ""
+msgstr "Error al eliminar el cliente OAuth2"
 
 msgid "Settings updated"
 msgstr "Configuración actualizada"
@@ -257,6 +257,8 @@ msgstr "Este campo debe ser un correo electrónico"
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
+"Esta configuración será anulada por la configuración actual del usuario: "
+"{{settingName}}"
 
 msgid "This setting can be overridden by user settings"
 msgstr "Esta configuración puede ser anulada por la configuración del usuario"
@@ -448,7 +450,7 @@ msgid "Last 5 financial years"
 msgstr "Últimos 5 ejercicios financieros"
 
 msgid "Hide daily periods"
-msgstr ""
+msgstr "Ocultar períodos diarios"
 
 msgid "Hidden period types in analytics apps"
 msgstr ""
@@ -457,16 +459,16 @@ msgid "Hide weekly periods"
 msgstr "Ocultar períodos semanales"
 
 msgid "Hide biweekly periods"
-msgstr ""
+msgstr "Ocultar períodos quincenales"
 
 msgid "Hide monthly periods"
-msgstr ""
+msgstr "Ocultar períodos mensuales"
 
 msgid "Hide bimonthly periods"
-msgstr ""
+msgstr "Ocultar períodos bimestrales"
 
 msgid "Financial year relative period start month"
-msgstr ""
+msgstr "Mes de inicio del período relativo al año fiscal"
 
 msgid "April"
 msgstr "Abril"
@@ -508,22 +510,22 @@ msgid "Private"
 msgstr "Privado"
 
 msgid "Analytics cache mode"
-msgstr ""
+msgstr "Modo cache de análisis"
 
 msgid "Progressive"
-msgstr ""
+msgstr "Progresivo"
 
 msgid "Fixed"
-msgstr ""
+msgstr "Fijo"
 
 msgid "Max number of years to hide unapproved data in analytics"
 msgstr "Número máximo de años para ocultar datos no aprobados en análisis"
 
 msgid "Never check approval"
-msgstr ""
+msgstr "Nunca verifique la aprobación"
 
 msgid "Check approval for all data"
-msgstr ""
+msgstr "Verificar la aprobación de todos los datos"
 
 msgid "Current year only"
 msgstr "Solo año actual"
@@ -679,6 +681,7 @@ msgstr ""
 
 msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""
+"Permitir a los usuarios ver los elementos del tablero en pantalla completa"
 
 msgid "Host name"
 msgstr "Nombre de host"
@@ -740,10 +743,10 @@ msgid "12 months"
 msgstr "12 meses"
 
 msgid "Enable password expiry alerts"
-msgstr ""
+msgstr "Activar alertas de caducidad de contraseña"
 
 msgid "Minimum characters in password"
-msgstr ""
+msgstr "Caracteres mínimos en la contraseña"
 
 msgid "CORS whitelist"
 msgstr "Lista blanca de CORS"
@@ -791,7 +794,7 @@ msgid ""
 msgstr ""
 
 msgid "Yes, change calendar"
-msgstr ""
+msgstr "Sí, cambiar calendario"
 
 msgid "Date format"
 msgstr "Formato de fecha"
