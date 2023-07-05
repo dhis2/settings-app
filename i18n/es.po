@@ -48,13 +48,14 @@ msgid "Cancel upload"
 msgstr "Cancelar la subida"
 
 msgid "System default (fallback)"
-msgstr ""
+msgstr "Valores del sistema por defecto (fallback)"
 
 msgid "Set the main field value before adding a translation"
 msgstr ""
+"Establecer el valor del campo principal antes de añadir una traducción"
 
 msgid "Could not fetch localized settings"
-msgstr ""
+msgstr "No se pudo obtener la configuración localizada"
 
 msgid "Select language"
 msgstr "Seleccionar idioma"
@@ -78,7 +79,7 @@ msgid "Atomic"
 msgstr "Atómico"
 
 msgid "Master version:"
-msgstr ""
+msgstr "Versión maestra:"
 
 msgid "None"
 msgstr "Ninguno"
@@ -672,12 +673,16 @@ msgstr "Logotipo personalizado del menú superior"
 
 msgid "Allow users to switch dashboard items view type"
 msgstr ""
+"Permitir a los usuarios cambiar el tipo de vista de los elementos del "
+"tablero"
 
 msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
 
 msgid "Allow users to show dashboard items interpretations and details"
 msgstr ""
+"Permitir a los usuarios mostrar interpretaciones y detalles de los elementos"
+" del tablero"
 
 msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""
@@ -752,7 +757,7 @@ msgid "CORS whitelist"
 msgstr "Lista blanca de CORS"
 
 msgid "reCAPTCHA Site Key"
-msgstr ""
+msgstr "reCAPTCHA Clave del sitio"
 
 msgid "reCAPTCHA Secret Key"
 msgstr "reCAPTCHA Clave secreta"
@@ -785,7 +790,7 @@ msgid "Persian"
 msgstr ""
 
 msgid "Change calendar setting"
-msgstr ""
+msgstr "Cambiar la configuración del calendario"
 
 msgid ""
 "Changing your calendar setting after you have entered data can make your "
@@ -804,7 +809,7 @@ msgstr ""
 "Requerir períodos para coincidir con el tipo de período del set de datos"
 
 msgid "Require data elements to be part of data set"
-msgstr ""
+msgstr "Se requiere que los elementos de datos formen parte del set de datos"
 
 msgid "Require category option combos to match category combo of data element"
 msgstr ""
