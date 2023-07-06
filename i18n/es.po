@@ -454,7 +454,7 @@ msgid "Hide daily periods"
 msgstr "Ocultar períodos diarios"
 
 msgid "Hidden period types in analytics apps"
-msgstr ""
+msgstr "Ocultar tipos de períodos en aplicaciones analíticas"
 
 msgid "Hide weekly periods"
 msgstr "Ocultar períodos semanales"
@@ -502,7 +502,7 @@ msgid "Cache for two weeks"
 msgstr "Caché por dos semanas"
 
 msgid "Cacheability"
-msgstr ""
+msgstr "Capacidad de almacenamiento en caché"
 
 msgid "Public"
 msgstr "Público"
@@ -511,7 +511,7 @@ msgid "Private"
 msgstr "Privado"
 
 msgid "Analytics cache mode"
-msgstr "Modo cache de análisis"
+msgstr "Modo cache de analíticas"
 
 msgid "Progressive"
 msgstr "Progresivo"
@@ -520,7 +520,7 @@ msgid "Fixed"
 msgstr "Fijo"
 
 msgid "Max number of years to hide unapproved data in analytics"
-msgstr "Número máximo de años para ocultar datos no aprobados en análisis"
+msgstr "Número máximo de años para ocultar datos no aprobados en analíticas"
 
 msgid "Never check approval"
 msgstr "Nunca verifique la aprobación"
@@ -554,6 +554,8 @@ msgstr "Últimos 9 años"
 
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
+"Respetar la fecha inicial y final de la opción de categoría en la "
+"exportación de tablas analíticas"
 
 msgid "Put analytics in maintenance mode"
 msgstr "Poner analíticas en modo de mantenimiento"
@@ -723,6 +725,8 @@ msgstr "Recuperación de cuentas de usuario"
 
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
+"Bloquear temporalmente la cuenta de usuario después de varios intentos "
+"fallidos de inicio de sesión"
 
 msgid "Allow users to grant own user roles"
 msgstr "Permitir a los usuarios otorgar roles de usuario propio"
