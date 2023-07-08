@@ -73,7 +73,7 @@ msgid "Create new version"
 msgstr "Crear nueva versión"
 
 msgid "Best effort"
-msgstr ""
+msgstr "Mejor esfuerzo"
 
 msgid "Atomic"
 msgstr "Atómico"
@@ -280,7 +280,7 @@ msgid "Unlimited"
 msgstr "Ilimitado"
 
 msgid "Maximum number of SQL view records"
-msgstr ""
+msgstr "Número máximo de registros de vista SQL"
 
 msgid "Infrastructural indicators"
 msgstr "Indicadores de infraestructura"
@@ -331,10 +331,10 @@ msgid "No message recipients"
 msgstr "No hay destinatarios del mensaje"
 
 msgid "System update notification recipients"
-msgstr ""
+msgstr "Destinatarios de las notificaciones de actualización del sistema"
 
 msgid "No update notification recipients"
-msgstr ""
+msgstr "Sin destinatarios de las notificaciones de actualización"
 
 msgid "Max offline organisation unit levels"
 msgstr "Máximos niveles de unidad organizativa en modo fuera de linea"
@@ -353,9 +353,12 @@ msgstr "Aceptación requerida antes de la aprobación"
 
 msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
+"Recopilación de estadísticas de objetos analíticos en vistas del tablero"
 
 msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
+"Incluir las vistas pasivas del tablero en las estadísticas de Analíticas de "
+"Uso"
 
 msgid "Default relative period for analysis"
 msgstr "Período relativo por defecto para el análisis"
@@ -496,7 +499,7 @@ msgid "Cache for one hour"
 msgstr "Caché por una hora"
 
 msgid "Cache until 6AM tomorrow"
-msgstr ""
+msgstr "Cache hasta las 6am de mañana"
 
 msgid "Cache for two weeks"
 msgstr "Caché por dos semanas"
@@ -561,37 +564,37 @@ msgid "Put analytics in maintenance mode"
 msgstr "Poner analíticas en modo de mantenimiento"
 
 msgid "Include zero data values in analytics tables"
-msgstr ""
+msgstr "Incluir valores de datos cero en tablas analíticas"
 
 msgid "Caching factor"
-msgstr ""
+msgstr "Factor de caché"
 
 msgid "Org unit group set in facility map layers"
 msgstr ""
 
 msgid "Org unit level in facility map layers"
-msgstr ""
+msgstr "Nivel de unidad organizativa en las capas del mapa de instalaciones"
 
 msgid "Default basemap"
-msgstr ""
+msgstr "Mapa base predeterminado"
 
 msgid "OSM Light (default)"
-msgstr ""
+msgstr "OSM Light (predeterminado)"
 
 msgid "OSM Detailed"
-msgstr ""
+msgstr "OSM Detallado"
 
 msgid "Bing Road"
-msgstr ""
+msgstr "Bing Carretera"
 
 msgid "Bing Dark"
 msgstr "Bing Dark"
 
 msgid "Bing Aerial"
-msgstr ""
+msgstr "Bing Aéreo"
 
 msgid "Bing Aerial Labels"
-msgstr ""
+msgstr "Etiquetas aéreas Bing"
 
 msgid "Number of database server CPUs"
 msgstr "Number of database server CPUs"
@@ -609,7 +612,7 @@ msgid "Google Maps API key"
 msgstr "Clave de la API de Google Maps"
 
 msgid "Bing Maps API key"
-msgstr ""
+msgstr "Clave API de Bing Maps"
 
 msgid "Application title"
 msgstr "Titulo de la aplicación"
@@ -633,7 +636,7 @@ msgid "Start page"
 msgstr "Pagina inicial"
 
 msgid "Enable light-weight start page"
-msgstr ""
+msgstr "Habilitar página de inicio ligera"
 
 msgid "Help page link"
 msgstr "Enlace de la página de ayuda"
@@ -680,6 +683,8 @@ msgstr ""
 
 msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
+"Permitir a los usuarios abrir elementos del tablero en la aplicación "
+"correspondiente"
 
 msgid "Allow users to show dashboard items interpretations and details"
 msgstr ""
@@ -779,7 +784,7 @@ msgid "Islamic"
 msgstr "Islámica"
 
 msgid "ISO 8601"
-msgstr ""
+msgstr "ISO 8601"
 
 msgid "Julian"
 msgstr "Juliano"
@@ -801,6 +806,9 @@ msgid ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
+"Cambiar la configuración del calendario después de haber ingresado los datos"
+" puede hacer que su sistema quede inutilizado. Si ha introducido datos, se "
+"recomienda altamente que no cambie la configuración del calendario."
 
 msgid "Yes, change calendar"
 msgstr "Sí, cambiar calendario"
