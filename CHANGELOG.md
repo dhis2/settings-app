@@ -1,3 +1,10 @@
+## [29.14.41](https://github.com/dhis2/settings-app/compare/v29.14.40...v29.14.41) (2023-08-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ff894d8](https://github.com/dhis2/settings-app/commit/ff894d8247e8838601205f945115d86940e932cc))
+
 ## [29.14.40](https://github.com/dhis2/settings-app/compare/v29.14.39...v29.14.40) (2023-07-08)
 
 
