@@ -571,9 +571,12 @@ msgstr "Factor de caché"
 
 msgid "Org unit group set in facility map layers"
 msgstr ""
+"Set de grupos de unidades organizativas en las capas del mapa de "
+"establecimientos"
 
 msgid "Org unit level in facility map layers"
-msgstr "Nivel de unidad organizativa en las capas del mapa de instalaciones"
+msgstr ""
+"Nivel de unidad organizativa en las capas del mapa de establecimientos"
 
 msgid "Default basemap"
 msgstr "Mapa base predeterminado"
@@ -796,7 +799,7 @@ msgid "Thai"
 msgstr "Tailandés"
 
 msgid "Persian"
-msgstr ""
+msgstr "Persa"
 
 msgid "Change calendar setting"
 msgstr "Cambiar la configuración del calendario"
