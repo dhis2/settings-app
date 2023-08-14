@@ -562,7 +562,7 @@ const settingsKeyMapping = {
     },
     credentialsExpiresReminderInDays: {
         label: i18n.t(
-            'Number of days before password expiry to send reminder (0–28)'
+            'Number of days before password expiry to send reminder (1–28)'
         ),
         type: 'textfield',
         inputType: 'number',
