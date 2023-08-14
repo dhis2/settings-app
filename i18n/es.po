@@ -1,17 +1,19 @@
 # 
 # Translators:
-# Pablo Pajuelo Cabezas <ppajuelo@quadram.mobi>, 2021
+# Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
+# Janeth Cruz, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-14T13:17:46.441Z\n"
+"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
-"Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
+"Last-Translator: Janeth Cruz, 2023\n"
+"Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "Failed to load: {{error}}"
-msgstr ""
+msgstr "Error al cargar: {{error}}"
 
 msgid "No flag"
 msgstr "Sin bandera"
@@ -34,49 +36,50 @@ msgid "Preview image"
 msgstr "Vista previa de la imagen"
 
 msgid "Preview of image"
-msgstr ""
+msgstr "Vista previa de la imagen"
 
 msgid "Upload image"
 msgstr "Subir imagen"
 
 msgid "Error uploading file: {{error}}"
-msgstr ""
+msgstr "Error al subir el archivo: {{error}}"
 
 msgid "Cancel upload"
 msgstr "Cancelar la subida"
 
 msgid "System default (fallback)"
-msgstr ""
+msgstr "Valores del sistema por defecto (fallback)"
 
 msgid "Set the main field value before adding a translation"
 msgstr ""
+"Establecer el valor del campo principal antes de añadir una traducción"
 
 msgid "Could not fetch localized settings"
-msgstr ""
+msgstr "No se pudo obtener la configuración localizada"
 
 msgid "Select language"
 msgstr "Seleccionar idioma"
 
 msgid "Version created"
-msgstr ""
+msgstr "Versión creada"
 
 msgid "Failed to create version"
-msgstr ""
+msgstr "Error al crear versión"
 
 msgid "Error fetching settings"
-msgstr ""
+msgstr "Error al obtener la configuración"
 
 msgid "Create new version"
 msgstr "Crear nueva versión"
 
 msgid "Best effort"
-msgstr ""
+msgstr "Mejor esfuerzo"
 
 msgid "Atomic"
 msgstr "Atómico"
 
 msgid "Master version:"
-msgstr ""
+msgstr "Versión maestra:"
 
 msgid "None"
 msgstr "Ninguno"
@@ -94,7 +97,7 @@ msgid "Enable Versioning for metadata sync"
 msgstr "Habilitar el control de versiones para la sincronización de metadatos"
 
 msgid "Don't sync metadata if DHIS versions differ"
-msgstr ""
+msgstr "No sincronizar metadatos si las versiones de DHIS difieren"
 
 msgid "Metadata Versioning"
 msgstr "Versión de metadatos"
@@ -163,7 +166,7 @@ msgid "Failed to save OAuth2 client"
 msgstr "Error al guardar el cliente OAuth2"
 
 msgid "Add OAuth2 client"
-msgstr ""
+msgstr "Añadir cliente OAuth2"
 
 msgid "Yes"
 msgstr "Sí"
@@ -175,7 +178,7 @@ msgid "OAuth2 client deleted"
 msgstr "Cliente OAuth2 eliminado"
 
 msgid "Failed to delete OAuth2 client"
-msgstr ""
+msgstr "Error al eliminar el cliente OAuth2"
 
 msgid "Settings updated"
 msgstr "Configuración actualizada"
@@ -190,7 +193,7 @@ msgid "Analytics"
 msgstr "Analíticas"
 
 msgid "Analytics settings"
-msgstr ""
+msgstr "Configuración de Analíticas"
 
 msgid "Server"
 msgstr "Servidor"
@@ -241,7 +244,7 @@ msgid "This field is required"
 msgstr "Se requiere éste campo"
 
 msgid "This field should be a URL"
-msgstr ""
+msgstr "Este campo debe ser una URL"
 
 msgid "This field should be a number"
 msgstr "Este campo debe ser un número"
@@ -250,17 +253,19 @@ msgid "This field should be a positive number"
 msgstr "Este campo debe ser un número positivo"
 
 msgid "This field should be an email"
-msgstr ""
+msgstr "Este campo debe ser un correo electrónico"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
+"Esta configuración será anulada por la configuración actual del usuario: "
+"{{settingName}}"
 
 msgid "This setting can be overridden by user settings"
 msgstr "Esta configuración puede ser anulada por la configuración del usuario"
 
 msgid "No options"
-msgstr ""
+msgstr "Sin opciones"
 
 msgid "No settings matched the search term"
 msgstr "Ninguna configuración coincide con el término de búsqueda"
@@ -275,7 +280,7 @@ msgid "Unlimited"
 msgstr "Ilimitado"
 
 msgid "Maximum number of SQL view records"
-msgstr ""
+msgstr "Número máximo de registros de vista SQL"
 
 msgid "Infrastructural indicators"
 msgstr "Indicadores de infraestructura"
@@ -326,10 +331,10 @@ msgid "No message recipients"
 msgstr "No hay destinatarios del mensaje"
 
 msgid "System update notification recipients"
-msgstr ""
+msgstr "Destinatarios de las notificaciones de actualización del sistema"
 
 msgid "No update notification recipients"
-msgstr ""
+msgstr "Sin destinatarios de las notificaciones de actualización"
 
 msgid "Max offline organisation unit levels"
 msgstr "Máximos niveles de unidad organizativa en modo fuera de linea"
@@ -348,9 +353,12 @@ msgstr "Aceptación requerida antes de la aprobación"
 
 msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
+"Recopilación de estadísticas de objetos analíticos en vistas del tablero"
 
 msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
+"Incluir las vistas pasivas del tablero en las estadísticas de Analíticas de "
+"Uso"
 
 msgid "Default relative period for analysis"
 msgstr "Período relativo por defecto para el análisis"
@@ -434,7 +442,7 @@ msgid "Last 5 years"
 msgstr "Últimos 5 años"
 
 msgid "Last 10 years"
-msgstr ""
+msgstr "Últimos 10 años"
 
 msgid "This financial year"
 msgstr "Este año fiscal"
@@ -446,25 +454,25 @@ msgid "Last 5 financial years"
 msgstr "Últimos 5 ejercicios financieros"
 
 msgid "Hide daily periods"
-msgstr ""
+msgstr "Ocultar períodos diarios"
 
 msgid "Hidden period types in analytics apps"
-msgstr ""
+msgstr "Ocultar tipos de períodos en aplicaciones analíticas"
 
 msgid "Hide weekly periods"
-msgstr ""
+msgstr "Ocultar períodos semanales"
 
 msgid "Hide biweekly periods"
-msgstr ""
+msgstr "Ocultar períodos quincenales"
 
 msgid "Hide monthly periods"
-msgstr ""
+msgstr "Ocultar períodos mensuales"
 
 msgid "Hide bimonthly periods"
-msgstr ""
+msgstr "Ocultar períodos bimestrales"
 
 msgid "Financial year relative period start month"
-msgstr ""
+msgstr "Mes de inicio del período relativo al año fiscal"
 
 msgid "April"
 msgstr "Abril"
@@ -491,100 +499,105 @@ msgid "Cache for one hour"
 msgstr "Caché por una hora"
 
 msgid "Cache until 6AM tomorrow"
-msgstr ""
+msgstr "Cache hasta las 6am de mañana"
 
 msgid "Cache for two weeks"
 msgstr "Caché por dos semanas"
 
 msgid "Cacheability"
-msgstr ""
+msgstr "Capacidad de almacenamiento en caché"
 
 msgid "Public"
 msgstr "Público"
 
 msgid "Private"
-msgstr ""
+msgstr "Privado"
 
 msgid "Analytics cache mode"
-msgstr ""
+msgstr "Modo cache de Analytics"
 
 msgid "Progressive"
-msgstr ""
+msgstr "Progresivo"
 
 msgid "Fixed"
-msgstr ""
+msgstr "Fijo"
 
 msgid "Max number of years to hide unapproved data in analytics"
-msgstr ""
+msgstr "Número máximo de años para ocultar datos no aprobados en analíticas"
 
 msgid "Never check approval"
-msgstr ""
+msgstr "Nunca verifique la aprobación"
 
 msgid "Check approval for all data"
-msgstr ""
+msgstr "Verificar la aprobación de todos los datos"
 
 msgid "Current year only"
-msgstr ""
+msgstr "Solo año actual"
 
 msgid "Last 2 years"
-msgstr ""
+msgstr "Últimos 2 años"
 
 msgid "Last 3 years"
-msgstr ""
+msgstr "Últimos 3 años"
 
 msgid "Last 4 years"
-msgstr ""
+msgstr "Últimos 4 años"
 
 msgid "Last 6 years"
-msgstr ""
+msgstr "Últimos 6 años"
 
 msgid "Last 7 years"
-msgstr ""
+msgstr "Últimos 7 años"
 
 msgid "Last 8 years"
-msgstr ""
+msgstr "Últimos 8 años"
 
 msgid "Last 9 years"
-msgstr ""
+msgstr "Últimos 9 años"
 
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
+"Respetar la fecha inicial y final de la opción de categoría en la "
+"exportación de tablas analíticas"
 
 msgid "Put analytics in maintenance mode"
 msgstr "Poner analíticas en modo de mantenimiento"
 
 msgid "Include zero data values in analytics tables"
-msgstr ""
+msgstr "Incluir valores de datos cero en tablas analíticas"
 
 msgid "Caching factor"
-msgstr ""
+msgstr "Factor de caché"
 
 msgid "Org unit group set in facility map layers"
 msgstr ""
+"Set de grupos de unidades organizativas en las capas del mapa de "
+"establecimientos"
 
 msgid "Org unit level in facility map layers"
 msgstr ""
+"Nivel de unidad organizativa en las capas del mapa de establecimientos"
 
 msgid "Default basemap"
-msgstr ""
+msgstr "Mapa base predeterminado"
 
 msgid "OSM Light (default)"
-msgstr ""
+msgstr "OSM Light (predeterminado)"
 
 msgid "OSM Detailed"
-msgstr ""
+msgstr "OSM Detallado"
 
 msgid "Bing Road"
-msgstr ""
+msgstr "Bing Carretera"
 
 msgid "Bing Dark"
-msgstr ""
+msgstr "Bing Dark"
 
 msgid "Bing Aerial"
-msgstr ""
+msgstr "Bing Aéreo"
 
 msgid "Bing Aerial Labels"
-msgstr ""
+msgstr "Etiquetas aéreas Bing"
 
 msgid "Number of database server CPUs"
 msgstr "Number of database server CPUs"
@@ -602,7 +615,7 @@ msgid "Google Maps API key"
 msgstr "Clave de la API de Google Maps"
 
 msgid "Bing Maps API key"
-msgstr ""
+msgstr "Clave API de Bing Maps"
 
 msgid "Application title"
 msgstr "Titulo de la aplicación"
@@ -626,7 +639,7 @@ msgid "Start page"
 msgstr "Pagina inicial"
 
 msgid "Enable light-weight start page"
-msgstr ""
+msgstr "Habilitar página de inicio ligera"
 
 msgid "Help page link"
 msgstr "Enlace de la página de ayuda"
@@ -668,15 +681,22 @@ msgstr "Logotipo personalizado del menú superior"
 
 msgid "Allow users to switch dashboard items view type"
 msgstr ""
+"Permitir a los usuarios cambiar el tipo de vista de los elementos del "
+"tablero"
 
 msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
+"Permitir a los usuarios abrir elementos del tablero en la aplicación "
+"correspondiente"
 
 msgid "Allow users to show dashboard items interpretations and details"
 msgstr ""
+"Permitir a los usuarios mostrar interpretaciones y detalles de los elementos"
+" del tablero"
 
 msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""
+"Permitir a los usuarios ver los elementos del tablero en pantalla completa"
 
 msgid "Host name"
 msgstr "Nombre de host"
@@ -713,6 +733,8 @@ msgstr "Recuperación de cuentas de usuario"
 
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
+"Bloquear temporalmente la cuenta de usuario después de varios intentos "
+"fallidos de inicio de sesión"
 
 msgid "Allow users to grant own user roles"
 msgstr "Permitir a los usuarios otorgar roles de usuario propio"
@@ -738,19 +760,19 @@ msgid "12 months"
 msgstr "12 meses"
 
 msgid "Enable password expiry alerts"
-msgstr ""
+msgstr "Activar alertas de caducidad de contraseña"
 
 msgid "Minimum characters in password"
-msgstr ""
+msgstr "Caracteres mínimos en la contraseña"
 
 msgid "CORS whitelist"
 msgstr "Lista blanca de CORS"
 
 msgid "reCAPTCHA Site Key"
-msgstr ""
+msgstr "reCAPTCHA Clave del sitio"
 
 msgid "reCAPTCHA Secret Key"
-msgstr ""
+msgstr "reCAPTCHA Clave secreta"
 
 msgid "Coptic"
 msgstr "Copto"
@@ -765,7 +787,7 @@ msgid "Islamic"
 msgstr "Islámica"
 
 msgid "ISO 8601"
-msgstr ""
+msgstr "ISO 8601"
 
 msgid "Julian"
 msgstr "Juliano"
@@ -777,7 +799,22 @@ msgid "Thai"
 msgstr "Tailandés"
 
 msgid "Persian"
+msgstr "Persa"
+
+msgid "Change calendar setting"
+msgstr "Cambiar la configuración del calendario"
+
+msgid ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
 msgstr ""
+"Cambiar la configuración del calendario después de haber ingresado los datos"
+" puede hacer que su sistema quede inutilizado. Si ha introducido datos, se "
+"recomienda altamente que no cambie la configuración del calendario."
+
+msgid "Yes, change calendar"
+msgstr "Sí, cambiar calendario"
 
 msgid "Date format"
 msgstr "Formato de fecha"
@@ -787,7 +824,7 @@ msgstr ""
 "Requerir períodos para coincidir con el tipo de período del set de datos"
 
 msgid "Require data elements to be part of data set"
-msgstr ""
+msgstr "Se requiere que los elementos de datos formen parte del set de datos"
 
 msgid "Require category option combos to match category combo of data element"
 msgstr ""

@@ -1,3 +1,206 @@
+## [29.14.41](https://github.com/dhis2/settings-app/compare/v29.14.40...v29.14.41) (2023-08-01)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ff894d8](https://github.com/dhis2/settings-app/commit/ff894d8247e8838601205f945115d86940e932cc))
+
+## [29.14.40](https://github.com/dhis2/settings-app/compare/v29.14.39...v29.14.40) (2023-07-08)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([92a4589](https://github.com/dhis2/settings-app/commit/92a458954bdb248d1e38f0246ade90654461dd84))
+
+## [29.14.39](https://github.com/dhis2/settings-app/compare/v29.14.38...v29.14.39) (2023-07-06)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([e420a22](https://github.com/dhis2/settings-app/commit/e420a22c1424c845cb63ce9c3cb665e67d5a4d75))
+
+## [29.14.38](https://github.com/dhis2/settings-app/compare/v29.14.37...v29.14.38) (2023-07-05)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0294c37](https://github.com/dhis2/settings-app/commit/0294c37a6d5c4d824a6cb6a752a8410f01147f18))
+
+## [29.14.37](https://github.com/dhis2/settings-app/compare/v29.14.36...v29.14.37) (2023-07-04)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([15fa638](https://github.com/dhis2/settings-app/commit/15fa638a6888d5c71da16870e7de8fbb2c0d3094))
+
+## [29.14.36](https://github.com/dhis2/settings-app/compare/v29.14.35...v29.14.36) (2023-07-02)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([7d40386](https://github.com/dhis2/settings-app/commit/7d403862bf98b5de50b916688687bc213d6f4796))
+
+## [29.14.35](https://github.com/dhis2/settings-app/compare/v29.14.34...v29.14.35) (2023-06-29)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([60c3466](https://github.com/dhis2/settings-app/commit/60c346637d4ca4d338b9ee62179d25bc06672c8c))
+
+## [29.14.34](https://github.com/dhis2/settings-app/compare/v29.14.33...v29.14.34) (2023-06-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f5f7c26](https://github.com/dhis2/settings-app/commit/f5f7c267713633877659f24ff19226d56ba26511))
+
+## [29.14.33](https://github.com/dhis2/settings-app/compare/v29.14.32...v29.14.33) (2023-06-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([965c9ba](https://github.com/dhis2/settings-app/commit/965c9ba32a00eee833a2334be07b0266d394a935))
+
+## [29.14.32](https://github.com/dhis2/settings-app/compare/v29.14.31...v29.14.32) (2023-06-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([b820cb7](https://github.com/dhis2/settings-app/commit/b820cb7d942c7a82530f69b1727fac514bcf165c))
+
+## [29.14.31](https://github.com/dhis2/settings-app/compare/v29.14.30...v29.14.31) (2023-06-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ba525bd](https://github.com/dhis2/settings-app/commit/ba525bd956b926f42f40eda15f89e89a4c61426c))
+
+## [29.14.30](https://github.com/dhis2/settings-app/compare/v29.14.29...v29.14.30) (2023-06-21)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([92e89ba](https://github.com/dhis2/settings-app/commit/92e89ba282f2567f6575ecaa03a2ce16159a6f27))
+
+## [29.14.29](https://github.com/dhis2/settings-app/compare/v29.14.28...v29.14.29) (2023-06-17)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c83fc34](https://github.com/dhis2/settings-app/commit/c83fc3462166061f8d77fd796c0a26257b909794))
+
+## [29.14.28](https://github.com/dhis2/settings-app/compare/v29.14.27...v29.14.28) (2023-06-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([c667708](https://github.com/dhis2/settings-app/commit/c66770892a625de8af4d0faaf21718997173a41a))
+
+## [29.14.27](https://github.com/dhis2/settings-app/compare/v29.14.26...v29.14.27) (2023-06-15)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([77cba2d](https://github.com/dhis2/settings-app/commit/77cba2d3a6ebef64aa94fcbcc39d38223c1249f7))
+
+## [29.14.26](https://github.com/dhis2/settings-app/compare/v29.14.25...v29.14.26) (2023-05-31)
+
+
+### Bug Fixes
+
+* language display ([#1131](https://github.com/dhis2/settings-app/issues/1131)) ([796540d](https://github.com/dhis2/settings-app/commit/796540d3460634613282144c7f876b1170fcc72e))
+
+## [29.14.25](https://github.com/dhis2/settings-app/compare/v29.14.24...v29.14.25) (2023-05-29)
+
+
+### Bug Fixes
+
+* show help text for sender email field ([6d7dd29](https://github.com/dhis2/settings-app/commit/6d7dd2950be56c9896b8918d4aaaf95515618d89))
+
+## [29.14.24](https://github.com/dhis2/settings-app/compare/v29.14.23...v29.14.24) (2023-05-28)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([cdbf2a1](https://github.com/dhis2/settings-app/commit/cdbf2a18f71db1f027c89171a0302af3f5c0d096))
+
+## [29.14.23](https://github.com/dhis2/settings-app/compare/v29.14.22...v29.14.23) (2023-05-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([87638eb](https://github.com/dhis2/settings-app/commit/87638eb3ec5a858b3d34d9e5c5ac8b738507afb3))
+
+## [29.14.22](https://github.com/dhis2/settings-app/compare/v29.14.21...v29.14.22) (2023-05-26)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([61c1174](https://github.com/dhis2/settings-app/commit/61c1174cecd3c7c7d236273a98165d30fb177b86))
+
+## [29.14.21](https://github.com/dhis2/settings-app/compare/v29.14.20...v29.14.21) (2023-05-23)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([f4fd8de](https://github.com/dhis2/settings-app/commit/f4fd8de3858b32a737f53927801a77f0a081dbd5))
+
+## [29.14.20](https://github.com/dhis2/settings-app/compare/v29.14.19...v29.14.20) (2023-03-01)
+
+
+### Bug Fixes
+
+* add warning for calendar update [DHIS2-7422] ([#1120](https://github.com/dhis2/settings-app/issues/1120)) ([7c317d0](https://github.com/dhis2/settings-app/commit/7c317d08ab9182d221fd5451531602e9b925e704))
+
+## [29.14.19](https://github.com/dhis2/settings-app/compare/v29.14.18...v29.14.19) (2023-01-02)
+
+
+### Bug Fixes
+
+* assume field is a default field type if no mapping is found ([#1068](https://github.com/dhis2/settings-app/issues/1068)) ([48ce0bd](https://github.com/dhis2/settings-app/commit/48ce0bd6b1b5b3573ff97b709bda8b515f8eb0f5))
+
+## [29.14.18](https://github.com/dhis2/settings-app/compare/v29.14.17...v29.14.18) (2022-12-14)
+
+
+### Bug Fixes
+
+* ensure i18n is imported before translations [DHIS2-13859] ([#1106](https://github.com/dhis2/settings-app/issues/1106)) ([62adc61](https://github.com/dhis2/settings-app/commit/62adc61e0064bdbdd87acc18f563939b1a53d98a))
+
+## [29.14.17](https://github.com/dhis2/settings-app/compare/v29.14.16...v29.14.17) (2022-12-06)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([215a0ec](https://github.com/dhis2/settings-app/commit/215a0ec604d93fcf22386252a136bdac83b3727e))
+
+## [29.14.16](https://github.com/dhis2/settings-app/compare/v29.14.15...v29.14.16) (2022-11-25)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([df80248](https://github.com/dhis2/settings-app/commit/df80248fa55d9389f7f8a6f6718b64d14f3fe7da))
+
+## [29.14.15](https://github.com/dhis2/settings-app/compare/v29.14.14...v29.14.15) (2022-11-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([0780f9c](https://github.com/dhis2/settings-app/commit/0780f9c24386d7fc90b7ac30111b8c9b796cc46c))
+
+## [29.14.14](https://github.com/dhis2/settings-app/compare/v29.14.13...v29.14.14) (2022-10-27)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([591177a](https://github.com/dhis2/settings-app/commit/591177a2f4a4b8f9da6d72b2c6d3bfcdc151104b))
+
+## [29.14.13](https://github.com/dhis2/settings-app/compare/v29.14.12...v29.14.13) (2022-10-22)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([4d873a5](https://github.com/dhis2/settings-app/commit/4d873a5779da7c889ba6b3a67abecf6b0a44c112))
+
 ## [29.14.12](https://github.com/dhis2/settings-app/compare/v29.14.11...v29.14.12) (2022-09-24)
 
 

@@ -2,14 +2,15 @@
 # Translators:
 # Cherise Beek <cherise.beek@gmail.com>, 2021
 # Rica Zamora Duchateau, 2022
+# Charel van den Elsen, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-14T13:17:46.441Z\n"
+"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Rica Zamora Duchateau, 2022\n"
-"Language-Team: Dutch (https://www.transifex.com/hisp-uio/teams/100509/nl/)\n"
+"Last-Translator: Charel van den Elsen, 2023\n"
+"Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -104,7 +105,7 @@ msgid "Name"
 msgstr "Naam"
 
 msgid "Required"
-msgstr ""
+msgstr "Vereist"
 
 msgid "Client ID"
 msgstr ""
@@ -116,7 +117,7 @@ msgid "Grant Types"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 msgid "Refresh token"
 msgstr ""
@@ -131,7 +132,7 @@ msgid "Redirect URIs"
 msgstr ""
 
 msgid "This field should contain a list of URLs"
-msgstr ""
+msgstr "Dit veld moet een lijst met URL's bevatten"
 
 msgid "Create new OAuth2 Client"
 msgstr ""
@@ -176,7 +177,7 @@ msgid "Failed to delete OAuth2 client"
 msgstr ""
 
 msgid "Settings updated"
-msgstr ""
+msgstr "Instellingen bijgewerkt"
 
 msgid "General"
 msgstr ""
@@ -185,7 +186,7 @@ msgid "General settings"
 msgstr ""
 
 msgid "Analytics"
-msgstr ""
+msgstr "Analyse"
 
 msgid "Analytics settings"
 msgstr ""
@@ -239,16 +240,16 @@ msgid "This field is required"
 msgstr "Dit veld is verplicht."
 
 msgid "This field should be a URL"
-msgstr ""
+msgstr "Dit veld moet een URL zijn"
 
 msgid "This field should be a number"
-msgstr ""
+msgstr "Dit veld moet een getal zijn"
 
 msgid "This field should be a positive number"
-msgstr ""
+msgstr "Dit veld moet een positief getal zijn"
 
 msgid "This field should be an email"
-msgstr ""
+msgstr "Dit veld moet een e-mail zijn"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
@@ -264,7 +265,7 @@ msgid "No settings matched the search term"
 msgstr ""
 
 msgid "Search results"
-msgstr ""
+msgstr "Zoekresultaten"
 
 msgid "Maximum number of analytics records"
 msgstr ""
@@ -378,7 +379,7 @@ msgid "Months this year"
 msgstr "Maanden dit jaar"
 
 msgid "Months last year"
-msgstr ""
+msgstr "Maanden vorig jaar"
 
 msgid "Last 3 months"
 msgstr "Laatste 3 maanden"
@@ -465,13 +466,13 @@ msgid "Financial year relative period start month"
 msgstr ""
 
 msgid "April"
-msgstr ""
+msgstr "april"
 
 msgid "July"
-msgstr ""
+msgstr "Juli"
 
 msgid "October"
-msgstr ""
+msgstr "Oktober"
 
 msgid "Cache strategy"
 msgstr ""
@@ -633,13 +634,13 @@ msgid "Flag"
 msgstr ""
 
 msgid "Interface language"
-msgstr ""
+msgstr "Interfacetaal"
 
 msgid "Database language"
-msgstr ""
+msgstr "Database taal"
 
 msgid "Property to display in analysis modules"
-msgstr ""
+msgstr "Eigenschap om weer te geven in analysemodules"
 
 msgid "Short name"
 msgstr "Korte naam"
@@ -648,10 +649,10 @@ msgid "Default digit group separator to display in analysis modules"
 msgstr ""
 
 msgid "Space"
-msgstr ""
+msgstr "Ruimte"
 
 msgid "Comma"
-msgstr ""
+msgstr "Komma"
 
 msgid "Require authority to add to view object lists"
 msgstr ""
@@ -771,6 +772,18 @@ msgid "Thai"
 msgstr ""
 
 msgid "Persian"
+msgstr ""
+
+msgid "Change calendar setting"
+msgstr ""
+
+msgid ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
+msgstr ""
+
+msgid "Yes, change calendar"
 msgstr ""
 
 msgid "Date format"

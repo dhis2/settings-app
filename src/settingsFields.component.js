@@ -190,6 +190,9 @@ class SettingsFields extends React.Component {
                             (mapping.includeEmpty && mapping.emptyLabel) ||
                             undefined,
                         noOptionsLabel: i18n.t('No options'),
+                        warning:
+                            (mapping.showWarning && mapping.warning) ||
+                            undefined,
                     }),
                 })
 
@@ -325,6 +328,7 @@ class SettingsFields extends React.Component {
                         type: mapping.inputType,
                         min: mapping.minValue,
                         max: mapping.maxValue,
+                        helpText: mapping.helpText,
                     },
                     validators,
                 }

@@ -496,6 +496,7 @@ const settingsKeyMapping = {
     },
     keyEmailSender: {
         label: i18n.t('Email sender'),
+        helpText: i18n.t('The address that outgoing messages are sent from.'),
         validators: ['email'],
     },
     emailTestButton: {
@@ -614,6 +615,15 @@ const settingsKeyMapping = {
             nepali: i18n.t('Nepali'),
             thai: i18n.t('Thai'),
             persian: i18n.t('Persian'),
+        },
+        showWarning: true,
+        warning: {
+            title: i18n.t('Change calendar setting'),
+            body: i18n.t(
+                'Changing your calendar setting after you have entered data can make your system unusable. If you have entered data, it is strongly recommended that you do not change your calendar setting.'
+            ),
+            cancel: i18n.t('Cancel'),
+            proceed: i18n.t('Yes, change calendar'),
         },
     },
     keyDateFormat: {

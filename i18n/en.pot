@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2022-10-05T08:32:39.671Z\n"
-"PO-Revision-Date: 2022-10-05T08:32:39.671Z\n"
+"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"PO-Revision-Date: 2023-02-27T15:56:53.590Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -766,6 +766,21 @@ msgstr "Thai"
 
 msgid "Persian"
 msgstr "Persian"
+
+msgid "Change calendar setting"
+msgstr "Change calendar setting"
+
+msgid ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
+msgstr ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
+
+msgid "Yes, change calendar"
+msgstr "Yes, change calendar"
 
 msgid "Date format"
 msgstr "Date format"
