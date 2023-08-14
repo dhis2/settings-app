@@ -722,8 +722,11 @@ msgstr "6 months"
 msgid "12 months"
 msgstr "12 months"
 
-msgid "Enable password expiry alerts"
-msgstr "Enable password expiry alerts"
+msgid "Send reminders to users before their password expires"
+msgstr "Send reminders to users before their password expires"
+
+msgid "Number of days before password expiry to send reminder (0–28)"
+msgstr "Number of days before password expiry to send reminder (0–28)"
 
 msgid "Minimum characters in password"
 msgstr "Minimum characters in password"
