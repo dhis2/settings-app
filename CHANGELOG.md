@@ -1,3 +1,16 @@
+# [29.15.0](https://github.com/dhis2/settings-app/compare/v29.14.41...v29.15.0) (2023-08-14)
+
+
+### Bug Fixes
+
+* adjust texts and use min/max attr on input instead of js validation ([161b646](https://github.com/dhis2/settings-app/commit/161b6460771375b86b1b2804a1379dc894bf8cd5))
+* implement field-specific validator ([31a9dc0](https://github.com/dhis2/settings-app/commit/31a9dc09cf565d3dc0e977cbcf3f08146cbeda02))
+
+
+### Features
+
+* add credentialsExpiresReminderInDays setting ([d2923bc](https://github.com/dhis2/settings-app/commit/d2923bc8510d05263a6ba9ad7aaad0b93e0a32b1))
+
 ## [29.14.41](https://github.com/dhis2/settings-app/compare/v29.14.40...v29.14.41) (2023-08-01)
 
 
