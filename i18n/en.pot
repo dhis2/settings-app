@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
-"PO-Revision-Date: 2023-02-27T15:56:53.590Z\n"
+"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
+"PO-Revision-Date: 2023-08-24T10:48:48.806Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -35,8 +35,8 @@ msgstr "Error uploading file: {{error}}"
 msgid "Cancel upload"
 msgstr "Cancel upload"
 
-msgid "System default (fallback)"
-msgstr "System default (fallback)"
+msgid "System default ({{language}})"
+msgstr "System default ({{language}})"
 
 msgid "Set the main field value before adding a translation"
 msgstr "Set the main field value before adding a translation"
@@ -680,6 +680,9 @@ msgstr "TLS"
 msgid "Email sender"
 msgstr "Email sender"
 
+msgid "The address that outgoing messages are sent from."
+msgstr "The address that outgoing messages are sent from."
+
 msgid "Send me a test email"
 msgstr "Send me a test email"
 
@@ -725,8 +728,8 @@ msgstr "12 months"
 msgid "Send reminders to users before their password expires"
 msgstr "Send reminders to users before their password expires"
 
-msgid "Number of days before password expiry to send reminder (0–28)"
-msgstr "Number of days before password expiry to send reminder (0–28)"
+msgid "Number of days before password expiry to send reminder (1–28)"
+msgstr "Number of days before password expiry to send reminder (1–28)"
 
 msgid "Minimum characters in password"
 msgstr "Minimum characters in password"
