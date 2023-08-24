@@ -82,12 +82,10 @@ class LocalizedTextEditor extends React.Component {
         super(props, context)
 
         this.state = {
-            locale: settingsStore.state && settingsStore.state.keyUiLocale,
+            locale: SYSTEM_DEFAULT,
             localeName:
                 settingsStore.state &&
-                LocalizedTextEditor.getLocaleName(
-                    settingsStore.state.keyUiLocale
-                ),
+                LocalizedTextEditor.getLocaleName(SYSTEM_DEFAULT),
             settings: null,
             error: false,
         }
