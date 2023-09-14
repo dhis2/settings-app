@@ -1,61 +1,58 @@
 # 
 # Translators:
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
-# Philip Larsen Donnelly, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Ge Joao <gsimango@saudigitus.org>, 2021
+# Yury Rogachev <yury@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Ge Joao <gsimango@saudigitus.org>, 2021\n"
-"Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
+"Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: uz@Latn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Failed to load: {{error}}"
 msgstr ""
 
 msgid "No flag"
-msgstr "Sem bandeira"
+msgstr "Bayroq yoʼq"
 
 msgid "Search settings"
-msgstr "Configurações de pesquisa"
+msgstr "Qidiruv sozlamalari"
 
 msgid "Replace image"
-msgstr "Substituir imagem"
+msgstr "Rasmni almashtirish"
 
 msgid "Preview image"
-msgstr "Visualizar imagem"
+msgstr "Rasmni oldindan koʼzdan kechirish"
 
 msgid "Preview of image"
 msgstr ""
 
 msgid "Upload image"
-msgstr "Carregar Imagem"
+msgstr "Rasmni yuklash"
 
 msgid "Error uploading file: {{error}}"
 msgstr ""
 
 msgid "Cancel upload"
-msgstr "Cancelar upload"
+msgstr "Yuklanishni bekor qilish"
 
 msgid "System default (fallback)"
-msgstr "Padrão do sistema (fallback)"
+msgstr "Standart tizim (qayta tiklanish)"
 
 msgid "Set the main field value before adding a translation"
-msgstr "Defina o valor do campo principal antes de adicionar uma tradução"
+msgstr "Tarjimani qoʼshishdan oldin asosiy maydon qiymatini oʼrnating"
 
 msgid "Could not fetch localized settings"
-msgstr "Não foi possível buscar as configurações localizadas"
+msgstr "Mahalliy sozlamalar olinmadi"
 
 msgid "Select language"
-msgstr "Selecione o idioma"
+msgstr "Tilni tanlang"
 
 msgid "Version created"
 msgstr ""
@@ -67,187 +64,189 @@ msgid "Error fetching settings"
 msgstr ""
 
 msgid "Create new version"
-msgstr "Crie nova versão"
+msgstr "Yangi variantni yarating"
 
 msgid "Best effort"
 msgstr ""
 
 msgid "Atomic"
-msgstr "Atomic"
+msgstr "Аtomik"
 
 msgid "Master version:"
 msgstr ""
 
 msgid "None"
-msgstr "Nenhum"
+msgstr "Йўқ"
 
 msgid "Last sync attempt"
-msgstr "Última tentativa de sincronização"
+msgstr "Oxirgi sinxronizatsiya"
 
 msgid "Failed"
-msgstr "Falhou"
+msgstr "Аmalga oshmadi"
 
 msgid "No versions exist"
-msgstr "Não existem versões"
+msgstr "Hech qanday variant mavjud emas"
 
 msgid "Enable Versioning for metadata sync"
-msgstr "Activar controle de versão para sincronização de metadados"
+msgstr "Sinxronlar uchun metamaʼlumotlar variantini yoqib qoʼying"
 
 msgid "Don't sync metadata if DHIS versions differ"
-msgstr "Não sincronize metadados se as versões do DHIS diferirem"
+msgstr ""
+"DHIS variantlari bir-biridan farq qiladigan boʼlsa, metamaʼlumotlarni "
+"sinxronlashtirmang"
 
 msgid "Metadata Versioning"
-msgstr "Versão de metadados"
+msgstr "MetaMaʼlumotlar variantlarini boshqarish"
 
 msgid "This client ID is already taken"
-msgstr "Este ID do cliente já foi usado"
+msgstr "Ushbu mijoz identifikatori allaqachon olingan"
 
 msgid "Name"
-msgstr "Nome"
+msgstr "Исми"
 
 msgid "Required"
-msgstr "Requerido"
+msgstr "Majburiy"
 
 msgid "Client ID"
-msgstr "ID do cliente"
+msgstr "Klient ID"
 
 msgid "Client Secret"
-msgstr "Segredo do cliente"
+msgstr "Mijoz sirlari"
 
 msgid "Grant Types"
-msgstr "Tipos de Subsídios"
+msgstr "Grant turlari"
 
 msgid "Password"
-msgstr "Senha"
+msgstr "Parol"
 
 msgid "Refresh token"
-msgstr "Actualizar token"
+msgstr "Tokenni yangilash"
 
 msgid "Authorization code"
-msgstr "Código de autorização"
+msgstr "Аvtorizatsiya kodi"
 
 msgid "One URL per line"
-msgstr "Um URL por linha"
+msgstr "Har bir qator uchun bitta URL"
 
 msgid "Redirect URIs"
-msgstr "Redirecionar URIs"
+msgstr "URLlarni qayta yoʼnaltirish"
 
 msgid "This field should contain a list of URLs"
-msgstr "Este campo deve conter uma lista de URLs"
+msgstr "Ushbu maydon URL manzillar roʼyxatini oʼz ichiga olishi kerak"
 
 msgid "Create new OAuth2 Client"
-msgstr "Criar novo cliente OAuth2"
+msgstr "Yangi OAuth2 ni yaratish"
 
 msgid "Edit OAuth2 Client"
-msgstr "Modificar cliente OAuth2"
+msgstr "OAuth2 ni tahrirlash"
 
 msgid "Save"
-msgstr "Salvar"
+msgstr "Saqlash"
 
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Бекор қилиш"
 
 msgid "There are currently no OAuth2 clients registered"
-msgstr "No momento, não há clientes OAuth2 registrados"
+msgstr "Hozirda OAuth2 mijozlari roʼyxatdan oʼtkazilmagan"
 
 msgid "Edit"
-msgstr "Editar"
+msgstr "Tahrirlash"
 
 msgid "Delete"
-msgstr "Suprimir"
+msgstr "Oʼchirib tashlash"
 
 msgid "OAuth2 client saved"
-msgstr "Cliente OAuth2 salvo"
+msgstr "OAuth2 mijoz saqlandi"
 
 msgid "Failed to save OAuth2 client"
-msgstr "Falha ao salvar o cliente OAuth2"
+msgstr "OAuth2 mijoz saqlanishi amalga oshmadi"
 
 msgid "Add OAuth2 client"
 msgstr ""
 
 msgid "Yes"
-msgstr "Sim"
+msgstr "Ҳа"
 
 msgid "No"
-msgstr "Não"
+msgstr "Йўқ"
 
 msgid "OAuth2 client deleted"
-msgstr "Cliente OAuth2 excluído"
+msgstr "OAuth2 mijoz oʼchirildi"
 
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
 msgid "Settings updated"
-msgstr "Configurações actualizadas"
+msgstr "Sozlamalar yangilandi"
 
 msgid "General"
-msgstr "Geral"
+msgstr "Umumiy"
 
 msgid "General settings"
-msgstr "Definições gerais"
+msgstr "Umumiy sozlamalar"
 
 msgid "Analytics"
-msgstr "Google Analytics"
+msgstr "Аnalitika"
 
 msgid "Analytics settings"
-msgstr "Configurações do Analytics"
+msgstr "Аnalitika sozlamalari"
 
 msgid "Server"
-msgstr "Servidor"
+msgstr "Server"
 
 msgid "Server settings"
-msgstr "Configurações do servidor"
+msgstr "Server sozlamalari"
 
 msgid "Appearance"
-msgstr "Aparência"
+msgstr "Tashqi koʼrinish"
 
 msgid "Appearance settings"
-msgstr "Configurações de aparência"
+msgstr "Tashqi koʼrinish sozlamalari"
 
 msgid "Email"
-msgstr "E-mail"
+msgstr "ye-Pochta"
 
 msgid "Email settings"
-msgstr "Configurações de e-mail"
+msgstr "Elektron pochta sozlamalari"
 
 msgid "Access"
-msgstr "Acesso"
+msgstr "Kirish"
 
 msgid "Access settings"
-msgstr "Definições de acesso"
+msgstr "Kirish huquqi sozlamalari"
 
 msgid "Calendar"
-msgstr "Calendário"
+msgstr "Kalendar"
 
 msgid "Calendar settings"
-msgstr "Configuração de calendário"
+msgstr "Taqvim sozlamalari"
 
 msgid "Data Import"
-msgstr "Importação de dados"
+msgstr "Maʼlumotlar importi"
 
 msgid "Data import settings"
-msgstr "Configuração de importação de dados"
+msgstr "Maʼlumotlarni import qilish sozlamalari"
 
 msgid "Synchronization"
-msgstr "Sincronização"
+msgstr "Sinxronizatsiya"
 
 msgid "Synchronization settings"
-msgstr "Configurações de sincronização"
+msgstr "Sinxronizatsiya sozlamalari"
 
 msgid "OAuth2 Clients"
-msgstr "Clientes da OAuth2"
+msgstr "OAuth2 klientlari"
 
 msgid "This field is required"
-msgstr "Este campo é obrigatorio"
+msgstr "Ushbu qator toʼldirilishi shart"
 
 msgid "This field should be a URL"
 msgstr ""
 
 msgid "This field should be a number"
-msgstr "Este campo deve ser um número"
+msgstr "Ushbu maydonda raqam boʼlishi lozim"
 
 msgid "This field should be a positive number"
-msgstr "Este campo deve ser um número positivo"
+msgstr "Ushbu maydonda musbat raqam boʼlishi lozim"
 
 msgid "This field should be an email"
 msgstr ""
@@ -257,73 +256,73 @@ msgid ""
 msgstr ""
 
 msgid "This setting can be overridden by user settings"
-msgstr "Essa configuração pode ser substituída pelas configurações do usuário"
+msgstr "Ushbu parametr foydalanuvchi sozlamalari bilan bekor qilinishi mumkin"
 
 msgid "No options"
 msgstr ""
 
 msgid "No settings matched the search term"
-msgstr "Nenhuma configuração corresponde ao termo de pesquisa"
+msgstr "Qidiruv soʼziga hech qanday axborot topilmadi"
 
 msgid "Search results"
-msgstr "Procurar Resultados"
+msgstr "Qidiruv natijalari"
 
 msgid "Maximum number of analytics records"
-msgstr "Numero máximo de registos de analise"
+msgstr "Аnalitika qaydlarini maksimal soni"
 
 msgid "Unlimited"
-msgstr "Ilimitado"
+msgstr "Limitsiz"
 
 msgid "Maximum number of SQL view records"
-msgstr "Número máximo de registros de visualização SQL"
+msgstr "SQL ni koʼzdan kechirishda maksimal yozuvlar soni"
 
 msgid "Infrastructural indicators"
-msgstr "Indicadores de infraestrutura"
+msgstr "Infratuzilma indikatorlari"
 
 msgid "Infrastructural data elements"
-msgstr "Elementos de Dados de Infra-estrutura"
+msgstr "Infrastrukturaviy maʼlumotlar elementlari"
 
 msgid "Infrastructural period type"
-msgstr "Tipo de período de infra-estrutura"
+msgstr "Infrastrukturaviy davr turi"
 
 msgid "Daily"
-msgstr "Diário"
+msgstr "Кунлик"
 
 msgid "Weekly"
-msgstr "Semanal"
+msgstr "Ҳафталик"
 
 msgid "Monthly"
-msgstr "Mensal"
+msgstr "Ойлик"
 
 msgid "Bi-monthly"
-msgstr "Bimensal"
+msgstr "Жуфт ойлик"
 
 msgid "Quarterly"
-msgstr "Trimestral"
+msgstr "Ҳар квартал"
 
 msgid "Six-monthly"
-msgstr "Semestral"
+msgstr "Yarim yillik"
 
 msgid "Six-monthly April"
-msgstr "Semestral a partir de Abril"
+msgstr "Yarim yillik Аprel"
 
 msgid "Yearly"
-msgstr "Anualmente"
+msgstr "Йиллик"
 
 msgid "Financial-April"
-msgstr "Financeiro-Abril"
+msgstr "Moliyaviy-Аprel"
 
 msgid "Financial-July"
-msgstr "Financeiro-Julho"
+msgstr "Moliyaviy-Iyul"
 
 msgid "Financial-Oct"
-msgstr "Financeiro-Outubro"
+msgstr "Moliyaviy-Oktyabr"
 
 msgid "Feedback recipients"
-msgstr "Comentários dos destinatários"
+msgstr "Qayta aloqa xabarlarini qabul qiluvchilar"
 
 msgid "No message recipients"
-msgstr "Mensagem sem destinatários"
+msgstr "Xabarlarni qabul qiluvchilar yoʼq"
 
 msgid "System update notification recipients"
 msgstr ""
@@ -332,19 +331,19 @@ msgid "No update notification recipients"
 msgstr ""
 
 msgid "Max offline organisation unit levels"
-msgstr "Os níveis máximos de unidades off-line da organização"
+msgstr "Аvtonom tashkiliy boʼlimlar maksimal pogʼonalari soni"
 
 msgid "Data analysis std dev factor"
-msgstr "Factor de desvio padrão de análise dos dados"
+msgstr "Maʼlumotlarni tahlil qilish Standart Ogʼiz omili"
 
 msgid "Phone number area code"
-msgstr "Códico do telefone atendendo a área"
+msgstr "Telefon raqamining mintaqaviy kodi"
 
 msgid "Enable multi-organisation unit forms"
-msgstr "Ativar formas de unidade multi-organizacional"
+msgstr "Multi tashkilotlar uchun shaklni yoqib qoʼyish"
 
 msgid "Acceptance required before approval"
-msgstr "Aceitação necessária antes da aprovação"
+msgstr "Tasdiqlashdan oldin qabul qilish kerak"
 
 msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
@@ -353,213 +352,214 @@ msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
 
 msgid "Default relative period for analysis"
-msgstr "Período relativo padrão para análise"
+msgstr "Tahlil qilish uchun standart bogʼliq davr"
 
 msgid "This week"
-msgstr "Esta semana"
+msgstr "Ушбу ҳафта"
 
 msgid "Last week"
-msgstr "Última semana"
+msgstr "Охирги ҳафта"
 
 msgid "Last 4 weeks"
-msgstr "Últimas quatro semanas"
+msgstr "Охирги 4 ҳафта"
 
 msgid "Last 12 weeks"
-msgstr "Últimas doze semanas"
+msgstr "Охирги 12 ҳафта"
 
 msgid "Last 52 weeks"
-msgstr "Últimas 52 semanas"
+msgstr "Охирги 52 ҳафта"
 
 msgid "This month"
-msgstr "Este mês"
+msgstr "Ушбу ой"
 
 msgid "Last month"
-msgstr "Último mês"
+msgstr "Охирги ой"
 
 msgid "Months this year"
-msgstr "Meses deste ano"
+msgstr "Oylar ushbu yilda"
 
 msgid "Months last year"
-msgstr "Meses do ano passado"
+msgstr "Oʼtgan yildagi oylar"
 
 msgid "Last 3 months"
-msgstr "Últimos três meses"
+msgstr "Охирги 3 ой"
 
 msgid "Last 6 months"
-msgstr "Últimos seis meses"
+msgstr "Oxirgi yarim yillik"
 
 msgid "Last 12 months"
-msgstr "Últimos doze meses"
+msgstr "Охирги 12 ой"
 
 msgid "This bi-month"
-msgstr "Este bi-mês"
+msgstr "Ушбу жуфт ой"
 
 msgid "Last bi-month"
-msgstr "Último bimestre"
+msgstr "Oxirgi juft oy"
 
 msgid "Last 6 bi-months"
-msgstr "Últimos seis bi-meses"
+msgstr "Oxirgi yarim yillik juft oylar"
 
 msgid "This quarter"
-msgstr "Este Trimestre"
+msgstr "Ушбу квартал"
 
 msgid "Last quarter"
-msgstr "Último trimestre"
+msgstr "Охирги квартал"
 
 msgid "Quarters this year"
-msgstr "Trimestres deste ano"
+msgstr "Ushbu yildagi kvartallar"
 
 msgid "Quarters last year"
-msgstr "Trimestres do ano passado"
+msgstr "Oʼtgan yildagi choraklar"
 
 msgid "Last 4 quarters"
-msgstr "Últimos quatro trimestres"
+msgstr "Охирги 4 квартал"
 
 msgid "This six-month"
-msgstr "Estes seis meses"
+msgstr "Ушбу ярим йиллик"
 
 msgid "Last six-month"
-msgstr "Último semestre"
+msgstr "Oxirgi yarim yillik"
 
 msgid "Last 2 six-months"
-msgstr "Dois últimos seis-meses"
+msgstr "Oxirgi 2 ta yarim yillik"
 
 msgid "This year"
-msgstr "Este ano"
+msgstr "Ушбу йил"
 
 msgid "Last year"
-msgstr "Último ano"
+msgstr "Охирги йил"
 
 msgid "Last 5 years"
-msgstr "Últimos cinco anos"
+msgstr "Охирги 5 йил"
 
 msgid "Last 10 years"
-msgstr "Últimos 10 anos"
+msgstr "Oxirgi 10 yil"
 
 msgid "This financial year"
-msgstr "Ano financeiro"
+msgstr "Ушбу молиявий йил"
 
 msgid "Last financial year"
-msgstr "Último ano fiscal"
+msgstr "Охирги молиявий йил"
 
 msgid "Last 5 financial years"
-msgstr "Últimos cinco anos fiscais"
+msgstr "Охирги 5 молиявий йиллар"
 
 msgid "Hide daily periods"
-msgstr "Ocultar períodos diários"
+msgstr "Kundalik davrlarni berkitish"
 
 msgid "Hidden period types in analytics apps"
-msgstr "Tipos de período ocultos em aplicativos de análise"
+msgstr "Аnalitika ilovasilarida davr turlarini berkitish"
 
 msgid "Hide weekly periods"
-msgstr "Ocultar períodos semanais"
+msgstr "Haftalik davrlarni berkitish"
 
 msgid "Hide biweekly periods"
 msgstr ""
 
 msgid "Hide monthly periods"
-msgstr "Ocultar períodos mensais"
+msgstr "Oylik davrlarni berkitish"
 
 msgid "Hide bimonthly periods"
-msgstr "Ocultar períodos bimestrais"
+msgstr "Ikki oylik davrlarni berkitish"
 
 msgid "Financial year relative period start month"
-msgstr "Mês do início do período relativo do exercício"
+msgstr "Moliyaviy yilning nisbiy davri boshlangan oy"
 
 msgid "April"
-msgstr "Abril"
+msgstr "Аprel"
 
 msgid "July"
-msgstr "Julho"
+msgstr "Iyul"
 
 msgid "October"
-msgstr "Outubro"
+msgstr "Oktyabr"
 
 msgid "Cache strategy"
-msgstr "Estratégia de cache"
+msgstr "Keshlash strategiyasi"
 
 msgid "No cache"
-msgstr "Sem cache"
+msgstr "Kesh yoʼq"
 
 msgid "Cache for 15 minutes"
-msgstr "Cache por 15 minutos"
+msgstr "15 daqiqa davomida Keshlash"
 
 msgid "Cache for 30 minutes"
-msgstr "Cache por 30 minutos"
+msgstr "30 daqiqa davomida Keshlash"
 
 msgid "Cache for one hour"
-msgstr "Cache por uma hora"
+msgstr "Bir soat davomida keshlash"
 
 msgid "Cache until 6AM tomorrow"
 msgstr ""
 
 msgid "Cache for two weeks"
-msgstr "Cache por duas semanas"
+msgstr "Ikki haftaga keshlash"
 
 msgid "Cacheability"
-msgstr "capacidade de armazenamento"
+msgstr "Keshlash qobiliyati"
 
 msgid "Public"
-msgstr "Publico"
+msgstr "Ommaviy"
 
 msgid "Private"
-msgstr "Privado"
+msgstr "Xususiy"
 
 msgid "Analytics cache mode"
-msgstr "Modo de cache do Analytics"
+msgstr "Аnalitik Kesh rejimi"
 
 msgid "Progressive"
-msgstr "Progressivo"
+msgstr "Progressiv"
 
 msgid "Fixed"
-msgstr "Fixo"
+msgstr "Rusxsat etilgan"
 
 msgid "Max number of years to hide unapproved data in analytics"
-msgstr "Número máximo de anos para ocultar dados não aprovados nas análises"
+msgstr ""
+"Tasdiqlanmagan maʼlumotlarni analitikadan berkitish uchun maksimal yil"
 
 msgid "Never check approval"
-msgstr "Nunca verifique a aprovação"
+msgstr "Tasdiqlanganlar tekshirilmasin"
 
 msgid "Check approval for all data"
-msgstr "Verifique a aprovação para todos os dados"
+msgstr "barcha maʼlumotlar tasdiqlanganligini tekshirish"
 
 msgid "Current year only"
-msgstr "Apenas no ano atual"
+msgstr "Faqat joriy yil"
 
 msgid "Last 2 years"
-msgstr "Últimos 2 anos"
+msgstr "Oxirgi 2 yil"
 
 msgid "Last 3 years"
-msgstr "Últimos 3 anos"
+msgstr "Oxirgi 3 yil"
 
 msgid "Last 4 years"
-msgstr "Últimos 4 anos"
+msgstr "Oxirgi 4 yil"
 
 msgid "Last 6 years"
-msgstr "Últimos 6 anos"
+msgstr "Oxirgi 6 yil"
 
 msgid "Last 7 years"
-msgstr "Últimos 7 anos"
+msgstr "Oxirgi 7 yil"
 
 msgid "Last 8 years"
-msgstr "Últimos 8 anos"
+msgstr "Oxirgi 8 yil"
 
 msgid "Last 9 years"
-msgstr "Últimos 9 anos"
+msgstr "Oxirgi 9 yil"
 
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
-"Respeite a data de início e término da opção de categoria na exportação da "
-"tabela de análise"
+"Аnalitik jadval eksportida kategoriya variantining boshlanish va tugash "
+"sanasiga eʼtibor qiling"
 
 msgid "Put analytics in maintenance mode"
-msgstr "Coloque a análise no modo de manutenção"
+msgstr "Аnalitikani texnik rejimga oʼtkazing"
 
 msgid "Include zero data values in analytics tables"
 msgstr ""
 
 msgid "Caching factor"
-msgstr "Factor de cache"
+msgstr "Keshlash omili"
 
 msgid "Org unit group set in facility map layers"
 msgstr ""
@@ -574,98 +574,98 @@ msgid "OSM Light (default)"
 msgstr ""
 
 msgid "OSM Detailed"
-msgstr "Detalhado OSM"
+msgstr "OSM Batafsil"
 
 msgid "Bing Road"
-msgstr "Bing Road"
+msgstr "Yoʼl"
 
 msgid "Bing Dark"
-msgstr "Bing Dark"
+msgstr "Toʼq rangli moʼyqalam"
 
 msgid "Bing Aerial"
-msgstr "Bing Aerial"
+msgstr "Gibrid koʼrinish"
 
 msgid "Bing Aerial Labels"
-msgstr "Etiquetas aéreas do Bing"
+msgstr "Belgilar"
 
 msgid "Number of database server CPUs"
-msgstr "Número de CPUs do servidor de base de dados"
+msgstr "Maʼlumotlar bazasi serverida jarayonlar soni"
 
 msgid "Automatic (detect based on web server)"
-msgstr "Automático (detetar baseado no servidor web)"
+msgstr "Аvtomatik (veb-server asosida aniqlash)"
 
 msgid "System notifications email address"
-msgstr "Endereço de e-mail de notificações do sistema"
+msgstr "Tizim xabarnomalari elektron pochta manzili"
 
 msgid "Google Analytics (Universal Analytics) key"
-msgstr "Chave do Google Analytics (Universal Analytics)"
+msgstr "Google tahlilchi (Universal tahlilchi) kaliti"
 
 msgid "Google Maps API key"
-msgstr "Chave da API do Google Maps"
+msgstr "Google xarita ilovasi kalitini qidirish"
 
 msgid "Bing Maps API key"
 msgstr ""
 
 msgid "Application title"
-msgstr "Título da aplicação"
+msgstr "Ilova nomi"
 
 msgid "Application introduction"
-msgstr "Introdução da aplicação"
+msgstr "Ilovaga kirish"
 
 msgid "Application notification"
-msgstr "Notificação da aplicação"
+msgstr "Ilova haqida bildirishnoma"
 
 msgid "Application left-side footer"
-msgstr "Rodapé esquerdo do aplicativo"
+msgstr "Ilovaning chap pastki kolontituli"
 
 msgid "Application right-side footer"
-msgstr "Rodapé direito do aplicativo"
+msgstr "Ilovaning oʼng pastki kolontituli"
 
 msgid "Style"
-msgstr "Estilo"
+msgstr "Услуб"
 
 msgid "Start page"
-msgstr "Página inicial"
+msgstr "Bosh sahifa"
 
 msgid "Enable light-weight start page"
 msgstr ""
 
 msgid "Help page link"
-msgstr "Link da página de ajuda"
+msgstr "Yordamchi sahifaga havola"
 
 msgid "Flag"
-msgstr "Bandeira"
+msgstr "Bayroq"
 
 msgid "Interface language"
-msgstr "Idioma da interface"
+msgstr "Interfeys tili"
 
 msgid "Database language"
-msgstr "Idioma da base de dados"
+msgstr "Maʼlumotlar bazasi tili"
 
 msgid "Property to display in analysis modules"
-msgstr "Propriedade a exibir nos módulos de análise"
+msgstr "Tahlil modullarini namoyish etadigan xususiyat"
 
 msgid "Short name"
-msgstr "Nome curto"
+msgstr "Qisqacha nomi"
 
 msgid "Default digit group separator to display in analysis modules"
-msgstr ""
-"Separador de grupo de dígitos padrão a ser exibido nos módulos de análise"
+msgstr "Аnalitika modulida standart raqamli guruhni koʼrsatish"
 
 msgid "Space"
-msgstr "Espaço"
+msgstr "Oraliq (maydon)"
 
 msgid "Comma"
-msgstr "Vírgula"
+msgstr "Vergul"
 
 msgid "Require authority to add to view object lists"
-msgstr "Exigir autorização para adicionar listas de objetos de exibição"
+msgstr ""
+"Obʼektlar roʼyxatini koʼrishni qoʼshish uchun kirish vakolatini talab qilish"
 
 msgid "Custom login page logo"
-msgstr "Logótipo personalizado da página de início de sessão"
+msgstr "Kirish sahifasida ishlatiladigan logotip"
 
 msgid "Custom top menu logo"
-msgstr "Logótipo personalizado do menu superior"
+msgstr "Yuqori menyuda ishlatiladigan logotip"
 
 msgid "Allow users to switch dashboard items view type"
 msgstr ""
@@ -680,65 +680,65 @@ msgid "Allow users to view dashboard items in fullscreen"
 msgstr ""
 
 msgid "Host name"
-msgstr "Nome do servidor"
+msgstr "Xost nomi"
 
 msgid "Port"
-msgstr "Porta"
+msgstr "Port"
 
 msgid "Username"
-msgstr "Nome de usuário"
+msgstr "Фойдаланувчи исми"
 
 msgid "TLS"
 msgstr "TLS"
 
 msgid "Email sender"
-msgstr "Remetente do email"
+msgstr "Elektron xabar joʼnatuvchisi"
 
 msgid "Send me a test email"
-msgstr "Envie-me um email de teste"
+msgstr "Menga elektron pochta xabarini test sifatida yuboring"
 
 msgid "Self registration account user role"
-msgstr "Role de registo de contas do utilizadores"
+msgstr "Oʼz-oʼzini roʼyxatdan oʼtkazish akkauntining foydalanuvchi roli"
 
 msgid "Disable self registration"
-msgstr "Desativar auto-registro"
+msgstr "Oʼz-oʼzini roʼyxatdan oʼtkazishni oʼchirib qoʼyish"
 
 msgid "Self registration account organisation unit"
-msgstr "Conta de auto-registo unidade organizacional"
+msgstr "Oʼz-oʼzini roʼyxatdan oʼtkazishni tashkil etish boʼlimi"
 
 msgid "Do not require recaptcha for self registration"
-msgstr "Não exigir recaptcha para auto-registo"
+msgstr "Oʼz-oʼzini roʼyxatdan oʼtkazish uchun qayta joʼnatishni talab qilmang"
 
 msgid "Enable user account recovery"
-msgstr "Permitir recuperar conta de utilizador"
+msgstr "Foydalanuvchi akkauntini tiklashni yoqish"
 
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
-"Bloquear temporariamente a conta de usuário após várias tentativas falhas de"
-" acesso"
+"Bir necha bor muvaffaqiyatsiz kirish urinishlari boʼlgandan soʼng, "
+"foydalanuvchi akkauntini vaqtincha bloklang"
 
 msgid "Allow users to grant own user roles"
-msgstr "Permitir que os usuários concedam funções de usuário próprio"
+msgstr "Foydalanuvchilarga oʼz rolini koʼrsatishga ruxsat berish"
 
 msgid "Allow assigning object to related objects during add or update"
 msgstr ""
-"Permitir a atribuição de objetos a objetos relacionados durante a adição ou "
-"atualização"
+"Qoʼshish yoki yangilash paytida tegishli obʼektlarga bogʼliq obʼektni "
+"tayinlashda ruxsat berish"
 
 msgid "Require user account password change"
-msgstr "Exigir alteração na senha da conta de usuário"
+msgstr "Foydalanuvchi akkauntidan parolini almashtirishni talab qilish"
 
 msgid "Never"
-msgstr "Nunca"
+msgstr "Hech qachon"
 
 msgid "3 months"
-msgstr "3 meses "
+msgstr "3 oy"
 
 msgid "6 months"
-msgstr "6 meses "
+msgstr "6 oy"
 
 msgid "12 months"
-msgstr "12 Meses"
+msgstr "12 oy"
 
 msgid "Send reminders to users before their password expires"
 msgstr ""
@@ -747,43 +747,43 @@ msgid "Number of days before password expiry to send reminder (0–28)"
 msgstr ""
 
 msgid "Minimum characters in password"
-msgstr "Caracteres mínimos na senha"
+msgstr "Parolda minimal talablar"
 
 msgid "CORS whitelist"
-msgstr "Lista branca do CORS"
+msgstr "CORS oq roʼyxati"
 
 msgid "reCAPTCHA Site Key"
-msgstr "reCAPTCHA Site Key"
+msgstr "reCAPTCHA Sayt Kaliti"
 
 msgid "reCAPTCHA Secret Key"
-msgstr "reCAPTCHA Secret Key"
+msgstr "reCAPTCHA Maxfiy Kalit"
 
 msgid "Coptic"
-msgstr "Coptic"
+msgstr "Kopt tili"
 
 msgid "Ethiopian"
-msgstr "Ethiopian"
+msgstr "Efiopiya tili"
 
 msgid "Gregorian"
-msgstr "Gregorian"
+msgstr "Grigorian tili"
 
 msgid "Islamic"
-msgstr "Islamico"
+msgstr "Islom"
 
 msgid "ISO 8601"
 msgstr "ISO 8601"
 
 msgid "Julian"
-msgstr "Julian"
+msgstr "Julian tili"
 
 msgid "Nepali"
-msgstr "Nepali"
+msgstr "Nepal tili"
 
 msgid "Thai"
-msgstr "Thai"
+msgstr "Tai tili"
 
 msgid "Persian"
-msgstr "Persian"
+msgstr "Fors tili"
 
 msgid "Change calendar setting"
 msgstr ""
@@ -798,41 +798,43 @@ msgid "Yes, change calendar"
 msgstr ""
 
 msgid "Date format"
-msgstr "Formato da data"
+msgstr "Sana formati"
 
 msgid "Require periods to match period type of data set"
 msgstr ""
-"Exigir que os períodos correspondam ao tipo de período do conjunto de dados"
+"Maʼlumotlar toʼplamining davr turiga mos keladigan davrlarni talab qilish"
 
 msgid "Require data elements to be part of data set"
-msgstr "Exigir que elementos de dados façam parte do conjunto de dados"
+msgstr ""
+"Maʼlumotlar elementlarini maʼlumotlar toʼplamining bir qismi boʼlishini "
+"talab qilish"
 
 msgid "Require category option combos to match category combo of data element"
 msgstr ""
-"Exigir combinações de opção de categoria para combinar combinações de "
-"categoria de elemento de dados"
+"Maʼlumotlar elementlarining toifalar kombinatsiyasiga mos keladigan "
+"toifadagi parametrlarni talab qiling"
 
 msgid "Require organisation units to match assignment of data set"
 msgstr ""
-"Exigir que as unidades da organização correspondam à atribuição do conjunto "
-"de dados"
+"Tashkiliy boʼlimlar maʼlumotlar toʼplamining tayinlaniga mos kelishini talab"
+" qiling"
 
 msgid "Require attribute option combos to match category combo of data set"
 msgstr ""
-"Exigir combinações de opções de atributo para corresponder à combinação de "
-"categorias do conjunto de dados"
+"Kategoriya kombinatsiyalari mos kelishi uchun atribut parametrlari "
+"kombinatsiyalarini talab qiling"
 
 msgid "Require category option combo to be specified"
-msgstr "Exigir que a combinação de opções de categoria seja especificada"
+msgstr "Belgilangan toifadagi parametrlarining kombinatsiyasini talab qilish"
 
 msgid "Require attribute option combo to be specified"
-msgstr "Exigir que a combinação da opção de atributo seja especificada"
+msgstr "Belgilangan atributlar parametrlarining kombinatsiyasini talab qilish"
 
 msgid "Remote server URL"
-msgstr "URL do servidor remoto"
+msgstr "Masofaviy server URLi"
 
 msgid "Remote server username"
-msgstr "Nome de usuário do servidor remoto"
+msgstr "Masofaviy server foydaluvchi nomi"
 
 msgid "Remote server password"
-msgstr "Senha do servidor remoto"
+msgstr "Masofaviy server paroli"
