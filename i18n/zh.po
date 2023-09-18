@@ -734,10 +734,10 @@ msgid "12 months"
 msgstr "12个月"
 
 msgid "Send reminders to users before their password expires"
-msgstr ""
+msgstr "在密码过期之前向用户发送提醒"
 
 msgid "Number of days before password expiry to send reminder (0–28)"
-msgstr ""
+msgstr "密码到期前发送提醒的天数 (0–28)"
 
 msgid "Minimum characters in password"
 msgstr "口令最小字符数"
