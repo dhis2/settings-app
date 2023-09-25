@@ -1,3 +1,10 @@
+## [29.15.3](https://github.com/dhis2/settings-app/compare/v29.15.2...v29.15.3) (2023-09-25)
+
+
+### Bug Fixes
+
+* appearance translations [DHIS2-15662] ([#1259](https://github.com/dhis2/settings-app/issues/1259)) ([d3e5cd9](https://github.com/dhis2/settings-app/commit/d3e5cd996a63a4cc680b79d371ba9f98726f9d06))
+
 ## [29.15.2](https://github.com/dhis2/settings-app/compare/v29.15.1...v29.15.2) (2023-09-19)
 
 
