@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2021\n"
 "Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -44,8 +44,8 @@ msgstr ""
 msgid "Cancel upload"
 msgstr "إلغاء التحميل"
 
-msgid "System default (fallback)"
-msgstr "النظام الافتراضي (تراجع)"
+msgid "System default ({{language}})"
+msgstr ""
 
 msgid "Set the main field value before adding a translation"
 msgstr "قم بتعيين قيمة الحقل الرئيسي قبل إضافة الترجمة"
@@ -690,6 +690,9 @@ msgstr "TLS"
 msgid "Email sender"
 msgstr "مرسل البريد الإلكتروني"
 
+msgid "The address that outgoing messages are sent from."
+msgstr ""
+
 msgid "Send me a test email"
 msgstr "أرسل لي رسالة بريد إلكتروني اختبارية"
 
@@ -735,7 +738,7 @@ msgstr "12 شهر"
 msgid "Send reminders to users before their password expires"
 msgstr ""
 
-msgid "Number of days before password expiry to send reminder (0–28)"
+msgid "Number of days before password expiry to send reminder (1–28)"
 msgstr ""
 
 msgid "Minimum characters in password"
