@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
 "Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -42,8 +42,8 @@ msgstr ""
 msgid "Cancel upload"
 msgstr "Yuklanishni bekor qilish"
 
-msgid "System default (fallback)"
-msgstr "Standart tizim (qayta tiklanish)"
+msgid "System default ({{language}})"
+msgstr ""
 
 msgid "Set the main field value before adding a translation"
 msgstr "Tarjimani qoʼshishdan oldin asosiy maydon qiymatini oʼrnating"
@@ -694,6 +694,9 @@ msgstr "TLS"
 msgid "Email sender"
 msgstr "Elektron xabar joʼnatuvchisi"
 
+msgid "The address that outgoing messages are sent from."
+msgstr ""
+
 msgid "Send me a test email"
 msgstr "Menga elektron pochta xabarini test sifatida yuboring"
 
@@ -743,7 +746,7 @@ msgstr "12 oy"
 msgid "Send reminders to users before their password expires"
 msgstr ""
 
-msgid "Number of days before password expiry to send reminder (0–28)"
+msgid "Number of days before password expiry to send reminder (1–28)"
 msgstr ""
 
 msgid "Minimum characters in password"
