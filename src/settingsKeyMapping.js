@@ -689,18 +689,6 @@ const settingsKeyMapping = {
         label: i18n.t('Metadata Versioning'),
         type: 'metadataSettings',
     },
-    /* ============================================================================================================ */
-    /* Category: oAuth2 clients                                                                                     */
-    /* ============================================================================================================ */
-    oauth2clients: {
-        type: 'oauth2clients',
-        searchLabels: [
-            'oauth2_clients',
-            'password',
-            'refresh_token',
-            'authorization_code',
-        ],
-    },
 
     /* ============================================================================================================ */
     // The following keys are present in the demo database but are not managed by dhis-web-maintenance-settings
