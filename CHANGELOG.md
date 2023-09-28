@@ -1,3 +1,10 @@
+## [29.15.5](https://github.com/dhis2/settings-app/compare/v29.15.4...v29.15.5) (2023-09-28)
+
+
+### Bug Fixes
+
+* remove oauth2 config [DHIS2-15326] ([#1269](https://github.com/dhis2/settings-app/issues/1269)) ([e3e7b57](https://github.com/dhis2/settings-app/commit/e3e7b57c35e33dcfe29b0b27754c55e556f465d8))
+
 ## [29.15.4](https://github.com/dhis2/settings-app/compare/v29.15.3...v29.15.4) (2023-09-26)
 
 
