@@ -689,7 +689,37 @@ const settingsKeyMapping = {
         label: i18n.t('Metadata Versioning'),
         type: 'metadataSettings',
     },
-
+    /* ============================================================================================================ */
+    /* Category: Scheduled jobs                                                                                    */
+    /* ============================================================================================================ */
+    jobsRescheduleAfterMinutes: {
+        label: i18n.t(
+            'Number of minutes after which a job is considered stale'
+        ),
+        type: 'textfield',
+        inputType: 'number',
+        minValue: 1,
+        maxValue: 60,
+        validators: ['number'],
+    },
+    jobsCleanupAfterMinutes: {
+        label: i18n.t(
+            'Number of minutes after which a completed one-run job is deleted'
+        ),
+        type: 'textfield',
+        inputType: 'number',
+        minValue: 1,
+        maxValue: 2147483647,
+    },
+    jobsMaxCronDelayHours: {
+        label: i18n.t(
+            'Number of hours a job will trigger after its intended time if job has not yet run'
+        ),
+        type: 'textfield',
+        inputType: 'number',
+        minValue: 1,
+        maxValue: 24,
+    },
     /* ============================================================================================================ */
     // The following keys are present in the demo database but are not managed by dhis-web-maintenance-settings
     //

@@ -56,6 +56,7 @@ class TextFieldComponent extends React.Component {
                     {...other}
                     value={this.state.value}
                     onChange={this.onChange}
+                    error={true}
                 />
                 {helpText && <p style={helpTextStyle}>{helpText}</p>}
             </div>

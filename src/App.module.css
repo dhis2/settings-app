@@ -1,6 +1,7 @@
 .contentWrap {
     display: flex;
     background: var(--colors-grey100);
+    min-height:100vh;
 }
 
 .contentArea {

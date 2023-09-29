@@ -10,6 +10,7 @@ export const categoryOrder = [
     'calendar',
     'import',
     'sync',
+    'scheduledJobs',
 ]
 
 export const categories = {
@@ -159,6 +160,16 @@ export const categories = {
             'keyRemoteInstanceUsername',
             'keyRemoteInstancePassword',
             'keyMetadataDataVersioning',
+        ],
+    },
+    scheduledJobs: {
+        label: i18n.t('Scheduled jobs'),
+        icon: 'schedule',
+        pageLabel: i18n.t('Scheduled jobs'),
+        settings: [
+            'jobsRescheduleAfterMinutes',
+            'jobsCleanupAfterMinutes',
+            'jobsMaxCronDelayHours',
         ],
     },
 }
