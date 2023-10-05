@@ -1,3 +1,10 @@
+## [29.15.7](https://github.com/dhis2/settings-app/compare/v29.15.6...v29.15.7) (2023-10-05)
+
+
+### Bug Fixes
+
+* extend container height [DHIS2-15875] ([#1271](https://github.com/dhis2/settings-app/issues/1271)) ([1aad046](https://github.com/dhis2/settings-app/commit/1aad046156424d286c97c58f5cef9a462d0bf3d5))
+
 ## [29.15.6](https://github.com/dhis2/settings-app/compare/v29.15.5...v29.15.6) (2023-09-30)
 
 
