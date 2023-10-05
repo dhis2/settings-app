@@ -1,6 +1,7 @@
 .contentWrap {
     display: flex;
     background: var(--colors-grey100);
+    min-height: calc(100vh - 48px); /* subtract header bar height */
 }
 
 .contentArea {
