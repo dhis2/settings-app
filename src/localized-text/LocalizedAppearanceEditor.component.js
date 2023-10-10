@@ -11,8 +11,6 @@ import settingsActions from '../settingsActions'
 import settingsKeyMapping from '../settingsKeyMapping'
 import settingsStore from '../settingsStore'
 
-const systemDefaultText = i18n.t('System default (fallback)')
-
 /**
  * To understand why this component works the way it does, some background knowledge is required:
  *
@@ -62,6 +60,13 @@ const LOCALIZED_SETTING_KEYS = [
 
 class LocalizedTextEditor extends React.Component {
     static getLocaleName(code) {
+        if (code === SYSTEM_DEFAULT) {
+            return i18n.t('System default ({{language}})', {
+                language: LocalizedTextEditor.getLocaleName(
+                    settingsStore.state.keyUiLocale
+                ),
+            })
+        }
         return (
             (configOptionStore.state &&
                 configOptionStore
@@ -77,12 +82,10 @@ class LocalizedTextEditor extends React.Component {
         super(props, context)
 
         this.state = {
-            locale: settingsStore.state && settingsStore.state.keyUiLocale,
+            locale: SYSTEM_DEFAULT,
             localeName:
                 settingsStore.state &&
-                LocalizedTextEditor.getLocaleName(
-                    settingsStore.state.keyUiLocale
-                ),
+                LocalizedTextEditor.getLocaleName(SYSTEM_DEFAULT),
             settings: null,
             error: false,
         }
@@ -95,10 +98,8 @@ class LocalizedTextEditor extends React.Component {
         this.getAppearanceSettings()
         this.settingsStoreSubscription = settingsStore.subscribe(() => {
             this.setState({
-                locale: settingsStore.state.keyUiLocale,
-                localeName: LocalizedTextEditor.getLocaleName(
-                    settingsStore.state.keyUiLocale
-                ),
+                locale: SYSTEM_DEFAULT,
+                localeName: LocalizedTextEditor.getLocaleName(SYSTEM_DEFAULT),
             })
         })
     }
@@ -187,7 +188,7 @@ class LocalizedTextEditor extends React.Component {
 
         if (defaultValue) {
             return {
-                helpText: `${systemDefaultText}: ${defaultValue}`,
+                helpText: LocalizedTextEditor.getLocaleName(SYSTEM_DEFAULT),
             }
         }
 
@@ -228,9 +229,9 @@ class LocalizedTextEditor extends React.Component {
             value: this.state.settings[key] || '',
             component: TextField,
             props: {
-                floatingLabelText: `${settingsKeyMapping[key].label} – ${
-                    this.state.localeName || systemDefaultText
-                }`,
+                floatingLabelText: `${
+                    settingsKeyMapping[key].label
+                } – ${LocalizedTextEditor.getLocaleName(this.state.locale)}`,
                 changeEvent: 'onBlur',
                 style: styles.field,
                 multiLine: true,
@@ -246,7 +247,7 @@ class LocalizedTextEditor extends React.Component {
     render() {
         const systemDefaultOption = {
             id: SYSTEM_DEFAULT,
-            displayName: systemDefaultText,
+            displayName: LocalizedTextEditor.getLocaleName(SYSTEM_DEFAULT),
         }
         const optionStoreState = configOptionStore.getState()
         const uiLocales = (optionStoreState && optionStoreState.uiLocales) || []
