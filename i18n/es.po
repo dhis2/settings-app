@@ -3,14 +3,14 @@
 # Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
 # Janeth Cruz, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
 "PO-Revision-Date: 2022-10-15 22:32+0000\n"
 "Last-Translator: Janeth Cruz, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -47,8 +47,8 @@ msgstr "Error al subir el archivo: {{error}}"
 msgid "Cancel upload"
 msgstr "Cancelar la subida"
 
-msgid "System default (fallback)"
-msgstr "Valores del sistema por defecto (fallback)"
+msgid "System default ({{language}})"
+msgstr ""
 
 msgid "Set the main field value before adding a translation"
 msgstr ""
@@ -712,6 +712,9 @@ msgstr "TLS"
 
 msgid "Email sender"
 msgstr "Remitente del correo-e"
+
+msgid "The address that outgoing messages are sent from."
+msgstr ""
 
 msgid "Send me a test email"
 msgstr "Envíame un correo-e de prueba"
