@@ -2,13 +2,13 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2023
 # Nadiia <semchuk@aph.org.ua>, 2023
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # Éva Tamási, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
 "Last-Translator: Éva Tamási, 2023\n"
 "Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -45,8 +45,8 @@ msgstr "Помилка при вивантаженні зображення: {{e
 msgid "Cancel upload"
 msgstr "Скасувати вивантаження"
 
-msgid "System default (fallback)"
-msgstr "Системне значення за замовчуванням (резерв)"
+msgid "System default ({{language}})"
+msgstr ""
 
 msgid "Set the main field value before adding a translation"
 msgstr "Перш ніж додавати переклад, встановіть значення основного поля"
@@ -707,6 +707,9 @@ msgstr "TLS"
 
 msgid "Email sender"
 msgstr "Відправник електронної пошти"
+
+msgid "The address that outgoing messages are sent from."
+msgstr ""
 
 msgid "Send me a test email"
 msgstr "Надіслати мені тестовий електронний лист"

@@ -5,14 +5,14 @@
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
 # tx_e2f_frfr r6 <tx_e2f_frfr_r661@ate2f.com>, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2023
 # Yayra Gomado <ygomado@hispwca.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
 "Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2023\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -49,8 +49,8 @@ msgstr "Erreur lors de l'importation du fichier : {{error}}"
 msgid "Cancel upload"
 msgstr "Annuler le téléchargement"
 
-msgid "System default (fallback)"
-msgstr "Valeur système par défaut (secours)"
+msgid "System default ({{language}})"
+msgstr ""
 
 msgid "Set the main field value before adding a translation"
 msgstr "Définir la valeur du champ principal avant d'ajouter une traduction"
@@ -720,6 +720,9 @@ msgstr "TLS"
 
 msgid "Email sender"
 msgstr "Expéditeur de l’e-mail"
+
+msgid "The address that outgoing messages are sent from."
+msgstr ""
 
 msgid "Send me a test email"
 msgstr "M’envoyer un e-mail de test"
