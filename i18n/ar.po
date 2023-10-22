@@ -1,16 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
 # Hamza Assada <7amza.it@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-30T09:47:23.342Z\n"
+"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
 "PO-Revision-Date: 2022-04-20 10:52+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
-"Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
+"Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,8 +44,8 @@ msgstr ""
 msgid "Cancel upload"
 msgstr "إلغاء التحميل"
 
-msgid "System default (fallback)"
-msgstr "النظام الافتراضي (تراجع)"
+msgid "System default ({{language}})"
+msgstr ""
 
 msgid "Set the main field value before adding a translation"
 msgstr "قم بتعيين قيمة الحقل الرئيسي قبل إضافة الترجمة"
@@ -690,6 +690,9 @@ msgstr "TLS"
 msgid "Email sender"
 msgstr "مرسل البريد الإلكتروني"
 
+msgid "The address that outgoing messages are sent from."
+msgstr ""
+
 msgid "Send me a test email"
 msgstr "أرسل لي رسالة بريد إلكتروني اختبارية"
 
@@ -773,6 +776,18 @@ msgstr "تايلاندي"
 
 msgid "Persian"
 msgstr "فارسي"
+
+msgid "Change calendar setting"
+msgstr ""
+
+msgid ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
+msgstr ""
+
+msgid "Yes, change calendar"
+msgstr ""
 
 msgid "Date format"
 msgstr "صيغة التاريخ"
