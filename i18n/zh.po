@@ -1,6 +1,6 @@
 # 
 # Translators:
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
 # 晓东 林 <13981924470@126.com>, 2023
 # easylin <lin_xd@126.com>, 2023
@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2023\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -45,8 +45,8 @@ msgstr "上传文件时出错：{{error}}"
 msgid "Cancel upload"
 msgstr "取消上传"
 
-msgid "System default (fallback)"
-msgstr "系统缺省（恢复）"
+msgid "System default ({{language}})"
+msgstr "系统默认值 ({{language}})"
 
 msgid "Set the main field value before adding a translation"
 msgstr "添加翻译前设置主要字段值"
@@ -690,6 +690,9 @@ msgstr "TLS"
 
 msgid "Email sender"
 msgstr "邮件发送者"
+
+msgid "The address that outgoing messages are sent from."
+msgstr "发送外发消息的地址。"
 
 msgid "Send me a test email"
 msgstr "发送测试邮件"
