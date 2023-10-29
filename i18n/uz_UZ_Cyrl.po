@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -42,9 +42,8 @@ msgstr "Файлни юклашда хатолик юз берди: {{error}}"
 msgid "Cancel upload"
 msgstr "Юкланишни бекор қилиш"
 
-msgid "System default (fallback)"
+msgid "System default ({{language}})"
 msgstr ""
-"Стандарт тизим (қайта тикланиш)Тизимнинг стандарт қиймати (қайта тикланиш)"
 
 msgid "Set the main field value before adding a translation"
 msgstr "Таржимани қўшишдан олдин асосий майдон қийматини ўрнатинг"
@@ -703,6 +702,9 @@ msgstr "TLS"
 
 msgid "Email sender"
 msgstr "Электрон хабар жўнатувчиси"
+
+msgid "The address that outgoing messages are sent from."
+msgstr ""
 
 msgid "Send me a test email"
 msgstr "Менга электрон почта хабарини тест сифатида юборинг"
