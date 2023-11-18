@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2022
+# Ibatov <ibatovk@who.int>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
 "PO-Revision-Date: 2022-10-15 22:32+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2022\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Failed to load: {{error}}"
-msgstr "Бклаб бўлмади: {{error}}"
+msgstr "Юклаб бўлмади: {{error}}"
 
 msgid "No flag"
 msgstr "Байроқ йўқ"
@@ -43,7 +43,7 @@ msgid "Cancel upload"
 msgstr "Юкланишни бекор қилиш"
 
 msgid "System default ({{language}})"
-msgstr ""
+msgstr "Стандарт тизим ({{language}})"
 
 msgid "Set the main field value before adding a translation"
 msgstr "Таржимани қўшишдан олдин асосий майдон қийматини ўрнатинг"
@@ -327,10 +327,10 @@ msgid "No message recipients"
 msgstr "Хабарларни қабул қилувчилар йўқ"
 
 msgid "System update notification recipients"
-msgstr ""
+msgstr "Тизим янгиланиши ҳақида билдиришнома олувчилар"
 
 msgid "No update notification recipients"
-msgstr ""
+msgstr "Тизим янгиланиши ҳақида билдиришнома олмайдиганлар"
 
 msgid "Max offline organisation unit levels"
 msgstr "Автоном ташкилий бўлимлар максимал поғоналари сони"
@@ -457,7 +457,7 @@ msgid "Hide weekly periods"
 msgstr "Ҳафталик даврларни беркитиш"
 
 msgid "Hide biweekly periods"
-msgstr ""
+msgstr "Икки ҳафталик даврни беркитиш"
 
 msgid "Hide monthly periods"
 msgstr "Ойлик даврларни беркитиш"
@@ -558,22 +558,22 @@ msgid "Put analytics in maintenance mode"
 msgstr "Аналитикани техник режимга ўтказинг"
 
 msgid "Include zero data values in analytics tables"
-msgstr ""
+msgstr "Аналитик жадвалга 0 қийматларни ҳам киритиш"
 
 msgid "Caching factor"
 msgstr "Кешлаш омили"
 
 msgid "Org unit group set in facility map layers"
-msgstr ""
+msgstr "Ташкилот харитаси қатламларида ташкилий бирлик гуруҳи бириктирилади"
 
 msgid "Org unit level in facility map layers"
-msgstr ""
+msgstr "Ташкилот харитаси қатламида ташкилий бирлик даражаси"
 
 msgid "Default basemap"
-msgstr ""
+msgstr "Стандарт базавий харита"
 
 msgid "OSM Light (default)"
-msgstr ""
+msgstr "OSM ёритувчи (стандарт)"
 
 msgid "OSM Detailed"
 msgstr "OSM Батафсил"
@@ -630,7 +630,7 @@ msgid "Start page"
 msgstr "Бош саҳифа"
 
 msgid "Enable light-weight start page"
-msgstr ""
+msgstr "Дастлабки саҳифани ёқинг"
 
 msgid "Help page link"
 msgstr "Ёрдамчи саҳифага ҳавола"
@@ -704,7 +704,7 @@ msgid "Email sender"
 msgstr "Электрон хабар жўнатувчиси"
 
 msgid "The address that outgoing messages are sent from."
-msgstr ""
+msgstr "Чиқувчи хабарлар юборадиган манзиллар."
 
 msgid "Send me a test email"
 msgstr "Менга электрон почта хабарини тест сифатида юборинг"
@@ -795,16 +795,19 @@ msgid "Persian"
 msgstr "Форс тили"
 
 msgid "Change calendar setting"
-msgstr ""
+msgstr "Календарни созламаларини танланг"
 
 msgid ""
 "Changing your calendar setting after you have entered data can make your "
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
+"Маълумотларни киритганингиздан сўнг календар созламаларини ўзгартириш "
+"тизимни яроқсиз ҳолга олиб келиши мумкин. Агар сиз маълумотларни киритган "
+"бўлсангиз, календар созламаларини ўзгартирмаслик тавсия этилади."
 
 msgid "Yes, change calendar"
-msgstr ""
+msgstr "Ҳа, календарни танланг"
 
 msgid "Date format"
 msgstr "Сана формати"
