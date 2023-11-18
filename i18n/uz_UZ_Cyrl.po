@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2021
+# Ibatov <ibatovk@who.int>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Failed to load: {{error}}"
-msgstr "Бклаб бўлмади: {{error}}"
+msgstr "Юклаб бўлмади: {{error}}"
 
 msgid "No flag"
 msgstr "Байроқ йўқ"
@@ -452,7 +452,7 @@ msgid "Hide weekly periods"
 msgstr "Ҳафталик даврларни беркитиш"
 
 msgid "Hide biweekly periods"
-msgstr ""
+msgstr "Икки ҳафталик даврни беркитиш"
 
 msgid "Hide monthly periods"
 msgstr "Ойлик даврларни беркитиш"
@@ -553,16 +553,16 @@ msgid "Put analytics in maintenance mode"
 msgstr "Аналитикани техник режимга ўтказинг"
 
 msgid "Include zero data values in analytics tables"
-msgstr ""
+msgstr "Аналитик жадвалга 0 қийматларни ҳам киритиш"
 
 msgid "Caching factor"
 msgstr "Кешлаш омили"
 
 msgid "Org unit group set in facility map layers"
-msgstr ""
+msgstr "Ташкилот харитаси қатламларида ташкилий бирлик гуруҳи бириктирилади"
 
 msgid "Org unit level in facility map layers"
-msgstr ""
+msgstr "Ташкилот харитаси қатламида ташкилий бирлик даражаси"
 
 msgid "Number of database server CPUs"
 msgstr "Маълумотлар базаси серверида жараёнлар сони"
@@ -604,7 +604,7 @@ msgid "Start page"
 msgstr "Бош саҳифа"
 
 msgid "Enable light-weight start page"
-msgstr ""
+msgstr "Дастлабки саҳифани ёқинг"
 
 msgid "Help page link"
 msgstr "Ёрдамчи саҳифага ҳавола"
@@ -766,16 +766,19 @@ msgid "Persian"
 msgstr "Форс тили"
 
 msgid "Change calendar setting"
-msgstr ""
+msgstr "Календарни созламаларини танланг"
 
 msgid ""
 "Changing your calendar setting after you have entered data can make your "
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
+"Маълумотларни киритганингиздан сўнг календар созламаларини ўзгартириш "
+"тизимни яроқсиз ҳолга олиб келиши мумкин. Агар сиз маълумотларни киритган "
+"бўлсангиз, календар созламаларини ўзгартирмаслик тавсия этилади."
 
 msgid "Yes, change calendar"
-msgstr ""
+msgstr "Ҳа, календарни танланг"
 
 msgid "Date format"
 msgstr "Сана формати"
