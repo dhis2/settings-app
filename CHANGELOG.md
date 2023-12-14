@@ -1,3 +1,10 @@
+## [29.15.9](https://github.com/dhis2/settings-app/compare/v29.15.8...v29.15.9) (2023-12-14)
+
+
+### Bug Fixes
+
+* update info icons ([#1290](https://github.com/dhis2/settings-app/issues/1290)) ([6448044](https://github.com/dhis2/settings-app/commit/644804410da37e6d6f3ee577e3a7ca83c5a5f959))
+
 ## [29.15.8](https://github.com/dhis2/settings-app/compare/v29.15.7...v29.15.8) (2023-11-19)
 
 
