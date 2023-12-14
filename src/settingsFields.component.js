@@ -1,8 +1,14 @@
 import i18n from '@dhis2/d2-i18n'
-import { Button, Card, CenteredContent, CircularLoader } from '@dhis2/ui'
+import {
+    Button,
+    Card,
+    CenteredContent,
+    CircularLoader,
+    IconInfo24,
+    Tooltip,
+} from '@dhis2/ui'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component'
 import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators'
-import IconButton from 'material-ui/IconButton'
 import PropTypes from 'prop-types'
 import React from 'react'
 import configOptionStore from './configOptionStore'
@@ -36,7 +42,7 @@ const styles = {
         color: AppTheme.rawTheme.palette.primary1Color,
         position: 'absolute',
         right: 0,
-        top: 24,
+        top: 36,
     },
     menuIcon: {
         color: '#757575',
@@ -85,24 +91,12 @@ function wrapUserSettingsOverride({ component, valueLabel }) {
                 : i18n.t('This setting can be overridden by user settings')
 
             return (
-                <div style={{ marginRight: 48 }}>
+                <div style={{ marginRight: 36 }}>
                     {super.render()}
                     <div style={labelStyle}>
-                        <IconButton
-                            iconClassName="material-icons"
-                            tooltip={labelText}
-                            tooltipPosition="bottom-left"
-                            iconStyle={{
-                                color: AppTheme.rawTheme.palette.primary1Color,
-                            }}
-                            tooltipStyles={{
-                                fontSize: '.75rem',
-                                marginRight: 32,
-                                marginTop: -32,
-                            }}
-                        >
-                            info_outline
-                        </IconButton>
+                        <Tooltip content={labelText}>
+                            <IconInfo24 />
+                        </Tooltip>
                     </div>
                 </div>
             )
