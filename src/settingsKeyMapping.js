@@ -585,7 +585,7 @@ const settingsKeyMapping = {
         },
     },
     corsWhitelist: {
-        label: i18n.t('CORS whitelist'),
+        label: i18n.t('CORS allowlist'),
         configuration: true,
         multiLine: true,
         hintText: i18n.t('One URL per line'),
