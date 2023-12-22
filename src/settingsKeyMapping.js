@@ -694,31 +694,43 @@ const settingsKeyMapping = {
     /* ============================================================================================================ */
     jobsRescheduleAfterMinutes: {
         label: i18n.t(
-            'Number of minutes after which a job is considered stale'
+            'Number of minutes after which a job is considered stale (1-60)'
         ),
         type: 'textfield',
         inputType: 'number',
         minValue: 1,
         maxValue: 60,
-        validators: ['number'],
+        validators: ['positive_number'],
     },
     jobsCleanupAfterMinutes: {
         label: i18n.t(
-            'Number of minutes after which a completed one-run job is deleted'
+            'Number of minutes after which a completed one-run job is deleted (1+)'
         ),
         type: 'textfield',
         inputType: 'number',
         minValue: 1,
         maxValue: 2147483647,
+        validators: ['positive_number'],
     },
     jobsMaxCronDelayHours: {
         label: i18n.t(
-            'Number of hours a job will trigger after its intended time if job has not yet run'
+            'Number of hours a job will trigger after its intended time if job has not yet run (1-24)'
         ),
         type: 'textfield',
         inputType: 'number',
         minValue: 1,
         maxValue: 24,
+        validators: ['positive_number'],
+    },
+    jobsLogDebugBelowSeconds: {
+        label: i18n.t(
+            'Job execution interval (seconds) below which a job will be logged at debug (rather than info) level (20+)'
+        ),
+        type: 'textfield',
+        inputType: 'number',
+        minValue: 20,
+        maxValue: 2147483647,
+        validators: ['positive_number'],
     },
     /* ============================================================================================================ */
     // The following keys are present in the demo database but are not managed by dhis-web-maintenance-settings

@@ -170,6 +170,7 @@ export const categories = {
             'jobsRescheduleAfterMinutes',
             'jobsCleanupAfterMinutes',
             'jobsMaxCronDelayHours',
+            'jobsLogDebugBelowSeconds',
         ],
     },
 }
