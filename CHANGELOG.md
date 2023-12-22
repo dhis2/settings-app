@@ -1,3 +1,31 @@
+## [29.15.9](https://github.com/dhis2/settings-app/compare/v29.15.8...v29.15.9) (2023-12-14)
+
+
+### Bug Fixes
+
+* update info icons ([#1290](https://github.com/dhis2/settings-app/issues/1290)) ([6448044](https://github.com/dhis2/settings-app/commit/644804410da37e6d6f3ee577e3a7ca83c5a5f959))
+
+## [29.15.8](https://github.com/dhis2/settings-app/compare/v29.15.7...v29.15.8) (2023-11-19)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([1e5fe5f](https://github.com/dhis2/settings-app/commit/1e5fe5f1b14a2f6b8eef3c5c579c28c683f98409))
+
+## [29.15.7](https://github.com/dhis2/settings-app/compare/v29.15.6...v29.15.7) (2023-10-05)
+
+
+### Bug Fixes
+
+* extend container height [DHIS2-15875] ([#1271](https://github.com/dhis2/settings-app/issues/1271)) ([1aad046](https://github.com/dhis2/settings-app/commit/1aad046156424d286c97c58f5cef9a462d0bf3d5))
+
+## [29.15.6](https://github.com/dhis2/settings-app/compare/v29.15.5...v29.15.6) (2023-09-30)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([8a4339a](https://github.com/dhis2/settings-app/commit/8a4339ae6127154453967f3b2f1af4efe3e45cdf))
+
 ## [29.15.5](https://github.com/dhis2/settings-app/compare/v29.15.4...v29.15.5) (2023-09-28)
 
 

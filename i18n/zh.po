@@ -46,7 +46,7 @@ msgid "Cancel upload"
 msgstr "取消上传"
 
 msgid "System default ({{language}})"
-msgstr ""
+msgstr "系统默认值 ({{language}})"
 
 msgid "Set the main field value before adding a translation"
 msgstr "添加翻译前设置主要字段值"
@@ -692,7 +692,7 @@ msgid "Email sender"
 msgstr "邮件发送者"
 
 msgid "The address that outgoing messages are sent from."
-msgstr ""
+msgstr "发送外发消息的地址。"
 
 msgid "Send me a test email"
 msgstr "发送测试邮件"
@@ -740,7 +740,7 @@ msgid "Send reminders to users before their password expires"
 msgstr "在密码过期之前向用户发送提醒"
 
 msgid "Number of days before password expiry to send reminder (1–28)"
-msgstr ""
+msgstr "密码到期前发送提醒的天数 (1–28)"
 
 msgid "Minimum characters in password"
 msgstr "口令最小字符数"
