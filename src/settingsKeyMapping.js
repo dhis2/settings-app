@@ -694,7 +694,7 @@ const settingsKeyMapping = {
     /* ============================================================================================================ */
     jobsRescheduleAfterMinutes: {
         label: i18n.t(
-            'Number of minutes after which a job is considered stale (1-60)'
+            'Number of minutes after which a stale job is reset to scheduled state (1-60)'
         ),
         type: 'textfield',
         inputType: 'number',
@@ -704,7 +704,7 @@ const settingsKeyMapping = {
     },
     jobsCleanupAfterMinutes: {
         label: i18n.t(
-            'Number of minutes after which a completed one-run job is deleted (1+)'
+            'Number of minutes after which a completed ad-hoc job is deleted (1+)'
         ),
         type: 'textfield',
         inputType: 'number',
@@ -714,7 +714,7 @@ const settingsKeyMapping = {
     },
     jobsMaxCronDelayHours: {
         label: i18n.t(
-            'Number of hours a job will trigger after its intended time if job has not yet run (1-24)'
+            'Maximum number of hours a job may trigger after its intended time if job has not yet run (1-24)'
         ),
         type: 'textfield',
         inputType: 'number',
