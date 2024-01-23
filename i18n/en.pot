@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
-"PO-Revision-Date: 2023-08-24T10:48:48.806Z\n"
+"POT-Creation-Date: 2024-01-19T12:30:16.705Z\n"
+"PO-Revision-Date: 2024-01-19T12:30:16.705Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -89,84 +89,6 @@ msgstr "Don't sync metadata if DHIS versions differ"
 msgid "Metadata Versioning"
 msgstr "Metadata Versioning"
 
-msgid "This client ID is already taken"
-msgstr "This client ID is already taken"
-
-msgid "Name"
-msgstr "Name"
-
-msgid "Required"
-msgstr "Required"
-
-msgid "Client ID"
-msgstr "Client ID"
-
-msgid "Client Secret"
-msgstr "Client Secret"
-
-msgid "Grant Types"
-msgstr "Grant Types"
-
-msgid "Password"
-msgstr "Password"
-
-msgid "Refresh token"
-msgstr "Refresh token"
-
-msgid "Authorization code"
-msgstr "Authorization code"
-
-msgid "One URL per line"
-msgstr "One URL per line"
-
-msgid "Redirect URIs"
-msgstr "Redirect URIs"
-
-msgid "This field should contain a list of URLs"
-msgstr "This field should contain a list of URLs"
-
-msgid "Create new OAuth2 Client"
-msgstr "Create new OAuth2 Client"
-
-msgid "Edit OAuth2 Client"
-msgstr "Edit OAuth2 Client"
-
-msgid "Save"
-msgstr "Save"
-
-msgid "Cancel"
-msgstr "Cancel"
-
-msgid "There are currently no OAuth2 clients registered"
-msgstr "There are currently no OAuth2 clients registered"
-
-msgid "Edit"
-msgstr "Edit"
-
-msgid "Delete"
-msgstr "Delete"
-
-msgid "OAuth2 client saved"
-msgstr "OAuth2 client saved"
-
-msgid "Failed to save OAuth2 client"
-msgstr "Failed to save OAuth2 client"
-
-msgid "Add OAuth2 client"
-msgstr "Add OAuth2 client"
-
-msgid "Yes"
-msgstr "Yes"
-
-msgid "No"
-msgstr "No"
-
-msgid "OAuth2 client deleted"
-msgstr "OAuth2 client deleted"
-
-msgid "Failed to delete OAuth2 client"
-msgstr "Failed to delete OAuth2 client"
-
 msgid "Settings updated"
 msgstr "Settings updated"
 
@@ -224,14 +146,17 @@ msgstr "Synchronization"
 msgid "Synchronization settings"
 msgstr "Synchronization settings"
 
-msgid "OAuth2 Clients"
-msgstr "OAuth2 Clients"
+msgid "Scheduled jobs"
+msgstr "Scheduled jobs"
 
 msgid "This field is required"
 msgstr "This field is required"
 
 msgid "This field should be a URL"
 msgstr "This field should be a URL"
+
+msgid "This field should contain a list of URLs"
+msgstr "This field should contain a list of URLs"
 
 msgid "This field should be a number"
 msgstr "This field should be a number"
@@ -632,6 +557,9 @@ msgstr "Database language"
 msgid "Property to display in analysis modules"
 msgstr "Property to display in analysis modules"
 
+msgid "Name"
+msgstr "Name"
+
 msgid "Short name"
 msgstr "Short name"
 
@@ -673,6 +601,9 @@ msgstr "Port"
 
 msgid "Username"
 msgstr "Username"
+
+msgid "Password"
+msgstr "Password"
 
 msgid "TLS"
 msgstr "TLS"
@@ -737,6 +668,9 @@ msgstr "Minimum characters in password"
 msgid "CORS whitelist"
 msgstr "CORS whitelist"
 
+msgid "One URL per line"
+msgstr "One URL per line"
+
 msgid "reCAPTCHA Site Key"
 msgstr "reCAPTCHA Site Key"
 
@@ -782,6 +716,9 @@ msgstr ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 
+msgid "Cancel"
+msgstr "Cancel"
+
 msgid "Yes, change calendar"
 msgstr "Yes, change calendar"
 
@@ -817,3 +754,23 @@ msgstr "Remote server username"
 
 msgid "Remote server password"
 msgstr "Remote server password"
+
+msgid "Number of minutes after which a stale job is reset to scheduled state (1-60)"
+msgstr "Number of minutes after which a stale job is reset to scheduled state (1-60)"
+
+msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+msgstr "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+
+msgid ""
+"Maximum number of hours a job may trigger after its intended time if job "
+"has not yet run (1-24)"
+msgstr ""
+"Maximum number of hours a job may trigger after its intended time if job "
+"has not yet run (1-24)"
+
+msgid ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
+msgstr ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
