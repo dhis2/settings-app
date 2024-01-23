@@ -1,3 +1,10 @@
+# [29.16.0](https://github.com/dhis2/settings-app/compare/v29.15.9...v29.16.0) (2024-01-23)
+
+
+### Features
+
+* add in scheduling settings to settings app [DHIS2-15765] ([#1295](https://github.com/dhis2/settings-app/issues/1295)) ([ba6f2a1](https://github.com/dhis2/settings-app/commit/ba6f2a17c364b16c967a9f548ed718163179b58b))
+
 ## [29.15.9](https://github.com/dhis2/settings-app/compare/v29.15.8...v29.15.9) (2023-12-14)
 
 
