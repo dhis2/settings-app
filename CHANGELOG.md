@@ -1,3 +1,10 @@
+## [29.16.1](https://github.com/dhis2/settings-app/compare/v29.16.0...v29.16.1) (2024-01-24)
+
+
+### Bug Fixes
+
+* remove keyAnalyticsMaintenanceMode [DHIS2-16534] ([#1296](https://github.com/dhis2/settings-app/issues/1296)) ([d9fdbc8](https://github.com/dhis2/settings-app/commit/d9fdbc8a502c0636353df368f26ebb9459e32e00))
+
 # [29.16.0](https://github.com/dhis2/settings-app/compare/v29.15.9...v29.16.0) (2024-01-23)
 
 
