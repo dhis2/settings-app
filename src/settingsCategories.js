@@ -55,7 +55,6 @@ export const categories = {
             'keyAnalyticsCacheProgressiveTtlFactor',
             'keyIgnoreAnalyticsApprovalYearThreshold',
             'keyRespectMetaDataStartEndDatesInAnalyticsTableExport',
-            'keyAnalyticsMaintenanceMode',
             'keyIncludeZeroValuesInAnalytics',
             'keyDashboardContextMenuItemSwitchViewType',
             'keyDashboardContextMenuItemOpenInRelevantApp',
