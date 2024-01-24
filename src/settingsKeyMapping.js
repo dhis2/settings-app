@@ -248,10 +248,6 @@ const settingsKeyMapping = {
         ),
         type: 'checkbox',
     },
-    keyAnalyticsMaintenanceMode: {
-        label: i18n.t('Put analytics in maintenance mode'),
-        type: 'checkbox',
-    },
     keyIncludeZeroValuesInAnalytics: {
         label: i18n.t('Include zero data values in analytics tables'),
         type: 'checkbox',
