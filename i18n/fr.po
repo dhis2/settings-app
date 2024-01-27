@@ -1,21 +1,21 @@
 # 
 # Translators:
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
-# Philip Larsen Donnelly, 2021
 # Edem Kossi <ekossi@hispwca.org>, 2021
+# Philip Larsen Donnelly, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Bram Piot <bram.piot@gmail.com>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2021
 # tx_e2f_frfr r6 <tx_e2f_frfr_r661@ate2f.com>, 2021
 # tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
+# Sakibou ALASSANI <sakibou.alass@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
+"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022\n"
+"Last-Translator: Sakibou ALASSANI <sakibou.alass@gmail.com>, 2024\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -105,84 +105,6 @@ msgstr "Ne pas synchroniser les métadonnées si les versions DHIS diffèrent"
 msgid "Metadata Versioning"
 msgstr "Gestion des versions des métadonnées"
 
-msgid "This client ID is already taken"
-msgstr "Cet identifiant client est déjà pris"
-
-msgid "Name"
-msgstr "Nom"
-
-msgid "Required"
-msgstr "Obligatoire"
-
-msgid "Client ID"
-msgstr "Identifiant du client"
-
-msgid "Client Secret"
-msgstr "Secret du client"
-
-msgid "Grant Types"
-msgstr "Types de permissions"
-
-msgid "Password"
-msgstr "Mot de passe"
-
-msgid "Refresh token"
-msgstr "Actualiser le Token"
-
-msgid "Authorization code"
-msgstr "Code d'autorisation"
-
-msgid "One URL per line"
-msgstr "Une URL par ligne"
-
-msgid "Redirect URIs"
-msgstr "URL de redirection"
-
-msgid "This field should contain a list of URLs"
-msgstr "Ce champ doit contenir une liste d'URL"
-
-msgid "Create new OAuth2 Client"
-msgstr "Créer un nouveau client OAuth2"
-
-msgid "Edit OAuth2 Client"
-msgstr "Modifier le client OAuth2"
-
-msgid "Save"
-msgstr "Enregistrer"
-
-msgid "Cancel"
-msgstr "Annuler"
-
-msgid "There are currently no OAuth2 clients registered"
-msgstr "Il n'y a actuellement aucun client OAuth2 enregistré"
-
-msgid "Edit"
-msgstr "Modifier"
-
-msgid "Delete"
-msgstr "Supprimer"
-
-msgid "OAuth2 client saved"
-msgstr "Client OAuth2 enregistré"
-
-msgid "Failed to save OAuth2 client"
-msgstr "Échec de l'enregistrement du client OAuth2"
-
-msgid "Add OAuth2 client"
-msgstr "Ajouter un client OAuth2"
-
-msgid "Yes"
-msgstr "Oui"
-
-msgid "No"
-msgstr "Non"
-
-msgid "OAuth2 client deleted"
-msgstr "Client OAuth2 supprimé"
-
-msgid "Failed to delete OAuth2 client"
-msgstr "Échec de la suppression du client OAuth2"
-
 msgid "Settings updated"
 msgstr "Paramètres mis à jour"
 
@@ -240,14 +162,17 @@ msgstr "Synchronisation"
 msgid "Synchronization settings"
 msgstr "Synchronisation"
 
-msgid "OAuth2 Clients"
-msgstr "Clients OAuth2"
+msgid "Scheduled jobs"
+msgstr "Tâches planifiées"
 
 msgid "This field is required"
 msgstr "Ce champs est requis"
 
 msgid "This field should be a URL"
 msgstr "Ce champ doit être une URL"
+
+msgid "This field should contain a list of URLs"
+msgstr "Ce champ doit contenir une liste d'URL"
 
 msgid "This field should be a number"
 msgstr "Ce champ doit être un nombre"
@@ -566,9 +491,6 @@ msgstr ""
 "Respecter les dates de début et de fin de l'option de catégorie dans "
 "l'exportation de tables analytiques"
 
-msgid "Put analytics in maintenance mode"
-msgstr "Placer les analyses en mode de maintenance"
-
 msgid "Include zero data values in analytics tables"
 msgstr "Inclure des valeurs de données nulles dans les tableaux analytiques"
 
@@ -663,6 +585,9 @@ msgstr "Langue de la base de données"
 msgid "Property to display in analysis modules"
 msgstr "Propriété à afficher dans les modules analytiques"
 
+msgid "Name"
+msgstr "Nom"
+
 msgid "Short name"
 msgstr "Nom court"
 
@@ -715,6 +640,9 @@ msgstr "Port"
 
 msgid "Username"
 msgstr "Nom d'utilisateur"
+
+msgid "Password"
+msgstr "Mot de passe"
 
 msgid "TLS"
 msgstr "TLS"
@@ -783,6 +711,9 @@ msgstr "Nombre min. de caractères dans un mot de passe"
 msgid "CORS whitelist"
 msgstr "Liste verte CORS"
 
+msgid "One URL per line"
+msgstr "Une URL par ligne"
+
 msgid "reCAPTCHA Site Key"
 msgstr "Clé du site reCAPTCHA"
 
@@ -824,6 +755,9 @@ msgid ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
+
+msgid "Cancel"
+msgstr "Annuler"
 
 msgid "Yes, change calendar"
 msgstr ""
@@ -868,3 +802,20 @@ msgstr "Nom d'utilisateur de serveur distant"
 
 msgid "Remote server password"
 msgstr "Mot de passe de serveur distant"
+
+msgid ""
+"Number of minutes after which a stale job is reset to scheduled state (1-60)"
+msgstr ""
+
+msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+msgstr ""
+
+msgid ""
+"Maximum number of hours a job may trigger after its intended time if job has"
+" not yet run (1-24)"
+msgstr ""
+
+msgid ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
+msgstr ""

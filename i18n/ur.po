@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Urdu (https://app.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -43,7 +43,7 @@ msgstr ""
 msgid "Cancel upload"
 msgstr "اپ لوڈ منسوخ کریں"
 
-msgid "System default (fallback)"
+msgid "System default ({{language}})"
 msgstr ""
 
 msgid "Set the main field value before adding a translation"
@@ -96,84 +96,6 @@ msgstr "DHIS ورژن مختلف ہیں تو میٹا ڈیٹا کو مطابقت
 
 msgid "Metadata Versioning"
 msgstr "میٹا ڈیٹا ڈیٹا بیسنگ"
-
-msgid "This client ID is already taken"
-msgstr "اس کلائنٹ کی شناخت پہلے ہی لی گئی ہے"
-
-msgid "Name"
-msgstr "ÙØ§Ù"
-
-msgid "Required"
-msgstr "لازمی"
-
-msgid "Client ID"
-msgstr "کلائنٹ کی شناخت"
-
-msgid "Client Secret"
-msgstr "کلائنٹ خفیہ"
-
-msgid "Grant Types"
-msgstr "گرانٹ کی اقسام"
-
-msgid "Password"
-msgstr "پاسورڈ"
-
-msgid "Refresh token"
-msgstr "ٹوکن تازہ کریں"
-
-msgid "Authorization code"
-msgstr "اختیار کوڈ"
-
-msgid "One URL per line"
-msgstr "فی یو آر ایل"
-
-msgid "Redirect URIs"
-msgstr "URIs کو ری ڈائریکٹ کریں"
-
-msgid "This field should contain a list of URLs"
-msgstr "اس فیلڈ کو یو آر ایل کی فہرست پر مشتمل ہونا چاہئے"
-
-msgid "Create new OAuth2 Client"
-msgstr "نئے OAuth2 کلائنٹ بنائیں"
-
-msgid "Edit OAuth2 Client"
-msgstr "OAuth2 کلائنٹ میں ترمیم کریں"
-
-msgid "Save"
-msgstr "محفوظ"
-
-msgid "Cancel"
-msgstr "منسوخ"
-
-msgid "There are currently no OAuth2 clients registered"
-msgstr "فی الحال کوئی OAuth2 کلائنٹ نہیں ہیں"
-
-msgid "Edit"
-msgstr "ترمیم"
-
-msgid "Delete"
-msgstr "حذف"
-
-msgid "OAuth2 client saved"
-msgstr "OAuth2 کلائنٹ کو بچایا"
-
-msgid "Failed to save OAuth2 client"
-msgstr "OAuth2 کلائنٹ کو بچانے میں ناکام"
-
-msgid "Add OAuth2 client"
-msgstr ""
-
-msgid "Yes"
-msgstr "Ø¬Û ÛØ§Úº"
-
-msgid "No"
-msgstr "ÙÛÛÚº"
-
-msgid "OAuth2 client deleted"
-msgstr "OAuth2 کلائنٹ کو خارج کر دیا گیا"
-
-msgid "Failed to delete OAuth2 client"
-msgstr ""
 
 msgid "Settings updated"
 msgstr "ØªØ±ØªÛØ¨Ø§Øª Ø§Ù¾ ÚÛÙ¹"
@@ -232,14 +154,17 @@ msgstr "ہم آہنگی"
 msgid "Synchronization settings"
 msgstr "ہم آہنگی کی ترجیحات"
 
-msgid "OAuth2 Clients"
-msgstr "OAuth2 گاہکوں"
+msgid "Scheduled jobs"
+msgstr ""
 
 msgid "This field is required"
 msgstr "اس کو پر کرنا ضروری ہے"
 
 msgid "This field should be a URL"
 msgstr ""
+
+msgid "This field should contain a list of URLs"
+msgstr "اس فیلڈ کو یو آر ایل کی فہرست پر مشتمل ہونا چاہئے"
 
 msgid "This field should be a number"
 msgstr "یہ فیلڈ ایک نمبر ہونا چاہئے"
@@ -552,9 +477,6 @@ msgstr ""
 "تجزیاتی ٹیبل ایکسپورٹ میں دریافت کرنے والے قسم کے اختیارات شروع اور اختتامی "
 "تاریخ"
 
-msgid "Put analytics in maintenance mode"
-msgstr "تجزیہ موڈ میں تجزیات رکھو"
-
 msgid "Include zero data values in analytics tables"
 msgstr ""
 
@@ -645,6 +567,9 @@ msgstr "ÚÛÙ¹Ø§ Ø¨ÛØ³ Ø²Ø¨Ø§Ù"
 msgid "Property to display in analysis modules"
 msgstr "Ø¬Ø§Ø¦ÛØ¯Ø§Ø¯ ØªØ¬Ø²ÛÛ Ù"
 
+msgid "Name"
+msgstr "ÙØ§Ù"
+
 msgid "Short name"
 msgstr "Ù"
 
@@ -687,11 +612,17 @@ msgstr "پورٹ"
 msgid "Username"
 msgstr "ØµØ§Ø±Ù Ú©Ø§ ÙØ§Ù"
 
+msgid "Password"
+msgstr "پاسورڈ"
+
 msgid "TLS"
 msgstr "TLS"
 
 msgid "Email sender"
 msgstr "ای میل بھیجنے والا"
+
+msgid "The address that outgoing messages are sent from."
+msgstr ""
 
 msgid "Send me a test email"
 msgstr "مجھے ایک ای میل بھیجیں"
@@ -741,7 +672,7 @@ msgstr "12 ماہ"
 msgid "Send reminders to users before their password expires"
 msgstr ""
 
-msgid "Number of days before password expiry to send reminder (0–28)"
+msgid "Number of days before password expiry to send reminder (1–28)"
 msgstr ""
 
 msgid "Minimum characters in password"
@@ -749,6 +680,9 @@ msgstr "پاس ورڈ میں کم از کم حروف"
 
 msgid "CORS whitelist"
 msgstr "CORS whitelist"
+
+msgid "One URL per line"
+msgstr "فی یو آر ایل"
 
 msgid "reCAPTCHA Site Key"
 msgstr "reCaptcha سائٹ کلید"
@@ -792,6 +726,9 @@ msgid ""
 "you do not change your calendar setting."
 msgstr ""
 
+msgid "Cancel"
+msgstr "منسوخ"
+
 msgid "Yes, change calendar"
 msgstr ""
 
@@ -829,3 +766,20 @@ msgstr "ریموٹ سرور کا صارف نام"
 
 msgid "Remote server password"
 msgstr "ریموٹ سرور پاس ورڈ"
+
+msgid ""
+"Number of minutes after which a stale job is reset to scheduled state (1-60)"
+msgstr ""
+
+msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+msgstr ""
+
+msgid ""
+"Maximum number of hours a job may trigger after its intended time if job has"
+" not yet run (1-24)"
+msgstr ""
+
+msgid ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
+msgstr ""

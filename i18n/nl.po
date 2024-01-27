@@ -1,13 +1,12 @@
 # 
 # Translators:
-# Cherise Beek <cherise.beek@gmail.com>, 2021
 # Rica Zamora Duchateau, 2022
 # Charel van den Elsen, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Charel van den Elsen, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
@@ -44,7 +43,7 @@ msgstr ""
 msgid "Cancel upload"
 msgstr ""
 
-msgid "System default (fallback)"
+msgid "System default ({{language}})"
 msgstr ""
 
 msgid "Set the main field value before adding a translation"
@@ -96,84 +95,6 @@ msgid "Don't sync metadata if DHIS versions differ"
 msgstr ""
 
 msgid "Metadata Versioning"
-msgstr ""
-
-msgid "This client ID is already taken"
-msgstr ""
-
-msgid "Name"
-msgstr "Naam"
-
-msgid "Required"
-msgstr "Vereist"
-
-msgid "Client ID"
-msgstr ""
-
-msgid "Client Secret"
-msgstr ""
-
-msgid "Grant Types"
-msgstr ""
-
-msgid "Password"
-msgstr "Wachtwoord"
-
-msgid "Refresh token"
-msgstr ""
-
-msgid "Authorization code"
-msgstr ""
-
-msgid "One URL per line"
-msgstr ""
-
-msgid "Redirect URIs"
-msgstr ""
-
-msgid "This field should contain a list of URLs"
-msgstr "Dit veld moet een lijst met URL's bevatten"
-
-msgid "Create new OAuth2 Client"
-msgstr ""
-
-msgid "Edit OAuth2 Client"
-msgstr ""
-
-msgid "Save"
-msgstr "Sla op"
-
-msgid "Cancel"
-msgstr "Annuleer"
-
-msgid "There are currently no OAuth2 clients registered"
-msgstr ""
-
-msgid "Edit"
-msgstr "Bewerk"
-
-msgid "Delete"
-msgstr "Verwijderen"
-
-msgid "OAuth2 client saved"
-msgstr ""
-
-msgid "Failed to save OAuth2 client"
-msgstr ""
-
-msgid "Add OAuth2 client"
-msgstr ""
-
-msgid "Yes"
-msgstr "Ja"
-
-msgid "No"
-msgstr "Nee"
-
-msgid "OAuth2 client deleted"
-msgstr ""
-
-msgid "Failed to delete OAuth2 client"
 msgstr ""
 
 msgid "Settings updated"
@@ -233,7 +154,7 @@ msgstr ""
 msgid "Synchronization settings"
 msgstr ""
 
-msgid "OAuth2 Clients"
+msgid "Scheduled jobs"
 msgstr ""
 
 msgid "This field is required"
@@ -241,6 +162,9 @@ msgstr "Dit veld is verplicht."
 
 msgid "This field should be a URL"
 msgstr "Dit veld moet een URL zijn"
+
+msgid "This field should contain a list of URLs"
+msgstr "Dit veld moet een lijst met URL's bevatten"
 
 msgid "This field should be a number"
 msgstr "Dit veld moet een getal zijn"
@@ -549,9 +473,6 @@ msgstr ""
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
-msgid "Put analytics in maintenance mode"
-msgstr ""
-
 msgid "Include zero data values in analytics tables"
 msgstr ""
 
@@ -642,6 +563,9 @@ msgstr "Database taal"
 msgid "Property to display in analysis modules"
 msgstr "Eigenschap om weer te geven in analysemodules"
 
+msgid "Name"
+msgstr "Naam"
+
 msgid "Short name"
 msgstr "Korte naam"
 
@@ -684,10 +608,16 @@ msgstr ""
 msgid "Username"
 msgstr "Gebruikersnaam"
 
+msgid "Password"
+msgstr "Wachtwoord"
+
 msgid "TLS"
 msgstr ""
 
 msgid "Email sender"
+msgstr ""
+
+msgid "The address that outgoing messages are sent from."
 msgstr ""
 
 msgid "Send me a test email"
@@ -732,13 +662,19 @@ msgstr ""
 msgid "12 months"
 msgstr ""
 
-msgid "Enable password expiry alerts"
+msgid "Send reminders to users before their password expires"
+msgstr ""
+
+msgid "Number of days before password expiry to send reminder (1–28)"
 msgstr ""
 
 msgid "Minimum characters in password"
 msgstr ""
 
 msgid "CORS whitelist"
+msgstr ""
+
+msgid "One URL per line"
 msgstr ""
 
 msgid "reCAPTCHA Site Key"
@@ -783,6 +719,9 @@ msgid ""
 "you do not change your calendar setting."
 msgstr ""
 
+msgid "Cancel"
+msgstr "Annuleer"
+
 msgid "Yes, change calendar"
 msgstr ""
 
@@ -817,4 +756,21 @@ msgid "Remote server username"
 msgstr ""
 
 msgid "Remote server password"
+msgstr ""
+
+msgid ""
+"Number of minutes after which a stale job is reset to scheduled state (1-60)"
+msgstr ""
+
+msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+msgstr ""
+
+msgid ""
+"Maximum number of hours a job may trigger after its intended time if job has"
+" not yet run (1-24)"
+msgstr ""
+
+msgid ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
 msgstr ""

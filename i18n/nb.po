@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2022
 # Thomas Zemp, 2022
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
+"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Thomas Zemp, 2022\n"
+"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2024\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -98,84 +98,6 @@ msgstr "Ikke synkroniser metadata hvis DHIS-versjoner er forskjellige"
 msgid "Metadata Versioning"
 msgstr "Metadataversjon"
 
-msgid "This client ID is already taken"
-msgstr "Denne Klient ID-en er allerede tatt"
-
-msgid "Name"
-msgstr "Navn"
-
-msgid "Required"
-msgstr "Påkrevd"
-
-msgid "Client ID"
-msgstr "Klient ID"
-
-msgid "Client Secret"
-msgstr "Privatklient"
-
-msgid "Grant Types"
-msgstr "Tilskuddstyper"
-
-msgid "Password"
-msgstr "Passord"
-
-msgid "Refresh token"
-msgstr "Oppdater symbol"
-
-msgid "Authorization code"
-msgstr "Autorisasjonskode"
-
-msgid "One URL per line"
-msgstr "En URL per linje"
-
-msgid "Redirect URIs"
-msgstr "Omdiriger URL-er"
-
-msgid "This field should contain a list of URLs"
-msgstr "Dette feltet skal inneholde en liste av URLs"
-
-msgid "Create new OAuth2 Client"
-msgstr "Opprett ny OAuth2 Klient"
-
-msgid "Edit OAuth2 Client"
-msgstr "Edit OAuth2 Klient"
-
-msgid "Save"
-msgstr "Lagre"
-
-msgid "Cancel"
-msgstr "Avbryt"
-
-msgid "There are currently no OAuth2 clients registered"
-msgstr "Det er for øyeblikket ingen OAuth2 klienter registrert"
-
-msgid "Edit"
-msgstr "Rediger"
-
-msgid "Delete"
-msgstr "Slett"
-
-msgid "OAuth2 client saved"
-msgstr "OAuth2 klient ble lagret"
-
-msgid "Failed to save OAuth2 client"
-msgstr "Kunne ikke lagre OAuth2 klient"
-
-msgid "Add OAuth2 client"
-msgstr "Legg til OAuth2 klient"
-
-msgid "Yes"
-msgstr "Ja"
-
-msgid "No"
-msgstr "Nei"
-
-msgid "OAuth2 client deleted"
-msgstr "OAuth2 klient ble slettet"
-
-msgid "Failed to delete OAuth2 client"
-msgstr ""
-
 msgid "Settings updated"
 msgstr "Innstillinger oppdatert"
 
@@ -233,14 +155,17 @@ msgstr "Synkronisering"
 msgid "Synchronization settings"
 msgstr "Synkroniseringsinnstillinger"
 
-msgid "OAuth2 Clients"
-msgstr "OAuth2 Klienter"
+msgid "Scheduled jobs"
+msgstr "Planlagte jobber"
 
 msgid "This field is required"
 msgstr "Dette er et påkrevd felt"
 
 msgid "This field should be a URL"
 msgstr ""
+
+msgid "This field should contain a list of URLs"
+msgstr "Dette feltet skal inneholde en liste av URLs"
 
 msgid "This field should be a number"
 msgstr "Dette feltet skal være en nummer"
@@ -551,9 +476,6 @@ msgstr ""
 "Respekter kategori-alternativets start- og sluttdato i eksport av "
 "analysetabeller"
 
-msgid "Put analytics in maintenance mode"
-msgstr "Sett analyser i vedlikeholdsmodus"
-
 msgid "Include zero data values in analytics tables"
 msgstr ""
 
@@ -644,6 +566,9 @@ msgstr "Databasespråk"
 msgid "Property to display in analysis modules"
 msgstr "Egenskap å vise i analysemoduler"
 
+msgid "Name"
+msgstr "Navn"
+
 msgid "Short name"
 msgstr "Kort navn"
 
@@ -685,6 +610,9 @@ msgstr "Port"
 
 msgid "Username"
 msgstr "Brukernavn"
+
+msgid "Password"
+msgstr "Passord"
 
 msgid "TLS"
 msgstr "TLS"
@@ -751,6 +679,9 @@ msgstr "Minimum tegn i passord"
 msgid "CORS whitelist"
 msgstr "CORS hvitliste"
 
+msgid "One URL per line"
+msgstr "En URL per linje"
+
 msgid "reCAPTCHA Site Key"
 msgstr "reCAPTCHA Site Key"
 
@@ -793,6 +724,9 @@ msgid ""
 "you do not change your calendar setting."
 msgstr ""
 
+msgid "Cancel"
+msgstr "Avbryt"
+
 msgid "Yes, change calendar"
 msgstr ""
 
@@ -830,3 +764,20 @@ msgstr "Brukernavn for ekstern server"
 
 msgid "Remote server password"
 msgstr "Passord for ekstern server"
+
+msgid ""
+"Number of minutes after which a stale job is reset to scheduled state (1-60)"
+msgstr ""
+
+msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+msgstr ""
+
+msgid ""
+"Maximum number of hours a job may trigger after its intended time if job has"
+" not yet run (1-24)"
+msgstr ""
+
+msgid ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
+msgstr ""
