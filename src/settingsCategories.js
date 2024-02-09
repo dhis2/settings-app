@@ -11,6 +11,7 @@ export const categoryOrder = [
     'import',
     'sync',
     'scheduledJobs',
+    'oauth2',
 ]
 
 export const categories = {
@@ -171,5 +172,12 @@ export const categories = {
             'jobsMaxCronDelayHours',
             'jobsLogDebugBelowSeconds',
         ],
+    },
+    oauth2: {
+        label: i18n.t('OAuth2 Clients'),
+        icon: 'vpn_lock',
+        pageLabel: i18n.t('OAuth2 Clients'),
+        authority: 'F_OAUTH2_CLIENT_MANAGE',
+        settings: ['oauth2clients'],
     },
 }
