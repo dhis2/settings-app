@@ -1,3 +1,10 @@
+## [29.16.2](https://github.com/dhis2/settings-app/compare/v29.16.1...v29.16.2) (2024-02-12)
+
+
+### Bug Fixes
+
+* add back OAUTH2 [DHIS2-15326] ([#1300](https://github.com/dhis2/settings-app/issues/1300)) ([520b1c7](https://github.com/dhis2/settings-app/commit/520b1c76fd8705eb311813c1bea0a9277aef8759))
+
 ## [29.16.1](https://github.com/dhis2/settings-app/compare/v29.16.0...v29.16.1) (2024-01-24)
 
 
