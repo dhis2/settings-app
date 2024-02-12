@@ -18,6 +18,7 @@ import FileUpload from './form-fields/file-upload.js'
 import TextField from './form-fields/text-field.js'
 import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component.js'
 import metadataSettings from './metadata-settings/metadataSettings.component.js'
+import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component.js'
 import settingsActions from './settingsActions.js'
 import { categories } from './settingsCategories.js'
 import classes from './SettingsFields.module.css'
@@ -241,6 +242,11 @@ class SettingsFields extends React.Component {
                                 })
                         },
                     },
+                })
+
+            case 'oauth2clients':
+                return Object.assign({}, fieldBase, {
+                    component: Oauth2ClientEditor,
                 })
 
             case 'localizedAppearance':
