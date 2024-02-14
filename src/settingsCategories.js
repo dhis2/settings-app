@@ -10,6 +10,8 @@ export const categoryOrder = [
     'calendar',
     'import',
     'sync',
+    'scheduledJobs',
+    'oauth2',
 ]
 
 export const categories = {
@@ -54,7 +56,6 @@ export const categories = {
             'keyAnalyticsCacheProgressiveTtlFactor',
             'keyIgnoreAnalyticsApprovalYearThreshold',
             'keyRespectMetaDataStartEndDatesInAnalyticsTableExport',
-            'keyAnalyticsMaintenanceMode',
             'keyIncludeZeroValuesInAnalytics',
             'keyDashboardContextMenuItemSwitchViewType',
             'keyDashboardContextMenuItemOpenInRelevantApp',
@@ -160,5 +161,23 @@ export const categories = {
             'keyRemoteInstancePassword',
             'keyMetadataDataVersioning',
         ],
+    },
+    scheduledJobs: {
+        label: i18n.t('Scheduled jobs'),
+        icon: 'schedule',
+        pageLabel: i18n.t('Scheduled jobs'),
+        settings: [
+            'jobsRescheduleAfterMinutes',
+            'jobsCleanupAfterMinutes',
+            'jobsMaxCronDelayHours',
+            'jobsLogDebugBelowSeconds',
+        ],
+    },
+    oauth2: {
+        label: i18n.t('OAuth2 Clients'),
+        icon: 'vpn_lock',
+        pageLabel: i18n.t('OAuth2 Clients'),
+        authority: 'F_OAUTH2_CLIENT_MANAGE',
+        settings: ['oauth2clients'],
     },
 }

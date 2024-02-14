@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-12-15T15:25:33.200Z\n"
-"PO-Revision-Date: 2023-12-15T15:25:33.200Z\n"
+"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
+"PO-Revision-Date: 2024-02-09T16:13:02.251Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -145,6 +145,12 @@ msgstr "Synchronization"
 
 msgid "Synchronization settings"
 msgstr "Synchronization settings"
+
+msgid "OAuth2 Clients"
+msgstr "OAuth2 Clients"
+
+msgid "Scheduled jobs"
+msgstr "Scheduled jobs"
 
 msgid "This field is required"
 msgstr "This field is required"
@@ -461,9 +467,6 @@ msgstr "Last 9 years"
 msgid "Respect category option start and end date in analytics table export"
 msgstr "Respect category option start and end date in analytics table export"
 
-msgid "Put analytics in maintenance mode"
-msgstr "Put analytics in maintenance mode"
-
 msgid "Include zero data values in analytics tables"
 msgstr "Include zero data values in analytics tables"
 
@@ -751,3 +754,23 @@ msgstr "Remote server username"
 
 msgid "Remote server password"
 msgstr "Remote server password"
+
+msgid "Number of minutes after which a stale job is reset to scheduled state (1-60)"
+msgstr "Number of minutes after which a stale job is reset to scheduled state (1-60)"
+
+msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+msgstr "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+
+msgid ""
+"Maximum number of hours a job may trigger after its intended time if job "
+"has not yet run (1-24)"
+msgstr ""
+"Maximum number of hours a job may trigger after its intended time if job "
+"has not yet run (1-24)"
+
+msgid ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
+msgstr ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"

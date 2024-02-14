@@ -248,10 +248,6 @@ const settingsKeyMapping = {
         ),
         type: 'checkbox',
     },
-    keyAnalyticsMaintenanceMode: {
-        label: i18n.t('Put analytics in maintenance mode'),
-        type: 'checkbox',
-    },
     keyIncludeZeroValuesInAnalytics: {
         label: i18n.t('Include zero data values in analytics tables'),
         type: 'checkbox',
@@ -689,7 +685,61 @@ const settingsKeyMapping = {
         label: i18n.t('Metadata Versioning'),
         type: 'metadataSettings',
     },
-
+    /* ============================================================================================================ */
+    /* Category: oAuth2 clients                                                                                     */
+    /* ============================================================================================================ */
+    oauth2clients: {
+        type: 'oauth2clients',
+        searchLabels: [
+            'oauth2_clients',
+            'password',
+            'refresh_token',
+            'authorization_code',
+        ],
+    },
+    /* ============================================================================================================ */
+    /* Category: Scheduled jobs                                                                                    */
+    /* ============================================================================================================ */
+    jobsRescheduleAfterMinutes: {
+        label: i18n.t(
+            'Number of minutes after which a stale job is reset to scheduled state (1-60)'
+        ),
+        type: 'textfield',
+        inputType: 'number',
+        minValue: 1,
+        maxValue: 60,
+        validators: ['positive_number'],
+    },
+    jobsCleanupAfterMinutes: {
+        label: i18n.t(
+            'Number of minutes after which a completed ad-hoc job is deleted (1+)'
+        ),
+        type: 'textfield',
+        inputType: 'number',
+        minValue: 1,
+        maxValue: 2147483647,
+        validators: ['positive_number'],
+    },
+    jobsMaxCronDelayHours: {
+        label: i18n.t(
+            'Maximum number of hours a job may trigger after its intended time if job has not yet run (1-24)'
+        ),
+        type: 'textfield',
+        inputType: 'number',
+        minValue: 1,
+        maxValue: 24,
+        validators: ['positive_number'],
+    },
+    jobsLogDebugBelowSeconds: {
+        label: i18n.t(
+            'Job execution interval (seconds) below which a job will be logged at debug (rather than info) level (20+)'
+        ),
+        type: 'textfield',
+        inputType: 'number',
+        minValue: 20,
+        maxValue: 2147483647,
+        validators: ['positive_number'],
+    },
     /* ============================================================================================================ */
     // The following keys are present in the demo database but are not managed by dhis-web-maintenance-settings
     //

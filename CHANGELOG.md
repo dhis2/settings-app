@@ -1,3 +1,24 @@
+## [29.16.2](https://github.com/dhis2/settings-app/compare/v29.16.1...v29.16.2) (2024-02-12)
+
+
+### Bug Fixes
+
+* add back OAUTH2 [DHIS2-15326] ([#1300](https://github.com/dhis2/settings-app/issues/1300)) ([520b1c7](https://github.com/dhis2/settings-app/commit/520b1c76fd8705eb311813c1bea0a9277aef8759))
+
+## [29.16.1](https://github.com/dhis2/settings-app/compare/v29.16.0...v29.16.1) (2024-01-24)
+
+
+### Bug Fixes
+
+* remove keyAnalyticsMaintenanceMode [DHIS2-16534] ([#1296](https://github.com/dhis2/settings-app/issues/1296)) ([d9fdbc8](https://github.com/dhis2/settings-app/commit/d9fdbc8a502c0636353df368f26ebb9459e32e00))
+
+# [29.16.0](https://github.com/dhis2/settings-app/compare/v29.15.9...v29.16.0) (2024-01-23)
+
+
+### Features
+
+* add in scheduling settings to settings app [DHIS2-15765] ([#1295](https://github.com/dhis2/settings-app/issues/1295)) ([ba6f2a1](https://github.com/dhis2/settings-app/commit/ba6f2a17c364b16c967a9f548ed718163179b58b))
+
 ## [29.15.9](https://github.com/dhis2/settings-app/compare/v29.15.8...v29.15.9) (2023-12-14)
 
 
