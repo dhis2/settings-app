@@ -3,6 +3,7 @@ const config = {
     name: 'settings',
     title: 'Settings',
     coreApp: true,
+    minDHIS2Version: '2.41',
 
     entryPoints: {
         app: './src/App.js',
