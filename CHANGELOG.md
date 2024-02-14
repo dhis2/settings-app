@@ -1,3 +1,15 @@
+# [100.0.0](https://github.com/dhis2/settings-app/compare/v99.9.9...v100.0.0) (2024-02-14)
+
+
+### chore
+
+* add apphubid ([b36108b](https://github.com/dhis2/settings-app/commit/b36108b60f6fbc3a002ca694c229b1de36da6b08))
+
+
+### BREAKING CHANGES
+
+* adding AppHub ID to enable continuous release
+
 ## [29.16.2](https://github.com/dhis2/settings-app/compare/v29.16.1...v29.16.2) (2024-02-12)
 
 
