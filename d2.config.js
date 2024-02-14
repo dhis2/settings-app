@@ -1,7 +1,7 @@
 const config = {
     type: 'app',
     name: 'settings',
-    title: 'Settings',
+    title: 'System Settings',
     coreApp: true,
     minDHIS2Version: '2.41',
 
