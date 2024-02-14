@@ -89,84 +89,6 @@ msgstr "Don't sync metadata if DHIS versions differ"
 msgid "Metadata Versioning"
 msgstr "Metadata Versioning"
 
-msgid "This client ID is already taken"
-msgstr "This client ID is already taken"
-
-msgid "Name"
-msgstr "Name"
-
-msgid "Required"
-msgstr "Required"
-
-msgid "Client ID"
-msgstr "Client ID"
-
-msgid "Client Secret"
-msgstr "Client Secret"
-
-msgid "Grant Types"
-msgstr "Grant Types"
-
-msgid "Password"
-msgstr "Password"
-
-msgid "Refresh token"
-msgstr "Refresh token"
-
-msgid "Authorization code"
-msgstr "Authorization code"
-
-msgid "One URL per line"
-msgstr "One URL per line"
-
-msgid "Redirect URIs"
-msgstr "Redirect URIs"
-
-msgid "This field should contain a list of URLs"
-msgstr "This field should contain a list of URLs"
-
-msgid "Create new OAuth2 Client"
-msgstr "Create new OAuth2 Client"
-
-msgid "Edit OAuth2 Client"
-msgstr "Edit OAuth2 Client"
-
-msgid "Save"
-msgstr "Save"
-
-msgid "Cancel"
-msgstr "Cancel"
-
-msgid "There are currently no OAuth2 clients registered"
-msgstr "There are currently no OAuth2 clients registered"
-
-msgid "Edit"
-msgstr "Edit"
-
-msgid "Delete"
-msgstr "Delete"
-
-msgid "OAuth2 client saved"
-msgstr "OAuth2 client saved"
-
-msgid "Failed to save OAuth2 client"
-msgstr "Failed to save OAuth2 client"
-
-msgid "Add OAuth2 client"
-msgstr "Add OAuth2 client"
-
-msgid "Yes"
-msgstr "Yes"
-
-msgid "No"
-msgstr "No"
-
-msgid "OAuth2 client deleted"
-msgstr "OAuth2 client deleted"
-
-msgid "Failed to delete OAuth2 client"
-msgstr "Failed to delete OAuth2 client"
-
 msgid "Settings updated"
 msgstr "Settings updated"
 
@@ -235,6 +157,9 @@ msgstr "This field is required"
 
 msgid "This field should be a URL"
 msgstr "This field should be a URL"
+
+msgid "This field should contain a list of URLs"
+msgstr "This field should contain a list of URLs"
 
 msgid "This field should be a number"
 msgstr "This field should be a number"
@@ -632,6 +557,9 @@ msgstr "Database language"
 msgid "Property to display in analysis modules"
 msgstr "Property to display in analysis modules"
 
+msgid "Name"
+msgstr "Name"
+
 msgid "Short name"
 msgstr "Short name"
 
@@ -673,6 +601,9 @@ msgstr "Port"
 
 msgid "Username"
 msgstr "Username"
+
+msgid "Password"
+msgstr "Password"
 
 msgid "TLS"
 msgstr "TLS"
@@ -734,8 +665,11 @@ msgstr "Number of days before password expiry to send reminder (1–28)"
 msgid "Minimum characters in password"
 msgstr "Minimum characters in password"
 
-msgid "CORS whitelist"
-msgstr "CORS whitelist"
+msgid "CORS allowlist"
+msgstr "CORS allowlist"
+
+msgid "One URL per line"
+msgstr "One URL per line"
 
 msgid "reCAPTCHA Site Key"
 msgstr "reCAPTCHA Site Key"
@@ -781,6 +715,9 @@ msgstr ""
 "Changing your calendar setting after you have entered data can make your "
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
+
+msgid "Cancel"
+msgstr "Cancel"
 
 msgid "Yes, change calendar"
 msgstr "Yes, change calendar"
