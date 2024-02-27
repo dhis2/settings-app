@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
+"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -97,84 +97,6 @@ msgstr "如果DHIS版本不一致，不同步元数据"
 msgid "Metadata Versioning"
 msgstr "元数据版本"
 
-msgid "This client ID is already taken"
-msgstr "客户端ID已经使用"
-
-msgid "Name"
-msgstr "名称"
-
-msgid "Required"
-msgstr "所需"
-
-msgid "Client ID"
-msgstr "客户ID"
-
-msgid "Client Secret"
-msgstr "客户密钥"
-
-msgid "Grant Types"
-msgstr "授权类型"
-
-msgid "Password"
-msgstr "口令"
-
-msgid "Refresh token"
-msgstr "刷新令牌"
-
-msgid "Authorization code"
-msgstr "认证码"
-
-msgid "One URL per line"
-msgstr "一行一个URI"
-
-msgid "Redirect URIs"
-msgstr "重定向URI"
-
-msgid "This field should contain a list of URLs"
-msgstr "该字段应该是包括一个url列表"
-
-msgid "Create new OAuth2 Client"
-msgstr "创建新的OAuth2 客户端"
-
-msgid "Edit OAuth2 Client"
-msgstr "编辑OAuth2 客户"
-
-msgid "Save"
-msgstr "保存"
-
-msgid "Cancel"
-msgstr "取消"
-
-msgid "There are currently no OAuth2 clients registered"
-msgstr "当前没有OAuth2 客户端注册"
-
-msgid "Edit"
-msgstr "编辑<br>"
-
-msgid "Delete"
-msgstr "删除"
-
-msgid "OAuth2 client saved"
-msgstr "OAth2客户已经保存"
-
-msgid "Failed to save OAuth2 client"
-msgstr "保存OAth2客户失败"
-
-msgid "Add OAuth2 client"
-msgstr ""
-
-msgid "Yes"
-msgstr "是"
-
-msgid "No"
-msgstr "否"
-
-msgid "OAuth2 client deleted"
-msgstr "OAth2客户已经删除"
-
-msgid "Failed to delete OAuth2 client"
-msgstr ""
-
 msgid "Settings updated"
 msgstr "设置已经更新"
 
@@ -232,14 +154,17 @@ msgstr "同步"
 msgid "Synchronization settings"
 msgstr "同步设置"
 
-msgid "OAuth2 Clients"
-msgstr "OAuth2 客户"
+msgid "Scheduled jobs"
+msgstr ""
 
 msgid "This field is required"
 msgstr "这个字段是必填的"
 
 msgid "This field should be a URL"
 msgstr ""
+
+msgid "This field should contain a list of URLs"
+msgstr "该字段应该是包括一个url列表"
 
 msgid "This field should be a number"
 msgstr "该字段应该是一个数字"
@@ -548,9 +473,6 @@ msgstr "最近9年"
 msgid "Respect category option start and end date in analytics table export"
 msgstr "分析表导出包括各自分类选项的起始日期"
 
-msgid "Put analytics in maintenance mode"
-msgstr "置分析为维护模式"
-
 msgid "Include zero data values in analytics tables"
 msgstr ""
 
@@ -641,6 +563,9 @@ msgstr "数据库语言"
 msgid "Property to display in analysis modules"
 msgstr "在分析模块中显示的属性"
 
+msgid "Name"
+msgstr "名称"
+
 msgid "Short name"
 msgstr "缩写"
 
@@ -682,6 +607,9 @@ msgstr "端口"
 
 msgid "Username"
 msgstr "用户名"
+
+msgid "Password"
+msgstr "口令"
 
 msgid "TLS"
 msgstr "TLS"
@@ -746,6 +674,9 @@ msgstr "口令最小字符数"
 msgid "CORS whitelist"
 msgstr "CORS白名单"
 
+msgid "One URL per line"
+msgstr "一行一个URI"
+
 msgid "reCAPTCHA Site Key"
 msgstr "reCAPTCHA Site Key"
 
@@ -788,6 +719,9 @@ msgid ""
 "you do not change your calendar setting."
 msgstr ""
 
+msgid "Cancel"
+msgstr "取消"
+
 msgid "Yes, change calendar"
 msgstr ""
 
@@ -823,3 +757,20 @@ msgstr "远程服务器用户名"
 
 msgid "Remote server password"
 msgstr "远程服务器口令"
+
+msgid ""
+"Number of minutes after which a stale job is reset to scheduled state (1-60)"
+msgstr ""
+
+msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+msgstr ""
+
+msgid ""
+"Maximum number of hours a job may trigger after its intended time if job has"
+" not yet run (1-24)"
+msgstr ""
+
+msgid ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
+msgstr ""

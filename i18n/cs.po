@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Jiří Podhorecký, 2022
+# Jiří Podhorecký, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
+"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Jiří Podhorecký, 2022\n"
+"Last-Translator: Jiří Podhorecký, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,84 +96,6 @@ msgstr "Nesynchronizovat metadata, pokud se liší verze DHIS"
 msgid "Metadata Versioning"
 msgstr "Správa verzí metadat"
 
-msgid "This client ID is already taken"
-msgstr "Toto ID klienta je již obsazeno"
-
-msgid "Name"
-msgstr "Název"
-
-msgid "Required"
-msgstr "Vyžadováno"
-
-msgid "Client ID"
-msgstr "Client ID"
-
-msgid "Client Secret"
-msgstr "Tajemství klienta"
-
-msgid "Grant Types"
-msgstr "Druhy grantů"
-
-msgid "Password"
-msgstr "Heslo"
-
-msgid "Refresh token"
-msgstr "Obnovit token"
-
-msgid "Authorization code"
-msgstr "Autorizační kód"
-
-msgid "One URL per line"
-msgstr "Jedna adresa URL na řádek"
-
-msgid "Redirect URIs"
-msgstr "Přesměrování URI"
-
-msgid "This field should contain a list of URLs"
-msgstr "Toto pole by mělo obsahovat seznam adres URL"
-
-msgid "Create new OAuth2 Client"
-msgstr "Vytvořit nového klienta OAuth2"
-
-msgid "Edit OAuth2 Client"
-msgstr "Upravit klienta OAuth2"
-
-msgid "Save"
-msgstr "Uložit"
-
-msgid "Cancel"
-msgstr "Zrušit"
-
-msgid "There are currently no OAuth2 clients registered"
-msgstr "Momentálně nejsou registrováni žádní klienti OAuth2"
-
-msgid "Edit"
-msgstr "Upravit"
-
-msgid "Delete"
-msgstr "Smazat"
-
-msgid "OAuth2 client saved"
-msgstr "Klient OAuth2 uložen"
-
-msgid "Failed to save OAuth2 client"
-msgstr "Uložení klienta OAuth2 se nezdařilo"
-
-msgid "Add OAuth2 client"
-msgstr "Přidat klienta OAuth2"
-
-msgid "Yes"
-msgstr "Ano"
-
-msgid "No"
-msgstr "Ne"
-
-msgid "OAuth2 client deleted"
-msgstr "Klient OAuth2 odstraněn"
-
-msgid "Failed to delete OAuth2 client"
-msgstr "Odstranění klienta OAuth2 se nezdařilo"
-
 msgid "Settings updated"
 msgstr "nastavení aktualizováno"
 
@@ -231,14 +153,17 @@ msgstr "Synchronizace"
 msgid "Synchronization settings"
 msgstr "Nastavení synchronizace"
 
-msgid "OAuth2 Clients"
-msgstr "Klienti OAuth2"
+msgid "Scheduled jobs"
+msgstr "Plánované úlohy"
 
 msgid "This field is required"
 msgstr "Toto pole je povinné"
 
 msgid "This field should be a URL"
 msgstr "Toto pole by mělo být URL"
+
+msgid "This field should contain a list of URLs"
+msgstr "Toto pole by mělo obsahovat seznam adres URL"
 
 msgid "This field should be a number"
 msgstr "Toto pole by mělo být číslo"
@@ -553,9 +478,6 @@ msgstr ""
 "Při exportu analytické tabulky respektujte počáteční a koncové datum "
 "možnosti kategorie"
 
-msgid "Put analytics in maintenance mode"
-msgstr "Přepnout analytiku do režimu údržby"
-
 msgid "Include zero data values in analytics tables"
 msgstr "Zahrnout nulové hodnoty dat do analytických tabulek"
 
@@ -646,6 +568,9 @@ msgstr "Jazyk databáze"
 msgid "Property to display in analysis modules"
 msgstr "Vlastnost k zobrazení v analytických modulech"
 
+msgid "Name"
+msgstr "Název"
+
 msgid "Short name"
 msgstr "Krátký název"
 
@@ -691,6 +616,9 @@ msgstr "Port"
 
 msgid "Username"
 msgstr "Uživatelské jméno"
+
+msgid "Password"
+msgstr "Heslo"
 
 msgid "TLS"
 msgstr "TLS"
@@ -759,6 +687,9 @@ msgstr "Minimální počet znaků v hesle"
 msgid "CORS whitelist"
 msgstr "Seznam povolených CORS"
 
+msgid "One URL per line"
+msgstr "Jedna adresa URL na řádek"
+
 msgid "reCAPTCHA Site Key"
 msgstr "Klíč webu reCAPTCHA"
 
@@ -801,6 +732,9 @@ msgid ""
 "you do not change your calendar setting."
 msgstr ""
 
+msgid "Cancel"
+msgstr "Zrušit"
+
 msgid "Yes, change calendar"
 msgstr ""
 
@@ -840,3 +774,20 @@ msgstr "Uživatelské jméno vzdáleného serveru"
 
 msgid "Remote server password"
 msgstr "Heslo vzdáleného serveru"
+
+msgid ""
+"Number of minutes after which a stale job is reset to scheduled state (1-60)"
+msgstr ""
+
+msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+msgstr ""
+
+msgid ""
+"Maximum number of hours a job may trigger after its intended time if job has"
+" not yet run (1-24)"
+msgstr ""
+
+msgid ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
+msgstr ""

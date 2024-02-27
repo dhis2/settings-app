@@ -1,16 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2021
+# Philip Larsen Donnelly, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Saysamone Sibounma, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-14T13:17:46.441Z\n"
+"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Saysamone Sibounma, 2022\n"
-"Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
+"Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Cancel upload"
 msgstr ""
 
-msgid "System default (fallback)"
+msgid "System default ({{language}})"
 msgstr ""
 
 msgid "Set the main field value before adding a translation"
@@ -96,84 +96,6 @@ msgid "Don't sync metadata if DHIS versions differ"
 msgstr ""
 
 msgid "Metadata Versioning"
-msgstr ""
-
-msgid "This client ID is already taken"
-msgstr ""
-
-msgid "Name"
-msgstr "ຊື່"
-
-msgid "Required"
-msgstr "ຕ້ອງການ"
-
-msgid "Client ID"
-msgstr ""
-
-msgid "Client Secret"
-msgstr ""
-
-msgid "Grant Types"
-msgstr ""
-
-msgid "Password"
-msgstr "ລະຫັດຜ່ານ"
-
-msgid "Refresh token"
-msgstr ""
-
-msgid "Authorization code"
-msgstr ""
-
-msgid "One URL per line"
-msgstr ""
-
-msgid "Redirect URIs"
-msgstr ""
-
-msgid "This field should contain a list of URLs"
-msgstr ""
-
-msgid "Create new OAuth2 Client"
-msgstr ""
-
-msgid "Edit OAuth2 Client"
-msgstr ""
-
-msgid "Save"
-msgstr "ບັນທຶກ"
-
-msgid "Cancel"
-msgstr "Cancel"
-
-msgid "There are currently no OAuth2 clients registered"
-msgstr ""
-
-msgid "Edit"
-msgstr "ແກ້ໄຂ"
-
-msgid "Delete"
-msgstr "ລົບ"
-
-msgid "OAuth2 client saved"
-msgstr ""
-
-msgid "Failed to save OAuth2 client"
-msgstr ""
-
-msgid "Add OAuth2 client"
-msgstr ""
-
-msgid "Yes"
-msgstr "Yes"
-
-msgid "No"
-msgstr "No"
-
-msgid "OAuth2 client deleted"
-msgstr ""
-
-msgid "Failed to delete OAuth2 client"
 msgstr ""
 
 msgid "Settings updated"
@@ -233,13 +155,16 @@ msgstr ""
 msgid "Synchronization settings"
 msgstr "Synchronization"
 
-msgid "OAuth2 Clients"
+msgid "Scheduled jobs"
 msgstr ""
 
 msgid "This field is required"
 msgstr "This field is required"
 
 msgid "This field should be a URL"
+msgstr ""
+
+msgid "This field should contain a list of URLs"
 msgstr ""
 
 msgid "This field should be a number"
@@ -549,9 +474,6 @@ msgstr ""
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
-msgid "Put analytics in maintenance mode"
-msgstr ""
-
 msgid "Include zero data values in analytics tables"
 msgstr ""
 
@@ -642,6 +564,9 @@ msgstr "ພາສາຂໍ້ມູນໃນລະບົບ"
 msgid "Property to display in analysis modules"
 msgstr "ສື່ງທີ່ສາມາດນໍາສະເໜີ ໃນໂມດູນຂອງການວິໄຈ"
 
+msgid "Name"
+msgstr "ຊື່"
+
 msgid "Short name"
 msgstr "ຊື່ສັ້ນ"
 
@@ -684,10 +609,16 @@ msgstr ""
 msgid "Username"
 msgstr "ຊື່ຜູ້ໃຊ້"
 
+msgid "Password"
+msgstr "ລະຫັດຜ່ານ"
+
 msgid "TLS"
 msgstr ""
 
 msgid "Email sender"
+msgstr ""
+
+msgid "The address that outgoing messages are sent from."
 msgstr ""
 
 msgid "Send me a test email"
@@ -732,13 +663,19 @@ msgstr ""
 msgid "12 months"
 msgstr ""
 
-msgid "Enable password expiry alerts"
+msgid "Send reminders to users before their password expires"
+msgstr ""
+
+msgid "Number of days before password expiry to send reminder (1–28)"
 msgstr ""
 
 msgid "Minimum characters in password"
 msgstr ""
 
 msgid "CORS whitelist"
+msgstr ""
+
+msgid "One URL per line"
 msgstr ""
 
 msgid "reCAPTCHA Site Key"
@@ -774,6 +711,21 @@ msgstr ""
 msgid "Persian"
 msgstr ""
 
+msgid "Change calendar setting"
+msgstr ""
+
+msgid ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
+msgstr ""
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Yes, change calendar"
+msgstr ""
+
 msgid "Date format"
 msgstr "Date Format"
 
@@ -805,4 +757,21 @@ msgid "Remote server username"
 msgstr ""
 
 msgid "Remote server password"
+msgstr ""
+
+msgid ""
+"Number of minutes after which a stale job is reset to scheduled state (1-60)"
+msgstr ""
+
+msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+msgstr ""
+
+msgid ""
+"Maximum number of hours a job may trigger after its intended time if job has"
+" not yet run (1-24)"
+msgstr ""
+
+msgid ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
 msgstr ""
