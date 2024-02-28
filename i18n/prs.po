@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2021
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-14T13:17:46.441Z\n"
+"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
-"Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Language-Team: Persian (Afghanistan) (https://app.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Cancel upload"
 msgstr "لغو اپلود"
 
-msgid "System default (fallback)"
+msgid "System default ({{language}})"
 msgstr ""
 
 msgid "Set the main field value before adding a translation"
@@ -95,84 +95,6 @@ msgstr "اگر نسخه DHIS فرق میکرد هیچ وقت دیتا را هم 
 
 msgid "Metadata Versioning"
 msgstr "نسخه میتا دیتا"
-
-msgid "This client ID is already taken"
-msgstr "آی دی این استفاده کننده قبلا گرفته شده"
-
-msgid "Name"
-msgstr "نام"
-
-msgid "Required"
-msgstr "ضروری"
-
-msgid "Client ID"
-msgstr "هویت مشتری"
-
-msgid "Client Secret"
-msgstr "رمز مشتری"
-
-msgid "Grant Types"
-msgstr "نوع اعانه"
-
-msgid "Password"
-msgstr "کلید رمز"
-
-msgid "Refresh token"
-msgstr "علامت تجدید قوا"
-
-msgid "Authorization code"
-msgstr "کود صلاحیت"
-
-msgid "One URL per line"
-msgstr "یک URI در یک خط"
-
-msgid "Redirect URIs"
-msgstr "یو آر ال های غیر مستقیم"
-
-msgid "This field should contain a list of URLs"
-msgstr "این بخش باید شامل لیست URLs باشد"
-
-msgid "Create new OAuth2 Client"
-msgstr "ایجاد مشتری جدید او ای یووت 2"
-
-msgid "Edit OAuth2 Client"
-msgstr "تصحیح مشتری او ای یووت 2"
-
-msgid "Save"
-msgstr "ذخیره"
-
-msgid "Cancel"
-msgstr "انصراف"
-
-msgid "There are currently no OAuth2 clients registered"
-msgstr "فعلآ هیچ OAuth2 clients راجستر نشده است"
-
-msgid "Edit"
-msgstr "تجدید"
-
-msgid "Delete"
-msgstr "حذف"
-
-msgid "OAuth2 client saved"
-msgstr "ثبت OAuth2 client"
-
-msgid "Failed to save OAuth2 client"
-msgstr "ثبت OAuth2 client به ناکامی انجامید"
-
-msgid "Add OAuth2 client"
-msgstr ""
-
-msgid "Yes"
-msgstr "بلی"
-
-msgid "No"
-msgstr "نخیر"
-
-msgid "OAuth2 client deleted"
-msgstr "خذف OAuth2 client"
-
-msgid "Failed to delete OAuth2 client"
-msgstr ""
 
 msgid "Settings updated"
 msgstr "تنظیمات تجدید گردید"
@@ -234,11 +156,17 @@ msgstr "تنظیمات همگاه سازی"
 msgid "OAuth2 Clients"
 msgstr "مشتریان او ای یووت 2"
 
+msgid "Scheduled jobs"
+msgstr ""
+
 msgid "This field is required"
 msgstr "این بخش لازمی میباشد"
 
 msgid "This field should be a URL"
 msgstr ""
+
+msgid "This field should contain a list of URLs"
+msgstr "این بخش باید شامل لیست URLs باشد"
 
 msgid "This field should be a number"
 msgstr "این بخش باید ارقام باشد"
@@ -547,9 +475,6 @@ msgstr "9 سال آخیر"
 msgid "Respect category option start and end date in analytics table export"
 msgstr "تاریخ آغاز و ختم گزینه کتگوری انتخاب شده به انالتیکس انتقال گردید"
 
-msgid "Put analytics in maintenance mode"
-msgstr "گذاشتن شیوه تحلیل در حالت حفظ و مراقبت"
-
 msgid "Include zero data values in analytics tables"
 msgstr ""
 
@@ -640,6 +565,9 @@ msgstr "زبان دیتابیس"
 msgid "Property to display in analysis modules"
 msgstr "ویژگی که در مادیول تحلیل به نمایش بیاید"
 
+msgid "Name"
+msgstr "نام"
+
 msgid "Short name"
 msgstr "نام کوتاه"
 
@@ -682,11 +610,17 @@ msgstr "پورت"
 msgid "Username"
 msgstr "نام کاربر"
 
+msgid "Password"
+msgstr "کلید رمز"
+
 msgid "TLS"
 msgstr "تی ال س"
 
 msgid "Email sender"
 msgstr "ارسال کننده ایمیل"
+
+msgid "The address that outgoing messages are sent from."
+msgstr ""
 
 msgid "Send me a test email"
 msgstr "یک ایمیل آزمایشی ارسال نمائید"
@@ -730,14 +664,20 @@ msgstr "6 ماهه"
 msgid "12 months"
 msgstr "12 ماهه"
 
-msgid "Enable password expiry alerts"
+msgid "Send reminders to users before their password expires"
+msgstr ""
+
+msgid "Number of days before password expiry to send reminder (1–28)"
 msgstr ""
 
 msgid "Minimum characters in password"
 msgstr "کمترین کلمه در رمز"
 
-msgid "CORS whitelist"
-msgstr "لست کورس"
+msgid "CORS allowlist"
+msgstr ""
+
+msgid "One URL per line"
+msgstr "یک URI در یک خط"
 
 msgid "reCAPTCHA Site Key"
 msgstr ""
@@ -772,6 +712,21 @@ msgstr "تایلندی"
 msgid "Persian"
 msgstr ""
 
+msgid "Change calendar setting"
+msgstr ""
+
+msgid ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
+msgstr ""
+
+msgid "Cancel"
+msgstr "انصراف"
+
+msgid "Yes, change calendar"
+msgstr ""
+
 msgid "Date format"
 msgstr "فارمت اطلاعات"
 
@@ -804,3 +759,20 @@ msgstr "اسم استفاده کننده سرفر از راه داور"
 
 msgid "Remote server password"
 msgstr "کلید رمز سرفر از راه دور"
+
+msgid ""
+"Number of minutes after which a stale job is reset to scheduled state (1-60)"
+msgstr ""
+
+msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+msgstr ""
+
+msgid ""
+"Maximum number of hours a job may trigger after its intended time if job has"
+" not yet run (1-24)"
+msgstr ""
+
+msgid ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
+msgstr ""

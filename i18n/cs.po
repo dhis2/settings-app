@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
+"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Jiří Podhorecký, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -152,6 +152,9 @@ msgstr "Synchronizace"
 
 msgid "Synchronization settings"
 msgstr "Nastavení synchronizace"
+
+msgid "OAuth2 Clients"
+msgstr "Klienti OAuth2"
 
 msgid "Scheduled jobs"
 msgstr "Plánované úlohy"
@@ -684,8 +687,8 @@ msgstr ""
 msgid "Minimum characters in password"
 msgstr "Minimální počet znaků v hesle"
 
-msgid "CORS whitelist"
-msgstr "Seznam povolených CORS"
+msgid "CORS allowlist"
+msgstr ""
 
 msgid "One URL per line"
 msgstr "Jedna adresa URL na řádek"

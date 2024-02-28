@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2023
+# Ibatov <ibatovk@who.int>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
+"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2024\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -98,84 +98,6 @@ msgstr ""
 msgid "Metadata Versioning"
 msgstr "МетаМаълумотлар вариантларини бошқариш"
 
-msgid "This client ID is already taken"
-msgstr "Ушбу мижоз идентификатори аллақачон олинган"
-
-msgid "Name"
-msgstr "Исми"
-
-msgid "Required"
-msgstr "Мажбурий"
-
-msgid "Client ID"
-msgstr "Клиент ID"
-
-msgid "Client Secret"
-msgstr "Мижоз сирлари"
-
-msgid "Grant Types"
-msgstr "Грант турлари"
-
-msgid "Password"
-msgstr "Пароль"
-
-msgid "Refresh token"
-msgstr "Токенни янгилаш"
-
-msgid "Authorization code"
-msgstr "Авторизация коди"
-
-msgid "One URL per line"
-msgstr "Ҳар бир қатор учун битта URL"
-
-msgid "Redirect URIs"
-msgstr "URLларни қайта йўналтириш"
-
-msgid "This field should contain a list of URLs"
-msgstr "Ушбу майдон URL манзиллар рўйхатини ўз ичига олиши керак"
-
-msgid "Create new OAuth2 Client"
-msgstr "Янги OAuth2 ни яратиш"
-
-msgid "Edit OAuth2 Client"
-msgstr "OAuth2 ни таҳрирлаш"
-
-msgid "Save"
-msgstr "Сақлаш"
-
-msgid "Cancel"
-msgstr "Бекор қилиш"
-
-msgid "There are currently no OAuth2 clients registered"
-msgstr "Ҳозирда OAuth2 мижозлари рўйхатдан ўтказилмаган"
-
-msgid "Edit"
-msgstr "Таҳрирлаш"
-
-msgid "Delete"
-msgstr "Ўчириб ташлаш"
-
-msgid "OAuth2 client saved"
-msgstr "OAuth2 мижоз сақланди"
-
-msgid "Failed to save OAuth2 client"
-msgstr "OAuth2 мижоз сақланиши амалга ошмади"
-
-msgid "Add OAuth2 client"
-msgstr "OAuth2 клиентини қўшиш"
-
-msgid "Yes"
-msgstr "Ҳа"
-
-msgid "No"
-msgstr "Йўқ"
-
-msgid "OAuth2 client deleted"
-msgstr "OAuth2 мижоз ўчирилди"
-
-msgid "Failed to delete OAuth2 client"
-msgstr "OAuth2 клиентини ўчириш амалга ошмади"
-
 msgid "Settings updated"
 msgstr "Созламалар янгиланди"
 
@@ -236,11 +158,17 @@ msgstr "Синхронизация созламалари"
 msgid "OAuth2 Clients"
 msgstr "OAuth2 клиентлари"
 
+msgid "Scheduled jobs"
+msgstr "Вазифалар режалаштирилган"
+
 msgid "This field is required"
 msgstr "Ушбу қатор тўлдирилиши шарт"
 
 msgid "This field should be a URL"
 msgstr "Ушбу сатрда URL бўлиши лозим"
+
+msgid "This field should contain a list of URLs"
+msgstr "Ушбу майдон URL манзиллар рўйхатини ўз ичига олиши керак"
 
 msgid "This field should be a number"
 msgstr "Ушбу майдонда рақам бўлиши лозим"
@@ -554,9 +482,6 @@ msgstr ""
 "Аналитик жадвал экспортида категория вариантининг бошланиш ва тугаш санасига"
 " эътибор қилинг"
 
-msgid "Put analytics in maintenance mode"
-msgstr "Аналитикани техник режимга ўтказинг"
-
 msgid "Include zero data values in analytics tables"
 msgstr "Аналитик жадвалга 0 қийматларни ҳам киритиш"
 
@@ -647,6 +572,9 @@ msgstr "Маълумотлар базаси тили"
 msgid "Property to display in analysis modules"
 msgstr "Таҳлил модулларини намойиш этиш хислати"
 
+msgid "Name"
+msgstr "Исми"
+
 msgid "Short name"
 msgstr "Қисқача номи"
 
@@ -696,6 +624,9 @@ msgstr "Порт"
 
 msgid "Username"
 msgstr "Фойдаланувчи исми"
+
+msgid "Password"
+msgstr "Пароль"
 
 msgid "TLS"
 msgstr "TLS"
@@ -762,8 +693,11 @@ msgstr ""
 msgid "Minimum characters in password"
 msgstr "Паролда минимал талаблар"
 
-msgid "CORS whitelist"
-msgstr "CORS оқ рўйхати"
+msgid "CORS allowlist"
+msgstr ""
+
+msgid "One URL per line"
+msgstr "Ҳар бир қатор учун битта URL"
 
 msgid "reCAPTCHA Site Key"
 msgstr "reCAPTCHA Сайт Калити"
@@ -810,6 +744,9 @@ msgstr ""
 "тизимни яроқсиз ҳолга олиб келиши мумкин. Агар сиз маълумотларни киритган "
 "бўлсангиз, календар созламаларини ўзгартирмаслик тавсия этилади."
 
+msgid "Cancel"
+msgstr "Бекор қилиш"
+
 msgid "Yes, change calendar"
 msgstr "Ҳа, календарни танланг"
 
@@ -854,3 +791,20 @@ msgstr "Масофавий сервер фойдалувчи номи"
 
 msgid "Remote server password"
 msgstr "Масофавий сервер пароли"
+
+msgid ""
+"Number of minutes after which a stale job is reset to scheduled state (1-60)"
+msgstr ""
+
+msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+msgstr ""
+
+msgid ""
+"Maximum number of hours a job may trigger after its intended time if job has"
+" not yet run (1-24)"
+msgstr ""
+
+msgid ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
+msgstr ""
