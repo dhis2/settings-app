@@ -1,13 +1,13 @@
 # 
 # Translators:
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
-"Last-Translator: phil_dhis2, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2023\n"
 "Language-Team: Persian (Afghanistan) (https://app.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Cancel upload"
 msgstr "لغو اپلود"
 
-msgid "System default (fallback)"
+msgid "System default ({{language}})"
 msgstr ""
 
 msgid "Set the main field value before adding a translation"
@@ -547,9 +547,6 @@ msgstr "9 سال آخیر"
 msgid "Respect category option start and end date in analytics table export"
 msgstr "تاریخ آغاز و ختم گزینه کتگوری انتخاب شده به انالتیکس انتقال گردید"
 
-msgid "Put analytics in maintenance mode"
-msgstr "گذاشتن شیوه تحلیل در حالت حفظ و مراقبت"
-
 msgid "Include zero data values in analytics tables"
 msgstr ""
 
@@ -687,6 +684,9 @@ msgstr "تی ال س"
 
 msgid "Email sender"
 msgstr "ارسال کننده ایمیل"
+
+msgid "The address that outgoing messages are sent from."
+msgstr ""
 
 msgid "Send me a test email"
 msgstr "یک ایمیل آزمایشی ارسال نمائید"

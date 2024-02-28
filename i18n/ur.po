@@ -1,12 +1,12 @@
 # 
 # Translators:
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
 "Language-Team: Urdu (https://app.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -43,7 +43,7 @@ msgstr ""
 msgid "Cancel upload"
 msgstr "اپ لوڈ منسوخ کریں"
 
-msgid "System default (fallback)"
+msgid "System default ({{language}})"
 msgstr ""
 
 msgid "Set the main field value before adding a translation"
@@ -552,9 +552,6 @@ msgstr ""
 "تجزیاتی ٹیبل ایکسپورٹ میں دریافت کرنے والے قسم کے اختیارات شروع اور اختتامی "
 "تاریخ"
 
-msgid "Put analytics in maintenance mode"
-msgstr "تجزیہ موڈ میں تجزیات رکھو"
-
 msgid "Include zero data values in analytics tables"
 msgstr ""
 
@@ -692,6 +689,9 @@ msgstr "TLS"
 
 msgid "Email sender"
 msgstr "ای میل بھیجنے والا"
+
+msgid "The address that outgoing messages are sent from."
+msgstr ""
 
 msgid "Send me a test email"
 msgstr "مجھے ایک ای میل بھیجیں"
