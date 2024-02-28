@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
+"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
 "Last-Translator: Éva Tamási, 2023\n"
 "Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -557,9 +557,6 @@ msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 "Зважати на дату початку та завершення параметрів категорій під час експорту "
 "аналітичної таблиці"
-
-msgid "Put analytics in maintenance mode"
-msgstr "Перевести аналітику в режим технічного обслуговування"
 
 msgid "Include zero data values in analytics tables"
 msgstr "Включити нульові значення даних в аналітичні таблиці"
