@@ -2,15 +2,15 @@
 # Translators:
 # Philip Larsen Donnelly, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
-# 晓东 林 <13981924470@126.com>, 2021
-# easylin <lin_xd@126.com>, 2023
+# easylin <lin_xd@126.com>, 2024
+# 晓东 林 <13981924470@126.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
+"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2024\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -99,84 +99,6 @@ msgstr "如果DHIS版本不一致，不同步元数据"
 msgid "Metadata Versioning"
 msgstr "元数据版本"
 
-msgid "This client ID is already taken"
-msgstr "客户端ID已经使用"
-
-msgid "Name"
-msgstr "名称"
-
-msgid "Required"
-msgstr "必须的"
-
-msgid "Client ID"
-msgstr "客户ID"
-
-msgid "Client Secret"
-msgstr "客户密钥"
-
-msgid "Grant Types"
-msgstr "授权类型"
-
-msgid "Password"
-msgstr "口令"
-
-msgid "Refresh token"
-msgstr "刷新令牌"
-
-msgid "Authorization code"
-msgstr "认证码"
-
-msgid "One URL per line"
-msgstr "一行一个URI"
-
-msgid "Redirect URIs"
-msgstr "重定向URI"
-
-msgid "This field should contain a list of URLs"
-msgstr "该字段应该是包括一个url列表"
-
-msgid "Create new OAuth2 Client"
-msgstr "创建新的OAuth2 客户端"
-
-msgid "Edit OAuth2 Client"
-msgstr "编辑OAuth2 客户"
-
-msgid "Save"
-msgstr "保存"
-
-msgid "Cancel"
-msgstr "取消"
-
-msgid "There are currently no OAuth2 clients registered"
-msgstr "当前没有OAuth2 客户端注册"
-
-msgid "Edit"
-msgstr "编辑<br>"
-
-msgid "Delete"
-msgstr "删除"
-
-msgid "OAuth2 client saved"
-msgstr "OAth2客户已经保存"
-
-msgid "Failed to save OAuth2 client"
-msgstr "保存OAth2客户失败"
-
-msgid "Add OAuth2 client"
-msgstr "添加OAuth2客户端"
-
-msgid "Yes"
-msgstr "Yes"
-
-msgid "No"
-msgstr "No"
-
-msgid "OAuth2 client deleted"
-msgstr "OAth2客户已经删除"
-
-msgid "Failed to delete OAuth2 client"
-msgstr "无法删除OAuth2客户端"
-
 msgid "Settings updated"
 msgstr "设置已经更新"
 
@@ -237,11 +159,17 @@ msgstr "同步设置"
 msgid "OAuth2 Clients"
 msgstr "OAuth2 客户"
 
+msgid "Scheduled jobs"
+msgstr "调度的作业"
+
 msgid "This field is required"
 msgstr "这个字段是必填的"
 
 msgid "This field should be a URL"
 msgstr "该字段应为网址"
+
+msgid "This field should contain a list of URLs"
+msgstr "该字段应该是包括一个url列表"
 
 msgid "This field should be a number"
 msgstr "该字段应该是一个数字"
@@ -550,9 +478,6 @@ msgstr "最近9年"
 msgid "Respect category option start and end date in analytics table export"
 msgstr "分析表导出包括各自分类选项的起始日期"
 
-msgid "Put analytics in maintenance mode"
-msgstr "置分析为维护模式"
-
 msgid "Include zero data values in analytics tables"
 msgstr "在分析表中包含零数据值"
 
@@ -643,6 +568,9 @@ msgstr "数据库语言"
 msgid "Property to display in analysis modules"
 msgstr "在分析模块中显示的属性"
 
+msgid "Name"
+msgstr "名称"
+
 msgid "Short name"
 msgstr "缩写名"
 
@@ -684,6 +612,9 @@ msgstr "端口"
 
 msgid "Username"
 msgstr "用户名"
+
+msgid "Password"
+msgstr "口令"
 
 msgid "TLS"
 msgstr "TLS"
@@ -745,8 +676,11 @@ msgstr "密码到期前发送提醒的天数 (1–28)"
 msgid "Minimum characters in password"
 msgstr "口令最小字符数"
 
-msgid "CORS whitelist"
-msgstr "CORS白名单"
+msgid "CORS allowlist"
+msgstr ""
+
+msgid "One URL per line"
+msgstr "一行一个URI"
 
 msgid "reCAPTCHA Site Key"
 msgstr "reCAPTCHA Site Key"
@@ -790,6 +724,9 @@ msgid ""
 "you do not change your calendar setting."
 msgstr "输入数据后更改日历设置可能会使您的系统无法使用。如果您输入了数据，强烈建议您不要更改日历设置。"
 
+msgid "Cancel"
+msgstr "取消"
+
 msgid "Yes, change calendar"
 msgstr "是的，更改日历"
 
@@ -825,3 +762,20 @@ msgstr "远程服务器用户名"
 
 msgid "Remote server password"
 msgstr "远程服务器口令"
+
+msgid ""
+"Number of minutes after which a stale job is reset to scheduled state (1-60)"
+msgstr "过时作业重置为计划状态之前的分钟数 (1-60)"
+
+msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+msgstr "删除已完成的临时作业之前的分钟数 (1+)"
+
+msgid ""
+"Maximum number of hours a job may trigger after its intended time if job has"
+" not yet run (1-24)"
+msgstr "如果作业尚未运行，则作业在其预期时间之后可以触发的最大小时数 (1-24)"
+
+msgid ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
+msgstr "作业执行间隔（秒），低于该间隔，作业将以调试（而不是信息）级别进行记录 (20+)"
