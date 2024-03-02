@@ -1,14 +1,14 @@
 # 
 # Translators:
 # Philip Larsen Donnelly, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
+# Viktor Varland <viktor@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
+"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
 "Language-Team: Urdu (https://app.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -153,6 +153,9 @@ msgstr "ہم آہنگی"
 
 msgid "Synchronization settings"
 msgstr "ہم آہنگی کی ترجیحات"
+
+msgid "OAuth2 Clients"
+msgstr "OAuth2 گاہکوں"
 
 msgid "Scheduled jobs"
 msgstr ""
@@ -678,8 +681,8 @@ msgstr ""
 msgid "Minimum characters in password"
 msgstr "پاس ورڈ میں کم از کم حروف"
 
-msgid "CORS whitelist"
-msgstr "CORS whitelist"
+msgid "CORS allowlist"
+msgstr ""
 
 msgid "One URL per line"
 msgstr "فی یو آر ایل"

@@ -4,14 +4,14 @@
 # Philip Larsen Donnelly, 2021
 # Wanda <wanda@frontlineaids.org>, 2021
 # Nadiia <semchuk@aph.org.ua>, 2021
-# Éva Tamási, 2022
+# Éva Tamási, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
+"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Éva Tamási, 2022\n"
+"Last-Translator: Éva Tamási, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -156,6 +156,9 @@ msgstr "Синхронізація"
 
 msgid "Synchronization settings"
 msgstr "Налаштування синхронізації"
+
+msgid "OAuth2 Clients"
+msgstr "Клієнти OAuth2"
 
 msgid "Scheduled jobs"
 msgstr ""
@@ -695,8 +698,8 @@ msgstr ""
 msgid "Minimum characters in password"
 msgstr "Мінімальна кількість символів у паролі"
 
-msgid "CORS whitelist"
-msgstr "Білий список CORS"
+msgid "CORS allowlist"
+msgstr ""
 
 msgid "One URL per line"
 msgstr "Одна URL-адреса на рядок"
