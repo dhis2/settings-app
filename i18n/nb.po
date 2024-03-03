@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
+"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2024\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -154,6 +154,9 @@ msgstr "Synkronisering"
 
 msgid "Synchronization settings"
 msgstr "Synkroniseringsinnstillinger"
+
+msgid "OAuth2 Clients"
+msgstr "OAuth2 Klienter"
 
 msgid "Scheduled jobs"
 msgstr "Planlagte jobber"
@@ -676,8 +679,8 @@ msgstr ""
 msgid "Minimum characters in password"
 msgstr "Minimum tegn i passord"
 
-msgid "CORS whitelist"
-msgstr "CORS hvitliste"
+msgid "CORS allowlist"
+msgstr ""
 
 msgid "One URL per line"
 msgstr "En URL per linje"
