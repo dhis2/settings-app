@@ -2,15 +2,15 @@
 # Translators:
 # Philip Larsen Donnelly, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
-# easylin <lin_xd@126.com>, 2024
 # 晓东 林 <13981924470@126.com>, 2024
+# easylin <lin_xd@126.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2024\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2024\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -677,7 +677,7 @@ msgid "Minimum characters in password"
 msgstr "口令最小字符数"
 
 msgid "CORS allowlist"
-msgstr ""
+msgstr "CORS 许可名单"
 
 msgid "One URL per line"
 msgstr "一行一个URI"
