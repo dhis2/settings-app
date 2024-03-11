@@ -1,3 +1,10 @@
+# [100.1.0](https://github.com/dhis2/settings-app/compare/v100.0.4...v100.1.0) (2024-03-11)
+
+
+### Features
+
+* **DHIS2-16944:** add login page settings ([e07a9c1](https://github.com/dhis2/settings-app/commit/e07a9c1c1da7dde1e27636ff820bcbfc61a75b77))
+
 ## [100.0.4](https://github.com/dhis2/settings-app/compare/v100.0.3...v100.0.4) (2024-03-10)
 
 
