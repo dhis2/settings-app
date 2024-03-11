@@ -438,6 +438,20 @@ const settingsKeyMapping = {
         label: i18n.t('Require authority to add to view object lists'),
         type: 'checkbox',
     },
+    loginPageLayout: {
+        label: i18n.t('Login page theme'),
+        type: 'dropdown',
+        options: {
+            DEFAULT: i18n.t('Default'),
+            SIDEBAR: i18n.t('Sidebar'),
+            CUSTOM: i18n.t('Custom'),
+        },
+    },
+    loginPageTemplate: {
+        label: i18n.t('Login page template'),
+        multiLine: true,
+        rowsMax: 10,
+    },
     keyUseCustomLogoFront: {
         label: i18n.t('Custom login page logo'),
         type: 'staticContent',

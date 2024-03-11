@@ -323,6 +323,7 @@ class SettingsFields extends React.Component {
                         min: mapping.minValue,
                         max: mapping.maxValue,
                         helpText: mapping.helpText,
+                        rowsMax: mapping.rowsMax,
                     },
                     validators,
                 }
