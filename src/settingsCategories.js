@@ -94,6 +94,8 @@ export const categories = {
             'keyRequireAddToView',
             'keyUseCustomLogoFront',
             'keyUseCustomLogoBanner',
+            'loginPageLayout',
+            'loginPageTemplate',
         ],
     },
     email: {
