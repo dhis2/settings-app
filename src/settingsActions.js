@@ -27,6 +27,11 @@ const saveLocalizedAppearanceSetting = (d2, key, value, locale) => {
             settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
         })
         .catch((err) => {
+            settingsActions.showSnackbarMessage(
+                i18n.t(
+                    'There was a problem updating settings. Changes have not been saved.'
+                )
+            )
             console.error('Failed to save localized setting:', err)
         })
 }
@@ -38,6 +43,11 @@ const saveConfiguration = (d2, key, value) =>
             settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
         })
         .catch((err) => {
+            settingsActions.showSnackbarMessage(
+                i18n.t(
+                    'There was a problem updating settings. Changes have not been saved.'
+                )
+            )
             console.error('Failed to save configuration:', err)
         })
 
@@ -48,6 +58,11 @@ const saveSetting = (d2, key, value) =>
             settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
         })
         .catch((err) => {
+            settingsActions.showSnackbarMessage(
+                i18n.t(
+                    'There was a problem updating settings. Changes have not been saved.'
+                )
+            )
             console.error('Failed to save setting:', err)
         })
 
