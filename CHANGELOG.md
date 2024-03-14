@@ -1,3 +1,11 @@
+## [100.1.1](https://github.com/dhis2/settings-app/compare/v100.1.0...v100.1.1) (2024-03-14)
+
+
+### Bug Fixes
+
+* show a generic error when updating setting fails ([0911535](https://github.com/dhis2/settings-app/commit/0911535c30a43869f0fb752d3d5e15b85a79f1df))
+* update app name to match the bundled apps in core ([6ffd71e](https://github.com/dhis2/settings-app/commit/6ffd71e2118351da32138f75a40e4b37fb377fe4))
+
 # [100.1.0](https://github.com/dhis2/settings-app/compare/v100.0.4...v100.1.0) (2024-03-11)
 
 
