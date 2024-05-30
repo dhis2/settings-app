@@ -123,6 +123,7 @@ export const categories = {
             'keyAllowObjectAssignment',
             'credentialsExpires',
             'credentialsExpiryAlert',
+            'credentialsExpiresReminderInDays',
             'minPasswordLength',
             'corsWhitelist',
             'recaptchaSite',
