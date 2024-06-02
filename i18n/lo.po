@@ -194,7 +194,7 @@ msgid "No settings matched the search term"
 msgstr ""
 
 msgid "Search results"
-msgstr ""
+msgstr "ຜົນການຄົ້ນຫາ"
 
 msgid "Maximum number of analytics records"
 msgstr ""
