@@ -557,8 +557,21 @@ const settingsKeyMapping = {
         },
     },
     credentialsExpiryAlert: {
-        label: i18n.t('Enable password expiry alerts'),
+        label: i18n.t('Send reminders to users before their password expires'),
         type: 'checkbox',
+    },
+    credentialsExpiresReminderInDays: {
+        label: i18n.t(
+            'Number of days before password expiry to send reminder (1–28)'
+        ),
+        type: 'textfield',
+        inputType: 'number',
+        minValue: 1,
+        maxValue: 28,
+        hideWhen: {
+            settingsKey: 'credentialsExpiryAlert',
+            settingsValue: 'false',
+        },
     },
     minPasswordLength: {
         label: i18n.t('Minimum characters in password'),

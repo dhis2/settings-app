@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
-"PO-Revision-Date: 2023-08-24T10:48:48.806Z\n"
+"POT-Creation-Date: 2024-05-30T13:11:40.739Z\n"
+"PO-Revision-Date: 2024-05-30T13:11:40.739Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -680,9 +680,6 @@ msgstr "TLS"
 msgid "Email sender"
 msgstr "Email sender"
 
-msgid "The address that outgoing messages are sent from."
-msgstr "The address that outgoing messages are sent from."
-
 msgid "Send me a test email"
 msgstr "Send me a test email"
 
@@ -725,8 +722,11 @@ msgstr "6 months"
 msgid "12 months"
 msgstr "12 months"
 
-msgid "Enable password expiry alerts"
-msgstr "Enable password expiry alerts"
+msgid "Send reminders to users before their password expires"
+msgstr "Send reminders to users before their password expires"
+
+msgid "Number of days before password expiry to send reminder (1–28)"
+msgstr "Number of days before password expiry to send reminder (1–28)"
 
 msgid "Minimum characters in password"
 msgstr "Minimum characters in password"
