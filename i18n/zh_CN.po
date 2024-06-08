@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
+"POT-Creation-Date: 2024-05-30T13:11:40.739Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2023\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -686,9 +686,6 @@ msgstr "TLS"
 msgid "Email sender"
 msgstr "邮件发送者"
 
-msgid "The address that outgoing messages are sent from."
-msgstr ""
-
 msgid "Send me a test email"
 msgstr "发送测试邮件"
 
@@ -731,8 +728,11 @@ msgstr "6个月"
 msgid "12 months"
 msgstr "12个月"
 
-msgid "Enable password expiry alerts"
-msgstr "激活口令过期警告"
+msgid "Send reminders to users before their password expires"
+msgstr ""
+
+msgid "Number of days before password expiry to send reminder (1–28)"
+msgstr ""
 
 msgid "Minimum characters in password"
 msgstr "口令最小字符数"

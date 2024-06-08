@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
+"POT-Creation-Date: 2024-05-30T13:11:40.739Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
 "Language-Team: Pashto (https://app.transifex.com/hisp-uio/teams/100509/ps/)\n"
@@ -687,9 +687,6 @@ msgstr "TLS"
 msgid "Email sender"
 msgstr "د برېښنالیک لېږونکی"
 
-msgid "The address that outgoing messages are sent from."
-msgstr ""
-
 msgid "Send me a test email"
 msgstr "ما ته یو ازمایښتي برېښنالیک راولېږئ"
 
@@ -736,8 +733,11 @@ msgstr "شپږ میاشتې"
 msgid "12 months"
 msgstr "دولس میاشتې"
 
-msgid "Enable password expiry alerts"
-msgstr "Enable password expiry alerts"
+msgid "Send reminders to users before their password expires"
+msgstr ""
+
+msgid "Number of days before password expiry to send reminder (1–28)"
+msgstr ""
 
 msgid "Minimum characters in password"
 msgstr "په پټ نوم کې تر ټولو کم حروف"
