@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
+"POT-Creation-Date: 2024-05-30T13:11:40.739Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
 "Last-Translator: Janeth Cruz, 2023\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -710,9 +710,6 @@ msgstr "TLS"
 msgid "Email sender"
 msgstr "Remitente del correo-e"
 
-msgid "The address that outgoing messages are sent from."
-msgstr ""
-
 msgid "Send me a test email"
 msgstr "Envíame un correo-e de prueba"
 
@@ -759,8 +756,11 @@ msgstr "6 meses"
 msgid "12 months"
 msgstr "12 meses"
 
-msgid "Enable password expiry alerts"
-msgstr "Activar alertas de caducidad de contraseña"
+msgid "Send reminders to users before their password expires"
+msgstr ""
+
+msgid "Number of days before password expiry to send reminder (1–28)"
+msgstr ""
 
 msgid "Minimum characters in password"
 msgstr "Caracteres mínimos en la contraseña"
