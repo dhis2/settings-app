@@ -2,20 +2,21 @@
 # Translators:
 # Bram Piot <bram.piot@gmail.com>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
-# phil_dhis2, 2021
+# Philip Larsen Donnelly, 2021
 # Edem Kossi <ekossi@hispwca.org>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2021
 # tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
+# Elise Desailly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-01-25T16:51:23.907Z\n"
+"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
-"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022\n"
-"Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
+"Last-Translator: Elise Desailly, 2024\n"
+"Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -781,6 +782,21 @@ msgstr "thaï"
 
 msgid "Persian"
 msgstr "Persan"
+
+msgid "Change calendar setting"
+msgstr "Modifier les paramètres du calendrier"
+
+msgid ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
+msgstr ""
+"Modifier les paramètres du calendrier après avoir saisi des données peut "
+"rendre votre système inutilisable. Si vous avez saisi des données, il est "
+"fortement recommandé de ne pas modifier vos paramètres de calendrier."
+
+msgid "Yes, change calendar"
+msgstr "Oui, modifier le calendrier"
 
 msgid "Date format"
 msgstr "Format de date"
