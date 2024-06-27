@@ -202,8 +202,8 @@ class AppComponent extends React.Component {
 }
 
 AppComponent.propTypes = {
-    d2: PropTypes.object.isRequired,
     apiVersion: PropTypes.number.isRequired,
+    d2: PropTypes.object.isRequired,
 }
 AppComponent.contextTypes = { muiTheme: PropTypes.object }
 AppComponent.childContextTypes = {
