@@ -1,4 +1,4 @@
-import { useDataQuery } from '@dhis2/app-runtime'
+import { useDataQuery, useConfig } from '@dhis2/app-runtime'
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import { CssVariables, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React from 'react'
@@ -98,6 +98,7 @@ const query = {
 
 const AppWrapper = () => {
     const { d2 } = useD2()
+    const { apiVersion } = useConfig()
     const { loading, error, data } = useDataQuery(query)
 
     if (error) {
@@ -191,7 +192,7 @@ const AppWrapper = () => {
     return (
         <>
             <CssVariables spacers colors />
-            <App d2={d2} />
+            <App d2={d2} apiVersion={apiVersion} />
         </>
     )
 }

@@ -36,7 +36,6 @@ class AppComponent extends React.Component {
 
     componentDidMount() {
         settingsActions.load()
-
         this.subscriptions = []
 
         this.subscriptions.push(
@@ -101,7 +100,13 @@ class AppComponent extends React.Component {
                 const search = decodeURIComponent(location.search.substr(1))
                 this.doSearch(search)
             } else if (Object.keys(categories).includes(section)) {
-                settingsActions.setCategory(section)
+                // settingsActions.setCategory(section)
+                if (this.props.apiVersion > 40 && section === 'oauth2') {
+                    this.history.replace(`/${categoryOrder[0]}`)
+                    settingsActions.setCategory(categoryOrder[0])
+                } else {
+                    settingsActions.setCategory(section)
+                }
             } else {
                 this.history.replace(`/${categoryOrder[0]}`)
                 settingsActions.setCategory(categoryOrder[0])
@@ -140,10 +145,26 @@ class AppComponent extends React.Component {
     }
 
     render() {
-        const sections = Object.keys(categories).map((category) => {
+        const { apiVersion } = this.props
+        // Filter out oauth2 section if apiVersion is greater than 41
+        const filteredCategoryOrder =
+            apiVersion > 41
+                ? categoryOrder.filter((category) => category !== 'oauth2')
+                : categoryOrder
+
+        const filteredCategories =
+            apiVersion > 41
+                ? Object.fromEntries(
+                      Object.entries(categories).filter(
+                          ([key]) => key !== 'oauth2'
+                      )
+                  )
+                : categories
+
+        const sections = filteredCategoryOrder.map((category) => {
             const key = category
-            const label = categories[category].label
-            const icon = categories[category].icon
+            const label = filteredCategories[category].label
+            const icon = filteredCategories[category].icon
             return { key, label, icon }
         })
 
@@ -180,7 +201,10 @@ class AppComponent extends React.Component {
     }
 }
 
-AppComponent.propTypes = { d2: PropTypes.object.isRequired }
+AppComponent.propTypes = {
+    d2: PropTypes.object.isRequired,
+    apiVersion: PropTypes.number.isRequired,
+}
 AppComponent.contextTypes = { muiTheme: PropTypes.object }
 AppComponent.childContextTypes = {
     d2: PropTypes.object,
