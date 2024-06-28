@@ -22,6 +22,8 @@ class AppComponent extends React.Component {
             snackbarMessage: '',
             showSnackbar: false,
             formValidator: undefined,
+            filteredCategoryOrder: [],
+            filteredCategories: {},
         }
 
         this.sidebarRef = React.createRef()
@@ -93,23 +95,46 @@ class AppComponent extends React.Component {
             })
         )
 
-        // Helper function for setting app state based on location
+        // Filter categories based on apiVersion
+        const { apiVersion } = this.props
+        const filteredCategoryOrder = categoryOrder.filter(
+            (category) =>
+                !categories[category].maximumApiVersion ||
+                apiVersion > categories[category].maximumApiVersion
+        )
+        const filteredCategories = Object.fromEntries(
+            Object.entries(categories).filter(
+                ([key]) =>
+                    !categories[key].maximumApiVersion ||
+                    apiVersion > categories[key].maximumApiVersion
+            )
+        )
+
+        this.setState({
+            filteredCategoryOrder,
+            filteredCategories,
+            category: filteredCategoryOrder[0],
+            currentSettings:
+                filteredCategories[filteredCategoryOrder[0]].settings,
+        })
+
+        // Helper function for setting app state based on location using filtered categories
         const navigate = (location) => {
             const section = location.pathname.substr(1)
             if (location.pathname === '/search') {
                 const search = decodeURIComponent(location.search.substr(1))
                 this.doSearch(search)
-            } else if (Object.keys(categories).includes(section)) {
+            } else if (Object.keys(filteredCategories).includes(section)) {
                 // settingsActions.setCategory(section)
                 if (this.props.apiVersion > 40 && section === 'oauth2') {
-                    this.history.replace(`/${categoryOrder[0]}`)
-                    settingsActions.setCategory(categoryOrder[0])
+                    this.history.replace(`/${filteredCategoryOrder[0]}`)
+                    settingsActions.setCategory(filteredCategoryOrder[0])
                 } else {
                     settingsActions.setCategory(section)
                 }
             } else {
-                this.history.replace(`/${categoryOrder[0]}`)
-                settingsActions.setCategory(categoryOrder[0])
+                this.history.replace(`/${filteredCategoryOrder[0]}`)
+                settingsActions.setCategory(filteredCategoryOrder[0])
             }
         }
 
@@ -145,21 +170,7 @@ class AppComponent extends React.Component {
     }
 
     render() {
-        const { apiVersion } = this.props
-        // Filter out oauth2 section if apiVersion is greater than 41
-        const filteredCategoryOrder =
-            apiVersion > 41
-                ? categoryOrder.filter((category) => category !== 'oauth2')
-                : categoryOrder
-
-        const filteredCategories =
-            apiVersion > 41
-                ? Object.fromEntries(
-                      Object.entries(categories).filter(
-                          ([key]) => key !== 'oauth2'
-                      )
-                  )
-                : categories
+        const { filteredCategoryOrder, filteredCategories } = this.state
 
         const sections = filteredCategoryOrder.map((category) => {
             const key = category
