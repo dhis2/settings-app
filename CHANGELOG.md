@@ -1,3 +1,16 @@
+# [100.2.0](https://github.com/dhis2/settings-app/compare/v100.1.3...v100.2.0) (2024-06-28)
+
+
+### Bug Fixes
+
+* move the filter logic on mounted ([6bb6434](https://github.com/dhis2/settings-app/commit/6bb643411bbc96d27972aec1fa958c6b69983588))
+* remove extra if block in navigation ([02e4c73](https://github.com/dhis2/settings-app/commit/02e4c73827bde406443fe9424008f6d2f3a43329))
+
+
+### Features
+
+* remove oauth2 section from version 42 and above ([0ad564d](https://github.com/dhis2/settings-app/commit/0ad564d4e622b78a584428ff7c3600d795b347f9))
+
 ## [100.1.3](https://github.com/dhis2/settings-app/compare/v100.1.2...v100.1.3) (2024-06-02)
 
 
