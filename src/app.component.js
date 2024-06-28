@@ -100,13 +100,13 @@ class AppComponent extends React.Component {
         const filteredCategoryOrder = categoryOrder.filter(
             (category) =>
                 !categories[category].maximumApiVersion ||
-                apiVersion > categories[category].maximumApiVersion
+                apiVersion <= categories[category].maximumApiVersion
         )
         const filteredCategories = Object.fromEntries(
             Object.entries(categories).filter(
                 ([key]) =>
                     !categories[key].maximumApiVersion ||
-                    apiVersion > categories[key].maximumApiVersion
+                    apiVersion <= categories[key].maximumApiVersion
             )
         )
 
@@ -125,13 +125,7 @@ class AppComponent extends React.Component {
                 const search = decodeURIComponent(location.search.substr(1))
                 this.doSearch(search)
             } else if (Object.keys(filteredCategories).includes(section)) {
-                // settingsActions.setCategory(section)
-                if (this.props.apiVersion > 40 && section === 'oauth2') {
-                    this.history.replace(`/${filteredCategoryOrder[0]}`)
-                    settingsActions.setCategory(filteredCategoryOrder[0])
-                } else {
-                    settingsActions.setCategory(section)
-                }
+                settingsActions.setCategory(section)
             } else {
                 this.history.replace(`/${filteredCategoryOrder[0]}`)
                 settingsActions.setCategory(filteredCategoryOrder[0])
