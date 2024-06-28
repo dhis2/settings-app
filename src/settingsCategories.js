@@ -181,5 +181,6 @@ export const categories = {
         pageLabel: i18n.t('OAuth2 Clients'),
         authority: 'F_OAUTH2_CLIENT_MANAGE',
         settings: ['oauth2clients'],
+        maximumApiVersion: 41,
     },
 }
