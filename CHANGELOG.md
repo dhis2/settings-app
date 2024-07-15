@@ -1,3 +1,10 @@
+## [100.2.1](https://github.com/dhis2/settings-app/compare/v100.2.0...v100.2.1) (2024-07-15)
+
+
+### Bug Fixes
+
+* pass valid locale for number formatting [DHIS2-17709] ([#1352](https://github.com/dhis2/settings-app/issues/1352)) ([460a87a](https://github.com/dhis2/settings-app/commit/460a87acef1ccc11dc0716bbbcfc9669f36a10ed))
+
 # [100.2.0](https://github.com/dhis2/settings-app/compare/v100.1.3...v100.2.0) (2024-06-28)
 
 
