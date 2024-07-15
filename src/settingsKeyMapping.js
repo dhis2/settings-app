@@ -4,8 +4,15 @@ const canBeOverridenLabel = i18n.t(
     'This setting can be overridden by user settings'
 )
 
+const parseLocale = (localeString) => {
+    const [language, country] = (localeString ?? 'en').split(/[-_]/)
+    return `${language}${country ? `-${country}` : ''}`
+}
+
+const parsedLocale = parseLocale(i18n.language)
+
 const formatNumber = (value) =>
-    new Intl.NumberFormat(i18n.language).format(value)
+    new Intl.NumberFormat(parsedLocale).format(value)
 
 /**
  * This file provides information about DHIS2 system settings and configuration options that are not otherwise
