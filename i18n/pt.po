@@ -1,14 +1,14 @@
 # 
 # Translators:
 # Philip Larsen Donnelly, 2021
-# Ge Joao <gsimango@saudigitus.org>, 2021
+# Ge Joao <gsimango@saudigitus.org>, 2024
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2024
 # Viktor Varland <viktor@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
+"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -99,8 +99,89 @@ msgstr "Não sincronize metadados se as versões do DHIS diferirem"
 msgid "Metadata Versioning"
 msgstr "Versão de metadados"
 
+msgid "This client ID is already taken"
+msgstr ""
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Required"
+msgstr ""
+
+msgid "Client ID"
+msgstr ""
+
+msgid "Client Secret"
+msgstr ""
+
+msgid "Grant Types"
+msgstr ""
+
+msgid "Password"
+msgstr "Senha"
+
+msgid "Refresh token"
+msgstr ""
+
+msgid "Authorization code"
+msgstr "Código de autorização"
+
+msgid "One URL per line"
+msgstr "Um URL por linha"
+
+msgid "Redirect URIs"
+msgstr ""
+
+msgid "This field should contain a list of URLs"
+msgstr "Este campo deve conter uma lista de URLs"
+
+msgid "Create new OAuth2 Client"
+msgstr ""
+
+msgid "Edit OAuth2 Client"
+msgstr "Modificar cliente OAuth2"
+
+msgid "Save"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Delete"
+msgstr "Suprimir"
+
+msgid "OAuth2 client saved"
+msgstr ""
+
+msgid "Failed to save OAuth2 client"
+msgstr "Falha ao salvar o cliente OAuth2"
+
+msgid "Add OAuth2 client"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "OAuth2 client deleted"
+msgstr ""
+
+msgid "Failed to delete OAuth2 client"
+msgstr ""
+
 msgid "Settings updated"
 msgstr "Configurações actualizadas"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
 
 msgid "General"
 msgstr "Geral"
@@ -156,20 +237,17 @@ msgstr "Sincronização"
 msgid "Synchronization settings"
 msgstr "Configurações de sincronização"
 
-msgid "OAuth2 Clients"
-msgstr "Clientes da OAuth2"
-
 msgid "Scheduled jobs"
 msgstr "Trabalhos agendados"
+
+msgid "OAuth2 Clients"
+msgstr "Clientes da OAuth2"
 
 msgid "This field is required"
 msgstr "Este campo é obrigatorio"
 
 msgid "This field should be a URL"
 msgstr ""
-
-msgid "This field should contain a list of URLs"
-msgstr "Este campo deve conter uma lista de URLs"
 
 msgid "This field should be a number"
 msgstr "Este campo deve ser um número"
@@ -570,9 +648,6 @@ msgstr "Idioma da base de dados"
 msgid "Property to display in analysis modules"
 msgstr "Propriedade a exibir nos módulos de análise"
 
-msgid "Name"
-msgstr "Nome"
-
 msgid "Short name"
 msgstr "Nome curto"
 
@@ -588,6 +663,21 @@ msgstr "Vírgula"
 
 msgid "Require authority to add to view object lists"
 msgstr "Exigir autorização para adicionar listas de objetos de exibição"
+
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "Login page template"
+msgstr ""
 
 msgid "Custom login page logo"
 msgstr "Logótipo personalizado da página de início de sessão"
@@ -615,9 +705,6 @@ msgstr "Porta"
 
 msgid "Username"
 msgstr "Nome de usuário"
-
-msgid "Password"
-msgstr "Senha"
 
 msgid "TLS"
 msgstr "TLS"
@@ -686,9 +773,6 @@ msgstr "Caracteres mínimos na senha"
 msgid "CORS allowlist"
 msgstr ""
 
-msgid "One URL per line"
-msgstr "Um URL por linha"
-
 msgid "reCAPTCHA Site Key"
 msgstr "reCAPTCHA Site Key"
 
@@ -730,9 +814,6 @@ msgid ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
-
-msgid "Cancel"
-msgstr "Cancelar"
 
 msgid "Yes, change calendar"
 msgstr ""
