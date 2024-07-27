@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
+"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2024\n"
 "Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -98,8 +98,89 @@ msgstr ""
 msgid "Metadata Versioning"
 msgstr "MetaMaʼlumotlar variantlarini boshqarish"
 
+msgid "This client ID is already taken"
+msgstr "Ushbu mijoz identifikatori allaqachon olingan"
+
+msgid "Name"
+msgstr "Исми"
+
+msgid "Required"
+msgstr "Majburiy"
+
+msgid "Client ID"
+msgstr "Klient ID"
+
+msgid "Client Secret"
+msgstr "Mijoz sirlari"
+
+msgid "Grant Types"
+msgstr "Grant turlari"
+
+msgid "Password"
+msgstr "Parol"
+
+msgid "Refresh token"
+msgstr "Tokenni yangilash"
+
+msgid "Authorization code"
+msgstr "Аvtorizatsiya kodi"
+
+msgid "One URL per line"
+msgstr "Har bir qator uchun bitta URL"
+
+msgid "Redirect URIs"
+msgstr "URLlarni qayta yoʼnaltirish"
+
+msgid "This field should contain a list of URLs"
+msgstr "Ushbu maydon URL manzillar roʼyxatini oʼz ichiga olishi kerak"
+
+msgid "Create new OAuth2 Client"
+msgstr "Yangi OAuth2 ni yaratish"
+
+msgid "Edit OAuth2 Client"
+msgstr "OAuth2 ni tahrirlash"
+
+msgid "Save"
+msgstr "Saqlash"
+
+msgid "Cancel"
+msgstr "Бекор қилиш"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr "Hozirda OAuth2 mijozlari roʼyxatdan oʼtkazilmagan"
+
+msgid "Edit"
+msgstr "Tahrirlash"
+
+msgid "Delete"
+msgstr "Oʼchirib tashlash"
+
+msgid "OAuth2 client saved"
+msgstr "OAuth2 mijoz saqlandi"
+
+msgid "Failed to save OAuth2 client"
+msgstr "OAuth2 mijoz saqlanishi amalga oshmadi"
+
+msgid "Add OAuth2 client"
+msgstr ""
+
+msgid "Yes"
+msgstr "Ҳа"
+
+msgid "No"
+msgstr "Йўқ"
+
+msgid "OAuth2 client deleted"
+msgstr "OAuth2 mijoz oʼchirildi"
+
+msgid "Failed to delete OAuth2 client"
+msgstr ""
+
 msgid "Settings updated"
 msgstr "Sozlamalar yangilandi"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
 
 msgid "General"
 msgstr "Umumiy"
@@ -155,20 +236,17 @@ msgstr "Sinxronizatsiya"
 msgid "Synchronization settings"
 msgstr "Sinxronizatsiya sozlamalari"
 
-msgid "OAuth2 Clients"
-msgstr "OAuth2 klientlari"
-
 msgid "Scheduled jobs"
 msgstr "Vazifalar rejalashtirilgan"
+
+msgid "OAuth2 Clients"
+msgstr "OAuth2 klientlari"
 
 msgid "This field is required"
 msgstr "Ushbu qator toʼldirilishi shart"
 
 msgid "This field should be a URL"
 msgstr ""
-
-msgid "This field should contain a list of URLs"
-msgstr "Ushbu maydon URL manzillar roʼyxatini oʼz ichiga olishi kerak"
 
 msgid "This field should be a number"
 msgstr "Ushbu maydonda raqam boʼlishi lozim"
@@ -570,9 +648,6 @@ msgstr "Maʼlumotlar bazasi tili"
 msgid "Property to display in analysis modules"
 msgstr "Tahlil modullarini namoyish etadigan xususiyat"
 
-msgid "Name"
-msgstr "Исми"
-
 msgid "Short name"
 msgstr "Qisqacha nomi"
 
@@ -588,6 +663,21 @@ msgstr "Vergul"
 msgid "Require authority to add to view object lists"
 msgstr ""
 "Obʼektlar roʼyxatini koʼrishni qoʼshish uchun kirish vakolatini talab qilish"
+
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr "Standart"
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr "Odatiy"
+
+msgid "Login page template"
+msgstr ""
 
 msgid "Custom login page logo"
 msgstr "Kirish sahifasida ishlatiladigan logotip"
@@ -615,9 +705,6 @@ msgstr "Port"
 
 msgid "Username"
 msgstr "Фойдаланувчи исми"
-
-msgid "Password"
-msgstr "Parol"
 
 msgid "TLS"
 msgstr "TLS"
@@ -686,9 +773,6 @@ msgstr "Parolda minimal talablar"
 msgid "CORS allowlist"
 msgstr ""
 
-msgid "One URL per line"
-msgstr "Har bir qator uchun bitta URL"
-
 msgid "reCAPTCHA Site Key"
 msgstr "reCAPTCHA Sayt Kaliti"
 
@@ -730,9 +814,6 @@ msgid ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
-
-msgid "Cancel"
-msgstr "Бекор қилиш"
 
 msgid "Yes, change calendar"
 msgstr ""

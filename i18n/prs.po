@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
+"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Persian (Afghanistan) (https://app.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
@@ -96,8 +96,89 @@ msgstr "اگر نسخه DHIS فرق میکرد هیچ وقت دیتا را هم 
 msgid "Metadata Versioning"
 msgstr "نسخه میتا دیتا"
 
+msgid "This client ID is already taken"
+msgstr "آی دی این استفاده کننده قبلا گرفته شده"
+
+msgid "Name"
+msgstr "نام"
+
+msgid "Required"
+msgstr "ضروری"
+
+msgid "Client ID"
+msgstr "هویت مشتری"
+
+msgid "Client Secret"
+msgstr "رمز مشتری"
+
+msgid "Grant Types"
+msgstr "نوع اعانه"
+
+msgid "Password"
+msgstr "کلید رمز"
+
+msgid "Refresh token"
+msgstr "علامت تجدید قوا"
+
+msgid "Authorization code"
+msgstr "کود صلاحیت"
+
+msgid "One URL per line"
+msgstr "یک URI در یک خط"
+
+msgid "Redirect URIs"
+msgstr "یو آر ال های غیر مستقیم"
+
+msgid "This field should contain a list of URLs"
+msgstr "این بخش باید شامل لیست URLs باشد"
+
+msgid "Create new OAuth2 Client"
+msgstr "ایجاد مشتری جدید او ای یووت 2"
+
+msgid "Edit OAuth2 Client"
+msgstr "تصحیح مشتری او ای یووت 2"
+
+msgid "Save"
+msgstr "ذخیره"
+
+msgid "Cancel"
+msgstr "انصراف"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr "فعلآ هیچ OAuth2 clients راجستر نشده است"
+
+msgid "Edit"
+msgstr "تجدید"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "OAuth2 client saved"
+msgstr "ثبت OAuth2 client"
+
+msgid "Failed to save OAuth2 client"
+msgstr "ثبت OAuth2 client به ناکامی انجامید"
+
+msgid "Add OAuth2 client"
+msgstr ""
+
+msgid "Yes"
+msgstr "بلی"
+
+msgid "No"
+msgstr "نخیر"
+
+msgid "OAuth2 client deleted"
+msgstr "خذف OAuth2 client"
+
+msgid "Failed to delete OAuth2 client"
+msgstr ""
+
 msgid "Settings updated"
 msgstr "تنظیمات تجدید گردید"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
 
 msgid "General"
 msgstr "عمومی"
@@ -153,20 +234,17 @@ msgstr "همگاه سازی"
 msgid "Synchronization settings"
 msgstr "تنظیمات همگاه سازی"
 
-msgid "OAuth2 Clients"
-msgstr "مشتریان او ای یووت 2"
-
 msgid "Scheduled jobs"
 msgstr ""
+
+msgid "OAuth2 Clients"
+msgstr "مشتریان او ای یووت 2"
 
 msgid "This field is required"
 msgstr "این بخش لازمی میباشد"
 
 msgid "This field should be a URL"
 msgstr ""
-
-msgid "This field should contain a list of URLs"
-msgstr "این بخش باید شامل لیست URLs باشد"
 
 msgid "This field should be a number"
 msgstr "این بخش باید ارقام باشد"
@@ -565,9 +643,6 @@ msgstr "زبان دیتابیس"
 msgid "Property to display in analysis modules"
 msgstr "ویژگی که در مادیول تحلیل به نمایش بیاید"
 
-msgid "Name"
-msgstr "نام"
-
 msgid "Short name"
 msgstr "نام کوتاه"
 
@@ -582,6 +657,21 @@ msgstr "کامه"
 
 msgid "Require authority to add to view object lists"
 msgstr "نیاز به صلاحیت جهت افزایش و نمایش لست های موضوع میباشد"
+
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr "پیش‌فرض"
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr "مروج"
+
+msgid "Login page template"
+msgstr ""
 
 msgid "Custom login page logo"
 msgstr "لوگوی صفحه مروج داخل شدن به  سیستم"
@@ -609,9 +699,6 @@ msgstr "پورت"
 
 msgid "Username"
 msgstr "نام کاربر"
-
-msgid "Password"
-msgstr "کلید رمز"
 
 msgid "TLS"
 msgstr "تی ال س"
@@ -676,9 +763,6 @@ msgstr "کمترین کلمه در رمز"
 msgid "CORS allowlist"
 msgstr ""
 
-msgid "One URL per line"
-msgstr "یک URI در یک خط"
-
 msgid "reCAPTCHA Site Key"
 msgstr ""
 
@@ -720,9 +804,6 @@ msgid ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
-
-msgid "Cancel"
-msgstr "انصراف"
 
 msgid "Yes, change calendar"
 msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
+"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Jiří Podhorecký, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -96,8 +96,89 @@ msgstr "Nesynchronizovat metadata, pokud se liší verze DHIS"
 msgid "Metadata Versioning"
 msgstr "Správa verzí metadat"
 
+msgid "This client ID is already taken"
+msgstr "Toto ID klienta je již obsazeno"
+
+msgid "Name"
+msgstr "Název"
+
+msgid "Required"
+msgstr "Vyžadováno"
+
+msgid "Client ID"
+msgstr "Client ID"
+
+msgid "Client Secret"
+msgstr "Tajemství klienta"
+
+msgid "Grant Types"
+msgstr "Druhy grantů"
+
+msgid "Password"
+msgstr "Heslo"
+
+msgid "Refresh token"
+msgstr "Obnovit token"
+
+msgid "Authorization code"
+msgstr "Autorizační kód"
+
+msgid "One URL per line"
+msgstr "Jedna adresa URL na řádek"
+
+msgid "Redirect URIs"
+msgstr "Přesměrování URI"
+
+msgid "This field should contain a list of URLs"
+msgstr "Toto pole by mělo obsahovat seznam adres URL"
+
+msgid "Create new OAuth2 Client"
+msgstr "Vytvořit nového klienta OAuth2"
+
+msgid "Edit OAuth2 Client"
+msgstr "Upravit klienta OAuth2"
+
+msgid "Save"
+msgstr "Uložit"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr "Momentálně nejsou registrováni žádní klienti OAuth2"
+
+msgid "Edit"
+msgstr "Upravit"
+
+msgid "Delete"
+msgstr "Vymazat"
+
+msgid "OAuth2 client saved"
+msgstr "Klient OAuth2 uložen"
+
+msgid "Failed to save OAuth2 client"
+msgstr "Uložení klienta OAuth2 se nezdařilo"
+
+msgid "Add OAuth2 client"
+msgstr "Přidat klienta OAuth2"
+
+msgid "Yes"
+msgstr "Ano"
+
+msgid "No"
+msgstr "Ne"
+
+msgid "OAuth2 client deleted"
+msgstr "Klient OAuth2 odstraněn"
+
+msgid "Failed to delete OAuth2 client"
+msgstr "Odstranění klienta OAuth2 se nezdařilo"
+
 msgid "Settings updated"
 msgstr "nastavení aktualizováno"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
 
 msgid "General"
 msgstr "Všeobecné"
@@ -153,20 +234,17 @@ msgstr "Synchronizace"
 msgid "Synchronization settings"
 msgstr "Nastavení synchronizace"
 
-msgid "OAuth2 Clients"
-msgstr "Klienti OAuth2"
-
 msgid "Scheduled jobs"
 msgstr "Plánované úlohy"
+
+msgid "OAuth2 Clients"
+msgstr "Klienti OAuth2"
 
 msgid "This field is required"
 msgstr "Toto pole je povinné"
 
 msgid "This field should be a URL"
 msgstr "Toto pole by mělo být URL"
-
-msgid "This field should contain a list of URLs"
-msgstr "Toto pole by mělo obsahovat seznam adres URL"
 
 msgid "This field should be a number"
 msgstr "Toto pole by mělo být číslo"
@@ -571,9 +649,6 @@ msgstr "Jazyk databáze"
 msgid "Property to display in analysis modules"
 msgstr "Vlastnost k zobrazení v analytických modulech"
 
-msgid "Name"
-msgstr "Název"
-
 msgid "Short name"
 msgstr "Krátký název"
 
@@ -588,6 +663,21 @@ msgstr "Čárka"
 
 msgid "Require authority to add to view object lists"
 msgstr "Vyžadovat oprávnění k přidání k zobrazení seznamů objektů"
+
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr "Výchozí"
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr "Vlastní"
+
+msgid "Login page template"
+msgstr ""
 
 msgid "Custom login page logo"
 msgstr "Vlastní logo přihlašovací stránky"
@@ -619,9 +709,6 @@ msgstr "Port"
 
 msgid "Username"
 msgstr "Uživatelské jméno"
-
-msgid "Password"
-msgstr "Heslo"
 
 msgid "TLS"
 msgstr "TLS"
@@ -690,9 +777,6 @@ msgstr "Minimální počet znaků v hesle"
 msgid "CORS allowlist"
 msgstr ""
 
-msgid "One URL per line"
-msgstr "Jedna adresa URL na řádek"
-
 msgid "reCAPTCHA Site Key"
 msgstr "Klíč webu reCAPTCHA"
 
@@ -734,9 +818,6 @@ msgid ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
-
-msgid "Cancel"
-msgstr "Zrušit"
 
 msgid "Yes, change calendar"
 msgstr ""

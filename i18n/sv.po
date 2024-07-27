@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-01-23T20:33:57.618Z\n"
+"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Swedish (https://app.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -97,8 +97,89 @@ msgstr ""
 msgid "Metadata Versioning"
 msgstr ""
 
+msgid "This client ID is already taken"
+msgstr ""
+
+msgid "Name"
+msgstr "Namn"
+
+msgid "Required"
+msgstr "Nödvändig"
+
+msgid "Client ID"
+msgstr ""
+
+msgid "Client Secret"
+msgstr ""
+
+msgid "Grant Types"
+msgstr ""
+
+msgid "Password"
+msgstr "Lösenord"
+
+msgid "Refresh token"
+msgstr ""
+
+msgid "Authorization code"
+msgstr ""
+
+msgid "One URL per line"
+msgstr ""
+
+msgid "Redirect URIs"
+msgstr ""
+
+msgid "This field should contain a list of URLs"
+msgstr ""
+
+msgid "Create new OAuth2 Client"
+msgstr ""
+
+msgid "Edit OAuth2 Client"
+msgstr ""
+
+msgid "Save"
+msgstr "Spara"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr ""
+
+msgid "Edit"
+msgstr "Redigera"
+
+msgid "Delete"
+msgstr "Radera"
+
+msgid "OAuth2 client saved"
+msgstr ""
+
+msgid "Failed to save OAuth2 client"
+msgstr ""
+
+msgid "Add OAuth2 client"
+msgstr ""
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nej"
+
+msgid "OAuth2 client deleted"
+msgstr ""
+
+msgid "Failed to delete OAuth2 client"
+msgstr ""
+
 msgid "Settings updated"
 msgstr "Inställningar uppdaterad"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
 
 msgid "General"
 msgstr "Allmänt"
@@ -157,13 +238,13 @@ msgstr ""
 msgid "Scheduled jobs"
 msgstr ""
 
+msgid "OAuth2 Clients"
+msgstr ""
+
 msgid "This field is required"
 msgstr "Fältet är nödvändigt"
 
 msgid "This field should be a URL"
-msgstr ""
-
-msgid "This field should contain a list of URLs"
 msgstr ""
 
 msgid "This field should be a number"
@@ -563,9 +644,6 @@ msgstr "Databas språk"
 msgid "Property to display in analysis modules"
 msgstr "Egenskap som ska visas i analysmoduler"
 
-msgid "Name"
-msgstr "Namn"
-
 msgid "Short name"
 msgstr "Kort namn"
 
@@ -579,6 +657,21 @@ msgid "Comma"
 msgstr ""
 
 msgid "Require authority to add to view object lists"
+msgstr ""
+
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr "Beställnings"
+
+msgid "Login page template"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -607,9 +700,6 @@ msgstr ""
 
 msgid "Username"
 msgstr "Användarnamn"
-
-msgid "Password"
-msgstr "Lösenord"
 
 msgid "TLS"
 msgstr ""
@@ -671,10 +761,7 @@ msgstr ""
 msgid "Minimum characters in password"
 msgstr ""
 
-msgid "CORS whitelist"
-msgstr ""
-
-msgid "One URL per line"
+msgid "CORS allowlist"
 msgstr ""
 
 msgid "reCAPTCHA Site Key"
@@ -718,9 +805,6 @@ msgid ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
-
-msgid "Cancel"
-msgstr "Avbryt"
 
 msgid "Yes, change calendar"
 msgstr ""

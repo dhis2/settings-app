@@ -1,13 +1,14 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2021
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2021
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024
+# Philip Larsen Donnelly, 2024
 # Viktor Varland <viktor@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
+"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -98,8 +99,89 @@ msgstr "Không đồng bộ siêu dữ liệu nếu khác phiên bản DHIS"
 msgid "Metadata Versioning"
 msgstr "Phiên bản siêu dữ liệu"
 
+msgid "This client ID is already taken"
+msgstr "Ký hiệu nhận dạng (ID) máy khách này đã được sử dụng"
+
+msgid "Name"
+msgstr "Tên"
+
+msgid "Required"
+msgstr "Bắt buộc"
+
+msgid "Client ID"
+msgstr "Ký hiệu nhận dạng máy khách"
+
+msgid "Client Secret"
+msgstr "Bí mật máy khách"
+
+msgid "Grant Types"
+msgstr "Loại Cấp quyền"
+
+msgid "Password"
+msgstr "Mật khẩu"
+
+msgid "Refresh token"
+msgstr "Nạp lại Cờ"
+
+msgid "Authorization code"
+msgstr "Mã quyền"
+
+msgid "One URL per line"
+msgstr "Mỗi dòng một URL"
+
+msgid "Redirect URIs"
+msgstr "Chuyển hướng URIs"
+
+msgid "This field should contain a list of URLs"
+msgstr "Trường này phải chứa danh sách đường dẫn liên kết (URL)"
+
+msgid "Create new OAuth2 Client"
+msgstr "Tạo máy khách OAuth2"
+
+msgid "Edit OAuth2 Client"
+msgstr "Sửa máy khách OAuth2"
+
+msgid "Save"
+msgstr "Lưu"
+
+msgid "Cancel"
+msgstr "Hủy"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr "Hiện không có máy khách OAuth2 được đăng ký"
+
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+msgid "Delete"
+msgstr "Xóa"
+
+msgid "OAuth2 client saved"
+msgstr "Máy khách OAuth2 đã lưu"
+
+msgid "Failed to save OAuth2 client"
+msgstr "Lưu máy khách OAuth2 KHÔNG THÀNH CÔNG"
+
+msgid "Add OAuth2 client"
+msgstr ""
+
+msgid "Yes"
+msgstr "Có"
+
+msgid "No"
+msgstr "Không"
+
+msgid "OAuth2 client deleted"
+msgstr "Máy khách OAuth2 đã xóa"
+
+msgid "Failed to delete OAuth2 client"
+msgstr ""
+
 msgid "Settings updated"
 msgstr "Cài đặt đã được cập nhật"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
 
 msgid "General"
 msgstr "Tổng quan"
@@ -155,20 +237,17 @@ msgstr "Đồng bộ"
 msgid "Synchronization settings"
 msgstr "Cài đặt đồng bộ"
 
-msgid "OAuth2 Clients"
-msgstr "Máy khách OAuth2"
-
 msgid "Scheduled jobs"
 msgstr ""
+
+msgid "OAuth2 Clients"
+msgstr "Máy khách OAuth2"
 
 msgid "This field is required"
 msgstr "Trường này yêu cầu"
 
 msgid "This field should be a URL"
 msgstr ""
-
-msgid "This field should contain a list of URLs"
-msgstr "Trường này phải chứa danh sách đường dẫn liên kết (URL)"
 
 msgid "This field should be a number"
 msgstr "Trường này phải là số"
@@ -568,9 +647,6 @@ msgstr "Ngôn ngữ cơ sở dữ liệu"
 msgid "Property to display in analysis modules"
 msgstr "Thuộc tính hiện trong các chức năng phân tích dữ liệu"
 
-msgid "Name"
-msgstr "Tên"
-
 msgid "Short name"
 msgstr "Tên rút gọn"
 
@@ -587,6 +663,21 @@ msgstr "Dấu phẩy"
 
 msgid "Require authority to add to view object lists"
 msgstr "Yêu cầu thêm quyền để xem danh sách đối tượng"
+
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr "Mặc định"
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr "Tùy chỉnh"
+
+msgid "Login page template"
+msgstr ""
 
 msgid "Custom login page logo"
 msgstr "Thiết lập biểu tượng trang đăng nhập"
@@ -614,9 +705,6 @@ msgstr "Cổng"
 
 msgid "Username"
 msgstr "Tên đăng nhập"
-
-msgid "Password"
-msgstr "Mật khẩu"
 
 msgid "TLS"
 msgstr ""
@@ -683,9 +771,6 @@ msgstr ""
 msgid "CORS allowlist"
 msgstr ""
 
-msgid "One URL per line"
-msgstr "Mỗi dòng một URL"
-
 msgid "reCAPTCHA Site Key"
 msgstr ""
 
@@ -727,9 +812,6 @@ msgid ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
-
-msgid "Cancel"
-msgstr "Hủy"
 
 msgid "Yes, change calendar"
 msgstr ""
