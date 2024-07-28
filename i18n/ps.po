@@ -1,12 +1,12 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2021
+# Philip Larsen Donnelly, 2024
 # Viktor Varland <viktor@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
+"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
 "Language-Team: Pashto (https://app.transifex.com/hisp-uio/teams/100509/ps/)\n"
@@ -97,8 +97,89 @@ msgstr "د DHIS نسخو د توپیر په صورت کې هېڅکله هم می
 msgid "Metadata Versioning"
 msgstr "د میټا ډاټا نسخه"
 
+msgid "This client ID is already taken"
+msgstr "د دغه مراجعه کاروونکي آيي ډي له وړاندې اخیستل شوې ده"
+
+msgid "Name"
+msgstr "نوم"
+
+msgid "Required"
+msgstr "اړین دي"
+
+msgid "Client ID"
+msgstr "د مراجعه کوونکي ID"
+
+msgid "Client Secret"
+msgstr "د مراجعه کوونکي راز"
+
+msgid "Grant Types"
+msgstr "د ډولونو رکول"
+
+msgid "Password"
+msgstr "پټنوم"
+
+msgid "Refresh token"
+msgstr "د بیا تازه کولو نښه"
+
+msgid "Authorization code"
+msgstr "د رسمي اجازې کوډ"
+
+msgid "One URL per line"
+msgstr "په هره کرښه کې یو URL"
+
+msgid "Redirect URIs"
+msgstr "د URIs بیاځلي رهنمايي کول"
+
+msgid "This field should contain a list of URLs"
+msgstr "دا ساحه یا برخه باید د URLs یو لېسټ ولري"
+
+msgid "Create new OAuth2 Client"
+msgstr "د مراجعه کوونکي نوی OAuth2 جوړ کړئ"
+
+msgid "Edit OAuth2 Client"
+msgstr "د مراجعه کوونکي OAuth2 تصحیح کړئ"
+
+msgid "Save"
+msgstr "ثبت یې کړئ [ ژباړه - ثبت کړئ ]"
+
+msgid "Cancel"
+msgstr "رد یې کړئ [ ژباړه ـ ردول ]"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr "اوسمهال د OAuth2 هېڅ مراجعین نه دي راجسټر شوي"
+
+msgid "Edit"
+msgstr "درست یې کړئ"
+
+msgid "Delete"
+msgstr "خذف یې کړئ"
+
+msgid "OAuth2 client saved"
+msgstr "د OAuth2 مراجعین ثبت شو"
+
+msgid "Failed to save OAuth2 client"
+msgstr "د مراجعه کوونکي نوی OAuth2 ثبتول ناکامی سړه مخ شو"
+
+msgid "Add OAuth2 client"
+msgstr ""
+
+msgid "Yes"
+msgstr "هو"
+
+msgid "No"
+msgstr "نه"
+
+msgid "OAuth2 client deleted"
+msgstr "د OAuth2 مراجعین حذف شو"
+
+msgid "Failed to delete OAuth2 client"
+msgstr ""
+
 msgid "Settings updated"
 msgstr "تنظیمات تجدید شول"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
 
 msgid "General"
 msgstr "عمومي"
@@ -154,20 +235,17 @@ msgstr "هم مهاله کول"
 msgid "Synchronization settings"
 msgstr "په هم مهال وخت کې د پېښو د همغږۍ تنظیمات"
 
-msgid "OAuth2 Clients"
-msgstr "د OAuth2 مراجعین"
-
 msgid "Scheduled jobs"
 msgstr ""
+
+msgid "OAuth2 Clients"
+msgstr "د OAuth2 مراجعین"
 
 msgid "This field is required"
 msgstr "دا ساحه اړینه ده"
 
 msgid "This field should be a URL"
 msgstr ""
-
-msgid "This field should contain a list of URLs"
-msgstr "دا ساحه یا برخه باید د URLs یو لېسټ ولري"
 
 msgid "This field should be a number"
 msgstr "دا ساحه یا برخه باید یوه شمېره وي"
@@ -567,9 +645,6 @@ msgstr "د ډاټابیس ژبه"
 msgid "Property to display in analysis modules"
 msgstr "هغه مالکیت یا ځانګړتیا چې په څېړنیز لارښود یا ماډیولونو کې ښودل کیږي"
 
-msgid "Name"
-msgstr "نوم"
-
 msgid "Short name"
 msgstr "لنډ نوم"
 
@@ -584,6 +659,21 @@ msgstr "کامه (،)"
 
 msgid "Require authority to add to view object lists"
 msgstr "باید د اقلامو د لېسټ د کتلو او اضافه کولو واک ولري"
+
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr "ډیفالټ"
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr "ځانګړی"
+
+msgid "Login page template"
+msgstr ""
 
 msgid "Custom login page logo"
 msgstr "د سیسټم پاڼې ته د ننوتو فرمایشي لوګو"
@@ -611,9 +701,6 @@ msgstr "د ننوتو لار"
 
 msgid "Username"
 msgstr "کارېدونکی نوم"
-
-msgid "Password"
-msgstr "پټنوم"
 
 msgid "TLS"
 msgstr "TLS"
@@ -682,9 +769,6 @@ msgstr "په پټ نوم کې تر ټولو کم حروف"
 msgid "CORS allowlist"
 msgstr ""
 
-msgid "One URL per line"
-msgstr "په هره کرښه کې یو URL"
-
 msgid "reCAPTCHA Site Key"
 msgstr ""
 
@@ -726,9 +810,6 @@ msgid ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
-
-msgid "Cancel"
-msgstr "رد یې کړئ [ ژباړه ـ ردول ]"
 
 msgid "Yes, change calendar"
 msgstr ""

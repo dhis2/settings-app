@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2021
 # Hamza Assada <7amza.it@gmail.com>, 2024
+# Philip Larsen Donnelly, 2024
 # Viktor Varland <viktor@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
+"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
 "Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -98,8 +98,89 @@ msgstr "لا تقم بمزامنة البيانات الوصفية إذا كان
 msgid "Metadata Versioning"
 msgstr "إصدار البيانات الوصفية"
 
+msgid "This client ID is already taken"
+msgstr "تم أخذ رقم تعريف العميل هذا بالفعل"
+
+msgid "Name"
+msgstr "الإسم"
+
+msgid "Required"
+msgstr "مطلوب"
+
+msgid "Client ID"
+msgstr "معرف العميل"
+
+msgid "Client Secret"
+msgstr "كلمة سر العميل"
+
+msgid "Grant Types"
+msgstr "أنواع المنح"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "Refresh token"
+msgstr "تحديث الرمز"
+
+msgid "Authorization code"
+msgstr "رمز المصادقة"
+
+msgid "One URL per line"
+msgstr "عنوان URL واحد لكل صف"
+
+msgid "Redirect URIs"
+msgstr "إعادة توجيه URIs"
+
+msgid "This field should contain a list of URLs"
+msgstr "يجب أن يحتوي هذا الحقل على قائمة بعناوين URLs"
+
+msgid "Create new OAuth2 Client"
+msgstr "إنشاء عميل OAuth2 جديد"
+
+msgid "Edit OAuth2 Client"
+msgstr "تعديل عميل OAuth2"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr "لا يوجد حاليا عملاء OAuth2 مسجلين"
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "OAuth2 client saved"
+msgstr "تم حفظ عميل OAuth2"
+
+msgid "Failed to save OAuth2 client"
+msgstr "فشل في حفظ العميل OAuth2"
+
+msgid "Add OAuth2 client"
+msgstr ""
+
+msgid "Yes"
+msgstr "نعم"
+
+msgid "No"
+msgstr "لا"
+
+msgid "OAuth2 client deleted"
+msgstr "تم حذف عميل OAuth2"
+
+msgid "Failed to delete OAuth2 client"
+msgstr ""
+
 msgid "Settings updated"
 msgstr "تم تحديث الإعدادات"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
 
 msgid "General"
 msgstr "عام"
@@ -155,20 +236,17 @@ msgstr "مزامنة"
 msgid "Synchronization settings"
 msgstr "إعدادات المزامنة"
 
-msgid "OAuth2 Clients"
-msgstr "عملاء OAuth2"
-
 msgid "Scheduled jobs"
 msgstr "المهام المجدولة"
+
+msgid "OAuth2 Clients"
+msgstr "عملاء OAuth2"
 
 msgid "This field is required"
 msgstr "هذا الحقل مطلوب"
 
 msgid "This field should be a URL"
 msgstr ""
-
-msgid "This field should contain a list of URLs"
-msgstr "يجب أن يحتوي هذا الحقل على قائمة بعناوين URLs"
 
 msgid "This field should be a number"
 msgstr "يجب أن يكون هذا الحقل عدداً"
@@ -567,9 +645,6 @@ msgstr "لغة قاعدة البيانات"
 msgid "Property to display in analysis modules"
 msgstr "الخاصية التي يتم عرضها في الوحدات التحليلية"
 
-msgid "Name"
-msgstr "الإسم"
-
 msgid "Short name"
 msgstr "الاسم المختصر"
 
@@ -584,6 +659,21 @@ msgstr "فاصلة"
 
 msgid "Require authority to add to view object lists"
 msgstr "يتطلب صلاحية إضافة لعرض قوائم العناصر"
+
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr "الافتراضي"
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr "مخصص"
+
+msgid "Login page template"
+msgstr ""
 
 msgid "Custom login page logo"
 msgstr "شعار مخصص لصفحة تسجيل الدخول"
@@ -611,9 +701,6 @@ msgstr "المنفذ"
 
 msgid "Username"
 msgstr "اسم المستخدم"
-
-msgid "Password"
-msgstr "كلمة المرور"
 
 msgid "TLS"
 msgstr "TLS"
@@ -678,9 +765,6 @@ msgstr "الحد الأدنى من المحارف في كلمة المرور"
 msgid "CORS allowlist"
 msgstr ""
 
-msgid "One URL per line"
-msgstr "عنوان URL واحد لكل صف"
-
 msgid "reCAPTCHA Site Key"
 msgstr "مفتاح صفحة reCAPTCHA "
 
@@ -722,9 +806,6 @@ msgid ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
-
-msgid "Cancel"
-msgstr "إلغاء"
 
 msgid "Yes, change calendar"
 msgstr ""

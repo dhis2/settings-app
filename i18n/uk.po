@@ -1,15 +1,15 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2021
-# Philip Larsen Donnelly, 2021
 # Wanda <wanda@frontlineaids.org>, 2021
 # Nadiia <semchuk@aph.org.ua>, 2021
+# Philip Larsen Donnelly, 2024
 # Éva Tamási, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
+"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Éva Tamási, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
@@ -100,8 +100,89 @@ msgstr "Не синхронізувати метадані, якщо версі�
 msgid "Metadata Versioning"
 msgstr "Керування версіями метаданих"
 
+msgid "This client ID is already taken"
+msgstr "Цей ідентифікатор клієнта вже взято"
+
+msgid "Name"
+msgstr "Ім'я"
+
+msgid "Required"
+msgstr "Обов'язкове поле"
+
+msgid "Client ID"
+msgstr "Ідентифікатор клієнта"
+
+msgid "Client Secret"
+msgstr "Секретний ключ клієнта"
+
+msgid "Grant Types"
+msgstr "Типи грантів"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Refresh token"
+msgstr "Оновити токен"
+
+msgid "Authorization code"
+msgstr "Код авторизації"
+
+msgid "One URL per line"
+msgstr "Одна URL-адреса на рядок"
+
+msgid "Redirect URIs"
+msgstr "URI-адреси перенаправлення"
+
+msgid "This field should contain a list of URLs"
+msgstr "Це поле має містити список URL-адрес"
+
+msgid "Create new OAuth2 Client"
+msgstr "Створити новий клієнт OAuth2"
+
+msgid "Edit OAuth2 Client"
+msgstr "Редагувати клієнт OAuth2"
+
+msgid "Save"
+msgstr "Зберегти"
+
+msgid "Cancel"
+msgstr "Скасувати"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr "Наразі немає зареєстрованих клієнтів OAuth2"
+
+msgid "Edit"
+msgstr "Редагувати"
+
+msgid "Delete"
+msgstr "Видалити"
+
+msgid "OAuth2 client saved"
+msgstr "Клієнт OAuth2 збережено"
+
+msgid "Failed to save OAuth2 client"
+msgstr "Не вдалося зберегти клієнт OAuth2"
+
+msgid "Add OAuth2 client"
+msgstr "Додати клієнт OAuth2"
+
+msgid "Yes"
+msgstr "Так"
+
+msgid "No"
+msgstr "Ні"
+
+msgid "OAuth2 client deleted"
+msgstr "Клієнт OAuth2 видалено"
+
+msgid "Failed to delete OAuth2 client"
+msgstr "Не вдалося видалити клієнт OAuth2"
+
 msgid "Settings updated"
 msgstr "Налаштування оновлено"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
 
 msgid "General"
 msgstr "Загальне"
@@ -157,20 +238,17 @@ msgstr "Синхронізація"
 msgid "Synchronization settings"
 msgstr "Налаштування синхронізації"
 
-msgid "OAuth2 Clients"
-msgstr "Клієнти OAuth2"
-
 msgid "Scheduled jobs"
 msgstr ""
+
+msgid "OAuth2 Clients"
+msgstr "Клієнти OAuth2"
 
 msgid "This field is required"
 msgstr "Обов'язкове поле"
 
 msgid "This field should be a URL"
 msgstr "Це поле повинно містити веб-адресу"
-
-msgid "This field should contain a list of URLs"
-msgstr "Це поле має містити список URL-адрес"
 
 msgid "This field should be a number"
 msgstr "Це поле повинно включати цифри"
@@ -577,9 +655,6 @@ msgstr "Мова бази даних"
 msgid "Property to display in analysis modules"
 msgstr "Властивість для відображення у модулях аналізу"
 
-msgid "Name"
-msgstr "Ім'я"
-
 msgid "Short name"
 msgstr "Коротке ім'я"
 
@@ -595,6 +670,21 @@ msgstr "Кома"
 
 msgid "Require authority to add to view object lists"
 msgstr "Потрібні повноваження для додавання до перегляду списків об'єктів"
+
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr "За замовчуванням"
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr "Налаштовуваний користувачем"
+
+msgid "Login page template"
+msgstr ""
 
 msgid "Custom login page logo"
 msgstr "Користувацький логотип сторінки входу"
@@ -630,9 +720,6 @@ msgstr "Порт"
 
 msgid "Username"
 msgstr "Ім'я користувача"
-
-msgid "Password"
-msgstr "Пароль"
 
 msgid "TLS"
 msgstr "TLS"
@@ -701,9 +788,6 @@ msgstr "Мінімальна кількість символів у паролі
 msgid "CORS allowlist"
 msgstr ""
 
-msgid "One URL per line"
-msgstr "Одна URL-адреса на рядок"
-
 msgid "reCAPTCHA Site Key"
 msgstr "Ключ сайту reCAPTCHA"
 
@@ -745,9 +829,6 @@ msgid ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
-
-msgid "Cancel"
-msgstr "Скасувати"
 
 msgid "Yes, change calendar"
 msgstr ""

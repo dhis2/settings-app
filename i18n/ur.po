@@ -1,12 +1,12 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2021
+# Philip Larsen Donnelly, 2024
 # Viktor Varland <viktor@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
+"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
 "Language-Team: Urdu (https://app.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -97,8 +97,89 @@ msgstr "DHIS ورژن مختلف ہیں تو میٹا ڈیٹا کو مطابقت
 msgid "Metadata Versioning"
 msgstr "میٹا ڈیٹا ڈیٹا بیسنگ"
 
+msgid "This client ID is already taken"
+msgstr "اس کلائنٹ کی شناخت پہلے ہی لی گئی ہے"
+
+msgid "Name"
+msgstr "ÙØ§Ù"
+
+msgid "Required"
+msgstr "لازمی"
+
+msgid "Client ID"
+msgstr "کلائنٹ کی شناخت"
+
+msgid "Client Secret"
+msgstr "کلائنٹ خفیہ"
+
+msgid "Grant Types"
+msgstr "گرانٹ کی اقسام"
+
+msgid "Password"
+msgstr "پاسورڈ"
+
+msgid "Refresh token"
+msgstr "ٹوکن تازہ کریں"
+
+msgid "Authorization code"
+msgstr "اختیار کوڈ"
+
+msgid "One URL per line"
+msgstr "فی یو آر ایل"
+
+msgid "Redirect URIs"
+msgstr "URIs کو ری ڈائریکٹ کریں"
+
+msgid "This field should contain a list of URLs"
+msgstr "اس فیلڈ کو یو آر ایل کی فہرست پر مشتمل ہونا چاہئے"
+
+msgid "Create new OAuth2 Client"
+msgstr "نئے OAuth2 کلائنٹ بنائیں"
+
+msgid "Edit OAuth2 Client"
+msgstr "OAuth2 کلائنٹ میں ترمیم کریں"
+
+msgid "Save"
+msgstr "محفوظ"
+
+msgid "Cancel"
+msgstr "منسوخ"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr "فی الحال کوئی OAuth2 کلائنٹ نہیں ہیں"
+
+msgid "Edit"
+msgstr "ترمیم"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "OAuth2 client saved"
+msgstr "OAuth2 کلائنٹ کو بچایا"
+
+msgid "Failed to save OAuth2 client"
+msgstr "OAuth2 کلائنٹ کو بچانے میں ناکام"
+
+msgid "Add OAuth2 client"
+msgstr ""
+
+msgid "Yes"
+msgstr "Ø¬Û ÛØ§Úº"
+
+msgid "No"
+msgstr "ÙÛÛÚº"
+
+msgid "OAuth2 client deleted"
+msgstr "OAuth2 کلائنٹ کو خارج کر دیا گیا"
+
+msgid "Failed to delete OAuth2 client"
+msgstr ""
+
 msgid "Settings updated"
 msgstr "ØªØ±ØªÛØ¨Ø§Øª Ø§Ù¾ ÚÛÙ¹"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
 
 msgid "General"
 msgstr "Ø¬ÙØ±Ù"
@@ -154,20 +235,17 @@ msgstr "ہم آہنگی"
 msgid "Synchronization settings"
 msgstr "ہم آہنگی کی ترجیحات"
 
-msgid "OAuth2 Clients"
-msgstr "OAuth2 گاہکوں"
-
 msgid "Scheduled jobs"
 msgstr ""
+
+msgid "OAuth2 Clients"
+msgstr "OAuth2 گاہکوں"
 
 msgid "This field is required"
 msgstr "اس کو پر کرنا ضروری ہے"
 
 msgid "This field should be a URL"
 msgstr ""
-
-msgid "This field should contain a list of URLs"
-msgstr "اس فیلڈ کو یو آر ایل کی فہرست پر مشتمل ہونا چاہئے"
 
 msgid "This field should be a number"
 msgstr "یہ فیلڈ ایک نمبر ہونا چاہئے"
@@ -570,9 +648,6 @@ msgstr "ÚÛÙ¹Ø§ Ø¨ÛØ³ Ø²Ø¨Ø§Ù"
 msgid "Property to display in analysis modules"
 msgstr "Ø¬Ø§Ø¦ÛØ¯Ø§Ø¯ ØªØ¬Ø²ÛÛ Ù"
 
-msgid "Name"
-msgstr "ÙØ§Ù"
-
 msgid "Short name"
 msgstr "Ù"
 
@@ -587,6 +662,21 @@ msgstr "کما"
 
 msgid "Require authority to add to view object lists"
 msgstr "اعتراض کی فہرستوں کو دیکھنے کے لئے شامل کرنے کا اختیار"
+
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr "طےشدہ"
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr "مرضی کے مطابق"
+
+msgid "Login page template"
+msgstr ""
 
 msgid "Custom login page logo"
 msgstr "اپنی مرضی کے لاگ ان پیج لوگو"
@@ -614,9 +704,6 @@ msgstr "پورٹ"
 
 msgid "Username"
 msgstr "ØµØ§Ø±Ù Ú©Ø§ ÙØ§Ù"
-
-msgid "Password"
-msgstr "پاسورڈ"
 
 msgid "TLS"
 msgstr "TLS"
@@ -684,9 +771,6 @@ msgstr "پاس ورڈ میں کم از کم حروف"
 msgid "CORS allowlist"
 msgstr ""
 
-msgid "One URL per line"
-msgstr "فی یو آر ایل"
-
 msgid "reCAPTCHA Site Key"
 msgstr "reCaptcha سائٹ کلید"
 
@@ -728,9 +812,6 @@ msgid ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
-
-msgid "Cancel"
-msgstr "منسوخ"
 
 msgid "Yes, change calendar"
 msgstr ""

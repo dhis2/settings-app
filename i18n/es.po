@@ -1,16 +1,17 @@
 # 
 # Translators:
 # Pablo Pajuelo Cabezas <pablo@dhis2.org>, 2021
-# Philip Larsen Donnelly, 2021
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2023
-# Janeth Cruz, 2023
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2024
+# Andres Miguel Rubio, 2024
+# Janeth Cruz, 2024
+# Philip Larsen Donnelly, 2024
 # Viktor Varland <viktor@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
+"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -102,8 +103,89 @@ msgstr "No sincronizar metadatos si las versiones de DHIS difieren"
 msgid "Metadata Versioning"
 msgstr "Versión de metadatos"
 
+msgid "This client ID is already taken"
+msgstr "Este ID de cliente ya se ha tomado"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Required"
+msgstr "Necesario"
+
+msgid "Client ID"
+msgstr "Identificador de cliente"
+
+msgid "Client Secret"
+msgstr "Certificado del cliente"
+
+msgid "Grant Types"
+msgstr "Grant Types"
+
+msgid "Password"
+msgstr "Contraseña"
+
+msgid "Refresh token"
+msgstr "Refresh token"
+
+msgid "Authorization code"
+msgstr "Código de Autorización"
+
+msgid "One URL per line"
+msgstr "Una URL por línea"
+
+msgid "Redirect URIs"
+msgstr "Redireccionar URIs"
+
+msgid "This field should contain a list of URLs"
+msgstr "Este campo debe contener una lista de URLs"
+
+msgid "Create new OAuth2 Client"
+msgstr "Crear nuevo cliente OAuth2"
+
+msgid "Edit OAuth2 Client"
+msgstr "Editar cliente OAuth2"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr "Actualmente no hay clientes OAuth2 registrados"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "OAuth2 client saved"
+msgstr "Cliente OAuth2 guardado"
+
+msgid "Failed to save OAuth2 client"
+msgstr "Error al guardar el cliente OAuth2"
+
+msgid "Add OAuth2 client"
+msgstr "Añadir cliente OAuth2"
+
+msgid "Yes"
+msgstr "Sí"
+
+msgid "No"
+msgstr "No"
+
+msgid "OAuth2 client deleted"
+msgstr "Cliente OAuth2 eliminado"
+
+msgid "Failed to delete OAuth2 client"
+msgstr "Error al eliminar el cliente OAuth2"
+
 msgid "Settings updated"
 msgstr "Configuración actualizada"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
 
 msgid "General"
 msgstr "General"
@@ -159,20 +241,17 @@ msgstr "Sincronización"
 msgid "Synchronization settings"
 msgstr "Ajustes de sincronización"
 
-msgid "OAuth2 Clients"
-msgstr "Clientes OAuth2"
-
 msgid "Scheduled jobs"
 msgstr "Trabajos programados"
+
+msgid "OAuth2 Clients"
+msgstr "Clientes OAuth2"
 
 msgid "This field is required"
 msgstr "Se requiere éste campo"
 
 msgid "This field should be a URL"
 msgstr "Este campo debe ser una URL"
-
-msgid "This field should contain a list of URLs"
-msgstr "Este campo debe contener una lista de URLs"
 
 msgid "This field should be a number"
 msgstr "Este campo debe ser un número"
@@ -581,9 +660,6 @@ msgstr "Idioma de la base de datos"
 msgid "Property to display in analysis modules"
 msgstr "Propiedad a desplegar en módulos de análisis"
 
-msgid "Name"
-msgstr "Nombre"
-
 msgid "Short name"
 msgstr "Abreviatura"
 
@@ -600,6 +676,21 @@ msgstr "Coma"
 
 msgid "Require authority to add to view object lists"
 msgstr "Requerir autorización para agregar a listas de objetos de vista"
+
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr "Predeterminado"
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr "Personalizado"
+
+msgid "Login page template"
+msgstr ""
 
 msgid "Custom login page logo"
 msgstr "Logotipo personalizado de la página de inicio de sesión"
@@ -634,9 +725,6 @@ msgstr "Puerto"
 
 msgid "Username"
 msgstr "Nombre de usuario"
-
-msgid "Password"
-msgstr "Contraseña"
 
 msgid "TLS"
 msgstr "TLS"
@@ -705,9 +793,6 @@ msgstr "Caracteres mínimos en la contraseña"
 msgid "CORS allowlist"
 msgstr ""
 
-msgid "One URL per line"
-msgstr "Una URL por línea"
-
 msgid "reCAPTCHA Site Key"
 msgstr "reCAPTCHA Clave del sitio"
 
@@ -752,9 +837,6 @@ msgstr ""
 "Cambiar la configuración del calendario después de haber ingresado los datos"
 " puede hacer que su sistema quede inutilizado. Si ha introducido datos, se "
 "recomienda altamente que no cambie la configuración del calendario."
-
-msgid "Cancel"
-msgstr "Cancelar"
 
 msgid "Yes, change calendar"
 msgstr "Sí, cambiar calendario"

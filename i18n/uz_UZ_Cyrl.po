@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
+"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2024\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -98,8 +98,89 @@ msgstr ""
 msgid "Metadata Versioning"
 msgstr "МетаМаълумотлар вариантларини бошқариш"
 
+msgid "This client ID is already taken"
+msgstr "Ушбу мижоз идентификатори аллақачон олинган"
+
+msgid "Name"
+msgstr "Исми"
+
+msgid "Required"
+msgstr "Мажбурий"
+
+msgid "Client ID"
+msgstr "Клиент ID"
+
+msgid "Client Secret"
+msgstr "Мижоз сирлари"
+
+msgid "Grant Types"
+msgstr "Грант турлари"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Refresh token"
+msgstr "Токенни янгилаш"
+
+msgid "Authorization code"
+msgstr "Авторизация коди"
+
+msgid "One URL per line"
+msgstr "Ҳар бир қатор учун битта URL"
+
+msgid "Redirect URIs"
+msgstr "URLларни қайта йўналтириш"
+
+msgid "This field should contain a list of URLs"
+msgstr "Ушбу майдон URL манзиллар рўйхатини ўз ичига олиши керак"
+
+msgid "Create new OAuth2 Client"
+msgstr "Янги OAuth2 ни яратиш"
+
+msgid "Edit OAuth2 Client"
+msgstr "OAuth2 ни таҳрирлаш"
+
+msgid "Save"
+msgstr "Сақлаш"
+
+msgid "Cancel"
+msgstr "Бекор қилиш"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr "Ҳозирда OAuth2 мижозлари рўйхатдан ўтказилмаган"
+
+msgid "Edit"
+msgstr "Таҳрирлаш"
+
+msgid "Delete"
+msgstr "Ўчириб ташлаш"
+
+msgid "OAuth2 client saved"
+msgstr "OAuth2 мижоз сақланди"
+
+msgid "Failed to save OAuth2 client"
+msgstr "OAuth2 мижоз сақланиши амалга ошмади"
+
+msgid "Add OAuth2 client"
+msgstr "OAuth2 клиентини қўшиш"
+
+msgid "Yes"
+msgstr "Ҳа"
+
+msgid "No"
+msgstr "Йўқ"
+
+msgid "OAuth2 client deleted"
+msgstr "OAuth2 мижоз ўчирилди"
+
+msgid "Failed to delete OAuth2 client"
+msgstr "OAuth2 клиентини ўчириш амалга ошмади"
+
 msgid "Settings updated"
 msgstr "Созламалар янгиланди"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
 
 msgid "General"
 msgstr "Умумий"
@@ -155,20 +236,17 @@ msgstr "Синхронизация"
 msgid "Synchronization settings"
 msgstr "Синхронизация созламалари"
 
-msgid "OAuth2 Clients"
-msgstr "OAuth2 клиентлари"
-
 msgid "Scheduled jobs"
 msgstr "Вазифалар режалаштирилган"
+
+msgid "OAuth2 Clients"
+msgstr "OAuth2 клиентлари"
 
 msgid "This field is required"
 msgstr "Ушбу қатор тўлдирилиши шарт"
 
 msgid "This field should be a URL"
 msgstr "Ушбу сатрда URL бўлиши лозим"
-
-msgid "This field should contain a list of URLs"
-msgstr "Ушбу майдон URL манзиллар рўйхатини ўз ичига олиши керак"
 
 msgid "This field should be a number"
 msgstr "Ушбу майдонда рақам бўлиши лозим"
@@ -572,9 +650,6 @@ msgstr "Маълумотлар базаси тили"
 msgid "Property to display in analysis modules"
 msgstr "Таҳлил модулларини намойиш этиш хислати"
 
-msgid "Name"
-msgstr "Исми"
-
 msgid "Short name"
 msgstr "Қисқача номи"
 
@@ -589,6 +664,21 @@ msgstr "Вергул"
 
 msgid "Require authority to add to view object lists"
 msgstr "Объектлар рўйхатини кўришни қўшиш учун кириш ваколатини талаб қилиш"
+
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr "Стандарт"
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr "Одатий"
+
+msgid "Login page template"
+msgstr ""
 
 msgid "Custom login page logo"
 msgstr "Кириш саҳифасида ишлатиладиган логотип"
@@ -624,9 +714,6 @@ msgstr "Порт"
 
 msgid "Username"
 msgstr "Фойдаланувчи исми"
-
-msgid "Password"
-msgstr "Пароль"
 
 msgid "TLS"
 msgstr "TLS"
@@ -696,9 +783,6 @@ msgstr "Паролда минимал талаблар"
 msgid "CORS allowlist"
 msgstr ""
 
-msgid "One URL per line"
-msgstr "Ҳар бир қатор учун битта URL"
-
 msgid "reCAPTCHA Site Key"
 msgstr "reCAPTCHA Сайт Калити"
 
@@ -743,9 +827,6 @@ msgstr ""
 "Маълумотларни киритганингиздан сўнг календар созламаларини ўзгартириш "
 "тизимни яроқсиз ҳолга олиб келиши мумкин. Агар сиз маълумотларни киритган "
 "бўлсангиз, календар созламаларини ўзгартирмаслик тавсия этилади."
-
-msgid "Cancel"
-msgstr "Бекор қилиш"
 
 msgid "Yes, change calendar"
 msgstr "Ҳа, календарни танланг"

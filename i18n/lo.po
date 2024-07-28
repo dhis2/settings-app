@@ -1,16 +1,17 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Saysamone Sibounma, 2022
 # Namwan Chanthavisouk, 2024
+# Philip Larsen Donnelly, 2024
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-09T16:13:02.251Z\n"
+"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Namwan Chanthavisouk, 2024\n"
+"Last-Translator: Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -99,8 +100,89 @@ msgstr ""
 msgid "Metadata Versioning"
 msgstr ""
 
+msgid "This client ID is already taken"
+msgstr ""
+
+msgid "Name"
+msgstr "ຊື່"
+
+msgid "Required"
+msgstr "ຕ້ອງການ"
+
+msgid "Client ID"
+msgstr ""
+
+msgid "Client Secret"
+msgstr ""
+
+msgid "Grant Types"
+msgstr ""
+
+msgid "Password"
+msgstr "ລະຫັດຜ່ານ"
+
+msgid "Refresh token"
+msgstr ""
+
+msgid "Authorization code"
+msgstr ""
+
+msgid "One URL per line"
+msgstr ""
+
+msgid "Redirect URIs"
+msgstr ""
+
+msgid "This field should contain a list of URLs"
+msgstr ""
+
+msgid "Create new OAuth2 Client"
+msgstr ""
+
+msgid "Edit OAuth2 Client"
+msgstr ""
+
+msgid "Save"
+msgstr "ບັນທຶກ"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "There are currently no OAuth2 clients registered"
+msgstr ""
+
+msgid "Edit"
+msgstr "ແກ້ໄຂ"
+
+msgid "Delete"
+msgstr "ລົບ"
+
+msgid "OAuth2 client saved"
+msgstr ""
+
+msgid "Failed to save OAuth2 client"
+msgstr ""
+
+msgid "Add OAuth2 client"
+msgstr ""
+
+msgid "Yes"
+msgstr "ແມ່ນ"
+
+msgid "No"
+msgstr "ບໍ່ແມນ"
+
+msgid "OAuth2 client deleted"
+msgstr ""
+
+msgid "Failed to delete OAuth2 client"
+msgstr ""
+
 msgid "Settings updated"
 msgstr "ການຕັ້ງຄ່ານີ້ໄດ້ຖືກບັນທຶກ"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
 
 msgid "General"
 msgstr "ທົ່ວໄປ"
@@ -156,19 +238,16 @@ msgstr ""
 msgid "Synchronization settings"
 msgstr "Synchronization"
 
-msgid "OAuth2 Clients"
+msgid "Scheduled jobs"
 msgstr ""
 
-msgid "Scheduled jobs"
+msgid "OAuth2 Clients"
 msgstr ""
 
 msgid "This field is required"
 msgstr "This field is required"
 
 msgid "This field should be a URL"
-msgstr ""
-
-msgid "This field should contain a list of URLs"
 msgstr ""
 
 msgid "This field should be a number"
@@ -568,9 +647,6 @@ msgstr "ພາສາຂໍ້ມູນໃນລະບົບ"
 msgid "Property to display in analysis modules"
 msgstr "ສື່ງທີ່ສາມາດນໍາສະເໜີ ໃນໂມດູນຂອງການວິໄຈ"
 
-msgid "Name"
-msgstr "ຊື່"
-
 msgid "Short name"
 msgstr "ຊື່ສັ້ນ"
 
@@ -584,6 +660,21 @@ msgid "Comma"
 msgstr "ຈຸດ"
 
 msgid "Require authority to add to view object lists"
+msgstr ""
+
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr "ຄ່າຕັ້ງຕົ້ນ"
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "Login page template"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -612,9 +703,6 @@ msgstr ""
 
 msgid "Username"
 msgstr "ຊື່ຜູ້ໃຊ້"
-
-msgid "Password"
-msgstr "ລະຫັດຜ່ານ"
 
 msgid "TLS"
 msgstr ""
@@ -679,9 +767,6 @@ msgstr ""
 msgid "CORS allowlist"
 msgstr ""
 
-msgid "One URL per line"
-msgstr ""
-
 msgid "reCAPTCHA Site Key"
 msgstr ""
 
@@ -723,9 +808,6 @@ msgid ""
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
-
-msgid "Cancel"
-msgstr "Cancel"
 
 msgid "Yes, change calendar"
 msgstr ""
