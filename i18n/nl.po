@@ -396,13 +396,13 @@ msgid "Last 12 months"
 msgstr "Laatste 12 maanden"
 
 msgid "This bi-month"
-msgstr ""
+msgstr "Deze twee manden"
 
 msgid "Last bi-month"
-msgstr ""
+msgstr "Vorige twee maanden"
 
 msgid "Last 6 bi-months"
-msgstr ""
+msgstr "Vorige 6 twee maanden"
 
 msgid "This quarter"
 msgstr "Dit kwartier"
