@@ -189,6 +189,7 @@ class MetadataSettings extends Component {
 
         const fieldGetter =
             (field, filter = (x) => x) =>
+            // eslint-disable-next-line react/display-name, react/prop-types
             ({ rowIndex, ...props }) =>
                 (
                     <Cell {...props}>

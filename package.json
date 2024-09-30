@@ -18,18 +18,19 @@
         "format": "yarn format:js && yarn format:text"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^8.0.1",
-        "@dhis2/cli-style": "^10.4.1"
+        "@dhis2/cli-app-scripts": "^11.7.1",
+        "@dhis2/cli-style": "^10.7.3"
     },
     "dependencies": {
         "@dhis2/app-runtime": "^3.2.0",
         "@dhis2/app-runtime-adapter-d2": "^1.0.2",
         "@dhis2/d2-i18n": "^1.1.0",
-        "@dhis2/ui": "^7.2.0",
+        "@dhis2/ui": "^9.11.3",
         "d2": "^31.9.0",
         "d2-ui": "^29.0.35",
         "fixed-data-table": "0.6.5",
         "history": "4.7.2",
+        "loglevel": "^1.9.2",
         "material-design-icons-iconfont": "^6.1.0",
         "material-ui": "0.20.2",
         "prop-types": "^15.7.2",
