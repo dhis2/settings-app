@@ -672,7 +672,7 @@ msgid "Sidebar"
 msgstr ""
 
 msgid "Custom"
-msgstr ""
+msgstr "ກຳນົດເອງ"
 
 msgid "Login page template"
 msgstr ""
