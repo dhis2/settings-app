@@ -1,3 +1,10 @@
+## [100.2.6](https://github.com/dhis2/settings-app/compare/v100.2.5...v100.2.6) (2024-10-06)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([b1ad8d0](https://github.com/dhis2/settings-app/commit/b1ad8d014dcefd951732fb060ce23b1da990cd35))
+
 ## [100.2.5](https://github.com/dhis2/settings-app/compare/v100.2.4...v100.2.5) (2024-08-25)
 
 
