@@ -582,13 +582,13 @@ msgid "Bing Road"
 msgstr "Bản đồ Bing Road"
 
 msgid "Bing Dark"
-msgstr ""
+msgstr "Bing Dark"
 
 msgid "Bing Aerial"
-msgstr ""
+msgstr "Bing Aerial"
 
 msgid "Bing Aerial Labels"
-msgstr ""
+msgstr "Big Aerial Labels"
 
 msgid "Number of database server CPUs"
 msgstr "Số bộ vi xử lý máy chủ cơ sở dữ liệu (CPUs)"
