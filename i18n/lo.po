@@ -576,7 +576,7 @@ msgid "OSM Light (default)"
 msgstr ""
 
 msgid "OSM Detailed"
-msgstr ""
+msgstr "OSM ລາຍລະອຽດ"
 
 msgid "Bing Road"
 msgstr ""
