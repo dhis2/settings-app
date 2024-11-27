@@ -259,6 +259,10 @@ const settingsKeyMapping = {
         label: i18n.t('Include zero data values in analytics tables'),
         type: 'checkbox',
     },
+    keyEmbeddedDashboardsEnabled: {
+        label: i18n.t('Enable embedded dashboards'),
+        type: 'checkbox',
+    },
     keyAnalyticsCacheProgressiveTtlFactor: {
         label: i18n.t('Caching factor'),
         type: 'dropdown',
