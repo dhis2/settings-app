@@ -2,7 +2,11 @@ import i18n from '@dhis2/d2-i18n'
 import { getInstance as getD2 } from 'd2'
 import Action from 'd2-ui/lib/action/Action.js'
 import { Observable } from 'rxjs'
-import { categories } from './settingsCategories.js'
+import {
+    categories,
+    filterCategoriesByApiVersion,
+    filterSettingsByApiVersion,
+} from './settingsCategories.js'
 import settingsKeyMapping from './settingsKeyMapping.js'
 import settingsStore from './settingsStore.js'
 
@@ -92,6 +96,7 @@ settingsActions.saveKey.subscribe((args) => {
 const settingsSearchMap = Observable.fromPromise(
     new Promise((resolve) => {
         settingsActions.load.subscribe((args) => {
+            const { apiVersion } = args?.data || {}
             getD2().then((d2) => {
                 // Get current settings and configuration
                 Promise.all([
@@ -142,7 +147,9 @@ const settingsSearchMap = Observable.fromPromise(
                 )
 
                 // Build the search index
-                const searchMapping = Object.keys(categories)
+                const searchMapping = Object.keys(
+                    filterCategoriesByApiVersion({ categories, apiVersion })
+                )
                     .filter(
                         (categoryKey) =>
                             !categories[categoryKey].authority ||
@@ -150,7 +157,12 @@ const settingsSearchMap = Observable.fromPromise(
                                 categories[categoryKey].authority
                             )
                     )
-                    .map((categoryKey) => categories[categoryKey].settings)
+                    .map((categoryKey) =>
+                        filterSettingsByApiVersion({
+                            settings: categories[categoryKey].settings,
+                            apiVersion,
+                        })
+                    )
                     .reduce(
                         (searchArray, categoryKeys) =>
                             searchArray.concat(categoryKeys),
