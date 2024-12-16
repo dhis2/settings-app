@@ -20,20 +20,48 @@ export const categories = {
         icon: 'settings',
         pageLabel: i18n.t('General settings'),
         settings: [
-            'keyAnalyticsMaxLimit',
-            'keySqlViewMaxLimit',
-            'infrastructuralIndicators',
-            'infrastructuralDataElements',
-            'infrastructuralPeriodType',
-            'feedbackRecipients',
-            'systemUpdateNotificationRecipients',
-            'offlineOrganisationUnitLevel',
-            'factorDeviation',
-            'phoneNumberAreaCode',
-            'multiOrganisationUnitForms',
-            'keyAcceptanceRequiredForApproval',
-            'keyGatherAnalyticalObjectStatisticsInDashboardViews',
-            'keyCountPassiveDashboardViewsInUsageAnalytics',
+            {
+                setting: 'keyAnalyticsMaxLimit',
+            },
+            {
+                setting: 'keySqlViewMaxLimit',
+            },
+            {
+                setting: 'infrastructuralIndicators',
+            },
+            {
+                setting: 'infrastructuralDataElements',
+            },
+            {
+                setting: 'infrastructuralPeriodType',
+            },
+            {
+                setting: 'feedbackRecipients',
+            },
+            {
+                setting: 'systemUpdateNotificationRecipients',
+            },
+            {
+                setting: 'offlineOrganisationUnitLevel',
+            },
+            {
+                setting: 'factorDeviation',
+            },
+            {
+                setting: 'phoneNumberAreaCode',
+            },
+            {
+                setting: 'multiOrganisationUnitForms',
+            },
+            {
+                setting: 'keyAcceptanceRequiredForApproval',
+            },
+            {
+                setting: 'keyGatherAnalyticalObjectStatisticsInDashboardViews',
+            },
+            {
+                setting: 'keyCountPassiveDashboardViewsInUsageAnalytics',
+            },
         ],
     },
     analytics: {
@@ -41,29 +69,81 @@ export const categories = {
         icon: 'equalizer',
         pageLabel: i18n.t('Analytics settings'),
         settings: [
-            'keyAnalysisRelativePeriod',
-            'keyAnalysisDisplayProperty',
-            'keyAnalysisDigitGroupSeparator',
-            'keyHideDailyPeriods',
-            'keyHideWeeklyPeriods',
-            'keyHideBiWeeklyPeriods',
-            'keyHideMonthlyPeriods',
-            'keyHideBiMonthlyPeriods',
-            'analyticsFinancialYearStart',
-            'keyCacheStrategy',
-            'keyCacheability',
-            'keyAnalyticsCacheTtlMode',
-            'keyAnalyticsCacheProgressiveTtlFactor',
-            'keyIgnoreAnalyticsApprovalYearThreshold',
-            'keyRespectMetaDataStartEndDatesInAnalyticsTableExport',
-            'keyIncludeZeroValuesInAnalytics',
-            'keyDashboardContextMenuItemSwitchViewType',
-            'keyDashboardContextMenuItemOpenInRelevantApp',
-            'keyDashboardContextMenuItemShowInterpretationsAndDetails',
-            'keyDashboardContextMenuItemViewFullscreen',
-            'facilityOrgUnitGroupSet',
-            'facilityOrgUnitLevel',
-            'keyDefaultBaseMap',
+            {
+                setting: 'keyAnalysisRelativePeriod',
+            },
+            {
+                setting: 'keyAnalysisDisplayProperty',
+            },
+            {
+                setting: 'keyAnalysisDigitGroupSeparator',
+            },
+            {
+                setting: 'keyHideDailyPeriods',
+            },
+            {
+                setting: 'keyHideWeeklyPeriods',
+            },
+            {
+                setting: 'keyHideBiWeeklyPeriods',
+            },
+            {
+                setting: 'keyHideMonthlyPeriods',
+            },
+            {
+                setting: 'keyHideBiMonthlyPeriods',
+            },
+            {
+                setting: 'analyticsFinancialYearStart',
+            },
+            {
+                setting: 'keyCacheStrategy',
+            },
+            {
+                setting: 'keyCacheability',
+            },
+            {
+                setting: 'keyAnalyticsCacheTtlMode',
+            },
+            {
+                setting: 'keyAnalyticsCacheProgressiveTtlFactor',
+            },
+            {
+                setting: 'keyIgnoreAnalyticsApprovalYearThreshold',
+            },
+            {
+                setting:
+                    'keyRespectMetaDataStartEndDatesInAnalyticsTableExport',
+            },
+            {
+                setting: 'keyIncludeZeroValuesInAnalytics',
+            },
+            {
+                setting: 'keyEmbeddedDashboardsEnabled',
+                minimumApiVersion: 42,
+            },
+            {
+                setting: 'keyDashboardContextMenuItemSwitchViewType',
+            },
+            {
+                setting: 'keyDashboardContextMenuItemOpenInRelevantApp',
+            },
+            {
+                setting:
+                    'keyDashboardContextMenuItemShowInterpretationsAndDetails',
+            },
+            {
+                setting: 'keyDashboardContextMenuItemViewFullscreen',
+            },
+            {
+                setting: 'facilityOrgUnitGroupSet',
+            },
+            {
+                setting: 'facilityOrgUnitLevel',
+            },
+            {
+                setting: 'keyDefaultBaseMap',
+            },
         ],
     },
     server: {
@@ -71,11 +151,21 @@ export const categories = {
         icon: 'business',
         pageLabel: i18n.t('Server settings'),
         settings: [
-            'keyDatabaseServerCpus',
-            'keySystemNotificationsEmail',
-            'googleAnalyticsUA',
-            'keyGoogleMapsApiKey',
-            'keyBingMapsApiKey',
+            {
+                setting: 'keyDatabaseServerCpus',
+            },
+            {
+                setting: 'keySystemNotificationsEmail',
+            },
+            {
+                setting: 'googleAnalyticsUA',
+            },
+            {
+                setting: 'keyGoogleMapsApiKey',
+            },
+            {
+                setting: 'keyBingMapsApiKey',
+            },
         ],
     },
     appearance: {
@@ -83,19 +173,45 @@ export const categories = {
         icon: 'looks',
         pageLabel: i18n.t('Appearance settings'),
         settings: [
-            'localizedText',
-            'keyStyle',
-            'startModule',
-            'startModuleEnableLightweight',
-            'helpPageLink',
-            'keyFlag',
-            'keyUiLocale',
-            'keyDbLocale',
-            'keyRequireAddToView',
-            'keyUseCustomLogoFront',
-            'keyUseCustomLogoBanner',
-            'loginPageLayout',
-            'loginPageTemplate',
+            {
+                setting: 'localizedText',
+            },
+            {
+                setting: 'keyStyle',
+            },
+            {
+                setting: 'startModule',
+            },
+            {
+                setting: 'startModuleEnableLightweight',
+            },
+            {
+                setting: 'helpPageLink',
+            },
+            {
+                setting: 'keyFlag',
+            },
+            {
+                setting: 'keyUiLocale',
+            },
+            {
+                setting: 'keyDbLocale',
+            },
+            {
+                setting: 'keyRequireAddToView',
+            },
+            {
+                setting: 'keyUseCustomLogoFront',
+            },
+            {
+                setting: 'keyUseCustomLogoBanner',
+            },
+            {
+                setting: 'loginPageLayout',
+            },
+            {
+                setting: 'loginPageTemplate',
+            },
         ],
     },
     email: {
@@ -103,13 +219,27 @@ export const categories = {
         icon: 'email',
         pageLabel: i18n.t('Email settings'),
         settings: [
-            'keyEmailHostName',
-            'keyEmailPort',
-            'keyEmailUsername',
-            'keyEmailPassword',
-            'keyEmailTls',
-            'keyEmailSender',
-            'emailTestButton',
+            {
+                setting: 'keyEmailHostName',
+            },
+            {
+                setting: 'keyEmailPort',
+            },
+            {
+                setting: 'keyEmailUsername',
+            },
+            {
+                setting: 'keyEmailPassword',
+            },
+            {
+                setting: 'keyEmailTls',
+            },
+            {
+                setting: 'keyEmailSender',
+            },
+            {
+                setting: 'emailTestButton',
+            },
         ],
     },
     access: {
@@ -117,40 +247,89 @@ export const categories = {
         icon: 'lock_open',
         pageLabel: i18n.t('Access settings'),
         settings: [
-            'selfRegistrationRole',
-            'selfRegistrationOrgUnit',
-            'keySelfRegistrationNoRecaptcha',
-            'keyAccountRecovery',
-            'keyLockMultipleFailedLogins',
-            'keyCanGrantOwnUserAuthorityGroups',
-            'keyAllowObjectAssignment',
-            'credentialsExpires',
-            'credentialsExpiryAlert',
-            'credentialsExpiresReminderInDays',
-            'minPasswordLength',
-            'corsWhitelist',
-            'recaptchaSite',
-            'recaptchaSecret',
+            {
+                setting: 'selfRegistrationRole',
+            },
+            {
+                setting: 'selfRegistrationOrgUnit',
+            },
+            {
+                setting: 'keySelfRegistrationNoRecaptcha',
+            },
+            {
+                setting: 'keyAccountRecovery',
+            },
+            {
+                setting: 'keyLockMultipleFailedLogins',
+            },
+            {
+                setting: 'keyCanGrantOwnUserAuthorityGroups',
+            },
+            {
+                setting: 'keyAllowObjectAssignment',
+            },
+            {
+                setting: 'credentialsExpires',
+            },
+            {
+                setting: 'credentialsExpiryAlert',
+            },
+            {
+                setting: 'credentialsExpiresReminderInDays',
+            },
+            {
+                setting: 'minPasswordLength',
+            },
+            {
+                setting: 'corsWhitelist',
+            },
+            {
+                setting: 'recaptchaSite',
+            },
+            {
+                setting: 'recaptchaSecret',
+            },
         ],
     },
     calendar: {
         label: i18n.t('Calendar'),
         icon: 'date_range',
         pageLabel: i18n.t('Calendar settings'),
-        settings: ['keyCalendar', 'keyDateFormat'],
+        settings: [
+            {
+                setting: 'keyCalendar',
+            },
+            {
+                setting: 'keyDateFormat',
+            },
+        ],
     },
     import: {
         label: i18n.t('Data Import'),
         icon: 'system_update_alt',
         pageLabel: i18n.t('Data import settings'),
         settings: [
-            'keyDataImportStrictPeriods',
-            'keyDataImportStrictDataElements',
-            'keyDataImportStrictCategoryOptionCombos',
-            'keyDataImportStrictOrganisationUnits',
-            'keyDataImportStrictAttributeOptionCombos',
-            'keyDataImportRequireCategoryOptionCombo',
-            'keyDataImportRequireAttributeOptionCombo',
+            {
+                setting: 'keyDataImportStrictPeriods',
+            },
+            {
+                setting: 'keyDataImportStrictDataElements',
+            },
+            {
+                setting: 'keyDataImportStrictCategoryOptionCombos',
+            },
+            {
+                setting: 'keyDataImportStrictOrganisationUnits',
+            },
+            {
+                setting: 'keyDataImportStrictAttributeOptionCombos',
+            },
+            {
+                setting: 'keyDataImportRequireCategoryOptionCombo',
+            },
+            {
+                setting: 'keyDataImportRequireAttributeOptionCombo',
+            },
         ],
     },
     sync: {
@@ -158,10 +337,18 @@ export const categories = {
         icon: 'sync',
         pageLabel: i18n.t('Synchronization settings'),
         settings: [
-            'keyRemoteInstanceUrl',
-            'keyRemoteInstanceUsername',
-            'keyRemoteInstancePassword',
-            'keyMetadataDataVersioning',
+            {
+                setting: 'keyRemoteInstanceUrl',
+            },
+            {
+                setting: 'keyRemoteInstanceUsername',
+            },
+            {
+                setting: 'keyRemoteInstancePassword',
+            },
+            {
+                setting: 'keyMetadataDataVersioning',
+            },
         ],
     },
     scheduledJobs: {
@@ -169,10 +356,18 @@ export const categories = {
         icon: 'schedule',
         pageLabel: i18n.t('Scheduled jobs'),
         settings: [
-            'jobsRescheduleAfterMinutes',
-            'jobsCleanupAfterMinutes',
-            'jobsMaxCronDelayHours',
-            'jobsLogDebugBelowSeconds',
+            {
+                setting: 'jobsRescheduleAfterMinutes',
+            },
+            {
+                setting: 'jobsCleanupAfterMinutes',
+            },
+            {
+                setting: 'jobsMaxCronDelayHours',
+            },
+            {
+                setting: 'jobsLogDebugBelowSeconds',
+            },
         ],
     },
     oauth2: {
@@ -180,7 +375,71 @@ export const categories = {
         icon: 'vpn_lock',
         pageLabel: i18n.t('OAuth2 Clients'),
         authority: 'F_OAUTH2_CLIENT_MANAGE',
-        settings: ['oauth2clients'],
+        settings: [
+            {
+                setting: 'oauth2clients',
+            },
+        ],
         maximumApiVersion: 41,
     },
 }
+
+export const filterSettingsByApiVersion = ({ settings, apiVersion }) =>
+    settings
+        .filter((setting) => {
+            // return true unless minimum/maximum version is specified and is out of range
+            if (
+                setting.minimumApiVersion &&
+                apiVersion < setting.minimumApiVersion
+            ) {
+                return false
+            }
+            if (
+                setting.maximumApiVersion &&
+                apiVersion > setting.maximumApiVersion
+            ) {
+                return false
+            }
+            return true
+        })
+        .map((setting) => setting.setting)
+
+export const filterCategoriesByApiVersion = ({ categories, apiVersion }) =>
+    Object.fromEntries(
+        Object.entries(categories).filter(([key]) => {
+            if (
+                categories[key].minimumApiVersion &&
+                apiVersion < categories[key].minimumApiVersion
+            ) {
+                return false
+            }
+            if (
+                categories[key].maximumApiVersion &&
+                apiVersion > categories[key].maximumApiVersion
+            ) {
+                return false
+            }
+            return true
+        })
+    )
+
+export const filterCategoryOrderByApiVersion = ({
+    categoryOrder,
+    categories,
+    apiVersion,
+}) =>
+    categoryOrder.filter((category) => {
+        if (
+            categories?.[category]?.minimumApiVersion &&
+            apiVersion < categories?.[category]?.minimumApiVersion
+        ) {
+            return false
+        }
+        if (
+            categories?.[category]?.maximumApiVersion &&
+            apiVersion > categories?.[category]?.maximumApiVersion
+        ) {
+            return false
+        }
+        return true
+    })

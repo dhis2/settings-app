@@ -8,7 +8,13 @@ import React from 'react'
 import styles from './App.module.css'
 import configOptionStore from './configOptionStore.js'
 import settingsActions from './settingsActions.js'
-import { categoryOrder, categories } from './settingsCategories.js'
+import {
+    categoryOrder,
+    categories,
+    filterCategoryOrderByApiVersion,
+    filterCategoriesByApiVersion,
+    filterSettingsByApiVersion,
+} from './settingsCategories.js'
 import SettingsFields from './settingsFields.component.js'
 import appTheme from './theme.js'
 
@@ -18,7 +24,10 @@ class AppComponent extends React.Component {
 
         this.state = {
             category: categoryOrder[0],
-            currentSettings: categories[categoryOrder[0]].settings,
+            currentSettings: filterSettingsByApiVersion({
+                settings: categories[categoryOrder[0]].settings,
+                apiVersion: props.apiVersion,
+            }),
             snackbarMessage: '',
             showSnackbar: false,
             formValidator: undefined,
@@ -37,7 +46,7 @@ class AppComponent extends React.Component {
     }
 
     componentDidMount() {
-        settingsActions.load()
+        settingsActions.load({ apiVersion: this.props.apiVersion })
         this.subscriptions = []
 
         this.subscriptions.push(
@@ -78,7 +87,10 @@ class AppComponent extends React.Component {
 
                 this.setState({
                     category,
-                    currentSettings,
+                    currentSettings: filterSettingsByApiVersion({
+                        settings: currentSettings,
+                        apiVersion: this.props.apiVersion,
+                    }),
                     searchText:
                         category === 'search' ? this.state.searchText : '',
                 })
@@ -97,25 +109,25 @@ class AppComponent extends React.Component {
 
         // Filter categories based on apiVersion
         const { apiVersion } = this.props
-        const filteredCategoryOrder = categoryOrder.filter(
-            (category) =>
-                !categories[category].maximumApiVersion ||
-                apiVersion <= categories[category].maximumApiVersion
-        )
-        const filteredCategories = Object.fromEntries(
-            Object.entries(categories).filter(
-                ([key]) =>
-                    !categories[key].maximumApiVersion ||
-                    apiVersion <= categories[key].maximumApiVersion
-            )
-        )
+        const filteredCategoryOrder = filterCategoryOrderByApiVersion({
+            categoryOrder,
+            categories,
+            apiVersion,
+        })
+
+        const filteredCategories = filterCategoriesByApiVersion({
+            categories,
+            apiVersion,
+        })
 
         this.setState({
             filteredCategoryOrder,
             filteredCategories,
             category: filteredCategoryOrder[0],
-            currentSettings:
-                filteredCategories[filteredCategoryOrder[0]].settings,
+            currentSettings: filterSettingsByApiVersion({
+                settings: filteredCategories[filteredCategoryOrder[0]].settings,
+                apiVersion: apiVersion,
+            }),
         })
 
         // Helper function for setting app state based on location using filtered categories
