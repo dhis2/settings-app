@@ -552,6 +552,10 @@ const settingsKeyMapping = {
         label: i18n.t('Enable user account recovery'),
         type: 'checkbox',
     },
+    enforceVerifiedEmail: {
+        label: i18n.t('Enforce verified emails'),
+        type: 'checkbox',
+    },
     keyLockMultipleFailedLogins: {
         label: i18n.t(
             'Lock user account temporarily after multiple failed login attempts'
