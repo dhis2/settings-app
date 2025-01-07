@@ -1,3 +1,17 @@
+# [100.3.0](https://github.com/dhis2/settings-app/compare/v100.2.8...v100.3.0) (2025-01-07)
+
+
+### Bug Fixes
+
+* trigger release ([#1412](https://github.com/dhis2/settings-app/issues/1412)) ([33e0415](https://github.com/dhis2/settings-app/commit/33e0415fb7b940fae5a55510ca0b2bea725e7299))
+* update translations, trigger release ([#1411](https://github.com/dhis2/settings-app/issues/1411)) ([869464f](https://github.com/dhis2/settings-app/commit/869464f06642651dc5e5c95c35947031218a3448))
+
+
+### Features
+
+* add checkbox to enforce verification of emails ([283f762](https://github.com/dhis2/settings-app/commit/283f762a4a5c4b887ac42d0527c85a0f9d74e33d))
+* add keyEmbeddedDashboardsEnabled [DHIS2-18472] ([#1409](https://github.com/dhis2/settings-app/issues/1409)) ([8e36284](https://github.com/dhis2/settings-app/commit/8e362849794e48fae5621dea57544718864025ca))
+
 ## [100.2.8](https://github.com/dhis2/settings-app/compare/v100.2.7...v100.2.8) (2024-10-27)
 
 
