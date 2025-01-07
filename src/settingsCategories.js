@@ -260,6 +260,10 @@ export const categories = {
                 setting: 'keyAccountRecovery',
             },
             {
+                setting: 'enforceVerifiedEmail',
+                minimumApiVersion: 42,
+            },
+            {
                 setting: 'keyLockMultipleFailedLogins',
             },
             {
