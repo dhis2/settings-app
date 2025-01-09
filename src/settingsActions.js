@@ -239,7 +239,7 @@ settingsActions.searchSettings
     .subscribe((searchResultSettings) => {
         settingsActions.setCategory({
             key: 'search',
-            settings: searchResultSettings,
+            settings: searchResultSettings.map((s) => ({ setting: s })),
             searchTerms,
         })
     })

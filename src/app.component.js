@@ -25,7 +25,9 @@ class AppComponent extends React.Component {
         this.state = {
             category: categoryOrder[0],
             currentSettings: filterSettingsByApiVersion({
-                settings: categories[categoryOrder[0]].settings,
+                settings: categories[categoryOrder[0]].settings.map(
+                    (s) => s.setting
+                ),
                 apiVersion: props.apiVersion,
             }),
             snackbarMessage: '',
