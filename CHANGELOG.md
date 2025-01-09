@@ -1,3 +1,10 @@
+## [100.3.1](https://github.com/dhis2/settings-app/compare/v100.3.0...v100.3.1) (2025-01-09)
+
+
+### Bug Fixes
+
+* search with feature toggling ([#1413](https://github.com/dhis2/settings-app/issues/1413)) ([ac1acc5](https://github.com/dhis2/settings-app/commit/ac1acc555e18ccba146ccf5088d1d422a80a51b0))
+
 # [100.3.0](https://github.com/dhis2/settings-app/compare/v100.2.8...v100.3.0) (2025-01-07)
 
 
