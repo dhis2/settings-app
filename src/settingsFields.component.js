@@ -129,6 +129,12 @@ function getMenuItems(mapping) {
     return optionsMenuItems.concat(sourceMenuItems)
 }
 
+function isEmailConfigured(d2) {
+    const emailHostName = d2.system.settings.settings.keyEmailHostName
+    const emailUserName = d2.system.settings.settings.keyEmailUsername
+    return emailHostName && emailUserName
+}
+
 class SettingsFields extends React.Component {
     componentDidMount() {
         this.subscriptions = []
@@ -189,21 +195,40 @@ class SettingsFields extends React.Component {
                             undefined,
                     }),
                 })
+            case 'checkbox': {
+                const isEmailField = key === 'enforceVerifiedEmail'
+                const emailConfigured = isEmailConfigured(d2)
+                const explanatoryText =
+                    emailConfigured &&
+                    'Settings must be configured to send emails to enforce verified emails'
 
-            case 'checkbox':
+                const commonProps = {
+                    label: fieldBase.props.floatingLabelText,
+                    sectionLabel: mapping.sectionLabel || undefined,
+                    style: fieldBase.props.style,
+                    onCheck: (_event, checked) => {
+                        if (
+                            isEmailField &&
+                            !emailConfigured &&
+                            checked === true
+                        ) {
+                            settingsActions.saveKey(key, 'false')
+                            return
+                        }
+                        settingsActions.saveKey(key, checked ? 'true' : 'false')
+                    },
+
+                    disabled: isEmailField && isEmailField && !emailConfigured,
+                }
+
                 return Object.assign({}, fieldBase, {
                     component: Checkbox,
                     props: {
-                        label: fieldBase.props.floatingLabelText,
-                        sectionLabel:
-                            (mapping.sectionLabel && mapping.sectionLabel) ||
-                            undefined,
-                        style: fieldBase.props.style,
-                        onCheck: (e, v) => {
-                            settingsActions.saveKey(key, v ? 'true' : 'false')
-                        },
+                        ...commonProps,
+                        explanatoryText,
                     },
                 })
+            }
 
             case 'staticContent':
                 return Object.assign({}, fieldBase, {
