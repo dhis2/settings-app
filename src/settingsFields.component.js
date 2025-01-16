@@ -198,7 +198,7 @@ class SettingsFields extends React.Component {
             case 'checkbox': {
                 const isEmailField = key === 'enforceVerifiedEmail'
                 const emailConfigured = isEmailConfigured(d2)
-                const explanatoryText =
+                const explanatoryText = isEmailField &&
                     emailConfigured &&
                     'Settings must be configured to send emails to enforce verified emails'
 
