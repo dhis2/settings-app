@@ -554,9 +554,13 @@ const settingsKeyMapping = {
         ),
         type: 'checkbox',
     },
+    keyEmbeddedDashboardsEnabled: {
+        label: i18n.t('Enable embedded dashboards'),
+        type: 'checkbox',
+    },
     enforceVerifiedEmail: {
         label: i18n.t('Enforce verified emails'),
-        type: 'checkbox',
+        type: 'emailCheckbox',
     },
     keyCanGrantOwnUserAuthorityGroups: {
         label: i18n.t('Allow users to grant own user roles'),

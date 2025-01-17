@@ -195,42 +195,57 @@ class SettingsFields extends React.Component {
                             undefined,
                     }),
                 })
-            case 'checkbox': {
-                const isEmailField = key === 'enforceVerifiedEmail'
+            case 'emailCheckbox': {
                 const emailConfigured = isEmailConfigured(d2)
                 const explanatoryText =
-                    isEmailField &&
-                    emailConfigured &&
-                    'Settings must be configured to send emails to enforce verified emails'
-
-                const commonProps = {
-                    label: fieldBase.props.floatingLabelText,
-                    sectionLabel: mapping.sectionLabel || undefined,
-                    style: fieldBase.props.style,
-                    onCheck: (_event, checked) => {
-                        if (
-                            isEmailField &&
-                            !emailConfigured &&
-                            checked === true
-                        ) {
-                            settingsActions.saveKey(key, 'false')
-                            return
-                        }
-                        settingsActions.saveKey(key, checked ? 'true' : 'false')
-                    },
-
-                    disabled: isEmailField && isEmailField && !emailConfigured,
-                }
-
+                    !emailConfigured &&
+                    i18n.t(
+                        'Settings must be configured to send emails to enforce verified emails'
+                    )
                 return Object.assign({}, fieldBase, {
                     component: Checkbox,
                     props: {
-                        ...commonProps,
+                        label: fieldBase.props.floatingLabelText,
+                        sectionLabel:
+                            (mapping.sectionLabel && mapping.sectionLabel) ||
+                            undefined,
+                        style: fieldBase.props.style,
+                        onCheck: (_event, checked) => {
+                            if (!emailConfigured && checked === true) {
+                                settingsActions.showSnackbarMessage(
+                                    i18n.t(
+                                        'You cannot enable "Enforce Verified Email" until email settings are configured.'
+                                    )
+                                )
+                                return
+                            }
+                            if (!emailConfigured && checked === false) {
+                                settingsActions.saveKey(key, 'false')
+                                return
+                            }
+                            settingsActions.saveKey(
+                                key,
+                                checked ? 'true' : 'false'
+                            )
+                        },
                         explanatoryText,
                     },
                 })
             }
-
+            case 'checkbox':
+                return Object.assign({}, fieldBase, {
+                    component: Checkbox,
+                    props: {
+                        label: fieldBase.props.floatingLabelText,
+                        sectionLabel:
+                            (mapping.sectionLabel && mapping.sectionLabel) ||
+                            undefined,
+                        style: fieldBase.props.style,
+                        onCheck: (e, v) => {
+                            settingsActions.saveKey(key, v ? 'true' : 'false')
+                        },
+                    },
+                })
             case 'staticContent':
                 return Object.assign({}, fieldBase, {
                     component: FileUpload,

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-01-07T11:06:15.516Z\n"
-"PO-Revision-Date: 2025-01-07T11:06:15.516Z\n"
+"POT-Creation-Date: 2025-01-17T10:18:20.401Z\n"
+"PO-Revision-Date: 2025-01-17T10:18:20.402Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -548,9 +548,6 @@ msgstr "Respect category option start and end date in analytics table export"
 msgid "Include zero data values in analytics tables"
 msgstr "Include zero data values in analytics tables"
 
-msgid "Enable embedded dashboards"
-msgstr "Enable embedded dashboards"
-
 msgid "Caching factor"
 msgstr "Caching factor"
 
@@ -722,11 +719,11 @@ msgstr "Do not require recaptcha for self registration"
 msgid "Enable user account recovery"
 msgstr "Enable user account recovery"
 
-msgid "Enforce verified emails"
-msgstr "Enforce verified emails"
-
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr "Lock user account temporarily after multiple failed login attempts"
+
+msgid "Enforce verified emails"
+msgstr "Enforce verified emails"
 
 msgid "Allow users to grant own user roles"
 msgstr "Allow users to grant own user roles"
