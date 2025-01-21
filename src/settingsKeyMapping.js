@@ -259,10 +259,6 @@ const settingsKeyMapping = {
         label: i18n.t('Include zero data values in analytics tables'),
         type: 'checkbox',
     },
-    keyEmbeddedDashboardsEnabled: {
-        label: i18n.t('Enable embedded dashboards'),
-        type: 'checkbox',
-    },
     keyAnalyticsCacheProgressiveTtlFactor: {
         label: i18n.t('Caching factor'),
         type: 'dropdown',
@@ -552,15 +548,19 @@ const settingsKeyMapping = {
         label: i18n.t('Enable user account recovery'),
         type: 'checkbox',
     },
-    enforceVerifiedEmail: {
-        label: i18n.t('Enforce verified emails'),
-        type: 'checkbox',
-    },
     keyLockMultipleFailedLogins: {
         label: i18n.t(
             'Lock user account temporarily after multiple failed login attempts'
         ),
         type: 'checkbox',
+    },
+    keyEmbeddedDashboardsEnabled: {
+        label: i18n.t('Enable embedded dashboards'),
+        type: 'checkbox',
+    },
+    enforceVerifiedEmail: {
+        label: i18n.t('Enforce verified emails'),
+        type: 'emailCheckbox',
     },
     keyCanGrantOwnUserAuthorityGroups: {
         label: i18n.t('Allow users to grant own user roles'),

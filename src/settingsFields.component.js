@@ -129,6 +129,12 @@ function getMenuItems(mapping) {
     return optionsMenuItems.concat(sourceMenuItems)
 }
 
+function isEmailConfigured(d2) {
+    const emailHostName = d2.system.settings.settings.keyEmailHostName
+    const emailUserName = d2.system.settings.settings.keyEmailUsername
+    return emailHostName && emailUserName
+}
+
 class SettingsFields extends React.Component {
     componentDidMount() {
         this.subscriptions = []
@@ -189,7 +195,43 @@ class SettingsFields extends React.Component {
                             undefined,
                     }),
                 })
-
+            case 'emailCheckbox': {
+                const emailConfigured = isEmailConfigured(d2)
+                const explanatoryText =
+                    !emailConfigured &&
+                    i18n.t(
+                        'Settings must be configured to send emails to enforce verified emails'
+                    )
+                return Object.assign({}, fieldBase, {
+                    component: Checkbox,
+                    props: {
+                        label: fieldBase.props.floatingLabelText,
+                        sectionLabel:
+                            (mapping.sectionLabel && mapping.sectionLabel) ||
+                            undefined,
+                        style: fieldBase.props.style,
+                        onCheck: (_event, checked) => {
+                            if (!emailConfigured && checked === true) {
+                                settingsActions.showSnackbarMessage(
+                                    i18n.t(
+                                        'You cannot enable "Enforce Verified Email" until email settings are configured.'
+                                    )
+                                )
+                                return
+                            }
+                            if (!emailConfigured && checked === false) {
+                                settingsActions.saveKey(key, 'false')
+                                return
+                            }
+                            settingsActions.saveKey(
+                                key,
+                                checked ? 'true' : 'false'
+                            )
+                        },
+                        explanatoryText,
+                    },
+                })
+            }
             case 'checkbox':
                 return Object.assign({}, fieldBase, {
                     component: Checkbox,
@@ -204,7 +246,6 @@ class SettingsFields extends React.Component {
                         },
                     },
                 })
-
             case 'staticContent':
                 return Object.assign({}, fieldBase, {
                     component: FileUpload,

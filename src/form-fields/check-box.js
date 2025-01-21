@@ -17,6 +17,7 @@ class Checkbox extends React.Component {
             onChange,
             sectionLabel,
             value,
+            explanatoryText,
             ...other
         } = this.props
         /* eslint-enable no-unused-vars */
@@ -31,6 +32,9 @@ class Checkbox extends React.Component {
                     checked={value === 'true'}
                     {...other}
                 />
+                {explanatoryText && (
+                    <p style={{ fontSize: '12px' }}>{explanatoryText}</p>
+                )}
             </div>
         )
     }
@@ -40,6 +44,7 @@ Checkbox.propTypes = {
     onChange: PropTypes.func.isRequired,
     errorStyle: PropTypes.object,
     errorText: PropTypes.string,
+    explanatoryText: PropTypes.string,
     sectionLabel: PropTypes.string,
     value: PropTypes.string,
 }
