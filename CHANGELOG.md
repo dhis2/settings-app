@@ -1,3 +1,17 @@
+# [100.4.0](https://github.com/dhis2/settings-app/compare/v100.3.1...v100.4.0) (2025-01-27)
+
+
+### Bug Fixes
+
+* lint errors ([5c659b1](https://github.com/dhis2/settings-app/commit/5c659b1b0293ba03c57a37fe6054b18d4bb8ea66))
+* trigger release ([edac3c4](https://github.com/dhis2/settings-app/commit/edac3c4723e5f2ed58a9dd2ccf814c72b8d68cec))
+* use an email checkbox type to abstract logic ([43f67bd](https://github.com/dhis2/settings-app/commit/43f67bd928711ff78f49ffd6ed09795b655b1774))
+
+
+### Features
+
+* update enforce verified email checkbox ([2715478](https://github.com/dhis2/settings-app/commit/2715478f9693bc65bf5890768e7bc69058ebe8af))
+
 ## [100.3.1](https://github.com/dhis2/settings-app/compare/v100.3.0...v100.3.1) (2025-01-09)
 
 
