@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Jiří Podhorecký, 2023
+# Jiří Podhorecký <jirka.p@volny.cz>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-05-30T13:11:40.739Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
-"Last-Translator: Jiří Podhorecký, 2023\n"
+"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,7 +43,7 @@ msgid "Cancel upload"
 msgstr "Zrušit nahrávání"
 
 msgid "System default ({{language}})"
-msgstr ""
+msgstr "Výchozí nastavení systému ({{language}})"
 
 msgid "Set the main field value before adding a translation"
 msgstr "Před přidáním překladu nastavte hodnotu hlavního pole"
