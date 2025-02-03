@@ -1,20 +1,18 @@
 # 
 # Translators:
-# Cherise Beek <cherise.beek@gmail.com>, 2021
-# Charel van den Elsen, 2023
-# Rica, 2024
+# Siddharth Agarwal, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
-"Last-Translator: Rica, 2024\n"
-"Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
+"Last-Translator: Siddharth Agarwal, 2025\n"
+"Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
+"Language: hi_IN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Failed to load: {{error}}"
@@ -78,13 +76,13 @@ msgid "Master version:"
 msgstr ""
 
 msgid "None"
-msgstr "Geen"
+msgstr "कोई नहीं"
 
 msgid "Last sync attempt"
 msgstr ""
 
 msgid "Failed"
-msgstr "Mislukt"
+msgstr ""
 
 msgid "No versions exist"
 msgstr ""
@@ -102,10 +100,10 @@ msgid "This client ID is already taken"
 msgstr ""
 
 msgid "Name"
-msgstr "Naam"
+msgstr "नाम"
 
 msgid "Required"
-msgstr "Vereist"
+msgstr "आवश्यकता है"
 
 msgid "Client ID"
 msgstr ""
@@ -117,7 +115,7 @@ msgid "Grant Types"
 msgstr ""
 
 msgid "Password"
-msgstr "Wachtwoord"
+msgstr ""
 
 msgid "Refresh token"
 msgstr ""
@@ -132,7 +130,7 @@ msgid "Redirect URIs"
 msgstr ""
 
 msgid "This field should contain a list of URLs"
-msgstr "Dit veld moet een lijst met URL's bevatten"
+msgstr ""
 
 msgid "Create new OAuth2 Client"
 msgstr ""
@@ -141,19 +139,19 @@ msgid "Edit OAuth2 Client"
 msgstr ""
 
 msgid "Save"
-msgstr "Sla op"
+msgstr "सहेजें"
 
 msgid "Cancel"
-msgstr "Annuleer"
+msgstr "रद्द करें"
 
 msgid "There are currently no OAuth2 clients registered"
 msgstr ""
 
 msgid "Edit"
-msgstr "Bewerk"
+msgstr "संपादन करें"
 
 msgid "Delete"
-msgstr "Verwijderen"
+msgstr "हटाएं"
 
 msgid "OAuth2 client saved"
 msgstr ""
@@ -165,10 +163,10 @@ msgid "Add OAuth2 client"
 msgstr ""
 
 msgid "Yes"
-msgstr "Ja"
+msgstr "हाँ"
 
 msgid "No"
-msgstr "Nee"
+msgstr "नहीं"
 
 msgid "OAuth2 client deleted"
 msgstr ""
@@ -177,7 +175,7 @@ msgid "Failed to delete OAuth2 client"
 msgstr ""
 
 msgid "Settings updated"
-msgstr "Instellingen bijgewerkt"
+msgstr ""
 
 msgid "General"
 msgstr ""
@@ -186,7 +184,7 @@ msgid "General settings"
 msgstr ""
 
 msgid "Analytics"
-msgstr "Analyse"
+msgstr ""
 
 msgid "Analytics settings"
 msgstr ""
@@ -204,7 +202,7 @@ msgid "Appearance settings"
 msgstr ""
 
 msgid "Email"
-msgstr "Emailadres"
+msgstr ""
 
 msgid "Email settings"
 msgstr ""
@@ -216,7 +214,7 @@ msgid "Access settings"
 msgstr ""
 
 msgid "Calendar"
-msgstr "Kalender"
+msgstr ""
 
 msgid "Calendar settings"
 msgstr ""
@@ -237,19 +235,19 @@ msgid "OAuth2 Clients"
 msgstr ""
 
 msgid "This field is required"
-msgstr "Dit veld is verplicht."
+msgstr ""
 
 msgid "This field should be a URL"
-msgstr "Dit veld moet een URL zijn"
+msgstr ""
 
 msgid "This field should be a number"
-msgstr "Dit veld moet een getal zijn"
+msgstr ""
 
 msgid "This field should be a positive number"
-msgstr "Dit veld moet een positief getal zijn"
+msgstr ""
 
 msgid "This field should be an email"
-msgstr "Dit veld moet een e-mail zijn"
+msgstr ""
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
@@ -259,13 +257,13 @@ msgid "This setting can be overridden by user settings"
 msgstr ""
 
 msgid "No options"
-msgstr "Geen opties"
+msgstr ""
 
 msgid "No settings matched the search term"
 msgstr ""
 
 msgid "Search results"
-msgstr "Zoekresultaten"
+msgstr ""
 
 msgid "Maximum number of analytics records"
 msgstr ""
@@ -286,28 +284,28 @@ msgid "Infrastructural period type"
 msgstr ""
 
 msgid "Daily"
-msgstr "Dagelijks"
+msgstr ""
 
 msgid "Weekly"
-msgstr "Wekelijks"
+msgstr ""
 
 msgid "Monthly"
-msgstr "Maandelijks"
+msgstr ""
 
 msgid "Bi-monthly"
-msgstr "Tweemaandelijks"
+msgstr ""
 
 msgid "Quarterly"
-msgstr "Driemaandelijks"
+msgstr ""
 
 msgid "Six-monthly"
-msgstr "Zesmaandelijks"
+msgstr ""
 
 msgid "Six-monthly April"
-msgstr "Zesmaandelijks april"
+msgstr ""
 
 msgid "Yearly"
-msgstr "Jaarlijks"
+msgstr ""
 
 msgid "Financial-April"
 msgstr ""
@@ -349,94 +347,94 @@ msgid "Default relative period for analysis"
 msgstr ""
 
 msgid "This week"
-msgstr "Deze week"
+msgstr ""
 
 msgid "Last week"
-msgstr "Laatste week"
+msgstr ""
 
 msgid "Last 4 weeks"
-msgstr "Laatste 4 weken"
+msgstr ""
 
 msgid "Last 12 weeks"
-msgstr "Laatste 12 weken"
+msgstr ""
 
 msgid "Last 52 weeks"
-msgstr "Laatste 52 weken"
+msgstr ""
 
 msgid "This month"
-msgstr "Deze maand"
+msgstr ""
 
 msgid "Last month"
-msgstr "Laatste maand"
+msgstr ""
 
 msgid "Months this year"
-msgstr "Maanden dit jaar"
+msgstr ""
 
 msgid "Months last year"
-msgstr "Maanden vorig jaar"
+msgstr ""
 
 msgid "Last 3 months"
-msgstr "Laatste 3 maanden"
+msgstr ""
 
 msgid "Last 6 months"
-msgstr "Laatste 6 maanden"
+msgstr ""
 
 msgid "Last 12 months"
-msgstr "Laatste 12 maanden"
+msgstr ""
 
 msgid "This bi-month"
-msgstr "Deze twee manden"
+msgstr ""
 
 msgid "Last bi-month"
-msgstr "Vorige twee maanden"
+msgstr ""
 
 msgid "Last 6 bi-months"
-msgstr "Vorige 6 twee maanden"
+msgstr ""
 
 msgid "This quarter"
-msgstr "Dit kwartier"
+msgstr ""
 
 msgid "Last quarter"
-msgstr "Laatste kwartier"
+msgstr ""
 
 msgid "Quarters this year"
-msgstr "Kwartieren dit jaar"
+msgstr ""
 
 msgid "Quarters last year"
 msgstr ""
 
 msgid "Last 4 quarters"
-msgstr "Laatste 4 kwartieren"
+msgstr ""
 
 msgid "This six-month"
-msgstr "Dit halfjaar"
+msgstr ""
 
 msgid "Last six-month"
-msgstr "Laatste halfjaar"
+msgstr ""
 
 msgid "Last 2 six-months"
-msgstr "Laatste 2 halfjaren"
+msgstr ""
 
 msgid "This year"
-msgstr "Dit jaar"
+msgstr ""
 
 msgid "Last year"
-msgstr "Laatste jaar"
+msgstr ""
 
 msgid "Last 5 years"
-msgstr "Laatste 5 jaren"
+msgstr ""
 
 msgid "Last 10 years"
 msgstr ""
 
 msgid "This financial year"
-msgstr "Dit financieel jaar"
+msgstr ""
 
 msgid "Last financial year"
-msgstr "Laatste financieel jaar"
+msgstr ""
 
 msgid "Last 5 financial years"
-msgstr "Laatste 5 financiële jaren"
+msgstr ""
 
 msgid "Hide daily periods"
 msgstr ""
@@ -460,13 +458,13 @@ msgid "Financial year relative period start month"
 msgstr ""
 
 msgid "April"
-msgstr "april"
+msgstr ""
 
 msgid "July"
-msgstr "Juli"
+msgstr ""
 
 msgid "October"
-msgstr "Oktober"
+msgstr ""
 
 msgid "Cache strategy"
 msgstr ""
@@ -592,7 +590,7 @@ msgid "Application right-side footer"
 msgstr ""
 
 msgid "Style"
-msgstr "Stijl"
+msgstr ""
 
 msgid "Start page"
 msgstr ""
@@ -607,25 +605,25 @@ msgid "Flag"
 msgstr ""
 
 msgid "Interface language"
-msgstr "Interfacetaal"
+msgstr ""
 
 msgid "Database language"
-msgstr "Database taal"
+msgstr ""
 
 msgid "Property to display in analysis modules"
-msgstr "Eigenschap om weer te geven in analysemodules"
+msgstr ""
 
 msgid "Short name"
-msgstr "Korte naam"
+msgstr ""
 
 msgid "Default digit group separator to display in analysis modules"
 msgstr ""
 
 msgid "Space"
-msgstr "Ruimte"
+msgstr ""
 
 msgid "Comma"
-msgstr "Komma"
+msgstr ""
 
 msgid "Require authority to add to view object lists"
 msgstr ""
@@ -655,7 +653,7 @@ msgid "Port"
 msgstr ""
 
 msgid "Username"
-msgstr "Gebruikersnaam"
+msgstr ""
 
 msgid "TLS"
 msgstr ""
@@ -694,7 +692,7 @@ msgid "Require user account password change"
 msgstr ""
 
 msgid "Never"
-msgstr "Nooit"
+msgstr ""
 
 msgid "3 months"
 msgstr ""
