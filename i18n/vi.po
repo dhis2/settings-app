@@ -4,13 +4,14 @@
 # Philip Larsen Donnelly, 2024
 # Viktor Varland <viktor@dhis2.org>, 2024
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024
+# Em Le <em.hispvietnam@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2025-01-17T10:18:20.401Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024\n"
+"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2024\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -247,7 +248,7 @@ msgid "This field is required"
 msgstr "Trường này yêu cầu"
 
 msgid "This field should be a URL"
-msgstr ""
+msgstr "Trường này phải là một URL"
 
 msgid "This field should be a number"
 msgstr "Trường này phải là số"
@@ -256,7 +257,7 @@ msgid "This field should be a positive number"
 msgstr "Trường này phải là số dương"
 
 msgid "This field should be an email"
-msgstr ""
+msgstr "Trường này phải là một tài khoản email"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
@@ -266,7 +267,7 @@ msgid "This setting can be overridden by user settings"
 msgstr "Cài đặt này có thể bị mất hiệu lực bởi cài đặt của người dùng"
 
 msgid "No options"
-msgstr ""
+msgstr "Không có tùy chọn"
 
 msgid "No settings matched the search term"
 msgstr "Không tìm thấy cài đặt"
@@ -737,6 +738,9 @@ msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
 "Khóa tạm thời tài khoảng người dùng sau nhiều lần thử đăng nhập không thành "
 "công"
+
+msgid "Enforce verified emails"
+msgstr ""
 
 msgid "Allow users to grant own user roles"
 msgstr "Cho phép người dùng cung cấp phân quyền cho người dùng khác"
