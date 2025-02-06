@@ -5,7 +5,7 @@ import React from 'react'
 // to ensure that i18n is first imported from locales/index, i18n is imported before App
 // eslint-disable-next-line import/order
 import i18n from './locales/index.js'
-import App from './app.component.js'
+import App from './app.component.jsx'
 import 'material-design-icons-iconfont'
 import configOptionStore from './configOptionStore.js'
 
