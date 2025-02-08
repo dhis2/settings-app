@@ -3,14 +3,14 @@
 # Viktor Varland <viktor@dhis2.org>, 2024
 # Philip Larsen Donnelly, 2024
 # 晓东 林 <13981924470@126.com>, 2024
-# easylin <lin_xd@126.com>, 2024
+# easylin <lin_xd@126.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2025-01-17T10:18:20.401Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2024\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -229,7 +229,7 @@ msgid "Data Import"
 msgstr "数据导入"
 
 msgid "Data import settings"
-msgstr "Data import settings"
+msgstr "数据导入设置"
 
 msgid "Synchronization"
 msgstr "同步"
@@ -311,7 +311,7 @@ msgid "Six-monthly"
 msgstr "六个月"
 
 msgid "Six-monthly April"
-msgstr "半年四月"
+msgstr "始于四月的每六个月"
 
 msgid "Yearly"
 msgstr "每年"
@@ -733,6 +733,9 @@ msgstr "打开用户帐号恢复"
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr "尝试多次登录失败后临时锁住用户帐号"
 
+msgid "Enforce verified emails"
+msgstr "执行已验证的电子邮件"
+
 msgid "Allow users to grant own user roles"
 msgstr "允许用户自我授权角色"
 
@@ -746,7 +749,7 @@ msgid "Never"
 msgstr "从不"
 
 msgid "3 months"
-msgstr "3月"
+msgstr "3个月"
 
 msgid "6 months"
 msgstr "6个月"
@@ -761,19 +764,19 @@ msgid "Number of days before password expiry to send reminder (1–28)"
 msgstr "密码到期前发送提醒的天数 (1–28)"
 
 msgid "Minimum characters in password"
-msgstr "口令最小字符数"
+msgstr "口令最少字符数"
 
 msgid "CORS allowlist"
 msgstr "CORS 许可名单"
 
 msgid "reCAPTCHA Site Key"
-msgstr "reCAPTCHA Site Key"
+msgstr "reCAPTCHA 网站密钥"
 
 msgid "reCAPTCHA Secret Key"
-msgstr "reCAPTCHA Secret Key"
+msgstr "reCAPTCHA 密钥"
 
 msgid "Coptic"
-msgstr "gemlke"
+msgstr "科普特"
 
 msgid "Ethiopian"
 msgstr "埃塞俄比亚"
