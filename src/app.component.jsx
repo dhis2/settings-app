@@ -15,7 +15,7 @@ import {
     filterCategoriesByApiVersion,
     filterSettingsByApiVersion,
 } from './settingsCategories.js'
-import SettingsFields from './settingsFields.component.js'
+import SettingsFields from './settingsFields.component.jsx'
 import appTheme from './theme.js'
 
 class AppComponent extends React.Component {
