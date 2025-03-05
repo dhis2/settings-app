@@ -212,6 +212,14 @@ export const categories = {
             {
                 setting: 'loginPageTemplate',
             },
+            {
+                setting: 'globalShellEnabled',
+                maximumApiVersion: 42,
+            },
+            {
+                setting: 'globalShellApp',
+                maximumApiVersion: 42,
+            }
         ],
     },
     email: {

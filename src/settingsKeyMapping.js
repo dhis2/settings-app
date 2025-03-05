@@ -459,6 +459,15 @@ const settingsKeyMapping = {
         multiLine: true,
         rowsMax: 10,
     },
+    globalShellEnabled: {
+        label: i18n.t('Enable Global Shell'),
+        type: 'checkbox'
+    },
+    globalShellApp: {
+        label: i18n.t('Global Shell App'),
+        type: 'dropdown',
+        source: 'startModules',
+    },
     keyUseCustomLogoFront: {
         label: i18n.t('Custom login page logo'),
         type: 'staticContent',
