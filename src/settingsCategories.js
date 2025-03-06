@@ -217,7 +217,7 @@ export const categories = {
                 maximumApiVersion: 42,
             },
             {
-                setting: 'globalShellApp',
+                setting: 'globalShellAppName',
                 maximumApiVersion: 42,
             }
         ],

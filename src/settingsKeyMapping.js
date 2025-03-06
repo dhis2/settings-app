@@ -463,7 +463,7 @@ const settingsKeyMapping = {
         label: i18n.t('Enable Global Shell'),
         type: 'checkbox'
     },
-    globalShellApp: {
+    globalShellAppName: {
         label: i18n.t('Global Shell App'),
         type: 'dropdown',
         source: 'startModules',
