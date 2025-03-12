@@ -384,7 +384,6 @@ export const categories = {
                 setting: 'oauth2clients',
             },
         ],
-        maximumApiVersion: 41,
     },
 }
 
