@@ -17,16 +17,12 @@ oa2Actions.load.subscribe(() => {
                 oa2Store.setState(
                     oa2ClientCollection.toArray().map((oa2c) =>
                         Object.assign(oa2c, {
-                            password:
-                                oa2c.grantTypes.indexOf('password') !== -1
-                                    ? yes
-                                    : no,
                             refresh_token:
-                                oa2c.grantTypes.indexOf('refresh_token') !== -1
+                                oa2c.authorizationGrantTypes && oa2c.authorizationGrantTypes.indexOf('refresh_token') !== -1
                                     ? yes
                                     : no,
                             authorization_code:
-                                oa2c.grantTypes.indexOf(
+                                oa2c.authorizationGrantTypes && oa2c.authorizationGrantTypes.indexOf(
                                     'authorization_code'
                                 ) !== -1
                                     ? yes

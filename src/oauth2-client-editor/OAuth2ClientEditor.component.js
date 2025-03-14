@@ -78,6 +78,22 @@ class OAuth2ClientEditor extends Component {
     saveAction = () => {
         this.clientModel.name = this.clientModel.name || ''
         this.clientModel.cid = this.clientModel.cid || ''
+        
+        // Ensure authorizationGrantTypes is a comma-separated string
+        if (this.clientModel.authorizationGrantTypes && Array.isArray(this.clientModel.authorizationGrantTypes)) {
+            this.clientModel.authorizationGrantTypes = this.clientModel.authorizationGrantTypes.join(',')
+        }
+        
+        // Ensure redirectUris is in the correct format - keep as array or convert to array if needed
+        if (this.clientModel.redirectUris && typeof this.clientModel.redirectUris === 'string') {
+            this.clientModel.redirectUris = this.clientModel.redirectUris
+                .split('\n')
+                .map(uri => uri.trim())
+                .filter(Boolean)
+        } else if (!this.clientModel.redirectUris) {
+            this.clientModel.redirectUris = []
+        }
+        
         this.setState({ saving: true })
         this.clientModel
             .save()
@@ -103,7 +119,14 @@ class OAuth2ClientEditor extends Component {
     formUpdateAction = (field, v) => {
         let value = v
         if (field === 'redirectUris') {
-            value = v.split('\n').filter((a) => a.trim().length > 0)
+            if (typeof v === 'string') {
+                value = v.split('\n').filter((a) => a.trim().length > 0)
+            } else if (!Array.isArray(v)) {
+                value = []
+            }
+        }
+        if (field === 'authorizationGrantTypes' && Array.isArray(v)) {
+            value = v.join(',')
         }
         this.clientModel[field] = value
         this.forceUpdate()

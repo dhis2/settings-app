@@ -17,7 +17,7 @@ const validateClientID = async (v) => {
     const d2 = await getD2()
     const list = await d2.models.oAuth2Clients.list({
         paging: false,
-        filter: [`cid:eq:${v}`],
+        filter: [`clientId:eq:${v}`],
     })
     if (list.size > 0) {
         throw i18n.t('This client ID is already taken')
@@ -25,7 +25,24 @@ const validateClientID = async (v) => {
 }
 
 const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
-    const grantTypes = ((clientModel && clientModel.grantTypes) || []).reduce(
+    // Handle both string and array types for authorizationGrantTypes
+    let authGrantTypesArray = [];
+    
+    if (clientModel && clientModel.authorizationGrantTypes) {
+        // If it's a string (from backend), split it
+        if (typeof clientModel.authorizationGrantTypes === 'string') {
+            authGrantTypesArray = clientModel.authorizationGrantTypes
+                .split(',')
+                .map(type => type.trim())
+                .filter(Boolean);
+        } 
+        // If it's already an array (from form update)
+        else if (Array.isArray(clientModel.authorizationGrantTypes)) {
+            authGrantTypesArray = clientModel.authorizationGrantTypes;
+        }
+    }
+    
+    const grantTypes = authGrantTypesArray.reduce(
         (curr, prev) => {
             curr[prev] = true
             return curr
@@ -33,26 +50,21 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
         {}
     )
 
+    // Format redirectUris for display in the form
+    let formattedRedirectUris = '';
+    if (clientModel && clientModel.redirectUris) {
+        if (Array.isArray(clientModel.redirectUris)) {
+            formattedRedirectUris = clientModel.redirectUris.join('\n');
+        } else if (typeof clientModel.redirectUris === 'string') {
+            // If it's already a string, keep it as is
+            formattedRedirectUris = clientModel.redirectUris;
+        }
+    }
+
     const fields = [
         {
-            name: 'name',
-            value: clientModel.name,
-            component: TextField,
-            props: {
-                floatingLabelText: i18n.t('Name'),
-                style: formFieldStyle,
-                changeEvent: 'onBlur',
-            },
-            validators: [
-                {
-                    validator: isRequired,
-                    message: i18n.t('Required'),
-                },
-            ],
-        },
-        {
-            name: 'cid',
-            value: clientModel.cid,
+            name: 'clientId',
+            value: clientModel.clientId,
             component: TextField,
             props: {
                 floatingLabelText: i18n.t('Client ID'),
@@ -82,7 +94,7 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
             },
         },
         {
-            name: 'grantTypes',
+            name: 'authorizationGrantTypes',
             component: MultiToggle,
             style: formFieldStyle,
             props: {
@@ -108,7 +120,7 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
         },
         {
             name: 'redirectUris',
-            value: (clientModel.redirectUris || []).join('\n'),
+            value: formattedRedirectUris,
             component: TextField,
             props: {
                 hintText: i18n.t('One URL per line'),
@@ -119,7 +131,7 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
             },
             validators: [
                 {
-                    validator: isUrlArray,
+                    validator: isRequired,
                     message: i18n.t('This field should contain a list of URLs'),
                 },
             ],
