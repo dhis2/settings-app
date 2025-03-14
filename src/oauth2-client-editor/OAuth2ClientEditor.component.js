@@ -76,6 +76,8 @@ class OAuth2ClientEditor extends Component {
     }
 
     saveAction = () => {
+        // Validation is now handled in the ClientForm component
+        
         this.clientModel.name = this.clientModel.name || ''
         this.clientModel.cid = this.clientModel.cid || ''
         

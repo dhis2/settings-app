@@ -4,7 +4,7 @@ import { getInstance as getD2 } from 'd2'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component.js'
 import { isUrlArray, isRequired } from 'd2-ui/lib/forms/Validators.js'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import MultiToggle from '../form-fields/multi-toggle.js'
 import TextField from '../form-fields/text-field.js'
 import styles from './ClientForm.module.css'
@@ -25,6 +25,11 @@ const validateClientID = async (v) => {
 }
 
 const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
+    const [formErrors, setFormErrors] = useState({
+        clientId: false,
+        redirectUris: false
+    });
+    
     // Handle both string and array types for authorizationGrantTypes
     let authGrantTypesArray = [];
     
@@ -65,6 +70,43 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
         }
     }
 
+    const handleSave = () => {
+        // Check fields and show errors if needed
+        const clientIdEmpty = !clientModel.clientId || clientModel.clientId.trim() === '';
+        const redirectUrisEmpty = !formattedRedirectUris || formattedRedirectUris.trim() === '';
+        
+        setFormErrors({
+            clientId: clientIdEmpty,
+            redirectUris: redirectUrisEmpty
+        });
+        
+        // Only save if both fields are valid
+        if (!clientIdEmpty && !redirectUrisEmpty) {
+            onSave();
+        }
+    };
+    
+    // Handle field updates and clear errors
+    const handleFieldUpdate = (fieldName, value) => {
+        // Clear the error for this field if it has a value
+        if (value) {
+            // Check if value is a string before using trim()
+            const isValid = typeof value === 'string' 
+                ? value.trim().length > 0 
+                : Boolean(value);
+                
+            if (isValid) {
+                setFormErrors(prev => ({
+                    ...prev,
+                    [fieldName]: false
+                }));
+            }
+        }
+        
+        // Call the original onUpdate function
+        onUpdate(fieldName, value);
+    };
+
     const fields = [
         {
             name: 'clientId',
@@ -74,6 +116,7 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
                 floatingLabelText: i18n.t('Client ID'),
                 style: formFieldStyle,
                 changeEvent: 'onBlur',
+                errorText: formErrors.clientId ? i18n.t('Required') : null,
             },
             validators: [
                 {
@@ -127,6 +170,7 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
                 multiLine: true,
                 style: formFieldStyle,
                 changeEvent: 'onBlur',
+                errorText: formErrors.redirectUris ? i18n.t('This field should contain a list of URLs') : null,
             },
             validators: [
                 {
@@ -141,13 +185,17 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
         clientModel.id === undefined
             ? i18n.t('Create new OAuth2 Client')
             : i18n.t('Edit OAuth2 Client')
+
     return (
         <Modal onClose={onCancel}>
             <ModalTitle>{headerText}</ModalTitle>
             <ModalContent>
-                <FormBuilder fields={fields} onUpdateField={onUpdate} />
+                <FormBuilder 
+                    fields={fields} 
+                    onUpdateField={handleFieldUpdate} 
+                />
                 <div style={{ marginTop: '1rem' }}>
-                    <Button primary onClick={onSave}>
+                    <Button primary onClick={handleSave}>
                         {i18n.t('Save')}
                     </Button>
                     <Button
