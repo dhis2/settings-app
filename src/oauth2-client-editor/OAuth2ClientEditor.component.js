@@ -84,7 +84,7 @@ class OAuth2ClientEditor extends Component {
             this.clientModel.authorizationGrantTypes = this.clientModel.authorizationGrantTypes.join(',')
         }
         
-        // Ensure redirectUris is in the correct format - keep as array or convert to array if needed
+        // First ensure redirectUris is an array
         if (this.clientModel.redirectUris && typeof this.clientModel.redirectUris === 'string') {
             this.clientModel.redirectUris = this.clientModel.redirectUris
                 .split('\n')
@@ -92,6 +92,11 @@ class OAuth2ClientEditor extends Component {
                 .filter(Boolean)
         } else if (!this.clientModel.redirectUris) {
             this.clientModel.redirectUris = []
+        }
+        
+        // Then convert the array to a comma-separated string
+        if (Array.isArray(this.clientModel.redirectUris)) {
+            this.clientModel.redirectUris = this.clientModel.redirectUris.join(',')
         }
         
         this.setState({ saving: true })
@@ -120,9 +125,17 @@ class OAuth2ClientEditor extends Component {
         let value = v
         if (field === 'redirectUris') {
             if (typeof v === 'string') {
-                value = v.split('\n').filter((a) => a.trim().length > 0)
-            } else if (!Array.isArray(v)) {
-                value = []
+                // Convert newline-separated string to array, then to comma-separated string
+                const uriArray = v.split('\n')
+                    .map(uri => uri.trim())
+                    .filter(Boolean);
+                value = uriArray.join(',');
+            } else if (Array.isArray(v)) {
+                // If it's already an array, convert to comma-separated string
+                value = v.join(',');
+            } else {
+                // Default to empty string
+                value = '';
             }
         }
         if (field === 'authorizationGrantTypes' && Array.isArray(v)) {

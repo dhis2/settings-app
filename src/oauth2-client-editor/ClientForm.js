@@ -54,10 +54,14 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
     let formattedRedirectUris = '';
     if (clientModel && clientModel.redirectUris) {
         if (Array.isArray(clientModel.redirectUris)) {
+            // If it's an array, join with newlines for display
             formattedRedirectUris = clientModel.redirectUris.join('\n');
         } else if (typeof clientModel.redirectUris === 'string') {
-            // If it's already a string, keep it as is
-            formattedRedirectUris = clientModel.redirectUris;
+            // If it's a comma-separated string, replace commas with newlines for display
+            formattedRedirectUris = clientModel.redirectUris.split(',')
+                .map(uri => uri.trim())
+                .filter(Boolean)
+                .join('\n');
         }
     }
 
@@ -100,11 +104,6 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
             props: {
                 label: i18n.t('Grant Types'),
                 items: [
-                    {
-                        name: 'password',
-                        text: i18n.t('Password'),
-                        value: grantTypes.password,
-                    },
                     {
                         name: 'refresh_token',
                         text: i18n.t('Refresh token'),

@@ -15,8 +15,13 @@ oa2Actions.load.subscribe(() => {
                 const no = i18n.t('No')
                 // Map grant types to object props in order to display them in the data table
                 oa2Store.setState(
-                    oa2ClientCollection.toArray().map((oa2c) =>
-                        Object.assign(oa2c, {
+                    oa2ClientCollection.toArray().map((oa2c) => {
+                        // Ensure redirectUris is a string, not an array
+                        if (oa2c.redirectUris && Array.isArray(oa2c.redirectUris)) {
+                            oa2c.redirectUris = oa2c.redirectUris.join(',')
+                        }
+                        
+                        return Object.assign(oa2c, {
                             refresh_token:
                                 oa2c.authorizationGrantTypes && oa2c.authorizationGrantTypes.indexOf('refresh_token') !== -1
                                     ? yes
@@ -28,7 +33,7 @@ oa2Actions.load.subscribe(() => {
                                     ? yes
                                     : no,
                         })
-                    )
+                    })
                 )
             })
     })
