@@ -461,13 +461,13 @@ const settingsKeyMapping = {
     },
     globalShellEnabled: {
         label: i18n.t('Enable Global Shell'),
-        type: 'checkbox'
+        type: 'checkbox',
     },
-    globalShellAppName: {
-        label: i18n.t('Global Shell App'),
-        type: 'dropdown',
-        source: 'startModules',
-    },
+    // globalShellAppName: {
+    //     label: i18n.t('Global Shell App'),
+    //     type: 'dropdown',
+    //     source: 'startModules',
+    // },
     keyUseCustomLogoFront: {
         label: i18n.t('Custom login page logo'),
         type: 'staticContent',

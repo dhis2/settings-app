@@ -216,10 +216,10 @@ export const categories = {
                 setting: 'globalShellEnabled',
                 maximumApiVersion: 42,
             },
-            {
-                setting: 'globalShellAppName',
-                maximumApiVersion: 42,
-            }
+            // {
+            //     setting: 'globalShellAppName',
+            //     maximumApiVersion: 42,
+            // },
         ],
     },
     email: {
