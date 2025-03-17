@@ -27,85 +27,86 @@ const validateClientID = async (v) => {
 const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
     const [formErrors, setFormErrors] = useState({
         clientId: false,
-        redirectUris: false
-    });
+        redirectUris: false,
+    })
 
     // Handle both string and array types for authorizationGrantTypes
-    let authGrantTypesArray = [];
+    let authGrantTypesArray = []
 
     if (clientModel && clientModel.authorizationGrantTypes) {
         // If it's a string (from backend), split it
         if (typeof clientModel.authorizationGrantTypes === 'string') {
             authGrantTypesArray = clientModel.authorizationGrantTypes
                 .split(',')
-                .map(type => type.trim())
-                .filter(Boolean);
+                .map((type) => type.trim())
+                .filter(Boolean)
         }
         // If it's already an array (from form update)
         else if (Array.isArray(clientModel.authorizationGrantTypes)) {
-            authGrantTypesArray = clientModel.authorizationGrantTypes;
+            authGrantTypesArray = clientModel.authorizationGrantTypes
         }
     }
 
-    const grantTypes = authGrantTypesArray.reduce(
-        (curr, prev) => {
-            curr[prev] = true
-            return curr
-        },
-        {}
-    )
+    const grantTypes = authGrantTypesArray.reduce((curr, prev) => {
+        curr[prev] = true
+        return curr
+    }, {})
 
     // Format redirectUris for display in the form
-    let formattedRedirectUris = '';
+    let formattedRedirectUris = ''
     if (clientModel && clientModel.redirectUris) {
         if (Array.isArray(clientModel.redirectUris)) {
             // If it's an array, join with newlines for display
-            formattedRedirectUris = clientModel.redirectUris.join('\n');
+            formattedRedirectUris = clientModel.redirectUris.join('\n')
         } else if (typeof clientModel.redirectUris === 'string') {
             // If it's a comma-separated string, replace commas with newlines for display
-            formattedRedirectUris = clientModel.redirectUris.split(',')
-                .map(uri => uri.trim())
+            formattedRedirectUris = clientModel.redirectUris
+                .split(',')
+                .map((uri) => uri.trim())
                 .filter(Boolean)
-                .join('\n');
+                .join('\n')
         }
     }
 
     const handleSave = () => {
         // Check fields and show errors if needed
-        const clientIdEmpty = !clientModel.clientId || clientModel.clientId.trim() === '';
-        const redirectUrisEmpty = !formattedRedirectUris || formattedRedirectUris.trim() === '';
+        const clientIdEmpty =
+            !clientModel.clientId || clientModel.clientId.trim() === ''
+        const redirectUrisEmpty =
+            !formattedRedirectUris || formattedRedirectUris.trim() === ''
 
         setFormErrors({
             clientId: clientIdEmpty,
-            redirectUris: redirectUrisEmpty
-        });
+            redirectUris: redirectUrisEmpty,
+        })
 
         // Only save if both fields are valid
         if (!clientIdEmpty && !redirectUrisEmpty) {
-            onSave();
+            onSave()
         }
-    };
+    }
 
     // Handle field updates and clear errors
     const handleFieldUpdate = (fieldName, value) => {
         // Clear the error for this field if it has a value
         if (value) {
             // Check if value is a string before using trim()
-            const isValid = typeof value === 'string'
-                ? value.trim().length > 0
-                : Boolean(value);
+            const isValid =
+                typeof value === 'string'
+                    ? value.trim().length > 0
+                    : Boolean(value)
 
             if (isValid) {
-                setFormErrors(prev => ({
+                setFormErrors((prev) => ({
                     ...prev,
-                    [fieldName]: false
-                }));
+                    [fieldName]: false,
+                }))
             }
         }
 
         // Call the original onUpdate function
-        onUpdate(fieldName, value);
-    };
+        onUpdate(fieldName, value)
+    }
 
     const fields = [
         {
@@ -170,7 +171,9 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
                 multiLine: true,
                 style: formFieldStyle,
                 changeEvent: 'onBlur',
-                errorText: formErrors.redirectUris ? i18n.t('This field should contain a list of URLs') : null,
+                errorText: formErrors.redirectUris
+                    ? i18n.t('This field should contain a list of URLs')
+                    : null,
             },
             validators: [
                 {

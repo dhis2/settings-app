@@ -17,17 +17,24 @@ oa2Actions.load.subscribe(() => {
                 oa2Store.setState(
                     oa2ClientCollection.toArray().map((oa2c) => {
                         // Ensure redirectUris is a string, not an array
-                        if (oa2c.redirectUris && Array.isArray(oa2c.redirectUris)) {
+                        if (
+                            oa2c.redirectUris &&
+                            Array.isArray(oa2c.redirectUris)
+                        ) {
                             oa2c.redirectUris = oa2c.redirectUris.join(',')
                         }
-                        
+
                         return Object.assign(oa2c, {
                             refresh_token:
-                                oa2c.authorizationGrantTypes && oa2c.authorizationGrantTypes.indexOf('refresh_token') !== -1
+                                oa2c.authorizationGrantTypes &&
+                                oa2c.authorizationGrantTypes.indexOf(
+                                    'refresh_token'
+                                ) !== -1
                                     ? yes
                                     : no,
                             authorization_code:
-                                oa2c.authorizationGrantTypes && oa2c.authorizationGrantTypes.indexOf(
+                                oa2c.authorizationGrantTypes &&
+                                oa2c.authorizationGrantTypes.indexOf(
                                     'authorization_code'
                                 ) !== -1
                                     ? yes

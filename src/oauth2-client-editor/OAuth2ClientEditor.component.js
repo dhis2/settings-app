@@ -77,30 +77,38 @@ class OAuth2ClientEditor extends Component {
 
     saveAction = () => {
         // Validation is now handled in the ClientForm component
-        
+
         this.clientModel.name = this.clientModel.name || ''
         this.clientModel.cid = this.clientModel.cid || ''
-        
+
         // Ensure authorizationGrantTypes is a comma-separated string
-        if (this.clientModel.authorizationGrantTypes && Array.isArray(this.clientModel.authorizationGrantTypes)) {
-            this.clientModel.authorizationGrantTypes = this.clientModel.authorizationGrantTypes.join(',')
+        if (
+            this.clientModel.authorizationGrantTypes &&
+            Array.isArray(this.clientModel.authorizationGrantTypes)
+        ) {
+            this.clientModel.authorizationGrantTypes =
+                this.clientModel.authorizationGrantTypes.join(',')
         }
-        
+
         // First ensure redirectUris is an array
-        if (this.clientModel.redirectUris && typeof this.clientModel.redirectUris === 'string') {
+        if (
+            this.clientModel.redirectUris &&
+            typeof this.clientModel.redirectUris === 'string'
+        ) {
             this.clientModel.redirectUris = this.clientModel.redirectUris
                 .split('\n')
-                .map(uri => uri.trim())
+                .map((uri) => uri.trim())
                 .filter(Boolean)
         } else if (!this.clientModel.redirectUris) {
             this.clientModel.redirectUris = []
         }
-        
+
         // Then convert the array to a comma-separated string
         if (Array.isArray(this.clientModel.redirectUris)) {
-            this.clientModel.redirectUris = this.clientModel.redirectUris.join(',')
+            this.clientModel.redirectUris =
+                this.clientModel.redirectUris.join(',')
         }
-        
+
         this.setState({ saving: true })
         this.clientModel
             .save()
@@ -128,16 +136,17 @@ class OAuth2ClientEditor extends Component {
         if (field === 'redirectUris') {
             if (typeof v === 'string') {
                 // Convert newline-separated string to array, then to comma-separated string
-                const uriArray = v.split('\n')
-                    .map(uri => uri.trim())
-                    .filter(Boolean);
-                value = uriArray.join(',');
+                const uriArray = v
+                    .split('\n')
+                    .map((uri) => uri.trim())
+                    .filter(Boolean)
+                value = uriArray.join(',')
             } else if (Array.isArray(v)) {
                 // If it's already an array, convert to comma-separated string
-                value = v.join(',');
+                value = v.join(',')
             } else {
                 // Default to empty string
-                value = '';
+                value = ''
             }
         }
         if (field === 'authorizationGrantTypes' && Array.isArray(v)) {
