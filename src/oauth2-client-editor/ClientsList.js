@@ -29,8 +29,7 @@ const ClientsList = ({ clients, onClientEdit, onClientDelete }) => {
         <Table>
             <TableHead>
                 <TableRowHead>
-                    <TableCellHead>{i18n.t('Name')}</TableCellHead>
-                    <TableCellHead>{i18n.t('Password')}</TableCellHead>
+                    <TableCellHead>{i18n.t('Client ID')}</TableCellHead>
                     <TableCellHead>{i18n.t('Refresh token')}</TableCellHead>
                     <TableCellHead>
                         {i18n.t('Authorization code')}
@@ -41,8 +40,7 @@ const ClientsList = ({ clients, onClientEdit, onClientDelete }) => {
             <TableBody>
                 {clients.map((client) => (
                     <TableRow key={client.authorization_code}>
-                        <TableCell>{client.name}</TableCell>
-                        <TableCell>{client.password}</TableCell>
+                        <TableCell>{client.clientId}</TableCell>
                         <TableCell>{client.refresh_token}</TableCell>
                         <TableCell>{client.authorization_code}</TableCell>
                         <TableCell>
