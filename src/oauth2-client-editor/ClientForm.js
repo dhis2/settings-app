@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import { Button, Modal, ModalTitle, ModalContent } from '@dhis2/ui'
 import { getInstance as getD2 } from 'd2'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component.js'
-import { isUrlArray, isRequired } from 'd2-ui/lib/forms/Validators.js'
+import { isRequired } from 'd2-ui/lib/forms/Validators.js'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import MultiToggle from '../form-fields/multi-toggle.js'
@@ -29,10 +29,10 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
         clientId: false,
         redirectUris: false
     });
-    
+
     // Handle both string and array types for authorizationGrantTypes
     let authGrantTypesArray = [];
-    
+
     if (clientModel && clientModel.authorizationGrantTypes) {
         // If it's a string (from backend), split it
         if (typeof clientModel.authorizationGrantTypes === 'string') {
@@ -40,13 +40,13 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
                 .split(',')
                 .map(type => type.trim())
                 .filter(Boolean);
-        } 
+        }
         // If it's already an array (from form update)
         else if (Array.isArray(clientModel.authorizationGrantTypes)) {
             authGrantTypesArray = clientModel.authorizationGrantTypes;
         }
     }
-    
+
     const grantTypes = authGrantTypesArray.reduce(
         (curr, prev) => {
             curr[prev] = true
@@ -74,27 +74,27 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
         // Check fields and show errors if needed
         const clientIdEmpty = !clientModel.clientId || clientModel.clientId.trim() === '';
         const redirectUrisEmpty = !formattedRedirectUris || formattedRedirectUris.trim() === '';
-        
+
         setFormErrors({
             clientId: clientIdEmpty,
             redirectUris: redirectUrisEmpty
         });
-        
+
         // Only save if both fields are valid
         if (!clientIdEmpty && !redirectUrisEmpty) {
             onSave();
         }
     };
-    
+
     // Handle field updates and clear errors
     const handleFieldUpdate = (fieldName, value) => {
         // Clear the error for this field if it has a value
         if (value) {
             // Check if value is a string before using trim()
-            const isValid = typeof value === 'string' 
-                ? value.trim().length > 0 
+            const isValid = typeof value === 'string'
+                ? value.trim().length > 0
                 : Boolean(value);
-                
+
             if (isValid) {
                 setFormErrors(prev => ({
                     ...prev,
@@ -102,7 +102,7 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
                 }));
             }
         }
-        
+
         // Call the original onUpdate function
         onUpdate(fieldName, value);
     };
@@ -190,9 +190,9 @@ const ClientForm = ({ clientModel, onUpdate, onSave, onCancel }) => {
         <Modal onClose={onCancel}>
             <ModalTitle>{headerText}</ModalTitle>
             <ModalContent>
-                <FormBuilder 
-                    fields={fields} 
-                    onUpdateField={handleFieldUpdate} 
+                <FormBuilder
+                    fields={fields}
+                    onUpdateField={handleFieldUpdate}
                 />
                 <div style={{ marginTop: '1rem' }}>
                     <Button primary onClick={handleSave}>
