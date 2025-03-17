@@ -12,6 +12,7 @@ export const categoryOrder = [
     'sync',
     'scheduledJobs',
     'oauth2',
+    'oauth2_41',
 ]
 
 export const categories = {
@@ -384,6 +385,19 @@ export const categories = {
                 setting: 'oauth2clients',
             },
         ],
+        minimumApiVersion: 42,
+    },
+    oauth2_41: {
+        label: i18n.t('OAuth2 Clients'),
+        icon: 'vpn_lock',
+        pageLabel: i18n.t('OAuth2 Clients'),
+        authority: 'F_OAUTH2_CLIENT_MANAGE',
+        settings: [
+            {
+                setting: 'oauth2clients41',
+            },
+        ],
+        maximumApiVersion: 41,
     },
 }
 
