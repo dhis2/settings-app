@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-01-17T10:18:20.401Z\n"
-"PO-Revision-Date: 2025-01-17T10:18:20.402Z\n"
+"POT-Creation-Date: 2025-03-05T20:30:30.881Z\n"
+"PO-Revision-Date: 2025-03-05T20:30:30.890Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -256,6 +256,16 @@ msgstr "This setting can be overridden by user settings"
 
 msgid "No options"
 msgstr "No options"
+
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr "Settings must be configured to send emails to enforce verified emails"
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
 
 msgid "No settings matched the search term"
 msgstr "No settings matched the search term"
@@ -665,6 +675,12 @@ msgstr "Custom"
 msgid "Login page template"
 msgstr "Login page template"
 
+msgid "Enable Global Shell"
+msgstr "Enable Global Shell"
+
+msgid "Global Shell App"
+msgstr "Global Shell App"
+
 msgid "Custom login page logo"
 msgstr "Custom login page logo"
 
@@ -721,6 +737,9 @@ msgstr "Enable user account recovery"
 
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr "Lock user account temporarily after multiple failed login attempts"
+
+msgid "Enable embedded dashboards"
+msgstr "Enable embedded dashboards"
 
 msgid "Enforce verified emails"
 msgstr "Enforce verified emails"
