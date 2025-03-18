@@ -1,3 +1,17 @@
+# [100.5.0](https://github.com/dhis2/settings-app/compare/v100.4.2...v100.5.0) (2025-03-18)
+
+
+### Features
+
+* add global shell settings ([#1426](https://github.com/dhis2/settings-app/issues/1426)) ([f471fab](https://github.com/dhis2/settings-app/commit/f471fab258f1f5cc369164d8a5de65ce8eec7558))
+
+## [100.4.2](https://github.com/dhis2/settings-app/compare/v100.4.1...v100.4.2) (2025-02-09)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([2cf2597](https://github.com/dhis2/settings-app/commit/2cf25979ee3cef11ed7256fce7546a1484fe4fea))
+
 ## [100.4.1](https://github.com/dhis2/settings-app/compare/v100.4.0...v100.4.1) (2025-02-04)
 
 
