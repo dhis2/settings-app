@@ -334,19 +334,18 @@ class SettingsFields extends React.Component {
 
                 // Base config, common for all component types
                 const validators = []
-                if (mapping.validators) {
+                if (mapping && mapping.validators) {
                     mapping.validators.forEach((name) => {
                         if (wordToValidatorMap.has(name)) {
                             const validator = wordToValidatorMap.get(name)
                             validators.push({
                                 validator,
-                                message: translateValidatorMessage(
-                                    validator.message
-                                ),
+                                message: translateValidatorMessage(validator.message),
                             })
                         }
                     })
                 }
+                
 
                 const fieldBase = {
                     name: key,

@@ -207,16 +207,6 @@ class MetadataSettings extends Component {
             td: { border: '1px solid #ddd', padding: '10px' },
         }
 
-        // const fieldGetter =
-        //     (field, filter = (x) => x) =>
-        //     // eslint-disable-next-line react/display-name, react/prop-types
-        //     ({ rowIndex, ...props }) =>
-        //         (
-        //             <Cell {...props}>
-        //                 {filter(this.state.metadataVersions[rowIndex][field])}
-        //             </Cell>
-        //         )
-
         const dateFmt = (str) => new Date(str).toLocaleString()
 
         return (
