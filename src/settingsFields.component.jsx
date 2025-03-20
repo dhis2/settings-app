@@ -340,12 +340,13 @@ class SettingsFields extends React.Component {
                             const validator = wordToValidatorMap.get(name)
                             validators.push({
                                 validator,
-                                message: translateValidatorMessage(validator.message),
+                                message: translateValidatorMessage(
+                                    validator.message
+                                ),
                             })
                         }
                     })
                 }
-                
 
                 const fieldBase = {
                     name: key,
