@@ -16,20 +16,21 @@
         "format:text": "d2-style apply text",
         "format:staged": "yarn format:js --staged && yarn format:text --staged",
         "format": "yarn format:js && yarn format:text",
-        "postinstall": "node patchGlobal.js"
+        "postinstall": "patch-package"
     },
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^12.3.0",
         "@dhis2/cli-style": "^10.7.6"
     },
     "dependencies": {
+        "patch-package": "^8.0.0",
+        "postinstall-postinstall": "^2.1.0",
         "@dhis2/app-runtime": "^3.13.1",
         "@dhis2/app-runtime-adapter-d2": "^1.0.2",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/ui": "^10.1.11",
         "d2": "^31.9.0",
         "d2-ui": "^29.0.35",
-        "fixed-data-table": "0.6.5",
         "history": "4.7.2",
         "loglevel": "^1.9.2",
         "material-design-icons-iconfont": "^6.1.0",

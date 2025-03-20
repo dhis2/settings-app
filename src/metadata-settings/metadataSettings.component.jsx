@@ -2,7 +2,6 @@ import i18n from '@dhis2/d2-i18n'
 import { Button } from '@dhis2/ui'
 import { getInstance as getD2 } from 'd2'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component.js'
-import { Table, Column, Cell } from 'fixed-data-table'
 import CircularProgress from 'material-ui/CircularProgress'
 import { RadioButtonGroup, RadioButton } from 'material-ui/RadioButton'
 import PropTypes from 'prop-types'
@@ -10,7 +9,6 @@ import React, { Component } from 'react'
 import Checkbox from '../form-fields/check-box.jsx'
 import settingsActions from '../settingsActions.js'
 import settingsStore from '../settingsStore.js'
-import 'fixed-data-table/dist/fixed-data-table.css'
 
 class MetadataSettings extends Component {
     constructor(props, context) {
@@ -185,17 +183,39 @@ class MetadataSettings extends Component {
                 top: '-7px',
                 float: 'left',
             },
+            tableContainerVisible: { display: 'block' },
+            tableContainerHidden: { display: 'none' },
+            table: {
+                width: '670px',
+                borderCollapse: 'collapse',
+                marginTop: '10px',
+                fontFamily: 'Arial, sans-serif',
+                textAlign: 'left',
+            },
+            theadRow: { backgroundColor: '#f4f4f4' },
+            th: {
+                border: '1px solid #ddd',
+                padding: '12px',
+                fontWeight: 'bold',
+            },
+            thVersion: { width: '135px' },
+            thWhen: { width: '205px' },
+            thType: { width: '145px' },
+            thLastSync: { width: '185px' },
+            tbodyRowEven: { height: '50px', backgroundColor: '#fff' },
+            tbodyRowOdd: { height: '50px', backgroundColor: '#f9f9f9' },
+            td: { border: '1px solid #ddd', padding: '10px' },
         }
 
-        const fieldGetter =
-            (field, filter = (x) => x) =>
-            // eslint-disable-next-line react/display-name, react/prop-types
-            ({ rowIndex, ...props }) =>
-                (
-                    <Cell {...props}>
-                        {filter(this.state.metadataVersions[rowIndex][field])}
-                    </Cell>
-                )
+        // const fieldGetter =
+        //     (field, filter = (x) => x) =>
+        //     // eslint-disable-next-line react/display-name, react/prop-types
+        //     ({ rowIndex, ...props }) =>
+        //         (
+        //             <Cell {...props}>
+        //                 {filter(this.state.metadataVersions[rowIndex][field])}
+        //             </Cell>
+        //         )
 
         const dateFmt = (str) => new Date(str).toLocaleString()
 
@@ -298,34 +318,61 @@ class MetadataSettings extends Component {
                             : styles.hidden
                     }
                 >
-                    <Table
-                        rowHeight={50}
-                        rowsCount={this.state.metadataVersions.length}
-                        width={670}
-                        maxHeight={50 * 6}
-                        headerHeight={50}
-                    >
-                        <Column
-                            header={<Cell>Version</Cell>}
-                            cell={fieldGetter('name')}
-                            width={135}
-                        />
-                        <Column
-                            header={<Cell>When</Cell>}
-                            cell={fieldGetter('created', dateFmt)}
-                            width={205}
-                        />
-                        <Column
-                            header={<Cell>Type</Cell>}
-                            cell={fieldGetter('type')}
-                            width={145}
-                        />
-                        <Column
-                            header={<Cell>Last Sync</Cell>}
-                            cell={fieldGetter('importdate')}
-                            width={185}
-                        />
-                    </Table>
+                    <table style={styles.table}>
+                        <thead>
+                            <tr style={styles.theadRow}>
+                                <th
+                                    style={{
+                                        ...styles.th,
+                                        ...styles.thVersion,
+                                    }}
+                                >
+                                    Version
+                                </th>
+                                <th style={{ ...styles.th, ...styles.thWhen }}>
+                                    When
+                                </th>
+                                <th style={{ ...styles.th, ...styles.thType }}>
+                                    Type
+                                </th>
+                                <th
+                                    style={{
+                                        ...styles.th,
+                                        ...styles.thLastSync,
+                                    }}
+                                >
+                                    Last Sync
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.metadataVersions.map(
+                                (version, index) => (
+                                    <tr
+                                        key={index}
+                                        style={
+                                            index % 2 === 0
+                                                ? styles.tbodyRowEven
+                                                : styles.tbodyRowOdd
+                                        }
+                                    >
+                                        <td style={styles.td}>
+                                            {version.name}
+                                        </td>
+                                        <td style={styles.td}>
+                                            {dateFmt(version.created)}
+                                        </td>
+                                        <td style={styles.td}>
+                                            {version.type}
+                                        </td>
+                                        <td style={styles.td}>
+                                            {version.importdate}
+                                        </td>
+                                    </tr>
+                                )
+                            )}
+                        </tbody>
+                    </table>
                 </div>
 
                 <div
@@ -335,29 +382,61 @@ class MetadataSettings extends Component {
                             : styles.visible
                     }
                 >
-                    <Table
-                        rowHeight={50}
-                        rowsCount={this.state.metadataVersions.length}
-                        width={670}
-                        maxHeight={50 * 6}
-                        headerHeight={50}
-                    >
-                        <Column
-                            header={<Cell>Version</Cell>}
-                            cell={fieldGetter('name')}
-                            width={190}
-                        />
-                        <Column
-                            header={<Cell>When</Cell>}
-                            cell={fieldGetter('created')}
-                            width={280}
-                        />
-                        <Column
-                            header={<Cell>Type</Cell>}
-                            cell={fieldGetter('type')}
-                            width={200}
-                        />
-                    </Table>
+                    <table style={styles.table}>
+                        <thead>
+                            <tr style={styles.theadRow}>
+                                <th
+                                    style={{
+                                        ...styles.th,
+                                        ...styles.thVersion,
+                                    }}
+                                >
+                                    Version
+                                </th>
+                                <th style={{ ...styles.th, ...styles.thWhen }}>
+                                    When
+                                </th>
+                                <th style={{ ...styles.th, ...styles.thType }}>
+                                    Type
+                                </th>
+                                <th
+                                    style={{
+                                        ...styles.th,
+                                        ...styles.thLastSync,
+                                    }}
+                                >
+                                    Last Sync
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.metadataVersions.map(
+                                (version, index) => (
+                                    <tr
+                                        key={index}
+                                        style={
+                                            index % 2 === 0
+                                                ? styles.tbodyRowEven
+                                                : styles.tbodyRowOdd
+                                        }
+                                    >
+                                        <td style={styles.td}>
+                                            {version.name}
+                                        </td>
+                                        <td style={styles.td}>
+                                            {dateFmt(version.created)}
+                                        </td>
+                                        <td style={styles.td}>
+                                            {version.type}
+                                        </td>
+                                        <td style={styles.td}>
+                                            {version.importdate}
+                                        </td>
+                                    </tr>
+                                )
+                            )}
+                        </tbody>
+                    </table>
                 </div>
 
                 <div
