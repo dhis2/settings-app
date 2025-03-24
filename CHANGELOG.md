@@ -1,3 +1,18 @@
+# [100.7.0](https://github.com/dhis2/settings-app/compare/v100.6.0...v100.7.0) (2025-03-24)
+
+
+### Bug Fixes
+
+* add back useState ([1a03583](https://github.com/dhis2/settings-app/commit/1a0358359c38615969ed69c1fde54579643a601e))
+* merge in oauth2 updates ([203e7ff](https://github.com/dhis2/settings-app/commit/203e7ffbd2d60b184b1589bf1af8ad5e9740046f))
+* **app-platform:** upgrade platform tools to use vite and react 18 ([257594f](https://github.com/dhis2/settings-app/commit/257594f075eebda7092f980ae05257bf7e8a3419))
+
+
+### Features
+
+* add postinstall script to patch global references and update translations ([a8ee049](https://github.com/dhis2/settings-app/commit/a8ee0497121a70fa913ebc2098ffed68540b72d6))
+* replace postinstall script with patch-package and remove patchGlobal.js ([bcd3552](https://github.com/dhis2/settings-app/commit/bcd35523da59a1608ea89b9f74b87c92afba2d23))
+
 # [100.6.0](https://github.com/dhis2/settings-app/compare/v100.5.0...v100.6.0) (2025-03-24)
 
 
