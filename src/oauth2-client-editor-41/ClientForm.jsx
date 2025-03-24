@@ -5,8 +5,8 @@ import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component.js'
 import { isUrlArray, isRequired } from 'd2-ui/lib/forms/Validators.js'
 import PropTypes from 'prop-types'
 import React from 'react'
-import MultiToggle from '../form-fields/multi-toggle.js'
-import TextField from '../form-fields/text-field.js'
+import MultiToggle from '../form-fields/multi-toggle.jsx'
+import TextField from '../form-fields/text-field.jsx'
 import styles from './ClientForm.module.css'
 
 const formFieldStyle = {

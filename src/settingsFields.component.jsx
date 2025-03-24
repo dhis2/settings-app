@@ -12,14 +12,14 @@ import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators.js'
 import PropTypes from 'prop-types'
 import React from 'react'
 import configOptionStore from './configOptionStore.js'
-import Checkbox from './form-fields/check-box.js'
-import SelectField from './form-fields/drop-down.js'
-import FileUpload from './form-fields/file-upload.js'
-import TextField from './form-fields/text-field.js'
-import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component.js'
-import metadataSettings from './metadata-settings/metadataSettings.component.js'
-import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component.js'
-import Oauth2ClientEditor41 from './oauth2-client-editor-41/OAuth2ClientEditor.component.js'
+import Checkbox from './form-fields/check-box.jsx'
+import SelectField from './form-fields/drop-down.jsx'
+import FileUpload from './form-fields/file-upload.jsx'
+import TextField from './form-fields/text-field.jsx'
+import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component.jsx'
+import metadataSettings from './metadata-settings/metadataSettings.component.jsx'
+import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component.jsx'
+import Oauth2ClientEditor41 from './oauth2-client-editor-41/OAuth2ClientEditor.component.jsx'
 import settingsActions from './settingsActions.js'
 import { categories } from './settingsCategories.js'
 import classes from './SettingsFields.module.css'
@@ -340,7 +340,7 @@ class SettingsFields extends React.Component {
 
                 // Base config, common for all component types
                 const validators = []
-                if (mapping.validators) {
+                if (mapping && mapping.validators) {
                     mapping.validators.forEach((name) => {
                         if (wordToValidatorMap.has(name)) {
                             const validator = wordToValidatorMap.get(name)

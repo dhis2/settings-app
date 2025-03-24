@@ -3,8 +3,8 @@ import { CircularLoader, CenteredContent, Button } from '@dhis2/ui'
 import { getInstance as getD2 } from 'd2'
 import React, { Component } from 'react'
 import settingsActions from '../settingsActions.js'
-import ClientForm from './ClientForm.js'
-import ClientsList from './ClientsList.js'
+import ClientForm from './ClientForm.jsx'
+import ClientsList from './ClientsList.jsx'
 import oa2Actions from './oauth2Client.actions.js'
 import oa2ClientStore from './oauth2Client.store.js'
 import styles from './OAuth2ClientEditor.module.css'
@@ -76,8 +76,39 @@ class OAuth2ClientEditor extends Component {
     }
 
     saveAction = () => {
+        // Validation is now handled in the ClientForm component
+
         this.clientModel.name = this.clientModel.name || ''
         this.clientModel.cid = this.clientModel.cid || ''
+
+        // Ensure authorizationGrantTypes is a comma-separated string
+        if (
+            this.clientModel.authorizationGrantTypes &&
+            Array.isArray(this.clientModel.authorizationGrantTypes)
+        ) {
+            this.clientModel.authorizationGrantTypes =
+                this.clientModel.authorizationGrantTypes.join(',')
+        }
+
+        // First ensure redirectUris is an array
+        if (
+            this.clientModel.redirectUris &&
+            typeof this.clientModel.redirectUris === 'string'
+        ) {
+            this.clientModel.redirectUris = this.clientModel.redirectUris
+                .split('\n')
+                .map((uri) => uri.trim())
+                .filter(Boolean)
+        } else if (!this.clientModel.redirectUris) {
+            this.clientModel.redirectUris = []
+        }
+
+        // Then convert the array to a comma-separated string
+        if (Array.isArray(this.clientModel.redirectUris)) {
+            this.clientModel.redirectUris =
+                this.clientModel.redirectUris.join(',')
+        }
+
         this.setState({ saving: true })
         this.clientModel
             .save()
@@ -103,7 +134,23 @@ class OAuth2ClientEditor extends Component {
     formUpdateAction = (field, v) => {
         let value = v
         if (field === 'redirectUris') {
-            value = v.split('\n').filter((a) => a.trim().length > 0)
+            if (typeof v === 'string') {
+                // Convert newline-separated string to array, then to comma-separated string
+                const uriArray = v
+                    .split('\n')
+                    .map((uri) => uri.trim())
+                    .filter(Boolean)
+                value = uriArray.join(',')
+            } else if (Array.isArray(v)) {
+                // If it's already an array, convert to comma-separated string
+                value = v.join(',')
+            } else {
+                // Default to empty string
+                value = ''
+            }
+        }
+        if (field === 'authorizationGrantTypes' && Array.isArray(v)) {
+            value = v.join(',')
         }
         this.clientModel[field] = value
         this.forceUpdate()
