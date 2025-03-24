@@ -1,3 +1,10 @@
+# [100.6.0](https://github.com/dhis2/settings-app/compare/v100.5.0...v100.6.0) (2025-03-24)
+
+
+### Features
+
+* allow oauth 2 clients for 42 ([#1425](https://github.com/dhis2/settings-app/issues/1425)) ([3a10fa8](https://github.com/dhis2/settings-app/commit/3a10fa878b1e4a108a4f3c45ffe6a6fa5980e9f6))
+
 # [100.5.0](https://github.com/dhis2/settings-app/compare/v100.4.2...v100.5.0) (2025-03-18)
 
 
