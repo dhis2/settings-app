@@ -1,3 +1,10 @@
+## [100.7.1](https://github.com/dhis2/settings-app/compare/v100.7.0...v100.7.1) (2025-03-25)
+
+
+### Bug Fixes
+
+* clean up min version ([#1427](https://github.com/dhis2/settings-app/issues/1427)) ([71643c6](https://github.com/dhis2/settings-app/commit/71643c630472b84ce597411aba7ab95e79a357fa))
+
 # [100.7.0](https://github.com/dhis2/settings-app/compare/v100.6.0...v100.7.0) (2025-03-24)
 
 
