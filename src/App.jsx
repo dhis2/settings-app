@@ -138,7 +138,7 @@ const AppWrapper = () => {
         id:
             module.defaultAction.substr(0, 3) === '../'
                 ? module.name
-                : `app/${module.name}`,
+                : `apps/${module.name}`,
         displayName: module.displayName || module.name,
     }))
 
