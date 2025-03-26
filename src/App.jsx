@@ -134,11 +134,12 @@ const AppWrapper = () => {
         userSettingsNoFallback,
     } = data
 
+    const appsModuleDelimiter = apiVersion >= 42 ? '/' : ':'
     const startModules = (data.apps.modules || []).map((module) => ({
         id:
             module.defaultAction.substr(0, 3) === '../'
                 ? module.name
-                : `apps/${module.name}`,
+                : `apps${appsModuleDelimiter}${module.name}`,
         displayName: module.displayName || module.name,
     }))
 
