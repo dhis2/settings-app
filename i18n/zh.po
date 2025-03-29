@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-01-17T10:18:20.401Z\n"
+"POT-Creation-Date: 2025-03-05T20:30:30.881Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -267,6 +267,14 @@ msgstr "该设置可以被用户设置覆盖"
 
 msgid "No options"
 msgstr "没有选择"
+
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr "必须将设置配置为发送电子邮件以强制执行已验证电子邮件"
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr "在配置电子邮件设置之前，无法启用 \"强制验证电子邮件\"。"
 
 msgid "No settings matched the search term"
 msgstr "没有设置满足搜索条件"
@@ -676,6 +684,12 @@ msgstr "定制"
 msgid "Login page template"
 msgstr "登录页面模板"
 
+msgid "Enable Global Shell"
+msgstr "启用全局Shell"
+
+msgid "Global Shell App"
+msgstr "全局Shell应用程序"
+
 msgid "Custom login page logo"
 msgstr "定制登录页面Logo"
 
@@ -732,6 +746,9 @@ msgstr "打开用户帐号恢复"
 
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr "尝试多次登录失败后临时锁住用户帐号"
+
+msgid "Enable embedded dashboards"
+msgstr "启用嵌入式仪表板"
 
 msgid "Enforce verified emails"
 msgstr "执行已验证的电子邮件"
