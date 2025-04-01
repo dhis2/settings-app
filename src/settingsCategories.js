@@ -53,6 +53,7 @@ export const categories = {
             },
             {
                 setting: 'multiOrganisationUnitForms',
+                maximumApiVersion: 41,
             },
             {
                 setting: 'keyAcceptanceRequiredForApproval',
