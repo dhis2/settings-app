@@ -54,6 +54,12 @@ const settingsKeyMapping = {
             1000000: formatNumber(1000000),
         },
     },
+    KeyTrackedEntityMaxLimit: {
+        label: i18n.t(
+            'Maximum number of tracked entity records to fetch from database (enter 0 for unlimited)'
+        ),
+        validators: ['number'],
+    },
     infrastructuralIndicators: {
         label: i18n.t('Infrastructural indicators'),
         configuration: true,
