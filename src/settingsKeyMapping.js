@@ -387,7 +387,7 @@ const settingsKeyMapping = {
         multiLine: true,
     },
     keyStyle: {
-        label: i18n.t('Style'),
+        label: i18n.t('Style (android)'),
         type: 'dropdown',
         includeEmpty: false,
         userSettingsOverride: true,
