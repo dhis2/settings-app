@@ -1,3 +1,10 @@
+## [100.7.3](https://github.com/dhis2/settings-app/compare/v100.7.2...v100.7.3) (2025-04-08)
+
+
+### Bug Fixes
+
+* use correct app module prefix for right version ([#1428](https://github.com/dhis2/settings-app/issues/1428)) ([2e4ed77](https://github.com/dhis2/settings-app/commit/2e4ed7753fd6d75776d0e4648a88543c9efc4585))
+
 ## [100.7.2](https://github.com/dhis2/settings-app/compare/v100.7.1...v100.7.2) (2025-03-30)
 
 
