@@ -28,6 +28,9 @@ export const categories = {
                 setting: 'keySqlViewMaxLimit',
             },
             {
+                setting: 'KeyTrackedEntityMaxLimit',
+            },
+            {
                 setting: 'infrastructuralIndicators',
             },
             {
@@ -53,6 +56,7 @@ export const categories = {
             },
             {
                 setting: 'multiOrganisationUnitForms',
+                maximumApiVersion: 41,
             },
             {
                 setting: 'keyAcceptanceRequiredForApproval',
