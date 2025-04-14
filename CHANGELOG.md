@@ -1,3 +1,10 @@
+## [100.7.4](https://github.com/dhis2/settings-app/compare/v100.7.3...v100.7.4) (2025-04-14)
+
+
+### Bug Fixes
+
+* remove v42 app prefix ([b5503b6](https://github.com/dhis2/settings-app/commit/b5503b6555b19e7bbe4a2919ac5b1f7775363dd8))
+
 ## [100.7.3](https://github.com/dhis2/settings-app/compare/v100.7.2...v100.7.3) (2025-04-08)
 
 
