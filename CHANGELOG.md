@@ -1,3 +1,10 @@
+## [100.7.5](https://github.com/dhis2/settings-app/compare/v100.7.4...v100.7.5) (2025-04-15)
+
+
+### Bug Fixes
+
+* update prefix ([#1433](https://github.com/dhis2/settings-app/issues/1433)) ([23abae8](https://github.com/dhis2/settings-app/commit/23abae8e0a605e81bb0d7ad5d9dace017b68843e))
+
 ## [100.7.4](https://github.com/dhis2/settings-app/compare/v100.7.3...v100.7.4) (2025-04-14)
 
 
