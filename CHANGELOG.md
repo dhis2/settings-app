@@ -1,3 +1,10 @@
+## [100.7.6](https://github.com/dhis2/settings-app/compare/v100.7.5...v100.7.6) (2025-04-16)
+
+
+### Bug Fixes
+
+* settings cleanup [DHIS2-19366] ([#1430](https://github.com/dhis2/settings-app/issues/1430)) ([8f324bd](https://github.com/dhis2/settings-app/commit/8f324bd27c698a16f99b11af09b597029aa96757))
+
 ## [100.7.5](https://github.com/dhis2/settings-app/compare/v100.7.4...v100.7.5) (2025-04-15)
 
 
