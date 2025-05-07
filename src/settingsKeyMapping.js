@@ -778,6 +778,42 @@ const settingsKeyMapping = {
         maxValue: 2147483647,
         validators: ['positive_number'],
     },
+
+    /* ============================================================================================================ */
+    /* Category: Notification settings                                                                                    */
+    /* ============================================================================================================ */
+
+    notifierLogLevel: {
+        label: i18n.t('Log level'),
+        type: 'dropdown',
+        options: {
+            DEBUG: 'DEBUG',
+            INFO: 'INFO',
+            WARN: 'WARN',
+            ERROR: 'ERROR',
+        },
+    },
+    notifierMaxMessagesPerJob: {
+        label: i18n.t('Max messages per job'),
+        type: 'textfield',
+    },
+    notifierMaxAgeDays: {
+        label: i18n.t('Max age in days'),
+        type: 'textfield',
+    },
+    notifierMaxJobsPerType: {
+        label: i18n.t('Max jobs per type'),
+        type: 'textfield',
+    },
+    notifierGistOverview: {
+        label: i18n.t('Enable Gist Overview'),
+        type: 'checkbox',
+    },
+    notifierCleanAfterIdleTime: {
+        label: i18n.t('Clean idle jobs after (in seconds)'),
+        type: 'textfield',
+    },
+
     /* ============================================================================================================ */
     // The following keys are present in the demo database but are not managed by dhis-web-maintenance-settings
     //
