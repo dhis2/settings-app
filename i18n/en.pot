@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-03-19T09:22:40.114Z\n"
-"PO-Revision-Date: 2025-03-19T09:22:40.115Z\n"
+"POT-Creation-Date: 2025-05-16T14:27:22.525Z\n"
+"PO-Revision-Date: 2025-05-16T14:27:22.525Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -229,6 +229,9 @@ msgstr "Synchronization settings"
 
 msgid "Scheduled jobs"
 msgstr "Scheduled jobs"
+
+msgid "Notification settings"
+msgstr "Notification settings"
 
 msgid "OAuth2 Clients"
 msgstr "OAuth2 Clients"
@@ -877,6 +880,24 @@ msgid ""
 msgstr ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+
+msgid "Log level"
+msgstr "Log level"
+
+msgid "Max messages per job"
+msgstr "Max messages per job"
+
+msgid "Max age in days"
+msgstr "Max age in days"
+
+msgid "Max jobs per type"
+msgstr "Max jobs per type"
+
+msgid "Enable Gist Overview"
+msgstr "Enable Gist Overview"
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr "Clean idle jobs after (in milliseconds)"
 
 msgctxt "Application title"
 msgid "__MANIFEST_APP_TITLE"

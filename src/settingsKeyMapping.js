@@ -791,6 +791,8 @@ const settingsKeyMapping = {
             INFO: 'INFO',
             WARN: 'WARN',
             ERROR: 'ERROR',
+            LOOP: 'LOOP',
+            OFF: 'OFF',
         },
     },
     notifierMaxMessagesPerJob: {
@@ -810,7 +812,7 @@ const settingsKeyMapping = {
         type: 'checkbox',
     },
     notifierCleanAfterIdleTime: {
-        label: i18n.t('Clean idle jobs after (in seconds)'),
+        label: i18n.t('Clean idle jobs after (in milliseconds)'),
         type: 'textfield',
     },
 
