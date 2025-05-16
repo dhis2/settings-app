@@ -13,6 +13,7 @@ export const categoryOrder = [
     'scheduledJobs',
     'notification',
     'oauth2',
+    'oauth2_41',
 ]
 
 export const categories = {
@@ -26,6 +27,9 @@ export const categories = {
             },
             {
                 setting: 'keySqlViewMaxLimit',
+            },
+            {
+                setting: 'KeyTrackedEntityMaxLimit',
             },
             {
                 setting: 'infrastructuralIndicators',
@@ -53,6 +57,7 @@ export const categories = {
             },
             {
                 setting: 'multiOrganisationUnitForms',
+                maximumApiVersion: 41,
             },
             {
                 setting: 'keyAcceptanceRequiredForApproval',
@@ -215,12 +220,8 @@ export const categories = {
             },
             {
                 setting: 'globalShellEnabled',
-                maximumApiVersion: 42,
+                minimumApiVersion: 42,
             },
-            // {
-            //     setting: 'globalShellAppName',
-            //     maximumApiVersion: 42,
-            // },
         ],
     },
     email: {
@@ -398,6 +399,18 @@ export const categories = {
         settings: [
             {
                 setting: 'oauth2clients',
+            },
+        ],
+        minimumApiVersion: 42,
+    },
+    oauth2_41: {
+        label: i18n.t('OAuth2 Clients'),
+        icon: 'vpn_lock',
+        pageLabel: i18n.t('OAuth2 Clients'),
+        authority: 'F_OAUTH2_CLIENT_MANAGE',
+        settings: [
+            {
+                setting: 'oauth2clients41',
             },
         ],
         maximumApiVersion: 41,

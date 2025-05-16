@@ -54,6 +54,12 @@ const settingsKeyMapping = {
             1000000: formatNumber(1000000),
         },
     },
+    KeyTrackedEntityMaxLimit: {
+        label: i18n.t(
+            'Maximum number of tracked entity records to fetch from database (enter 0 for unlimited)'
+        ),
+        validators: ['number'],
+    },
     infrastructuralIndicators: {
         label: i18n.t('Infrastructural indicators'),
         configuration: true,
@@ -381,7 +387,7 @@ const settingsKeyMapping = {
         multiLine: true,
     },
     keyStyle: {
-        label: i18n.t('Style'),
+        label: i18n.t('Style (android)'),
         type: 'dropdown',
         includeEmpty: false,
         userSettingsOverride: true,
@@ -463,11 +469,6 @@ const settingsKeyMapping = {
         label: i18n.t('Enable Global Shell'),
         type: 'checkbox',
     },
-    // globalShellAppName: {
-    //     label: i18n.t('Global Shell App'),
-    //     type: 'dropdown',
-    //     source: 'startModules',
-    // },
     keyUseCustomLogoFront: {
         label: i18n.t('Custom login page logo'),
         type: 'staticContent',
@@ -728,6 +729,18 @@ const settingsKeyMapping = {
     /* ============================================================================================================ */
     oauth2clients: {
         type: 'oauth2clients',
+        searchLabels: [
+            'oauth2_clients',
+            'password',
+            'refresh_token',
+            'authorization_code',
+        ],
+    },
+    /* ============================================================================================================ */
+    /* Category: oAuth2 clients v41                                                                                   */
+    /* ============================================================================================================ */
+    oauth2clients41: {
+        type: 'oauth2clients41',
         searchLabels: [
             'oauth2_clients',
             'password',

@@ -1,3 +1,67 @@
+## [100.7.6](https://github.com/dhis2/settings-app/compare/v100.7.5...v100.7.6) (2025-04-16)
+
+
+### Bug Fixes
+
+* settings cleanup [DHIS2-19366] ([#1430](https://github.com/dhis2/settings-app/issues/1430)) ([8f324bd](https://github.com/dhis2/settings-app/commit/8f324bd27c698a16f99b11af09b597029aa96757))
+
+## [100.7.5](https://github.com/dhis2/settings-app/compare/v100.7.4...v100.7.5) (2025-04-15)
+
+
+### Bug Fixes
+
+* update prefix ([#1433](https://github.com/dhis2/settings-app/issues/1433)) ([23abae8](https://github.com/dhis2/settings-app/commit/23abae8e0a605e81bb0d7ad5d9dace017b68843e))
+
+## [100.7.4](https://github.com/dhis2/settings-app/compare/v100.7.3...v100.7.4) (2025-04-14)
+
+
+### Bug Fixes
+
+* remove v42 app prefix ([b5503b6](https://github.com/dhis2/settings-app/commit/b5503b6555b19e7bbe4a2919ac5b1f7775363dd8))
+
+## [100.7.3](https://github.com/dhis2/settings-app/compare/v100.7.2...v100.7.3) (2025-04-08)
+
+
+### Bug Fixes
+
+* use correct app module prefix for right version ([#1428](https://github.com/dhis2/settings-app/issues/1428)) ([2e4ed77](https://github.com/dhis2/settings-app/commit/2e4ed7753fd6d75776d0e4648a88543c9efc4585))
+
+## [100.7.2](https://github.com/dhis2/settings-app/compare/v100.7.1...v100.7.2) (2025-03-30)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([7c9de8c](https://github.com/dhis2/settings-app/commit/7c9de8c488956749285903cdb7722c08d6dfbcb0))
+
+## [100.7.1](https://github.com/dhis2/settings-app/compare/v100.7.0...v100.7.1) (2025-03-25)
+
+
+### Bug Fixes
+
+* clean up min version ([#1427](https://github.com/dhis2/settings-app/issues/1427)) ([71643c6](https://github.com/dhis2/settings-app/commit/71643c630472b84ce597411aba7ab95e79a357fa))
+
+# [100.7.0](https://github.com/dhis2/settings-app/compare/v100.6.0...v100.7.0) (2025-03-24)
+
+
+### Bug Fixes
+
+* add back useState ([1a03583](https://github.com/dhis2/settings-app/commit/1a0358359c38615969ed69c1fde54579643a601e))
+* merge in oauth2 updates ([203e7ff](https://github.com/dhis2/settings-app/commit/203e7ffbd2d60b184b1589bf1af8ad5e9740046f))
+* **app-platform:** upgrade platform tools to use vite and react 18 ([257594f](https://github.com/dhis2/settings-app/commit/257594f075eebda7092f980ae05257bf7e8a3419))
+
+
+### Features
+
+* add postinstall script to patch global references and update translations ([a8ee049](https://github.com/dhis2/settings-app/commit/a8ee0497121a70fa913ebc2098ffed68540b72d6))
+* replace postinstall script with patch-package and remove patchGlobal.js ([bcd3552](https://github.com/dhis2/settings-app/commit/bcd35523da59a1608ea89b9f74b87c92afba2d23))
+
+# [100.6.0](https://github.com/dhis2/settings-app/compare/v100.5.0...v100.6.0) (2025-03-24)
+
+
+### Features
+
+* allow oauth 2 clients for 42 ([#1425](https://github.com/dhis2/settings-app/issues/1425)) ([3a10fa8](https://github.com/dhis2/settings-app/commit/3a10fa878b1e4a108a4f3c45ffe6a6fa5980e9f6))
+
 # [100.5.0](https://github.com/dhis2/settings-app/compare/v100.4.2...v100.5.0) (2025-03-18)
 
 

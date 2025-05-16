@@ -7,6 +7,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "POT-Creation-Date: 2025-05-16T14:27:22.525Z\n"
 "PO-Revision-Date: 2025-05-16T14:27:22.525Z\n"
+"POT-Creation-Date: 2025-04-02T12:55:54.216Z\n"
+"PO-Revision-Date: 2025-04-02T12:55:54.216Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -92,23 +94,17 @@ msgstr "Metadata Versioning"
 msgid "This client ID is already taken"
 msgstr "This client ID is already taken"
 
-msgid "Name"
-msgstr "Name"
+msgid "Client ID"
+msgstr "Client ID"
 
 msgid "Required"
 msgstr "Required"
-
-msgid "Client ID"
-msgstr "Client ID"
 
 msgid "Client Secret"
 msgstr "Client Secret"
 
 msgid "Grant Types"
 msgstr "Grant Types"
-
-msgid "Password"
-msgstr "Password"
 
 msgid "Refresh token"
 msgstr "Refresh token"
@@ -166,6 +162,12 @@ msgstr "OAuth2 client deleted"
 
 msgid "Failed to delete OAuth2 client"
 msgstr "Failed to delete OAuth2 client"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Password"
+msgstr "Password"
 
 msgid "Settings updated"
 msgstr "Settings updated"
@@ -284,6 +286,13 @@ msgstr "Unlimited"
 
 msgid "Maximum number of SQL view records"
 msgstr "Maximum number of SQL view records"
+
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 "
+"for unlimited)"
+msgstr ""
+"Maximum number of tracked entity records to fetch from database (enter 0 "
+"for unlimited)"
 
 msgid "Infrastructural indicators"
 msgstr "Infrastructural indicators"
@@ -680,9 +689,6 @@ msgstr "Login page template"
 
 msgid "Enable Global Shell"
 msgstr "Enable Global Shell"
-
-msgid "Global Shell App"
-msgstr "Global Shell App"
 
 msgid "Custom login page logo"
 msgstr "Custom login page logo"
