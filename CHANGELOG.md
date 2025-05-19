@@ -1,3 +1,11 @@
+# [100.8.0](https://github.com/dhis2/settings-app/compare/v100.7.6...v100.8.0) (2025-05-19)
+
+
+### Features
+
+* add notification settings category and related configurations ([b96f30d](https://github.com/dhis2/settings-app/commit/b96f30d1b917c0311d139f75f91aec831849b805))
+* update localization strings and add notifier settings options ([5e0ea15](https://github.com/dhis2/settings-app/commit/5e0ea156d07fc9fa1cf1ff88bec7ade55bd79dd2))
+
 ## [100.7.6](https://github.com/dhis2/settings-app/compare/v100.7.5...v100.7.6) (2025-04-16)
 
 
