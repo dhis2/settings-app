@@ -11,6 +11,7 @@ export const categoryOrder = [
     'import',
     'sync',
     'scheduledJobs',
+    'notification',
     'oauth2',
     'oauth2_41',
 ]
@@ -369,20 +370,27 @@ export const categories = {
         icon: 'schedule',
         pageLabel: i18n.t('Scheduled jobs'),
         settings: [
-            {
-                setting: 'jobsRescheduleAfterMinutes',
-            },
-            {
-                setting: 'jobsCleanupAfterMinutes',
-            },
-            {
-                setting: 'jobsMaxCronDelayHours',
-            },
-            {
-                setting: 'jobsLogDebugBelowSeconds',
-            },
+            { setting: 'jobsRescheduleAfterMinutes' },
+            { setting: 'jobsCleanupAfterMinutes' },
+            { setting: 'jobsMaxCronDelayHours' },
+            { setting: 'jobsLogDebugBelowSeconds' },
         ],
     },
+
+    notification: {
+        label: i18n.t('Notification settings'),
+        icon: 'notifications',
+        pageLabel: i18n.t('Notification settings'),
+        settings: [
+            { setting: 'notifierLogLevel' },
+            { setting: 'notifierMaxMessagesPerJob' },
+            { setting: 'notifierMaxAgeDays' },
+            { setting: 'notifierMaxJobsPerType' },
+            { setting: 'notifierCleanAfterIdleTime' },
+            { setting: 'notifierGistOverview' },
+        ],
+    },
+
     oauth2: {
         label: i18n.t('OAuth2 Clients'),
         icon: 'vpn_lock',

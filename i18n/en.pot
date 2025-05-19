@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-04-02T12:55:54.216Z\n"
-"PO-Revision-Date: 2025-04-02T12:55:54.216Z\n"
+"POT-Creation-Date: 2025-05-19T08:23:29.681Z\n"
+"PO-Revision-Date: 2025-05-19T08:23:29.682Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -229,6 +229,9 @@ msgstr "Synchronization settings"
 
 msgid "Scheduled jobs"
 msgstr "Scheduled jobs"
+
+msgid "Notification settings"
+msgstr "Notification settings"
 
 msgid "OAuth2 Clients"
 msgstr "OAuth2 Clients"
@@ -628,6 +631,9 @@ msgstr "Application left-side footer"
 msgid "Application right-side footer"
 msgstr "Application right-side footer"
 
+msgid "Style (android)"
+msgstr "Style (android)"
+
 msgid "Style"
 msgstr "Style"
 
@@ -881,6 +887,24 @@ msgid ""
 msgstr ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+
+msgid "Log level"
+msgstr "Log level"
+
+msgid "Max messages per job"
+msgstr "Max messages per job"
+
+msgid "Max age in days"
+msgstr "Max age in days"
+
+msgid "Max jobs per type"
+msgstr "Max jobs per type"
+
+msgid "Enable Gist Overview"
+msgstr "Enable Gist Overview"
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr "Clean idle jobs after (in milliseconds)"
 
 msgctxt "Application title"
 msgid "__MANIFEST_APP_TITLE"
