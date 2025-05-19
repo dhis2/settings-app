@@ -5,10 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-05-16T14:27:22.525Z\n"
-"PO-Revision-Date: 2025-05-16T14:27:22.525Z\n"
-"POT-Creation-Date: 2025-04-02T12:55:54.216Z\n"
-"PO-Revision-Date: 2025-04-02T12:55:54.216Z\n"
+"POT-Creation-Date: 2025-05-19T08:23:29.681Z\n"
+"PO-Revision-Date: 2025-05-19T08:23:29.682Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -632,6 +630,9 @@ msgstr "Application left-side footer"
 
 msgid "Application right-side footer"
 msgstr "Application right-side footer"
+
+msgid "Style (android)"
+msgstr "Style (android)"
 
 msgid "Style"
 msgstr "Style"

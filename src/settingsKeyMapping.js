@@ -804,7 +804,6 @@ const settingsKeyMapping = {
             INFO: 'INFO',
             WARN: 'WARN',
             ERROR: 'ERROR',
-            LOOP: 'LOOP',
             OFF: 'OFF',
         },
     },
