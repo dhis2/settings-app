@@ -1,14 +1,14 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2024
 # 晓东 林 <13981924470@126.com>, 2024
+# easylin <lin_xd@126.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2025-03-05T20:30:30.881Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2024\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Failed to load: {{error}}"
-msgstr ""
+msgstr "加载失败：{{error}}"
 
 msgid "No flag"
 msgstr "无标志"
@@ -32,19 +32,19 @@ msgid "Preview image"
 msgstr "预览图像"
 
 msgid "Preview of image"
-msgstr ""
+msgstr "图片预览"
 
 msgid "Upload image"
 msgstr "上传图像"
 
 msgid "Error uploading file: {{error}}"
-msgstr ""
+msgstr "上传文件时出错：{{error}}"
 
 msgid "Cancel upload"
 msgstr "取消上传"
 
 msgid "System default ({{language}})"
-msgstr ""
+msgstr "系统默认值 ({{language}})"
 
 msgid "Set the main field value before adding a translation"
 msgstr "添加翻译前设置主要字段值"
@@ -56,28 +56,28 @@ msgid "Select language"
 msgstr "选择语言"
 
 msgid "Version created"
-msgstr ""
+msgstr "版本已建立"
 
 msgid "Failed to create version"
-msgstr ""
+msgstr "创建版本失败"
 
 msgid "Error fetching settings"
-msgstr ""
+msgstr "提取设置时出错"
 
 msgid "Create new version"
 msgstr "创建新版本"
 
 msgid "Best effort"
-msgstr ""
+msgstr "最大努力"
 
 msgid "Atomic"
 msgstr "原子化"
 
 msgid "Master version:"
-msgstr ""
+msgstr "主版本："
 
 msgid "None"
-msgstr "无"
+msgstr "没有"
 
 msgid "Last sync attempt"
 msgstr "最近尝试同步"
@@ -104,7 +104,7 @@ msgid "Name"
 msgstr "名称"
 
 msgid "Required"
-msgstr "所需"
+msgstr "必须的"
 
 msgid "Client ID"
 msgstr "客户ID"
@@ -161,7 +161,7 @@ msgid "Failed to save OAuth2 client"
 msgstr "保存OAth2客户失败"
 
 msgid "Add OAuth2 client"
-msgstr ""
+msgstr "添加 OAuth2 客户端"
 
 msgid "Yes"
 msgstr "是"
@@ -173,13 +173,13 @@ msgid "OAuth2 client deleted"
 msgstr "OAth2客户已经删除"
 
 msgid "Failed to delete OAuth2 client"
-msgstr ""
+msgstr "删除 OAuth2 客户端失败"
 
 msgid "Settings updated"
 msgstr "设置已经更新"
 
 msgid "There was a problem updating settings. Changes have not been saved."
-msgstr ""
+msgstr "更新设置时出现问题。尚未保存更改。"
 
 msgid "General"
 msgstr "常规"
@@ -188,7 +188,7 @@ msgid "General settings"
 msgstr "常规设置"
 
 msgid "Analytics"
-msgstr "分析"
+msgstr "Analytics"
 
 msgid "Analytics settings"
 msgstr "分析设置"
@@ -212,10 +212,10 @@ msgid "Email settings"
 msgstr "SMTP设置"
 
 msgid "Access"
-msgstr "访问"
+msgstr "访问权限"
 
 msgid "Access settings"
-msgstr "访问设置"
+msgstr "权限设置"
 
 msgid "Calendar"
 msgstr "日历"
@@ -227,7 +227,7 @@ msgid "Data Import"
 msgstr "数据导入"
 
 msgid "Data import settings"
-msgstr "Data import settings"
+msgstr "数据导入设置"
 
 msgid "Synchronization"
 msgstr "同步"
@@ -236,7 +236,7 @@ msgid "Synchronization settings"
 msgstr "同步设置"
 
 msgid "Scheduled jobs"
-msgstr ""
+msgstr "调度的作业"
 
 msgid "OAuth2 Clients"
 msgstr "OAuth2 客户"
@@ -245,7 +245,7 @@ msgid "This field is required"
 msgstr "这个字段是必填的"
 
 msgid "This field should be a URL"
-msgstr ""
+msgstr "该字段应为网址"
 
 msgid "This field should be a number"
 msgstr "该字段应该是一个数字"
@@ -254,17 +254,25 @@ msgid "This field should be a positive number"
 msgstr "该字段应该是一个正数"
 
 msgid "This field should be an email"
-msgstr ""
+msgstr "该字段应为电子邮件"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
-msgstr ""
+msgstr "当前用户设置将覆盖此设置：{{settingName}}"
 
 msgid "This setting can be overridden by user settings"
 msgstr "该设置可以被用户设置覆盖"
 
 msgid "No options"
-msgstr ""
+msgstr "没有选择"
+
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr "必须将设置配置为发送电子邮件以强制执行已验证电子邮件"
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr "在配置电子邮件设置之前，无法启用 \"强制验证电子邮件\"。"
 
 msgid "No settings matched the search term"
 msgstr "没有设置满足搜索条件"
@@ -309,7 +317,7 @@ msgid "Six-monthly"
 msgstr "六个月"
 
 msgid "Six-monthly April"
-msgstr "半年的四月"
+msgstr "始于四月的每六个月"
 
 msgid "Yearly"
 msgstr "每年"
@@ -330,10 +338,10 @@ msgid "No message recipients"
 msgstr "无反馈接收者"
 
 msgid "System update notification recipients"
-msgstr ""
+msgstr "系统更新通知收件人"
 
 msgid "No update notification recipients"
-msgstr ""
+msgstr "没有更新通知收件人"
 
 msgid "Max offline organisation unit levels"
 msgstr "离线的最大机构等级"
@@ -351,22 +359,22 @@ msgid "Acceptance required before approval"
 msgstr "确认前需审批"
 
 msgid "Gather analytical object statistics in dashboard views"
-msgstr ""
+msgstr "在仪表板视图中收集分析对象统计信息"
 
 msgid "Include passive dashboard views in usage analytics statistics"
-msgstr ""
+msgstr "在使用情况分析统计信息中包括被动仪表板视图"
 
 msgid "Default relative period for analysis"
 msgstr "缺省的系统分析相对期间类型"
 
 msgid "This week"
-msgstr "本周"
+msgstr "本年"
 
 msgid "Last week"
 msgstr "上周"
 
 msgid "Last 4 weeks"
-msgstr "最近四周"
+msgstr "最近4周"
 
 msgid "Last 12 weeks"
 msgstr "最近12周"
@@ -390,22 +398,22 @@ msgid "Last 3 months"
 msgstr "最近3个月"
 
 msgid "Last 6 months"
-msgstr "最近六个月<br>"
+msgstr "最近6个月"
 
 msgid "Last 12 months"
-msgstr "最近12个月"
+msgstr "最近12月"
 
 msgid "This bi-month"
-msgstr "本两月"
+msgstr "本双月"
 
 msgid "Last bi-month"
-msgstr "最近双月"
+msgstr "最近两个月"
 
 msgid "Last 6 bi-months"
-msgstr "最近六个双月"
+msgstr "最近6个两月"
 
 msgid "This quarter"
-msgstr "本季"
+msgstr "本季度"
 
 msgid "Last quarter"
 msgstr "最近一季"
@@ -417,16 +425,16 @@ msgid "Quarters last year"
 msgstr "去年的季度"
 
 msgid "Last 4 quarters"
-msgstr "最近四季度"
+msgstr "最近4个季度"
 
 msgid "This six-month"
-msgstr "本半年"
+msgstr "本六个月"
 
 msgid "Last six-month"
 msgstr "最近六个月"
 
 msgid "Last 2 six-months"
-msgstr "最近两个六个月"
+msgstr "最近2个半年"
 
 msgid "This year"
 msgstr "今年"
@@ -441,13 +449,13 @@ msgid "Last 10 years"
 msgstr "最近10年"
 
 msgid "This financial year"
-msgstr "本财政年"
+msgstr "本财年"
 
 msgid "Last financial year"
 msgstr "上一财政年"
 
 msgid "Last 5 financial years"
-msgstr "最近五个财政年"
+msgstr "最近5个财政年"
 
 msgid "Hide daily periods"
 msgstr "隐藏每日期间"
@@ -459,7 +467,7 @@ msgid "Hide weekly periods"
 msgstr "隐藏每周期间"
 
 msgid "Hide biweekly periods"
-msgstr ""
+msgstr "隐藏期间每两周"
 
 msgid "Hide monthly periods"
 msgstr "隐藏每月期间"
@@ -471,13 +479,13 @@ msgid "Financial year relative period start month"
 msgstr "财政年相对期间起始月份"
 
 msgid "April"
-msgstr "04"
+msgstr "4月"
 
 msgid "July"
-msgstr "07"
+msgstr "7月"
 
 msgid "October"
-msgstr "10"
+msgstr "10月"
 
 msgid "Cache strategy"
 msgstr "缓冲策略"
@@ -486,16 +494,16 @@ msgid "No cache"
 msgstr "无缓冲"
 
 msgid "Cache for 15 minutes"
-msgstr "缓冲 15 分钟"
+msgstr "缓存15分钟"
 
 msgid "Cache for 30 minutes"
-msgstr "缓冲 30 分钟"
+msgstr "缓存30分钟"
 
 msgid "Cache for one hour"
-msgstr "缓冲一小时"
+msgstr "缓存一小时"
 
 msgid "Cache until 6AM tomorrow"
-msgstr ""
+msgstr "缓存到明天凌晨6点"
 
 msgid "Cache for two weeks"
 msgstr "缓冲两周"
@@ -510,13 +518,13 @@ msgid "Private"
 msgstr "私有"
 
 msgid "Analytics cache mode"
-msgstr "Analytics缓存模式"
+msgstr "分析缓冲模式"
 
 msgid "Progressive"
-msgstr "进步"
+msgstr "进行的"
 
 msgid "Fixed"
-msgstr "固定"
+msgstr "完成的"
 
 msgid "Max number of years to hide unapproved data in analytics"
 msgstr "分析表中隐藏的最大没有确认的数据的年数"
@@ -555,37 +563,37 @@ msgid "Respect category option start and end date in analytics table export"
 msgstr "分析表导出包括各自分类选项的起始日期"
 
 msgid "Include zero data values in analytics tables"
-msgstr ""
+msgstr "在分析表中包含零数据值"
 
 msgid "Caching factor"
-msgstr "缓存因子"
+msgstr "缓冲因子"
 
 msgid "Org unit group set in facility map layers"
-msgstr ""
+msgstr "在机构设施地图图层中设置的组织机构组"
 
 msgid "Org unit level in facility map layers"
-msgstr ""
+msgstr "设施地图图层中的组织机构级别"
 
 msgid "Default basemap"
-msgstr ""
+msgstr "默认底图"
 
 msgid "OSM Light (default)"
-msgstr ""
+msgstr "OSM 简化（默认）"
 
 msgid "OSM Detailed"
-msgstr ""
+msgstr "OSM详细图"
 
 msgid "Bing Road"
-msgstr ""
+msgstr "Bing道路"
 
 msgid "Bing Dark"
-msgstr ""
+msgstr "Bing夜图"
 
 msgid "Bing Aerial"
-msgstr ""
+msgstr "Bing空间图"
 
 msgid "Bing Aerial Labels"
-msgstr ""
+msgstr "Bing空间标示图"
 
 msgid "Number of database server CPUs"
 msgstr "数据库服务器cpu数量"
@@ -603,7 +611,7 @@ msgid "Google Maps API key"
 msgstr "Google Maps API key"
 
 msgid "Bing Maps API key"
-msgstr ""
+msgstr "Bing Maps API密钥"
 
 msgid "Application title"
 msgstr "应用标题"
@@ -627,7 +635,7 @@ msgid "Start page"
 msgstr "开始页面"
 
 msgid "Enable light-weight start page"
-msgstr ""
+msgstr "启用轻量级起始页"
 
 msgid "Help page link"
 msgstr "帮助手册地址"
@@ -636,7 +644,7 @@ msgid "Flag"
 msgstr "国旗"
 
 msgid "Interface language"
-msgstr "接口语言"
+msgstr "界面语言"
 
 msgid "Database language"
 msgstr "数据库语言"
@@ -645,7 +653,7 @@ msgid "Property to display in analysis modules"
 msgstr "在分析模块中显示的属性"
 
 msgid "Short name"
-msgstr "缩写"
+msgstr "缩写名"
 
 msgid "Default digit group separator to display in analysis modules"
 msgstr "分析模块中缺省的数字分段符"
@@ -660,19 +668,25 @@ msgid "Require authority to add to view object lists"
 msgstr "添加到查看对象列表需要授权"
 
 msgid "Login page theme"
-msgstr ""
+msgstr "登录页面主题"
 
 msgid "Default"
 msgstr "默认"
 
 msgid "Sidebar"
-msgstr ""
+msgstr "侧边栏"
 
 msgid "Custom"
 msgstr "定制"
 
 msgid "Login page template"
-msgstr ""
+msgstr "登录页面模板"
+
+msgid "Enable Global Shell"
+msgstr "启用全局Shell"
+
+msgid "Global Shell App"
+msgstr "全局Shell应用程序"
 
 msgid "Custom login page logo"
 msgstr "定制登录页面Logo"
@@ -681,16 +695,16 @@ msgid "Custom top menu logo"
 msgstr "定制顶部菜单logo"
 
 msgid "Allow users to switch dashboard items view type"
-msgstr ""
+msgstr "允许用户切换仪表板项目的视图类型"
 
 msgid "Allow users to open dashboard items in relevant app"
-msgstr ""
+msgstr "允许用户在相关应用中打开仪表板项目"
 
 msgid "Allow users to show dashboard items interpretations and details"
-msgstr ""
+msgstr "允许用户显示仪表板项目的解释和详细信息"
 
 msgid "Allow users to view dashboard items in fullscreen"
-msgstr ""
+msgstr "允许用户全屏查看仪表板项目"
 
 msgid "Host name"
 msgstr "主机名"
@@ -708,7 +722,7 @@ msgid "Email sender"
 msgstr "邮件发送者"
 
 msgid "The address that outgoing messages are sent from."
-msgstr ""
+msgstr "发送外发消息的地址。"
 
 msgid "Send me a test email"
 msgstr "发送测试邮件"
@@ -731,6 +745,12 @@ msgstr "打开用户帐号恢复"
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr "尝试多次登录失败后临时锁住用户帐号"
 
+msgid "Enable embedded dashboards"
+msgstr "启用嵌入式仪表板"
+
+msgid "Enforce verified emails"
+msgstr "执行已验证的电子邮件"
+
 msgid "Allow users to grant own user roles"
 msgstr "允许用户自我授权角色"
 
@@ -744,7 +764,7 @@ msgid "Never"
 msgstr "从不"
 
 msgid "3 months"
-msgstr "3月"
+msgstr "3个月"
 
 msgid "6 months"
 msgstr "6个月"
@@ -753,25 +773,25 @@ msgid "12 months"
 msgstr "12个月"
 
 msgid "Send reminders to users before their password expires"
-msgstr ""
+msgstr "在密码过期之前向用户发送提醒"
 
 msgid "Number of days before password expiry to send reminder (1–28)"
-msgstr ""
+msgstr "密码到期前发送提醒的天数 (1–28)"
 
 msgid "Minimum characters in password"
-msgstr "口令最小字符数"
+msgstr "口令最少字符数"
 
 msgid "CORS allowlist"
-msgstr ""
+msgstr "CORS 许可名单"
 
 msgid "reCAPTCHA Site Key"
-msgstr "reCAPTCHA Site Key"
+msgstr "reCAPTCHA 网站密钥"
 
 msgid "reCAPTCHA Secret Key"
-msgstr "reCAPTCHA Secret Key"
+msgstr "reCAPTCHA 密钥"
 
 msgid "Coptic"
-msgstr "gemlke"
+msgstr "科普特"
 
 msgid "Ethiopian"
 msgstr "埃塞俄比亚"
@@ -798,16 +818,16 @@ msgid "Persian"
 msgstr "波斯语"
 
 msgid "Change calendar setting"
-msgstr ""
+msgstr "更改日历设置"
 
 msgid ""
 "Changing your calendar setting after you have entered data can make your "
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
-msgstr ""
+msgstr "输入数据后更改日历设置可能会使您的系统无法使用。如果您输入了数据，强烈建议您不要更改日历设置。"
 
 msgid "Yes, change calendar"
-msgstr ""
+msgstr "是的，更改日历"
 
 msgid "Date format"
 msgstr "日期格式"
@@ -844,17 +864,17 @@ msgstr "远程服务器口令"
 
 msgid ""
 "Number of minutes after which a stale job is reset to scheduled state (1-60)"
-msgstr ""
+msgstr "过时作业重置为计划状态之前的分钟数 (1-60)"
 
 msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
-msgstr ""
+msgstr "删除已完成的临时作业之前的分钟数 (1+)"
 
 msgid ""
 "Maximum number of hours a job may trigger after its intended time if job has"
 " not yet run (1-24)"
-msgstr ""
+msgstr "如果作业尚未运行，则作业在其预期时间之后可以触发的最大小时数 (1-24)"
 
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
-msgstr ""
+msgstr "作业执行间隔（秒），低于该间隔，作业将以调试（而不是信息）级别进行记录 (20+)"
