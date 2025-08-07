@@ -338,8 +338,8 @@ const settingsKeyMapping = {
         label: i18n.t('Google Maps API key'),
         type: 'password',
     },
-    keyBingMapsApiKey: {
-        label: i18n.t('Bing Maps API key'),
+    keyAzureMapsApiKey: {
+        label: i18n.t('Azure Maps API key'),
         type: 'password',
     },
     /* ============================================================================================================ */
