@@ -1,3 +1,10 @@
+# [100.9.0](https://github.com/dhis2/settings-app/compare/v100.8.0...v100.9.0) (2025-08-07)
+
+
+### Features
+
+* add new settings for Azure maps API key ([#1442](https://github.com/dhis2/settings-app/issues/1442)) ([891a478](https://github.com/dhis2/settings-app/commit/891a478f1aa83a9a1fe202d48762c65a0408d1da))
+
 # [100.8.0](https://github.com/dhis2/settings-app/compare/v100.7.6...v100.8.0) (2025-05-19)
 
 
