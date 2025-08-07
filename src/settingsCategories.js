@@ -170,7 +170,7 @@ export const categories = {
                 setting: 'keyGoogleMapsApiKey',
             },
             {
-                setting: 'keyBingMapsApiKey',
+                setting: 'keyAzureMapsApiKey',
             },
         ],
     },
