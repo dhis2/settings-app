@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-05-19T08:23:29.681Z\n"
-"PO-Revision-Date: 2025-05-19T08:23:29.682Z\n"
+"POT-Creation-Date: 2025-08-08T07:56:02.943Z\n"
+"PO-Revision-Date: 2025-08-08T07:56:02.944Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -615,6 +615,9 @@ msgstr "Google Maps API key"
 
 msgid "Bing Maps API key"
 msgstr "Bing Maps API key"
+
+msgid "Azure Maps API key"
+msgstr "Azure Maps API key"
 
 msgid "Application title"
 msgstr "Application title"
