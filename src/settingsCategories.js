@@ -75,6 +75,7 @@ export const categories = {
             'googleAnalyticsUA',
             'keyGoogleMapsApiKey',
             'keyBingMapsApiKey',
+            'keyAzureMapsApiKey',
         ],
     },
     appearance: {

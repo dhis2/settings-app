@@ -342,6 +342,10 @@ const settingsKeyMapping = {
         label: i18n.t('Bing Maps API key'),
         type: 'password',
     },
+    keyAzureMapsApiKey: {
+        label: i18n.t('Azure Maps API key'),
+        type: 'password',
+    },
     /* ============================================================================================================ */
     /* Category: Appearance                                                                                         */
     /* ============================================================================================================ */
