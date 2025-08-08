@@ -74,6 +74,7 @@ export const categories = {
             'keySystemNotificationsEmail',
             'googleAnalyticsUA',
             'keyGoogleMapsApiKey',
+            'keyBingMapsApiKey',
             'keyAzureMapsApiKey',
         ],
     },
