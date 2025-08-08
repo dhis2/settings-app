@@ -1,3 +1,10 @@
+## [100.9.1](https://github.com/dhis2/settings-app/compare/v100.9.0...v100.9.1) (2025-08-08)
+
+
+### Bug Fixes
+
+* add back bing api key [DHIS2-19780] ([#1446](https://github.com/dhis2/settings-app/issues/1446)) ([e5580ea](https://github.com/dhis2/settings-app/commit/e5580eaa85442ab1016173eef7756c3445ca070c))
+
 # [100.9.0](https://github.com/dhis2/settings-app/compare/v100.8.0...v100.9.0) (2025-08-07)
 
 
