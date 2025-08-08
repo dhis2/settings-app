@@ -26,7 +26,7 @@ jobs:
               with:
                   node-version: 12.x
 
-            - uses: c-hive/gha-yarn-cache@v1
+            - uses: c-hive/gha-yarn-cache@v2
             - run: yarn install --frozen-lockfile
 
             - name: Build
