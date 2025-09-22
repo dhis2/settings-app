@@ -44,7 +44,7 @@ const config = {
             url: '#/import',
         },
         {
-            name: 'Synchronozation',
+            name: 'Synchronization',
             url: '#/sync',
         },
         {
