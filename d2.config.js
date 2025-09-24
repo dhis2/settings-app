@@ -52,6 +52,10 @@ const config = {
             url: '#/scheduledJobs',
         },
         {
+            name: 'Notification settings',
+            url: '#/notification',
+        },
+        {
             name: 'OAuth2 clients',
             url: '#/oauth2',
         },
