@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-08-08T07:56:02.943Z\n"
-"PO-Revision-Date: 2025-08-08T07:56:02.944Z\n"
+"POT-Creation-Date: 2025-09-24T08:44:28.347Z\n"
+"PO-Revision-Date: 2025-09-24T08:44:28.348Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -916,3 +916,51 @@ msgstr "System Settings"
 msgctxt "Application description"
 msgid "__MANIFEST_APP_DESCRIPTION"
 msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_General"
+msgstr "General"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Analytics"
+msgstr "Analytics"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Server"
+msgstr "Server"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Appearance"
+msgstr "Appearance"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Email"
+msgstr "Email"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Access"
+msgstr "Access"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Calendar"
+msgstr "Calendar"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data import settings"
+msgstr "Data import settings"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Synchronization"
+msgstr "Synchronization"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Scheduled job settings"
+msgstr "Scheduled job settings"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Notification settings"
+msgstr "Notification settings"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_OAuth2 clients"
+msgstr "OAuth2 clients"
