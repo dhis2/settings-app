@@ -1,3 +1,10 @@
+# [100.10.0](https://github.com/dhis2/settings-app/compare/v100.9.1...v100.10.0) (2025-09-25)
+
+
+### Features
+
+* add shortcuts for command palette ([#1447](https://github.com/dhis2/settings-app/issues/1447)) ([2db4222](https://github.com/dhis2/settings-app/commit/2db42222b4cefe650b48097b024ef24e249cb22e))
+
 ## [100.9.1](https://github.com/dhis2/settings-app/compare/v100.9.0...v100.9.1) (2025-08-08)
 
 
