@@ -147,10 +147,16 @@ const AppWrapper = () => {
         id: flag.key,
         displayName: flag.name,
     }))
-    flags.unshift({
-        id: 'dhis2',
-        displayName: i18n.t('No flag'),
-    })
+    flags.unshift(
+        {
+            id: 'none',
+            displayName: i18n.t('No flag'),
+        },
+        {
+            id: 'dhis2',
+            displayName: i18n.t('DHIS2'),
+        }
+    )
 
     const styles = (data.styles || []).map((style) => ({
         id: style.path,
