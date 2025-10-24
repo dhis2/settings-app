@@ -135,6 +135,7 @@ const AppWrapper = () => {
     } = data
 
     const appsModulePrefix = apiVersion >= 42 ? '' : 'app:'
+    const newLoginAppAvailable = apiVersion >= 41
     const startModules = (data.apps.modules || []).map((module) => ({
         id:
             module.defaultAction.substr(0, 3) === '../'
@@ -147,17 +148,18 @@ const AppWrapper = () => {
         id: flag.key,
         displayName: flag.name,
     }))
-    flags.unshift(
-        {
+
+    flags.unshift({
+        id: 'dhis2',
+        displayName: i18n.t('DHIS2'),
+    })
+
+    if (newLoginAppAvailable) {
+        flags.unshift({
             id: 'none',
             displayName: i18n.t('No flag'),
-        },
-        {
-            id: 'dhis2',
-            displayName: i18n.t('DHIS2'),
-        }
-    )
-
+        })
+    }
     const styles = (data.styles || []).map((style) => ({
         id: style.path,
         displayName: style.name,
