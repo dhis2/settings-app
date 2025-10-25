@@ -1,14 +1,14 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2023
 # 晓东 林 <13981924470@126.com>, 2023
+# easylin <lin_xd@126.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-05-30T13:11:40.739Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2023\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Failed to load: {{error}}"
-msgstr ""
+msgstr "加载失败：{{error}}"
 
 msgid "No flag"
 msgstr "无标志"
@@ -32,19 +32,19 @@ msgid "Preview image"
 msgstr "预览图像"
 
 msgid "Preview of image"
-msgstr ""
+msgstr "图片预览"
 
 msgid "Upload image"
 msgstr "上传图像"
 
 msgid "Error uploading file: {{error}}"
-msgstr ""
+msgstr "上传文件时出错：{{error}}"
 
 msgid "Cancel upload"
 msgstr "取消上传"
 
 msgid "System default ({{language}})"
-msgstr ""
+msgstr "系统默认值 ({{language}})"
 
 msgid "Set the main field value before adding a translation"
 msgstr "添加翻译前设置主要字段值"
@@ -56,25 +56,25 @@ msgid "Select language"
 msgstr "选择语言"
 
 msgid "Version created"
-msgstr ""
+msgstr "版本已建立"
 
 msgid "Failed to create version"
-msgstr ""
+msgstr "创建版本失败"
 
 msgid "Error fetching settings"
-msgstr ""
+msgstr "提取设置时出错"
 
 msgid "Create new version"
 msgstr "创建新版本"
 
 msgid "Best effort"
-msgstr ""
+msgstr "最大努力"
 
 msgid "Atomic"
 msgstr "原子化"
 
 msgid "Master version:"
-msgstr ""
+msgstr "主版本："
 
 msgid "None"
 msgstr "无"
@@ -161,7 +161,7 @@ msgid "Failed to save OAuth2 client"
 msgstr "保存OAth2客户失败"
 
 msgid "Add OAuth2 client"
-msgstr ""
+msgstr "添加 OAuth2 客户端"
 
 msgid "Yes"
 msgstr "是"
@@ -173,7 +173,7 @@ msgid "OAuth2 client deleted"
 msgstr "OAth2客户已经删除"
 
 msgid "Failed to delete OAuth2 client"
-msgstr ""
+msgstr "删除 OAuth2 客户端失败"
 
 msgid "Settings updated"
 msgstr "设置已经更新"
@@ -239,7 +239,7 @@ msgid "This field is required"
 msgstr "这个字段是必填的"
 
 msgid "This field should be a URL"
-msgstr ""
+msgstr "该字段应为网址"
 
 msgid "This field should be a number"
 msgstr "该字段应该是一个数字"
@@ -248,17 +248,17 @@ msgid "This field should be a positive number"
 msgstr "该字段应该是一个正数"
 
 msgid "This field should be an email"
-msgstr ""
+msgstr "该字段应为电子邮件"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
-msgstr ""
+msgstr "当前用户设置将覆盖此设置：{{settingName}}"
 
 msgid "This setting can be overridden by user settings"
 msgstr "该设置可以被用户设置覆盖"
 
 msgid "No options"
-msgstr ""
+msgstr "没有选择"
 
 msgid "No settings matched the search term"
 msgstr "没有设置满足搜索条件"
@@ -324,10 +324,10 @@ msgid "No message recipients"
 msgstr "无反馈接收者"
 
 msgid "System update notification recipients"
-msgstr ""
+msgstr "系统更新通知收件人"
 
 msgid "No update notification recipients"
-msgstr ""
+msgstr "没有更新通知收件人"
 
 msgid "Max offline organisation unit levels"
 msgstr "离线的最大机构等级"
@@ -345,10 +345,10 @@ msgid "Acceptance required before approval"
 msgstr "确认前需审批"
 
 msgid "Gather analytical object statistics in dashboard views"
-msgstr ""
+msgstr "在仪表板视图中收集分析对象统计信息"
 
 msgid "Include passive dashboard views in usage analytics statistics"
-msgstr ""
+msgstr "在使用情况分析统计信息中包括被动仪表板视图"
 
 msgid "Default relative period for analysis"
 msgstr "缺省的系统分析相对期间类型"
@@ -453,7 +453,7 @@ msgid "Hide weekly periods"
 msgstr "隐藏每周期间"
 
 msgid "Hide biweekly periods"
-msgstr ""
+msgstr "隐藏期间每两周"
 
 msgid "Hide monthly periods"
 msgstr "隐藏每月期间"
@@ -489,7 +489,7 @@ msgid "Cache for one hour"
 msgstr "缓冲一小时"
 
 msgid "Cache until 6AM tomorrow"
-msgstr ""
+msgstr "缓存到明天凌晨6点"
 
 msgid "Cache for two weeks"
 msgstr "缓冲两周"
@@ -549,37 +549,37 @@ msgid "Respect category option start and end date in analytics table export"
 msgstr "分析表导出包括各自分类选项的起始日期"
 
 msgid "Include zero data values in analytics tables"
-msgstr ""
+msgstr "在分析表中包含零数据值"
 
 msgid "Caching factor"
 msgstr "缓存因子"
 
 msgid "Org unit group set in facility map layers"
-msgstr ""
+msgstr "在机构设施地图图层中设置的组织机构组"
 
 msgid "Org unit level in facility map layers"
-msgstr ""
+msgstr "设施地图图层中的组织机构级别"
 
 msgid "Default basemap"
-msgstr ""
+msgstr "默认底图"
 
 msgid "OSM Light (default)"
-msgstr ""
+msgstr "OSM 简化（默认）"
 
 msgid "OSM Detailed"
-msgstr ""
+msgstr "OSM详细图"
 
 msgid "Bing Road"
-msgstr ""
+msgstr "Bing道路"
 
 msgid "Bing Dark"
-msgstr ""
+msgstr "Bing夜图"
 
 msgid "Bing Aerial"
-msgstr ""
+msgstr "Bing空间图"
 
 msgid "Bing Aerial Labels"
-msgstr ""
+msgstr "Bing空间标示图"
 
 msgid "Number of database server CPUs"
 msgstr "数据库服务器cpu数量"
@@ -597,7 +597,7 @@ msgid "Google Maps API key"
 msgstr "Google Maps API key"
 
 msgid "Bing Maps API key"
-msgstr ""
+msgstr "Bing Maps API密钥"
 
 msgid "Application title"
 msgstr "应用标题"
@@ -621,7 +621,7 @@ msgid "Start page"
 msgstr "开始页面"
 
 msgid "Enable light-weight start page"
-msgstr ""
+msgstr "启用轻量级起始页"
 
 msgid "Help page link"
 msgstr "帮助手册地址"
@@ -660,16 +660,16 @@ msgid "Custom top menu logo"
 msgstr "定制顶部菜单logo"
 
 msgid "Allow users to switch dashboard items view type"
-msgstr ""
+msgstr "允许用户切换仪表板项目的视图类型"
 
 msgid "Allow users to open dashboard items in relevant app"
-msgstr ""
+msgstr "允许用户在相关应用中打开仪表板项目"
 
 msgid "Allow users to show dashboard items interpretations and details"
-msgstr ""
+msgstr "允许用户显示仪表板项目的解释和详细信息"
 
 msgid "Allow users to view dashboard items in fullscreen"
-msgstr ""
+msgstr "允许用户全屏查看仪表板项目"
 
 msgid "Host name"
 msgstr "主机名"
@@ -729,10 +729,10 @@ msgid "12 months"
 msgstr "12个月"
 
 msgid "Send reminders to users before their password expires"
-msgstr ""
+msgstr "在密码过期之前向用户发送提醒"
 
 msgid "Number of days before password expiry to send reminder (1–28)"
-msgstr ""
+msgstr "密码到期前发送提醒的天数 (1–28)"
 
 msgid "Minimum characters in password"
 msgstr "口令最小字符数"
@@ -774,16 +774,16 @@ msgid "Persian"
 msgstr "波斯语"
 
 msgid "Change calendar setting"
-msgstr ""
+msgstr "更改日历设置"
 
 msgid ""
 "Changing your calendar setting after you have entered data can make your "
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
-msgstr ""
+msgstr "输入数据后更改日历设置可能会使您的系统无法使用。如果您输入了数据，强烈建议您不要更改日历设置。"
 
 msgid "Yes, change calendar"
-msgstr ""
+msgstr "是的，更改日历"
 
 msgid "Date format"
 msgstr "日期格式"
