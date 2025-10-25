@@ -4,19 +4,21 @@
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Edem Kossi <ekossi@hispwca.org>, 2022
 # tx_e2f_frfr r6 <tx_e2f_frfr_r661@ate2f.com>, 2022
-# Philip Larsen Donnelly, 2022
 # tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2022
 # Yayra Gomado <ygomado@hispwca.org>, 2022
-# Viktor Varland <viktor@dhis2.org>, 2022
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
 # Elise Desailly, 2024
+# Viktor Varland <viktor@dhis2.org>, 2025
+# Cyrille Kabrane, 2025
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
+# Philip Larsen Donnelly, 2025
+# Esther Tokouli, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
 "PO-Revision-Date: 2022-04-20 10:52+0000\n"
-"Last-Translator: Elise Desailly, 2024\n"
+"Last-Translator: Esther Tokouli, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,7 +54,7 @@ msgid "Cancel upload"
 msgstr "Annuler le téléchargement"
 
 msgid "System default ({{language}})"
-msgstr ""
+msgstr "Valeur par défaut du système ({{language}})"
 
 msgid "Set the main field value before adding a translation"
 msgstr "Définir la valeur du champ principal avant d'ajouter une traduction"
@@ -149,7 +151,7 @@ msgid "Edit OAuth2 Client"
 msgstr "Modifier le client OAuth2"
 
 msgid "Save"
-msgstr "Enregistrer"
+msgstr "Sauvegarder"
 
 msgid "Cancel"
 msgstr "Annuler"
@@ -194,7 +196,7 @@ msgid "General settings"
 msgstr "Paramètres généraux"
 
 msgid "Analytics"
-msgstr "Analytiques"
+msgstr "Analyses"
 
 msgid "Analytics settings"
 msgstr "Paramètres d'analyse"
@@ -224,7 +226,7 @@ msgid "Access settings"
 msgstr "Paramètres d'accès"
 
 msgid "Calendar"
-msgstr "Calendar"
+msgstr "Calendrier"
 
 msgid "Calendar settings"
 msgstr "Paramètres du calendrier"
@@ -278,10 +280,10 @@ msgid "Search results"
 msgstr "Résultats de la recherche"
 
 msgid "Maximum number of analytics records"
-msgstr "Maximum number of analytics records"
+msgstr "Nombre maximum d'enregistrements d'analyse"
 
 msgid "Unlimited"
-msgstr "Unlimited"
+msgstr "Illimité"
 
 msgid "Maximum number of SQL view records"
 msgstr "Nombre maximal d'enregistrements de vue SQL"
@@ -296,7 +298,7 @@ msgid "Infrastructural period type"
 msgstr "Type de période d'infrastructure"
 
 msgid "Daily"
-msgstr "Quotidien"
+msgstr "Journalier"
 
 msgid "Weekly"
 msgstr "Hebdomadaire"
@@ -314,7 +316,7 @@ msgid "Six-monthly"
 msgstr "Semestriel"
 
 msgid "Six-monthly April"
-msgstr "Six-mois avril"
+msgstr "Semestriel Avril"
 
 msgid "Yearly"
 msgstr "Annuel"
@@ -329,7 +331,7 @@ msgid "Financial-Oct"
 msgstr "Financière-Oct"
 
 msgid "Feedback recipients"
-msgstr "Commentaires des bénéficiaires"
+msgstr "Feedback des bénéficiaires"
 
 msgid "No message recipients"
 msgstr "Pas de destinataires du message"
@@ -341,10 +343,10 @@ msgid "No update notification recipients"
 msgstr "Aucune mise à jour des destinataires des notifications"
 
 msgid "Max offline organisation unit levels"
-msgstr "Niveau maximum d'unité d'organisation en offline"
+msgstr "Niveau maximum d'unité d'organisation hors ligne"
 
 msgid "Data analysis std dev factor"
-msgstr "L'analyse des données écart facteur standard"
+msgstr "Facteur d'écart type dans l'analyse des données"
 
 msgid "Phone number area code"
 msgstr "Code zone du numéro de téléphone"
@@ -453,7 +455,7 @@ msgid "This financial year"
 msgstr "Année fiscale en cours"
 
 msgid "Last financial year"
-msgstr "Dernière année financière"
+msgstr "Année fiscale précédente"
 
 msgid "Last 5 financial years"
 msgstr "5 dernières années fiscales"
@@ -477,7 +479,7 @@ msgid "Hide bimonthly periods"
 msgstr "Masquer les périodes bimensuelles"
 
 msgid "Financial year relative period start month"
-msgstr "Mois de départ de la période relative à l’année financière"
+msgstr "Mois de début de la période relative à l'année fiscale"
 
 msgid "April"
 msgstr "Avril"
@@ -489,7 +491,7 @@ msgid "October"
 msgstr "Octobre"
 
 msgid "Cache strategy"
-msgstr "Stratégie de cache"
+msgstr "Stratégie de mise en cache"
 
 msgid "No cache"
 msgstr "Pas de cache"
@@ -501,13 +503,13 @@ msgid "Cache for 30 minutes"
 msgstr "Cache pour 30 min"
 
 msgid "Cache for one hour"
-msgstr "Cache pendant 1 heure"
+msgstr "Cache pendant une heure"
 
 msgid "Cache until 6AM tomorrow"
 msgstr "Cache jusqu'à 6 heures demain matin"
 
 msgid "Cache for two weeks"
-msgstr "Cache pendant 2 semaines"
+msgstr "Cache pour deux semaines"
 
 msgid "Cacheability"
 msgstr "Capacité de mise en cache"
@@ -596,7 +598,7 @@ msgid "OSM Detailed"
 msgstr "OSM détaillée"
 
 msgid "Bing Road"
-msgstr "Bing Route"
+msgstr "Bing Road"
 
 msgid "Bing Dark"
 msgstr "Bing Sombre"
@@ -620,7 +622,7 @@ msgid "Google Analytics (Universal Analytics) key"
 msgstr "Clé de Google Analytics (Universal Analytics)"
 
 msgid "Google Maps API key"
-msgstr "Clé API Google Maps"
+msgstr "Clé API de Google Maps"
 
 msgid "Bing Maps API key"
 msgstr "Clé API de Bing Maps"
@@ -662,7 +664,7 @@ msgid "Database language"
 msgstr "Langue de la base de données"
 
 msgid "Property to display in analysis modules"
-msgstr "Propriété à afficher dans les modules analytiques"
+msgstr "Propriété à afficher dans les modules d'analyses"
 
 msgid "Short name"
 msgstr "Nom court"
@@ -724,7 +726,7 @@ msgid "Email sender"
 msgstr "Expéditeur de l’e-mail"
 
 msgid "The address that outgoing messages are sent from."
-msgstr ""
+msgstr "L'adresse à partir de laquelle les messages sortants sont envoyés."
 
 msgid "Send me a test email"
 msgstr "M’envoyer un e-mail de test"
@@ -739,7 +741,7 @@ msgid "Self registration account organisation unit"
 msgstr "L'unité d'organisation des comptes auto-inscrits"
 
 msgid "Do not require recaptcha for self registration"
-msgstr "Do not require recaptcha for self registration"
+msgstr "Ne pas exiger de recaptcha pour l'auto-inscription"
 
 msgid "Enable user account recovery"
 msgstr "Permettre la restauration de compte utilisateur"
@@ -750,7 +752,8 @@ msgstr ""
 "tentatives de connexion infructueuses"
 
 msgid "Allow users to grant own user roles"
-msgstr "Allow users to grant own user roles"
+msgstr ""
+"Autoriser les utilisateurs à attribuer leurs propres rôles d'utilisateur"
 
 msgid "Allow assigning object to related objects during add or update"
 msgstr ""
@@ -758,7 +761,7 @@ msgstr ""
 " mise à jour"
 
 msgid "Require user account password change"
-msgstr "Require user account password change"
+msgstr "Exiger le changement de mot de passe du compte utilisateur"
 
 msgid "Never"
 msgstr "Jamais"
@@ -830,7 +833,7 @@ msgid "Yes, change calendar"
 msgstr "Oui, modifier le calendrier"
 
 msgid "Date format"
-msgstr "Format de date"
+msgstr "Format de la date"
 
 msgid "Require periods to match period type of data set"
 msgstr ""
@@ -842,8 +845,8 @@ msgstr "Les éléments de données doivent faire partie de l’ensemble de donn�
 
 msgid "Require category option combos to match category combo of data element"
 msgstr ""
-"Les combos d’options de catégorie doivent correspondre à la combinaison de "
-"catégories d’élément de données"
+"Les combinaisons d’options de catégorie doivent correspondre à la "
+"combinaison de catégories d’élément de données"
 
 msgid "Require organisation units to match assignment of data set"
 msgstr ""
@@ -856,7 +859,7 @@ msgstr ""
 "de catégories de l’ensemble de données"
 
 msgid "Require category option combo to be specified"
-msgstr "Le combo d’options de catégorie doit être précisé"
+msgstr "La combinaison d'options de catégorie doit être précisée"
 
 msgid "Require attribute option combo to be specified"
 msgstr "La combinaison d’options d’attribut doit être précisée"
