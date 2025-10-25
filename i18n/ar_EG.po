@@ -1,14 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2021
+# Philip Larsen Donnelly, 2021
+# Yara Elkady, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-14T13:17:46.441Z\n"
+"POT-Creation-Date: 2025-03-05T20:30:30.881Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
-"Language-Team: Arabic (Egypt) (https://www.transifex.com/hisp-uio/teams/100509/ar_EG/)\n"
+"Last-Translator: Yara Elkady, 2025\n"
+"Language-Team: Arabic (Egypt) (https://app.transifex.com/hisp-uio/teams/100509/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,7 +43,7 @@ msgstr ""
 msgid "Cancel upload"
 msgstr ""
 
-msgid "System default (fallback)"
+msgid "System default ({{language}})"
 msgstr ""
 
 msgid "Set the main field value before adding a translation"
@@ -142,7 +143,7 @@ msgid "Save"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "إلغاء"
 
 msgid "There are currently no OAuth2 clients registered"
 msgstr ""
@@ -175,6 +176,9 @@ msgid "Failed to delete OAuth2 client"
 msgstr ""
 
 msgid "Settings updated"
+msgstr ""
+
+msgid "There was a problem updating settings. Changes have not been saved."
 msgstr ""
 
 msgid "General"
@@ -231,6 +235,9 @@ msgstr ""
 msgid "Synchronization settings"
 msgstr ""
 
+msgid "Scheduled jobs"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr ""
 
@@ -257,6 +264,14 @@ msgid "This setting can be overridden by user settings"
 msgstr ""
 
 msgid "No options"
+msgstr ""
+
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
 msgstr ""
 
 msgid "No settings matched the search term"
@@ -547,9 +562,6 @@ msgstr ""
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
-msgid "Put analytics in maintenance mode"
-msgstr ""
-
 msgid "Include zero data values in analytics tables"
 msgstr ""
 
@@ -655,6 +667,27 @@ msgstr ""
 msgid "Require authority to add to view object lists"
 msgstr ""
 
+msgid "Login page theme"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "Login page template"
+msgstr ""
+
+msgid "Enable Global Shell"
+msgstr ""
+
+msgid "Global Shell App"
+msgstr ""
+
 msgid "Custom login page logo"
 msgstr ""
 
@@ -688,6 +721,9 @@ msgstr ""
 msgid "Email sender"
 msgstr ""
 
+msgid "The address that outgoing messages are sent from."
+msgstr ""
+
 msgid "Send me a test email"
 msgstr ""
 
@@ -707,6 +743,12 @@ msgid "Enable user account recovery"
 msgstr ""
 
 msgid "Lock user account temporarily after multiple failed login attempts"
+msgstr ""
+
+msgid "Enable embedded dashboards"
+msgstr ""
+
+msgid "Enforce verified emails"
 msgstr ""
 
 msgid "Allow users to grant own user roles"
@@ -730,13 +772,16 @@ msgstr ""
 msgid "12 months"
 msgstr ""
 
-msgid "Enable password expiry alerts"
+msgid "Send reminders to users before their password expires"
+msgstr ""
+
+msgid "Number of days before password expiry to send reminder (1–28)"
 msgstr ""
 
 msgid "Minimum characters in password"
 msgstr ""
 
-msgid "CORS whitelist"
+msgid "CORS allowlist"
 msgstr ""
 
 msgid "reCAPTCHA Site Key"
@@ -772,6 +817,18 @@ msgstr ""
 msgid "Persian"
 msgstr ""
 
+msgid "Change calendar setting"
+msgstr ""
+
+msgid ""
+"Changing your calendar setting after you have entered data can make your "
+"system unusable. If you have entered data, it is strongly recommended that "
+"you do not change your calendar setting."
+msgstr ""
+
+msgid "Yes, change calendar"
+msgstr ""
+
 msgid "Date format"
 msgstr ""
 
@@ -803,4 +860,21 @@ msgid "Remote server username"
 msgstr ""
 
 msgid "Remote server password"
+msgstr ""
+
+msgid ""
+"Number of minutes after which a stale job is reset to scheduled state (1-60)"
+msgstr ""
+
+msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
+msgstr ""
+
+msgid ""
+"Maximum number of hours a job may trigger after its intended time if job has"
+" not yet run (1-24)"
+msgstr ""
+
+msgid ""
+"Job execution interval (seconds) below which a job will be logged at debug "
+"(rather than info) level (20+)"
 msgstr ""

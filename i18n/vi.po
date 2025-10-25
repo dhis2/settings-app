@@ -4,14 +4,14 @@
 # Philip Larsen Donnelly, 2024
 # Viktor Varland <viktor@dhis2.org>, 2024
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024
-# Em Le <em.hispvietnam@gmail.com>, 2024
+# Em Le <em.hispvietnam@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-01-17T10:18:20.401Z\n"
+"POT-Creation-Date: 2025-03-05T20:30:30.881Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2024\n"
+"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2025\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -268,6 +268,14 @@ msgstr "Cài đặt này có thể bị mất hiệu lực bởi cài đặt c�
 
 msgid "No options"
 msgstr "Không có tùy chọn"
+
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
 
 msgid "No settings matched the search term"
 msgstr "Không tìm thấy cài đặt"
@@ -680,6 +688,12 @@ msgstr "Tùy chỉnh"
 msgid "Login page template"
 msgstr ""
 
+msgid "Enable Global Shell"
+msgstr ""
+
+msgid "Global Shell App"
+msgstr ""
+
 msgid "Custom login page logo"
 msgstr "Thiết lập biểu tượng trang đăng nhập"
 
@@ -720,24 +734,27 @@ msgid "Send me a test email"
 msgstr "Gửi tôi thư điện tử để kiểm định"
 
 msgid "Self registration account user role"
-msgstr "Vai trò (quyền) của người dùng được cấp khi tự đăng ký tài khoảng"
+msgstr "Vai trò của người dùng được cấp khi tự đăng ký tài khoản"
 
 msgid "Disable self registration"
 msgstr "Tắt chức năng tự đăng ký tài khoảng"
 
 msgid "Self registration account organisation unit"
-msgstr "Đơn vị gán cho người dùng tự đăng ký tài khoảng"
+msgstr "Đơn vị gán cho người dùng tự đăng ký tài khoản"
 
 msgid "Do not require recaptcha for self registration"
 msgstr "Không yêu cầu gõ lại ký tự xác minh khi tự đăng ký tài khoảng"
 
 msgid "Enable user account recovery"
-msgstr "Cho phép phục hồi tài khoảng"
+msgstr "Cho phép phục hồi tài khoản"
 
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
 "Khóa tạm thời tài khoảng người dùng sau nhiều lần thử đăng nhập không thành "
 "công"
+
+msgid "Enable embedded dashboards"
+msgstr ""
 
 msgid "Enforce verified emails"
 msgstr ""
@@ -749,7 +766,7 @@ msgid "Allow assigning object to related objects during add or update"
 msgstr "Cho phép gán đối tượng liên quan trong khi thêm hoặc cập nhật"
 
 msgid "Require user account password change"
-msgstr "Yêu cầu thay đổi mật khẩu tài khoảng"
+msgstr "Yêu cầu thay đổi mật khẩu tài khoản"
 
 msgid "Never"
 msgstr "Chưa bao giờ"
