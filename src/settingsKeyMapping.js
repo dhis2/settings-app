@@ -832,6 +832,16 @@ const settingsKeyMapping = {
         type: 'textfield',
     },
 
+    orgUnitCentroidsInEventsAnalytics: {
+        label: i18n.t(
+            'Use centroids for organisation unit polygons in event analytics'
+        ),
+        type: 'checkbox',
+        helpText: i18n.t(
+            'When enabled, event analytics requests that normally return polygons for organisation units will return centroids instead. Improves performance for large datasets.'
+        ),
+    },
+
     /* ============================================================================================================ */
     // The following keys are present in the demo database but are not managed by dhis-web-maintenance-settings
     //

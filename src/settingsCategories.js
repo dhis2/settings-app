@@ -142,6 +142,9 @@ export const categories = {
                 setting: 'keyDashboardContextMenuItemViewFullscreen',
             },
             {
+                setting: 'orgUnitCentroidsInEventsAnalytics',
+            },
+            {
                 setting: 'facilityOrgUnitGroupSet',
             },
             {
