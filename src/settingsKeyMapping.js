@@ -837,9 +837,6 @@ const settingsKeyMapping = {
             'Use centroids for organisation unit polygons in event analytics'
         ),
         type: 'checkbox',
-        helpText: i18n.t(
-            'When enabled, event analytics requests that normally return polygons for organisation units will return centroids instead. Improves performance for large datasets.'
-        ),
     },
 
     /* ============================================================================================================ */
