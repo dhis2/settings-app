@@ -1,3 +1,11 @@
+# [100.11.0](https://github.com/dhis2/settings-app/compare/v100.10.0...v100.11.0) (2025-11-18)
+
+
+### Features
+
+* add orgUnitCentroidsInEventsAnalytics to analytics settings ([cb81cde](https://github.com/dhis2/settings-app/commit/cb81cdee9014f97bdd6ddd6d743ea9ec8a43f661))
+* add orgUnitCentroidsInEventsAnalytics to analytics settings ([e5c0ecf](https://github.com/dhis2/settings-app/commit/e5c0ecf84a5cd857eeae9ce30fcbbc9f4fa322f3))
+
 # [100.10.0](https://github.com/dhis2/settings-app/compare/v100.9.1...v100.10.0) (2025-09-25)
 
 
