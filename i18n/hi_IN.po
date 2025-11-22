@@ -383,10 +383,10 @@ msgid "Last 52 weeks"
 msgstr ""
 
 msgid "This month"
-msgstr ""
+msgstr "इस महीने"
 
 msgid "Last month"
-msgstr ""
+msgstr "पिछला महीना"
 
 msgid "Months this year"
 msgstr ""
@@ -395,7 +395,7 @@ msgid "Months last year"
 msgstr ""
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "पिछले 3 महीने"
 
 msgid "Last 6 months"
 msgstr ""
