@@ -1,13 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
+# Yara Elkady, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
+"POT-Creation-Date: 2025-08-08T08:33:10.371Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
-"Last-Translator: phil_dhis2, 2023\n"
+"Last-Translator: Yara Elkady, 2025\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/hisp-uio/teams/100509/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +43,7 @@ msgstr ""
 msgid "Cancel upload"
 msgstr ""
 
-msgid "System default (fallback)"
+msgid "System default ({{language}})"
 msgstr ""
 
 msgid "Set the main field value before adding a translation"
@@ -142,7 +143,7 @@ msgid "Save"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "إلغاء"
 
 msgid "There are currently no OAuth2 clients registered"
 msgstr ""
@@ -547,9 +548,6 @@ msgstr ""
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 
-msgid "Put analytics in maintenance mode"
-msgstr ""
-
 msgid "Include zero data values in analytics tables"
 msgstr ""
 
@@ -599,6 +597,9 @@ msgid "Google Maps API key"
 msgstr ""
 
 msgid "Bing Maps API key"
+msgstr ""
+
+msgid "Azure Maps API key"
 msgstr ""
 
 msgid "Application title"
@@ -730,7 +731,10 @@ msgstr ""
 msgid "12 months"
 msgstr ""
 
-msgid "Enable password expiry alerts"
+msgid "Send reminders to users before their password expires"
+msgstr ""
+
+msgid "Number of days before password expiry to send reminder (1–28)"
 msgstr ""
 
 msgid "Minimum characters in password"
