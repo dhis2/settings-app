@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-11-17T22:16:03.463Z\n"
-"PO-Revision-Date: 2025-11-17T22:16:03.464Z\n"
+"POT-Creation-Date: 2025-11-26T13:10:18.388Z\n"
+"PO-Revision-Date: 2025-11-26T13:10:18.389Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -911,68 +911,3 @@ msgstr "Clean idle jobs after (in milliseconds)"
 
 msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr "Use centroids for organisation unit polygons in event analytics"
-
-msgid ""
-"When enabled, event analytics requests that normally return polygons for "
-"organisation units will return centroids instead. Improves performance for "
-"large datasets."
-msgstr ""
-"When enabled, event analytics requests that normally return polygons for "
-"organisation units will return centroids instead. Improves performance for "
-"large datasets."
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr "System Settings"
-
-msgctxt "Application description"
-msgid "__MANIFEST_APP_DESCRIPTION"
-msgstr ""
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_General"
-msgstr "General"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Analytics"
-msgstr "Analytics"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Server"
-msgstr "Server"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Appearance"
-msgstr "Appearance"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Email"
-msgstr "Email"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Access"
-msgstr "Access"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Calendar"
-msgstr "Calendar"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data import settings"
-msgstr "Data import settings"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Synchronization"
-msgstr "Synchronization"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Scheduled job settings"
-msgstr "Scheduled job settings"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Notification settings"
-msgstr "Notification settings"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_OAuth2 clients"
-msgstr "OAuth2 clients"
