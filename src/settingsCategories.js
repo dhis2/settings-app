@@ -85,19 +85,7 @@ export const categories = {
                 setting: 'keyAnalysisDigitGroupSeparator',
             },
             {
-                setting: 'keyHideDailyPeriods',
-            },
-            {
-                setting: 'keyHideWeeklyPeriods',
-            },
-            {
-                setting: 'keyHideBiWeeklyPeriods',
-            },
-            {
-                setting: 'keyHideMonthlyPeriods',
-            },
-            {
-                setting: 'keyHideBiMonthlyPeriods',
+                setting: 'periodTypes',
             },
             {
                 setting: 'analyticsFinancialYearStart',

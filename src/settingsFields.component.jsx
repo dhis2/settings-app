@@ -20,6 +20,7 @@ import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.comp
 import metadataSettings from './metadata-settings/metadataSettings.component.jsx'
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component.jsx'
 import Oauth2ClientEditor41 from './oauth2-client-editor-41/OAuth2ClientEditor.component.jsx'
+import PeriodTypes from './period-types/PeriodTypes.component.jsx'
 import settingsActions from './settingsActions.js'
 import { categories } from './settingsCategories.js'
 import classes from './SettingsFields.module.css'
@@ -304,6 +305,11 @@ class SettingsFields extends React.Component {
             case 'metadataSettings':
                 return Object.assign({}, fieldBase, {
                     component: metadataSettings,
+                })
+
+            case 'periodTypes':
+                return Object.assign({}, fieldBase, {
+                    component: PeriodTypes,
                 })
 
             default:

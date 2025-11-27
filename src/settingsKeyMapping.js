@@ -177,26 +177,9 @@ const settingsKeyMapping = {
             LAST_5_FINANCIAL_YEARS: i18n.t('Last 5 financial years'),
         },
     },
-    keyHideDailyPeriods: {
-        label: i18n.t('Hide daily periods'),
-        sectionLabel: i18n.t('Hidden period types in analytics apps'),
-        type: 'checkbox',
-    },
-    keyHideWeeklyPeriods: {
-        label: i18n.t('Hide weekly periods'),
-        type: 'checkbox',
-    },
-    keyHideBiWeeklyPeriods: {
-        label: i18n.t('Hide biweekly periods'),
-        type: 'checkbox',
-    },
-    keyHideMonthlyPeriods: {
-        label: i18n.t('Hide monthly periods'),
-        type: 'checkbox',
-    },
-    keyHideBiMonthlyPeriods: {
-        label: i18n.t('Hide bimonthly periods'),
-        type: 'checkbox',
+    periodTypes: {
+        type: 'periodTypes',
+        searchLabels: [i18n.t('Period types'), i18n.t('Allowed period types')],
     },
     analyticsFinancialYearStart: {
         label: i18n.t('Financial year relative period start month'),
