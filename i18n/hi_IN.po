@@ -387,7 +387,7 @@ msgid "Last 6 months"
 msgstr ""
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "पिछले 12 महीने"
 
 msgid "This bi-month"
 msgstr ""
@@ -417,19 +417,19 @@ msgid "This six-month"
 msgstr ""
 
 msgid "Last six-month"
-msgstr ""
+msgstr "पिछला छः-मासिक"
 
 msgid "Last 2 six-months"
-msgstr ""
+msgstr "पिछले 2 छः-मासिक"
 
 msgid "This year"
-msgstr ""
+msgstr "इस वर्ष"
 
 msgid "Last year"
-msgstr ""
+msgstr "पिछला वर्ष"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "पिछले 5 वर्ष"
 
 msgid "Last 10 years"
 msgstr ""
@@ -465,13 +465,13 @@ msgid "Financial year relative period start month"
 msgstr ""
 
 msgid "April"
-msgstr ""
+msgstr "अप्रैल"
 
 msgid "July"
-msgstr ""
+msgstr "जुलाई"
 
 msgid "October"
-msgstr ""
+msgstr "अक्टूबर"
 
 msgid "Cache strategy"
 msgstr ""
