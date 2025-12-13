@@ -1,13 +1,14 @@
 # 
 # Translators:
 # Siddharth Agarwal, 2025
+# Rohit Wadhwani, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-01-17T10:18:20.401Z\n"
+"POT-Creation-Date: 2025-03-05T20:30:30.881Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Siddharth Agarwal, 2025\n"
+"Last-Translator: Rohit Wadhwani, 2025\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -265,6 +266,14 @@ msgstr ""
 msgid "No options"
 msgstr ""
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr ""
 
@@ -290,13 +299,13 @@ msgid "Infrastructural period type"
 msgstr ""
 
 msgid "Daily"
-msgstr ""
+msgstr "रोज़ाना"
 
 msgid "Weekly"
-msgstr ""
+msgstr "साप्ताहिक"
 
 msgid "Monthly"
-msgstr ""
+msgstr "मासिक"
 
 msgid "Bi-monthly"
 msgstr ""
@@ -311,7 +320,7 @@ msgid "Six-monthly April"
 msgstr ""
 
 msgid "Yearly"
-msgstr ""
+msgstr "वार्षिक"
 
 msgid "Financial-April"
 msgstr ""
@@ -374,10 +383,10 @@ msgid "Last 52 weeks"
 msgstr ""
 
 msgid "This month"
-msgstr ""
+msgstr "इस महीने"
 
 msgid "Last month"
-msgstr ""
+msgstr "पिछला महीना"
 
 msgid "Months this year"
 msgstr ""
@@ -386,13 +395,13 @@ msgid "Months last year"
 msgstr ""
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "पिछले 3 महीने"
 
 msgid "Last 6 months"
 msgstr ""
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "पिछले 12 महीने"
 
 msgid "This bi-month"
 msgstr ""
@@ -422,19 +431,19 @@ msgid "This six-month"
 msgstr ""
 
 msgid "Last six-month"
-msgstr ""
+msgstr "पिछला छः-मासिक"
 
 msgid "Last 2 six-months"
-msgstr ""
+msgstr "पिछले 2 छः-मासिक"
 
 msgid "This year"
-msgstr ""
+msgstr "इस वर्ष"
 
 msgid "Last year"
-msgstr ""
+msgstr "पिछला वर्ष"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "पिछले 5 वर्ष"
 
 msgid "Last 10 years"
 msgstr ""
@@ -470,13 +479,13 @@ msgid "Financial year relative period start month"
 msgstr ""
 
 msgid "April"
-msgstr ""
+msgstr "अप्रैल"
 
 msgid "July"
-msgstr ""
+msgstr "जुलाई"
 
 msgid "October"
-msgstr ""
+msgstr "अक्टूबर"
 
 msgid "Cache strategy"
 msgstr ""
@@ -673,6 +682,12 @@ msgstr ""
 msgid "Login page template"
 msgstr ""
 
+msgid "Enable Global Shell"
+msgstr ""
+
+msgid "Global Shell App"
+msgstr ""
+
 msgid "Custom login page logo"
 msgstr ""
 
@@ -728,6 +743,9 @@ msgid "Enable user account recovery"
 msgstr ""
 
 msgid "Lock user account temporarily after multiple failed login attempts"
+msgstr ""
+
+msgid "Enable embedded dashboards"
 msgstr ""
 
 msgid "Enforce verified emails"
