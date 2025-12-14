@@ -20,6 +20,7 @@ import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.comp
 import metadataSettings from './metadata-settings/metadataSettings.component.jsx'
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component.jsx'
 import Oauth2ClientEditor41 from './oauth2-client-editor-41/OAuth2ClientEditor.component.jsx'
+import PeriodTypes from './period-types/PeriodTypes.component.jsx'
 import settingsActions from './settingsActions.js'
 import { categories } from './settingsCategories.js'
 import classes from './SettingsFields.module.css'
@@ -83,12 +84,12 @@ function wrapUserSettingsOverride({ component, valueLabel }) {
 
             const labelText = valueLabel
                 ? `${i18n.t(
-                      'This setting will be overridden by the current user setting: {{settingName}}',
-                      {
-                          settingName: valueLabel,
-                          nsSeparator: '-:-',
-                      }
-                  )}`
+                    'This setting will be overridden by the current user setting: {{settingName}}',
+                    {
+                        settingName: valueLabel,
+                        nsSeparator: '-:-',
+                    }
+                )}`
                 : i18n.t('This setting can be overridden by user settings')
 
             return (
@@ -306,6 +307,11 @@ class SettingsFields extends React.Component {
                     component: metadataSettings,
                 })
 
+            case 'periodTypes':
+                return Object.assign({}, fieldBase, {
+
+                    component: PeriodTypes,
+                })
             default:
                 console.warn(
                     `Unknown control type "${mapping.type}" encountered for field "${key}"`
@@ -387,16 +393,16 @@ class SettingsFields extends React.Component {
                         (options && options.userSettingsNoFallback) || {}
                     const userSettingValue =
                         userSettingsNoFallback &&
-                        userSettingsNoFallback[field.name] !== null
+                            userSettingsNoFallback[field.name] !== null
                             ? userSettingsNoFallback[field.name]
                             : ''
                     const component = wrapUserSettingsOverride({
                         component: field.component,
                         valueLabel: mapping.source
                             ? ((options && options[mapping.source]) || [])
-                                  .filter((opt) => opt.id === userSettingValue)
-                                  .map((opt) => opt.displayName)
-                                  .pop()
+                                .filter((opt) => opt.id === userSettingValue)
+                                .map((opt) => opt.displayName)
+                                .pop()
                             : userSettingValue,
                     })
 
