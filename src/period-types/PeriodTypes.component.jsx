@@ -2,7 +2,9 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader } from '@dhis2/ui'
 import CheckboxMaterial from 'material-ui/Checkbox'
-import React from 'react'
+import React, { useState, useCallback } from 'react'
+import { getInstance as getD2 } from 'd2'
+import settingsActions from '../settingsActions.js'
 import styles from './PeriodTypes.module.css'
 
 const query = {
@@ -132,7 +134,58 @@ const groupByFrequency = (periodTypes) => {
 }
 
 const PeriodTypes = () => {
-    const { loading, error, data } = useDataQuery(query)
+    const { loading, error, data, refetch } = useDataQuery(query)
+    const [updating, setUpdating] = useState(false)
+
+    const handlePeriodTypeToggle = useCallback(
+        async (periodTypeName, isCurrentlyEnabled) => {
+            setUpdating(true)
+            try {
+                const d2 = await getD2()
+                const api = d2.Api.getApi()
+                const allPeriodTypes = data?.periodTypes?.periodTypes || []
+                const allowedPeriodTypes = data?.dataOutputPeriodTypes || []
+                // Handle both array of strings and array of objects with name property
+                const currentAllowedSet = new Set(
+                    allowedPeriodTypes.map((pt) =>
+                        typeof pt === 'string' ? pt : pt.name
+                    )
+                )
+
+                // Update the set based on the toggle
+                if (isCurrentlyEnabled) {
+                    currentAllowedSet.delete(periodTypeName)
+                } else {
+                    currentAllowedSet.add(periodTypeName)
+                }
+
+                // Convert set to array of objects with name property
+                // The API expects: [{name: "Monthly"}, {name: "Quarterly"}, ...]
+                const updatedPeriodTypes = Array.from(currentAllowedSet).map((name) => ({
+                    name,
+                }))
+
+                // POST to the configuration endpoint
+                await api.post('configuration/dataOutputPeriodTypes', updatedPeriodTypes)
+
+                // Refetch the data to get the updated state
+                await refetch()
+                settingsActions.showSnackbarMessage(
+                    i18n.t('Settings updated')
+                )
+            } catch (err) {
+                console.error('Failed to update period types:', err)
+                settingsActions.showSnackbarMessage(
+                    i18n.t(
+                        'There was a problem updating settings. Changes have not been saved.'
+                    )
+                )
+            } finally {
+                setUpdating(false)
+            }
+        },
+        [data, refetch]
+    )
 
     if (loading) {
         return (
@@ -157,7 +210,12 @@ const PeriodTypes = () => {
     const allowedPeriodTypes = data?.dataOutputPeriodTypes || []
 
     // Create a Set of allowed period type names for quick lookup
-    const allowedSet = new Set(allowedPeriodTypes.map((pt) => pt.name))
+    // Handle both array of strings and array of objects with name property
+    const allowedSet = new Set(
+        allowedPeriodTypes.map((pt) =>
+            typeof pt === 'string' ? pt : pt.name
+        )
+    )
 
     // Group period types by frequency
     const groupedPeriodTypes = groupByFrequency(allPeriodTypes)
@@ -172,22 +230,31 @@ const PeriodTypes = () => {
                     <div key={group.frequencyOrder} className={styles.group}>
                         <p className={styles.groupLabel}>{group.label}</p>
                         <div className={styles.checkboxList}>
-                            {group.periodTypes.map((periodType) => (
-                                <div
-                                    key={periodType.name}
-                                    className={styles.checkboxItem}
-                                >
-                                    <CheckboxMaterial
-                                        checked={allowedSet.has(
-                                            periodType.name
-                                        )}
-                                        label={formatPeriodTypeName(
-                                            periodType.name
-                                        )}
-                                        onCheck={() => {}}
-                                    />
-                                </div>
-                            ))}
+                            {group.periodTypes.map((periodType) => {
+                                const isEnabled = allowedSet.has(
+                                    periodType.name
+                                )
+                                return (
+                                    <div
+                                        key={periodType.name}
+                                        className={styles.checkboxItem}
+                                    >
+                                        <CheckboxMaterial
+                                            checked={isEnabled}
+                                            disabled={updating}
+                                            label={formatPeriodTypeName(
+                                                periodType.name
+                                            )}
+                                            onCheck={() =>
+                                                handlePeriodTypeToggle(
+                                                    periodType.name,
+                                                    isEnabled
+                                                )
+                                            }
+                                        />
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
                 ))}
