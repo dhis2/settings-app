@@ -84,12 +84,12 @@ function wrapUserSettingsOverride({ component, valueLabel }) {
 
             const labelText = valueLabel
                 ? `${i18n.t(
-                    'This setting will be overridden by the current user setting: {{settingName}}',
-                    {
-                        settingName: valueLabel,
-                        nsSeparator: '-:-',
-                    }
-                )}`
+                      'This setting will be overridden by the current user setting: {{settingName}}',
+                      {
+                          settingName: valueLabel,
+                          nsSeparator: '-:-',
+                      }
+                  )}`
                 : i18n.t('This setting can be overridden by user settings')
 
             return (
@@ -309,7 +309,6 @@ class SettingsFields extends React.Component {
 
             case 'periodTypes':
                 return Object.assign({}, fieldBase, {
-
                     component: PeriodTypes,
                 })
             default:
@@ -393,16 +392,16 @@ class SettingsFields extends React.Component {
                         (options && options.userSettingsNoFallback) || {}
                     const userSettingValue =
                         userSettingsNoFallback &&
-                            userSettingsNoFallback[field.name] !== null
+                        userSettingsNoFallback[field.name] !== null
                             ? userSettingsNoFallback[field.name]
                             : ''
                     const component = wrapUserSettingsOverride({
                         component: field.component,
                         valueLabel: mapping.source
                             ? ((options && options[mapping.source]) || [])
-                                .filter((opt) => opt.id === userSettingValue)
-                                .map((opt) => opt.displayName)
-                                .pop()
+                                  .filter((opt) => opt.id === userSettingValue)
+                                  .map((opt) => opt.displayName)
+                                  .pop()
                             : userSettingValue,
                     })
 

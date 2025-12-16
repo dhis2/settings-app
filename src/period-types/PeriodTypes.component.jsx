@@ -1,9 +1,9 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader } from '@dhis2/ui'
+import { getInstance as getD2 } from 'd2'
 import CheckboxMaterial from 'material-ui/Checkbox'
 import React, { useState, useCallback } from 'react'
-import { getInstance as getD2 } from 'd2'
 import settingsActions from '../settingsActions.js'
 import styles from './PeriodTypes.module.css'
 
@@ -143,7 +143,6 @@ const PeriodTypes = () => {
             try {
                 const d2 = await getD2()
                 const api = d2.Api.getApi()
-                const allPeriodTypes = data?.periodTypes?.periodTypes || []
                 const allowedPeriodTypes = data?.dataOutputPeriodTypes || []
                 // Handle both array of strings and array of objects with name property
                 const currentAllowedSet = new Set(
@@ -161,18 +160,21 @@ const PeriodTypes = () => {
 
                 // Convert set to array of objects with name property
                 // The API expects: [{name: "Monthly"}, {name: "Quarterly"}, ...]
-                const updatedPeriodTypes = Array.from(currentAllowedSet).map((name) => ({
-                    name,
-                }))
+                const updatedPeriodTypes = Array.from(currentAllowedSet).map(
+                    (name) => ({
+                        name,
+                    })
+                )
 
                 // POST to the configuration endpoint
-                await api.post('configuration/dataOutputPeriodTypes', updatedPeriodTypes)
+                await api.post(
+                    'configuration/dataOutputPeriodTypes',
+                    updatedPeriodTypes
+                )
 
                 // Refetch the data to get the updated state
                 await refetch()
-                settingsActions.showSnackbarMessage(
-                    i18n.t('Settings updated')
-                )
+                settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
             } catch (err) {
                 console.error('Failed to update period types:', err)
                 settingsActions.showSnackbarMessage(
@@ -212,9 +214,7 @@ const PeriodTypes = () => {
     // Create a Set of allowed period type names for quick lookup
     // Handle both array of strings and array of objects with name property
     const allowedSet = new Set(
-        allowedPeriodTypes.map((pt) =>
-            typeof pt === 'string' ? pt : pt.name
-        )
+        allowedPeriodTypes.map((pt) => (typeof pt === 'string' ? pt : pt.name))
     )
 
     // Group period types by frequency
