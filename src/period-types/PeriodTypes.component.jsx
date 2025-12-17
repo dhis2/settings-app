@@ -16,104 +16,78 @@ const query = {
     },
 }
 
-// Format period type names for display
 const formatPeriodTypeName = (name) => {
-    // Handle Weekly variants
-    if (name === 'Weekly') {
-        return i18n.t('Weekly')
-    }
-    if (name.startsWith('Weekly')) {
-        const day = name.replace('Weekly', '')
-        return i18n.t('Weekly (start {{day}})', { day })
-    }
-
-    // Handle Financial year variants
-    if (name.startsWith('Financial')) {
-        const monthAbbrev = name.replace('Financial', '')
-        const monthMap = {
-            April: 'April',
-            July: 'July',
-            Oct: 'October',
-            Nov: 'November',
-        }
-        const month = monthMap[monthAbbrev] || monthAbbrev
-        return i18n.t('Financial year (start {{month}})', { month })
-    }
-
-    // Handle Six-monthly variants
-    if (name === 'SixMonthly') {
-        return i18n.t('Six-monthly')
-    }
-    if (name.startsWith('SixMonthly')) {
-        const monthAbbrev = name.replace('SixMonthly', '')
-        const monthMap = {
-            April: 'April',
-            Nov: 'November',
-        }
-        const month = monthMap[monthAbbrev] || monthAbbrev
-        return i18n.t('Six-monthly (start {{month}})', { month })
-    }
-
-    // Handle Quarterly variants
-    if (name === 'Quarterly') {
-        return i18n.t('Quarterly')
-    }
-    if (name.startsWith('Quarterly')) {
-        const monthAbbrev = name.replace('Quarterly', '')
-        const monthMap = {
-            Nov: 'November',
-        }
-        const month = monthMap[monthAbbrev] || monthAbbrev
-        return i18n.t('Quarterly (start {{month}})', { month })
-    }
-
-    // Handle other common types
     const simpleLabels = {
         Daily: i18n.t('Daily'),
+        Weekly: i18n.t('Weekly'),
         Monthly: i18n.t('Monthly'),
         BiMonthly: i18n.t('Bi-monthly'),
         Yearly: i18n.t('Yearly'),
         BiWeekly: i18n.t('Bi-weekly'),
+        Quarterly: i18n.t('Quarterly'),
+        SixMonthly: i18n.t('Six-monthly'),
     }
 
     if (simpleLabels[name]) {
         return simpleLabels[name]
     }
 
-    // Fallback: add spaces before capital letters
-    return name.replace(/([A-Z])/g, ' $1').trim()
+    const monthMap = {
+        April: 'April',
+        July: 'July',
+        Oct: 'October',
+        Nov: 'November',
+    }
+
+    if (name.startsWith('Weekly')) {
+        const day = name.replace('Weekly', '')
+        return day
+            ? i18n.t('Weekly (start {{day}})', { day })
+            : simpleLabels.Weekly
+    }
+
+    if (name.startsWith('Financial')) {
+        const monthAbbrev = name.replace('Financial', '')
+        const month = monthMap[monthAbbrev] || monthAbbrev
+        return i18n.t('Financial year (start {{month}})', { month })
+    }
+
+    if (name.startsWith('SixMonthly')) {
+        const monthAbbrev = name.replace('SixMonthly', '')
+        const month = monthMap[monthAbbrev] || monthAbbrev
+        return monthAbbrev
+            ? i18n.t('Six-monthly (start {{month}})', { month })
+            : simpleLabels.SixMonthly
+    }
+
+    if (name.startsWith('Quarterly')) {
+        const monthAbbrev = name.replace('Quarterly', '')
+        const month = monthMap[monthAbbrev] || monthAbbrev
+        return monthAbbrev
+            ? i18n.t('Quarterly (start {{month}})', { month })
+            : simpleLabels.Quarterly
+    }
+
+    return name
+        .split(/(?=[A-Z])/)
+        .join(' ')
+        .trim()
 }
 
-// Map frequencyOrder to group labels
 const getGroupLabel = (frequencyOrder) => {
-    if (frequencyOrder === 1) {
-        return i18n.t('Days')
+    const labels = {
+        1: i18n.t('Days'),
+        7: i18n.t('Weeks'),
+        14: i18n.t('Bi-weeks'),
+        30: i18n.t('Months'),
+        60: i18n.t('Bi-months'),
+        91: i18n.t('Quarters'),
+        182: i18n.t('Six months'),
+        365: i18n.t('Years'),
     }
-    if (frequencyOrder === 7) {
-        return i18n.t('Weeks')
-    }
-    if (frequencyOrder === 14) {
-        return i18n.t('Bi-weeks')
-    }
-    if (frequencyOrder === 30) {
-        return i18n.t('Months')
-    }
-    if (frequencyOrder === 60) {
-        return i18n.t('Bi-months')
-    }
-    if (frequencyOrder === 91) {
-        return i18n.t('Quarters')
-    }
-    if (frequencyOrder === 182) {
-        return i18n.t('Six months')
-    }
-    if (frequencyOrder === 365) {
-        return i18n.t('Years')
-    }
-    return i18n.t('Other')
+    return labels[frequencyOrder] || i18n.t('Other')
 }
 
-// Group period types by frequencyOrder
 const groupByFrequency = (periodTypes) => {
     const groups = {}
     periodTypes.forEach((pt) => {
@@ -127,14 +101,13 @@ const groupByFrequency = (periodTypes) => {
         }
         groups[freq].periodTypes.push(pt)
     })
-    // Sort groups by frequencyOrder and return as array
     return Object.values(groups).sort(
         (a, b) => a.frequencyOrder - b.frequencyOrder
     )
 }
 
 const PeriodTypes = () => {
-    const { loading, error, data, refetch } = useDataQuery(query)
+    const { loading, data, refetch } = useDataQuery(query)
     const [updating, setUpdating] = useState(false)
 
     const handlePeriodTypeToggle = useCallback(
@@ -144,35 +117,27 @@ const PeriodTypes = () => {
                 const d2 = await getD2()
                 const api = d2.Api.getApi()
                 const allowedPeriodTypes = data?.dataOutputPeriodTypes || []
-                // Handle both array of strings and array of objects with name property
                 const currentAllowedSet = new Set(
                     allowedPeriodTypes.map((pt) =>
                         typeof pt === 'string' ? pt : pt.name
                     )
                 )
 
-                // Update the set based on the toggle
                 if (isCurrentlyEnabled) {
                     currentAllowedSet.delete(periodTypeName)
                 } else {
                     currentAllowedSet.add(periodTypeName)
                 }
 
-                // Convert set to array of objects with name property
-                // The API expects: [{name: "Monthly"}, {name: "Quarterly"}, ...]
                 const updatedPeriodTypes = Array.from(currentAllowedSet).map(
-                    (name) => ({
-                        name,
-                    })
+                    (name) => ({ name })
                 )
 
-                // POST to the configuration endpoint
                 await api.post(
                     'configuration/dataOutputPeriodTypes',
                     updatedPeriodTypes
                 )
 
-                // Refetch the data to get the updated state
                 await refetch()
                 settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
             } catch (err) {
@@ -197,27 +162,11 @@ const PeriodTypes = () => {
         )
     }
 
-    if (error) {
-        return (
-            <div className={styles.error}>
-                {i18n.t('Failed to load period types: {{error}}', {
-                    error: error.message,
-                    nsSeparator: '-:-',
-                })}
-            </div>
-        )
-    }
-
     const allPeriodTypes = data?.periodTypes?.periodTypes || []
     const allowedPeriodTypes = data?.dataOutputPeriodTypes || []
-
-    // Create a Set of allowed period type names for quick lookup
-    // Handle both array of strings and array of objects with name property
     const allowedSet = new Set(
         allowedPeriodTypes.map((pt) => (typeof pt === 'string' ? pt : pt.name))
     )
-
-    // Group period types by frequency
     const groupedPeriodTypes = groupByFrequency(allPeriodTypes)
 
     return (

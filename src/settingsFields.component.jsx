@@ -303,14 +303,16 @@ class SettingsFields extends React.Component {
                 })
 
             case 'metadataSettings':
-                return Object.assign({}, fieldBase, {
+                return {
+                    ...fieldBase,
                     component: metadataSettings,
-                })
+                }
 
             case 'periodTypes':
-                return Object.assign({}, fieldBase, {
+                return {
+                    ...fieldBase,
                     component: PeriodTypes,
-                })
+                }
             default:
                 console.warn(
                     `Unknown control type "${mapping.type}" encountered for field "${key}"`
