@@ -18,96 +18,122 @@ const query = {
     },
 }
 
+const monthMap = {
+    Jan: i18n.t('January'),
+    Feb: i18n.t('February'),
+    Mar: i18n.t('March'),
+    Apr: i18n.t('April'),
+    May: i18n.t('May'),
+    Jun: i18n.t('June'),
+    Jul: i18n.t('July'),
+    Aug: i18n.t('August'),
+    Sep: i18n.t('September'),
+    Oct: i18n.t('October'),
+    Nov: i18n.t('November'),
+    Dec: i18n.t('December'),
+    April: i18n.t('April'),
+    July: i18n.t('July'),
+    October: i18n.t('October'),
+    November: i18n.t('November'),
+    September: i18n.t('September'),
+}
+
+const dayMap = {
+    Monday: i18n.t('Monday'),
+    Tuesday: i18n.t('Tuesday'),
+    Wednesday: i18n.t('Wednesday'),
+    Thursday: i18n.t('Thursday'),
+    Friday: i18n.t('Friday'),
+    Saturday: i18n.t('Saturday'),
+    Sunday: i18n.t('Sunday'),
+}
+
+const simpleLabels = {
+    Daily: i18n.t('Daily'),
+    Weekly: i18n.t('Weekly'),
+    Monthly: i18n.t('Monthly'),
+    BiMonthly: i18n.t('Bi-monthly'),
+    Yearly: i18n.t('Yearly'),
+    BiWeekly: i18n.t('Bi-weekly'),
+    Quarterly: i18n.t('Quarterly'),
+    SixMonthly: i18n.t('Six-monthly'),
+}
+
+const formatWeeklyPeriod = (name) => {
+    const day = name.replace('Weekly', '')
+    if (!day) {
+        return simpleLabels.Weekly || i18n.t('Weekly')
+    }
+    const translatedDay = dayMap[day] || i18n.t(day)
+    return i18n.t('Weekly (start {{day}})', { day: translatedDay })
+}
+
+const formatPeriodWithMonth = (name, options) => {
+    const { prefix, template, defaultLabel } = options
+    const monthAbbrev = name.replace(prefix, '')
+    if (!monthAbbrev) {
+        return defaultLabel
+            ? simpleLabels[defaultLabel] || i18n.t(defaultLabel)
+            : null
+    }
+    const month = monthMap[monthAbbrev] || monthAbbrev
+    return i18n.t(template, { month })
+}
+
+const formatFinancialPeriod = (name) => {
+    return formatPeriodWithMonth(name, {
+        prefix: 'Financial',
+        template: 'Financial year (start {{month}})',
+        defaultLabel: null,
+    })
+}
+
+const formatSixMonthlyPeriod = (name) => {
+    return formatPeriodWithMonth(name, {
+        prefix: 'SixMonthly',
+        template: 'Six-monthly (start {{month}})',
+        defaultLabel: 'SixMonthly',
+    })
+}
+
+const formatQuarterlyPeriod = (name) => {
+    return formatPeriodWithMonth(name, {
+        prefix: 'Quarterly',
+        template: 'Quarterly (start {{month}})',
+        defaultLabel: 'Quarterly',
+    })
+}
+
 const formatPeriodDisplayName = (displayName, name) => {
-    const monthMap = {
-        Jan: i18n.t('January'),
-        Feb: i18n.t('February'),
-        Mar: i18n.t('March'),
-        Apr: i18n.t('April'),
-        May: i18n.t('May'),
-        Jun: i18n.t('June'),
-        Jul: i18n.t('July'),
-        Aug: i18n.t('August'),
-        Sep: i18n.t('September'),
-        Oct: i18n.t('October'),
-        Nov: i18n.t('November'),
-        Dec: i18n.t('December'),
-        April: i18n.t('April'),
-        July: i18n.t('July'),
-        October: i18n.t('October'),
-        November: i18n.t('November'),
-        September: i18n.t('September'),
-    }
-
-    const dayMap = {
-        Monday: i18n.t('Monday'),
-        Tuesday: i18n.t('Tuesday'),
-        Wednesday: i18n.t('Wednesday'),
-        Thursday: i18n.t('Thursday'),
-        Friday: i18n.t('Friday'),
-        Saturday: i18n.t('Saturday'),
-        Sunday: i18n.t('Sunday'),
-    }
-
-    const simpleLabels = {
-        Daily: i18n.t('Daily'),
-        Weekly: i18n.t('Weekly'),
-        Monthly: i18n.t('Monthly'),
-        BiMonthly: i18n.t('Bi-monthly'),
-        Yearly: i18n.t('Yearly'),
-        BiWeekly: i18n.t('Bi-weekly'),
-        Quarterly: i18n.t('Quarterly'),
-        SixMonthly: i18n.t('Six-monthly'),
+    if (!name && !displayName) {
+        return ''
     }
 
     if (name) {
         if (name.startsWith('Weekly')) {
-            const day = name.replace('Weekly', '')
-            if (day) {
-                const translatedDay = dayMap[day] || i18n.t(day)
-                return i18n.t('Weekly (start {{day}})', { day: translatedDay })
-            }
-            return simpleLabels.Weekly || i18n.t('Weekly')
+            return formatWeeklyPeriod(name)
         }
-
         if (name.startsWith('Financial')) {
-            const monthAbbrev = name.replace('Financial', '')
-            if (monthAbbrev) {
-                const month = monthMap[monthAbbrev] || monthAbbrev
-                return i18n.t('Financial year (start {{month}})', { month })
-            }
+            return formatFinancialPeriod(name) || displayName || ''
         }
-
         if (name.startsWith('SixMonthly')) {
-            const monthAbbrev = name.replace('SixMonthly', '')
-            if (monthAbbrev) {
-                const month = monthMap[monthAbbrev] || monthAbbrev
-                return i18n.t('Six-monthly (start {{month}})', { month })
-            }
-            return simpleLabels.SixMonthly || i18n.t('Six-monthly')
+            return formatSixMonthlyPeriod(name)
         }
-
         if (name.startsWith('Quarterly')) {
-            const monthAbbrev = name.replace('Quarterly', '')
-            if (monthAbbrev) {
-                const month = monthMap[monthAbbrev] || monthAbbrev
-                return i18n.t('Quarterly (start {{month}})', { month })
-            }
-            return simpleLabels.Quarterly || i18n.t('Quarterly')
+            return formatQuarterlyPeriod(name)
         }
-
         if (simpleLabels[name]) {
             return simpleLabels[name]
         }
     }
 
-    if (displayName) {
-        if (displayName === 'FinancialSep') {
-            return i18n.t('Financial year (start {{month}})', {
-                month: monthMap.Sep,
-            })
-        }
+    if (displayName === 'FinancialSep') {
+        return i18n.t('Financial year (start {{month}})', {
+            month: monthMap.Sep,
+        })
+    }
 
+    if (displayName) {
         return displayName
     }
 
