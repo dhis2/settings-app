@@ -104,43 +104,51 @@ const formatQuarterlyPeriod = (name) => {
     })
 }
 
+const formatNameBasedPeriod = (name, displayName) => {
+    if (name.startsWith('Weekly')) {
+        return formatWeeklyPeriod(name)
+    }
+    if (name.startsWith('Financial')) {
+        return formatFinancialPeriod(name) || displayName || ''
+    }
+    if (name.startsWith('SixMonthly')) {
+        return formatSixMonthlyPeriod(name)
+    }
+    if (name.startsWith('Quarterly')) {
+        return formatQuarterlyPeriod(name)
+    }
+    if (simpleLabels[name]) {
+        return simpleLabels[name]
+    }
+    return name
+        .split(/(?=[A-Z])/)
+        .join(' ')
+        .trim()
+}
+
+const formatDisplayNameFallback = (displayName) => {
+    if (displayName === 'FinancialSep') {
+        return i18n.t('Financial year (start {{month}})', {
+            month: monthMap.Sep,
+        })
+    }
+    return displayName
+}
+
 const formatPeriodDisplayName = (displayName, name) => {
     if (!name && !displayName) {
         return ''
     }
 
     if (name) {
-        if (name.startsWith('Weekly')) {
-            return formatWeeklyPeriod(name)
-        }
-        if (name.startsWith('Financial')) {
-            return formatFinancialPeriod(name) || displayName || ''
-        }
-        if (name.startsWith('SixMonthly')) {
-            return formatSixMonthlyPeriod(name)
-        }
-        if (name.startsWith('Quarterly')) {
-            return formatQuarterlyPeriod(name)
-        }
-        if (simpleLabels[name]) {
-            return simpleLabels[name]
+        const formatted = formatNameBasedPeriod(name, displayName)
+        if (formatted) {
+            return formatted
         }
     }
 
     if (displayName) {
-        if (displayName === 'FinancialSep') {
-            return i18n.t('Financial year (start {{month}})', {
-                month: monthMap.Sep,
-            })
-        }
-        return displayName
-    }
-
-    if (name) {
-        return name
-            .split(/(?=[A-Z])/)
-            .join(' ')
-            .trim()
+        return formatDisplayNameFallback(displayName)
     }
 
     return ''
