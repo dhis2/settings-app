@@ -29,7 +29,6 @@ const formatPeriodDisplayName = (displayName, name) => {
         Jul: i18n.t('July'),
         Aug: i18n.t('August'),
         Sep: i18n.t('September'),
-        Sept: i18n.t('September'),
         Oct: i18n.t('October'),
         Nov: i18n.t('November'),
         Dec: i18n.t('December'),
