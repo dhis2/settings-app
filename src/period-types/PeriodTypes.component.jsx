@@ -127,13 +127,12 @@ const formatPeriodDisplayName = (displayName, name) => {
         }
     }
 
-    if (displayName === 'FinancialSep') {
-        return i18n.t('Financial year (start {{month}})', {
-            month: monthMap.Sep,
-        })
-    }
-
     if (displayName) {
+        if (displayName === 'FinancialSep') {
+            return i18n.t('Financial year (start {{month}})', {
+                month: monthMap.Sep,
+            })
+        }
         return displayName
     }
 
