@@ -198,7 +198,7 @@ const settingsKeyMapping = {
     //     label: i18n.t('Hide bimonthly periods'),
     //     type: 'checkbox',
     // },
-    periodTypes: {
+    dataOutputPeriodTypes: {
         type: 'periodTypes',
         searchLabels: [i18n.t('Period types'), i18n.t('Allowed period types')],
     },

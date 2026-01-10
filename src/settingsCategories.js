@@ -84,23 +84,28 @@ export const categories = {
             {
                 setting: 'keyAnalysisDigitGroupSeparator',
             },
-            // {
-            //     setting: 'keyHideDailyPeriods',
-            // },
-            // {
-            //     setting: 'keyHideWeeklyPeriods',
-            // },
-            // {
-            //     setting: 'keyHideBiWeeklyPeriods',
-            // },
-            // {
-            //     setting: 'keyHideMonthlyPeriods',
-            // },
-            // {
-            //     setting: 'keyHideBiMonthlyPeriods',
-            // },
             {
-                setting: 'periodTypes',
+                setting: 'keyHideDailyPeriods',
+                maximumApiVersion: 42,
+            },
+            {
+                setting: 'keyHideWeeklyPeriods',
+                maximumApiVersion: 42,
+            },
+            {
+                setting: 'keyHideBiWeeklyPeriods',
+                maximumApiVersion: 42,
+            },
+            {
+                setting: 'keyHideMonthlyPeriods',
+                maximumApiVersion: 42,
+            },
+            {
+                setting: 'keyHideBiMonthlyPeriods',
+                maximumApiVersion: 42,
+            },
+            {
+                setting: 'dataOutputPeriodTypes',
                 minimumApiVersion: 43,
             },
             {
