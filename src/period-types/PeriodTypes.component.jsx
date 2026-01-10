@@ -1,22 +1,55 @@
-import { useDataQuery } from '@dhis2/app-runtime'
+import { useDataQuery, useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader } from '@dhis2/ui'
-import { getInstance as getD2 } from 'd2'
 import CheckboxMaterial from 'material-ui/Checkbox'
-import React, { useState, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import settingsActions from '../settingsActions.js'
 import styles from './PeriodTypes.module.css'
 
 const query = {
     periodTypes: {
         resource: 'periodTypes',
+        params: {
+            fields: 'name,displayName,frequencyOrder',
+        },
     },
     dataOutputPeriodTypes: {
         resource: 'configuration/dataOutputPeriodTypes',
     },
 }
 
-const formatPeriodTypeName = (name) => {
+const formatPeriodDisplayName = (displayName, name) => {
+    const monthMap = {
+        Jan: i18n.t('January'),
+        Feb: i18n.t('February'),
+        Mar: i18n.t('March'),
+        Apr: i18n.t('April'),
+        May: i18n.t('May'),
+        Jun: i18n.t('June'),
+        Jul: i18n.t('July'),
+        Aug: i18n.t('August'),
+        Sep: i18n.t('September'),
+        Sept: i18n.t('September'),
+        Oct: i18n.t('October'),
+        Nov: i18n.t('November'),
+        Dec: i18n.t('December'),
+        April: i18n.t('April'),
+        July: i18n.t('July'),
+        October: i18n.t('October'),
+        November: i18n.t('November'),
+        September: i18n.t('September'),
+    }
+
+    const dayMap = {
+        Monday: i18n.t('Monday'),
+        Tuesday: i18n.t('Tuesday'),
+        Wednesday: i18n.t('Wednesday'),
+        Thursday: i18n.t('Thursday'),
+        Friday: i18n.t('Friday'),
+        Saturday: i18n.t('Saturday'),
+        Sunday: i18n.t('Sunday'),
+    }
+
     const simpleLabels = {
         Daily: i18n.t('Daily'),
         Weekly: i18n.t('Weekly'),
@@ -28,50 +61,65 @@ const formatPeriodTypeName = (name) => {
         SixMonthly: i18n.t('Six-monthly'),
     }
 
-    if (simpleLabels[name]) {
-        return simpleLabels[name]
+    if (name) {
+        if (name.startsWith('Weekly')) {
+            const day = name.replace('Weekly', '')
+            if (day) {
+                const translatedDay = dayMap[day] || i18n.t(day)
+                return i18n.t('Weekly (start {{day}})', { day: translatedDay })
+            }
+            return simpleLabels.Weekly || i18n.t('Weekly')
+        }
+
+        if (name.startsWith('Financial')) {
+            const monthAbbrev = name.replace('Financial', '')
+            if (monthAbbrev) {
+                const month = monthMap[monthAbbrev] || monthAbbrev
+                return i18n.t('Financial year (start {{month}})', { month })
+            }
+        }
+
+        if (name.startsWith('SixMonthly')) {
+            const monthAbbrev = name.replace('SixMonthly', '')
+            if (monthAbbrev) {
+                const month = monthMap[monthAbbrev] || monthAbbrev
+                return i18n.t('Six-monthly (start {{month}})', { month })
+            }
+            return simpleLabels.SixMonthly || i18n.t('Six-monthly')
+        }
+
+        if (name.startsWith('Quarterly')) {
+            const monthAbbrev = name.replace('Quarterly', '')
+            if (monthAbbrev) {
+                const month = monthMap[monthAbbrev] || monthAbbrev
+                return i18n.t('Quarterly (start {{month}})', { month })
+            }
+            return simpleLabels.Quarterly || i18n.t('Quarterly')
+        }
+
+        if (simpleLabels[name]) {
+            return simpleLabels[name]
+        }
     }
 
-    const monthMap = {
-        April: 'April',
-        July: 'July',
-        Oct: 'October',
-        Nov: 'November',
+    if (displayName) {
+        if (displayName === 'FinancialSep') {
+            return i18n.t('Financial year (start {{month}})', {
+                month: monthMap.Sep,
+            })
+        }
+
+        return displayName
     }
 
-    if (name.startsWith('Weekly')) {
-        const day = name.replace('Weekly', '')
-        return day
-            ? i18n.t('Weekly (start {{day}})', { day })
-            : simpleLabels.Weekly
+    if (name) {
+        return name
+            .split(/(?=[A-Z])/)
+            .join(' ')
+            .trim()
     }
 
-    if (name.startsWith('Financial')) {
-        const monthAbbrev = name.replace('Financial', '')
-        const month = monthMap[monthAbbrev] || monthAbbrev
-        return i18n.t('Financial year (start {{month}})', { month })
-    }
-
-    if (name.startsWith('SixMonthly')) {
-        const monthAbbrev = name.replace('SixMonthly', '')
-        const month = monthMap[monthAbbrev] || monthAbbrev
-        return monthAbbrev
-            ? i18n.t('Six-monthly (start {{month}})', { month })
-            : simpleLabels.SixMonthly
-    }
-
-    if (name.startsWith('Quarterly')) {
-        const monthAbbrev = name.replace('Quarterly', '')
-        const month = monthMap[monthAbbrev] || monthAbbrev
-        return monthAbbrev
-            ? i18n.t('Quarterly (start {{month}})', { month })
-            : simpleLabels.Quarterly
-    }
-
-    return name
-        .split(/(?=[A-Z])/)
-        .join(' ')
-        .trim()
+    return ''
 }
 
 const getGroupLabel = (frequencyOrder) => {
@@ -81,6 +129,7 @@ const getGroupLabel = (frequencyOrder) => {
         14: i18n.t('Bi-weeks'),
         30: i18n.t('Months'),
         60: i18n.t('Bi-months'),
+        61: i18n.t('Bi-months'),
         91: i18n.t('Quarters'),
         182: i18n.t('Six months'),
         365: i18n.t('Years'),
@@ -107,52 +156,70 @@ const groupByFrequency = (periodTypes) => {
 }
 
 const PeriodTypes = () => {
-    const { loading, data, refetch } = useDataQuery(query)
+    const { loading, data } = useDataQuery(query)
+    const [allowedPeriodTypes, setAllowedPeriodTypes] = useState([])
+    const { baseUrl, apiVersion } = useConfig()
     const [updating, setUpdating] = useState(false)
 
-    const handlePeriodTypeToggle = useCallback(
-        async (periodTypeName, isCurrentlyEnabled) => {
-            setUpdating(true)
-            try {
-                const d2 = await getD2()
-                const api = d2.Api.getApi()
-                const allowedPeriodTypes = data?.dataOutputPeriodTypes || []
-                const currentAllowedSet = new Set(
-                    allowedPeriodTypes.map((pt) =>
-                        typeof pt === 'string' ? pt : pt.name
-                    )
-                )
+    useEffect(() => {
+        if (data?.dataOutputPeriodTypes) {
+            setAllowedPeriodTypes(data.dataOutputPeriodTypes)
+        }
+    }, [data?.dataOutputPeriodTypes])
 
-                if (isCurrentlyEnabled) {
-                    currentAllowedSet.delete(periodTypeName)
-                } else {
-                    currentAllowedSet.add(periodTypeName)
+    const handlePeriodTypeToggle = async (
+        periodTypeName,
+        isCurrentlyEnabled
+    ) => {
+        const currentAllowedSet = new Set(
+            allowedPeriodTypes.map((pt) =>
+                typeof pt === 'string' ? pt : pt.name
+            )
+        )
+
+        if (isCurrentlyEnabled) {
+            currentAllowedSet.delete(periodTypeName)
+        } else {
+            currentAllowedSet.add(periodTypeName)
+        }
+
+        const updatedPeriodTypes = Array.from(currentAllowedSet).map(
+            (name) => ({
+                name,
+            })
+        )
+
+        setUpdating(true)
+        try {
+            const response = await fetch(
+                `${baseUrl}/api/${apiVersion}/configuration/dataOutputPeriodTypes`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify(updatedPeriodTypes),
                 }
+            )
 
-                const updatedPeriodTypes = Array.from(currentAllowedSet).map(
-                    (name) => ({ name })
-                )
-
-                await api.post(
-                    'configuration/dataOutputPeriodTypes',
-                    updatedPeriodTypes
-                )
-
-                await refetch()
-                settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
-            } catch (err) {
-                console.error('Failed to update period types:', err)
-                settingsActions.showSnackbarMessage(
-                    i18n.t(
-                        'There was a problem updating settings. Changes have not been saved.'
-                    )
-                )
-            } finally {
-                setUpdating(false)
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`)
             }
-        },
-        [data, refetch]
-    )
+
+            setAllowedPeriodTypes(updatedPeriodTypes)
+            settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
+        } catch (error) {
+            console.error('Failed to update period types:', error)
+            settingsActions.showSnackbarMessage(
+                i18n.t(
+                    'There was a problem updating settings. Changes have not been saved.'
+                )
+            )
+        } finally {
+            setUpdating(false)
+        }
+    }
 
     if (loading) {
         return (
@@ -163,7 +230,6 @@ const PeriodTypes = () => {
     }
 
     const allPeriodTypes = data?.periodTypes?.periodTypes || []
-    const allowedPeriodTypes = data?.dataOutputPeriodTypes || []
     const allowedSet = new Set(
         allowedPeriodTypes.map((pt) => (typeof pt === 'string' ? pt : pt.name))
     )
@@ -191,7 +257,8 @@ const PeriodTypes = () => {
                                         <CheckboxMaterial
                                             checked={isEnabled}
                                             disabled={updating}
-                                            label={formatPeriodTypeName(
+                                            label={formatPeriodDisplayName(
+                                                periodType.displayName,
                                                 periodType.name
                                             )}
                                             onCheck={() =>

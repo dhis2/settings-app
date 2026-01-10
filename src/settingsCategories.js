@@ -99,7 +99,10 @@ export const categories = {
             // {
             //     setting: 'keyHideBiMonthlyPeriods',
             // },
-            { setting: 'periodTypes' },
+            {
+                setting: 'periodTypes',
+                minimumApiVersion: 43,
+            },
             {
                 setting: 'analyticsFinancialYearStart',
             },
