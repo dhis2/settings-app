@@ -1,0 +1,45 @@
+.wrapper {
+    margin: 16px 0;
+}
+
+.sectionLabel {
+    color: var(--colors-grey800);
+    font-size: 12px;
+    margin: 0;
+}
+
+.groupsWrapper {
+    margin: 8px 0;
+    padding: 12px;
+    background: var(--colors-grey050);
+    border: 1px solid var(--colors-grey200);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.groupLabel {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--colors-grey600);
+    margin: 0px 0 8px 0;
+}
+
+.checkboxList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 6px 24px;
+    padding-left: 8px;
+    width: 100%;
+}
+
+.checkboxItem {
+    min-width: 0;
+    font-size: 15px;
+}
+
+.error {
+    color: var(--colors-red600);
+    padding: 16px;
+}
