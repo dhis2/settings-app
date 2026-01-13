@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-01-10T08:36:08.413Z\n"
-"PO-Revision-Date: 2026-01-10T08:36:08.413Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
+"PO-Revision-Date: 2026-01-13T22:53:28.645Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -166,6 +166,93 @@ msgstr "Name"
 
 msgid "Password"
 msgstr "Password"
+
+msgid "January"
+msgstr "January"
+
+msgid "February"
+msgstr "February"
+
+msgid "March"
+msgstr "March"
+
+msgid "April"
+msgstr "April"
+
+msgid "May"
+msgstr "May"
+
+msgid "June"
+msgstr "June"
+
+msgid "July"
+msgstr "July"
+
+msgid "August"
+msgstr "August"
+
+msgid "September"
+msgstr "September"
+
+msgid "October"
+msgstr "October"
+
+msgid "November"
+msgstr "November"
+
+msgid "December"
+msgstr "December"
+
+msgid "Monday"
+msgstr "Monday"
+
+msgid "Tuesday"
+msgstr "Tuesday"
+
+msgid "Wednesday"
+msgstr "Wednesday"
+
+msgid "Thursday"
+msgstr "Thursday"
+
+msgid "Friday"
+msgstr "Friday"
+
+msgid "Saturday"
+msgstr "Saturday"
+
+msgid "Sunday"
+msgstr "Sunday"
+
+msgid "Daily"
+msgstr "Daily"
+
+msgid "Weekly"
+msgstr "Weekly"
+
+msgid "Monthly"
+msgstr "Monthly"
+
+msgid "Bi-monthly"
+msgstr "Bi-monthly"
+
+msgid "Yearly"
+msgstr "Yearly"
+
+msgid "Bi-weekly"
+msgstr "Bi-weekly"
+
+msgid "Quarterly"
+msgstr "Quarterly"
+
+msgid "Six-monthly"
+msgstr "Six-monthly"
+
+msgid "Weekly (start {{day}})"
+msgstr "Weekly (start {{day}})"
+
+msgid "Financial year (start {{month}})"
+msgstr "Financial year (start {{month}})"
 
 msgid "Days"
 msgstr "Days"
@@ -331,29 +418,8 @@ msgstr "Infrastructural data elements"
 msgid "Infrastructural period type"
 msgstr "Infrastructural period type"
 
-msgid "Daily"
-msgstr "Daily"
-
-msgid "Weekly"
-msgstr "Weekly"
-
-msgid "Monthly"
-msgstr "Monthly"
-
-msgid "Bi-monthly"
-msgstr "Bi-monthly"
-
-msgid "Quarterly"
-msgstr "Quarterly"
-
-msgid "Six-monthly"
-msgstr "Six-monthly"
-
 msgid "Six-monthly April"
 msgstr "Six-monthly April"
-
-msgid "Yearly"
-msgstr "Yearly"
 
 msgid "Financial-April"
 msgstr "Financial-April"
@@ -516,15 +582,6 @@ msgstr "Allowed period types"
 
 msgid "Financial year relative period start month"
 msgstr "Financial year relative period start month"
-
-msgid "April"
-msgstr "April"
-
-msgid "July"
-msgstr "July"
-
-msgid "October"
-msgstr "October"
 
 msgid "Cache strategy"
 msgstr "Cache strategy"
