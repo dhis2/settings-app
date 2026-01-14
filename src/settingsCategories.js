@@ -86,18 +86,27 @@ export const categories = {
             },
             {
                 setting: 'keyHideDailyPeriods',
+                maximumApiVersion: 42,
             },
             {
                 setting: 'keyHideWeeklyPeriods',
+                maximumApiVersion: 42,
             },
             {
                 setting: 'keyHideBiWeeklyPeriods',
+                maximumApiVersion: 42,
             },
             {
                 setting: 'keyHideMonthlyPeriods',
+                maximumApiVersion: 42,
             },
             {
                 setting: 'keyHideBiMonthlyPeriods',
+                maximumApiVersion: 42,
+            },
+            {
+                setting: 'dataOutputPeriodTypes',
+                minimumApiVersion: 43,
             },
             {
                 setting: 'analyticsFinancialYearStart',

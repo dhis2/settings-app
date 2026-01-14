@@ -198,6 +198,10 @@ const settingsKeyMapping = {
         label: i18n.t('Hide bimonthly periods'),
         type: 'checkbox',
     },
+    dataOutputPeriodTypes: {
+        type: 'periodTypes',
+        searchLabels: [i18n.t('Period types'), i18n.t('Allowed period types')],
+    },
     analyticsFinancialYearStart: {
         label: i18n.t('Financial year relative period start month'),
         type: 'dropdown',

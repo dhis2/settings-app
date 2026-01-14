@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-11-17T22:16:03.463Z\n"
-"PO-Revision-Date: 2025-11-17T22:16:03.464Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
+"PO-Revision-Date: 2026-01-13T22:53:28.645Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -167,11 +167,128 @@ msgstr "Name"
 msgid "Password"
 msgstr "Password"
 
+msgid "January"
+msgstr "January"
+
+msgid "February"
+msgstr "February"
+
+msgid "March"
+msgstr "March"
+
+msgid "April"
+msgstr "April"
+
+msgid "May"
+msgstr "May"
+
+msgid "June"
+msgstr "June"
+
+msgid "July"
+msgstr "July"
+
+msgid "August"
+msgstr "August"
+
+msgid "September"
+msgstr "September"
+
+msgid "October"
+msgstr "October"
+
+msgid "November"
+msgstr "November"
+
+msgid "December"
+msgstr "December"
+
+msgid "Monday"
+msgstr "Monday"
+
+msgid "Tuesday"
+msgstr "Tuesday"
+
+msgid "Wednesday"
+msgstr "Wednesday"
+
+msgid "Thursday"
+msgstr "Thursday"
+
+msgid "Friday"
+msgstr "Friday"
+
+msgid "Saturday"
+msgstr "Saturday"
+
+msgid "Sunday"
+msgstr "Sunday"
+
+msgid "Daily"
+msgstr "Daily"
+
+msgid "Weekly"
+msgstr "Weekly"
+
+msgid "Monthly"
+msgstr "Monthly"
+
+msgid "Bi-monthly"
+msgstr "Bi-monthly"
+
+msgid "Yearly"
+msgstr "Yearly"
+
+msgid "Bi-weekly"
+msgstr "Bi-weekly"
+
+msgid "Quarterly"
+msgstr "Quarterly"
+
+msgid "Six-monthly"
+msgstr "Six-monthly"
+
+msgid "Weekly (start {{day}})"
+msgstr "Weekly (start {{day}})"
+
+msgid "Financial year (start {{month}})"
+msgstr "Financial year (start {{month}})"
+
+msgid "Days"
+msgstr "Days"
+
+msgid "Weeks"
+msgstr "Weeks"
+
+msgid "Bi-weeks"
+msgstr "Bi-weeks"
+
+msgid "Months"
+msgstr "Months"
+
+msgid "Bi-months"
+msgstr "Bi-months"
+
+msgid "Quarters"
+msgstr "Quarters"
+
+msgid "Six months"
+msgstr "Six months"
+
+msgid "Years"
+msgstr "Years"
+
+msgid "Other"
+msgstr "Other"
+
 msgid "Settings updated"
 msgstr "Settings updated"
 
 msgid "There was a problem updating settings. Changes have not been saved."
 msgstr "There was a problem updating settings. Changes have not been saved."
+
+msgid "Period types available in analytics apps"
+msgstr "Period types available in analytics apps"
 
 msgid "General"
 msgstr "General"
@@ -301,29 +418,8 @@ msgstr "Infrastructural data elements"
 msgid "Infrastructural period type"
 msgstr "Infrastructural period type"
 
-msgid "Daily"
-msgstr "Daily"
-
-msgid "Weekly"
-msgstr "Weekly"
-
-msgid "Monthly"
-msgstr "Monthly"
-
-msgid "Bi-monthly"
-msgstr "Bi-monthly"
-
-msgid "Quarterly"
-msgstr "Quarterly"
-
-msgid "Six-monthly"
-msgstr "Six-monthly"
-
 msgid "Six-monthly April"
 msgstr "Six-monthly April"
-
-msgid "Yearly"
-msgstr "Yearly"
 
 msgid "Financial-April"
 msgstr "Financial-April"
@@ -478,17 +574,14 @@ msgstr "Hide monthly periods"
 msgid "Hide bimonthly periods"
 msgstr "Hide bimonthly periods"
 
+msgid "Period types"
+msgstr "Period types"
+
+msgid "Allowed period types"
+msgstr "Allowed period types"
+
 msgid "Financial year relative period start month"
 msgstr "Financial year relative period start month"
-
-msgid "April"
-msgstr "April"
-
-msgid "July"
-msgstr "July"
-
-msgid "October"
-msgstr "October"
 
 msgid "Cache strategy"
 msgstr "Cache strategy"
@@ -911,68 +1004,3 @@ msgstr "Clean idle jobs after (in milliseconds)"
 
 msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr "Use centroids for organisation unit polygons in event analytics"
-
-msgid ""
-"When enabled, event analytics requests that normally return polygons for "
-"organisation units will return centroids instead. Improves performance for "
-"large datasets."
-msgstr ""
-"When enabled, event analytics requests that normally return polygons for "
-"organisation units will return centroids instead. Improves performance for "
-"large datasets."
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr "System Settings"
-
-msgctxt "Application description"
-msgid "__MANIFEST_APP_DESCRIPTION"
-msgstr ""
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_General"
-msgstr "General"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Analytics"
-msgstr "Analytics"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Server"
-msgstr "Server"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Appearance"
-msgstr "Appearance"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Email"
-msgstr "Email"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Access"
-msgstr "Access"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Calendar"
-msgstr "Calendar"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data import settings"
-msgstr "Data import settings"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Synchronization"
-msgstr "Synchronization"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Scheduled job settings"
-msgstr "Scheduled job settings"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Notification settings"
-msgstr "Notification settings"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_OAuth2 clients"
-msgstr "OAuth2 clients"
