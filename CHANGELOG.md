@@ -1,3 +1,14 @@
+# [100.12.0](https://github.com/dhis2/settings-app/compare/v100.11.0...v100.12.0) (2026-01-14)
+
+
+### Features
+
+* add org unit centroids in events analytics to analytics settings ([76046b4](https://github.com/dhis2/settings-app/commit/76046b456ad74455d78a50ecd23c9fdd7108dc31))
+* add org unit centroids in events analytics to analytics settings ([6f21a22](https://github.com/dhis2/settings-app/commit/6f21a2271db0411f5d89c639f27a99e089f228e9))
+* add period types configuration ([3ad92b4](https://github.com/dhis2/settings-app/commit/3ad92b4dc1eac614aefb7b5bd97d0516a8fce1da))
+* implement period type toggling in period types component ([840a08c](https://github.com/dhis2/settings-app/commit/840a08c604f4720d3a26659dab0d227a62fbcbca))
+* update period types and improve localization handling ([1f4b23e](https://github.com/dhis2/settings-app/commit/1f4b23e677756c29b056dbcfb427694395ecee9c))
+
 # [100.11.0](https://github.com/dhis2/settings-app/compare/v100.10.0...v100.11.0) (2025-11-18)
 
 
