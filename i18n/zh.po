@@ -1,16 +1,16 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2024
-# Philip Larsen Donnelly, 2024
 # 晓东 林 <13981924470@126.com>, 2024
-# easylin <lin_xd@126.com>, 2025
+# Philip Larsen Donnelly, 2026
+# easylin <lin_xd@126.com>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-05T20:30:30.881Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2025\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2026\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,23 +102,17 @@ msgstr "元数据版本"
 msgid "This client ID is already taken"
 msgstr "客户端ID已经使用"
 
-msgid "Name"
-msgstr "名称"
+msgid "Client ID"
+msgstr "客户ID"
 
 msgid "Required"
 msgstr "必须的"
-
-msgid "Client ID"
-msgstr "客户ID"
 
 msgid "Client Secret"
 msgstr "客户密钥"
 
 msgid "Grant Types"
 msgstr "授权类型"
-
-msgid "Password"
-msgstr "口令"
 
 msgid "Refresh token"
 msgstr "刷新令牌"
@@ -177,11 +171,134 @@ msgstr "OAth2客户已经删除"
 msgid "Failed to delete OAuth2 client"
 msgstr "删除 OAuth2 客户端失败"
 
+msgid "Name"
+msgstr "名称"
+
+msgid "Password"
+msgstr "口令"
+
+msgid "January"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "April"
+msgstr "4月"
+
+msgid "May"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "July"
+msgstr "7月"
+
+msgid "August"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "October"
+msgstr "10月"
+
+msgid "November"
+msgstr "十一月"
+
+msgid "December"
+msgstr ""
+
+msgid "Monday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr "周四"
+
+msgid "Friday"
+msgstr ""
+
+msgid "Saturday"
+msgstr "周六"
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Daily"
+msgstr "每日"
+
+msgid "Weekly"
+msgstr "每周"
+
+msgid "Monthly"
+msgstr "每月"
+
+msgid "Bi-monthly"
+msgstr "每两月"
+
+msgid "Yearly"
+msgstr "每年"
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr "季度"
+
+msgid "Six-monthly"
+msgstr "六个月"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "日"
+
+msgid "Weeks"
+msgstr ""
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr ""
+
+msgid "Bi-months"
+msgstr ""
+
+msgid "Quarters"
+msgstr ""
+
+msgid "Six months"
+msgstr ""
+
+msgid "Years"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
 msgid "Settings updated"
 msgstr "设置已经更新"
 
 msgid "There was a problem updating settings. Changes have not been saved."
 msgstr "更新设置时出现问题。尚未保存更改。"
+
+msgid "Period types available in analytics apps"
+msgstr ""
 
 msgid "General"
 msgstr "常规"
@@ -240,6 +357,9 @@ msgstr "同步设置"
 msgid "Scheduled jobs"
 msgstr "调度的作业"
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr "OAuth2 客户"
 
@@ -291,6 +411,11 @@ msgstr "无限制"
 msgid "Maximum number of SQL view records"
 msgstr "SQL视图最大记录数量"
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr "基础指标"
 
@@ -300,29 +425,8 @@ msgstr "基础数据元"
 msgid "Infrastructural period type"
 msgstr "基础数据周期类型"
 
-msgid "Daily"
-msgstr "每日"
-
-msgid "Weekly"
-msgstr "每周"
-
-msgid "Monthly"
-msgstr "每月"
-
-msgid "Bi-monthly"
-msgstr "每两月"
-
-msgid "Quarterly"
-msgstr "季度"
-
-msgid "Six-monthly"
-msgstr "六个月"
-
 msgid "Six-monthly April"
 msgstr "始于四月的每六个月"
-
-msgid "Yearly"
-msgstr "每年"
 
 msgid "Financial-April"
 msgstr "财务-四月"
@@ -477,17 +581,14 @@ msgstr "隐藏每月期间"
 msgid "Hide bimonthly periods"
 msgstr "隐藏两个月期间"
 
+msgid "Period types"
+msgstr ""
+
+msgid "Allowed period types"
+msgstr ""
+
 msgid "Financial year relative period start month"
 msgstr "财政年相对期间起始月份"
-
-msgid "April"
-msgstr "4月"
-
-msgid "July"
-msgstr "7月"
-
-msgid "October"
-msgstr "10月"
 
 msgid "Cache strategy"
 msgstr "缓冲策略"
@@ -615,6 +716,9 @@ msgstr "Google Maps API key"
 msgid "Bing Maps API key"
 msgstr "Bing Maps API密钥"
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr "应用标题"
 
@@ -629,6 +733,9 @@ msgstr "应用左页脚"
 
 msgid "Application right-side footer"
 msgstr "应用右页脚"
+
+msgid "Style (android)"
+msgstr ""
 
 msgid "Style"
 msgstr "风格"
@@ -686,9 +793,6 @@ msgstr "登录页面模板"
 
 msgid "Enable Global Shell"
 msgstr "启用全局Shell"
-
-msgid "Global Shell App"
-msgstr "全局Shell应用程序"
 
 msgid "Custom login page logo"
 msgstr "定制登录页面Logo"
@@ -880,3 +984,24 @@ msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
 msgstr "作业执行间隔（秒），低于该间隔，作业将以调试（而不是信息）级别进行记录 (20+)"
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
+msgstr ""
