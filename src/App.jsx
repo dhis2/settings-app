@@ -2,12 +2,12 @@ import { useDataQuery, useConfig } from '@dhis2/app-runtime'
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import { CssVariables, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React from 'react'
-// to ensure that i18n is first imported from locales/index, i18n is imported before App
 // eslint-disable-next-line import/order
 import i18n from './locales/index.js'
 import App from './app.component.jsx'
 import 'material-design-icons-iconfont'
 import configOptionStore from './configOptionStore.js'
+import normalizeLocaleCode from './lib/normalizeLocaleCode.js'
 
 const query = {
     indicatorGroups: {
@@ -158,14 +158,14 @@ const AppWrapper = () => {
     }))
 
     const uiLocales = (data.uiLocales || []).map((locale) => ({
-        id: locale.locale,
+        id: normalizeLocaleCode(locale.locale),
         displayName:
             locale.name === locale.displayName
                 ? locale.name
                 : `${locale.name} — ${locale.displayName}`,
     }))
     const dbLocales = (data.dbLocales || []).map((locale) => ({
-        id: locale.locale,
+        id: normalizeLocaleCode(locale.locale),
         displayName:
             locale.name === locale.displayName
                 ? locale.name
