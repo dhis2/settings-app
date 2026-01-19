@@ -16,6 +16,7 @@ import Checkbox from './form-fields/check-box.jsx'
 import SelectField from './form-fields/drop-down.jsx'
 import FileUpload from './form-fields/file-upload.jsx'
 import TextField from './form-fields/text-field.jsx'
+import normalizeLocaleCode from './lib/normalizeLocaleCode.js'
 import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component.jsx'
 import metadataSettings from './metadata-settings/metadataSettings.component.jsx'
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component.jsx'
@@ -117,11 +118,38 @@ function addConditionallyHiddenStyles(mapping) {
     return settingsValue === currentValue ? { display: 'none' } : {}
 }
 
+function findItemById(items, searchId) {
+    if (
+        !items ||
+        !Array.isArray(items) ||
+        searchId === null ||
+        searchId === undefined
+    ) {
+        return undefined
+    }
+
+    const searchIdStr = String(searchId)
+
+    const foundItem = items.find((item) => String(item.id) === searchIdStr)
+    if (foundItem) {
+        return foundItem
+    }
+
+    const normalizedSearchId = searchIdStr.toLowerCase()
+    return items.find((item) => {
+        const itemIdStr = String(item.id)
+        return (
+            itemIdStr.toLowerCase() === normalizedSearchId ||
+            itemIdStr.replaceAll('_', '-') === searchIdStr ||
+            itemIdStr.replaceAll('-', '_') === searchIdStr
+        )
+    })
+}
+
 function getMenuItems(mapping) {
     const sourceMenuItems =
         (configOptionStore.state && configOptionStore.state[mapping.source]) ||
         []
-
     const optionsMenuItems = Object.entries(mapping.options || []).map(
         ([id, displayName]) => ({
             id,
@@ -178,15 +206,33 @@ class SettingsFields extends React.Component {
                     }),
                 })
 
-            case 'dropdown':
-                if (mapping.includeEmpty && fieldBase.value === '') {
-                    fieldBase.value = 'null'
+            case 'dropdown': {
+                const menuItems = getMenuItems(mapping)
+                let value = fieldBase.value
+
+                if (key === 'keyUiLocale' && value) {
+                    value = normalizeLocaleCode(value)
+                }
+
+                if (mapping.includeEmpty && value === '') {
+                    value = 'null'
+                } else if (
+                    value &&
+                    value !== 'null' &&
+                    value !== '' &&
+                    menuItems.length > 0
+                ) {
+                    const foundItem = findItemById(menuItems, value)
+                    if (foundItem) {
+                        value = String(foundItem.id)
+                    }
                 }
 
                 return Object.assign({}, fieldBase, {
+                    value,
                     component: SelectField,
                     props: Object.assign({}, fieldBase.props, {
-                        menuItems: getMenuItems(mapping),
+                        menuItems,
                         includeEmpty: !!mapping.includeEmpty,
                         emptyLabel:
                             (mapping.includeEmpty && mapping.emptyLabel) ||
@@ -197,6 +243,7 @@ class SettingsFields extends React.Component {
                             undefined,
                     }),
                 })
+            }
             case 'emailCheckbox': {
                 const emailConfigured = isEmailConfigured(d2)
                 const explanatoryText =
@@ -400,10 +447,17 @@ class SettingsFields extends React.Component {
                     const component = wrapUserSettingsOverride({
                         component: field.component,
                         valueLabel: mapping.source
-                            ? ((options && options[mapping.source]) || [])
-                                  .filter((opt) => opt.id === userSettingValue)
-                                  .map((opt) => opt.displayName)
-                                  .pop()
+                            ? (() => {
+                                  const sourceArray =
+                                      (options && options[mapping.source]) || []
+                                  const foundItem = findItemById(
+                                      sourceArray,
+                                      userSettingValue
+                                  )
+                                  return foundItem
+                                      ? foundItem.displayName
+                                      : userSettingValue
+                              })()
                             : userSettingValue,
                     })
 
