@@ -159,28 +159,30 @@ function getMenuItems(mapping) {
     return optionsMenuItems.concat(sourceMenuItems)
 }
 
-function normalizeDropdownValue(key, value, mapping, menuItems) {
-    if (key === 'keyUiLocale' && value) {
-        value = normalizeLocaleCode(value)
+function normalizeDropdownValue({ key, value, mapping, menuItems }) {
+    let normalizedValue = value
+
+    if (key === 'keyUiLocale' && normalizedValue) {
+        normalizedValue = normalizeLocaleCode(normalizedValue)
     }
 
-    if (mapping.includeEmpty && value === '') {
+    if (mapping.includeEmpty && normalizedValue === '') {
         return 'null'
     }
 
     if (
-        value &&
-        value !== 'null' &&
-        value !== '' &&
+        normalizedValue &&
+        normalizedValue !== 'null' &&
+        normalizedValue !== '' &&
         menuItems.length > 0
     ) {
-        const foundItem = findItemById(menuItems, value)
+        const foundItem = findItemById(menuItems, normalizedValue)
         if (foundItem) {
             return String(foundItem.id)
         }
     }
 
-    return value
+    return normalizedValue
 }
 
 function createEmailCheckboxHandler(d2, key) {
@@ -251,12 +253,12 @@ class SettingsFields extends React.Component {
 
             case 'dropdown': {
                 const menuItems = getMenuItems(mapping)
-                const value = normalizeDropdownValue(
+                const value = normalizeDropdownValue({
                     key,
-                    fieldBase.value,
+                    value: fieldBase.value,
                     mapping,
-                    menuItems
-                )
+                    menuItems,
+                })
 
                 return Object.assign({}, fieldBase, {
                     value,
