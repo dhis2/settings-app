@@ -159,6 +159,49 @@ function getMenuItems(mapping) {
     return optionsMenuItems.concat(sourceMenuItems)
 }
 
+function normalizeDropdownValue(key, value, mapping, menuItems) {
+    if (key === 'keyUiLocale' && value) {
+        value = normalizeLocaleCode(value)
+    }
+
+    if (mapping.includeEmpty && value === '') {
+        return 'null'
+    }
+
+    if (
+        value &&
+        value !== 'null' &&
+        value !== '' &&
+        menuItems.length > 0
+    ) {
+        const foundItem = findItemById(menuItems, value)
+        if (foundItem) {
+            return String(foundItem.id)
+        }
+    }
+
+    return value
+}
+
+function createEmailCheckboxHandler(d2, key) {
+    return (_event, checked) => {
+        const emailConfigured = isEmailConfigured(d2)
+        if (!emailConfigured && checked === true) {
+            settingsActions.showSnackbarMessage(
+                i18n.t(
+                    'You cannot enable "Enforce Verified Email" until email settings are configured.'
+                )
+            )
+            return
+        }
+        if (!emailConfigured && checked === false) {
+            settingsActions.saveKey(key, 'false')
+            return
+        }
+        settingsActions.saveKey(key, checked ? 'true' : 'false')
+    }
+}
+
 function isEmailConfigured(d2) {
     const emailHostName = d2.system.settings.settings.keyEmailHostName
     const emailUserName = d2.system.settings.settings.keyEmailUsername
@@ -208,25 +251,12 @@ class SettingsFields extends React.Component {
 
             case 'dropdown': {
                 const menuItems = getMenuItems(mapping)
-                let value = fieldBase.value
-
-                if (key === 'keyUiLocale' && value) {
-                    value = normalizeLocaleCode(value)
-                }
-
-                if (mapping.includeEmpty && value === '') {
-                    value = 'null'
-                } else if (
-                    value &&
-                    value !== 'null' &&
-                    value !== '' &&
-                    menuItems.length > 0
-                ) {
-                    const foundItem = findItemById(menuItems, value)
-                    if (foundItem) {
-                        value = String(foundItem.id)
-                    }
-                }
+                const value = normalizeDropdownValue(
+                    key,
+                    fieldBase.value,
+                    mapping,
+                    menuItems
+                )
 
                 return Object.assign({}, fieldBase, {
                     value,
@@ -259,24 +289,7 @@ class SettingsFields extends React.Component {
                             (mapping.sectionLabel && mapping.sectionLabel) ||
                             undefined,
                         style: fieldBase.props.style,
-                        onCheck: (_event, checked) => {
-                            if (!emailConfigured && checked === true) {
-                                settingsActions.showSnackbarMessage(
-                                    i18n.t(
-                                        'You cannot enable "Enforce Verified Email" until email settings are configured.'
-                                    )
-                                )
-                                return
-                            }
-                            if (!emailConfigured && checked === false) {
-                                settingsActions.saveKey(key, 'false')
-                                return
-                            }
-                            settingsActions.saveKey(
-                                key,
-                                checked ? 'true' : 'false'
-                            )
-                        },
+                        onCheck: createEmailCheckboxHandler(d2, key),
                         explanatoryText,
                     },
                 })
@@ -392,7 +405,6 @@ class SettingsFields extends React.Component {
             .map((key) => {
                 const mapping = settingsKeyMapping[key]
 
-                // Base config, common for all component types
                 const validators = []
                 if (mapping && mapping.validators) {
                     mapping.validators.forEach((name) => {
@@ -449,7 +461,7 @@ class SettingsFields extends React.Component {
                         valueLabel: mapping.source
                             ? (() => {
                                   const sourceArray =
-                                      (options && options[mapping.source]) || []
+                                      options?.[mapping.source] || []
                                   const foundItem = findItemById(
                                       sourceArray,
                                       userSettingValue

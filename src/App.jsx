@@ -2,7 +2,6 @@ import { useDataQuery, useConfig } from '@dhis2/app-runtime'
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import { CssVariables, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React from 'react'
-// to ensure that i18n is first imported from locales/index, i18n is imported before App
 // eslint-disable-next-line import/order
 import i18n from './locales/index.js'
 import App from './app.component.jsx'
