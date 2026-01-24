@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Thomas Zemp, 2022
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2024
-# Karoline Tufte Lien <karoline@dhis2.org>, 2024
+# Thomas Zemp, 2024
+# Karoline Tufte Lien <karoline@dhis2.org>, 2026
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2024\n"
+"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2026\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -99,28 +99,22 @@ msgid "Metadata Versioning"
 msgstr "Metadataversjon"
 
 msgid "This client ID is already taken"
-msgstr ""
-
-msgid "Name"
-msgstr "Navn"
-
-msgid "Required"
-msgstr ""
+msgstr "Denne Klient ID-en er allerede tatt"
 
 msgid "Client ID"
-msgstr ""
+msgstr "Klient ID"
+
+msgid "Required"
+msgstr "Påkrevd"
 
 msgid "Client Secret"
-msgstr ""
+msgstr "Privatklient"
 
 msgid "Grant Types"
-msgstr ""
-
-msgid "Password"
-msgstr "Passord"
+msgstr "Tilskuddstyper"
 
 msgid "Refresh token"
-msgstr ""
+msgstr "Oppdater symbol"
 
 msgid "Authorization code"
 msgstr "Autorisasjonskode"
@@ -129,57 +123,180 @@ msgid "One URL per line"
 msgstr "En URL per linje"
 
 msgid "Redirect URIs"
-msgstr ""
+msgstr "Omdiriger URL-er"
 
 msgid "This field should contain a list of URLs"
 msgstr "Dette feltet skal inneholde en liste av URLs"
 
 msgid "Create new OAuth2 Client"
-msgstr ""
+msgstr "Opprett ny OAuth2 Klient"
 
 msgid "Edit OAuth2 Client"
 msgstr "Edit OAuth2 Klient"
 
 msgid "Save"
-msgstr ""
+msgstr "Lagre"
 
 msgid "Cancel"
 msgstr "Avbryt"
 
 msgid "There are currently no OAuth2 clients registered"
-msgstr ""
+msgstr "Det er for øyeblikket ingen OAuth2 klienter registrert"
 
 msgid "Edit"
-msgstr ""
+msgstr "Rediger"
 
 msgid "Delete"
 msgstr "Slett"
 
 msgid "OAuth2 client saved"
-msgstr ""
+msgstr "OAuth2 klient ble lagret"
 
 msgid "Failed to save OAuth2 client"
 msgstr "Kunne ikke lagre OAuth2 klient"
 
 msgid "Add OAuth2 client"
-msgstr ""
+msgstr "Legg til OAuth2 klient"
 
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 msgid "No"
-msgstr ""
+msgstr "Nei"
 
 msgid "OAuth2 client deleted"
-msgstr ""
+msgstr "OAuth2 klient ble slettet"
 
 msgid "Failed to delete OAuth2 client"
 msgstr ""
+
+msgid "Name"
+msgstr "Navn"
+
+msgid "Password"
+msgstr "Passord"
+
+msgid "January"
+msgstr "Januar"
+
+msgid "February"
+msgstr "Februar"
+
+msgid "March"
+msgstr "Mars"
+
+msgid "April"
+msgstr "April"
+
+msgid "May"
+msgstr "Mai"
+
+msgid "June"
+msgstr "Juni"
+
+msgid "July"
+msgstr "Juli"
+
+msgid "August"
+msgstr "August"
+
+msgid "September"
+msgstr "September"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "November"
+msgstr "November"
+
+msgid "December"
+msgstr "Desember"
+
+msgid "Monday"
+msgstr "Mandag"
+
+msgid "Tuesday"
+msgstr "Tirsdag"
+
+msgid "Wednesday"
+msgstr "Onsdag"
+
+msgid "Thursday"
+msgstr "Torsdag"
+
+msgid "Friday"
+msgstr "Fredag"
+
+msgid "Saturday"
+msgstr "Lørdag"
+
+msgid "Sunday"
+msgstr "Søndag"
+
+msgid "Daily"
+msgstr "Daglig"
+
+msgid "Weekly"
+msgstr "Ukentlig"
+
+msgid "Monthly"
+msgstr "Månedlig"
+
+msgid "Bi-monthly"
+msgstr "Tomånedlig"
+
+msgid "Yearly"
+msgstr "Årlig"
+
+msgid "Bi-weekly"
+msgstr "Toukentlig"
+
+msgid "Quarterly"
+msgstr "Kvartalsvis"
+
+msgid "Six-monthly"
+msgstr "Halvårlig"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "Dager"
+
+msgid "Weeks"
+msgstr "Uker"
+
+msgid "Bi-weeks"
+msgstr "Touker"
+
+msgid "Months"
+msgstr "Måneder"
+
+msgid "Bi-months"
+msgstr "Tomåneder"
+
+msgid "Quarters"
+msgstr "Kvartaler"
+
+msgid "Six months"
+msgstr "Seks måneder"
+
+msgid "Years"
+msgstr "År"
+
+msgid "Other"
+msgstr "Annet"
 
 msgid "Settings updated"
 msgstr "Innstillinger oppdatert"
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
@@ -239,6 +356,9 @@ msgstr "Synkroniseringsinnstillinger"
 msgid "Scheduled jobs"
 msgstr "Planlagte jobber"
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr "OAuth2 Klienter"
 
@@ -267,6 +387,14 @@ msgstr "Denne innstillingen kan bli overstyrt av brukerinnstillinger"
 msgid "No options"
 msgstr "Ingen alternativer"
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr "Ingen innstillinger samsvarte med søkeordet"
 
@@ -282,6 +410,11 @@ msgstr "Ubegrenset"
 msgid "Maximum number of SQL view records"
 msgstr "Maksimalt antall SQL-visningsoppføringer"
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr "Infrastrukturelle indikatorer"
 
@@ -291,29 +424,8 @@ msgstr "Infrastrukturelle dataelementer"
 msgid "Infrastructural period type"
 msgstr "Infrastrukturperiodetype"
 
-msgid "Daily"
-msgstr "Daglig"
-
-msgid "Weekly"
-msgstr "Ukentlig"
-
-msgid "Monthly"
-msgstr "Månedlig"
-
-msgid "Bi-monthly"
-msgstr "Tomånedlig"
-
-msgid "Quarterly"
-msgstr "Kvartalsvis"
-
-msgid "Six-monthly"
-msgstr "Halvårlig"
-
 msgid "Six-monthly April"
 msgstr "Halvårig April"
-
-msgid "Yearly"
-msgstr "Årlig"
 
 msgid "Financial-April"
 msgstr "Regnskap-April"
@@ -468,17 +580,14 @@ msgstr "Skjul månedlige perioder"
 msgid "Hide bimonthly periods"
 msgstr "Skjul bimånedlige perioder"
 
+msgid "Period types"
+msgstr ""
+
+msgid "Allowed period types"
+msgstr ""
+
 msgid "Financial year relative period start month"
 msgstr "Regnskapsår relativ periode startmåned"
-
-msgid "April"
-msgstr "April"
-
-msgid "July"
-msgstr "Juli"
-
-msgid "October"
-msgstr "Oktober"
 
 msgid "Cache strategy"
 msgstr "Bufferstrategi"
@@ -608,6 +717,9 @@ msgstr "Google Maps API nøkkel"
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr "Applikasjonstittel"
 
@@ -622,6 +734,9 @@ msgstr "Bruk bunntekst på venstre side"
 
 msgid "Application right-side footer"
 msgstr "Bruk bunntekst på høyre side"
+
+msgid "Style (android)"
+msgstr ""
 
 msgid "Style"
 msgstr "Stil"
@@ -666,15 +781,18 @@ msgid "Login page theme"
 msgstr ""
 
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 msgid "Sidebar"
 msgstr ""
 
 msgid "Custom"
-msgstr ""
+msgstr "Tilpasset"
 
 msgid "Login page template"
+msgstr ""
+
+msgid "Enable Global Shell"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -733,6 +851,12 @@ msgstr "Aktiver brukerkonto gjenoppretting"
 
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr "Lås brukeren midlertidig etter flere mislykkede innloggingsforsøk"
+
+msgid "Enable embedded dashboards"
+msgstr ""
+
+msgid "Enforce verified emails"
+msgstr ""
 
 msgid "Allow users to grant own user roles"
 msgstr "Tillat brukere å gi egne brukerroller"
@@ -864,4 +988,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""
