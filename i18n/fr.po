@@ -1,24 +1,23 @@
 # 
 # Translators:
 # Bram Piot <bram.piot@gmail.com>, 2021
-# tx_e2f_frfr r6 <tx_e2f_frfr_r661@ate2f.com>, 2021
 # tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021
 # Sakibou ALASSANI <sakibou.alass@gmail.com>, 2024
 # Elise Desailly, 2024
 # Edem Kossi <ekossi@hispwca.org>, 2024
 # Yayra Gomado <ygomado@hispwca.org>, 2024
-# Cyrille Kabrane, 2025
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
 # Esther Tokouli, 2025
 # Viktor Varland <viktor@dhis2.org>, 2026
 # Philip Larsen Donnelly, 2026
+# Cyrille Kabrane, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2026\n"
+"Last-Translator: Cyrille Kabrane, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +29,7 @@ msgid "Failed to load: {{error}}"
 msgstr "Échec du chargement : {{error}}"
 
 msgid "No flag"
-msgstr "Pas de Drapeau"
+msgstr "Pas de drapeau"
 
 msgid "Search settings"
 msgstr "Paramètres de recherche"
@@ -84,7 +83,7 @@ msgid "Atomic"
 msgstr "Atomique"
 
 msgid "Master version:"
-msgstr "Version principale:"
+msgstr "Version principale :"
 
 msgid "None"
 msgstr "Aucun"
@@ -109,7 +108,7 @@ msgid "Metadata Versioning"
 msgstr "Gestion des versions des métadonnées"
 
 msgid "This client ID is already taken"
-msgstr "Cet identifiant client est déjà pris"
+msgstr "Cet identifiant client est déjà utilisé"
 
 msgid "Client ID"
 msgstr "Identifiant du client"
@@ -124,7 +123,7 @@ msgid "Grant Types"
 msgstr "Types de permissions"
 
 msgid "Refresh token"
-msgstr "Actualiser le Token"
+msgstr "Actualiser le token"
 
 msgid "Authorization code"
 msgstr "Code d'autorisation"
@@ -145,7 +144,7 @@ msgid "Edit OAuth2 Client"
 msgstr "Modifier le client OAuth2"
 
 msgid "Save"
-msgstr "Sauvegarder"
+msgstr "Enregistrer"
 
 msgid "Cancel"
 msgstr "Annuler"
@@ -187,31 +186,31 @@ msgid "Password"
 msgstr "Mot de passe"
 
 msgid "January"
-msgstr ""
+msgstr "Janvier"
 
 msgid "February"
-msgstr ""
+msgstr "Février"
 
 msgid "March"
-msgstr ""
+msgstr "Mars"
 
 msgid "April"
 msgstr "Avril"
 
 msgid "May"
-msgstr ""
+msgstr "Mai"
 
 msgid "June"
-msgstr ""
+msgstr "Juin"
 
 msgid "July"
 msgstr "Juillet"
 
 msgid "August"
-msgstr ""
+msgstr "Août"
 
 msgid "September"
-msgstr ""
+msgstr "Septembre"
 
 msgid "October"
 msgstr "Octobre"
@@ -220,31 +219,31 @@ msgid "November"
 msgstr "Novembre"
 
 msgid "December"
-msgstr ""
+msgstr "Décembre"
 
 msgid "Monday"
-msgstr ""
+msgstr "Lundi"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "Mardi"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "Mercredi"
 
 msgid "Thursday"
 msgstr "Jeudi"
 
 msgid "Friday"
-msgstr ""
+msgstr "Vendredi"
 
 msgid "Saturday"
-msgstr "samedi"
+msgstr "Samedi"
 
 msgid "Sunday"
-msgstr ""
+msgstr "Dimanche"
 
 msgid "Daily"
-msgstr "Journalier"
+msgstr "Quotidien"
 
 msgid "Weekly"
 msgstr "Hebdomadaire"
@@ -253,13 +252,13 @@ msgid "Monthly"
 msgstr "Mensuel"
 
 msgid "Bi-monthly"
-msgstr "Bimensuel"
+msgstr "Bimestriel"
 
 msgid "Yearly"
 msgstr "Annuel"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "Bimensuel"
 
 msgid "Quarterly"
 msgstr "Trimestriel"
@@ -268,37 +267,37 @@ msgid "Six-monthly"
 msgstr "Semestriel"
 
 msgid "Weekly (start {{day}})"
-msgstr ""
+msgstr "Hebdomadaire (à partir de {{day}})"
 
 msgid "Financial year (start {{month}})"
-msgstr ""
+msgstr "Année financière (à partir de {{month}})"
 
 msgid "Days"
 msgstr "Jours"
 
 msgid "Weeks"
-msgstr ""
+msgstr "Semaines"
 
 msgid "Bi-weeks"
-msgstr ""
+msgstr "Quinzaines"
 
 msgid "Months"
-msgstr ""
+msgstr "Mois"
 
 msgid "Bi-months"
-msgstr ""
+msgstr "Bimestres"
 
 msgid "Quarters"
-msgstr ""
+msgstr "Trimestres"
 
 msgid "Six months"
-msgstr ""
+msgstr "Semestres"
 
 msgid "Years"
-msgstr ""
+msgstr "Années"
 
 msgid "Other"
-msgstr ""
+msgstr "Autre"
 
 msgid "Settings updated"
 msgstr "Paramètres mis à jour"
@@ -309,7 +308,7 @@ msgstr ""
 "modifications n'ont pas été enregistrées."
 
 msgid "Period types available in analytics apps"
-msgstr ""
+msgstr "Types de périodes disponibles dans les applications d'analyse"
 
 msgid "General"
 msgstr "Général"
@@ -318,7 +317,7 @@ msgid "General settings"
 msgstr "Paramètres généraux"
 
 msgid "Analytics"
-msgstr "Analytiques"
+msgstr "Analyses"
 
 msgid "Analytics settings"
 msgstr "Paramètres d'analyse"
@@ -330,7 +329,7 @@ msgid "Server settings"
 msgstr "Paramètres du serveur"
 
 msgid "Appearance"
-msgstr "Aspect"
+msgstr "Apparence"
 
 msgid "Appearance settings"
 msgstr "Paramètres d'apparence"
@@ -339,7 +338,7 @@ msgid "Email"
 msgstr "Adresse e-mail"
 
 msgid "Email settings"
-msgstr "paramètres e-mail"
+msgstr "Paramètres e-mail"
 
 msgid "Access"
 msgstr "Accès"
@@ -357,19 +356,19 @@ msgid "Data Import"
 msgstr "Importation de données"
 
 msgid "Data import settings"
-msgstr "Paramètres d'importation de données"
+msgstr "Paramètres d'importation des données"
 
 msgid "Synchronization"
 msgstr "Synchronisation"
 
 msgid "Synchronization settings"
-msgstr "Synchronisation"
+msgstr "Paramètres de synchronisation"
 
 msgid "Scheduled jobs"
 msgstr "Tâches planifiées"
 
 msgid "Notification settings"
-msgstr ""
+msgstr "Paramètres de notification"
 
 msgid "OAuth2 Clients"
 msgstr "Clients OAuth2"
@@ -378,21 +377,21 @@ msgid "This field is required"
 msgstr "Ce champs est requis"
 
 msgid "This field should be a URL"
-msgstr "Ce champ doit être une URL"
+msgstr "Ce champ doit contenir une URL"
 
 msgid "This field should be a number"
-msgstr "Ce champ doit être un nombre"
+msgstr "Ce champ doit contenir un nombre"
 
 msgid "This field should be a positive number"
-msgstr "Ce champ doit être un nombre positif"
+msgstr "Ce champ doit contenir un nombre positif"
 
 msgid "This field should be an email"
-msgstr "Ce champ doit être un e-mail"
+msgstr "Ce champ doit contenir une adresse e-mail"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
-"Ce paramètre sera remplacé par le paramètre utilisateur actuel : "
+"Ce paramètre sera remplacé par le paramètre de l'utilisateur actuel : "
 "{{settingName}}"
 
 msgid "This setting can be overridden by user settings"
@@ -403,14 +402,14 @@ msgstr "Aucune option"
 
 msgid "Settings must be configured to send emails to enforce verified emails"
 msgstr ""
-"Les paramètres doivent être configurés de sorte à envoyer des e-mails afin "
-"de vérifier les adresses électroniques."
+"Les paramètres doivent être configurés pour envoyer des e-mails de "
+"vérification des adresses électroniques."
 
 msgid ""
 "You cannot enable \"Enforce Verified Email\" until email settings are "
 "configured."
 msgstr ""
-"Vous ne pouvez pas activer l'option « Activer l'e-mail vérifié » tant que "
+"Vous ne pouvez pas activer l'option \"E-mail vérifié obligatoire\" tant que "
 "les paramètres de messagerie ne sont pas configurés."
 
 msgid "No settings matched the search term"
@@ -426,18 +425,20 @@ msgid "Unlimited"
 msgstr "Illimité"
 
 msgid "Maximum number of SQL view records"
-msgstr "Nombre maximal d'enregistrements de vue SQL"
+msgstr "Nombre maximum d'enregistrements de vues SQL"
 
 msgid ""
 "Maximum number of tracked entity records to fetch from database (enter 0 for"
 " unlimited)"
 msgstr ""
+"Nombre maximum d'enregistrements d'entités suivies à extraire de la base de "
+"données (entrez 0 pour un nombre illimité)"
 
 msgid "Infrastructural indicators"
 msgstr "Indicateurs d'infrastructure"
 
 msgid "Infrastructural data elements"
-msgstr "Infrastructures éléments de données"
+msgstr "Éléments de données d'infrastructure "
 
 msgid "Infrastructural period type"
 msgstr "Type de période d'infrastructure"
@@ -449,13 +450,13 @@ msgid "Financial-April"
 msgstr "Financier-Avril"
 
 msgid "Financial-July"
-msgstr "Financière-Juillet"
+msgstr "Financier-Juillet"
 
 msgid "Financial-Oct"
-msgstr "Financière-Oct"
+msgstr "Financier-Oct"
 
 msgid "Feedback recipients"
-msgstr "Commentaires des bénéficiaires"
+msgstr "Destinataires des feedbacks"
 
 msgid "No message recipients"
 msgstr "Pas de destinataires du message"
@@ -467,13 +468,13 @@ msgid "No update notification recipients"
 msgstr "Aucune mise à jour des destinataires des notifications"
 
 msgid "Max offline organisation unit levels"
-msgstr "Niveau maximum d'unité d'organisation en offline"
+msgstr "Niveau maximum d'unités d'organisation hors ligne"
 
 msgid "Data analysis std dev factor"
-msgstr "L'analyse des données écart facteur standard"
+msgstr "Facteur d'écart type dans l'analyse des données"
 
 msgid "Phone number area code"
-msgstr "Code zone du numéro de téléphone"
+msgstr "Indicatif régional du numéro de téléphone"
 
 msgid "Enable multi-organisation unit forms"
 msgstr "Activer les formulaires multi-unités d'organisation"
@@ -483,7 +484,7 @@ msgstr "Acceptation requise avant approbation"
 
 msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
-"Recueillir des statistiques d'objets analytiques dans les vues de tableau de"
+"Recueillir des statistiques d'objets analytiques dans les vues du tableau de"
 " bord"
 
 msgid "Include passive dashboard views in usage analytics statistics"
@@ -498,7 +499,7 @@ msgid "This week"
 msgstr "Cette semaine"
 
 msgid "Last week"
-msgstr "Semaine passée"
+msgstr "Semaine dernière"
 
 msgid "Last 4 weeks"
 msgstr "4 dernières semaines"
@@ -510,13 +511,13 @@ msgid "Last 52 weeks"
 msgstr "52 dernières semaines"
 
 msgid "This month"
-msgstr "Ce mois-ci"
+msgstr "Ce mois"
 
 msgid "Last month"
 msgstr "Mois dernier"
 
 msgid "Months this year"
-msgstr "Mois cette année"
+msgstr "Mois de cette année"
 
 msgid "Months last year"
 msgstr "Mois de l'année passée"
@@ -534,7 +535,7 @@ msgid "This bi-month"
 msgstr "Ces 2 dernières semaines"
 
 msgid "Last bi-month"
-msgstr "Dernier bi-mestre"
+msgstr "Dernier bimestre"
 
 msgid "Last 6 bi-months"
 msgstr "6 derniers bimestres"
@@ -543,7 +544,7 @@ msgid "This quarter"
 msgstr "Ce trimestre"
 
 msgid "Last quarter"
-msgstr "Trimestre précédent"
+msgstr "Dernier trimestre"
 
 msgid "Quarters this year"
 msgstr "Trimestres cette année"
@@ -567,7 +568,7 @@ msgid "This year"
 msgstr "Année en cours"
 
 msgid "Last year"
-msgstr "L'année passée"
+msgstr "Année dernière"
 
 msgid "Last 5 years"
 msgstr "5 dernières années"
@@ -576,13 +577,13 @@ msgid "Last 10 years"
 msgstr "10 dernières années"
 
 msgid "This financial year"
-msgstr "Année fiscale en cours"
+msgstr "Cette année financière"
 
 msgid "Last financial year"
-msgstr "Année fiscale précédente"
+msgstr "Dernière année financière"
 
 msgid "Last 5 financial years"
-msgstr "5 dernières années fiscales"
+msgstr "5 dernières années financières"
 
 msgid "Hide daily periods"
 msgstr "Masquer les périodes quotidiennes"
@@ -594,22 +595,22 @@ msgid "Hide weekly periods"
 msgstr "Masquer les périodes hebdomadaires"
 
 msgid "Hide biweekly periods"
-msgstr "Masquer les périodes bihebdomadaires"
+msgstr "Masquer les périodes bimensuelles"
 
 msgid "Hide monthly periods"
 msgstr "Masquer les périodes mensuelles"
 
 msgid "Hide bimonthly periods"
-msgstr "Masquer les périodes bimensuelles"
+msgstr "Masquer les périodes bimestrielles"
 
 msgid "Period types"
-msgstr ""
+msgstr "Type de période"
 
 msgid "Allowed period types"
-msgstr ""
+msgstr "Types de périodes autorisées"
 
 msgid "Financial year relative period start month"
-msgstr "Mois de départ de la période relative à l'année financière"
+msgstr "Mois de début de la période relative à l'année financière"
 
 msgid "Cache strategy"
 msgstr "Stratégie de mise en cache"
@@ -624,10 +625,10 @@ msgid "Cache for 30 minutes"
 msgstr "Cache pour 30 min"
 
 msgid "Cache for one hour"
-msgstr "Cache pendant une heure"
+msgstr "Cache pour une heure"
 
 msgid "Cache until 6AM tomorrow"
-msgstr "Cache jusqu'à 6 heures demain matin"
+msgstr "Cache jusqu'à 06h00 demain matin"
 
 msgid "Cache for two weeks"
 msgstr "Cache pour deux semaines"
@@ -642,7 +643,7 @@ msgid "Private"
 msgstr "Privé"
 
 msgid "Analytics cache mode"
-msgstr "Mode cache pour les analyses"
+msgstr "Mode de cache pour les analyses"
 
 msgid "Progressive"
 msgstr "Progressif"
@@ -652,7 +653,7 @@ msgstr "Fixe"
 
 msgid "Max number of years to hide unapproved data in analytics"
 msgstr ""
-"Nombre max. d'années pour masquer des données non approuvées dans des "
+"Nombre maximum d'années pour masquer les données non approuvées dans les "
 "analyses"
 
 msgid "Never check approval"
@@ -688,7 +689,7 @@ msgstr "9 dernières années"
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
 "Respecter les dates de début et de fin de l'option de catégorie dans "
-"l'exportation de tables analytiques"
+"l'exportation des tableaux analytiques"
 
 msgid "Include zero data values in analytics tables"
 msgstr "Inclure des valeurs de données nulles dans les tableaux analytiques"
@@ -698,8 +699,8 @@ msgstr "Facteur de mise en cache"
 
 msgid "Org unit group set in facility map layers"
 msgstr ""
-"Groupe d'unités d'organisation défini dans les couches cartographiques des "
-"établissements de santé"
+"Ensemble de groupes d'unités d'organisation dans les couches cartographiques"
+" des établissements"
 
 msgid "Org unit level in facility map layers"
 msgstr ""
@@ -707,46 +708,46 @@ msgstr ""
 "établissements"
 
 msgid "Default basemap"
-msgstr "Basemap par défaut"
+msgstr "Fond de carte par défaut"
 
 msgid "OSM Light (default)"
 msgstr "OSM Light (par défaut)"
 
 msgid "OSM Detailed"
-msgstr "OSM détaillée"
+msgstr "OSM Detailed"
 
 msgid "Bing Road"
-msgstr "Bing Route"
+msgstr "Bing Road"
 
 msgid "Bing Dark"
-msgstr "Bing Sombre"
+msgstr "Bing Dark"
 
 msgid "Bing Aerial"
-msgstr "Bing Satellite"
+msgstr "Bing Aerial"
 
 msgid "Bing Aerial Labels"
-msgstr "Étiquettes Bing Satellite"
+msgstr "Bing Aerial Labels"
 
 msgid "Number of database server CPUs"
-msgstr "Nombre d'UC de serveur de base de données"
+msgstr "Nombre de processeurs dans le serveur de la base de données"
 
 msgid "Automatic (detect based on web server)"
 msgstr "Automatique (détection basée sur le serveur Web)"
 
 msgid "System notifications email address"
-msgstr "Adresse e-mail des notifications du système"
+msgstr "Adresse e-mail pour les notifications du système"
 
 msgid "Google Analytics (Universal Analytics) key"
 msgstr "Clé de Google Analytics (Universal Analytics)"
 
 msgid "Google Maps API key"
-msgstr "Clé API Google Maps"
+msgstr "Clé API de Google Maps"
 
 msgid "Bing Maps API key"
 msgstr "Clé API de Bing Maps"
 
 msgid "Azure Maps API key"
-msgstr ""
+msgstr "Clé API de Azure Maps"
 
 msgid "Application title"
 msgstr "Titre de l'application"
@@ -761,10 +762,10 @@ msgid "Application left-side footer"
 msgstr "Bas de page gauche de l'application"
 
 msgid "Application right-side footer"
-msgstr "Bas de page droit de l'application"
+msgstr "Bas de page droit de l’application"
 
 msgid "Style (android)"
-msgstr ""
+msgstr "Style (android)"
 
 msgid "Style"
 msgstr "Style"
@@ -788,7 +789,7 @@ msgid "Database language"
 msgstr "Langue de la base de données"
 
 msgid "Property to display in analysis modules"
-msgstr "Propriété à afficher dans les modules d'analyses"
+msgstr "Propriété à afficher dans les modules d'analyse"
 
 msgid "Short name"
 msgstr "Nom court"
@@ -834,8 +835,8 @@ msgstr "Logo personnalisé du menu supérieur"
 
 msgid "Allow users to switch dashboard items view type"
 msgstr ""
-"Permettre aux utilisateurs de changer le type de vue des éléments du tableau"
-" de bord"
+"Autoriser les utilisateurs à changer le type de vue des éléments du tableau "
+"de bord"
 
 msgid "Allow users to open dashboard items in relevant app"
 msgstr ""
@@ -874,13 +875,13 @@ msgid "Send me a test email"
 msgstr "M'envoyer un e-mail de test"
 
 msgid "Self registration account user role"
-msgstr "Rôle d'utilisateur des des comptes auto-inscrits"
+msgstr "Rôle d'utilisateur du compte auto-inscrit"
 
 msgid "Disable self registration"
 msgstr "Désactiver l'auto-inscription"
 
 msgid "Self registration account organisation unit"
-msgstr "L'unité d'organisation des comptes auto-inscrits"
+msgstr "Unité d'organisation du compte auto-inscrit"
 
 msgid "Do not require recaptcha for self registration"
 msgstr "Ne pas exiger de recaptcha pour l'auto-inscription"
@@ -900,13 +901,12 @@ msgid "Enforce verified emails"
 msgstr "Activer les e-mails vérifiés"
 
 msgid "Allow users to grant own user roles"
-msgstr ""
-"Autoriser les utilisateurs à attribuer leurs propres rôles d'utilisateur"
+msgstr "Autoriser les utilisateurs à s'attribuer des rôles d'utilisateur"
 
 msgid "Allow assigning object to related objects during add or update"
 msgstr ""
-"Permet l'attribution d'un objet à des objets liés pendant un ajout ou une "
-"mise à jour"
+"Autoriser l'attribution d'un objet à des objets associés pendant un ajout ou"
+" une mise à jour"
 
 msgid "Require user account password change"
 msgstr "Exiger le changement de mot de passe du compte utilisateur"

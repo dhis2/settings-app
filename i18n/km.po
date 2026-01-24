@@ -1,15 +1,16 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Philip Larsen Donnelly, 2024
 # Em Le <em.hispvietnam@gmail.com>, 2025
+# Kiry Heng, 2026
+# Viktor Varland <viktor@dhis2.org>, 2026
+# Philip Larsen Donnelly, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-05T20:30:30.881Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2025\n"
+"Last-Translator: Philip Larsen Donnelly, 2026\n"
 "Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,23 +102,17 @@ msgstr ""
 msgid "This client ID is already taken"
 msgstr ""
 
-msgid "Name"
-msgstr "ឈ្មោះ"
+msgid "Client ID"
+msgstr ""
 
 msgid "Required"
 msgstr "ទាមទារ"
-
-msgid "Client ID"
-msgstr ""
 
 msgid "Client Secret"
 msgstr ""
 
 msgid "Grant Types"
 msgstr ""
-
-msgid "Password"
-msgstr "ពាក្យ​សម្ងាត់"
 
 msgid "Refresh token"
 msgstr ""
@@ -176,10 +171,133 @@ msgstr ""
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Name"
+msgstr "ឈ្មោះ"
+
+msgid "Password"
+msgstr "ពាក្យ​សម្ងាត់"
+
+msgid "January"
+msgstr "មករា​"
+
+msgid "February"
+msgstr "កុម្ភៈ​"
+
+msgid "March"
+msgstr "មីនា​"
+
+msgid "April"
+msgstr "មេសា​"
+
+msgid "May"
+msgstr "ឧសភា​"
+
+msgid "June"
+msgstr "មិថុនា​"
+
+msgid "July"
+msgstr "កក្កដា​"
+
+msgid "August"
+msgstr "សីហា​"
+
+msgid "September"
+msgstr "កញ្ញា​"
+
+msgid "October"
+msgstr "តុលា​"
+
+msgid "November"
+msgstr "វិច្ឆិកា​"
+
+msgid "December"
+msgstr "ធ្នូ​"
+
+msgid "Monday"
+msgstr "ថ្ងៃ​ច័ន្ទ"
+
+msgid "Tuesday"
+msgstr "ថ្ងៃ​អង្គារ"
+
+msgid "Wednesday"
+msgstr "ថ្ងៃ​ពុធ"
+
+msgid "Thursday"
+msgstr "ថ្ងៃ​ព្រហស្បតិ៍"
+
+msgid "Friday"
+msgstr "ថ្ងៃ​សុក្រ"
+
+msgid "Saturday"
+msgstr "ថ្ងៃ​សៅរ៍"
+
+msgid "Sunday"
+msgstr "ថ្ងៃ​អាទិត្យ"
+
+msgid "Daily"
+msgstr "រាល់​ថ្ងៃ"
+
+msgid "Weekly"
+msgstr "រាល់​សប្ដាហ៍"
+
+msgid "Monthly"
+msgstr "រាល់​ខែ"
+
+msgid "Bi-monthly"
+msgstr "រាល់ពីរសប្តាហ៍"
+
+msgid "Yearly"
+msgstr "ប្រចាំឆ្នាំ"
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr "រាល់ត្រីមាស"
+
+msgid "Six-monthly"
+msgstr "រាល់ឆមាស"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "ថ្ងៃ"
+
+msgid "Weeks"
+msgstr "សប្ដាហ៏"
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr "ខែ"
+
+msgid "Bi-months"
+msgstr ""
+
+msgid "Quarters"
+msgstr "ត្រីមាស"
+
+msgid "Six months"
+msgstr "ឆមាស"
+
+msgid "Years"
+msgstr "ឆ្នាំ"
+
+msgid "Other"
+msgstr "ផ្សេង"
+
 msgid "Settings updated"
 msgstr ""
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
@@ -239,6 +357,9 @@ msgstr ""
 msgid "Scheduled jobs"
 msgstr ""
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr ""
 
@@ -290,6 +411,11 @@ msgstr ""
 msgid "Maximum number of SQL view records"
 msgstr ""
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr ""
 
@@ -299,29 +425,8 @@ msgstr ""
 msgid "Infrastructural period type"
 msgstr ""
 
-msgid "Daily"
-msgstr "រាល់​ថ្ងៃ"
-
-msgid "Weekly"
-msgstr "រាល់​សប្ដាហ៍"
-
-msgid "Monthly"
-msgstr "រាល់​ខែ"
-
-msgid "Bi-monthly"
-msgstr "រាល់ពីរសប្តាហ៍"
-
-msgid "Quarterly"
-msgstr "រាល់ត្រីមាស"
-
-msgid "Six-monthly"
-msgstr "រាល់ឆមាស"
-
 msgid "Six-monthly April"
 msgstr "ប្រចាំឆមាស​ពីខែមេសា"
-
-msgid "Yearly"
-msgstr "ប្រចាំឆ្នាំ"
 
 msgid "Financial-April"
 msgstr "ប្រចាំឆ្នាំហិរញ្ញវត្ថុពីខែមេសា"
@@ -476,17 +581,14 @@ msgstr ""
 msgid "Hide bimonthly periods"
 msgstr ""
 
-msgid "Financial year relative period start month"
+msgid "Period types"
 msgstr ""
 
-msgid "April"
-msgstr "មេសា​"
+msgid "Allowed period types"
+msgstr ""
 
-msgid "July"
-msgstr "កក្កដា​"
-
-msgid "October"
-msgstr "តុលា​"
+msgid "Financial year relative period start month"
+msgstr ""
 
 msgid "Cache strategy"
 msgstr ""
@@ -614,6 +716,9 @@ msgstr ""
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr ""
 
@@ -627,6 +732,9 @@ msgid "Application left-side footer"
 msgstr ""
 
 msgid "Application right-side footer"
+msgstr ""
+
+msgid "Style (android)"
 msgstr ""
 
 msgid "Style"
@@ -684,9 +792,6 @@ msgid "Login page template"
 msgstr ""
 
 msgid "Enable Global Shell"
-msgstr ""
-
-msgid "Global Shell App"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -878,4 +983,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""

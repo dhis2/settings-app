@@ -175,31 +175,31 @@ msgid "Password"
 msgstr "کلید رمز"
 
 msgid "January"
-msgstr ""
+msgstr "جنوری"
 
 msgid "February"
-msgstr ""
+msgstr "فبروری"
 
 msgid "March"
-msgstr ""
+msgstr "مارچ"
 
 msgid "April"
 msgstr "آپریل"
 
 msgid "May"
-msgstr ""
+msgstr "می"
 
 msgid "June"
-msgstr ""
+msgstr "جون"
 
 msgid "July"
 msgstr "جولای"
 
 msgid "August"
-msgstr ""
+msgstr "آگست"
 
 msgid "September"
-msgstr ""
+msgstr "سپتامبر"
 
 msgid "October"
 msgstr "اکتبر"
@@ -208,28 +208,28 @@ msgid "November"
 msgstr "نوامبر"
 
 msgid "December"
-msgstr ""
+msgstr "دسامبر"
 
 msgid "Monday"
-msgstr ""
+msgstr "دوشنبه"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "سه‌شنبه"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "چهارشنبه"
 
 msgid "Thursday"
 msgstr "پنج‌شنبه"
 
 msgid "Friday"
-msgstr ""
+msgstr "جمعه"
 
 msgid "Saturday"
 msgstr "شنبه"
 
 msgid "Sunday"
-msgstr ""
+msgstr "یک‌شنبه"
 
 msgid "Daily"
 msgstr "روزنه"
@@ -265,28 +265,28 @@ msgid "Days"
 msgstr "روزها"
 
 msgid "Weeks"
-msgstr ""
+msgstr "هفته ها"
 
 msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr ""
+msgstr "ماه ها"
 
 msgid "Bi-months"
-msgstr ""
+msgstr "دوبار در ماه"
 
 msgid "Quarters"
-msgstr ""
+msgstr "سه ماهه"
 
 msgid "Six months"
-msgstr ""
+msgstr "شپږ میاشتې"
 
 msgid "Years"
-msgstr ""
+msgstr "سالانه"
 
 msgid "Other"
-msgstr ""
+msgstr "دیگر"
 
 msgid "Settings updated"
 msgstr "تنظیمات تجدید گردید"
@@ -579,7 +579,7 @@ msgid "Hide bimonthly periods"
 msgstr ""
 
 msgid "Period types"
-msgstr ""
+msgstr "انواع دوره"
 
 msgid "Allowed period types"
 msgstr ""

@@ -1,6 +1,6 @@
 # 
 # Translators:
-# 晓东 林 <13981924470@126.com>, 2024
+# 晓东 林 <13981924470@126.com>, 2026
 # easylin <lin_xd@126.com>, 2026
 # 
 msgid ""
@@ -179,28 +179,28 @@ msgid "January"
 msgstr "01"
 
 msgid "February"
-msgstr ""
+msgstr "02"
 
 msgid "March"
-msgstr ""
+msgstr "03"
 
 msgid "April"
 msgstr "4月"
 
 msgid "May"
-msgstr ""
+msgstr "05"
 
 msgid "June"
-msgstr ""
+msgstr "06"
 
 msgid "July"
 msgstr "7月"
 
 msgid "August"
-msgstr ""
+msgstr "08"
 
 msgid "September"
-msgstr ""
+msgstr "09"
 
 msgid "October"
 msgstr "10月"
@@ -209,16 +209,16 @@ msgid "November"
 msgstr "11"
 
 msgid "December"
-msgstr ""
+msgstr "12"
 
 msgid "Monday"
 msgstr "周一"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "周二"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "周三"
 
 msgid "Thursday"
 msgstr "周四"
@@ -248,7 +248,7 @@ msgid "Yearly"
 msgstr "每年"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "双周"
 
 msgid "Quarterly"
 msgstr "季度"
@@ -266,28 +266,28 @@ msgid "Days"
 msgstr "天"
 
 msgid "Weeks"
-msgstr ""
+msgstr "周"
 
 msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr ""
+msgstr "月"
 
 msgid "Bi-months"
 msgstr "俩月"
 
 msgid "Quarters"
-msgstr ""
+msgstr "季节"
 
 msgid "Six months"
 msgstr ""
 
 msgid "Years"
-msgstr ""
+msgstr "年"
 
 msgid "Other"
-msgstr ""
+msgstr "其它"
 
 msgid "Settings updated"
 msgstr "设置已经更新"

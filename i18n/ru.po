@@ -1,14 +1,15 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2024
-# Philip Larsen Donnelly, 2024
+# Wanda <wanda@frontlineaids.org>, 2026
+# Viktor Varland <viktor@dhis2.org>, 2026
+# Philip Larsen Donnelly, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Philip Larsen Donnelly, 2026\n"
 "Language-Team: Russian (https://app.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -98,28 +99,22 @@ msgid "Metadata Versioning"
 msgstr "Управление версиями метаданных"
 
 msgid "This client ID is already taken"
-msgstr ""
-
-msgid "Name"
-msgstr "Название"
-
-msgid "Required"
-msgstr ""
+msgstr "Этот ID клиента уже занят"
 
 msgid "Client ID"
-msgstr ""
+msgstr "ID клиента"
+
+msgid "Required"
+msgstr "Обязательный"
 
 msgid "Client Secret"
-msgstr ""
+msgstr "Секрет клиента"
 
 msgid "Grant Types"
-msgstr ""
-
-msgid "Password"
-msgstr "Пароль"
+msgstr "Виды полномочий"
 
 msgid "Refresh token"
-msgstr ""
+msgstr "Обновить токен"
 
 msgid "Authorization code"
 msgstr "Код авторизации"
@@ -128,34 +123,34 @@ msgid "One URL per line"
 msgstr ""
 
 msgid "Redirect URIs"
-msgstr ""
+msgstr "Перенаправить URI"
 
 msgid "This field should contain a list of URLs"
 msgstr "Это поле должно содержать список URL"
 
 msgid "Create new OAuth2 Client"
-msgstr ""
+msgstr "Создать новый клиент OAuth2"
 
 msgid "Edit OAuth2 Client"
 msgstr "Редактировать клиент OAuth2"
 
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
 msgid "Cancel"
 msgstr "Отмена"
 
 msgid "There are currently no OAuth2 clients registered"
-msgstr ""
+msgstr "На данный момент нет зарегистрированных клиентов OAuth2"
 
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 msgid "Delete"
 msgstr "Удалить"
 
 msgid "OAuth2 client saved"
-msgstr ""
+msgstr "Клиент OAuth2 сохранен"
 
 msgid "Failed to save OAuth2 client"
 msgstr "Не удалось сохранить клиент OAuth2"
@@ -164,21 +159,144 @@ msgid "Add OAuth2 client"
 msgstr ""
 
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 msgid "No"
-msgstr ""
+msgstr "Нет"
 
 msgid "OAuth2 client deleted"
-msgstr ""
+msgstr "Клиент OAuth2 удален"
 
 msgid "Failed to delete OAuth2 client"
 msgstr ""
+
+msgid "Name"
+msgstr "Название"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "January"
+msgstr "Январь"
+
+msgid "February"
+msgstr "Февраль"
+
+msgid "March"
+msgstr "Март"
+
+msgid "April"
+msgstr "Апрель"
+
+msgid "May"
+msgstr "Май"
+
+msgid "June"
+msgstr "Июнь"
+
+msgid "July"
+msgstr "Июль"
+
+msgid "August"
+msgstr "Август"
+
+msgid "September"
+msgstr "Сентябрь"
+
+msgid "October"
+msgstr "Октябрь"
+
+msgid "November"
+msgstr "Ноябрь"
+
+msgid "December"
+msgstr "Декабрь"
+
+msgid "Monday"
+msgstr "Понедельник"
+
+msgid "Tuesday"
+msgstr "Вторник"
+
+msgid "Wednesday"
+msgstr "Среда"
+
+msgid "Thursday"
+msgstr "Четверг"
+
+msgid "Friday"
+msgstr "Пятница"
+
+msgid "Saturday"
+msgstr "Суббота"
+
+msgid "Sunday"
+msgstr "Воскресенье"
+
+msgid "Daily"
+msgstr "Ежедневно"
+
+msgid "Weekly"
+msgstr "Еженедельно"
+
+msgid "Monthly"
+msgstr "Ежемесячно"
+
+msgid "Bi-monthly"
+msgstr "Раз в два месяца"
+
+msgid "Yearly"
+msgstr "Ежегодно"
+
+msgid "Bi-weekly"
+msgstr "Каждые две недели"
+
+msgid "Quarterly"
+msgstr "Ежеквартально"
+
+msgid "Six-monthly"
+msgstr "Раз в полугодие"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "Дни"
+
+msgid "Weeks"
+msgstr "Недели"
+
+msgid "Bi-weeks"
+msgstr "Двухнедельные промежутки"
+
+msgid "Months"
+msgstr "Месяцы"
+
+msgid "Bi-months"
+msgstr "Двухмесячный период"
+
+msgid "Quarters"
+msgstr "Кварталы"
+
+msgid "Six months"
+msgstr "Полугодие"
+
+msgid "Years"
+msgstr "Годы"
+
+msgid "Other"
+msgstr "Другое"
 
 msgid "Settings updated"
 msgstr "Настройки обновлены"
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
@@ -238,6 +356,9 @@ msgstr "Настройки синхронизации"
 msgid "Scheduled jobs"
 msgstr ""
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr "Клиенты OAuth2"
 
@@ -266,6 +387,14 @@ msgstr "Этот настройка может быть переопределе
 msgid "No options"
 msgstr ""
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr "Настройки не соответствуют поисковому запросу"
 
@@ -281,6 +410,11 @@ msgstr "Неограничено"
 msgid "Maximum number of SQL view records"
 msgstr "Максимальное количество строк представления SQL"
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr "Инфраструктурные показатели"
 
@@ -290,29 +424,8 @@ msgstr "Инфраструктурные элементы данных"
 msgid "Infrastructural period type"
 msgstr "Инфраструктурные типы периодов"
 
-msgid "Daily"
-msgstr "Ежедневно"
-
-msgid "Weekly"
-msgstr "Еженедельно"
-
-msgid "Monthly"
-msgstr "Ежемесячно"
-
-msgid "Bi-monthly"
-msgstr "Раз в два месяца"
-
-msgid "Quarterly"
-msgstr "Ежеквартально"
-
-msgid "Six-monthly"
-msgstr "Раз в полугодие"
-
 msgid "Six-monthly April"
 msgstr "Полугодовой-Апрель"
-
-msgid "Yearly"
-msgstr "Ежегодно"
 
 msgid "Financial-April"
 msgstr "Финансовый-апрель"
@@ -467,17 +580,14 @@ msgstr "Скрыть месячные периоды"
 msgid "Hide bimonthly periods"
 msgstr "Скрыть два месячных периода"
 
+msgid "Period types"
+msgstr "Типы периодов"
+
+msgid "Allowed period types"
+msgstr ""
+
 msgid "Financial year relative period start month"
 msgstr "Начало mесяца относительного периода финансового года"
-
-msgid "April"
-msgstr "Апрель"
-
-msgid "July"
-msgstr "Июль"
-
-msgid "October"
-msgstr "Октябрь"
 
 msgid "Cache strategy"
 msgstr "Стратегия кеширования"
@@ -608,6 +718,9 @@ msgstr "API Ключ Google Maps"
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr "Название анкеты"
 
@@ -622,6 +735,9 @@ msgstr "Левый футер (колонтитул) приложения"
 
 msgid "Application right-side footer"
 msgstr "Правый футер (колонтитул) приложения"
+
+msgid "Style (android)"
+msgstr ""
 
 msgid "Style"
 msgstr "Стиль"
@@ -666,15 +782,18 @@ msgid "Login page theme"
 msgstr ""
 
 msgid "Default"
-msgstr ""
+msgstr "По умолчанию"
 
 msgid "Sidebar"
 msgstr ""
 
 msgid "Custom"
-msgstr ""
+msgstr "Пользователь"
 
 msgid "Login page template"
+msgstr ""
+
+msgid "Enable Global Shell"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -735,6 +854,12 @@ msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
 "Временно заблокировать учетную запись пользователя после нескольких "
 "неудачных попыток входа"
+
+msgid "Enable embedded dashboards"
+msgstr ""
+
+msgid "Enforce verified emails"
+msgstr ""
 
 msgid "Allow users to grant own user roles"
 msgstr "Разрешить пользователям назначать собственные роли"
@@ -870,4 +995,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""

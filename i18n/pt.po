@@ -1,18 +1,19 @@
 # 
 # Translators:
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2024
 # Sheila André <sandre@saudigitus.org>, 2024
-# Philip Larsen Donnelly, 2024
-# Viktor Varland <viktor@dhis2.org>, 2024
-# Ge Joao <gsimango@saudigitus.org>, 2024
 # Helton Dias, 2024
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2026
+# Ge Joao <gsimango@saudigitus.org>, 2026
+# Shelsea Chumaio, 2026
+# Viktor Varland <viktor@dhis2.org>, 2026
+# Philip Larsen Donnelly, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-01-17T10:18:20.401Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Helton Dias, 2024\n"
+"Last-Translator: Philip Larsen Donnelly, 2026\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -104,23 +105,17 @@ msgstr "Versão de metadados"
 msgid "This client ID is already taken"
 msgstr "Este ID do cliente já foi usado"
 
-msgid "Name"
-msgstr "Nome"
+msgid "Client ID"
+msgstr "ID do cliente"
 
 msgid "Required"
 msgstr "Requerido"
-
-msgid "Client ID"
-msgstr "ID do cliente"
 
 msgid "Client Secret"
 msgstr "Segredo do cliente"
 
 msgid "Grant Types"
 msgstr "Tipos de Subsídios"
-
-msgid "Password"
-msgstr "Senha"
 
 msgid "Refresh token"
 msgstr "Actualizar token"
@@ -179,10 +174,133 @@ msgstr "Cliente OAuth2 excluído"
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Name"
+msgstr "Nome"
+
+msgid "Password"
+msgstr "Senha"
+
+msgid "January"
+msgstr "Janeiro"
+
+msgid "February"
+msgstr "Fevereiro"
+
+msgid "March"
+msgstr "Março"
+
+msgid "April"
+msgstr "Abril"
+
+msgid "May"
+msgstr "Maio"
+
+msgid "June"
+msgstr "Junho"
+
+msgid "July"
+msgstr "Julho"
+
+msgid "August"
+msgstr "Agosto"
+
+msgid "September"
+msgstr "Setembro"
+
+msgid "October"
+msgstr "Outubro"
+
+msgid "November"
+msgstr "Novembro"
+
+msgid "December"
+msgstr "Dezembro"
+
+msgid "Monday"
+msgstr "Segunda-Feira"
+
+msgid "Tuesday"
+msgstr "Terça-Feira"
+
+msgid "Wednesday"
+msgstr "Quarta-Feira"
+
+msgid "Thursday"
+msgstr "Quinta-Feira"
+
+msgid "Friday"
+msgstr "Sexta-Feira"
+
+msgid "Saturday"
+msgstr "Sábado"
+
+msgid "Sunday"
+msgstr "Domingo"
+
+msgid "Daily"
+msgstr "Diário"
+
+msgid "Weekly"
+msgstr "Semanal"
+
+msgid "Monthly"
+msgstr "Mensal"
+
+msgid "Bi-monthly"
+msgstr "Bimensal"
+
+msgid "Yearly"
+msgstr "Anualmente"
+
+msgid "Bi-weekly"
+msgstr "Quinzenal"
+
+msgid "Quarterly"
+msgstr "Trimestral"
+
+msgid "Six-monthly"
+msgstr "Semestral"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "Dias"
+
+msgid "Weeks"
+msgstr "Semanas"
+
+msgid "Bi-weeks"
+msgstr "Quinzena"
+
+msgid "Months"
+msgstr "Meses"
+
+msgid "Bi-months"
+msgstr "Bimestre"
+
+msgid "Quarters"
+msgstr "Trimestres"
+
+msgid "Six months"
+msgstr "Semestre"
+
+msgid "Years"
+msgstr "Anos"
+
+msgid "Other"
+msgstr "Outro"
+
 msgid "Settings updated"
 msgstr "Configurações actualizadas"
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
@@ -242,6 +360,9 @@ msgstr "Configurações de sincronização"
 msgid "Scheduled jobs"
 msgstr "Trabalhos agendados"
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr "Clientes da OAuth2"
 
@@ -270,6 +391,14 @@ msgstr "Essa configuração pode ser substituída pelas configurações do usuá
 msgid "No options"
 msgstr "Sem opções"
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr "Nenhuma configuração corresponde ao termo de pesquisa"
 
@@ -285,6 +414,11 @@ msgstr "Ilimitado"
 msgid "Maximum number of SQL view records"
 msgstr "Número máximo de registros de visualização SQL"
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr "Indicadores de infraestrutura"
 
@@ -294,29 +428,8 @@ msgstr "Elementos de Dados de Infra-estrutura"
 msgid "Infrastructural period type"
 msgstr "Tipo de período de infra-estrutura"
 
-msgid "Daily"
-msgstr "Diário"
-
-msgid "Weekly"
-msgstr "Semanal"
-
-msgid "Monthly"
-msgstr "Mensal"
-
-msgid "Bi-monthly"
-msgstr "Bimensal"
-
-msgid "Quarterly"
-msgstr "Trimestral"
-
-msgid "Six-monthly"
-msgstr "Semestral"
-
 msgid "Six-monthly April"
 msgstr "Semestral a partir de Abril"
-
-msgid "Yearly"
-msgstr "Anualmente"
 
 msgid "Financial-April"
 msgstr "Financeiro-Abril"
@@ -471,17 +584,14 @@ msgstr "Ocultar períodos mensais"
 msgid "Hide bimonthly periods"
 msgstr "Ocultar períodos bimestrais"
 
+msgid "Period types"
+msgstr "Tipos de períodos"
+
+msgid "Allowed period types"
+msgstr ""
+
 msgid "Financial year relative period start month"
 msgstr "Mês do início do período relativo do exercício"
-
-msgid "April"
-msgstr "Abril"
-
-msgid "July"
-msgstr "Julho"
-
-msgid "October"
-msgstr "Outubro"
 
 msgid "Cache strategy"
 msgstr "Estratégia de cache"
@@ -611,6 +721,9 @@ msgstr "Chave da API do Google Maps"
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr "Título da aplicação"
 
@@ -625,6 +738,9 @@ msgstr "Rodapé esquerdo do aplicativo"
 
 msgid "Application right-side footer"
 msgstr "Rodapé direito do aplicativo"
+
+msgid "Style (android)"
+msgstr ""
 
 msgid "Style"
 msgstr "Estilo"
@@ -679,6 +795,9 @@ msgid "Custom"
 msgstr "Customizar "
 
 msgid "Login page template"
+msgstr ""
+
+msgid "Enable Global Shell"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -739,6 +858,9 @@ msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
 "Bloquear temporariamente a conta de usuário após várias tentativas falhas de"
 " acesso"
+
+msgid "Enable embedded dashboards"
+msgstr ""
 
 msgid "Enforce verified emails"
 msgstr ""
@@ -878,4 +1000,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""
