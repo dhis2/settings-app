@@ -10,13 +10,14 @@
 # Viktor Varland <viktor@dhis2.org>, 2025
 # Philip Larsen Donnelly, 2025
 # Esther Tokouli, 2025
+# Cyrille Kabrane, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-05-30T13:11:40.739Z\n"
 "PO-Revision-Date: 2022-10-15 22:32+0000\n"
-"Last-Translator: Esther Tokouli, 2025\n"
+"Last-Translator: Cyrille Kabrane, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -107,7 +108,7 @@ msgid "Metadata Versioning"
 msgstr "Gestion des versions des métadonnées"
 
 msgid "This client ID is already taken"
-msgstr "Cet identifiant client est déjà pris"
+msgstr "Cet identifiant client est déjà utilisé"
 
 msgid "Name"
 msgstr "Nom"
@@ -284,7 +285,7 @@ msgid "Unlimited"
 msgstr "Illimité"
 
 msgid "Maximum number of SQL view records"
-msgstr "Nombre maximum d'enregistrements de vue SQL"
+msgstr "Nombre maximum d'enregistrements de vues SQL"
 
 msgid "Infrastructural indicators"
 msgstr "Indicateurs d'infrastructure"
@@ -347,7 +348,7 @@ msgid "Data analysis std dev factor"
 msgstr "Facteur d'écart type dans l'analyse des données"
 
 msgid "Phone number area code"
-msgstr "Code zone du numéro de téléphone"
+msgstr "Indicatif régional du numéro de téléphone"
 
 msgid "Enable multi-organisation unit forms"
 msgstr "Autoriser les formulaires multi-unités d'organisation"
@@ -357,7 +358,7 @@ msgstr "Acceptation requise avant approbation"
 
 msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
-"Recueillir des statistiques d'objets analytiques dans les vues de tableau de"
+"Recueillir des statistiques d'objets analytiques dans les vues du tableau de"
 " bord"
 
 msgid "Include passive dashboard views in usage analytics statistics"
@@ -501,10 +502,10 @@ msgid "Cache for 30 minutes"
 msgstr "Cache pendant 30 minutes"
 
 msgid "Cache for one hour"
-msgstr "Cache pendant une heure"
+msgstr "Cache pour une heure"
 
 msgid "Cache until 6AM tomorrow"
-msgstr "Cache jusqu'à 6 heures demain matin"
+msgstr "Cache jusqu'à 06h00 demain matin"
 
 msgid "Cache for two weeks"
 msgstr "Cache pour deux semaines"
