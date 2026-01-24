@@ -1,8 +1,8 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2024
-# 晓东 林 <13981924470@126.com>, 2024
+# 晓东 林 <13981924470@126.com>, 2026
 # Philip Larsen Donnelly, 2026
+# Viktor Varland <viktor@dhis2.org>, 2026
 # easylin <lin_xd@126.com>, 2026
 # 
 msgid ""
@@ -178,31 +178,31 @@ msgid "Password"
 msgstr "口令"
 
 msgid "January"
-msgstr ""
+msgstr "一月"
 
 msgid "February"
-msgstr ""
+msgstr "二月"
 
 msgid "March"
-msgstr ""
+msgstr "三月"
 
 msgid "April"
 msgstr "4月"
 
 msgid "May"
-msgstr ""
+msgstr "五月"
 
 msgid "June"
-msgstr ""
+msgstr "六月"
 
 msgid "July"
 msgstr "7月"
 
 msgid "August"
-msgstr ""
+msgstr "八月"
 
 msgid "September"
-msgstr ""
+msgstr "九月"
 
 msgid "October"
 msgstr "10月"
@@ -211,28 +211,28 @@ msgid "November"
 msgstr "十一月"
 
 msgid "December"
-msgstr ""
+msgstr "十二月"
 
 msgid "Monday"
-msgstr ""
+msgstr "周一"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "周二"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "周三"
 
 msgid "Thursday"
 msgstr "周四"
 
 msgid "Friday"
-msgstr ""
+msgstr "周五"
 
 msgid "Saturday"
 msgstr "周六"
 
 msgid "Sunday"
-msgstr ""
+msgstr "周日"
 
 msgid "Daily"
 msgstr "每日"
@@ -250,7 +250,7 @@ msgid "Yearly"
 msgstr "每年"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "两周"
 
 msgid "Quarterly"
 msgstr "季度"
@@ -259,37 +259,37 @@ msgid "Six-monthly"
 msgstr "六个月"
 
 msgid "Weekly (start {{day}})"
-msgstr ""
+msgstr "每周（从{{day}} 开始）"
 
 msgid "Financial year (start {{month}})"
-msgstr ""
+msgstr "财政年度（始于{{month}} ）"
 
 msgid "Days"
 msgstr "日"
 
 msgid "Weeks"
-msgstr ""
+msgstr "星期"
 
 msgid "Bi-weeks"
-msgstr ""
+msgstr "双周"
 
 msgid "Months"
-msgstr ""
+msgstr "月"
 
 msgid "Bi-months"
-msgstr ""
+msgstr "双月"
 
 msgid "Quarters"
-msgstr ""
+msgstr "四分之一"
 
 msgid "Six months"
-msgstr ""
+msgstr "六个月"
 
 msgid "Years"
-msgstr ""
+msgstr "岁"
 
 msgid "Other"
-msgstr ""
+msgstr "其它"
 
 msgid "Settings updated"
 msgstr "设置已经更新"
@@ -298,7 +298,7 @@ msgid "There was a problem updating settings. Changes have not been saved."
 msgstr "更新设置时出现问题。尚未保存更改。"
 
 msgid "Period types available in analytics apps"
-msgstr ""
+msgstr "分析应用程序中可用的周期类型"
 
 msgid "General"
 msgstr "常规"
@@ -358,7 +358,7 @@ msgid "Scheduled jobs"
 msgstr "调度的作业"
 
 msgid "Notification settings"
-msgstr ""
+msgstr "通知设置"
 
 msgid "OAuth2 Clients"
 msgstr "OAuth2 客户"
@@ -414,7 +414,7 @@ msgstr "SQL视图最大记录数量"
 msgid ""
 "Maximum number of tracked entity records to fetch from database (enter 0 for"
 " unlimited)"
-msgstr ""
+msgstr "从数据库获取跟踪实体 记录的最大数量（输入 0 表示无限制）"
 
 msgid "Infrastructural indicators"
 msgstr "基础指标"
@@ -582,10 +582,10 @@ msgid "Hide bimonthly periods"
 msgstr "隐藏两个月期间"
 
 msgid "Period types"
-msgstr ""
+msgstr "周期类型"
 
 msgid "Allowed period types"
-msgstr ""
+msgstr "允许的时段类型"
 
 msgid "Financial year relative period start month"
 msgstr "财政年相对期间起始月份"
@@ -717,7 +717,7 @@ msgid "Bing Maps API key"
 msgstr "Bing Maps API密钥"
 
 msgid "Azure Maps API key"
-msgstr ""
+msgstr "Azure 地图 API 密钥"
 
 msgid "Application title"
 msgstr "应用标题"
@@ -735,7 +735,7 @@ msgid "Application right-side footer"
 msgstr "应用右页脚"
 
 msgid "Style (android)"
-msgstr ""
+msgstr "风格（安卓）"
 
 msgid "Style"
 msgstr "风格"
@@ -986,22 +986,22 @@ msgid ""
 msgstr "作业执行间隔（秒），低于该间隔，作业将以调试（而不是信息）级别进行记录 (20+)"
 
 msgid "Log level"
-msgstr ""
+msgstr "日志级别"
 
 msgid "Max messages per job"
-msgstr ""
+msgstr "每个任务的最大信息量"
 
 msgid "Max age in days"
-msgstr ""
+msgstr "最大年龄（天数）"
 
 msgid "Max jobs per type"
-msgstr ""
+msgstr "每个类型的最大作业量"
 
 msgid "Enable Gist Overview"
-msgstr ""
+msgstr "启用 Gist 概述"
 
 msgid "Clean idle jobs after (in milliseconds)"
-msgstr ""
+msgstr "之后清理空闲工作（毫秒）"
 
 msgid "Use centroids for organisation unit polygons in event analytics"
-msgstr ""
+msgstr "在事件 分析中使用中心点组织单位多边形"

@@ -177,31 +177,31 @@ msgid "Password"
 msgstr "Parol"
 
 msgid "January"
-msgstr ""
+msgstr "Yanvar"
 
 msgid "February"
-msgstr ""
+msgstr "Fevral"
 
 msgid "March"
-msgstr ""
+msgstr "Mart"
 
 msgid "April"
 msgstr "Аprel"
 
 msgid "May"
-msgstr ""
+msgstr "May"
 
 msgid "June"
-msgstr ""
+msgstr "Iyun"
 
 msgid "July"
 msgstr "Iyul"
 
 msgid "August"
-msgstr ""
+msgstr "Аvgust"
 
 msgid "September"
-msgstr ""
+msgstr "Sentyabr"
 
 msgid "October"
 msgstr "Oktyabr"
@@ -210,28 +210,28 @@ msgid "November"
 msgstr "Noyabr"
 
 msgid "December"
-msgstr ""
+msgstr "Dekabr"
 
 msgid "Monday"
-msgstr ""
+msgstr "Dushanba"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "Seshanba"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "Chorshanba"
 
 msgid "Thursday"
 msgstr "Payshanba"
 
 msgid "Friday"
-msgstr ""
+msgstr "Juma"
 
 msgid "Saturday"
 msgstr "Shanba"
 
 msgid "Sunday"
-msgstr ""
+msgstr "Yakshanba"
 
 msgid "Daily"
 msgstr "Кунлик"
@@ -249,7 +249,7 @@ msgid "Yearly"
 msgstr "Йиллик"
 
 msgid "Bi-weekly"
-msgstr ""
+msgstr "Juft hafta"
 
 msgid "Quarterly"
 msgstr "Ҳар квартал"
@@ -267,28 +267,28 @@ msgid "Days"
 msgstr "Kunlar"
 
 msgid "Weeks"
-msgstr ""
+msgstr "Haftalar"
 
 msgid "Bi-weeks"
-msgstr ""
+msgstr "Juft haftalar"
 
 msgid "Months"
-msgstr ""
+msgstr "Oylar"
 
 msgid "Bi-months"
-msgstr ""
+msgstr "Juft oy"
 
 msgid "Quarters"
-msgstr ""
+msgstr "Kvartal"
 
 msgid "Six months"
-msgstr ""
+msgstr "Olti oy"
 
 msgid "Years"
-msgstr ""
+msgstr "Yillar"
 
 msgid "Other"
-msgstr ""
+msgstr "Boshqa"
 
 msgid "Settings updated"
 msgstr "Sozlamalar yangilandi"

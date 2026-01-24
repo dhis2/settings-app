@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2024
-# Viktor Varland <viktor@dhis2.org>, 2024
+# Viktor Varland <viktor@dhis2.org>, 2026
+# Philip Larsen Donnelly, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
+"Last-Translator: Philip Larsen Donnelly, 2026\n"
 "Language-Team: Urdu (https://app.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,23 +100,17 @@ msgstr "میٹا ڈیٹا ڈیٹا بیسنگ"
 msgid "This client ID is already taken"
 msgstr "اس کلائنٹ کی شناخت پہلے ہی لی گئی ہے"
 
-msgid "Name"
-msgstr "ÙØ§Ù"
+msgid "Client ID"
+msgstr "کلائنٹ کی شناخت"
 
 msgid "Required"
 msgstr "لازمی"
-
-msgid "Client ID"
-msgstr "کلائنٹ کی شناخت"
 
 msgid "Client Secret"
 msgstr "کلائنٹ خفیہ"
 
 msgid "Grant Types"
 msgstr "گرانٹ کی اقسام"
-
-msgid "Password"
-msgstr "پاسورڈ"
 
 msgid "Refresh token"
 msgstr "ٹوکن تازہ کریں"
@@ -175,10 +169,133 @@ msgstr "OAuth2 کلائنٹ کو خارج کر دیا گیا"
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Name"
+msgstr "ÙØ§Ù"
+
+msgid "Password"
+msgstr "پاسورڈ"
+
+msgid "January"
+msgstr "جنوری"
+
+msgid "February"
+msgstr "فروری"
+
+msgid "March"
+msgstr "مارچ"
+
+msgid "April"
+msgstr "اپریل"
+
+msgid "May"
+msgstr "مئی"
+
+msgid "June"
+msgstr "جون"
+
+msgid "July"
+msgstr "جولائی"
+
+msgid "August"
+msgstr "اگست"
+
+msgid "September"
+msgstr "ستمبر"
+
+msgid "October"
+msgstr "اکتوبر"
+
+msgid "November"
+msgstr "نومبر"
+
+msgid "December"
+msgstr "دسمبر"
+
+msgid "Monday"
+msgstr "سوموار"
+
+msgid "Tuesday"
+msgstr "منگل"
+
+msgid "Wednesday"
+msgstr "بدھ"
+
+msgid "Thursday"
+msgstr "جمعرات"
+
+msgid "Friday"
+msgstr "جمعہ"
+
+msgid "Saturday"
+msgstr "ہفتہ"
+
+msgid "Sunday"
+msgstr "اتوار"
+
+msgid "Daily"
+msgstr "روزانہ"
+
+msgid "Weekly"
+msgstr "ہفتہ وار"
+
+msgid "Monthly"
+msgstr "ماہانہ"
+
+msgid "Bi-monthly"
+msgstr "دو ماہی"
+
+msgid "Yearly"
+msgstr "سالانہ"
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr "سہ ماہی"
+
+msgid "Six-monthly"
+msgstr "چھ ماہی"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "دن"
+
+msgid "Weeks"
+msgstr "ہفتوں"
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr "مہینے"
+
+msgid "Bi-months"
+msgstr "دو ماہ"
+
+msgid "Quarters"
+msgstr "چوتھائی"
+
+msgid "Six months"
+msgstr "چھ مہینے"
+
+msgid "Years"
+msgstr "سال"
+
+msgid "Other"
+msgstr "Ø¯ÛÚ¯Ø±"
+
 msgid "Settings updated"
 msgstr "ØªØ±ØªÛØ¨Ø§Øª Ø§Ù¾ ÚÛÙ¹"
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
@@ -238,6 +355,9 @@ msgstr "ہم آہنگی کی ترجیحات"
 msgid "Scheduled jobs"
 msgstr ""
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr "OAuth2 گاہکوں"
 
@@ -266,6 +386,14 @@ msgstr "یہ ترتیب صارف کی ترتیبات کی طرف سے ختم ہ�
 msgid "No options"
 msgstr ""
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr "تلاش کی اصطلاح سے مل کر کوئی ترتیبات نہیں ہیں"
 
@@ -281,6 +409,11 @@ msgstr "لا محدود"
 msgid "Maximum number of SQL view records"
 msgstr ""
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr "بنیادی ڈھانچے"
 
@@ -290,29 +423,8 @@ msgstr "بنیادی ڈھانچے کے اعداد و شمار"
 msgid "Infrastructural period type"
 msgstr "انفراسٹرکچر کی مدت کی قسم"
 
-msgid "Daily"
-msgstr "روزانہ"
-
-msgid "Weekly"
-msgstr "ہفتہ وار"
-
-msgid "Monthly"
-msgstr "ماہانہ"
-
-msgid "Bi-monthly"
-msgstr "دو ماہی"
-
-msgid "Quarterly"
-msgstr "سہ ماہی"
-
-msgid "Six-monthly"
-msgstr "چھ ماہی"
-
 msgid "Six-monthly April"
 msgstr "چھ ماہی اپریل"
-
-msgid "Yearly"
-msgstr "سالانہ"
 
 msgid "Financial-April"
 msgstr "مالیاتی۔اپریل"
@@ -467,17 +579,14 @@ msgstr ""
 msgid "Hide bimonthly periods"
 msgstr ""
 
+msgid "Period types"
+msgstr ""
+
+msgid "Allowed period types"
+msgstr ""
+
 msgid "Financial year relative period start month"
 msgstr "مالی سال کا رشتہ دار دورہ شروع ہوتا ہے"
-
-msgid "April"
-msgstr "اپریل"
-
-msgid "July"
-msgstr "جولائی"
-
-msgid "October"
-msgstr "اکتوبر"
 
 msgid "Cache strategy"
 msgstr "کیش کی حکمت عملی"
@@ -609,6 +718,9 @@ msgstr "Google Maps API کی چابی"
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr "درخواست کا عنوان"
 
@@ -623,6 +735,9 @@ msgstr "درخواست بائیں جانب کی فوٹر"
 
 msgid "Application right-side footer"
 msgstr "اطلاق دائیں طرف کے فوٹر"
+
+msgid "Style (android)"
+msgstr ""
 
 msgid "Style"
 msgstr "سٹائل"
@@ -676,6 +791,9 @@ msgid "Custom"
 msgstr "مرضی کے مطابق"
 
 msgid "Login page template"
+msgstr ""
+
+msgid "Enable Global Shell"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -736,6 +854,12 @@ msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
 "ایک سے زیادہ ناکام لاگ ان کی کوششوں کے بعد عارضی طور پر صارف کا اکاؤنٹ بند "
 "کریں"
+
+msgid "Enable embedded dashboards"
+msgstr ""
+
+msgid "Enforce verified emails"
+msgstr ""
 
 msgid "Allow users to grant own user roles"
 msgstr "صارفین کو اپنا صارف کردار ادا کرنے کی اجازت دیں"
@@ -866,4 +990,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""

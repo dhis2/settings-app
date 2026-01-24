@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2021
 # Yara Elkady, 2025
+# Philip Larsen Donnelly, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-03-05T20:30:30.881Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Yara Elkady, 2025\n"
+"Last-Translator: Philip Larsen Donnelly, 2026\n"
 "Language-Team: Arabic (Egypt) (https://app.transifex.com/hisp-uio/teams/100509/ar_EG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,22 +100,16 @@ msgstr ""
 msgid "This client ID is already taken"
 msgstr ""
 
-msgid "Name"
+msgid "Client ID"
 msgstr ""
 
 msgid "Required"
-msgstr ""
-
-msgid "Client ID"
 msgstr ""
 
 msgid "Client Secret"
 msgstr ""
 
 msgid "Grant Types"
-msgstr ""
-
-msgid "Password"
 msgstr ""
 
 msgid "Refresh token"
@@ -175,10 +169,133 @@ msgstr ""
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Name"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "January"
+msgstr "يناير"
+
+msgid "February"
+msgstr "فبراير"
+
+msgid "March"
+msgstr "مارس"
+
+msgid "April"
+msgstr "ابريل"
+
+msgid "May"
+msgstr "مايو"
+
+msgid "June"
+msgstr "يونيو"
+
+msgid "July"
+msgstr "يوليو"
+
+msgid "August"
+msgstr "أغسطس"
+
+msgid "September"
+msgstr "سبتمبر"
+
+msgid "October"
+msgstr "اكتوبر"
+
+msgid "November"
+msgstr "نوفمبر"
+
+msgid "December"
+msgstr "ديسمبر"
+
+msgid "Monday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Daily"
+msgstr ""
+
+msgid "Weekly"
+msgstr ""
+
+msgid "Monthly"
+msgstr ""
+
+msgid "Bi-monthly"
+msgstr ""
+
+msgid "Yearly"
+msgstr ""
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr ""
+
+msgid "Six-monthly"
+msgstr ""
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr ""
+
+msgid "Weeks"
+msgstr ""
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr ""
+
+msgid "Bi-months"
+msgstr ""
+
+msgid "Quarters"
+msgstr ""
+
+msgid "Six months"
+msgstr ""
+
+msgid "Years"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
 msgid "Settings updated"
 msgstr ""
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
@@ -238,6 +355,9 @@ msgstr ""
 msgid "Scheduled jobs"
 msgstr ""
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr ""
 
@@ -289,6 +409,11 @@ msgstr ""
 msgid "Maximum number of SQL view records"
 msgstr ""
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr ""
 
@@ -298,28 +423,7 @@ msgstr ""
 msgid "Infrastructural period type"
 msgstr ""
 
-msgid "Daily"
-msgstr ""
-
-msgid "Weekly"
-msgstr ""
-
-msgid "Monthly"
-msgstr ""
-
-msgid "Bi-monthly"
-msgstr ""
-
-msgid "Quarterly"
-msgstr ""
-
-msgid "Six-monthly"
-msgstr ""
-
 msgid "Six-monthly April"
-msgstr ""
-
-msgid "Yearly"
 msgstr ""
 
 msgid "Financial-April"
@@ -475,17 +579,14 @@ msgstr ""
 msgid "Hide bimonthly periods"
 msgstr ""
 
-msgid "Financial year relative period start month"
+msgid "Period types"
 msgstr ""
 
-msgid "April"
-msgstr "ابريل"
+msgid "Allowed period types"
+msgstr ""
 
-msgid "July"
-msgstr "يوليو"
-
-msgid "October"
-msgstr "اكتوبر"
+msgid "Financial year relative period start month"
+msgstr ""
 
 msgid "Cache strategy"
 msgstr ""
@@ -613,6 +714,9 @@ msgstr ""
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr ""
 
@@ -626,6 +730,9 @@ msgid "Application left-side footer"
 msgstr ""
 
 msgid "Application right-side footer"
+msgstr ""
+
+msgid "Style (android)"
 msgstr ""
 
 msgid "Style"
@@ -683,9 +790,6 @@ msgid "Login page template"
 msgstr ""
 
 msgid "Enable Global Shell"
-msgstr ""
-
-msgid "Global Shell App"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -877,4 +981,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""

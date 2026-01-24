@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Philip Larsen Donnelly, 2024
+# Viktor Varland <viktor@dhis2.org>, 2026
+# Philip Larsen Donnelly, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Philip Larsen Donnelly, 2026\n"
 "Language-Team: Tajik (https://app.transifex.com/hisp-uio/teams/100509/tg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,23 +100,17 @@ msgstr ""
 msgid "This client ID is already taken"
 msgstr ""
 
-msgid "Name"
-msgstr "Ном"
+msgid "Client ID"
+msgstr ""
 
 msgid "Required"
 msgstr "Ҳатмӣ"
-
-msgid "Client ID"
-msgstr ""
 
 msgid "Client Secret"
 msgstr ""
 
 msgid "Grant Types"
 msgstr ""
-
-msgid "Password"
-msgstr "Парол"
 
 msgid "Refresh token"
 msgstr ""
@@ -175,10 +169,133 @@ msgstr ""
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Name"
+msgstr "Ном"
+
+msgid "Password"
+msgstr "Парол"
+
+msgid "January"
+msgstr "Январ"
+
+msgid "February"
+msgstr "Феврал"
+
+msgid "March"
+msgstr "Март"
+
+msgid "April"
+msgstr "Апрел"
+
+msgid "May"
+msgstr "Май"
+
+msgid "June"
+msgstr "Июн"
+
+msgid "July"
+msgstr "Июл"
+
+msgid "August"
+msgstr "Август"
+
+msgid "September"
+msgstr "Сентябр"
+
+msgid "October"
+msgstr "Октябр"
+
+msgid "November"
+msgstr "Ноябр"
+
+msgid "December"
+msgstr "Декабр"
+
+msgid "Monday"
+msgstr "Душанбе"
+
+msgid "Tuesday"
+msgstr "Сешанбе"
+
+msgid "Wednesday"
+msgstr "Чоршанбе"
+
+msgid "Thursday"
+msgstr "Панҷшанбе"
+
+msgid "Friday"
+msgstr "Ҷумъа"
+
+msgid "Saturday"
+msgstr "Шанбе"
+
+msgid "Sunday"
+msgstr "Якшанбе"
+
+msgid "Daily"
+msgstr "Ҳаррӯза"
+
+msgid "Weekly"
+msgstr "Ҳафтаина"
+
+msgid "Monthly"
+msgstr "Моҳона"
+
+msgid "Bi-monthly"
+msgstr "Ду маротиба дар як моҳ"
+
+msgid "Yearly"
+msgstr "Солона"
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr "Семоҳа"
+
+msgid "Six-monthly"
+msgstr "Шашмоҳа"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr ""
+
+msgid "Weeks"
+msgstr "Ҳафтаҳо"
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr "Моҳҳо"
+
+msgid "Bi-months"
+msgstr "Думоҳаҳо"
+
+msgid "Quarters"
+msgstr "Семоҳаҳо"
+
+msgid "Six months"
+msgstr "Шашмоҳаҳо"
+
+msgid "Years"
+msgstr "Солҳо"
+
+msgid "Other"
+msgstr "Дигар"
+
 msgid "Settings updated"
 msgstr ""
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
@@ -238,6 +355,9 @@ msgstr ""
 msgid "Scheduled jobs"
 msgstr ""
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr ""
 
@@ -266,6 +386,14 @@ msgstr ""
 msgid "No options"
 msgstr ""
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr ""
 
@@ -281,6 +409,11 @@ msgstr ""
 msgid "Maximum number of SQL view records"
 msgstr ""
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr ""
 
@@ -290,29 +423,8 @@ msgstr "Унсурҳои иттилооти инфрасохторӣ"
 msgid "Infrastructural period type"
 msgstr "Навъи давраи инфрасохторӣ"
 
-msgid "Daily"
-msgstr "Ҳаррӯза"
-
-msgid "Weekly"
-msgstr "Ҳафтаина"
-
-msgid "Monthly"
-msgstr "Моҳона"
-
-msgid "Bi-monthly"
-msgstr "Ду маротиба дар як моҳ"
-
-msgid "Quarterly"
-msgstr "Семоҳа"
-
-msgid "Six-monthly"
-msgstr "Шашмоҳа"
-
 msgid "Six-monthly April"
 msgstr ""
-
-msgid "Yearly"
-msgstr "Солона"
 
 msgid "Financial-April"
 msgstr "Молиявӣ - апрел"
@@ -467,17 +579,14 @@ msgstr ""
 msgid "Hide bimonthly periods"
 msgstr ""
 
-msgid "Financial year relative period start month"
+msgid "Period types"
+msgstr "Навъҳои давра"
+
+msgid "Allowed period types"
 msgstr ""
 
-msgid "April"
-msgstr "Апрел"
-
-msgid "July"
-msgstr "Июл"
-
-msgid "October"
-msgstr "Октябр"
+msgid "Financial year relative period start month"
+msgstr ""
 
 msgid "Cache strategy"
 msgstr "Стратегияи кэш"
@@ -605,6 +714,9 @@ msgstr ""
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr "Унвони замима"
 
@@ -618,6 +730,9 @@ msgid "Application left-side footer"
 msgstr ""
 
 msgid "Application right-side footer"
+msgstr ""
+
+msgid "Style (android)"
 msgstr ""
 
 msgid "Style"
@@ -672,6 +787,9 @@ msgid "Custom"
 msgstr ""
 
 msgid "Login page template"
+msgstr ""
+
+msgid "Enable Global Shell"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -729,6 +847,12 @@ msgid "Enable user account recovery"
 msgstr "Фаъол кардани барқарорсозии ҳисоби корбар"
 
 msgid "Lock user account temporarily after multiple failed login attempts"
+msgstr ""
+
+msgid "Enable embedded dashboards"
+msgstr ""
+
+msgid "Enforce verified emails"
 msgstr ""
 
 msgid "Allow users to grant own user roles"
@@ -857,4 +981,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""
