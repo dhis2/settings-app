@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Jiří Podhorecký <jirka.p@volny.cz>, 2024
+# Jiří Podhorecký <jirka.p@volny.cz>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-01-17T10:18:20.401Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2024\n"
+"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2026\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -99,23 +99,17 @@ msgstr "Správa verzí metadat"
 msgid "This client ID is already taken"
 msgstr "Toto ID klienta je již obsazeno"
 
-msgid "Name"
-msgstr "Název"
+msgid "Client ID"
+msgstr "Client ID"
 
 msgid "Required"
 msgstr "Vyžadováno"
-
-msgid "Client ID"
-msgstr "Client ID"
 
 msgid "Client Secret"
 msgstr "Tajemství klienta"
 
 msgid "Grant Types"
 msgstr "Druhy grantů"
-
-msgid "Password"
-msgstr "Heslo"
 
 msgid "Refresh token"
 msgstr "Obnovit token"
@@ -174,10 +168,133 @@ msgstr "Klient OAuth2 odstraněn"
 msgid "Failed to delete OAuth2 client"
 msgstr "Odstranění klienta OAuth2 se nezdařilo"
 
+msgid "Name"
+msgstr "Název"
+
+msgid "Password"
+msgstr "Heslo"
+
+msgid "January"
+msgstr "Leden"
+
+msgid "February"
+msgstr "únor"
+
+msgid "March"
+msgstr "Březen"
+
+msgid "April"
+msgstr "Duben"
+
+msgid "May"
+msgstr "Květen"
+
+msgid "June"
+msgstr "červen"
+
+msgid "July"
+msgstr "Červenec"
+
+msgid "August"
+msgstr "Srpen"
+
+msgid "September"
+msgstr "Září"
+
+msgid "October"
+msgstr "Říjen"
+
+msgid "November"
+msgstr "Listopad"
+
+msgid "December"
+msgstr "Prosinec"
+
+msgid "Monday"
+msgstr "pondělí"
+
+msgid "Tuesday"
+msgstr "úterý"
+
+msgid "Wednesday"
+msgstr "středa"
+
+msgid "Thursday"
+msgstr "Čtvrtek"
+
+msgid "Friday"
+msgstr "pátek"
+
+msgid "Saturday"
+msgstr "Sobota"
+
+msgid "Sunday"
+msgstr "Neděle"
+
+msgid "Daily"
+msgstr "Denně"
+
+msgid "Weekly"
+msgstr "Týdně"
+
+msgid "Monthly"
+msgstr "Měsíčně"
+
+msgid "Bi-monthly"
+msgstr "Dva měsíce"
+
+msgid "Yearly"
+msgstr "Ročně"
+
+msgid "Bi-weekly"
+msgstr "po 14ti dnech"
+
+msgid "Quarterly"
+msgstr "Čtvrtletně"
+
+msgid "Six-monthly"
+msgstr "Šestiměsíční"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "Dnů"
+
+msgid "Weeks"
+msgstr "Týdnů"
+
+msgid "Bi-weeks"
+msgstr "14 dní"
+
+msgid "Months"
+msgstr "Měsíce"
+
+msgid "Bi-months"
+msgstr "Dva měsíce"
+
+msgid "Quarters"
+msgstr "Čtvrtletí"
+
+msgid "Six months"
+msgstr "Šest měsíců"
+
+msgid "Years"
+msgstr "Let"
+
+msgid "Other"
+msgstr "jiný"
+
 msgid "Settings updated"
 msgstr "nastavení aktualizováno"
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
@@ -237,6 +354,9 @@ msgstr "Nastavení synchronizace"
 msgid "Scheduled jobs"
 msgstr "Plánované úlohy"
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr "Klienti OAuth2"
 
@@ -267,6 +387,14 @@ msgstr "Toto nastavení lze přepsat uživatelským nastavením"
 msgid "No options"
 msgstr "Žádné možnosti"
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr "Hledanému výrazu neodpovídá žádná nastavení"
 
@@ -282,6 +410,11 @@ msgstr "Neomezeno"
 msgid "Maximum number of SQL view records"
 msgstr "Maximální počet záznamů SQL pohledů"
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr "Indikátory infrastruktury"
 
@@ -291,29 +424,8 @@ msgstr "Infrastrukturní datové prvky"
 msgid "Infrastructural period type"
 msgstr "Typ období infrastruktury"
 
-msgid "Daily"
-msgstr "Denně"
-
-msgid "Weekly"
-msgstr "Týdně"
-
-msgid "Monthly"
-msgstr "Měsíčně"
-
-msgid "Bi-monthly"
-msgstr "Dva měsíce"
-
-msgid "Quarterly"
-msgstr "Čtvrtletně"
-
-msgid "Six-monthly"
-msgstr "Šestiměsíční"
-
 msgid "Six-monthly April"
 msgstr "Duben šest měsíců"
-
-msgid "Yearly"
-msgstr "Ročně"
 
 msgid "Financial-April"
 msgstr "Finanční - Duben"
@@ -470,17 +582,14 @@ msgstr "Skrýt měsíční období"
 msgid "Hide bimonthly periods"
 msgstr "Skrýt dvouměsíční období"
 
+msgid "Period types"
+msgstr "Typy období"
+
+msgid "Allowed period types"
+msgstr ""
+
 msgid "Financial year relative period start month"
 msgstr "Počáteční měsíc relativního období finančního roku"
-
-msgid "April"
-msgstr "Duben"
-
-msgid "July"
-msgstr "Červenec"
-
-msgid "October"
-msgstr "Říjen"
 
 msgid "Cache strategy"
 msgstr "Strategie mezipaměti"
@@ -610,6 +719,9 @@ msgstr "Klíč rozhraní Google Maps API"
 msgid "Bing Maps API key"
 msgstr "Klíč API Bing Maps"
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr "Název aplikace"
 
@@ -624,6 +736,9 @@ msgstr "Zápatí levé strany aplikace"
 
 msgid "Application right-side footer"
 msgstr "Zápatí na pravé straně aplikace"
+
+msgid "Style (android)"
+msgstr ""
 
 msgid "Style"
 msgstr "Styl"
@@ -677,6 +792,9 @@ msgid "Custom"
 msgstr "Vlastní"
 
 msgid "Login page template"
+msgstr ""
+
+msgid "Enable Global Shell"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -741,6 +859,9 @@ msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
 "Po několika neúspěšných pokusech o přihlášení dočasně uzamknout uživatelský "
 "účet"
+
+msgid "Enable embedded dashboards"
+msgstr ""
 
 msgid "Enforce verified emails"
 msgstr ""
@@ -877,4 +998,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""

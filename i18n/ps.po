@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2024
-# Viktor Varland <viktor@dhis2.org>, 2024
+# Viktor Varland <viktor@dhis2.org>, 2026
+# Philip Larsen Donnelly, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
+"Last-Translator: Philip Larsen Donnelly, 2026\n"
 "Language-Team: Pashto (https://app.transifex.com/hisp-uio/teams/100509/ps/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,23 +100,17 @@ msgstr "د میټا ډاټا نسخه"
 msgid "This client ID is already taken"
 msgstr "د دغه مراجعه کاروونکي آيي ډي له وړاندې اخیستل شوې ده"
 
-msgid "Name"
-msgstr "نوم"
+msgid "Client ID"
+msgstr "د مراجعه کوونکي ID"
 
 msgid "Required"
 msgstr "اړین دي"
-
-msgid "Client ID"
-msgstr "د مراجعه کوونکي ID"
 
 msgid "Client Secret"
 msgstr "د مراجعه کوونکي راز"
 
 msgid "Grant Types"
 msgstr "د ډولونو رکول"
-
-msgid "Password"
-msgstr "پټنوم"
 
 msgid "Refresh token"
 msgstr "د بیا تازه کولو نښه"
@@ -175,10 +169,133 @@ msgstr "د OAuth2 مراجعین حذف شو"
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Name"
+msgstr "نوم"
+
+msgid "Password"
+msgstr "پټنوم"
+
+msgid "January"
+msgstr "جنوري"
+
+msgid "February"
+msgstr "فبروري"
+
+msgid "March"
+msgstr "مارچ"
+
+msgid "April"
+msgstr "اپرېل"
+
+msgid "May"
+msgstr "می [ میاشت. می]"
+
+msgid "June"
+msgstr "جون"
+
+msgid "July"
+msgstr "جولای"
+
+msgid "August"
+msgstr "اګست"
+
+msgid "September"
+msgstr "سپټمبر"
+
+msgid "October"
+msgstr "اکتوبر"
+
+msgid "November"
+msgstr "نومبر"
+
+msgid "December"
+msgstr "ډیسمبر"
+
+msgid "Monday"
+msgstr "دو شنبه [ د اونۍ ورځ - دو شنبه ]"
+
+msgid "Tuesday"
+msgstr "سه شنبه [ نیپالي.د اونۍ ورځ. سه شنبه ]"
+
+msgid "Wednesday"
+msgstr "چهارشنبه [ د اونۍ ورځ.چهار شنبه ]"
+
+msgid "Thursday"
+msgstr "پنج شنبه [ د اونۍ ورځ. پنج شنبه ]"
+
+msgid "Friday"
+msgstr "جمعه [ د اونۍ ورځ. جمعه ]"
+
+msgid "Saturday"
+msgstr "شنبه [ نیپالي.د اونۍ ورځ. شنبه ]"
+
+msgid "Sunday"
+msgstr "یک شنبه [ د اونۍ ورځ. یک شنبه ]"
+
+msgid "Daily"
+msgstr "ورځني [ د مودې ډول ]"
+
+msgid "Weekly"
+msgstr "اوونیز"
+
+msgid "Monthly"
+msgstr "میاشتنۍ"
+
+msgid "Bi-monthly"
+msgstr "دوه میاشتنۍ"
+
+msgid "Yearly"
+msgstr "کلنۍ"
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr "درې میاشتنۍ"
+
+msgid "Six-monthly"
+msgstr "شپږ- میاشتنۍ"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "ورځې"
+
+msgid "Weeks"
+msgstr "اونۍ"
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr "میاشت"
+
+msgid "Bi-months"
+msgstr "دوه میاشتنۍ"
+
+msgid "Quarters"
+msgstr "ربعې"
+
+msgid "Six months"
+msgstr "شپږ میاشتې"
+
+msgid "Years"
+msgstr "کلونه"
+
+msgid "Other"
+msgstr "نور"
+
 msgid "Settings updated"
 msgstr "تنظیمات تجدید شول"
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
@@ -238,6 +355,9 @@ msgstr "په هم مهال وخت کې د پېښو د همغږۍ تنظیمات"
 msgid "Scheduled jobs"
 msgstr ""
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr "د OAuth2 مراجعین"
 
@@ -266,6 +386,14 @@ msgstr "دغه تنظیم د کاروونکي د تنظیماتو په وسیل�
 msgid "No options"
 msgstr ""
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr "د لټون د مطلب سره هېڅ ډول تنظیمات مطابقت نه لري"
 
@@ -281,6 +409,11 @@ msgstr "غېرې محدود دی"
 msgid "Maximum number of SQL view records"
 msgstr ""
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr "د زېربنا شاخصونه"
 
@@ -290,29 +423,8 @@ msgstr "د زېربنايي مالوماتو (ډاټا) برخې"
 msgid "Infrastructural period type"
 msgstr "د زېربنايي مودې ډول"
 
-msgid "Daily"
-msgstr "ورځني [ د مودې ډول ]"
-
-msgid "Weekly"
-msgstr "اوونیز"
-
-msgid "Monthly"
-msgstr "میاشتنۍ"
-
-msgid "Bi-monthly"
-msgstr "دوه میاشتنۍ"
-
-msgid "Quarterly"
-msgstr "درې میاشتنۍ"
-
-msgid "Six-monthly"
-msgstr "شپږ- میاشتنۍ"
-
 msgid "Six-monthly April"
 msgstr "شپږ - د اپرېل میاشتنۍ"
-
-msgid "Yearly"
-msgstr "کلنۍ"
 
 msgid "Financial-April"
 msgstr "مالي - اپرېل"
@@ -467,17 +579,14 @@ msgstr ""
 msgid "Hide bimonthly periods"
 msgstr ""
 
-msgid "Financial year relative period start month"
+msgid "Period types"
+msgstr "د مودې ډولونه"
+
+msgid "Allowed period types"
 msgstr ""
 
-msgid "April"
-msgstr "اپرېل"
-
-msgid "July"
-msgstr "جولای"
-
-msgid "October"
-msgstr "اکتوبر"
+msgid "Financial year relative period start month"
+msgstr ""
 
 msgid "Cache strategy"
 msgstr "د ساتنې ستراتیژي"
@@ -606,6 +715,9 @@ msgstr "د ګوګل د نخشو د API کلي"
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr "د اپلیکېشن نوم"
 
@@ -620,6 +732,9 @@ msgstr "د کیڼ لوري د لاندینۍ برخې اپلیکېشن"
 
 msgid "Application right-side footer"
 msgstr "د ښي لوري د لاندینۍ برخې اپلیکېشن"
+
+msgid "Style (android)"
+msgstr ""
 
 msgid "Style"
 msgstr "طرز یا ډول"
@@ -673,6 +788,9 @@ msgid "Custom"
 msgstr "ځانګړی"
 
 msgid "Login page template"
+msgstr ""
+
+msgid "Enable Global Shell"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -733,6 +851,12 @@ msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
 "سیسټم ته د ننوتلو په موخه د څو پر له پسې هڅو څخه وروسته د لنډې مودې لپاره د "
 "کاروونکي حساب بند کړئ"
+
+msgid "Enable embedded dashboards"
+msgstr ""
+
+msgid "Enforce verified emails"
+msgstr ""
 
 msgid "Allow users to grant own user roles"
 msgstr "کاروونکو ته اجازه ورکړئ چې د خپل کاروونکي دندې ورکړي"
@@ -870,4 +994,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""
