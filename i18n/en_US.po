@@ -1,23 +1,19 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2022
-# Philip Larsen Donnelly, 2022
-# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022
-# Saysamone Sibounma, 2024
-# Namwan Chanthavisouk, 2025
+# Rohit Wadhwani, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-08-24T10:48:48.806Z\n"
 "PO-Revision-Date: 2022-04-20 10:52+0000\n"
-"Last-Translator: Namwan Chanthavisouk, 2025\n"
-"Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
+"Last-Translator: Rohit Wadhwani, 2026\n"
+"Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lo\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Failed to load: {{error}}"
 msgstr ""
@@ -80,13 +76,13 @@ msgid "Master version:"
 msgstr ""
 
 msgid "None"
-msgstr "ບໍ່ມີ"
+msgstr "कोई नहीं"
 
 msgid "Last sync attempt"
 msgstr ""
 
 msgid "Failed"
-msgstr "Failed"
+msgstr ""
 
 msgid "No versions exist"
 msgstr ""
@@ -104,10 +100,10 @@ msgid "This client ID is already taken"
 msgstr ""
 
 msgid "Name"
-msgstr "ຊື່"
+msgstr ""
 
 msgid "Required"
-msgstr "ຕ້ອງການ"
+msgstr "Required"
 
 msgid "Client ID"
 msgstr ""
@@ -119,7 +115,7 @@ msgid "Grant Types"
 msgstr ""
 
 msgid "Password"
-msgstr "ລະຫັດຜ່ານ"
+msgstr ""
 
 msgid "Refresh token"
 msgstr ""
@@ -134,7 +130,7 @@ msgid "Redirect URIs"
 msgstr ""
 
 msgid "This field should contain a list of URLs"
-msgstr "ຊ່ອງນີ້ຄວນມີລາຍການ URL"
+msgstr ""
 
 msgid "Create new OAuth2 Client"
 msgstr ""
@@ -143,19 +139,19 @@ msgid "Edit OAuth2 Client"
 msgstr ""
 
 msgid "Save"
-msgstr "ບັນທຶກ"
+msgstr "सेव"
 
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "कैंसल"
 
 msgid "There are currently no OAuth2 clients registered"
 msgstr ""
 
 msgid "Edit"
-msgstr "ແກ້ໄຂ"
+msgstr ""
 
 msgid "Delete"
-msgstr "ລົບ"
+msgstr "डिलीट"
 
 msgid "OAuth2 client saved"
 msgstr ""
@@ -167,10 +163,10 @@ msgid "Add OAuth2 client"
 msgstr ""
 
 msgid "Yes"
-msgstr "ມີ"
+msgstr "हाँ"
 
 msgid "No"
-msgstr "ບໍ່ມີ"
+msgstr "नहीं"
 
 msgid "OAuth2 client deleted"
 msgstr ""
@@ -179,49 +175,49 @@ msgid "Failed to delete OAuth2 client"
 msgstr ""
 
 msgid "Settings updated"
-msgstr "ການຕັ້ງຄ່ານີ້ໄດ້ຖືກບັນທຶກ"
+msgstr ""
 
 msgid "General"
-msgstr "ທົ່ວໄປ"
+msgstr ""
 
 msgid "General settings"
-msgstr "General"
+msgstr ""
 
 msgid "Analytics"
-msgstr "ການວິເຄາະ"
+msgstr ""
 
 msgid "Analytics settings"
-msgstr "ໂຄງການ"
+msgstr ""
 
 msgid "Server"
 msgstr ""
 
 msgid "Server settings"
-msgstr "ການຕັ້ງຄ່າອີເມວ"
+msgstr ""
 
 msgid "Appearance"
 msgstr ""
 
 msgid "Appearance settings"
-msgstr "Appearance"
+msgstr ""
 
 msgid "Email"
-msgstr "ອີເມວ"
+msgstr ""
 
 msgid "Email settings"
-msgstr "Email"
+msgstr ""
 
 msgid "Access"
-msgstr "Access"
+msgstr ""
 
 msgid "Access settings"
-msgstr "Access"
+msgstr ""
 
 msgid "Calendar"
-msgstr "ປະຕິທິນ"
+msgstr ""
 
 msgid "Calendar settings"
-msgstr "Calendar"
+msgstr ""
 
 msgid "Data Import"
 msgstr ""
@@ -233,25 +229,25 @@ msgid "Synchronization"
 msgstr ""
 
 msgid "Synchronization settings"
-msgstr "Synchronization"
+msgstr ""
 
 msgid "OAuth2 Clients"
 msgstr ""
 
 msgid "This field is required"
-msgstr "This field is required"
+msgstr ""
 
 msgid "This field should be a URL"
-msgstr "ຊ່ອງນີ້ຄວນເປັນ URL"
+msgstr ""
 
 msgid "This field should be a number"
-msgstr "ຊ່ອງນີ້ຄວນມີຕົວເລກ"
+msgstr ""
 
 msgid "This field should be a positive number"
-msgstr "ຊ່ອງນີ້ຄວນເປັນຈຳນວນບວກ"
+msgstr ""
 
 msgid "This field should be an email"
-msgstr "ຊ່ອງນີ້ຄວນເປັນອີເມວ"
+msgstr ""
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
@@ -261,13 +257,13 @@ msgid "This setting can be overridden by user settings"
 msgstr ""
 
 msgid "No options"
-msgstr "ບໍ່ມີຕົວເລືອກ"
+msgstr ""
 
 msgid "No settings matched the search term"
 msgstr ""
 
 msgid "Search results"
-msgstr "ຜົນການຄົ້ນຫາ"
+msgstr ""
 
 msgid "Maximum number of analytics records"
 msgstr ""
@@ -288,37 +284,37 @@ msgid "Infrastructural period type"
 msgstr ""
 
 msgid "Daily"
-msgstr "ທຸກໆມື້"
+msgstr ""
 
 msgid "Weekly"
-msgstr "ເປັນອາທິດ"
+msgstr ""
 
 msgid "Monthly"
-msgstr "ລາຍເດືອນ"
+msgstr ""
 
 msgid "Bi-monthly"
-msgstr "ທຸກໆສອງເດືອນ"
+msgstr ""
 
 msgid "Quarterly"
-msgstr "ໄຕມາດ"
+msgstr ""
 
 msgid "Six-monthly"
-msgstr "ແຕ່ລະ 6 ເດືອນ"
+msgstr ""
 
 msgid "Six-monthly April"
-msgstr "ແຕ່ລະຫົກເດືອນ ແລະ ເດືອນເມສາ"
+msgstr ""
 
 msgid "Yearly"
-msgstr "ລາຍປີ"
+msgstr ""
 
 msgid "Financial-April"
-msgstr "ປີງົບປະມານ (ເມສາ)"
+msgstr ""
 
 msgid "Financial-July"
-msgstr "ສົກປີງົບປະມານ ແຕ່ ເດືອນ 7"
+msgstr ""
 
 msgid "Financial-Oct"
-msgstr "ປີງົບປະມານ (ຕຸລາ)"
+msgstr ""
 
 msgid "Feedback recipients"
 msgstr ""
@@ -333,7 +329,7 @@ msgid "No update notification recipients"
 msgstr ""
 
 msgid "Max offline organisation unit levels"
-msgstr "Maximum offline organisation unit levels"
+msgstr ""
 
 msgid "Data analysis std dev factor"
 msgstr ""
@@ -357,94 +353,94 @@ msgid "Default relative period for analysis"
 msgstr ""
 
 msgid "This week"
-msgstr "ທິດນີ້"
+msgstr ""
 
 msgid "Last week"
-msgstr "ອາທິດທີ່ຜ່ານມາ"
+msgstr ""
 
 msgid "Last 4 weeks"
-msgstr "4 ອາທິດຍ້ອນຫຼັງ"
+msgstr ""
 
 msgid "Last 12 weeks"
-msgstr "12 ອາທິດຍ້ອນຫຼັງ"
+msgstr ""
 
 msgid "Last 52 weeks"
-msgstr "52 ອາທິດຜ່ານມາ"
+msgstr ""
 
 msgid "This month"
-msgstr "ເດືອນນີ້"
+msgstr "इस महीने"
 
 msgid "Last month"
-msgstr "ເດືອນຜ່ານມາ"
+msgstr "पिछला महीना"
 
 msgid "Months this year"
-msgstr "​ເດືອນ​ໃນ​ປີ"
+msgstr ""
 
 msgid "Months last year"
-msgstr "​ເດືອນ​ໃນປີ​ຜ່ານ​ມາ"
+msgstr ""
 
 msgid "Last 3 months"
-msgstr "3 ເດືອນຍ້ອນຫຼັງ"
+msgstr "पिछले 3 महीने"
 
 msgid "Last 6 months"
-msgstr "6 ເດືອນຜ່ານມາ"
+msgstr ""
 
 msgid "Last 12 months"
-msgstr "12 ເດືອນຍ້ອນຫຼັງ"
+msgstr ""
 
 msgid "This bi-month"
-msgstr "ສອງເດືອນນີ້"
+msgstr ""
 
 msgid "Last bi-month"
-msgstr "ສອງເດືອນກ່ອນທ້າຍປີ"
+msgstr ""
 
 msgid "Last 6 bi-months"
-msgstr "6 ຂອງສອງເດືອນສຸດທ້າຍ"
+msgstr ""
 
 msgid "This quarter"
-msgstr "ໄຕມານີ້"
+msgstr ""
 
 msgid "Last quarter"
-msgstr "ໄຕມາດຜ່ານມາ"
+msgstr ""
 
 msgid "Quarters this year"
-msgstr "​ໄຕຼມາດ​ໃນ​ປີ"
+msgstr ""
 
 msgid "Quarters last year"
-msgstr "​ໄຕຼມາດ​ໃນ​ປີ​ຜ່ານ​ມາ"
+msgstr ""
 
 msgid "Last 4 quarters"
-msgstr "4 ໄຕມາດຍ້ອນຫຼັງ"
+msgstr ""
 
 msgid "This six-month"
-msgstr "6 ເດືອນນີ້"
+msgstr ""
 
 msgid "Last six-month"
-msgstr "6 ເດືອນຜ່ານມາ"
+msgstr ""
 
 msgid "Last 2 six-months"
-msgstr "ລວມ 6 ເດືອນ 2 ຄັ້ງທີ່ຜ່ານມາ"
+msgstr ""
 
 msgid "This year"
-msgstr "ປີນີ້"
+msgstr ""
 
 msgid "Last year"
-msgstr "ປີກາຍ"
+msgstr ""
 
 msgid "Last 5 years"
-msgstr "5 ປີຍ້ອນຫຼັງ"
+msgstr ""
 
 msgid "Last 10 years"
-msgstr "10 ປີຍ້ອນຫຼັງ"
+msgstr ""
 
 msgid "This financial year"
-msgstr "ສົກປີງົບປະມານຂອງປິນີ້"
+msgstr ""
 
 msgid "Last financial year"
-msgstr "​ສົກ​ປີ​ງົບ​ປະ​ມານ​ປີ​ກາຍ"
+msgstr ""
 
 msgid "Last 5 financial years"
-msgstr "​ສົກ​ປິ​ງົບ​ປະ​ມານ 5ປີ​ຜ່ານ​ມາ"
+msgstr ""
 
 msgid "Hide daily periods"
 msgstr ""
@@ -468,19 +464,19 @@ msgid "Financial year relative period start month"
 msgstr ""
 
 msgid "April"
-msgstr "ເມສາ"
+msgstr ""
 
 msgid "July"
-msgstr "ກໍລະກົດ"
+msgstr ""
 
 msgid "October"
-msgstr "ຕຸລາ"
+msgstr ""
 
 msgid "Cache strategy"
-msgstr "Cache strategy"
+msgstr ""
 
 msgid "No cache"
-msgstr "No cache"
+msgstr ""
 
 msgid "Cache for 15 minutes"
 msgstr ""
@@ -489,19 +485,19 @@ msgid "Cache for 30 minutes"
 msgstr ""
 
 msgid "Cache for one hour"
-msgstr "Cache ເປັນເວລາ 1 ຊົ່ວໂມງ"
+msgstr ""
 
 msgid "Cache until 6AM tomorrow"
 msgstr ""
 
 msgid "Cache for two weeks"
-msgstr "Cache for two weeks"
+msgstr ""
 
 msgid "Cacheability"
 msgstr ""
 
 msgid "Public"
-msgstr "ສາທາລະນະ"
+msgstr ""
 
 msgid "Private"
 msgstr ""
@@ -573,7 +569,7 @@ msgid "OSM Light (default)"
 msgstr ""
 
 msgid "OSM Detailed"
-msgstr "OSM ລາຍລະອຽດ"
+msgstr ""
 
 msgid "Bing Road"
 msgstr ""
@@ -597,7 +593,7 @@ msgid "System notifications email address"
 msgstr ""
 
 msgid "Google Analytics (Universal Analytics) key"
-msgstr "Google Analytics (Universal Analytics) Key"
+msgstr ""
 
 msgid "Google Maps API key"
 msgstr ""
@@ -621,7 +617,7 @@ msgid "Application right-side footer"
 msgstr ""
 
 msgid "Style"
-msgstr "ລັກສະນະ"
+msgstr ""
 
 msgid "Start page"
 msgstr ""
@@ -636,25 +632,25 @@ msgid "Flag"
 msgstr ""
 
 msgid "Interface language"
-msgstr "ພາສາສະແດງຜົນ"
+msgstr ""
 
 msgid "Database language"
-msgstr "ພາສາຂໍ້ມູນໃນລະບົບ"
+msgstr ""
 
 msgid "Property to display in analysis modules"
-msgstr "ສື່ງທີ່ສາມາດນໍາສະເໜີ ໃນໂມດູນຂອງການວິໄຈ"
+msgstr ""
 
 msgid "Short name"
-msgstr "ຊື່ສັ້ນ"
+msgstr ""
 
 msgid "Default digit group separator to display in analysis modules"
 msgstr ""
 
 msgid "Space"
-msgstr "ຍະຫວ່າງ"
+msgstr ""
 
 msgid "Comma"
-msgstr "ຈຸດ"
+msgstr ""
 
 msgid "Require authority to add to view object lists"
 msgstr ""
@@ -681,10 +677,10 @@ msgid "Host name"
 msgstr ""
 
 msgid "Port"
-msgstr "ການເຊື່ອມ"
+msgstr ""
 
 msgid "Username"
-msgstr "ຊື່ຜູ້ໃຊ້"
+msgstr ""
 
 msgid "TLS"
 msgstr ""
@@ -726,7 +722,7 @@ msgid "Require user account password change"
 msgstr ""
 
 msgid "Never"
-msgstr "Never"
+msgstr ""
 
 msgid "3 months"
 msgstr ""
@@ -753,31 +749,31 @@ msgid "reCAPTCHA Secret Key"
 msgstr ""
 
 msgid "Coptic"
-msgstr "ISO 8601"
+msgstr ""
 
 msgid "Ethiopian"
-msgstr "ເອທິໂອເປຍ (Ethiopian)"
+msgstr ""
 
 msgid "Gregorian"
-msgstr "ເກຣໂກຣຽນ (Gregorian)"
+msgstr ""
 
 msgid "Islamic"
-msgstr "ອິດສະລາມ (Islamic)"
+msgstr ""
 
 msgid "ISO 8601"
-msgstr "ISO 8601"
+msgstr ""
 
 msgid "Julian"
-msgstr "ຈູລຽນ (Julian)"
+msgstr ""
 
 msgid "Nepali"
-msgstr "ເນປານ (Nepali)"
+msgstr ""
 
 msgid "Thai"
-msgstr "ໄທ (Thai)"
+msgstr ""
 
 msgid "Persian"
-msgstr "ເປີເຊຍ (Persian)"
+msgstr ""
 
 msgid "Change calendar setting"
 msgstr ""
@@ -792,7 +788,7 @@ msgid "Yes, change calendar"
 msgstr ""
 
 msgid "Date format"
-msgstr "Date Format"
+msgstr ""
 
 msgid "Require periods to match period type of data set"
 msgstr ""
