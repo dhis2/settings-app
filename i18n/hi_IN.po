@@ -1,17 +1,17 @@
 # 
 # Translators:
 # Siddharth Agarwal, 2025
-# Rohit Wadhwani, 2025
+# Rohit Wadhwani, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2025-08-08T08:33:10.371Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
-"Last-Translator: Rohit Wadhwani, 2025\n"
+"Last-Translator: Rohit Wadhwani, 2026\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hi_IN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -354,16 +354,16 @@ msgid "Default relative period for analysis"
 msgstr ""
 
 msgid "This week"
-msgstr ""
+msgstr "इस सप्ताह"
 
 msgid "Last week"
-msgstr ""
+msgstr "पिछला सप्ताह"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "पिछले 4 सप्ताह"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "पिछले 12 सप्ताह"
 
 msgid "Last 52 weeks"
 msgstr ""
@@ -402,7 +402,7 @@ msgid "This quarter"
 msgstr ""
 
 msgid "Last quarter"
-msgstr ""
+msgstr "पिछली तिमाही"
 
 msgid "Quarters this year"
 msgstr ""
@@ -411,7 +411,7 @@ msgid "Quarters last year"
 msgstr ""
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "पिछली 4 तिमाहियाँ"
 
 msgid "This six-month"
 msgstr ""
