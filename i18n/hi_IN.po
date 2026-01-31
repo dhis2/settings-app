@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Rohit Wadhwani, 2026\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hi_IN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -266,7 +266,7 @@ msgid "Days"
 msgstr "दिन"
 
 msgid "Weeks"
-msgstr ""
+msgstr "सप्ताह"
 
 msgid "Bi-weeks"
 msgstr ""
@@ -278,7 +278,7 @@ msgid "Bi-months"
 msgstr ""
 
 msgid "Quarters"
-msgstr ""
+msgstr "पिछली तिमाही"
 
 msgid "Six months"
 msgstr "छह महीने"
@@ -472,16 +472,16 @@ msgid "Default relative period for analysis"
 msgstr ""
 
 msgid "This week"
-msgstr ""
+msgstr "इस सप्ताह"
 
 msgid "Last week"
-msgstr ""
+msgstr "पिछला सप्ताह"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "पिछले 4 सप्ताह"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "पिछले 12 सप्ताह"
 
 msgid "Last 52 weeks"
 msgstr ""
@@ -520,7 +520,7 @@ msgid "This quarter"
 msgstr ""
 
 msgid "Last quarter"
-msgstr ""
+msgstr "पिछली तिमाही"
 
 msgid "Quarters this year"
 msgstr ""
@@ -529,7 +529,7 @@ msgid "Quarters last year"
 msgstr ""
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "पिछली 4 तिमाहियाँ"
 
 msgid "This six-month"
 msgstr ""
