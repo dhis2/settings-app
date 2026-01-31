@@ -20,7 +20,7 @@ msgstr ""
 "Last-Translator: Cyrille Kabrane, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
@@ -38,7 +38,7 @@ msgid "Replace image"
 msgstr "Remplacer l'image"
 
 msgid "Preview image"
-msgstr "Aperçu de l'image"
+msgstr "Prévisualiser l'image"
 
 msgid "Preview of image"
 msgstr "Aperçu de l'image"
@@ -141,7 +141,7 @@ msgid "Create new OAuth2 Client"
 msgstr "Créer un nouveau client OAuth2"
 
 msgid "Edit OAuth2 Client"
-msgstr "Modifier le client OAuth2"
+msgstr "Éditer le client OAuth2"
 
 msgid "Save"
 msgstr "Enregistrer"
@@ -317,7 +317,7 @@ msgid "General settings"
 msgstr "Paramètres généraux"
 
 msgid "Analytics"
-msgstr "Analyses"
+msgstr "Analyse"
 
 msgid "Analytics settings"
 msgstr "Paramètres d'analyse"
@@ -391,11 +391,11 @@ msgstr "Ce champ doit contenir une adresse e-mail"
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
-"Ce paramètre sera remplacé par le paramètre de l'utilisateur actuel : "
+"Ce paramètre sera remplacé par le paramètre utilisateur actuel : "
 "{{settingName}}"
 
 msgid "This setting can be overridden by user settings"
-msgstr "Ce paramètre peut être remplacé par les paramètres utilisateur"
+msgstr "Ce paramètre peut être remplacé par les paramètres de l'utilisateur"
 
 msgid "No options"
 msgstr "Aucune option"
@@ -459,7 +459,7 @@ msgid "Feedback recipients"
 msgstr "Destinataires des feedbacks"
 
 msgid "No message recipients"
-msgstr "Pas de destinataires du message"
+msgstr "Pas de destinataires pour le message"
 
 msgid "System update notification recipients"
 msgstr "Destinataires des notifications de mise à jour du système"
@@ -544,7 +544,7 @@ msgid "This quarter"
 msgstr "Ce trimestre"
 
 msgid "Last quarter"
-msgstr "Dernier trimestre"
+msgstr "Trimestre précédent"
 
 msgid "Quarters this year"
 msgstr "Trimestres cette année"
@@ -559,7 +559,7 @@ msgid "This six-month"
 msgstr "Ce semestre"
 
 msgid "Last six-month"
-msgstr "Dernier semestre"
+msgstr "Semestre précédent"
 
 msgid "Last 2 six-months"
 msgstr "2 derniers semestres"
@@ -568,7 +568,7 @@ msgid "This year"
 msgstr "Année en cours"
 
 msgid "Last year"
-msgstr "Année dernière"
+msgstr "Année passée "
 
 msgid "Last 5 years"
 msgstr "5 dernières années"
@@ -580,7 +580,7 @@ msgid "This financial year"
 msgstr "Cette année financière"
 
 msgid "Last financial year"
-msgstr "Dernière année financière"
+msgstr "Année financière précédente"
 
 msgid "Last 5 financial years"
 msgstr "5 dernières années financières"
@@ -589,7 +589,7 @@ msgid "Hide daily periods"
 msgstr "Masquer les périodes quotidiennes"
 
 msgid "Hidden period types in analytics apps"
-msgstr "Types de périodes masquées dans les applications d'analyses"
+msgstr "Types de périodes masquées dans les applications d’analyse"
 
 msgid "Hide weekly periods"
 msgstr "Masquer les périodes hebdomadaires"
@@ -933,7 +933,7 @@ msgstr ""
 "(1-28)"
 
 msgid "Minimum characters in password"
-msgstr "Nombre min. de caractères dans un mot de passe"
+msgstr "Nombre minimum de caractères dans un mot de passe"
 
 msgid "CORS allowlist"
 msgstr "Liste d'autorisations CORS"
@@ -945,28 +945,28 @@ msgid "reCAPTCHA Secret Key"
 msgstr "Clé secrète reCAPTCHA"
 
 msgid "Coptic"
-msgstr "copte"
+msgstr "Copte"
 
 msgid "Ethiopian"
-msgstr "éthiopien"
+msgstr "Éthiopien"
 
 msgid "Gregorian"
-msgstr "grégorien"
+msgstr "Grégorien"
 
 msgid "Islamic"
-msgstr "islamique"
+msgstr "Islamique"
 
 msgid "ISO 8601"
 msgstr "ISO 8601"
 
 msgid "Julian"
-msgstr "julien"
+msgstr "Julien"
 
 msgid "Nepali"
-msgstr "népalais"
+msgstr "Népalais"
 
 msgid "Thai"
-msgstr "thaï"
+msgstr "Thaï"
 
 msgid "Persian"
 msgstr "Persan"
@@ -980,8 +980,8 @@ msgid ""
 "you do not change your calendar setting."
 msgstr ""
 "Modifier les paramètres du calendrier après avoir saisi des données peut "
-"rendre votre système inutilisable. Si vous avez saisi des données, il est "
-"fortement recommandé de ne pas modifier vos paramètres de calendrier."
+"rendre votre système inutilisable. Si vous avez saisi des données, nous vous"
+" recommandons fortement de ne pas modifier vos paramètres de calendrier."
 
 msgid "Yes, change calendar"
 msgstr "Oui, modifier le calendrier"
@@ -999,8 +999,8 @@ msgstr "Les éléments de données doivent faire partie de l'ensemble de donnée
 
 msgid "Require category option combos to match category combo of data element"
 msgstr ""
-"Nécessité de combinaisons d'options de catégorie correspondant à la "
-"combinaison de catégories d'élément de données"
+"Les combinaisons d’options de catégorie doivent correspondre à la "
+"combinaison de catégories de l’élément de données"
 
 msgid "Require organisation units to match assignment of data set"
 msgstr ""
@@ -1019,18 +1019,18 @@ msgid "Require attribute option combo to be specified"
 msgstr "La combinaison d'options d'attribut doit être précisée"
 
 msgid "Remote server URL"
-msgstr "URL de serveur distant"
+msgstr "URL du serveur distant"
 
 msgid "Remote server username"
-msgstr "Nom d'utilisateur de serveur distant"
+msgstr "Nom d'utilisateur du serveur distant"
 
 msgid "Remote server password"
-msgstr "Mot de passe de serveur distant"
+msgstr "Mot de passe du serveur distant"
 
 msgid ""
 "Number of minutes after which a stale job is reset to scheduled state (1-60)"
 msgstr ""
-"Nombre de minutes après lesquelles une tâche obsolète est réinitialisée à "
+"Nombre de minutes après lesquelles une tâche bloquée est réinitialisée à "
 "l'état planifié (1-60)"
 
 msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
@@ -1054,22 +1054,24 @@ msgstr ""
 "informations) (20+)"
 
 msgid "Log level"
-msgstr ""
+msgstr "Niveau d'enregistrement"
 
 msgid "Max messages per job"
-msgstr ""
+msgstr "Nombre maximal de messages par tâche"
 
 msgid "Max age in days"
-msgstr ""
+msgstr "Âge maximal en jours"
 
 msgid "Max jobs per type"
-msgstr ""
+msgstr "Nombre maximal de tâches par type"
 
 msgid "Enable Gist Overview"
 msgstr ""
 
 msgid "Clean idle jobs after (in milliseconds)"
-msgstr ""
+msgstr "Nettoyer les tâches inactives après (en millisecondes)"
 
 msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""
+"Utiliser les centroïdes pour représenter les polygones des unités "
+"d'organisation dans les analyses d'événements"
