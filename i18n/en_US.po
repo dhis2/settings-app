@@ -1,22 +1,19 @@
 # 
 # Translators:
-# Em Le <em.hispvietnam@gmail.com>, 2025
-# Kiry Heng, 2026
-# Viktor Varland <viktor@dhis2.org>, 2026
-# Philip Larsen Donnelly, 2026
+# Rohit Wadhwani, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2026\n"
-"Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
+"Last-Translator: Rohit Wadhwani, 2026\n"
+"Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: km\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Failed to load: {{error}}"
 msgstr ""
@@ -79,7 +76,7 @@ msgid "Master version:"
 msgstr ""
 
 msgid "None"
-msgstr "គ្មាន"
+msgstr "कोई नहीं"
 
 msgid "Last sync attempt"
 msgstr ""
@@ -106,7 +103,7 @@ msgid "Client ID"
 msgstr ""
 
 msgid "Required"
-msgstr "ទាមទារ"
+msgstr "Required"
 
 msgid "Client Secret"
 msgstr ""
@@ -136,19 +133,19 @@ msgid "Edit OAuth2 Client"
 msgstr ""
 
 msgid "Save"
-msgstr "រក្សាទុក​"
+msgstr "सेव"
 
 msgid "Cancel"
-msgstr "បោះបង់"
+msgstr "कैंसल"
 
 msgid "There are currently no OAuth2 clients registered"
 msgstr ""
 
 msgid "Edit"
-msgstr "កែសម្រួល​"
+msgstr ""
 
 msgid "Delete"
-msgstr "​លុប​"
+msgstr "डिलीट"
 
 msgid "OAuth2 client saved"
 msgstr ""
@@ -160,10 +157,10 @@ msgid "Add OAuth2 client"
 msgstr ""
 
 msgid "Yes"
-msgstr "បាទ/ចាស"
+msgstr "हाँ"
 
 msgid "No"
-msgstr "ទេ"
+msgstr "नहीं"
 
 msgid "OAuth2 client deleted"
 msgstr ""
@@ -172,91 +169,91 @@ msgid "Failed to delete OAuth2 client"
 msgstr ""
 
 msgid "Name"
-msgstr "ឈ្មោះ"
+msgstr ""
 
 msgid "Password"
-msgstr "ពាក្យ​សម្ងាត់"
+msgstr ""
 
 msgid "January"
-msgstr "មករា​"
+msgstr ""
 
 msgid "February"
-msgstr "កុម្ភៈ​"
+msgstr ""
 
 msgid "March"
-msgstr "មីនា​"
+msgstr ""
 
 msgid "April"
-msgstr "មេសា​"
+msgstr ""
 
 msgid "May"
-msgstr "ឧសភា​"
+msgstr ""
 
 msgid "June"
-msgstr "មិថុនា​"
+msgstr ""
 
 msgid "July"
-msgstr "កក្កដា​"
+msgstr ""
 
 msgid "August"
-msgstr "សីហា​"
+msgstr ""
 
 msgid "September"
-msgstr "កញ្ញា​"
+msgstr ""
 
 msgid "October"
-msgstr "តុលា​"
+msgstr ""
 
 msgid "November"
-msgstr "វិច្ឆិកា​"
+msgstr ""
 
 msgid "December"
-msgstr "ធ្នូ​"
+msgstr ""
 
 msgid "Monday"
-msgstr "ថ្ងៃ​ច័ន្ទ"
+msgstr ""
 
 msgid "Tuesday"
-msgstr "ថ្ងៃ​អង្គារ"
+msgstr ""
 
 msgid "Wednesday"
-msgstr "ថ្ងៃ​ពុធ"
+msgstr ""
 
 msgid "Thursday"
-msgstr "ថ្ងៃ​ព្រហស្បតិ៍"
+msgstr ""
 
 msgid "Friday"
-msgstr "ថ្ងៃ​សុក្រ"
+msgstr ""
 
 msgid "Saturday"
-msgstr "ថ្ងៃ​សៅរ៍"
+msgstr ""
 
 msgid "Sunday"
-msgstr "ថ្ងៃ​អាទិត្យ"
+msgstr ""
 
 msgid "Daily"
-msgstr "រាល់​ថ្ងៃ"
+msgstr ""
 
 msgid "Weekly"
-msgstr "រាល់​សប្ដាហ៍"
+msgstr ""
 
 msgid "Monthly"
-msgstr "រាល់​ខែ"
+msgstr ""
 
 msgid "Bi-monthly"
-msgstr "រាល់ពីរសប្តាហ៍"
+msgstr ""
 
 msgid "Yearly"
-msgstr "ប្រចាំឆ្នាំ"
+msgstr ""
 
 msgid "Bi-weekly"
 msgstr ""
 
 msgid "Quarterly"
-msgstr "រាល់ត្រីមាស"
+msgstr ""
 
 msgid "Six-monthly"
-msgstr "រាល់ឆមាស"
+msgstr ""
 
 msgid "Weekly (start {{day}})"
 msgstr ""
@@ -265,31 +262,31 @@ msgid "Financial year (start {{month}})"
 msgstr ""
 
 msgid "Days"
-msgstr "ថ្ងៃ"
+msgstr "Days"
 
 msgid "Weeks"
-msgstr "សប្ដាហ៏"
+msgstr ""
 
 msgid "Bi-weeks"
 msgstr ""
 
 msgid "Months"
-msgstr "ខែ"
+msgstr "Months"
 
 msgid "Bi-months"
 msgstr ""
 
 msgid "Quarters"
-msgstr "ត្រីមាស"
+msgstr ""
 
 msgid "Six months"
-msgstr "ឆមាស"
+msgstr ""
 
 msgid "Years"
-msgstr "ឆ្នាំ"
+msgstr "Years"
 
 msgid "Other"
-msgstr "ផ្សេង"
+msgstr ""
 
 msgid "Settings updated"
 msgstr ""
@@ -301,7 +298,7 @@ msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
-msgstr "ទូទៅ"
+msgstr ""
 
 msgid "General settings"
 msgstr ""
@@ -334,7 +331,7 @@ msgid "Access"
 msgstr ""
 
 msgid "Access settings"
-msgstr "Access"
+msgstr ""
 
 msgid "Calendar"
 msgstr ""
@@ -426,16 +423,16 @@ msgid "Infrastructural period type"
 msgstr ""
 
 msgid "Six-monthly April"
-msgstr "ប្រចាំឆមាស​ពីខែមេសា"
+msgstr ""
 
 msgid "Financial-April"
-msgstr "ប្រចាំឆ្នាំហិរញ្ញវត្ថុពីខែមេសា"
+msgstr ""
 
 msgid "Financial-July"
-msgstr "ប្រចាំឆ្នាំហិរញ្ញវត្ថុពីខែកក្កដា"
+msgstr ""
 
 msgid "Financial-Oct"
-msgstr "ប្រចាំឆ្នាំហិរញ្ញវត្ថុពីខែតុលា"
+msgstr ""
 
 msgid "Feedback recipients"
 msgstr ""
@@ -474,40 +471,40 @@ msgid "Default relative period for analysis"
 msgstr ""
 
 msgid "This week"
-msgstr "សប្តាហ៍នេះ"
+msgstr ""
 
 msgid "Last week"
-msgstr "សប្តាហ៍មុន"
+msgstr ""
 
 msgid "Last 4 weeks"
-msgstr "៤សប្តាហ៍ចុងក្រោយ"
+msgstr ""
 
 msgid "Last 12 weeks"
-msgstr "១២សប្តាហ៍ចុងក្រោយ"
+msgstr ""
 
 msgid "Last 52 weeks"
-msgstr "៥២សប្តាហ៍ចុងក្រោយ"
+msgstr ""
 
 msgid "This month"
-msgstr "ខែនេះ"
+msgstr "इस महीने"
 
 msgid "Last month"
-msgstr "ខែមុន"
+msgstr "पिछला महीना"
 
 msgid "Months this year"
-msgstr "ជាខែក្នុងឆ្នាំនេះ"
+msgstr ""
 
 msgid "Months last year"
 msgstr ""
 
 msgid "Last 3 months"
-msgstr "៣ខែចុងក្រោយ"
+msgstr "पिछले 3 महीने"
 
 msgid "Last 6 months"
-msgstr "៦ខែចុងក្រោយ"
+msgstr ""
 
 msgid "Last 12 months"
-msgstr "១២ខែចុងក្រោយ"
+msgstr ""
 
 msgid "This bi-month"
 msgstr ""
@@ -519,49 +516,49 @@ msgid "Last 6 bi-months"
 msgstr ""
 
 msgid "This quarter"
-msgstr "ត្រីមាសនេះ"
+msgstr ""
 
 msgid "Last quarter"
-msgstr "ត្រីមាសចុងក្រោយ"
+msgstr ""
 
 msgid "Quarters this year"
-msgstr "ជាត្រីមាសក្នុងឆ្នាំនេះ"
+msgstr ""
 
 msgid "Quarters last year"
 msgstr ""
 
 msgid "Last 4 quarters"
-msgstr "៤ត្រីមាសចុងក្រោយ"
+msgstr ""
 
 msgid "This six-month"
-msgstr "ឆមាសនេះ"
+msgstr ""
 
 msgid "Last six-month"
-msgstr "ឆមាសមុន"
+msgstr ""
 
 msgid "Last 2 six-months"
-msgstr "២ឆមាសចុងក្រោយ"
+msgstr ""
 
 msgid "This year"
-msgstr "ឆ្នាំនេះ"
+msgstr ""
 
 msgid "Last year"
-msgstr "ឆ្នាំមុន"
+msgstr ""
 
 msgid "Last 5 years"
-msgstr "៥ឆ្នាំចុងក្រោយ"
+msgstr ""
 
 msgid "Last 10 years"
 msgstr ""
 
 msgid "This financial year"
-msgstr "ឆ្នាំហិរញ្ញវត្ថុនេះ"
+msgstr ""
 
 msgid "Last financial year"
-msgstr "ឆ្នាំហិរញ្ញវត្ថុមុន"
+msgstr ""
 
 msgid "Last 5 financial years"
-msgstr "៥ឆ្នាំហិរញ្ញវត្ថុចុងក្រោយ"
+msgstr ""
 
 msgid "Hide daily periods"
 msgstr ""
@@ -738,7 +735,7 @@ msgid "Style (android)"
 msgstr ""
 
 msgid "Style"
-msgstr "​រចនាបទ"
+msgstr ""
 
 msgid "Start page"
 msgstr ""
@@ -753,7 +750,7 @@ msgid "Flag"
 msgstr ""
 
 msgid "Interface language"
-msgstr "ផ្ទាំងភាសា"
+msgstr ""
 
 msgid "Database language"
 msgstr ""
@@ -762,16 +759,16 @@ msgid "Property to display in analysis modules"
 msgstr ""
 
 msgid "Short name"
-msgstr "ឈ្មោះ​​ខ្លី"
+msgstr ""
 
 msgid "Default digit group separator to display in analysis modules"
 msgstr ""
 
 msgid "Space"
-msgstr "ដកឃ្លា"
+msgstr ""
 
 msgid "Comma"
-msgstr "សញ្ញាក្បៀស"
+msgstr ""
 
 msgid "Require authority to add to view object lists"
 msgstr ""
@@ -780,13 +777,13 @@ msgid "Login page theme"
 msgstr ""
 
 msgid "Default"
-msgstr "​លំនាំដើម"
+msgstr ""
 
 msgid "Sidebar"
 msgstr ""
 
 msgid "Custom"
-msgstr "កែសម្រួលផ្ទាល់ខ្លួន"
+msgstr ""
 
 msgid "Login page template"
 msgstr ""
@@ -819,7 +816,7 @@ msgid "Port"
 msgstr ""
 
 msgid "Username"
-msgstr "ឈ្មោះ​គណនី"
+msgstr ""
 
 msgid "TLS"
 msgstr ""
