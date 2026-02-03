@@ -206,11 +206,11 @@ const settingsKeyMapping = {
         label: i18n.t('Week relative start day'),
         type: 'dropdown',
         options: {
-            Weekly: i18n.t('Monday'),
-            WeeklyWednesday: i18n.t('Wednesday'),
-            WeeklyThursday: i18n.t('Thursday'),
-            WeeklySaturday: i18n.t('Saturday'),
-            WeeklySunday: i18n.t('Sunday'),
+            WEEKLY: i18n.t('Monday'),
+            WEEKLY_WEDNESDAY: i18n.t('Wednesday'),
+            WEEKLY_THURSDAY: i18n.t('Thursday'),
+            WEEKLY_SATURDAY: i18n.t('Saturday'),
+            WEEKLY_SUNDAY: i18n.t('Sunday'),
         },
     },
     analyticsFinancialYearStart: {
