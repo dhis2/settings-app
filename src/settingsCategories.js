@@ -109,6 +109,9 @@ export const categories = {
                 minimumApiVersion: 43,
             },
             {
+                setting: 'analyticsWeekStart',
+            },
+            {
                 setting: 'analyticsFinancialYearStart',
             },
             {

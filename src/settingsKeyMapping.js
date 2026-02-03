@@ -202,6 +202,17 @@ const settingsKeyMapping = {
         type: 'periodTypes',
         searchLabels: [i18n.t('Period types'), i18n.t('Allowed period types')],
     },
+    analyticsWeekStart: {
+        label: i18n.t('Week relative start day'),
+        type: 'dropdown',
+        options: {
+            Weekly: i18n.t('Monday'),
+            WeeklyWednesday: i18n.t('Wednesday'),
+            WeeklyThursday: i18n.t('Thursday'),
+            WeeklySaturday: i18n.t('Saturday'),
+            WeeklySunday: i18n.t('Sunday'),
+        },
+    },
     analyticsFinancialYearStart: {
         label: i18n.t('Financial year relative period start month'),
         type: 'dropdown',
