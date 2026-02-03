@@ -208,6 +208,7 @@ const settingsKeyMapping = {
         options: {
             FINANCIAL_YEAR_APRIL: i18n.t('April'),
             FINANCIAL_YEAR_JULY: i18n.t('July'),
+            FINANCIAL_YEAR_SEPTEMBER: i18n.t('September'),
             FINANCIAL_YEAR_OCTOBER: i18n.t('October'),
         },
     },
