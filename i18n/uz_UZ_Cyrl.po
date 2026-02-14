@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2024
+# Khurshid Ibatov <x.ibatov@dtsj.uz>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2024\n"
+"Last-Translator: Khurshid Ibatov <x.ibatov@dtsj.uz>, 2026\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,23 +101,17 @@ msgstr "МетаМаълумотлар вариантларини бошқари
 msgid "This client ID is already taken"
 msgstr "Ушбу мижоз идентификатори аллақачон олинган"
 
-msgid "Name"
-msgstr "Исми"
+msgid "Client ID"
+msgstr "Клиент ID"
 
 msgid "Required"
 msgstr "Мажбурий"
-
-msgid "Client ID"
-msgstr "Клиент ID"
 
 msgid "Client Secret"
 msgstr "Мижоз сирлари"
 
 msgid "Grant Types"
 msgstr "Грант турлари"
-
-msgid "Password"
-msgstr "Пароль"
 
 msgid "Refresh token"
 msgstr "Токенни янгилаш"
@@ -176,10 +170,133 @@ msgstr "OAuth2 мижоз ўчирилди"
 msgid "Failed to delete OAuth2 client"
 msgstr "OAuth2 клиентини ўчириш амалга ошмади"
 
+msgid "Name"
+msgstr "Исми"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "January"
+msgstr "Январь"
+
+msgid "February"
+msgstr "Февраль"
+
+msgid "March"
+msgstr "Март"
+
+msgid "April"
+msgstr "Апрель"
+
+msgid "May"
+msgstr "Май"
+
+msgid "June"
+msgstr "Июнь"
+
+msgid "July"
+msgstr "Июль"
+
+msgid "August"
+msgstr "Август"
+
+msgid "September"
+msgstr "Сентябрь"
+
+msgid "October"
+msgstr "Октябрь"
+
+msgid "November"
+msgstr "Ноябрь"
+
+msgid "December"
+msgstr "Декабрь"
+
+msgid "Monday"
+msgstr "Душанба"
+
+msgid "Tuesday"
+msgstr "Сешанба"
+
+msgid "Wednesday"
+msgstr "Чоршанба"
+
+msgid "Thursday"
+msgstr "Пайшанба"
+
+msgid "Friday"
+msgstr "Жума"
+
+msgid "Saturday"
+msgstr "Шанба"
+
+msgid "Sunday"
+msgstr "Якшанба"
+
+msgid "Daily"
+msgstr "Кунлик"
+
+msgid "Weekly"
+msgstr "Ҳафталик"
+
+msgid "Monthly"
+msgstr "Ойлик"
+
+msgid "Bi-monthly"
+msgstr "Жуфт ойлик"
+
+msgid "Yearly"
+msgstr "Йиллик"
+
+msgid "Bi-weekly"
+msgstr "Жуфт ҳафталик"
+
+msgid "Quarterly"
+msgstr "Ҳар квартал"
+
+msgid "Six-monthly"
+msgstr "Ярим йиллик"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "Кунлар"
+
+msgid "Weeks"
+msgstr "Ҳафталар"
+
+msgid "Bi-weeks"
+msgstr "Жуфт ҳафталар"
+
+msgid "Months"
+msgstr "Ойлар"
+
+msgid "Bi-months"
+msgstr "Жуфт ой"
+
+msgid "Quarters"
+msgstr "Квартал"
+
+msgid "Six months"
+msgstr "Олти ой"
+
+msgid "Years"
+msgstr "Йиллар"
+
+msgid "Other"
+msgstr "Бошқа"
+
 msgid "Settings updated"
 msgstr "Созламалар янгиланди"
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
@@ -239,6 +356,9 @@ msgstr "Синхронизация созламалари"
 msgid "Scheduled jobs"
 msgstr "Вазифалар режалаштирилган"
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr "OAuth2 клиентлари"
 
@@ -269,6 +389,14 @@ msgstr "Ушбу параметр фойдаланувчи созламалар�
 msgid "No options"
 msgstr "Вариант йўқ"
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr "Қидирув сўзига ҳеч қандай ахборот топилмади"
 
@@ -284,6 +412,11 @@ msgstr "Лимитсиз"
 msgid "Maximum number of SQL view records"
 msgstr "SQL ни кўздан кечиришда максимал ёзувлар сони"
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr "Инфратузилма индикаторлари"
 
@@ -293,29 +426,8 @@ msgstr "Инфраструктуравий маълумотлар элемент
 msgid "Infrastructural period type"
 msgstr "Инфраструктуравий давр тури"
 
-msgid "Daily"
-msgstr "Кунлик"
-
-msgid "Weekly"
-msgstr "Ҳафталик"
-
-msgid "Monthly"
-msgstr "Ойлик"
-
-msgid "Bi-monthly"
-msgstr "Жуфт ойлик"
-
-msgid "Quarterly"
-msgstr "Ҳар квартал"
-
-msgid "Six-monthly"
-msgstr "Ярим йиллик"
-
 msgid "Six-monthly April"
 msgstr "Ярим йиллик Апрель"
-
-msgid "Yearly"
-msgstr "Йиллик"
 
 msgid "Financial-April"
 msgstr "Молиявий-Апрель"
@@ -471,17 +583,14 @@ msgstr "Ойлик даврларни беркитиш"
 msgid "Hide bimonthly periods"
 msgstr "Икки ойлик даврларни беркитиш"
 
+msgid "Period types"
+msgstr "Давр турлари"
+
+msgid "Allowed period types"
+msgstr ""
+
 msgid "Financial year relative period start month"
 msgstr "Молиявий йилнинг нисбий даври бошланган ой"
-
-msgid "April"
-msgstr "Апрель"
-
-msgid "July"
-msgstr "Июль"
-
-msgid "October"
-msgstr "Октябрь"
 
 msgid "Cache strategy"
 msgstr "Кешлаш стратегияси"
@@ -611,6 +720,9 @@ msgstr "Google харита иловаси калитини қидириш"
 msgid "Bing Maps API key"
 msgstr "Bing хариталари API калити"
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr "Илова номи"
 
@@ -625,6 +737,9 @@ msgstr "Илованинг чап пастки колонтитули"
 
 msgid "Application right-side footer"
 msgstr "Илованинг ўнг пастки колонтитули"
+
+msgid "Style (android)"
+msgstr ""
 
 msgid "Style"
 msgstr "Услуб"
@@ -678,6 +793,9 @@ msgid "Custom"
 msgstr "Одатий"
 
 msgid "Login page template"
+msgstr ""
+
+msgid "Enable Global Shell"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -746,6 +864,12 @@ msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
 "Бир неча бор муваффақиятсиз кириш уринишлари бўлгандан сўнг, фойдаланувчи "
 "аккаунтини вақтинча блокланг "
+
+msgid "Enable embedded dashboards"
+msgstr ""
+
+msgid "Enforce verified emails"
+msgstr ""
 
 msgid "Allow users to grant own user roles"
 msgstr "Фойдаланувчиларга ўз ролини кўрсатишга рухсат бериш"
@@ -888,4 +1012,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""

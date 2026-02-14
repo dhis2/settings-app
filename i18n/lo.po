@@ -1,17 +1,18 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Philip Larsen Donnelly, 2024
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024
-# Namwan Chanthavisouk, 2024
-# Saysamone Sibounma, 2024
+# Namwan Chanthavisouk, 2025
+# Saysamone Sibounma, 2026
+# Phouthasinh PHEUAYSITHIPHONE, 2026
+# Viktor Varland <viktor@dhis2.org>, 2026
+# Philip Larsen Donnelly, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Saysamone Sibounma, 2024\n"
+"Last-Translator: Philip Larsen Donnelly, 2026\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -103,23 +104,17 @@ msgstr ""
 msgid "This client ID is already taken"
 msgstr ""
 
-msgid "Name"
-msgstr "ຊື່"
+msgid "Client ID"
+msgstr ""
 
 msgid "Required"
 msgstr "ຕ້ອງການ"
-
-msgid "Client ID"
-msgstr ""
 
 msgid "Client Secret"
 msgstr ""
 
 msgid "Grant Types"
 msgstr ""
-
-msgid "Password"
-msgstr "ລະຫັດຜ່ານ"
 
 msgid "Refresh token"
 msgstr ""
@@ -178,10 +173,133 @@ msgstr ""
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Name"
+msgstr "ຊື່"
+
+msgid "Password"
+msgstr "ລະຫັດຜ່ານ"
+
+msgid "January"
+msgstr "ມັງກອນ"
+
+msgid "February"
+msgstr "ກຸມພາ"
+
+msgid "March"
+msgstr "ມີນາ"
+
+msgid "April"
+msgstr "ເມສາ"
+
+msgid "May"
+msgstr "ພຶດສະພາ"
+
+msgid "June"
+msgstr "ມີຖຸນາ"
+
+msgid "July"
+msgstr "ກໍລະກົດ"
+
+msgid "August"
+msgstr "ສິງຫາ"
+
+msgid "September"
+msgstr "ກັນຍາ"
+
+msgid "October"
+msgstr "ຕຸລາ"
+
+msgid "November"
+msgstr "ພະຈິກ"
+
+msgid "December"
+msgstr "ທັນວາ"
+
+msgid "Monday"
+msgstr "Monday"
+
+msgid "Tuesday"
+msgstr "Tuesday"
+
+msgid "Wednesday"
+msgstr "ວັນພຸດ"
+
+msgid "Thursday"
+msgstr "Thursday"
+
+msgid "Friday"
+msgstr "ວັນສຸກ"
+
+msgid "Saturday"
+msgstr "ວັນເສົາ"
+
+msgid "Sunday"
+msgstr "ວັນອາທິດ"
+
+msgid "Daily"
+msgstr "ທຸກໆມື້"
+
+msgid "Weekly"
+msgstr "ເປັນອາທິດ"
+
+msgid "Monthly"
+msgstr "ລາຍເດືອນ"
+
+msgid "Bi-monthly"
+msgstr "ທຸກໆສອງເດືອນ"
+
+msgid "Yearly"
+msgstr "ລາຍປີ"
+
+msgid "Bi-weekly"
+msgstr "ສອງອາທິດຕໍ່ຄັ້ງ"
+
+msgid "Quarterly"
+msgstr "ໄຕມາດ"
+
+msgid "Six-monthly"
+msgstr "ແຕ່ລະ 6 ເດືອນ"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "ມື້"
+
+msgid "Weeks"
+msgstr "ອາທິດ"
+
+msgid "Bi-weeks"
+msgstr "ສອງອາທິດຕໍ່ຄັ້ງ"
+
+msgid "Months"
+msgstr "ເດືອນ"
+
+msgid "Bi-months"
+msgstr "2ເດືອນ"
+
+msgid "Quarters"
+msgstr "ໄຕມາດ"
+
+msgid "Six months"
+msgstr "6 ເດືອນ"
+
+msgid "Years"
+msgstr "ປີ"
+
+msgid "Other"
+msgstr "ອື່ນໆ"
+
 msgid "Settings updated"
 msgstr "ການຕັ້ງຄ່ານີ້ໄດ້ຖືກບັນທຶກ"
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
@@ -194,13 +312,13 @@ msgid "Analytics"
 msgstr "ການວິເຄາະ"
 
 msgid "Analytics settings"
-msgstr ""
+msgstr "ໂຄງການ"
 
 msgid "Server"
 msgstr ""
 
 msgid "Server settings"
-msgstr ""
+msgstr "ການຕັ້ງຄ່າອີເມວ"
 
 msgid "Appearance"
 msgstr ""
@@ -241,6 +359,9 @@ msgstr "Synchronization"
 msgid "Scheduled jobs"
 msgstr ""
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr ""
 
@@ -269,6 +390,14 @@ msgstr ""
 msgid "No options"
 msgstr "ບໍ່ມີຕົວເລືອກ"
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr ""
 
@@ -284,6 +413,11 @@ msgstr ""
 msgid "Maximum number of SQL view records"
 msgstr ""
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr ""
 
@@ -293,38 +427,17 @@ msgstr ""
 msgid "Infrastructural period type"
 msgstr ""
 
-msgid "Daily"
-msgstr "ທຸກໆມື້"
-
-msgid "Weekly"
-msgstr "ເປັນອາທິດ"
-
-msgid "Monthly"
-msgstr "ລາຍເດືອນ"
-
-msgid "Bi-monthly"
-msgstr "ທຸກໆສອງເດືອນ"
-
-msgid "Quarterly"
-msgstr "ໄຕມາດ"
-
-msgid "Six-monthly"
-msgstr "ແຕ່ລະ 6 ເດືອນ"
-
 msgid "Six-monthly April"
 msgstr "ແຕ່ລະຫົກເດືອນ ແລະ ເດືອນເມສາ"
 
-msgid "Yearly"
-msgstr "ລາຍປີ"
-
 msgid "Financial-April"
-msgstr ""
+msgstr "ປີງົບປະມານ (ເມສາ)"
 
 msgid "Financial-July"
 msgstr "ສົກປີງົບປະມານ ແຕ່ ເດືອນ 7"
 
 msgid "Financial-Oct"
-msgstr ""
+msgstr "ປີງົບປະມານ (ຕຸລາ)"
 
 msgid "Feedback recipients"
 msgstr ""
@@ -470,17 +583,14 @@ msgstr ""
 msgid "Hide bimonthly periods"
 msgstr ""
 
-msgid "Financial year relative period start month"
+msgid "Period types"
+msgstr "ແບບຊ່ວງເວລາ"
+
+msgid "Allowed period types"
 msgstr ""
 
-msgid "April"
-msgstr "ເມສາ"
-
-msgid "July"
-msgstr "ກໍລະກົດ"
-
-msgid "October"
-msgstr "ຕຸລາ"
+msgid "Financial year relative period start month"
+msgstr ""
 
 msgid "Cache strategy"
 msgstr "Cache strategy"
@@ -495,7 +605,7 @@ msgid "Cache for 30 minutes"
 msgstr ""
 
 msgid "Cache for one hour"
-msgstr ""
+msgstr "Cache ເປັນເວລາ 1 ຊົ່ວໂມງ"
 
 msgid "Cache until 6AM tomorrow"
 msgstr ""
@@ -608,6 +718,9 @@ msgstr ""
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr ""
 
@@ -621,6 +734,9 @@ msgid "Application left-side footer"
 msgstr ""
 
 msgid "Application right-side footer"
+msgstr ""
+
+msgid "Style (android)"
 msgstr ""
 
 msgid "Style"
@@ -677,6 +793,9 @@ msgstr "ກຳນົດເອງ"
 msgid "Login page template"
 msgstr ""
 
+msgid "Enable Global Shell"
+msgstr ""
+
 msgid "Custom login page logo"
 msgstr ""
 
@@ -699,7 +818,7 @@ msgid "Host name"
 msgstr ""
 
 msgid "Port"
-msgstr ""
+msgstr "ການເຊື່ອມ"
 
 msgid "Username"
 msgstr "ຊື່ຜູ້ໃຊ້"
@@ -732,6 +851,12 @@ msgid "Enable user account recovery"
 msgstr ""
 
 msgid "Lock user account temporarily after multiple failed login attempts"
+msgstr ""
+
+msgid "Enable embedded dashboards"
+msgstr ""
+
+msgid "Enforce verified emails"
 msgstr ""
 
 msgid "Allow users to grant own user roles"
@@ -774,31 +899,31 @@ msgid "reCAPTCHA Secret Key"
 msgstr ""
 
 msgid "Coptic"
-msgstr ""
+msgstr "ISO 8601"
 
 msgid "Ethiopian"
-msgstr ""
+msgstr "ເອທິໂອເປຍ (Ethiopian)"
 
 msgid "Gregorian"
-msgstr ""
+msgstr "ເກຣໂກຣຽນ (Gregorian)"
 
 msgid "Islamic"
-msgstr ""
+msgstr "ອິດສະລາມ (Islamic)"
 
 msgid "ISO 8601"
-msgstr ""
+msgstr "ISO 8601"
 
 msgid "Julian"
-msgstr ""
+msgstr "ຈູລຽນ (Julian)"
 
 msgid "Nepali"
-msgstr ""
+msgstr "ເນປານ (Nepali)"
 
 msgid "Thai"
-msgstr ""
+msgstr "ໄທ (Thai)"
 
 msgid "Persian"
-msgstr ""
+msgstr "ເປີເຊຍ (Persian)"
 
 msgid "Change calendar setting"
 msgstr ""
@@ -860,4 +985,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""

@@ -1,17 +1,17 @@
 # 
 # Translators:
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2021
-# Philip Larsen Donnelly, 2024
-# Viktor Varland <viktor@dhis2.org>, 2024
-# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2024
-# Em Le <em.hispvietnam@gmail.com>, 2024
+# Philip Larsen Donnelly, 2026
+# Em Le <em.hispvietnam@gmail.com>, 2026
+# Viktor Varland <viktor@dhis2.org>, 2026
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-01-17T10:18:20.401Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Em Le <em.hispvietnam@gmail.com>, 2024\n"
+"Last-Translator: Thuy Nguyen <thuynguyen@hispvietnam.org>, 2026\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -103,23 +103,17 @@ msgstr "Phiên bản siêu dữ liệu"
 msgid "This client ID is already taken"
 msgstr "Ký hiệu nhận dạng (ID) máy khách này đã được sử dụng"
 
-msgid "Name"
-msgstr "Tên"
+msgid "Client ID"
+msgstr "Ký hiệu nhận dạng máy khách"
 
 msgid "Required"
 msgstr "Bắt buộc"
-
-msgid "Client ID"
-msgstr "Ký hiệu nhận dạng máy khách"
 
 msgid "Client Secret"
 msgstr "Bí mật máy khách"
 
 msgid "Grant Types"
 msgstr "Loại Cấp quyền"
-
-msgid "Password"
-msgstr "Mật khẩu"
 
 msgid "Refresh token"
 msgstr "Nạp lại Cờ"
@@ -178,10 +172,133 @@ msgstr "Máy khách OAuth2 đã xóa"
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Name"
+msgstr "Tên"
+
+msgid "Password"
+msgstr "Mật khẩu"
+
+msgid "January"
+msgstr "Tháng Một"
+
+msgid "February"
+msgstr "Tháng Hai"
+
+msgid "March"
+msgstr "Tháng Ba"
+
+msgid "April"
+msgstr "Tháng tư"
+
+msgid "May"
+msgstr "Tháng Năm"
+
+msgid "June"
+msgstr "Tháng Sáu"
+
+msgid "July"
+msgstr "Tháng bảy"
+
+msgid "August"
+msgstr "Tháng Tám"
+
+msgid "September"
+msgstr "Tháng Chín"
+
+msgid "October"
+msgstr "Tháng mười"
+
+msgid "November"
+msgstr "Tháng Mười Một"
+
+msgid "December"
+msgstr "Tháng Mười Hai"
+
+msgid "Monday"
+msgstr "Thứ Hai"
+
+msgid "Tuesday"
+msgstr "Thứ Ba"
+
+msgid "Wednesday"
+msgstr "Thứ Tư"
+
+msgid "Thursday"
+msgstr "Thứ Năm"
+
+msgid "Friday"
+msgstr "Thứ Sáu"
+
+msgid "Saturday"
+msgstr "Thứ Bảy"
+
+msgid "Sunday"
+msgstr "Chủ Nhật"
+
+msgid "Daily"
+msgstr "Hàng ngày"
+
+msgid "Weekly"
+msgstr "Hàng tuần"
+
+msgid "Monthly"
+msgstr "Hàng tháng"
+
+msgid "Bi-monthly"
+msgstr "Hàng 2 tháng"
+
+msgid "Yearly"
+msgstr "Một năm"
+
+msgid "Bi-weekly"
+msgstr "Định kỳ 2 tuần"
+
+msgid "Quarterly"
+msgstr "Hàng quý"
+
+msgid "Six-monthly"
+msgstr "Hàng 6 tháng"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "Ngày"
+
+msgid "Weeks"
+msgstr "Tuần"
+
+msgid "Bi-weeks"
+msgstr "Định kỳ 2 tuần"
+
+msgid "Months"
+msgstr "Tháng"
+
+msgid "Bi-months"
+msgstr "Định kỳ 2 tháng"
+
+msgid "Quarters"
+msgstr "Quý"
+
+msgid "Six months"
+msgstr "Sáu Tháng"
+
+msgid "Years"
+msgstr "Năm"
+
+msgid "Other"
+msgstr "Khác"
+
 msgid "Settings updated"
 msgstr "Cài đặt đã được cập nhật"
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
@@ -241,6 +358,9 @@ msgstr "Cài đặt đồng bộ"
 msgid "Scheduled jobs"
 msgstr ""
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr "Máy khách OAuth2"
 
@@ -269,6 +389,14 @@ msgstr "Cài đặt này có thể bị mất hiệu lực bởi cài đặt c�
 msgid "No options"
 msgstr "Không có tùy chọn"
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr "Không tìm thấy cài đặt"
 
@@ -284,6 +412,11 @@ msgstr "Không hạn chế"
 msgid "Maximum number of SQL view records"
 msgstr ""
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr "Chỉ số hạ tầng"
 
@@ -293,29 +426,8 @@ msgstr "Phần tử dữ liệu hạ tầng"
 msgid "Infrastructural period type"
 msgstr "Loại thời điểm hạ tầng"
 
-msgid "Daily"
-msgstr "Hàng ngày"
-
-msgid "Weekly"
-msgstr "Hàng tuần"
-
-msgid "Monthly"
-msgstr "Hàng tháng"
-
-msgid "Bi-monthly"
-msgstr "Hàng 2 tháng"
-
-msgid "Quarterly"
-msgstr "Hàng quý"
-
-msgid "Six-monthly"
-msgstr "Hàng 6 tháng"
-
 msgid "Six-monthly April"
 msgstr "Hàng 6 tháng - tháng 4"
-
-msgid "Yearly"
-msgstr "Một năm"
 
 msgid "Financial-April"
 msgstr "Năm tài chính - tháng 4"
@@ -470,17 +582,14 @@ msgstr ""
 msgid "Hide bimonthly periods"
 msgstr ""
 
-msgid "Financial year relative period start month"
+msgid "Period types"
+msgstr "Các loại thời điểm"
+
+msgid "Allowed period types"
 msgstr ""
 
-msgid "April"
-msgstr "Tháng tư"
-
-msgid "July"
-msgstr "Tháng bảy"
-
-msgid "October"
-msgstr "Tháng mười"
+msgid "Financial year relative period start month"
+msgstr ""
 
 msgid "Cache strategy"
 msgstr "Chiến lược cho bộ nhớ cache"
@@ -609,6 +718,9 @@ msgstr "Khóa API bản đồ Google"
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr "Tiêu đề ứng dụng"
 
@@ -623,6 +735,9 @@ msgstr "Nhãn hiển thị ở cuối trang bên trái ứng dụng"
 
 msgid "Application right-side footer"
 msgstr "Nhãn hiển thị ở cuối trang bên phải ứng dụng"
+
+msgid "Style (android)"
+msgstr ""
 
 msgid "Style"
 msgstr "Kiểu dáng"
@@ -680,6 +795,9 @@ msgstr "Tùy chỉnh"
 msgid "Login page template"
 msgstr ""
 
+msgid "Enable Global Shell"
+msgstr ""
+
 msgid "Custom login page logo"
 msgstr "Thiết lập biểu tượng trang đăng nhập"
 
@@ -720,24 +838,27 @@ msgid "Send me a test email"
 msgstr "Gửi tôi thư điện tử để kiểm định"
 
 msgid "Self registration account user role"
-msgstr "Vai trò (quyền) của người dùng được cấp khi tự đăng ký tài khoảng"
+msgstr "Vai trò của người dùng được cấp khi tự đăng ký tài khoản"
 
 msgid "Disable self registration"
 msgstr "Tắt chức năng tự đăng ký tài khoảng"
 
 msgid "Self registration account organisation unit"
-msgstr "Đơn vị gán cho người dùng tự đăng ký tài khoảng"
+msgstr "Đơn vị gán cho người dùng tự đăng ký tài khoản"
 
 msgid "Do not require recaptcha for self registration"
 msgstr "Không yêu cầu gõ lại ký tự xác minh khi tự đăng ký tài khoảng"
 
 msgid "Enable user account recovery"
-msgstr "Cho phép phục hồi tài khoảng"
+msgstr "Cho phép phục hồi tài khoản"
 
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr ""
 "Khóa tạm thời tài khoảng người dùng sau nhiều lần thử đăng nhập không thành "
 "công"
+
+msgid "Enable embedded dashboards"
+msgstr ""
 
 msgid "Enforce verified emails"
 msgstr ""
@@ -749,7 +870,7 @@ msgid "Allow assigning object to related objects during add or update"
 msgstr "Cho phép gán đối tượng liên quan trong khi thêm hoặc cập nhật"
 
 msgid "Require user account password change"
-msgstr "Yêu cầu thay đổi mật khẩu tài khoảng"
+msgstr "Yêu cầu thay đổi mật khẩu tài khoản"
 
 msgid "Never"
 msgstr "Chưa bao giờ"
@@ -872,4 +993,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""

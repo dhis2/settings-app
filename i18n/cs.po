@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Jiří Podhorecký <jirka.p@volny.cz>, 2024
+# Jiří Podhorecký <jirka.p@volny.cz>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-01-17T10:18:20.401Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2024\n"
+"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2026\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
@@ -99,23 +99,17 @@ msgstr "Správa verzí metadat"
 msgid "This client ID is already taken"
 msgstr "Toto ID klienta je již obsazeno"
 
-msgid "Name"
-msgstr "Název"
+msgid "Client ID"
+msgstr "Client ID"
 
 msgid "Required"
 msgstr "Vyžadováno"
-
-msgid "Client ID"
-msgstr "Client ID"
 
 msgid "Client Secret"
 msgstr "Tajemství klienta"
 
 msgid "Grant Types"
 msgstr "Druhy grantů"
-
-msgid "Password"
-msgstr "Heslo"
 
 msgid "Refresh token"
 msgstr "Obnovit token"
@@ -174,11 +168,134 @@ msgstr "Klient OAuth2 odstraněn"
 msgid "Failed to delete OAuth2 client"
 msgstr "Odstranění klienta OAuth2 se nezdařilo"
 
+msgid "Name"
+msgstr "Název"
+
+msgid "Password"
+msgstr "Heslo"
+
+msgid "January"
+msgstr "Leden"
+
+msgid "February"
+msgstr "únor"
+
+msgid "March"
+msgstr "Březen"
+
+msgid "April"
+msgstr "Duben"
+
+msgid "May"
+msgstr "Květen"
+
+msgid "June"
+msgstr "červen"
+
+msgid "July"
+msgstr "Červenec"
+
+msgid "August"
+msgstr "Srpen"
+
+msgid "September"
+msgstr "Září"
+
+msgid "October"
+msgstr "Říjen"
+
+msgid "November"
+msgstr "Listopad"
+
+msgid "December"
+msgstr "Prosinec"
+
+msgid "Monday"
+msgstr "pondělí"
+
+msgid "Tuesday"
+msgstr "úterý"
+
+msgid "Wednesday"
+msgstr "středa"
+
+msgid "Thursday"
+msgstr "Čtvrtek"
+
+msgid "Friday"
+msgstr "pátek"
+
+msgid "Saturday"
+msgstr "Sobota"
+
+msgid "Sunday"
+msgstr "Neděle"
+
+msgid "Daily"
+msgstr "Denně"
+
+msgid "Weekly"
+msgstr "Týdně"
+
+msgid "Monthly"
+msgstr "Měsíčně"
+
+msgid "Bi-monthly"
+msgstr "Dva měsíce"
+
+msgid "Yearly"
+msgstr "Ročně"
+
+msgid "Bi-weekly"
+msgstr "po 14ti dnech"
+
+msgid "Quarterly"
+msgstr "Čtvrtletně"
+
+msgid "Six-monthly"
+msgstr "Šestiměsíční"
+
+msgid "Weekly (start {{day}})"
+msgstr "Týdenní (začátek {{day}})"
+
+msgid "Financial year (start {{month}})"
+msgstr "Rozpočtový rok (začátek {{month}})"
+
+msgid "Days"
+msgstr "Dnů"
+
+msgid "Weeks"
+msgstr "Týdnů"
+
+msgid "Bi-weeks"
+msgstr "14 dní"
+
+msgid "Months"
+msgstr "Měsíce"
+
+msgid "Bi-months"
+msgstr "Dva měsíce"
+
+msgid "Quarters"
+msgstr "Čtvrtletí"
+
+msgid "Six months"
+msgstr "Šest měsíců"
+
+msgid "Years"
+msgstr "Let"
+
+msgid "Other"
+msgstr "jiný"
+
 msgid "Settings updated"
 msgstr "nastavení aktualizováno"
 
 msgid "There was a problem updating settings. Changes have not been saved."
-msgstr ""
+msgstr "Došlo k problému s aktualizací nastavení. Změny nebyly uloženy."
+
+msgid "Period types available in analytics apps"
+msgstr "Typy období dostupné v analytických aplikacích"
 
 msgid "General"
 msgstr "Všeobecné"
@@ -237,6 +354,9 @@ msgstr "Nastavení synchronizace"
 msgid "Scheduled jobs"
 msgstr "Plánované úlohy"
 
+msgid "Notification settings"
+msgstr "Nastavení oznámení"
+
 msgid "OAuth2 Clients"
 msgstr "Klienti OAuth2"
 
@@ -267,6 +387,18 @@ msgstr "Toto nastavení lze přepsat uživatelským nastavením"
 msgid "No options"
 msgstr "Žádné možnosti"
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+"Nastavení musí být nakonfigurováno tak, aby odesílalo e-maily pro vynucení "
+"ověřených e-mailů."
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+"Funkci \"Vynutit ověřený e-mail\" nelze povolit, dokud není nakonfigurováno "
+"nastavení e-mailu."
+
 msgid "No settings matched the search term"
 msgstr "Hledanému výrazu neodpovídá žádná nastavení"
 
@@ -282,6 +414,13 @@ msgstr "Neomezeno"
 msgid "Maximum number of SQL view records"
 msgstr "Maximální počet záznamů SQL pohledů"
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+"Maximální počet záznamů trasovaných entit, které se mají načíst z databáze "
+"(pro neomezený počet zadejte 0)."
+
 msgid "Infrastructural indicators"
 msgstr "Indikátory infrastruktury"
 
@@ -291,29 +430,8 @@ msgstr "Infrastrukturní datové prvky"
 msgid "Infrastructural period type"
 msgstr "Typ období infrastruktury"
 
-msgid "Daily"
-msgstr "Denně"
-
-msgid "Weekly"
-msgstr "Týdně"
-
-msgid "Monthly"
-msgstr "Měsíčně"
-
-msgid "Bi-monthly"
-msgstr "Dva měsíce"
-
-msgid "Quarterly"
-msgstr "Čtvrtletně"
-
-msgid "Six-monthly"
-msgstr "Šestiměsíční"
-
 msgid "Six-monthly April"
 msgstr "Duben šest měsíců"
-
-msgid "Yearly"
-msgstr "Ročně"
 
 msgid "Financial-April"
 msgstr "Finanční - Duben"
@@ -470,17 +588,14 @@ msgstr "Skrýt měsíční období"
 msgid "Hide bimonthly periods"
 msgstr "Skrýt dvouměsíční období"
 
+msgid "Period types"
+msgstr "Typy období"
+
+msgid "Allowed period types"
+msgstr "Povolené typy období"
+
 msgid "Financial year relative period start month"
 msgstr "Počáteční měsíc relativního období finančního roku"
-
-msgid "April"
-msgstr "Duben"
-
-msgid "July"
-msgstr "Červenec"
-
-msgid "October"
-msgstr "Říjen"
 
 msgid "Cache strategy"
 msgstr "Strategie mezipaměti"
@@ -610,6 +725,9 @@ msgstr "Klíč rozhraní Google Maps API"
 msgid "Bing Maps API key"
 msgstr "Klíč API Bing Maps"
 
+msgid "Azure Maps API key"
+msgstr "Klíč API služby Azure Maps"
+
 msgid "Application title"
 msgstr "Název aplikace"
 
@@ -624,6 +742,9 @@ msgstr "Zápatí levé strany aplikace"
 
 msgid "Application right-side footer"
 msgstr "Zápatí na pravé straně aplikace"
+
+msgid "Style (android)"
+msgstr "Styl (android)"
 
 msgid "Style"
 msgstr "Styl"
@@ -665,19 +786,22 @@ msgid "Require authority to add to view object lists"
 msgstr "Vyžadovat oprávnění k přidání k zobrazení seznamů objektů"
 
 msgid "Login page theme"
-msgstr ""
+msgstr "Motiv přihlašovací stránky"
 
 msgid "Default"
 msgstr "Výchozí"
 
 msgid "Sidebar"
-msgstr ""
+msgstr "Postranní panel"
 
 msgid "Custom"
 msgstr "Vlastní"
 
 msgid "Login page template"
-msgstr ""
+msgstr "Šablona přihlašovací stránky"
+
+msgid "Enable Global Shell"
+msgstr "Povolení globálního shellu"
 
 msgid "Custom login page logo"
 msgstr "Vlastní logo přihlašovací stránky"
@@ -717,7 +841,7 @@ msgid "Email sender"
 msgstr "Odesílateli e-mailu"
 
 msgid "The address that outgoing messages are sent from."
-msgstr ""
+msgstr "Adresa, ze které jsou odesílány odchozí zprávy."
 
 msgid "Send me a test email"
 msgstr "Zašlete mi zkušební e-mail"
@@ -742,8 +866,11 @@ msgstr ""
 "Po několika neúspěšných pokusech o přihlášení dočasně uzamknout uživatelský "
 "účet"
 
+msgid "Enable embedded dashboards"
+msgstr "Povolení vestavěných ovládacích panelů"
+
 msgid "Enforce verified emails"
-msgstr ""
+msgstr "Vymáhání ověřených e-mailů"
 
 msgid "Allow users to grant own user roles"
 msgstr "Povolit uživatelům přidělit vlastní uživatelské role"
@@ -769,16 +896,17 @@ msgid "12 months"
 msgstr "12 měsíců"
 
 msgid "Send reminders to users before their password expires"
-msgstr ""
+msgstr "Odesílání upomínek uživatelům před vypršením platnosti jejich hesla"
 
 msgid "Number of days before password expiry to send reminder (1–28)"
 msgstr ""
+"Počet dní před vypršením platnosti hesla pro zaslání připomenutí (1-28)"
 
 msgid "Minimum characters in password"
 msgstr "Minimální počet znaků v hesle"
 
 msgid "CORS allowlist"
-msgstr ""
+msgstr "Seznam povolení CORS"
 
 msgid "reCAPTCHA Site Key"
 msgstr "Klíč webu reCAPTCHA"
@@ -814,16 +942,19 @@ msgid "Persian"
 msgstr "Peršan"
 
 msgid "Change calendar setting"
-msgstr ""
+msgstr "Změna nastavení kalendáře"
 
 msgid ""
 "Changing your calendar setting after you have entered data can make your "
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
 msgstr ""
+"Změna nastavení kalendáře po zadání dat může způsobit nepoužitelnost "
+"systému. Pokud jste již data zadali, důrazně doporučujeme nastavení "
+"kalendáře neměnit."
 
 msgid "Yes, change calendar"
-msgstr ""
+msgstr "Ano, změna kalendáře"
 
 msgid "Date format"
 msgstr "Formát data"
@@ -865,16 +996,44 @@ msgstr "Heslo vzdáleného serveru"
 msgid ""
 "Number of minutes after which a stale job is reset to scheduled state (1-60)"
 msgstr ""
+"Počet minut, po kterých se zastaralá úloha vrátí do naplánovaného stavu "
+"(1-60)"
 
 msgid "Number of minutes after which a completed ad-hoc job is deleted (1+)"
-msgstr ""
+msgstr "Počet minut, po kterých je dokončená úloha ad hoc odstraněna (1+)"
 
 msgid ""
 "Maximum number of hours a job may trigger after its intended time if job has"
 " not yet run (1-24)"
 msgstr ""
+"Maximální počet hodin, po kterých může být úloha spuštěna, pokud ještě "
+"nebyla spuštěna (1-24)."
 
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
 msgstr ""
+"Interval provádění úlohy (v sekundách), pod kterým se úloha zaznamená na "
+"úrovni ladění (nikoli informací) (20+)."
+
+msgid "Log level"
+msgstr "Úroveň protokolu"
+
+msgid "Max messages per job"
+msgstr "Maximální počet zpráv na úlohu"
+
+msgid "Max age in days"
+msgstr "Maximální věk ve dnech"
+
+msgid "Max jobs per type"
+msgstr "Maximální počet úloh na typ"
+
+msgid "Enable Gist Overview"
+msgstr "Povolit přehled Gist"
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr "Čištění nečinných úloh po (v milisekundách)"
+
+msgid "Use centroids for organisation unit polygons in event analytics"
+msgstr ""
+"Použití centroidů pro polygony organizačních jednotek v analýze událostí"
