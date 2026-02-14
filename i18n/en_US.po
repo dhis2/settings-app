@@ -1,792 +1,791 @@
 # 
 # Translators:
-# 晓东 林 <13981924470@126.com>, 2021
-# easylin <lin_xd@126.com>, 2025
+# Rohit Wadhwani, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-02-27T15:56:53.590Z\n"
 "PO-Revision-Date: 2021-09-04 00:34+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2025\n"
-"Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
+"Last-Translator: Rohit Wadhwani, 2026\n"
+"Language-Team: English (United States) (https://app.transifex.com/hisp-uio/teams/100509/en_US/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Failed to load: {{error}}"
-msgstr "加载失败：{{error}}"
+msgstr ""
 
 msgid "No flag"
-msgstr "无标志"
+msgstr ""
 
 msgid "Search settings"
-msgstr "搜索设置"
+msgstr ""
 
 msgid "Replace image"
-msgstr "替换图像"
+msgstr ""
 
 msgid "Preview image"
-msgstr "预览图像"
+msgstr ""
 
 msgid "Preview of image"
-msgstr "图片预览"
+msgstr ""
 
 msgid "Upload image"
-msgstr "上传图像"
+msgstr ""
 
 msgid "Error uploading file: {{error}}"
-msgstr "上传文件时出错：{{error}}"
+msgstr ""
 
 msgid "Cancel upload"
-msgstr "取消上传"
+msgstr ""
 
 msgid "System default (fallback)"
-msgstr "系统缺省（恢复）"
+msgstr ""
 
 msgid "Set the main field value before adding a translation"
-msgstr "添加翻译前设置主要字段值"
+msgstr ""
 
 msgid "Could not fetch localized settings"
-msgstr "不能提前本地化设置"
+msgstr ""
 
 msgid "Select language"
-msgstr "选择语言"
+msgstr ""
 
 msgid "Version created"
-msgstr "版本已建立"
+msgstr ""
 
 msgid "Failed to create version"
-msgstr "创建版本失败"
+msgstr ""
 
 msgid "Error fetching settings"
-msgstr "提取设置时出错"
+msgstr ""
 
 msgid "Create new version"
-msgstr "创建新版本"
+msgstr ""
 
 msgid "Best effort"
-msgstr "最大努力"
+msgstr ""
 
 msgid "Atomic"
-msgstr "原子化"
+msgstr ""
 
 msgid "Master version:"
-msgstr "主版本："
+msgstr ""
 
 msgid "None"
-msgstr "无"
+msgstr "कोई नहीं"
 
 msgid "Last sync attempt"
-msgstr "最近尝试同步"
+msgstr ""
 
 msgid "Failed"
-msgstr "Failed"
+msgstr ""
 
 msgid "No versions exist"
-msgstr "没有版本"
+msgstr ""
 
 msgid "Enable Versioning for metadata sync"
-msgstr "激活元数据同步版本化"
+msgstr ""
 
 msgid "Don't sync metadata if DHIS versions differ"
-msgstr "如果DHIS版本不一致，不同步元数据"
+msgstr ""
 
 msgid "Metadata Versioning"
-msgstr "元数据版本"
+msgstr ""
 
 msgid "This client ID is already taken"
-msgstr "客户端ID已经使用"
+msgstr ""
 
 msgid "Name"
-msgstr "名称"
+msgstr ""
 
 msgid "Required"
-msgstr "所需"
+msgstr "Required"
 
 msgid "Client ID"
-msgstr "客户ID"
+msgstr ""
 
 msgid "Client Secret"
-msgstr "客户密钥"
+msgstr ""
 
 msgid "Grant Types"
-msgstr "授权类型"
+msgstr ""
 
 msgid "Password"
-msgstr "口令"
+msgstr ""
 
 msgid "Refresh token"
-msgstr "刷新令牌"
+msgstr ""
 
 msgid "Authorization code"
-msgstr "认证码"
+msgstr ""
 
 msgid "One URL per line"
-msgstr "一行一个URI"
+msgstr ""
 
 msgid "Redirect URIs"
-msgstr "重定向URI"
+msgstr ""
 
 msgid "This field should contain a list of URLs"
-msgstr "该字段应该是包括一个url列表"
+msgstr ""
 
 msgid "Create new OAuth2 Client"
-msgstr "创建新的OAuth2 客户端"
+msgstr ""
 
 msgid "Edit OAuth2 Client"
-msgstr "编辑OAuth2 客户"
+msgstr ""
 
 msgid "Save"
-msgstr "保存"
+msgstr "सेव"
 
 msgid "Cancel"
-msgstr "取消"
+msgstr "कैंसल"
 
 msgid "There are currently no OAuth2 clients registered"
-msgstr "当前没有OAuth2 客户端注册"
+msgstr ""
 
 msgid "Edit"
-msgstr "编辑<br>"
+msgstr ""
 
 msgid "Delete"
-msgstr "删除"
+msgstr "डिलीट"
 
 msgid "OAuth2 client saved"
-msgstr "OAth2客户已经保存"
+msgstr ""
 
 msgid "Failed to save OAuth2 client"
-msgstr "保存OAth2客户失败"
+msgstr ""
 
 msgid "Add OAuth2 client"
-msgstr "添加 OAuth2 客户端"
+msgstr ""
 
 msgid "Yes"
-msgstr "是"
+msgstr "हाँ"
 
 msgid "No"
-msgstr "否"
+msgstr "नहीं"
 
 msgid "OAuth2 client deleted"
-msgstr "OAth2客户已经删除"
+msgstr ""
 
 msgid "Failed to delete OAuth2 client"
-msgstr "删除 OAuth2 客户端失败"
+msgstr ""
 
 msgid "Settings updated"
-msgstr "设置已经更新"
+msgstr ""
 
 msgid "General"
-msgstr "常规"
+msgstr ""
 
 msgid "General settings"
-msgstr "常规设置"
+msgstr ""
 
 msgid "Analytics"
-msgstr "分析"
+msgstr ""
 
 msgid "Analytics settings"
-msgstr "分析设置"
+msgstr ""
 
 msgid "Server"
-msgstr "服务器"
+msgstr ""
 
 msgid "Server settings"
-msgstr "服务器设置"
+msgstr ""
 
 msgid "Appearance"
-msgstr "外观"
+msgstr ""
 
 msgid "Appearance settings"
-msgstr "外观设置"
+msgstr ""
 
 msgid "Email"
-msgstr "邮件"
+msgstr ""
 
 msgid "Email settings"
-msgstr "SMTP设置"
+msgstr ""
 
 msgid "Access"
-msgstr "访问"
+msgstr ""
 
 msgid "Access settings"
-msgstr "访问设置"
+msgstr ""
 
 msgid "Calendar"
-msgstr "日历"
+msgstr ""
 
 msgid "Calendar settings"
-msgstr "日历设置"
+msgstr ""
 
 msgid "Data Import"
-msgstr "数据导入"
+msgstr ""
 
 msgid "Data import settings"
-msgstr "Data import settings"
+msgstr ""
 
 msgid "Synchronization"
-msgstr "同步"
+msgstr ""
 
 msgid "Synchronization settings"
-msgstr "同步设置"
+msgstr ""
 
 msgid "OAuth2 Clients"
-msgstr "OAuth2 客户"
+msgstr ""
 
 msgid "This field is required"
-msgstr "这个字段是必填的"
+msgstr ""
 
 msgid "This field should be a URL"
-msgstr "该字段应为网址"
+msgstr ""
 
 msgid "This field should be a number"
-msgstr "该字段应该是一个数字"
+msgstr ""
 
 msgid "This field should be a positive number"
-msgstr "该字段应该是一个正数"
+msgstr ""
 
 msgid "This field should be an email"
-msgstr "该字段应为电子邮件"
+msgstr ""
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
-msgstr "当前用户设置将覆盖此设置：{{settingName}}"
+msgstr ""
 
 msgid "This setting can be overridden by user settings"
-msgstr "该设置可以被用户设置覆盖"
+msgstr ""
 
 msgid "No options"
-msgstr "没有选择"
+msgstr ""
 
 msgid "No settings matched the search term"
-msgstr "没有设置满足搜索条件"
+msgstr ""
 
 msgid "Search results"
-msgstr "搜索结果"
+msgstr ""
 
 msgid "Maximum number of analytics records"
-msgstr "分析记录的最大数量"
+msgstr ""
 
 msgid "Unlimited"
-msgstr "无限制"
+msgstr ""
 
 msgid "Maximum number of SQL view records"
-msgstr "SQL视图最大记录数量"
+msgstr ""
 
 msgid "Infrastructural indicators"
-msgstr "基础指标"
+msgstr ""
 
 msgid "Infrastructural data elements"
-msgstr "基础数据元"
+msgstr ""
 
 msgid "Infrastructural period type"
-msgstr "基础数据周期类型"
+msgstr ""
 
 msgid "Daily"
-msgstr "每日"
+msgstr ""
 
 msgid "Weekly"
-msgstr "每周"
+msgstr ""
 
 msgid "Monthly"
-msgstr "每月"
+msgstr ""
 
 msgid "Bi-monthly"
-msgstr "每两月"
+msgstr ""
 
 msgid "Quarterly"
-msgstr "季度"
+msgstr ""
 
 msgid "Six-monthly"
-msgstr "六个月"
+msgstr ""
 
 msgid "Six-monthly April"
-msgstr "半年的四月"
+msgstr ""
 
 msgid "Yearly"
-msgstr "每年"
+msgstr ""
 
 msgid "Financial-April"
-msgstr "财务-四月"
+msgstr ""
 
 msgid "Financial-July"
-msgstr "财务七月"
+msgstr ""
 
 msgid "Financial-Oct"
-msgstr "财务十月"
+msgstr ""
 
 msgid "Feedback recipients"
-msgstr "反馈接收者"
+msgstr ""
 
 msgid "No message recipients"
-msgstr "无反馈接收者"
+msgstr ""
 
 msgid "Max offline organisation unit levels"
-msgstr "离线的最大机构等级"
+msgstr ""
 
 msgid "Data analysis std dev factor"
-msgstr "数据分析因子"
+msgstr ""
 
 msgid "Phone number area code"
-msgstr "电话区号"
+msgstr ""
 
 msgid "Enable multi-organisation unit forms"
-msgstr "允许多机构表单"
+msgstr ""
 
 msgid "Acceptance required before approval"
-msgstr "确认前需审批"
+msgstr ""
 
 msgid "Gather analytical object statistics in dashboard views"
-msgstr "在仪表板视图中收集分析对象统计信息"
+msgstr ""
 
 msgid "Include passive dashboard views in usage analytics statistics"
-msgstr "在使用情况分析统计信息中包括被动仪表板视图"
+msgstr ""
 
 msgid "Default relative period for analysis"
-msgstr "缺省的系统分析相对期间类型"
+msgstr ""
 
 msgid "This week"
-msgstr "本周"
+msgstr ""
 
 msgid "Last week"
-msgstr "上周"
+msgstr ""
 
 msgid "Last 4 weeks"
-msgstr "最近四周"
+msgstr ""
 
 msgid "Last 12 weeks"
-msgstr "最近12周"
+msgstr ""
 
 msgid "Last 52 weeks"
-msgstr "最近52周"
+msgstr ""
 
 msgid "This month"
-msgstr "本月"
+msgstr "इस महीने"
 
 msgid "Last month"
-msgstr "上月"
+msgstr "पिछला महीना"
 
 msgid "Months this year"
-msgstr "今年的月份"
+msgstr ""
 
 msgid "Months last year"
-msgstr "去年的月份"
+msgstr ""
 
 msgid "Last 3 months"
-msgstr "最近3个月"
+msgstr "पिछले 3 महीने"
 
 msgid "Last 6 months"
-msgstr "最近六个月<br>"
+msgstr ""
 
 msgid "Last 12 months"
-msgstr "最近12个月"
+msgstr ""
 
 msgid "This bi-month"
-msgstr "本两月"
+msgstr ""
 
 msgid "Last bi-month"
-msgstr "最近双月"
+msgstr ""
 
 msgid "Last 6 bi-months"
-msgstr "最近六个双月"
+msgstr ""
 
 msgid "This quarter"
-msgstr "本季"
+msgstr ""
 
 msgid "Last quarter"
-msgstr "最近一季"
+msgstr ""
 
 msgid "Quarters this year"
-msgstr "今年的季度"
+msgstr ""
 
 msgid "Quarters last year"
-msgstr "去年的季度"
+msgstr ""
 
 msgid "Last 4 quarters"
-msgstr "最近四季度"
+msgstr ""
 
 msgid "This six-month"
-msgstr "本半年"
+msgstr ""
 
 msgid "Last six-month"
-msgstr "最近六个月"
+msgstr ""
 
 msgid "Last 2 six-months"
-msgstr "最近两个六个月"
+msgstr ""
 
 msgid "This year"
-msgstr "今年"
+msgstr ""
 
 msgid "Last year"
-msgstr "去年"
+msgstr ""
 
 msgid "Last 5 years"
-msgstr "最近5年"
+msgstr ""
 
 msgid "Last 10 years"
-msgstr "最近10年"
+msgstr ""
 
 msgid "This financial year"
-msgstr "本财政年"
+msgstr ""
 
 msgid "Last financial year"
-msgstr "上一财政年"
+msgstr ""
 
 msgid "Last 5 financial years"
-msgstr "最近五个财政年"
+msgstr ""
 
 msgid "Hide daily periods"
-msgstr "隐藏每日期间"
+msgstr ""
 
 msgid "Hidden period types in analytics apps"
-msgstr "在分析应用中隐藏期间类型"
+msgstr ""
 
 msgid "Hide weekly periods"
-msgstr "隐藏每周期间"
+msgstr ""
 
 msgid "Hide biweekly periods"
-msgstr "隐藏期间每两周"
+msgstr ""
 
 msgid "Hide monthly periods"
-msgstr "隐藏每月期间"
+msgstr ""
 
 msgid "Hide bimonthly periods"
-msgstr "隐藏两个月期间"
+msgstr ""
 
 msgid "Financial year relative period start month"
-msgstr "财政年相对期间起始月份"
+msgstr ""
 
 msgid "April"
-msgstr "04"
+msgstr ""
 
 msgid "July"
-msgstr "07"
+msgstr ""
 
 msgid "October"
-msgstr "10"
+msgstr ""
 
 msgid "Cache strategy"
-msgstr "缓冲策略"
+msgstr ""
 
 msgid "No cache"
-msgstr "无缓冲"
+msgstr ""
 
 msgid "Cache for 15 minutes"
-msgstr "缓冲 15 分钟"
+msgstr ""
 
 msgid "Cache for 30 minutes"
-msgstr "缓冲 30 分钟"
+msgstr ""
 
 msgid "Cache for one hour"
-msgstr "缓冲一小时"
+msgstr ""
 
 msgid "Cache until 6AM tomorrow"
-msgstr "缓存到明天凌晨6点"
+msgstr ""
 
 msgid "Cache for two weeks"
-msgstr "缓冲两周"
+msgstr ""
 
 msgid "Cacheability"
-msgstr "可缓存性"
+msgstr ""
 
 msgid "Public"
-msgstr "公用"
+msgstr ""
 
 msgid "Private"
-msgstr "私有"
+msgstr ""
 
 msgid "Analytics cache mode"
-msgstr "Analytics缓存模式"
+msgstr ""
 
 msgid "Progressive"
-msgstr "进步"
+msgstr ""
 
 msgid "Fixed"
-msgstr "固定"
+msgstr ""
 
 msgid "Max number of years to hide unapproved data in analytics"
-msgstr "分析表中隐藏的最大没有确认的数据的年数"
+msgstr ""
 
 msgid "Never check approval"
-msgstr "从不检查确认"
+msgstr ""
 
 msgid "Check approval for all data"
-msgstr "检查所有数据的确认"
+msgstr ""
 
 msgid "Current year only"
-msgstr "仅仅当前年"
+msgstr ""
 
 msgid "Last 2 years"
-msgstr "最近2年"
+msgstr ""
 
 msgid "Last 3 years"
-msgstr "最近3年"
+msgstr ""
 
 msgid "Last 4 years"
-msgstr "最近4年"
+msgstr ""
 
 msgid "Last 6 years"
-msgstr "最近6年"
+msgstr ""
 
 msgid "Last 7 years"
-msgstr "最近7年"
+msgstr ""
 
 msgid "Last 8 years"
-msgstr "最近8年"
+msgstr ""
 
 msgid "Last 9 years"
-msgstr "最近9年"
+msgstr ""
 
 msgid "Respect category option start and end date in analytics table export"
-msgstr "分析表导出包括各自分类选项的起始日期"
+msgstr ""
 
 msgid "Put analytics in maintenance mode"
-msgstr "置分析为维护模式"
+msgstr ""
 
 msgid "Include zero data values in analytics tables"
-msgstr "在分析表中包含零数据值"
+msgstr ""
 
 msgid "Caching factor"
-msgstr "缓存因子"
+msgstr ""
 
 msgid "Org unit group set in facility map layers"
-msgstr "在机构设施地图图层中设置的组织机构组"
+msgstr ""
 
 msgid "Org unit level in facility map layers"
-msgstr "设施地图图层中的组织机构级别"
+msgstr ""
 
 msgid "Number of database server CPUs"
-msgstr "数据库服务器cpu数量"
+msgstr ""
 
 msgid "Automatic (detect based on web server)"
-msgstr "自动（基于web服务器探测）"
+msgstr ""
 
 msgid "System notifications email address"
-msgstr "系统通知邮件地址"
+msgstr ""
 
 msgid "Google Analytics (Universal Analytics) key"
-msgstr "Google Analytics (Universal Analytics) 键值"
+msgstr ""
 
 msgid "Google Maps API key"
-msgstr "Google Maps API key"
+msgstr ""
 
 msgid "Bing Maps API key"
-msgstr "Bing Maps API密钥"
+msgstr ""
 
 msgid "Application title"
-msgstr "应用标题"
+msgstr ""
 
 msgid "Application introduction"
-msgstr "应用介绍"
+msgstr ""
 
 msgid "Application notification"
-msgstr "应用提示"
+msgstr ""
 
 msgid "Application left-side footer"
-msgstr "应用左页脚"
+msgstr ""
 
 msgid "Application right-side footer"
-msgstr "应用右页脚"
+msgstr ""
 
 msgid "Style"
-msgstr "风格"
+msgstr ""
 
 msgid "Start page"
-msgstr "开始页面"
+msgstr ""
 
 msgid "Enable light-weight start page"
-msgstr "启用轻量级起始页"
+msgstr ""
 
 msgid "Help page link"
-msgstr "帮助手册地址"
+msgstr ""
 
 msgid "Flag"
-msgstr "国旗"
+msgstr ""
 
 msgid "Interface language"
-msgstr "接口语言"
+msgstr ""
 
 msgid "Database language"
-msgstr "数据库语言"
+msgstr ""
 
 msgid "Property to display in analysis modules"
-msgstr "在分析模块中显示的属性"
+msgstr ""
 
 msgid "Short name"
-msgstr "缩写"
+msgstr ""
 
 msgid "Default digit group separator to display in analysis modules"
-msgstr "分析模块中缺省的数字分段符"
+msgstr ""
 
 msgid "Space"
-msgstr "空格"
+msgstr ""
 
 msgid "Comma"
-msgstr "逗号"
+msgstr ""
 
 msgid "Require authority to add to view object lists"
-msgstr "添加到查看对象列表需要授权"
+msgstr ""
 
 msgid "Custom login page logo"
-msgstr "定制登录页面Logo"
+msgstr ""
 
 msgid "Custom top menu logo"
-msgstr "定制顶部菜单logo"
+msgstr ""
 
 msgid "Allow users to switch dashboard items view type"
-msgstr "允许用户切换仪表板项目的视图类型"
+msgstr ""
 
 msgid "Allow users to open dashboard items in relevant app"
-msgstr "允许用户在相关应用中打开仪表板项目"
+msgstr ""
 
 msgid "Allow users to show dashboard items interpretations and details"
-msgstr "允许用户显示仪表板项目的解释和详细信息"
+msgstr ""
 
 msgid "Allow users to view dashboard items in fullscreen"
-msgstr "允许用户全屏查看仪表板项目"
+msgstr ""
 
 msgid "Host name"
-msgstr "主机名"
+msgstr ""
 
 msgid "Port"
-msgstr "端口"
+msgstr ""
 
 msgid "Username"
-msgstr "用户名"
+msgstr ""
 
 msgid "TLS"
-msgstr "TLS"
+msgstr ""
 
 msgid "Email sender"
-msgstr "邮件发送者"
+msgstr ""
 
 msgid "Send me a test email"
-msgstr "发送测试邮件"
+msgstr ""
 
 msgid "Self registration account user role"
-msgstr "自我注册用户帐号角色"
+msgstr ""
 
 msgid "Disable self registration"
-msgstr "关闭自我注册"
+msgstr ""
 
 msgid "Self registration account organisation unit"
-msgstr "自我注册用户帐号所属机构"
+msgstr ""
 
 msgid "Do not require recaptcha for self registration"
-msgstr "不要求自我注册对验证码"
+msgstr ""
 
 msgid "Enable user account recovery"
-msgstr "打开用户帐号恢复"
+msgstr ""
 
 msgid "Lock user account temporarily after multiple failed login attempts"
-msgstr "尝试多次登录失败后临时锁住用户帐号"
+msgstr ""
 
 msgid "Allow users to grant own user roles"
-msgstr "允许用户自我授权角色"
+msgstr ""
 
 msgid "Allow assigning object to related objects during add or update"
-msgstr "添加更新时允许指派对象到相关对象"
+msgstr ""
 
 msgid "Require user account password change"
-msgstr "要求用户帐号口令改变"
+msgstr ""
 
 msgid "Never"
-msgstr "从不"
+msgstr ""
 
 msgid "3 months"
-msgstr "3月"
+msgstr ""
 
 msgid "6 months"
-msgstr "6个月"
+msgstr ""
 
 msgid "12 months"
-msgstr "12个月"
+msgstr ""
 
 msgid "Enable password expiry alerts"
-msgstr "激活口令过期警告"
+msgstr ""
 
 msgid "Minimum characters in password"
-msgstr "口令最小字符数"
+msgstr ""
 
 msgid "CORS whitelist"
-msgstr "CORS白名单"
+msgstr ""
 
 msgid "reCAPTCHA Site Key"
-msgstr "reCAPTCHA Site Key"
+msgstr ""
 
 msgid "reCAPTCHA Secret Key"
-msgstr "reCAPTCHA Secret Key"
+msgstr ""
 
 msgid "Coptic"
-msgstr "gemlke"
+msgstr ""
 
 msgid "Ethiopian"
-msgstr "埃塞俄比亚"
+msgstr ""
 
 msgid "Gregorian"
-msgstr "格里高利"
+msgstr ""
 
 msgid "Islamic"
-msgstr "穆斯林的"
+msgstr ""
 
 msgid "ISO 8601"
-msgstr "ISO 8601"
+msgstr ""
 
 msgid "Julian"
-msgstr "朱利安"
+msgstr ""
 
 msgid "Nepali"
-msgstr "尼泊尔文"
+msgstr ""
 
 msgid "Thai"
-msgstr "泰国"
+msgstr ""
 
 msgid "Persian"
-msgstr "波斯语"
+msgstr ""
 
 msgid "Change calendar setting"
-msgstr "更改日历设置"
+msgstr ""
 
 msgid ""
 "Changing your calendar setting after you have entered data can make your "
 "system unusable. If you have entered data, it is strongly recommended that "
 "you do not change your calendar setting."
-msgstr "输入数据后更改日历设置可能会使您的系统无法使用。如果您输入了数据，强烈建议您不要更改日历设置。"
+msgstr ""
 
 msgid "Yes, change calendar"
-msgstr "是的，更改日历"
+msgstr ""
 
 msgid "Date format"
-msgstr "日期格式"
+msgstr ""
 
 msgid "Require periods to match period type of data set"
-msgstr "要求期间匹配数据集的期间类型"
+msgstr ""
 
 msgid "Require data elements to be part of data set"
-msgstr "要求数据元是数据集的一部分"
+msgstr ""
 
 msgid "Require category option combos to match category combo of data element"
-msgstr "要求分类选项组合匹配数据元分类组合"
+msgstr ""
 
 msgid "Require organisation units to match assignment of data set"
-msgstr "要求机构匹配分配的数据集"
+msgstr ""
 
 msgid "Require attribute option combos to match category combo of data set"
-msgstr "要求属性选项组合匹配数据集分类组合"
+msgstr ""
 
 msgid "Require category option combo to be specified"
-msgstr "要求分类选项组合被定义"
+msgstr ""
 
 msgid "Require attribute option combo to be specified"
-msgstr "要求属性选项组合被定义"
+msgstr ""
 
 msgid "Remote server URL"
-msgstr "远程服务器地址"
+msgstr ""
 
 msgid "Remote server username"
-msgstr "远程服务器用户名"
+msgstr ""
 
 msgid "Remote server password"
-msgstr "远程服务器口令"
+msgstr ""
