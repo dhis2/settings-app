@@ -173,7 +173,7 @@ msgid "Name"
 msgstr "नाम"
 
 msgid "Password"
-msgstr ""
+msgstr "पासवर्ड"
 
 msgid "January"
 msgstr "जनवरी"
@@ -323,7 +323,7 @@ msgid "Appearance settings"
 msgstr ""
 
 msgid "Email"
-msgstr ""
+msgstr "ईमेल"
 
 msgid "Email settings"
 msgstr ""
@@ -362,7 +362,7 @@ msgid "OAuth2 Clients"
 msgstr ""
 
 msgid "This field is required"
-msgstr ""
+msgstr "यह फ़ील्ड आवश्यक है"
 
 msgid "This field should be a URL"
 msgstr ""
@@ -817,7 +817,7 @@ msgid "Port"
 msgstr ""
 
 msgid "Username"
-msgstr ""
+msgstr "यूज़रनेम"
 
 msgid "TLS"
 msgstr ""

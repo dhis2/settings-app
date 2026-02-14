@@ -1066,7 +1066,7 @@ msgid "Max jobs per type"
 msgstr "Nombre maximal de tâches par type"
 
 msgid "Enable Gist Overview"
-msgstr ""
+msgstr "Activer l'aperçu Gist"
 
 msgid "Clean idle jobs after (in milliseconds)"
 msgstr "Nettoyer les tâches inactives après (en millisecondes)"
