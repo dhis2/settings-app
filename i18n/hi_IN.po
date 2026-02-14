@@ -1,16 +1,17 @@
 # 
 # Translators:
 # Siddharth Agarwal, 2025
+# Rohit Wadhwani, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-05-30T13:11:40.739Z\n"
 "PO-Revision-Date: 2022-10-15 22:32+0000\n"
-"Last-Translator: Siddharth Agarwal, 2025\n"
+"Last-Translator: Rohit Wadhwani, 2026\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hi_IN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -115,7 +116,7 @@ msgid "Grant Types"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "पासवर्ड"
 
 msgid "Refresh token"
 msgstr ""
@@ -202,7 +203,7 @@ msgid "Appearance settings"
 msgstr ""
 
 msgid "Email"
-msgstr ""
+msgstr "ईमेल"
 
 msgid "Email settings"
 msgstr ""
@@ -235,7 +236,7 @@ msgid "OAuth2 Clients"
 msgstr ""
 
 msgid "This field is required"
-msgstr ""
+msgstr "यह फ़ील्ड आवश्यक है"
 
 msgid "This field should be a URL"
 msgstr ""
@@ -284,13 +285,13 @@ msgid "Infrastructural period type"
 msgstr ""
 
 msgid "Daily"
-msgstr ""
+msgstr "रोज़ाना"
 
 msgid "Weekly"
-msgstr ""
+msgstr "साप्ताहिक"
 
 msgid "Monthly"
-msgstr ""
+msgstr "मासिक"
 
 msgid "Bi-monthly"
 msgstr ""
@@ -305,7 +306,7 @@ msgid "Six-monthly April"
 msgstr ""
 
 msgid "Yearly"
-msgstr ""
+msgstr "वार्षिक"
 
 msgid "Financial-April"
 msgstr ""
@@ -353,25 +354,25 @@ msgid "Default relative period for analysis"
 msgstr ""
 
 msgid "This week"
-msgstr ""
+msgstr "इस सप्ताह"
 
 msgid "Last week"
-msgstr ""
+msgstr "पिछला सप्ताह"
 
 msgid "Last 4 weeks"
-msgstr ""
+msgstr "पिछले 4 सप्ताह"
 
 msgid "Last 12 weeks"
-msgstr ""
+msgstr "पिछले 12 सप्ताह"
 
 msgid "Last 52 weeks"
 msgstr ""
 
 msgid "This month"
-msgstr ""
+msgstr "इस महीने"
 
 msgid "Last month"
-msgstr ""
+msgstr "पिछला महीना"
 
 msgid "Months this year"
 msgstr ""
@@ -380,13 +381,13 @@ msgid "Months last year"
 msgstr ""
 
 msgid "Last 3 months"
-msgstr ""
+msgstr "पिछले 3 महीने"
 
 msgid "Last 6 months"
 msgstr ""
 
 msgid "Last 12 months"
-msgstr ""
+msgstr "पिछले 12 महीने"
 
 msgid "This bi-month"
 msgstr ""
@@ -401,7 +402,7 @@ msgid "This quarter"
 msgstr ""
 
 msgid "Last quarter"
-msgstr ""
+msgstr "पिछली तिमाही"
 
 msgid "Quarters this year"
 msgstr ""
@@ -410,25 +411,25 @@ msgid "Quarters last year"
 msgstr ""
 
 msgid "Last 4 quarters"
-msgstr ""
+msgstr "पिछली 4 तिमाहियाँ"
 
 msgid "This six-month"
 msgstr ""
 
 msgid "Last six-month"
-msgstr ""
+msgstr "पिछला छः-मासिक"
 
 msgid "Last 2 six-months"
-msgstr ""
+msgstr "पिछले 2 छः-मासिक"
 
 msgid "This year"
-msgstr ""
+msgstr "इस वर्ष"
 
 msgid "Last year"
-msgstr ""
+msgstr "पिछला वर्ष"
 
 msgid "Last 5 years"
-msgstr ""
+msgstr "पिछले 5 वर्ष"
 
 msgid "Last 10 years"
 msgstr ""
@@ -464,13 +465,13 @@ msgid "Financial year relative period start month"
 msgstr ""
 
 msgid "April"
-msgstr ""
+msgstr "अप्रैल"
 
 msgid "July"
-msgstr ""
+msgstr "जुलाई"
 
 msgid "October"
-msgstr ""
+msgstr "अक्टूबर"
 
 msgid "Cache strategy"
 msgstr ""
@@ -680,7 +681,7 @@ msgid "Port"
 msgstr ""
 
 msgid "Username"
-msgstr ""
+msgstr "यूज़रनेम"
 
 msgid "TLS"
 msgstr ""
