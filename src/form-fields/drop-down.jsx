@@ -11,6 +11,12 @@ import SelectField from 'material-ui/SelectField'
 import PropTypes from 'prop-types'
 import React from 'react'
 
+const helpTextStyle = {
+    fontSize: '12px',
+    color: '#d32f2f',
+    margin: '-4px 0 0',
+}
+
 class DropDown extends React.Component {
     static propTypes = {
         value: PropTypes.string.isRequired,
@@ -20,6 +26,7 @@ class DropDown extends React.Component {
             PropTypes.bool,
         ]),
         emptyLabel: PropTypes.string,
+        helpText: PropTypes.node,
         includeEmpty: PropTypes.bool,
         menuItems: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
         noOptionsLabel: PropTypes.string,
@@ -103,6 +110,7 @@ class DropDown extends React.Component {
             noOptionsLabel,
             isRequired,
             warning,
+            helpText,
             /* eslint-enable no-unused-vars, react/prop-types */
             ...other
         } = this.props
@@ -145,6 +153,7 @@ class DropDown extends React.Component {
                         />
                     )}
                 </SelectField>
+                {helpText && <p style={helpTextStyle}>{helpText}</p>}
             </>
         )
     }

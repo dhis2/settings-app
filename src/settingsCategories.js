@@ -76,9 +76,6 @@ export const categories = {
         pageLabel: i18n.t('Analytics settings'),
         settings: [
             {
-                setting: 'keyAnalysisRelativePeriod',
-            },
-            {
                 setting: 'keyAnalysisDisplayProperty',
             },
             {
@@ -109,7 +106,14 @@ export const categories = {
                 minimumApiVersion: 43,
             },
             {
+                setting: 'keyAnalysisRelativePeriod',
+            },
+            {
                 setting: 'analyticsFinancialYearStart',
+            },
+            {
+                setting: 'analyticsWeeklyStart',
+                maximumApiVersion: 43,
             },
             {
                 setting: 'keyCacheStrategy',
