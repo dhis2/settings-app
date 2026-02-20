@@ -113,7 +113,7 @@ export const categories = {
             },
             {
                 setting: 'analyticsWeeklyStart',
-                maximumApiVersion: 43,
+                minimumApiVersion: 43,
             },
             {
                 setting: 'keyCacheStrategy',
