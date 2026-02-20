@@ -109,11 +109,11 @@ export const categories = {
                 setting: 'keyAnalysisRelativePeriod',
             },
             {
-                setting: 'analyticsFinancialYearStart',
-            },
-            {
                 setting: 'analyticsWeeklyStart',
                 minimumApiVersion: 43,
+            },
+            {
+                setting: 'analyticsFinancialYearStart',
             },
             {
                 setting: 'keyCacheStrategy',

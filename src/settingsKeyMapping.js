@@ -22,6 +22,50 @@ const financialYearStartToPeriodType = {
     FINANCIAL_YEAR_OCTOBER: 'FinancialOct',
 }
 
+const relativePeriodToPeriodType = {
+    THIS_WEEK: 'weekly',
+    LAST_WEEK: 'weekly',
+    LAST_4_WEEKS: 'weekly',
+    LAST_12_WEEKS: 'weekly',
+    LAST_52_WEEKS: 'weekly',
+    THIS_MONTH: 'Monthly',
+    LAST_MONTH: 'Monthly',
+    MONTHS_THIS_YEAR: 'Monthly',
+    MONTHS_LAST_YEAR: 'Monthly',
+    LAST_3_MONTHS: 'Monthly',
+    LAST_6_MONTHS: 'Monthly',
+    LAST_12_MONTHS: 'Monthly',
+    THIS_BIMONTH: 'BiMonthly',
+    LAST_BIMONTH: 'BiMonthly',
+    LAST_6_BIMONTHS: 'BiMonthly',
+    THIS_QUARTER: 'Quarterly',
+    LAST_QUARTER: 'Quarterly',
+    QUARTERS_THIS_YEAR: 'Quarterly',
+    QUARTERS_LAST_YEAR: 'Quarterly',
+    LAST_4_QUARTERS: 'Quarterly',
+    THIS_SIX_MONTH: 'SixMonthly',
+    LAST_SIX_MONTH: 'SixMonthly',
+    LAST_2_SIXMONTHS: 'SixMonthly',
+    THIS_YEAR: 'Yearly',
+    LAST_YEAR: 'Yearly',
+    LAST_5_YEARS: 'Yearly',
+    LAST_10_YEARS: 'Yearly',
+    THIS_FINANCIAL_YEAR: 'financial',
+    LAST_FINANCIAL_YEAR: 'financial',
+    LAST_5_FINANCIAL_YEARS: 'financial',
+}
+
+const resolveRelativePeriodType = (value, settings) => {
+    const mapped = relativePeriodToPeriodType[value]
+    if (mapped === 'weekly') {
+        return weeklyStartToPeriodType[settings?.analyticsWeeklyStart] || 'Weekly'
+    }
+    if (mapped === 'financial') {
+        return financialYearStartToPeriodType[settings?.analyticsFinancialYearStart] || 'FinancialApril'
+    }
+    return mapped
+}
+
 const getDisabledPeriodTypeWarning = (periodTypeName, { configOptions }) => {
     const allowedPeriodTypes = configOptions?.dataOutputPeriodTypes
     if (!allowedPeriodTypes || !periodTypeName) {
@@ -237,6 +281,11 @@ const settingsKeyMapping = {
             LAST_FINANCIAL_YEAR: i18n.t('Last financial year'),
             LAST_5_FINANCIAL_YEARS: i18n.t('Last 5 financial years'),
         },
+        helpText: (value, context) =>
+            getDisabledPeriodTypeWarning(
+                resolveRelativePeriodType(value, context.settings),
+                context
+            ),
     },
     analyticsFinancialYearStart: {
         label: i18n.t('Financial year relative period start month'),

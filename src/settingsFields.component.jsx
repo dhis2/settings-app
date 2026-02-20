@@ -195,6 +195,7 @@ class SettingsFields extends React.Component {
                     typeof mapping.helpText === 'function'
                         ? mapping.helpText(fieldBase.value, {
                               configOptions: configOptionStore.getState(),
+                              settings: settingsStore.state,
                           })
                         : mapping.helpText
 
