@@ -4,6 +4,86 @@ const canBeOverridenLabel = i18n.t(
     'This setting can be overridden by user settings'
 )
 
+const weeklyStartToPeriodType = {
+    WEEKLY: 'Weekly',
+    WEEKLY_WEDNESDAY: 'WeeklyWednesday',
+    WEEKLY_THURSDAY: 'WeeklyThursday',
+    WEEKLY_FRIDAY: 'WeeklyFriday',
+    WEEKLY_SATURDAY: 'WeeklySaturday',
+    WEEKLY_SUNDAY: 'WeeklySunday',
+}
+
+const financialYearStartToPeriodType = {
+    FINANCIAL_YEAR_FEBRUARY: 'FinancialFeb',
+    FINANCIAL_YEAR_APRIL: 'FinancialApril',
+    FINANCIAL_YEAR_JULY: 'FinancialJuly',
+    FINANCIAL_YEAR_AUGUST: 'FinancialAug',
+    FINANCIAL_YEAR_SEPTEMBER: 'FinancialSep',
+    FINANCIAL_YEAR_OCTOBER: 'FinancialOct',
+}
+
+const relativePeriodToPeriodType = {
+    THIS_WEEK: 'weekly',
+    LAST_WEEK: 'weekly',
+    LAST_4_WEEKS: 'weekly',
+    LAST_12_WEEKS: 'weekly',
+    LAST_52_WEEKS: 'weekly',
+    THIS_MONTH: 'Monthly',
+    LAST_MONTH: 'Monthly',
+    MONTHS_THIS_YEAR: 'Monthly',
+    MONTHS_LAST_YEAR: 'Monthly',
+    LAST_3_MONTHS: 'Monthly',
+    LAST_6_MONTHS: 'Monthly',
+    LAST_12_MONTHS: 'Monthly',
+    THIS_BIMONTH: 'BiMonthly',
+    LAST_BIMONTH: 'BiMonthly',
+    LAST_6_BIMONTHS: 'BiMonthly',
+    THIS_QUARTER: 'Quarterly',
+    LAST_QUARTER: 'Quarterly',
+    QUARTERS_THIS_YEAR: 'Quarterly',
+    QUARTERS_LAST_YEAR: 'Quarterly',
+    LAST_4_QUARTERS: 'Quarterly',
+    THIS_SIX_MONTH: 'SixMonthly',
+    LAST_SIX_MONTH: 'SixMonthly',
+    LAST_2_SIXMONTHS: 'SixMonthly',
+    THIS_YEAR: 'Yearly',
+    LAST_YEAR: 'Yearly',
+    LAST_5_YEARS: 'Yearly',
+    LAST_10_YEARS: 'Yearly',
+    THIS_FINANCIAL_YEAR: 'financial',
+    LAST_FINANCIAL_YEAR: 'financial',
+    LAST_5_FINANCIAL_YEARS: 'financial',
+}
+
+const resolveRelativePeriodType = (value, settings) => {
+    const mapped = relativePeriodToPeriodType[value]
+    if (mapped === 'weekly') {
+        return weeklyStartToPeriodType[settings?.analyticsWeeklyStart] || 'Weekly'
+    }
+    if (mapped === 'financial') {
+        return financialYearStartToPeriodType[settings?.analyticsFinancialYearStart] || 'FinancialApril'
+    }
+    return mapped
+}
+
+const getDisabledPeriodTypeWarning = (periodTypeName, { configOptions }) => {
+    const allowedPeriodTypes = configOptions?.dataOutputPeriodTypes
+    if (!allowedPeriodTypes || !periodTypeName) {
+        return undefined
+    }
+    const allowedSet = new Set(
+        allowedPeriodTypes.map((pt) =>
+            typeof pt === 'string' ? pt : pt.name
+        )
+    )
+    if (!allowedSet.has(periodTypeName)) {
+        return i18n.t(
+            'This period type is currently disabled in the period type settings above'
+        )
+    }
+    return undefined
+}
+
 const parseLocale = (localeString) => {
     const [language, country] = (localeString ?? 'en').split(/[-_]/)
     return `${language}${country ? `-${country}` : ''}`
@@ -141,6 +221,31 @@ const settingsKeyMapping = {
     /* ============================================================================================================ */
     /* Category: Analytics                                                                                          */
     /* ============================================================================================================ */
+    keyHideDailyPeriods: {
+        label: i18n.t('Hide daily periods'),
+        sectionLabel: i18n.t('Hidden period types in analytics apps'),
+        type: 'checkbox',
+    },
+    keyHideWeeklyPeriods: {
+        label: i18n.t('Hide weekly periods'),
+        type: 'checkbox',
+    },
+    keyHideBiWeeklyPeriods: {
+        label: i18n.t('Hide biweekly periods'),
+        type: 'checkbox',
+    },
+    keyHideMonthlyPeriods: {
+        label: i18n.t('Hide monthly periods'),
+        type: 'checkbox',
+    },
+    keyHideBiMonthlyPeriods: {
+        label: i18n.t('Hide bimonthly periods'),
+        type: 'checkbox',
+    },
+    dataOutputPeriodTypes: {
+        type: 'periodTypes',
+        searchLabels: [i18n.t('Period types'), i18n.t('Allowed period types')],
+    },
     keyAnalysisRelativePeriod: {
         label: i18n.t('Default relative period for analysis'),
         type: 'dropdown',
@@ -176,40 +281,49 @@ const settingsKeyMapping = {
             LAST_FINANCIAL_YEAR: i18n.t('Last financial year'),
             LAST_5_FINANCIAL_YEARS: i18n.t('Last 5 financial years'),
         },
-    },
-    keyHideDailyPeriods: {
-        label: i18n.t('Hide daily periods'),
-        sectionLabel: i18n.t('Hidden period types in analytics apps'),
-        type: 'checkbox',
-    },
-    keyHideWeeklyPeriods: {
-        label: i18n.t('Hide weekly periods'),
-        type: 'checkbox',
-    },
-    keyHideBiWeeklyPeriods: {
-        label: i18n.t('Hide biweekly periods'),
-        type: 'checkbox',
-    },
-    keyHideMonthlyPeriods: {
-        label: i18n.t('Hide monthly periods'),
-        type: 'checkbox',
-    },
-    keyHideBiMonthlyPeriods: {
-        label: i18n.t('Hide bimonthly periods'),
-        type: 'checkbox',
-    },
-    dataOutputPeriodTypes: {
-        type: 'periodTypes',
-        searchLabels: [i18n.t('Period types'), i18n.t('Allowed period types')],
+        helpText: (value, context) =>
+            getDisabledPeriodTypeWarning(
+                resolveRelativePeriodType(value, context.settings),
+                context
+            ),
     },
     analyticsFinancialYearStart: {
         label: i18n.t('Financial year relative period start month'),
         type: 'dropdown',
-        options: {
+        options: (apiVersion) => ({
+            ...(apiVersion >= 43 && {
+                FINANCIAL_YEAR_FEBRUARY: i18n.t('February'),
+            }),
             FINANCIAL_YEAR_APRIL: i18n.t('April'),
             FINANCIAL_YEAR_JULY: i18n.t('July'),
+            ...(apiVersion >= 43 && {
+                FINANCIAL_YEAR_AUGUST: i18n.t('August'),
+                FINANCIAL_YEAR_SEPTEMBER: i18n.t('September'),
+            }),
             FINANCIAL_YEAR_OCTOBER: i18n.t('October'),
+        }),
+        helpText: (value, context) =>
+            getDisabledPeriodTypeWarning(
+                financialYearStartToPeriodType[value],
+                context
+            ),
+    },
+    analyticsWeeklyStart: {
+        label: i18n.t('Weekly relative period start day'),
+        type: 'dropdown',
+        options: {
+            WEEKLY: i18n.t('Monday'),
+            WEEKLY_WEDNESDAY: i18n.t('Wednesday'),
+            WEEKLY_THURSDAY: i18n.t('Thursday'),
+            WEEKLY_FRIDAY: i18n.t('Friday'),
+            WEEKLY_SATURDAY: i18n.t('Saturday'),
+            WEEKLY_SUNDAY: i18n.t('Sunday'),
         },
+        helpText: (value, context) =>
+            getDisabledPeriodTypeWarning(
+                weeklyStartToPeriodType[value],
+                context
+            ),
     },
     keyCacheStrategy: {
         label: i18n.t('Cache strategy'),

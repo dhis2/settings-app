@@ -3,6 +3,7 @@ import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader } from '@dhis2/ui'
 import CheckboxMaterial from 'material-ui/Checkbox'
 import React, { useState, useEffect } from 'react'
+import configOptionStore from '../configOptionStore.js'
 import settingsActions from '../settingsActions.js'
 import styles from './PeriodTypes.module.css'
 
@@ -169,6 +170,32 @@ const getGroupLabel = (frequencyOrder) => {
     return labels[frequencyOrder] || i18n.t('Other')
 }
 
+const periodTypeOrder = {
+    Daily: 1,
+    Weekly: 1,
+    WeeklyWednesday: 2,
+    WeeklyThursday: 3,
+    WeeklyFriday: 4,
+    WeeklySaturday: 5,
+    WeeklySunday: 6,
+    BiWeekly: 1,
+    Monthly: 1,
+    BiMonthly: 1,
+    Quarterly: 1,
+    QuarterlyNov: 2,
+    SixMonthly: 1,
+    SixMonthlyApril: 2,
+    SixMonthlyNov: 3,
+    Yearly: 1,
+    FinancialFeb: 2,
+    FinancialApril: 3,
+    FinancialJuly: 4,
+    FinancialAug: 5,
+    FinancialSep: 6,
+    FinancialOct: 7,
+    FinancialNov: 8,
+}
+
 const groupByFrequency = (periodTypes) => {
     const groups = {}
     periodTypes.forEach((pt) => {
@@ -182,9 +209,17 @@ const groupByFrequency = (periodTypes) => {
         }
         groups[freq].periodTypes.push(pt)
     })
-    return Object.values(groups).sort(
+    const sorted = Object.values(groups).sort(
         (a, b) => a.frequencyOrder - b.frequencyOrder
     )
+    sorted.forEach((group) => {
+        group.periodTypes.sort(
+            (a, b) =>
+                (periodTypeOrder[a.name] || 0) -
+                (periodTypeOrder[b.name] || 0)
+        )
+    })
+    return sorted
 }
 
 const PeriodTypes = () => {
@@ -196,6 +231,10 @@ const PeriodTypes = () => {
     useEffect(() => {
         if (data?.dataOutputPeriodTypes) {
             setAllowedPeriodTypes(data.dataOutputPeriodTypes)
+            configOptionStore.setState({
+                ...configOptionStore.state,
+                dataOutputPeriodTypes: data.dataOutputPeriodTypes,
+            })
         }
     }, [data?.dataOutputPeriodTypes])
 
@@ -240,6 +279,10 @@ const PeriodTypes = () => {
             }
 
             setAllowedPeriodTypes(updatedPeriodTypes)
+            configOptionStore.setState({
+                ...configOptionStore.state,
+                dataOutputPeriodTypes: updatedPeriodTypes,
+            })
             settingsActions.showSnackbarMessage(i18n.t('Settings updated'))
         } catch (error) {
             console.error('Failed to update period types:', error)
