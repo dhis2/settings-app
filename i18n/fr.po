@@ -1,4 +1,3 @@
-# 
 # Translators:
 # Bram Piot <bram.piot@gmail.com>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
@@ -654,6 +653,7 @@ msgstr "Virgule"
 
 msgid "Require authority to add to view object lists"
 msgstr ""
+"Exiger une autorité pour ajouter des objets à la liste de consultation"
 
 msgid "Custom login page logo"
 msgstr "Logo personnalisé de la page de connexion"
