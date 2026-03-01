@@ -211,6 +211,7 @@ class AppComponent extends React.Component {
                             <SettingsFields
                                 category={this.state.category}
                                 currentSettings={this.state.currentSettings}
+                                apiVersion={this.props.apiVersion}
                             />
                         </form>
                     </div>
