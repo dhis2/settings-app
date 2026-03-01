@@ -146,9 +146,7 @@ class SettingsFields extends React.Component {
     componentDidMount() {
         this.subscriptions = []
         this.subscriptions.push(
-            settingsStore.subscribe(() => this.forceUpdate())
-        )
-        this.subscriptions.push(
+            settingsStore.subscribe(() => this.forceUpdate()),
             configOptionStore.subscribe(() => this.forceUpdate())
         )
     }
@@ -194,9 +192,9 @@ class SettingsFields extends React.Component {
                 const helpText =
                     typeof mapping.helpText === 'function'
                         ? mapping.helpText(fieldBase.value, {
-                              configOptions: configOptionStore.getState(),
-                              settings: settingsStore.state,
-                          })
+                            configOptions: configOptionStore.getState(),
+                            settings: settingsStore.state,
+                        })
                         : mapping.helpText
 
                 return Object.assign({}, fieldBase, {

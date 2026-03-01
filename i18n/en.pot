@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-02-20T13:08:22.328Z\n"
-"PO-Revision-Date: 2026-02-20T13:08:22.328Z\n"
+"POT-Creation-Date: 2026-02-20T19:17:48.484Z\n"
+"PO-Revision-Date: 2026-02-20T19:17:48.484Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -392,6 +392,9 @@ msgstr "No settings matched the search term"
 
 msgid "Search results"
 msgstr "Search results"
+
+msgid "This period type is currently disabled in the period type settings above"
+msgstr "This period type is currently disabled in the period type settings above"
 
 msgid "Maximum number of analytics records"
 msgstr "Maximum number of analytics records"
