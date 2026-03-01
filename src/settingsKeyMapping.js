@@ -58,10 +58,16 @@ const relativePeriodToPeriodType = {
 const resolveRelativePeriodType = (value, settings) => {
     const mapped = relativePeriodToPeriodType[value]
     if (mapped === 'weekly') {
-        return weeklyStartToPeriodType[settings?.analyticsWeeklyStart] || 'Weekly'
+        return (
+            weeklyStartToPeriodType[settings?.analyticsWeeklyStart] || 'Weekly'
+        )
     }
     if (mapped === 'financial') {
-        return financialYearStartToPeriodType[settings?.analyticsFinancialYearStart] || 'FinancialApril'
+        return (
+            financialYearStartToPeriodType[
+                settings?.analyticsFinancialYearStart
+            ] || 'FinancialApril'
+        )
     }
     return mapped
 }
@@ -72,9 +78,7 @@ const getDisabledPeriodTypeWarning = (periodTypeName, { configOptions }) => {
         return undefined
     }
     const allowedSet = new Set(
-        allowedPeriodTypes.map((pt) =>
-            typeof pt === 'string' ? pt : pt.name
-        )
+        allowedPeriodTypes.map((pt) => (typeof pt === 'string' ? pt : pt.name))
     )
     if (!allowedSet.has(periodTypeName)) {
         return i18n.t(

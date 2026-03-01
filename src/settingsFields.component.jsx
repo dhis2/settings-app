@@ -84,12 +84,12 @@ function wrapUserSettingsOverride({ component, valueLabel }) {
 
             const labelText = valueLabel
                 ? `${i18n.t(
-                    'This setting will be overridden by the current user setting: {{settingName}}',
-                    {
-                        settingName: valueLabel,
-                        nsSeparator: '-:-',
-                    }
-                )}`
+                      'This setting will be overridden by the current user setting: {{settingName}}',
+                      {
+                          settingName: valueLabel,
+                          nsSeparator: '-:-',
+                      }
+                  )}`
                 : i18n.t('This setting can be overridden by user settings')
 
             return (
@@ -192,9 +192,9 @@ class SettingsFields extends React.Component {
                 const helpText =
                     typeof mapping.helpText === 'function'
                         ? mapping.helpText(fieldBase.value, {
-                            configOptions: configOptionStore.getState(),
-                            settings: settingsStore.state,
-                        })
+                              configOptions: configOptionStore.getState(),
+                              settings: settingsStore.state,
+                          })
                         : mapping.helpText
 
                 return Object.assign({}, fieldBase, {
@@ -398,7 +398,13 @@ class SettingsFields extends React.Component {
                     validators,
                 }
 
-                return this.fieldForMapping({ mapping, fieldBase, key, d2, apiVersion: this.props.apiVersion })
+                return this.fieldForMapping({
+                    mapping,
+                    fieldBase,
+                    key,
+                    d2,
+                    apiVersion: this.props.apiVersion,
+                })
             })
             .filter((f) => f && !!f.name)
             .map((field) => {
@@ -410,16 +416,16 @@ class SettingsFields extends React.Component {
                         (options && options.userSettingsNoFallback) || {}
                     const userSettingValue =
                         userSettingsNoFallback &&
-                            userSettingsNoFallback[field.name] !== null
+                        userSettingsNoFallback[field.name] !== null
                             ? userSettingsNoFallback[field.name]
                             : ''
                     const component = wrapUserSettingsOverride({
                         component: field.component,
                         valueLabel: mapping.source
                             ? ((options && options[mapping.source]) || [])
-                                .filter((opt) => opt.id === userSettingValue)
-                                .map((opt) => opt.displayName)
-                                .pop()
+                                  .filter((opt) => opt.id === userSettingValue)
+                                  .map((opt) => opt.displayName)
+                                  .pop()
                             : userSettingValue,
                     })
 

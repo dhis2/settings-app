@@ -215,8 +215,7 @@ const groupByFrequency = (periodTypes) => {
     sorted.forEach((group) => {
         group.periodTypes.sort(
             (a, b) =>
-                (periodTypeOrder[a.name] || 0) -
-                (periodTypeOrder[b.name] || 0)
+                (periodTypeOrder[a.name] || 0) - (periodTypeOrder[b.name] || 0)
         )
     })
     return sorted
