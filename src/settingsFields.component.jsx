@@ -213,6 +213,7 @@ class SettingsFields extends React.Component {
                     }),
                 })
             }
+
             case 'emailCheckbox': {
                 const emailConfigured = isEmailConfigured(d2)
                 const explanatoryText =
