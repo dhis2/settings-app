@@ -118,12 +118,17 @@ function addConditionallyHiddenStyles(mapping) {
     return settingsValue === currentValue ? { display: 'none' } : {}
 }
 
-function getMenuItems(mapping) {
+function getMenuItems(mapping, apiVersion) {
     const sourceMenuItems =
         (configOptionStore.state && configOptionStore.state[mapping.source]) ||
         []
 
-    const optionsMenuItems = Object.entries(mapping.options || []).map(
+    const options =
+        typeof mapping.options === 'function'
+            ? mapping.options(apiVersion)
+            : mapping.options
+
+    const optionsMenuItems = Object.entries(options || []).map(
         ([id, displayName]) => ({
             id,
             displayName,
@@ -142,7 +147,8 @@ class SettingsFields extends React.Component {
     componentDidMount() {
         this.subscriptions = []
         this.subscriptions.push(
-            settingsStore.subscribe(() => this.forceUpdate())
+            settingsStore.subscribe(() => this.forceUpdate()),
+            configOptionStore.subscribe(() => this.forceUpdate())
         )
     }
 
@@ -159,7 +165,7 @@ class SettingsFields extends React.Component {
         }
     }
 
-    fieldForMapping({ mapping, fieldBase, key, d2 }) {
+    fieldForMapping({ mapping, fieldBase, key, d2, apiVersion }) {
         switch (mapping.type) {
             case 'textfield':
             case undefined:
@@ -179,15 +185,23 @@ class SettingsFields extends React.Component {
                     }),
                 })
 
-            case 'dropdown':
+            case 'dropdown': {
                 if (mapping.includeEmpty && fieldBase.value === '') {
                     fieldBase.value = 'null'
                 }
 
+                const helpText =
+                    typeof mapping.helpText === 'function'
+                        ? mapping.helpText(fieldBase.value, {
+                              configOptions: configOptionStore.getState(),
+                              settings: settingsStore.state,
+                          })
+                        : mapping.helpText
+
                 return Object.assign({}, fieldBase, {
                     component: SelectField,
                     props: Object.assign({}, fieldBase.props, {
-                        menuItems: getMenuItems(mapping),
+                        menuItems: getMenuItems(mapping, apiVersion),
                         includeEmpty: !!mapping.includeEmpty,
                         emptyLabel:
                             (mapping.includeEmpty && mapping.emptyLabel) ||
@@ -196,8 +210,11 @@ class SettingsFields extends React.Component {
                         warning:
                             (mapping.showWarning && mapping.warning) ||
                             undefined,
+                        helpText,
                     }),
                 })
+            }
+
             case 'emailCheckbox': {
                 const emailConfigured = isEmailConfigured(d2)
                 const explanatoryText =
@@ -400,7 +417,13 @@ class SettingsFields extends React.Component {
                     validators,
                 }
 
-                return this.fieldForMapping({ mapping, fieldBase, key, d2 })
+                return this.fieldForMapping({
+                    mapping,
+                    fieldBase,
+                    key,
+                    d2,
+                    apiVersion: this.props.apiVersion,
+                })
             })
             .filter((f) => f && !!f.name)
             .map((field) => {
@@ -456,6 +479,7 @@ class SettingsFields extends React.Component {
 }
 
 SettingsFields.propTypes = {
+    apiVersion: PropTypes.number.isRequired,
     category: PropTypes.string.isRequired,
     currentSettings: PropTypes.arrayOf(PropTypes.string).isRequired,
 }

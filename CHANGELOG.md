@@ -1,3 +1,15 @@
+# [100.13.0](https://github.com/dhis2/settings-app/compare/v100.12.0...v100.13.0) (2026-03-02)
+
+
+### Bug Fixes
+
+* redeploy updated analytics period settings ([#1457](https://github.com/dhis2/settings-app/issues/1457)) ([de9d8d3](https://github.com/dhis2/settings-app/commit/de9d8d39754ae5627ddd6f6952c3bfb9147a4a73))
+
+
+### Features
+
+* add new system settings and improve period type handling ([#1456](https://github.com/dhis2/settings-app/issues/1456)) ([e55bf09](https://github.com/dhis2/settings-app/commit/e55bf0963e0f5ca2617025445cb5e11c2a26b97c))
+
 # [100.12.0](https://github.com/dhis2/settings-app/compare/v100.11.0...v100.12.0) (2026-01-14)
 
 
