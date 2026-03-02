@@ -35,27 +35,50 @@ function ColorPicker({ label, onColorPick, color = '' }) {
     return (
         <div>
             {label && <div style={labelStyle}>{label}</div>}
-            <button
-                type="button"
-                ref={ref}
-                onClick={() => setShowPicker(true)}
-                style={colorButtonStyle}
+            <div
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                }}
             >
-                <span
-                    style={{
-                        display: 'inline-block',
-                        width: 20,
-                        height: 20,
-                        borderRadius: 2,
-                        border: '1px solid rgba(0,0,0,0.2)',
-                        background: color || 'transparent',
-                    }}
-                />
-                <span style={{ flex: 1, textAlign: 'left', fontSize: 14 }}>
-                    {color || i18n.t('Choose a color')}
-                </span>
-                {showPicker ? <IconChevronUp16 /> : <IconChevronDown16 />}
-            </button>
+                <button
+                    type="button"
+                    ref={ref}
+                    onClick={() => setShowPicker(true)}
+                    style={colorButtonStyle}
+                >
+                    <span
+                        style={{
+                            display: 'inline-block',
+                            width: 20,
+                            height: 20,
+                            borderRadius: 2,
+                            border: '1px solid rgba(0,0,0,0.2)',
+                            background: color || 'transparent',
+                        }}
+                    />
+                    <span style={{ flex: 1, textAlign: 'left', fontSize: 14 }}>
+                        {color || i18n.t('Choose a color')}
+                    </span>
+                    {showPicker ? <IconChevronUp16 /> : <IconChevronDown16 />}
+                </button>
+
+                {color && (
+                    <Button
+                        type="button"
+                        onClick={() => {
+                            onColorPick({ color: '' })
+                            setShowPicker(false)
+                        }}
+                        secondary
+                        destructive
+                        small
+                    >
+                        {i18n.t('Remove color')}
+                    </Button>
+                )}
+            </div>
 
             {showPicker && (
                 <Layer onBackdropClick={() => setShowPicker(false)}>
@@ -72,20 +95,6 @@ function ColorPicker({ label, onColorPick, color = '' }) {
                                     setShowPicker(false)
                                 }}
                             />
-                            {color && (
-                                <Button
-                                    type="button"
-                                    onClick={() => {
-                                        onColorPick({ color: '' })
-                                        setShowPicker(false)
-                                    }}
-                                    secondary
-                                    destructive
-                                    small
-                                >
-                                    {i18n.t('Remove color')}
-                                </Button>
-                            )}
                         </div>
                     </Popper>
                 </Layer>

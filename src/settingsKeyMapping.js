@@ -521,7 +521,7 @@ const settingsKeyMapping = {
         source: 'styles',
     },
     keyCustomColor: {
-        label: i18n.t('Theme Color'),
+        label: i18n.t('Theme color'),
         type: 'colorPicker',
         includeEmpty: false,
         searchLabels: [i18n.t('Style')],
