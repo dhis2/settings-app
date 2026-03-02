@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
-"PO-Revision-Date: 2026-01-13T22:53:28.645Z\n"
+"POT-Creation-Date: 2026-03-02T17:58:02.625Z\n"
+"PO-Revision-Date: 2026-03-02T17:58:02.625Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -16,6 +16,12 @@ msgstr "No flag"
 
 msgid "Search settings"
 msgstr "Search settings"
+
+msgid "Choose a color"
+msgstr "Choose a color"
+
+msgid "Remove color"
+msgstr "Remove color"
 
 msgid "Replace image"
 msgstr "Replace image"
@@ -732,6 +738,9 @@ msgstr "Style (android)"
 
 msgid "Style"
 msgstr "Style"
+
+msgid "Theme Color"
+msgstr "Theme Color"
 
 msgid "Start page"
 msgstr "Start page"
