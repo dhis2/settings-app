@@ -26,6 +26,7 @@ const colorButtonStyle = {
     borderRadius: 4,
     background: 'white',
     minWidth: 160,
+    cursor: 'pointer',
 }
 
 function ColorPicker({ label, onColorPick, color = '' }) {
