@@ -1,3 +1,10 @@
+# [100.15.0](https://github.com/dhis2/settings-app/compare/v100.14.0...v100.15.0) (2026-03-03)
+
+
+### Features
+
+* add appearance setting for custom translations ([#1459](https://github.com/dhis2/settings-app/issues/1459)) ([98b13eb](https://github.com/dhis2/settings-app/commit/98b13ebd7c2d9bb6eb53ed65dedd395322449fb6))
+
 # [100.14.0](https://github.com/dhis2/settings-app/compare/v100.13.0...v100.14.0) (2026-03-03)
 
 
