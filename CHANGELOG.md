@@ -1,3 +1,10 @@
+# [100.14.0](https://github.com/dhis2/settings-app/compare/v100.13.0...v100.14.0) (2026-03-03)
+
+
+### Features
+
+* add custom theme color setting ([#1458](https://github.com/dhis2/settings-app/issues/1458)) ([82f4ef7](https://github.com/dhis2/settings-app/commit/82f4ef7fbc0132aafb50f49811706fa0bb390a20))
+
 # [100.13.0](https://github.com/dhis2/settings-app/compare/v100.12.0...v100.13.0) (2026-03-02)
 
 
