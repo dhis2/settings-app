@@ -13,6 +13,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import configOptionStore from './configOptionStore.js'
 import Checkbox from './form-fields/check-box.jsx'
+import ColorPicker from './form-fields/color-picker/colorPicker.jsx'
 import SelectField from './form-fields/drop-down.jsx'
 import FileUpload from './form-fields/file-upload.jsx'
 import TextField from './form-fields/text-field.jsx'
@@ -330,6 +331,23 @@ class SettingsFields extends React.Component {
                     ...fieldBase,
                     component: PeriodTypes,
                 }
+            case 'colorPicker':
+                return {
+                    ...fieldBase,
+                    component: ColorPicker,
+                    props: {
+                        label: fieldBase.props.floatingLabelText,
+                        color: fieldBase.value,
+                        onColorPick: ({ color }) => {
+                            settingsActions.saveKey(key, color)
+                            settingsActions.saveKey(
+                                'keyCustomColorMobile',
+                                color
+                            )
+                        },
+                    },
+                }
+
             default:
                 console.warn(
                     `Unknown control type "${mapping.type}" encountered for field "${key}"`

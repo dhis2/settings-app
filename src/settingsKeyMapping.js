@@ -520,6 +520,12 @@ const settingsKeyMapping = {
         searchLabels: [i18n.t('Style'), canBeOverridenLabel],
         source: 'styles',
     },
+    keyCustomColor: {
+        label: i18n.t('Theme color'),
+        type: 'colorPicker',
+        includeEmpty: false,
+        searchLabels: [i18n.t('Style')],
+    },
     startModule: {
         label: i18n.t('Start page'),
         type: 'dropdown',

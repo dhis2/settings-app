@@ -203,6 +203,11 @@ export const categories = {
             },
             {
                 setting: 'keyStyle',
+                maximumApiVersion: 42,
+            },
+            {
+                setting: 'keyCustomColor',
+                // minimumApiVersion: 43
             },
             {
                 setting: 'startModule',

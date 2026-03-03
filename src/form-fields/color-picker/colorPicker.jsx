@@ -1,0 +1,107 @@
+/* eslint-disable react/prop-types */
+import i18n from '@dhis2/d2-i18n'
+import {
+    IconChevronDown16,
+    IconChevronUp16,
+    Layer,
+    Popper,
+    Button,
+} from '@dhis2/ui'
+import React, { useRef, useState } from 'react'
+import { SketchPicker } from 'react-color'
+import { AVAILABLE_COLORS } from './presetColors.js'
+
+const labelStyle = {
+    fontSize: 12,
+    color: 'rgba(0,0,0,0.80)',
+    margin: '15px 0 6px 0',
+}
+
+const colorButtonStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 6,
+    padding: '8px 12px',
+    border: '1px solid rgba(0,0,0,0.20)',
+    borderRadius: 4,
+    background: 'white',
+    minWidth: 160,
+    cursor: 'pointer',
+}
+
+function ColorPicker({ label, onColorPick, color = '' }) {
+    const [showPicker, setShowPicker] = useState(false)
+    const ref = useRef(null)
+
+    return (
+        <div>
+            {label && <div style={labelStyle}>{label}</div>}
+            <div
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                }}
+            >
+                <button
+                    type="button"
+                    ref={ref}
+                    onClick={() => setShowPicker(true)}
+                    style={colorButtonStyle}
+                >
+                    <span
+                        style={{
+                            display: 'inline-block',
+                            width: 20,
+                            height: 20,
+                            borderRadius: 2,
+                            border: '1px solid rgba(0,0,0,0.2)',
+                            background: color || 'transparent',
+                        }}
+                    />
+                    <span style={{ flex: 1, textAlign: 'left', fontSize: 14 }}>
+                        {color || i18n.t('Choose a color')}
+                    </span>
+                    {showPicker ? <IconChevronUp16 /> : <IconChevronDown16 />}
+                </button>
+
+                {color && (
+                    <Button
+                        type="button"
+                        onClick={() => {
+                            onColorPick({ color: '' })
+                            setShowPicker(false)
+                        }}
+                        secondary
+                        destructive
+                        small
+                    >
+                        {i18n.t('Remove color')}
+                    </Button>
+                )}
+            </div>
+
+            {showPicker && (
+                <Layer onBackdropClick={() => setShowPicker(false)}>
+                    <Popper placement="right-start" reference={ref}>
+                        {/* todo: account for rtl for popper placement */}
+                        <div data-test="colors">
+                            <SketchPicker
+                                presetColors={AVAILABLE_COLORS}
+                                color={color}
+                                disableAlpha
+                                onChangeComplete={({ hex }) => {
+                                    const nextColor = hex === color ? '' : hex
+                                    onColorPick({ color: nextColor })
+                                    setShowPicker(false)
+                                }}
+                            />
+                        </div>
+                    </Popper>
+                </Layer>
+            )}
+        </div>
+    )
+}
+
+export default ColorPicker
