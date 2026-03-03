@@ -246,6 +246,10 @@ export const categories = {
                 setting: 'globalShellEnabled',
                 minimumApiVersion: 42,
             },
+            {
+                setting: 'keyCustomTranslationsEnabled',
+                minimumApiVersion: 43,
+            },
         ],
     },
     email: {

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-03-02T20:05:17.932Z\n"
-"PO-Revision-Date: 2026-03-02T20:05:17.932Z\n"
+"POT-Creation-Date: 2026-03-03T00:13:02.752Z\n"
+"PO-Revision-Date: 2026-03-03T00:13:02.752Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -802,6 +802,9 @@ msgstr "Login page template"
 msgid "Enable Global Shell"
 msgstr "Enable Global Shell"
 
+msgid "Enable custom translations"
+msgstr "Enable custom translations"
+
 msgid "Custom login page logo"
 msgstr "Custom login page logo"
 
@@ -1019,3 +1022,59 @@ msgstr "Clean idle jobs after (in milliseconds)"
 
 msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr "Use centroids for organisation unit polygons in event analytics"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr "System Settings"
+
+msgctxt "Application description"
+msgid "__MANIFEST_APP_DESCRIPTION"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_General"
+msgstr "General"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Analytics"
+msgstr "Analytics"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Server"
+msgstr "Server"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Appearance"
+msgstr "Appearance"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Email"
+msgstr "Email"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Access"
+msgstr "Access"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Calendar"
+msgstr "Calendar"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data import settings"
+msgstr "Data import settings"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Synchronization"
+msgstr "Synchronization"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Scheduled job settings"
+msgstr "Scheduled job settings"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Notification settings"
+msgstr "Notification settings"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_OAuth2 clients"
+msgstr "OAuth2 clients"

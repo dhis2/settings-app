@@ -601,6 +601,10 @@ const settingsKeyMapping = {
         label: i18n.t('Enable Global Shell'),
         type: 'checkbox',
     },
+    keyCustomTranslationsEnabled: {
+        label: i18n.t('Enable custom translations'),
+        type: 'checkbox',
+    },
     keyUseCustomLogoFront: {
         label: i18n.t('Custom login page logo'),
         type: 'staticContent',
