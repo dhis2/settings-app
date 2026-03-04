@@ -329,10 +329,9 @@ const PeriodTypes = () => {
                                 const isEnabled = allowedSet.has(
                                     periodType.name
                                 )
-                                const isMandatory =
-                                    mandatoryPeriodTypes.has(
-                                        periodType.name
-                                    )
+                                const isMandatory = mandatoryPeriodTypes.has(
+                                    periodType.name
+                                )
                                 return (
                                     <div
                                         key={periodType.name}
@@ -340,16 +339,14 @@ const PeriodTypes = () => {
                                         title={
                                             isMandatory
                                                 ? i18n.t(
-                                                    'This period type is always enabled and cannot be disabled'
-                                                )
+                                                      'This period type is always enabled and cannot be disabled'
+                                                  )
                                                 : undefined
                                         }
                                     >
                                         <CheckboxMaterial
                                             checked={isEnabled}
-                                            disabled={
-                                                updating || isMandatory
-                                            }
+                                            disabled={updating || isMandatory}
                                             label={formatPeriodDisplayName(
                                                 periodType.displayName,
                                                 periodType.name
