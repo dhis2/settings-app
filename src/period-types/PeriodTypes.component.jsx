@@ -303,7 +303,11 @@ const PeriodTypes = () => {
         )
     }
 
-    const allPeriodTypes = data?.periodTypes?.periodTypes || []
+    // Remove on v41-end-of-life
+    const hiddenPeriodTypes = new Set(['TwoYearly'])
+    const allPeriodTypes = (data?.periodTypes?.periodTypes || []).filter(
+        (pt) => !hiddenPeriodTypes.has(pt.name)
+    )
     const allowedSet = new Set(
         allowedPeriodTypes.map((pt) => (typeof pt === 'string' ? pt : pt.name))
     )
