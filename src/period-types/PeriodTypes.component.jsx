@@ -19,6 +19,8 @@ const query = {
     },
 }
 
+const mandatoryPeriodTypes = new Set(['Yearly'])
+
 const monthMap = {
     Jan: i18n.t('January'),
     Feb: i18n.t('February'),
@@ -323,14 +325,27 @@ const PeriodTypes = () => {
                                 const isEnabled = allowedSet.has(
                                     periodType.name
                                 )
+                                const isMandatory =
+                                    mandatoryPeriodTypes.has(
+                                        periodType.name
+                                    )
                                 return (
                                     <div
                                         key={periodType.name}
                                         className={styles.checkboxItem}
+                                        title={
+                                            isMandatory
+                                                ? i18n.t(
+                                                    'This period type is always enabled and cannot be disabled'
+                                                )
+                                                : undefined
+                                        }
                                     >
                                         <CheckboxMaterial
                                             checked={isEnabled}
-                                            disabled={updating}
+                                            disabled={
+                                                updating || isMandatory
+                                            }
                                             label={formatPeriodDisplayName(
                                                 periodType.displayName,
                                                 periodType.name
