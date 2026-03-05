@@ -19,6 +19,8 @@ const query = {
     },
 }
 
+const mandatoryPeriodTypes = new Set(['Yearly'])
+
 const monthMap = {
     Jan: i18n.t('January'),
     Feb: i18n.t('February'),
@@ -303,7 +305,11 @@ const PeriodTypes = () => {
         )
     }
 
-    const allPeriodTypes = data?.periodTypes?.periodTypes || []
+    // Remove on v43-end-of-life
+    const hiddenPeriodTypes = new Set(['TwoYearly'])
+    const allPeriodTypes = (data?.periodTypes?.periodTypes || []).filter(
+        (pt) => !hiddenPeriodTypes.has(pt.name)
+    )
     const allowedSet = new Set(
         allowedPeriodTypes.map((pt) => (typeof pt === 'string' ? pt : pt.name))
     )
@@ -323,14 +329,24 @@ const PeriodTypes = () => {
                                 const isEnabled = allowedSet.has(
                                     periodType.name
                                 )
+                                const isMandatory = mandatoryPeriodTypes.has(
+                                    periodType.name
+                                )
                                 return (
                                     <div
                                         key={periodType.name}
                                         className={styles.checkboxItem}
+                                        title={
+                                            isMandatory
+                                                ? i18n.t(
+                                                      'This period type is always enabled and cannot be disabled'
+                                                  )
+                                                : undefined
+                                        }
                                     >
                                         <CheckboxMaterial
                                             checked={isEnabled}
-                                            disabled={updating}
+                                            disabled={updating || isMandatory}
                                             label={formatPeriodDisplayName(
                                                 periodType.displayName,
                                                 periodType.name
