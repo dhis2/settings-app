@@ -93,7 +93,6 @@ function ColorPicker({ label, onColorPick, color = '' }) {
                                 onChangeComplete={({ hex }) => {
                                     const nextColor = hex === color ? '' : hex
                                     onColorPick({ color: nextColor })
-                                    setShowPicker(false)
                                 }}
                             />
                         </div>
