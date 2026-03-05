@@ -1,3 +1,10 @@
+## [100.15.1](https://github.com/dhis2/settings-app/compare/v100.15.0...v100.15.1) (2026-03-05)
+
+
+### Bug Fixes
+
+* hide two yearly and make yearly mandatory (DHIS2-21046) (DHIS2-21018) ([#1460](https://github.com/dhis2/settings-app/issues/1460)) ([0b1a38a](https://github.com/dhis2/settings-app/commit/0b1a38ae7de9ce7bf4f6650b9909272d81f254d3))
+
 # [100.15.0](https://github.com/dhis2/settings-app/compare/v100.14.0...v100.15.0) (2026-03-03)
 
 
