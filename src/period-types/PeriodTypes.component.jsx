@@ -305,7 +305,7 @@ const PeriodTypes = () => {
         )
     }
 
-    // Remove on v41-end-of-life
+    // Remove on v43-end-of-life
     const hiddenPeriodTypes = new Set(['TwoYearly'])
     const allPeriodTypes = (data?.periodTypes?.periodTypes || []).filter(
         (pt) => !hiddenPeriodTypes.has(pt.name)
