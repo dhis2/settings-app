@@ -60,7 +60,7 @@ function ColorPicker({ label, onColorPick, color = '' }) {
                         }}
                     />
                     <span style={{ flex: 1, textAlign: 'left', fontSize: 14 }}>
-                        {color || i18n.t('Choose a color')}
+                        {color || i18n.t('No color selected')}
                     </span>
                     {showPicker ? <IconChevronUp16 /> : <IconChevronDown16 />}
                 </button>
@@ -83,7 +83,7 @@ function ColorPicker({ label, onColorPick, color = '' }) {
 
             {showPicker && (
                 <Layer onBackdropClick={() => setShowPicker(false)}>
-                    <Popper placement="right-start" reference={ref}>
+                    <Popper placement="auto" reference={ref}>
                         {/* todo: account for rtl for popper placement */}
                         <div data-test="colors">
                             <SketchPicker
