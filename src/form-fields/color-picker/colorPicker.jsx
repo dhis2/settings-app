@@ -49,22 +49,36 @@ function ColorPicker({ label, onColorPick, color = '' }) {
                     onClick={() => setShowPicker(true)}
                     style={colorButtonStyle}
                 >
-                    <span
+                    <svg
+                        width="20"
+                        height="20"
                         style={{
-                            display: 'inline-block',
-                            width: 20,
-                            height: 20,
                             borderRadius: 2,
                             border: '1px solid rgba(0,0,0,0.2)',
-                            background: color || 'transparent',
+                            display: 'inline-block',
                         }}
-                    />
+                    >
+                        <rect
+                            width="20"
+                            height="20"
+                            fill={color || 'transparent'}
+                        />
+                        {!color && (
+                            <line
+                                x1="0"
+                                y1="0"
+                                x2="20"
+                                y2="20"
+                                stroke="red"
+                                strokeWidth="1"
+                            />
+                        )}
+                    </svg>
                     <span style={{ flex: 1, textAlign: 'left', fontSize: 14 }}>
                         {color || i18n.t('No color selected')}
                     </span>
                     {showPicker ? <IconChevronUp16 /> : <IconChevronDown16 />}
                 </button>
-
                 {color && (
                     <Button
                         type="button"
