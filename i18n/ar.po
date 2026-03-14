@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Hamza Assada <7amza.it@gmail.com>, 2024
-# Philip Larsen Donnelly, 2024
-# Viktor Varland <viktor@dhis2.org>, 2024
+# Philip Larsen Donnelly, 2026
+# Viktor Varland <viktor@dhis2.org>, 2026
+# Hamza <7amza.it@gmail.com>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
+"Last-Translator: Hamza <7amza.it@gmail.com>, 2026\n"
 "Language-Team: Arabic (https://app.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,23 +101,17 @@ msgstr "إصدار البيانات الوصفية"
 msgid "This client ID is already taken"
 msgstr "تم أخذ رقم تعريف العميل هذا بالفعل"
 
-msgid "Name"
-msgstr "الإسم"
+msgid "Client ID"
+msgstr "معرف العميل"
 
 msgid "Required"
 msgstr "مطلوب"
-
-msgid "Client ID"
-msgstr "معرف العميل"
 
 msgid "Client Secret"
 msgstr "كلمة سر العميل"
 
 msgid "Grant Types"
 msgstr "أنواع المنح"
-
-msgid "Password"
-msgstr "كلمة المرور"
 
 msgid "Refresh token"
 msgstr "تحديث الرمز"
@@ -176,10 +170,133 @@ msgstr "تم حذف عميل OAuth2"
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Name"
+msgstr "الإسم"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "January"
+msgstr "يناير"
+
+msgid "February"
+msgstr "فبراير"
+
+msgid "March"
+msgstr "مارس"
+
+msgid "April"
+msgstr "ابريل"
+
+msgid "May"
+msgstr "مايو"
+
+msgid "June"
+msgstr "يونيو"
+
+msgid "July"
+msgstr "يوليو"
+
+msgid "August"
+msgstr "اغسطس"
+
+msgid "September"
+msgstr "سبتمبر"
+
+msgid "October"
+msgstr "اكتوبر"
+
+msgid "November"
+msgstr "نوفمبر"
+
+msgid "December"
+msgstr "ديسمبر"
+
+msgid "Monday"
+msgstr "الاثنين"
+
+msgid "Tuesday"
+msgstr "الثلاثاء"
+
+msgid "Wednesday"
+msgstr "الأربعاء"
+
+msgid "Thursday"
+msgstr "الخميس"
+
+msgid "Friday"
+msgstr "الجمعة"
+
+msgid "Saturday"
+msgstr "السبت"
+
+msgid "Sunday"
+msgstr "الأحد"
+
+msgid "Daily"
+msgstr "يومي"
+
+msgid "Weekly"
+msgstr "أسبوعي"
+
+msgid "Monthly"
+msgstr "شهري"
+
+msgid "Bi-monthly"
+msgstr "كل شهرين"
+
+msgid "Yearly"
+msgstr "سنوي"
+
+msgid "Bi-weekly"
+msgstr "كل اسبوعين"
+
+msgid "Quarterly"
+msgstr "ربعي"
+
+msgid "Six-monthly"
+msgstr "كل ستة-أشهر"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "‏‏الأيام"
+
+msgid "Weeks"
+msgstr "الأسابيع"
+
+msgid "Bi-weeks"
+msgstr "كل اسبوعين"
+
+msgid "Months"
+msgstr "الأشهر"
+
+msgid "Bi-months"
+msgstr "الأشهر المزدوجة"
+
+msgid "Quarters"
+msgstr "أرباع السنة"
+
+msgid "Six months"
+msgstr "ستة أشهر"
+
+msgid "Years"
+msgstr "السنوات"
+
+msgid "Other"
+msgstr "أخرى"
+
 msgid "Settings updated"
 msgstr "تم تحديث الإعدادات"
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
 msgstr ""
 
 msgid "General"
@@ -239,6 +356,9 @@ msgstr "إعدادات المزامنة"
 msgid "Scheduled jobs"
 msgstr "المهام المجدولة"
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr "عملاء OAuth2"
 
@@ -267,6 +387,14 @@ msgstr "يمكن تجاوز هذا الإعداد بواسطة إعدادات ا
 msgid "No options"
 msgstr ""
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr "لم تتطابق أي إعدادات مع عبارة البحث"
 
@@ -282,6 +410,11 @@ msgstr "غير محدود"
 msgid "Maximum number of SQL view records"
 msgstr "الحد الأقصى لعدد سجلات الـ  SQL view"
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr "مؤشرات البنية التحتية"
 
@@ -291,29 +424,8 @@ msgstr "عناصر بيانات البنية التحتية"
 msgid "Infrastructural period type"
 msgstr "نوع فترة البنية التحتية"
 
-msgid "Daily"
-msgstr "يومي"
-
-msgid "Weekly"
-msgstr "أسبوعي"
-
-msgid "Monthly"
-msgstr "شهري"
-
-msgid "Bi-monthly"
-msgstr "كل شهرين"
-
-msgid "Quarterly"
-msgstr "ربعي"
-
-msgid "Six-monthly"
-msgstr "كل ستة-أشهر"
-
 msgid "Six-monthly April"
 msgstr "نصف سنوي، كل ستة أشهر، ابريل"
-
-msgid "Yearly"
-msgstr "سنوي"
 
 msgid "Financial-April"
 msgstr "الأمور المالية-نيسان"
@@ -468,17 +580,14 @@ msgstr "إخفاء الفترات الشهرية"
 msgid "Hide bimonthly periods"
 msgstr "إخفاء فترات كل شهرين"
 
+msgid "Period types"
+msgstr "أنواع الفترات الزمنية"
+
+msgid "Allowed period types"
+msgstr ""
+
 msgid "Financial year relative period start month"
 msgstr "شهر بداية الفترة الزمنية النسبية للسنة المالية"
-
-msgid "April"
-msgstr "ابريل"
-
-msgid "July"
-msgstr "يوليو"
-
-msgid "October"
-msgstr "اكتوبر"
 
 msgid "Cache strategy"
 msgstr "إستراتيجية ذاكرة التخزين المؤقت"
@@ -606,6 +715,9 @@ msgstr "خرائط غوغل مفتاح API"
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr "عنوان التطبيق"
 
@@ -620,6 +732,9 @@ msgstr "تذييل الجانب الأيسر للتطبيق"
 
 msgid "Application right-side footer"
 msgstr "تذييل الجانب الأيمن للتطبيق"
+
+msgid "Style (android)"
+msgstr ""
 
 msgid "Style"
 msgstr "المظهر"
@@ -673,6 +788,9 @@ msgid "Custom"
 msgstr "مخصص"
 
 msgid "Login page template"
+msgstr ""
+
+msgid "Enable Global Shell"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -731,6 +849,12 @@ msgstr "تمكين استرداد حساب المستخدم"
 
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr "تم قفل حساب المستخدم مؤقتا بعد عدة محاولات لتسجيل الدخول الفاشلة"
+
+msgid "Enable embedded dashboards"
+msgstr ""
+
+msgid "Enforce verified emails"
+msgstr ""
 
 msgid "Allow users to grant own user roles"
 msgstr "السماح للمستخدمين بمنح أنفسهم أدوار مستخدمين"
@@ -858,4 +982,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""
