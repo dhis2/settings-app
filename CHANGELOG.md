@@ -1,3 +1,10 @@
+## [100.15.2](https://github.com/dhis2/settings-app/compare/v100.15.1...v100.15.2) (2026-03-16)
+
+
+### Bug Fixes
+
+* allow user to input rgb values in color picker ([#1461](https://github.com/dhis2/settings-app/issues/1461)) ([1364941](https://github.com/dhis2/settings-app/commit/1364941027964d3135ba2a872fb8932118f7bae1))
+
 ## [100.15.1](https://github.com/dhis2/settings-app/compare/v100.15.0...v100.15.1) (2026-03-05)
 
 
