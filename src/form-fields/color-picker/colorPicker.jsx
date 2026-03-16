@@ -65,10 +65,10 @@ function ColorPicker({ label, onColorPick, color = '' }) {
                         />
                         {!color && (
                             <line
-                                x1="0"
+                                x1="18"
                                 y1="0"
-                                x2="20"
-                                y2="20"
+                                x2="0"
+                                y2="18"
                                 stroke="red"
                                 strokeWidth="1"
                             />
