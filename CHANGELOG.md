@@ -1,3 +1,10 @@
+## [100.15.3](https://github.com/dhis2/settings-app/compare/v100.15.2...v100.15.3) (2026-03-17)
+
+
+### Bug Fixes
+
+* add true no flag option [DHIS2-18263] ([#1448](https://github.com/dhis2/settings-app/issues/1448)) ([2b9acfe](https://github.com/dhis2/settings-app/commit/2b9acfe7ab6c1c4e7ebeaed732bb45469ce8868f))
+
 ## [100.15.2](https://github.com/dhis2/settings-app/compare/v100.15.1...v100.15.2) (2026-03-16)
 
 
