@@ -135,12 +135,15 @@ const AppWrapper = () => {
     } = data
 
     const appsModulePrefix = apiVersion >= 42 ? '' : 'app:'
+    const trimmedAppNameAboveV42 =
+        apiVersion >= 42 ? module.name.replace('dhis-web-', '') : module.name
+
     const startModules = (data.apps.modules || []).map((module) => ({
         id:
             module.defaultAction.substr(0, 3) === '../'
-                ? module.name
-                : appsModulePrefix + module.name,
-        displayName: module.displayName || module.name,
+                ? trimmedAppNameAboveV42
+                : appsModulePrefix + trimmedAppNameAboveV42,
+        displayName: module.displayName || trimmedAppNameAboveV42,
     }))
 
     const flags = (data.flags || []).map((flag) => ({
