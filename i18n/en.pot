@@ -14,6 +14,9 @@ msgstr "Failed to load: {{error}}"
 msgid "No flag"
 msgstr "No flag"
 
+msgid "DHIS2"
+msgstr "DHIS2"
+
 msgid "Search settings"
 msgstr "Search settings"
 
