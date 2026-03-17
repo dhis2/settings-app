@@ -1,3 +1,62 @@
+## [100.15.2](https://github.com/dhis2/settings-app/compare/v100.15.1...v100.15.2) (2026-03-16)
+
+
+### Bug Fixes
+
+* allow user to input rgb values in color picker ([#1461](https://github.com/dhis2/settings-app/issues/1461)) ([1364941](https://github.com/dhis2/settings-app/commit/1364941027964d3135ba2a872fb8932118f7bae1))
+
+## [100.15.1](https://github.com/dhis2/settings-app/compare/v100.15.0...v100.15.1) (2026-03-05)
+
+
+### Bug Fixes
+
+* hide two yearly and make yearly mandatory (DHIS2-21046) (DHIS2-21018) ([#1460](https://github.com/dhis2/settings-app/issues/1460)) ([0b1a38a](https://github.com/dhis2/settings-app/commit/0b1a38ae7de9ce7bf4f6650b9909272d81f254d3))
+
+# [100.15.0](https://github.com/dhis2/settings-app/compare/v100.14.0...v100.15.0) (2026-03-03)
+
+
+### Features
+
+* add appearance setting for custom translations ([#1459](https://github.com/dhis2/settings-app/issues/1459)) ([98b13eb](https://github.com/dhis2/settings-app/commit/98b13ebd7c2d9bb6eb53ed65dedd395322449fb6))
+
+# [100.14.0](https://github.com/dhis2/settings-app/compare/v100.13.0...v100.14.0) (2026-03-03)
+
+
+### Features
+
+* add custom theme color setting ([#1458](https://github.com/dhis2/settings-app/issues/1458)) ([82f4ef7](https://github.com/dhis2/settings-app/commit/82f4ef7fbc0132aafb50f49811706fa0bb390a20))
+
+# [100.13.0](https://github.com/dhis2/settings-app/compare/v100.12.0...v100.13.0) (2026-03-02)
+
+
+### Bug Fixes
+
+* redeploy updated analytics period settings ([#1457](https://github.com/dhis2/settings-app/issues/1457)) ([de9d8d3](https://github.com/dhis2/settings-app/commit/de9d8d39754ae5627ddd6f6952c3bfb9147a4a73))
+
+
+### Features
+
+* add new system settings and improve period type handling ([#1456](https://github.com/dhis2/settings-app/issues/1456)) ([e55bf09](https://github.com/dhis2/settings-app/commit/e55bf0963e0f5ca2617025445cb5e11c2a26b97c))
+
+# [100.12.0](https://github.com/dhis2/settings-app/compare/v100.11.0...v100.12.0) (2026-01-14)
+
+
+### Features
+
+* add org unit centroids in events analytics to analytics settings ([76046b4](https://github.com/dhis2/settings-app/commit/76046b456ad74455d78a50ecd23c9fdd7108dc31))
+* add org unit centroids in events analytics to analytics settings ([6f21a22](https://github.com/dhis2/settings-app/commit/6f21a2271db0411f5d89c639f27a99e089f228e9))
+* add period types configuration ([3ad92b4](https://github.com/dhis2/settings-app/commit/3ad92b4dc1eac614aefb7b5bd97d0516a8fce1da))
+* implement period type toggling in period types component ([840a08c](https://github.com/dhis2/settings-app/commit/840a08c604f4720d3a26659dab0d227a62fbcbca))
+* update period types and improve localization handling ([1f4b23e](https://github.com/dhis2/settings-app/commit/1f4b23e677756c29b056dbcfb427694395ecee9c))
+
+# [100.11.0](https://github.com/dhis2/settings-app/compare/v100.10.0...v100.11.0) (2025-11-18)
+
+
+### Features
+
+* add orgUnitCentroidsInEventsAnalytics to analytics settings ([cb81cde](https://github.com/dhis2/settings-app/commit/cb81cdee9014f97bdd6ddd6d743ea9ec8a43f661))
+* add orgUnitCentroidsInEventsAnalytics to analytics settings ([e5c0ecf](https://github.com/dhis2/settings-app/commit/e5c0ecf84a5cd857eeae9ce30fcbbc9f4fa322f3))
+
 # [100.10.0](https://github.com/dhis2/settings-app/compare/v100.9.1...v100.10.0) (2025-09-25)
 
 

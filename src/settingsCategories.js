@@ -76,9 +76,6 @@ export const categories = {
         pageLabel: i18n.t('Analytics settings'),
         settings: [
             {
-                setting: 'keyAnalysisRelativePeriod',
-            },
-            {
                 setting: 'keyAnalysisDisplayProperty',
             },
             {
@@ -86,18 +83,34 @@ export const categories = {
             },
             {
                 setting: 'keyHideDailyPeriods',
+                maximumApiVersion: 42,
             },
             {
                 setting: 'keyHideWeeklyPeriods',
+                maximumApiVersion: 42,
             },
             {
                 setting: 'keyHideBiWeeklyPeriods',
+                maximumApiVersion: 42,
             },
             {
                 setting: 'keyHideMonthlyPeriods',
+                maximumApiVersion: 42,
             },
             {
                 setting: 'keyHideBiMonthlyPeriods',
+                maximumApiVersion: 42,
+            },
+            {
+                setting: 'dataOutputPeriodTypes',
+                minimumApiVersion: 43,
+            },
+            {
+                setting: 'keyAnalysisRelativePeriod',
+            },
+            {
+                setting: 'analyticsWeeklyStart',
+                minimumApiVersion: 43,
             },
             {
                 setting: 'analyticsFinancialYearStart',
@@ -140,6 +153,9 @@ export const categories = {
             },
             {
                 setting: 'keyDashboardContextMenuItemViewFullscreen',
+            },
+            {
+                setting: 'orgUnitCentroidsInEventsAnalytics',
             },
             {
                 setting: 'facilityOrgUnitGroupSet',
@@ -187,6 +203,11 @@ export const categories = {
             },
             {
                 setting: 'keyStyle',
+                maximumApiVersion: 42,
+            },
+            {
+                setting: 'keyCustomColor',
+                // minimumApiVersion: 43
             },
             {
                 setting: 'startModule',
@@ -224,6 +245,10 @@ export const categories = {
             {
                 setting: 'globalShellEnabled',
                 minimumApiVersion: 42,
+            },
+            {
+                setting: 'keyCustomTranslationsEnabled',
+                minimumApiVersion: 43,
             },
         ],
     },

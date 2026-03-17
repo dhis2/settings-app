@@ -13,6 +13,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import configOptionStore from './configOptionStore.js'
 import Checkbox from './form-fields/check-box.jsx'
+import ColorPicker from './form-fields/color-picker/colorPicker.jsx'
 import SelectField from './form-fields/drop-down.jsx'
 import FileUpload from './form-fields/file-upload.jsx'
 import TextField from './form-fields/text-field.jsx'
@@ -20,6 +21,7 @@ import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.comp
 import metadataSettings from './metadata-settings/metadataSettings.component.jsx'
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component.jsx'
 import Oauth2ClientEditor41 from './oauth2-client-editor-41/OAuth2ClientEditor.component.jsx'
+import PeriodTypes from './period-types/PeriodTypes.component.jsx'
 import settingsActions from './settingsActions.js'
 import { categories } from './settingsCategories.js'
 import classes from './SettingsFields.module.css'
@@ -116,12 +118,17 @@ function addConditionallyHiddenStyles(mapping) {
     return settingsValue === currentValue ? { display: 'none' } : {}
 }
 
-function getMenuItems(mapping) {
+function getMenuItems(mapping, apiVersion) {
     const sourceMenuItems =
         (configOptionStore.state && configOptionStore.state[mapping.source]) ||
         []
 
-    const optionsMenuItems = Object.entries(mapping.options || []).map(
+    const options =
+        typeof mapping.options === 'function'
+            ? mapping.options(apiVersion)
+            : mapping.options
+
+    const optionsMenuItems = Object.entries(options || []).map(
         ([id, displayName]) => ({
             id,
             displayName,
@@ -140,7 +147,8 @@ class SettingsFields extends React.Component {
     componentDidMount() {
         this.subscriptions = []
         this.subscriptions.push(
-            settingsStore.subscribe(() => this.forceUpdate())
+            settingsStore.subscribe(() => this.forceUpdate()),
+            configOptionStore.subscribe(() => this.forceUpdate())
         )
     }
 
@@ -157,7 +165,7 @@ class SettingsFields extends React.Component {
         }
     }
 
-    fieldForMapping({ mapping, fieldBase, key, d2 }) {
+    fieldForMapping({ mapping, fieldBase, key, d2, apiVersion }) {
         switch (mapping.type) {
             case 'textfield':
             case undefined:
@@ -177,15 +185,23 @@ class SettingsFields extends React.Component {
                     }),
                 })
 
-            case 'dropdown':
+            case 'dropdown': {
                 if (mapping.includeEmpty && fieldBase.value === '') {
                     fieldBase.value = 'null'
                 }
 
+                const helpText =
+                    typeof mapping.helpText === 'function'
+                        ? mapping.helpText(fieldBase.value, {
+                              configOptions: configOptionStore.getState(),
+                              settings: settingsStore.state,
+                          })
+                        : mapping.helpText
+
                 return Object.assign({}, fieldBase, {
                     component: SelectField,
                     props: Object.assign({}, fieldBase.props, {
-                        menuItems: getMenuItems(mapping),
+                        menuItems: getMenuItems(mapping, apiVersion),
                         includeEmpty: !!mapping.includeEmpty,
                         emptyLabel:
                             (mapping.includeEmpty && mapping.emptyLabel) ||
@@ -194,8 +210,11 @@ class SettingsFields extends React.Component {
                         warning:
                             (mapping.showWarning && mapping.warning) ||
                             undefined,
+                        helpText,
                     }),
                 })
+            }
+
             case 'emailCheckbox': {
                 const emailConfigured = isEmailConfigured(d2)
                 const explanatoryText =
@@ -302,9 +321,32 @@ class SettingsFields extends React.Component {
                 })
 
             case 'metadataSettings':
-                return Object.assign({}, fieldBase, {
+                return {
+                    ...fieldBase,
                     component: metadataSettings,
-                })
+                }
+
+            case 'periodTypes':
+                return {
+                    ...fieldBase,
+                    component: PeriodTypes,
+                }
+            case 'colorPicker':
+                return {
+                    ...fieldBase,
+                    component: ColorPicker,
+                    props: {
+                        label: fieldBase.props.floatingLabelText,
+                        color: fieldBase.value,
+                        onColorPick: ({ color }) => {
+                            settingsActions.saveKey(key, color)
+                            settingsActions.saveKey(
+                                'keyCustomColorMobile',
+                                color
+                            )
+                        },
+                    },
+                }
 
             default:
                 console.warn(
@@ -375,7 +417,13 @@ class SettingsFields extends React.Component {
                     validators,
                 }
 
-                return this.fieldForMapping({ mapping, fieldBase, key, d2 })
+                return this.fieldForMapping({
+                    mapping,
+                    fieldBase,
+                    key,
+                    d2,
+                    apiVersion: this.props.apiVersion,
+                })
             })
             .filter((f) => f && !!f.name)
             .map((field) => {
@@ -431,6 +479,7 @@ class SettingsFields extends React.Component {
 }
 
 SettingsFields.propTypes = {
+    apiVersion: PropTypes.number.isRequired,
     category: PropTypes.string.isRequired,
     currentSettings: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
