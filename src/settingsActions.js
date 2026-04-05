@@ -9,6 +9,7 @@ import {
 } from './settingsCategories.js'
 import settingsKeyMapping from './settingsKeyMapping.js'
 import settingsStore from './settingsStore.js'
+import { validateMappingValue } from './settingValidators.js'
 
 /* eslint-disable max-params */
 
@@ -74,6 +75,13 @@ settingsActions.saveKey.subscribe((args) => {
     const [key, value, locale] = args.data
     // Can be undefined for some custom sections, i.e. 'keyStopMetadataSync'
     const mapping = settingsKeyMapping[key]
+
+    if (mapping && !locale) {
+        const validation = validateMappingValue(mapping, value)
+        if (!validation.valid) {
+            return
+        }
+    }
 
     getD2().then((d2) => {
         const isLocalisedAppearanceSetting = mapping?.appendLocale && locale
