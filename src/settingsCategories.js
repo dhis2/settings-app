@@ -76,9 +76,6 @@ export const categories = {
         pageLabel: i18n.t('Analytics settings'),
         settings: [
             {
-                setting: 'keyAnalysisRelativePeriod',
-            },
-            {
                 setting: 'keyAnalysisDisplayProperty',
             },
             {
@@ -106,6 +103,13 @@ export const categories = {
             },
             {
                 setting: 'dataOutputPeriodTypes',
+                minimumApiVersion: 43,
+            },
+            {
+                setting: 'keyAnalysisRelativePeriod',
+            },
+            {
+                setting: 'analyticsWeeklyStart',
                 minimumApiVersion: 43,
             },
             {
@@ -199,6 +203,11 @@ export const categories = {
             },
             {
                 setting: 'keyStyle',
+                maximumApiVersion: 42,
+            },
+            {
+                setting: 'keyCustomColor',
+                // minimumApiVersion: 43
             },
             {
                 setting: 'startModule',
@@ -236,6 +245,10 @@ export const categories = {
             {
                 setting: 'globalShellEnabled',
                 minimumApiVersion: 42,
+            },
+            {
+                setting: 'keyCustomTranslationsEnabled',
+                minimumApiVersion: 43,
             },
         ],
     },

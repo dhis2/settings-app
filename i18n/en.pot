@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-04-05T10:55:50.124Z\n"
-"PO-Revision-Date: 2026-04-05T10:55:50.124Z\n"
+"POT-Creation-Date: 2026-03-09T20:16:58.354Z\n"
+"PO-Revision-Date: 2026-03-09T20:16:58.354Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -14,8 +14,17 @@ msgstr "Failed to load: {{error}}"
 msgid "No flag"
 msgstr "No flag"
 
+msgid "DHIS2"
+msgstr "DHIS2"
+
 msgid "Search settings"
 msgstr "Search settings"
+
+msgid "No color selected"
+msgstr "No color selected"
+
+msgid "Remove color"
+msgstr "Remove color"
 
 msgid "Replace image"
 msgstr "Replace image"
@@ -290,23 +299,8 @@ msgstr "There was a problem updating settings. Changes have not been saved."
 msgid "Period types available in analytics apps"
 msgstr "Period types available in analytics apps"
 
-msgid "This field is required"
-msgstr "This field is required"
-
-msgid "This field should be a URL"
-msgstr "This field should be a URL"
-
-msgid "This field should be a number"
-msgstr "This field should be a number"
-
-msgid "This field should be a positive number"
-msgstr "This field should be a positive number"
-
-msgid "This field should be an email"
-msgstr "This field should be an email"
-
-msgid "Please enter a number from {{min}} to {{max}}"
-msgstr "Please enter a number from {{min}} to {{max}}"
+msgid "This period type is always enabled and cannot be disabled"
+msgstr "This period type is always enabled and cannot be disabled"
 
 msgid "General"
 msgstr "General"
@@ -396,6 +390,9 @@ msgstr "No settings matched the search term"
 msgid "Search results"
 msgstr "Search results"
 
+msgid "This period type is currently disabled in the period type settings above"
+msgstr "This period type is currently disabled in the period type settings above"
+
 msgid "Maximum number of analytics records"
 msgstr "Maximum number of analytics records"
 
@@ -465,6 +462,30 @@ msgstr "Gather analytical object statistics in dashboard views"
 
 msgid "Include passive dashboard views in usage analytics statistics"
 msgstr "Include passive dashboard views in usage analytics statistics"
+
+msgid "Hide daily periods"
+msgstr "Hide daily periods"
+
+msgid "Hidden period types in analytics apps"
+msgstr "Hidden period types in analytics apps"
+
+msgid "Hide weekly periods"
+msgstr "Hide weekly periods"
+
+msgid "Hide biweekly periods"
+msgstr "Hide biweekly periods"
+
+msgid "Hide monthly periods"
+msgstr "Hide monthly periods"
+
+msgid "Hide bimonthly periods"
+msgstr "Hide bimonthly periods"
+
+msgid "Period types"
+msgstr "Period types"
+
+msgid "Allowed period types"
+msgstr "Allowed period types"
 
 msgid "Default relative period for analysis"
 msgstr "Default relative period for analysis"
@@ -559,32 +580,11 @@ msgstr "Last financial year"
 msgid "Last 5 financial years"
 msgstr "Last 5 financial years"
 
-msgid "Hide daily periods"
-msgstr "Hide daily periods"
-
-msgid "Hidden period types in analytics apps"
-msgstr "Hidden period types in analytics apps"
-
-msgid "Hide weekly periods"
-msgstr "Hide weekly periods"
-
-msgid "Hide biweekly periods"
-msgstr "Hide biweekly periods"
-
-msgid "Hide monthly periods"
-msgstr "Hide monthly periods"
-
-msgid "Hide bimonthly periods"
-msgstr "Hide bimonthly periods"
-
-msgid "Period types"
-msgstr "Period types"
-
-msgid "Allowed period types"
-msgstr "Allowed period types"
-
 msgid "Financial year relative period start month"
 msgstr "Financial year relative period start month"
+
+msgid "Weekly relative period start day"
+msgstr "Weekly relative period start day"
 
 msgid "Cache strategy"
 msgstr "Cache strategy"
@@ -736,6 +736,9 @@ msgstr "Style (android)"
 msgid "Style"
 msgstr "Style"
 
+msgid "Theme color"
+msgstr "Theme color"
+
 msgid "Start page"
 msgstr "Start page"
 
@@ -789,6 +792,9 @@ msgstr "Login page template"
 
 msgid "Enable Global Shell"
 msgstr "Enable Global Shell"
+
+msgid "Enable custom translations"
+msgstr "Enable custom translations"
 
 msgid "Custom login page logo"
 msgstr "Custom login page logo"
