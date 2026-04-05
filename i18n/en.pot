@@ -365,21 +365,6 @@ msgstr "Notification settings"
 msgid "OAuth2 Clients"
 msgstr "OAuth2 Clients"
 
-msgid "This field is required"
-msgstr "This field is required"
-
-msgid "This field should be a URL"
-msgstr "This field should be a URL"
-
-msgid "This field should be a number"
-msgstr "This field should be a number"
-
-msgid "This field should be a positive number"
-msgstr "This field should be a positive number"
-
-msgid "This field should be an email"
-msgstr "This field should be an email"
-
 msgid "This setting will be overridden by the current user setting: {{settingName}}"
 msgstr "This setting will be overridden by the current user setting: {{settingName}}"
 
