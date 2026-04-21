@@ -207,7 +207,7 @@ export const categories = {
             },
             {
                 setting: 'keyCustomColor',
-                // minimumApiVersion: 43
+                minimumApiVersion: 43,
             },
             {
                 setting: 'startModule',

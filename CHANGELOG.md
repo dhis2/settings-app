@@ -1,3 +1,10 @@
+## [100.15.4](https://github.com/dhis2/settings-app/compare/v100.15.3...v100.15.4) (2026-04-10)
+
+
+### Bug Fixes
+
+* only show theme color setting for v43 and above ([#1479](https://github.com/dhis2/settings-app/issues/1479)) ([2d273ba](https://github.com/dhis2/settings-app/commit/2d273bae768a279852a0dec23287ce98908f9e69))
+
 ## [100.15.3](https://github.com/dhis2/settings-app/compare/v100.15.2...v100.15.3) (2026-03-17)
 
 
