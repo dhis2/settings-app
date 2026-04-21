@@ -76,7 +76,7 @@ settingsActions.saveKey.subscribe((args) => {
     // Can be undefined for some custom sections, i.e. 'keyStopMetadataSync'
     const mapping = settingsKeyMapping[key]
 
-    if (mapping && !locale) {
+    if (mapping) {
         const validation = validateMappingValue(mapping, value)
         if (!validation.valid) {
             return

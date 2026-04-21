@@ -34,7 +34,6 @@ export function buildValidatorsForMapping(mapping) {
         mapping.validators.forEach((name) => {
             if (wordToValidatorMap.has(name)) {
                 const validator = wordToValidatorMap.get(name)
-                console.log('validator', validator.message, mapping)
                 validators.push({
                     validator,
                     message: translateValidatorMessage(validator.message),
@@ -49,7 +48,7 @@ export function buildValidatorsForMapping(mapping) {
         validators.push({
             validator: (value) => {
                 if (value === '' || value === null || value === undefined) {
-                    return true
+                    return false
                 }
                 const n = Number(value)
                 if (Number.isNaN(n)) {
