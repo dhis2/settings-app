@@ -8,7 +8,6 @@ import {
     Tooltip,
 } from '@dhis2/ui'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component.js'
-import { wordToValidatorMap } from 'd2-ui/lib/forms/Validators.js'
 import PropTypes from 'prop-types'
 import React from 'react'
 import configOptionStore from './configOptionStore.js'
@@ -27,6 +26,7 @@ import { categories } from './settingsCategories.js'
 import classes from './SettingsFields.module.css'
 import settingsKeyMapping from './settingsKeyMapping.js'
 import settingsStore from './settingsStore.js'
+import { buildValidatorsForMapping } from './settingValidators.js'
 import AppTheme from './theme.js'
 
 const styles = {
@@ -55,24 +55,6 @@ const styles = {
         top: -6,
         marginLeft: 16,
     },
-}
-
-const translateValidatorMessage = (validatorMessage) => {
-    switch (validatorMessage) {
-        case 'value_required':
-            return i18n.t('This field is required')
-        case 'value_should_be_a_url':
-            return i18n.t('This field should be a URL')
-        case 'value_should_be_list_of_urls':
-            return i18n.t('This field should contain a list of URLs')
-        case 'value_should_be_a_number':
-            return i18n.t('This field should be a number')
-        case 'value_should_be_a_positive_number':
-            return i18n.t('This field should be a positive number')
-        case 'value_should_be_an_email':
-            return i18n.t('This field should be an email')
-    }
-    return validatorMessage
 }
 
 function wrapUserSettingsOverride({ component, valueLabel }) {
@@ -381,20 +363,7 @@ class SettingsFields extends React.Component {
                 const mapping = settingsKeyMapping[key]
 
                 // Base config, common for all component types
-                const validators = []
-                if (mapping && mapping.validators) {
-                    mapping.validators.forEach((name) => {
-                        if (wordToValidatorMap.has(name)) {
-                            const validator = wordToValidatorMap.get(name)
-                            validators.push({
-                                validator,
-                                message: translateValidatorMessage(
-                                    validator.message
-                                ),
-                            })
-                        }
-                    })
-                }
+                const validators = buildValidatorsForMapping(mapping)
 
                 const fieldBase = {
                     name: key,

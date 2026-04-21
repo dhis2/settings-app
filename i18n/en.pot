@@ -5,17 +5,17 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-03-09T20:16:58.354Z\n"
-"PO-Revision-Date: 2026-03-09T20:16:58.354Z\n"
+"POT-Creation-Date: 2026-04-17T07:03:07.634Z\n"
+"PO-Revision-Date: 2026-04-17T07:03:07.634Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
 
-msgid "No flag"
-msgstr "No flag"
-
 msgid "DHIS2"
 msgstr "DHIS2"
+
+msgid "No flag"
+msgstr "No flag"
 
 msgid "Search settings"
 msgstr "Search settings"
@@ -302,6 +302,24 @@ msgstr "Period types available in analytics apps"
 msgid "This period type is always enabled and cannot be disabled"
 msgstr "This period type is always enabled and cannot be disabled"
 
+msgid "This field is required"
+msgstr "This field is required"
+
+msgid "This field should be a URL"
+msgstr "This field should be a URL"
+
+msgid "This field should be a number"
+msgstr "This field should be a number"
+
+msgid "This field should be a positive number"
+msgstr "This field should be a positive number"
+
+msgid "This field should be an email"
+msgstr "This field should be an email"
+
+msgid "Please enter a number from {{min}} to {{max}}"
+msgstr "Please enter a number from {{min}} to {{max}}"
+
 msgid "General"
 msgstr "General"
 
@@ -364,21 +382,6 @@ msgstr "Notification settings"
 
 msgid "OAuth2 Clients"
 msgstr "OAuth2 Clients"
-
-msgid "This field is required"
-msgstr "This field is required"
-
-msgid "This field should be a URL"
-msgstr "This field should be a URL"
-
-msgid "This field should be a number"
-msgstr "This field should be a number"
-
-msgid "This field should be a positive number"
-msgstr "This field should be a positive number"
-
-msgid "This field should be an email"
-msgstr "This field should be an email"
 
 msgid "This setting will be overridden by the current user setting: {{settingName}}"
 msgstr "This setting will be overridden by the current user setting: {{settingName}}"

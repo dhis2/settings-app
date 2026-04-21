@@ -13,6 +13,7 @@ class TextFieldComponent extends React.Component {
         helpText: PropTypes.node,
         multiLine: PropTypes.bool,
         value: PropTypes.string,
+        onChange: PropTypes.func,
     }
 
     static defaultProps = {
@@ -37,6 +38,9 @@ class TextFieldComponent extends React.Component {
 
     onChange(e) {
         this.setState({ value: e.target.value })
+        if (this.props.onChange) {
+            this.props.onChange(e)
+        }
     }
 
     render() {

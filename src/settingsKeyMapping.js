@@ -740,6 +740,7 @@ const settingsKeyMapping = {
         inputType: 'number',
         minValue: 1,
         maxValue: 28,
+        validators: ['positive_number'],
         hideWhen: {
             settingsKey: 'credentialsExpiryAlert',
             settingsValue: 'false',
