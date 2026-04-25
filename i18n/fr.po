@@ -1,4 +1,3 @@
-# 
 # Translators:
 # Bram Piot <bram.piot@gmail.com>, 2021
 # tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021
@@ -15,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
+"POT-Creation-Date: 2026-04-17T07:03:07.634Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Cyrille Kabrane, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -28,11 +27,20 @@ msgstr ""
 msgid "Failed to load: {{error}}"
 msgstr "Échec du chargement : {{error}}"
 
+msgid "DHIS2"
+msgstr "DHIS2"
+
 msgid "No flag"
 msgstr "Pas de drapeau"
 
 msgid "Search settings"
 msgstr "Paramètres de recherche"
+
+msgid "No color selected"
+msgstr "Aucune couleur sélectionnée"
+
+msgid "Remove color"
+msgstr "Retirer la couleur"
 
 msgid "Replace image"
 msgstr "Remplacer l'image"
@@ -310,6 +318,27 @@ msgstr ""
 msgid "Period types available in analytics apps"
 msgstr "Types de périodes disponibles dans les applications d'analyse"
 
+msgid "This period type is always enabled and cannot be disabled"
+msgstr "Ce type de période est toujours activé et ne peut pas être désactivé"
+
+msgid "This field is required"
+msgstr "Ce champs est requis"
+
+msgid "This field should be a URL"
+msgstr "Ce champ doit contenir une URL"
+
+msgid "This field should be a number"
+msgstr "Ce champ doit contenir un nombre"
+
+msgid "This field should be a positive number"
+msgstr "Ce champ doit contenir un nombre positif"
+
+msgid "This field should be an email"
+msgstr "Ce champ doit contenir une adresse e-mail"
+
+msgid "Please enter a number from {{min}} to {{max}}"
+msgstr ""
+
 msgid "General"
 msgstr "Général"
 
@@ -373,21 +402,6 @@ msgstr "Paramètres de notification"
 msgid "OAuth2 Clients"
 msgstr "Clients OAuth2"
 
-msgid "This field is required"
-msgstr "Ce champs est requis"
-
-msgid "This field should be a URL"
-msgstr "Ce champ doit contenir une URL"
-
-msgid "This field should be a number"
-msgstr "Ce champ doit contenir un nombre"
-
-msgid "This field should be a positive number"
-msgstr "Ce champ doit contenir un nombre positif"
-
-msgid "This field should be an email"
-msgstr "Ce champ doit contenir une adresse e-mail"
-
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
@@ -417,6 +431,12 @@ msgstr "Aucun paramètre ne correspond au terme de la recherche"
 
 msgid "Search results"
 msgstr "Résultats de la recherche"
+
+msgid ""
+"This period type is currently disabled in the period type settings above"
+msgstr ""
+"Ce type de période est actuellement désactivé dans les paramètres du type de"
+" période ci-dessus."
 
 msgid "Maximum number of analytics records"
 msgstr "Nombre maximum d'enregistrements d'analyse"
@@ -491,6 +511,30 @@ msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
 "Inclure les vues passives du tableau de bord dans les statistiques d'analyse"
 " d'utilisation"
+
+msgid "Hide daily periods"
+msgstr "Masquer les périodes quotidiennes"
+
+msgid "Hidden period types in analytics apps"
+msgstr "Types de périodes masquées dans les applications d’analyse"
+
+msgid "Hide weekly periods"
+msgstr "Masquer les périodes hebdomadaires"
+
+msgid "Hide biweekly periods"
+msgstr "Masquer les périodes bimensuelles"
+
+msgid "Hide monthly periods"
+msgstr "Masquer les périodes mensuelles"
+
+msgid "Hide bimonthly periods"
+msgstr "Masquer les périodes bimestrielles"
+
+msgid "Period types"
+msgstr "Type de période"
+
+msgid "Allowed period types"
+msgstr "Types de périodes autorisées"
 
 msgid "Default relative period for analysis"
 msgstr "Période relative par défaut pour l'analyse"
@@ -585,32 +629,11 @@ msgstr "Année financière précédente"
 msgid "Last 5 financial years"
 msgstr "5 dernières années financières"
 
-msgid "Hide daily periods"
-msgstr "Masquer les périodes quotidiennes"
-
-msgid "Hidden period types in analytics apps"
-msgstr "Types de périodes masquées dans les applications d’analyse"
-
-msgid "Hide weekly periods"
-msgstr "Masquer les périodes hebdomadaires"
-
-msgid "Hide biweekly periods"
-msgstr "Masquer les périodes bimensuelles"
-
-msgid "Hide monthly periods"
-msgstr "Masquer les périodes mensuelles"
-
-msgid "Hide bimonthly periods"
-msgstr "Masquer les périodes bimestrielles"
-
-msgid "Period types"
-msgstr "Type de période"
-
-msgid "Allowed period types"
-msgstr "Types de périodes autorisées"
-
 msgid "Financial year relative period start month"
 msgstr "Mois de début de la période relative à l'année financière"
+
+msgid "Weekly relative period start day"
+msgstr "Jour de début de la période relative hebdomadaire"
 
 msgid "Cache strategy"
 msgstr "Stratégie de mise en cache"
@@ -770,6 +793,9 @@ msgstr "Style (android)"
 msgid "Style"
 msgstr "Style"
 
+msgid "Theme color"
+msgstr "Couleur du thème"
+
 msgid "Start page"
 msgstr "Page d'accueil"
 
@@ -826,6 +852,9 @@ msgstr "Modèle de page de connexion"
 
 msgid "Enable Global Shell"
 msgstr "Activer Global Shell"
+
+msgid "Enable custom translations"
+msgstr "Activer les traductions personnalisées"
 
 msgid "Custom login page logo"
 msgstr "Logo personnalisé de la page de connexion"
