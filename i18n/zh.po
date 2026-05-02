@@ -1,15 +1,15 @@
 # Translators:
 # Philip Larsen Donnelly, 2026
 # Viktor Varland <viktor@dhis2.org>, 2026
-# easylin <lin_xd@126.com>, 2026
 # 晓东 林 <13981924470@126.com>, 2026
+# easylin <lin_xd@126.com>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-03-09T20:16:58.354Z\n"
+"POT-Creation-Date: 2026-04-17T07:03:07.634Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2026\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2026\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -20,11 +20,11 @@ msgstr ""
 msgid "Failed to load: {{error}}"
 msgstr "加载失败：{{error}}"
 
-msgid "No flag"
-msgstr "无标志"
-
 msgid "DHIS2"
 msgstr "DHIS2"
+
+msgid "No flag"
+msgstr "无标志"
 
 msgid "Search settings"
 msgstr "搜索设置"
@@ -311,6 +311,24 @@ msgstr "分析应用程序中可用的周期类型"
 msgid "This period type is always enabled and cannot be disabled"
 msgstr "该时段类型需始终启用，不能禁用"
 
+msgid "This field is required"
+msgstr "这个字段是必填的"
+
+msgid "This field should be a URL"
+msgstr "该字段应为网址"
+
+msgid "This field should be a number"
+msgstr "该字段应该是一个数字"
+
+msgid "This field should be a positive number"
+msgstr "该字段应该是一个正数"
+
+msgid "This field should be an email"
+msgstr "该字段应为电子邮件"
+
+msgid "Please enter a number from {{min}} to {{max}}"
+msgstr "请输入一个从{{min}} 到{{max}}的数"
+
 msgid "General"
 msgstr "常规"
 
@@ -373,21 +391,6 @@ msgstr "通知设置"
 
 msgid "OAuth2 Clients"
 msgstr "OAuth2 客户"
-
-msgid "This field is required"
-msgstr "这个字段是必填的"
-
-msgid "This field should be a URL"
-msgstr "该字段应为网址"
-
-msgid "This field should be a number"
-msgstr "该字段应该是一个数字"
-
-msgid "This field should be a positive number"
-msgstr "该字段应该是一个正数"
-
-msgid "This field should be an email"
-msgstr "该字段应为电子邮件"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"

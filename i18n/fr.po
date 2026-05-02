@@ -337,7 +337,7 @@ msgid "This field should be an email"
 msgstr "Ce champ doit contenir une adresse e-mail"
 
 msgid "Please enter a number from {{min}} to {{max}}"
-msgstr ""
+msgstr "Veuillez saisir un nombre de {{min}} à {{max}}"
 
 msgid "General"
 msgstr "Général"
