@@ -105,6 +105,9 @@ function ColorPicker({ label, onColorPick, color = '' }) {
                                 color={color}
                                 disableAlpha
                                 onChangeComplete={({ hex }) => {
+                                    if (hex !== 'ffffff' && hex === color) {
+                                        return
+                                    }
                                     onColorPick({ color: hex })
                                 }}
                             />
