@@ -105,8 +105,10 @@ function ColorPicker({ label, onColorPick, color = '' }) {
                                 color={color}
                                 disableAlpha
                                 onChangeComplete={({ hex }) => {
-                                    const nextColor = hex === color ? '' : hex
-                                    onColorPick({ color: nextColor })
+                                    if (hex !== 'ffffff' && hex === color) {
+                                        return
+                                    }
+                                    onColorPick({ color: hex })
                                 }}
                             />
                         </div>
