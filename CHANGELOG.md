@@ -1,3 +1,10 @@
+## [100.15.5](https://github.com/dhis2/settings-app/compare/v100.15.4...v100.15.5) (2026-05-07)
+
+
+### Bug Fixes
+
+* **theme-color:** allow user to set white theme color ([#1484](https://github.com/dhis2/settings-app/issues/1484)) ([1a5bc48](https://github.com/dhis2/settings-app/commit/1a5bc4827ab136b159af3f5ee98e811748f8a9db))
+
 ## [100.15.4](https://github.com/dhis2/settings-app/compare/v100.15.3...v100.15.4) (2026-04-10)
 
 
