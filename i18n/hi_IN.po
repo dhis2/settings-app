@@ -1,4 +1,3 @@
-# 
 # Translators:
 # Siddharth Agarwal, 2026
 # Rohit Wadhwani, 2026
@@ -6,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-01-13T22:53:28.645Z\n"
+"POT-Creation-Date: 2026-04-17T07:03:07.634Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
 "Last-Translator: Rohit Wadhwani, 2026\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
@@ -19,10 +18,19 @@ msgstr ""
 msgid "Failed to load: {{error}}"
 msgstr ""
 
+msgid "DHIS2"
+msgstr ""
+
 msgid "No flag"
 msgstr ""
 
 msgid "Search settings"
+msgstr ""
+
+msgid "No color selected"
+msgstr ""
+
+msgid "Remove color"
 msgstr ""
 
 msgid "Replace image"
@@ -287,7 +295,7 @@ msgid "Years"
 msgstr "वर्ष"
 
 msgid "Other"
-msgstr ""
+msgstr "दूसरा"
 
 msgid "Settings updated"
 msgstr ""
@@ -296,6 +304,27 @@ msgid "There was a problem updating settings. Changes have not been saved."
 msgstr ""
 
 msgid "Period types available in analytics apps"
+msgstr ""
+
+msgid "This period type is always enabled and cannot be disabled"
+msgstr ""
+
+msgid "This field is required"
+msgstr "यह फ़ील्ड आवश्यक है"
+
+msgid "This field should be a URL"
+msgstr ""
+
+msgid "This field should be a number"
+msgstr ""
+
+msgid "This field should be a positive number"
+msgstr ""
+
+msgid "This field should be an email"
+msgstr ""
+
+msgid "Please enter a number from {{min}} to {{max}}"
 msgstr ""
 
 msgid "General"
@@ -361,21 +390,6 @@ msgstr ""
 msgid "OAuth2 Clients"
 msgstr ""
 
-msgid "This field is required"
-msgstr "यह फ़ील्ड आवश्यक है"
-
-msgid "This field should be a URL"
-msgstr ""
-
-msgid "This field should be a number"
-msgstr ""
-
-msgid "This field should be a positive number"
-msgstr ""
-
-msgid "This field should be an email"
-msgstr ""
-
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
 msgstr ""
@@ -398,6 +412,10 @@ msgid "No settings matched the search term"
 msgstr ""
 
 msgid "Search results"
+msgstr ""
+
+msgid ""
+"This period type is currently disabled in the period type settings above"
 msgstr ""
 
 msgid "Maximum number of analytics records"
@@ -466,6 +484,30 @@ msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
 
 msgid "Include passive dashboard views in usage analytics statistics"
+msgstr ""
+
+msgid "Hide daily periods"
+msgstr ""
+
+msgid "Hidden period types in analytics apps"
+msgstr ""
+
+msgid "Hide weekly periods"
+msgstr ""
+
+msgid "Hide biweekly periods"
+msgstr ""
+
+msgid "Hide monthly periods"
+msgstr ""
+
+msgid "Hide bimonthly periods"
+msgstr ""
+
+msgid "Period types"
+msgstr ""
+
+msgid "Allowed period types"
 msgstr ""
 
 msgid "Default relative period for analysis"
@@ -561,31 +603,10 @@ msgstr ""
 msgid "Last 5 financial years"
 msgstr ""
 
-msgid "Hide daily periods"
-msgstr ""
-
-msgid "Hidden period types in analytics apps"
-msgstr ""
-
-msgid "Hide weekly periods"
-msgstr ""
-
-msgid "Hide biweekly periods"
-msgstr ""
-
-msgid "Hide monthly periods"
-msgstr ""
-
-msgid "Hide bimonthly periods"
-msgstr ""
-
-msgid "Period types"
-msgstr ""
-
-msgid "Allowed period types"
-msgstr ""
-
 msgid "Financial year relative period start month"
+msgstr ""
+
+msgid "Weekly relative period start day"
 msgstr ""
 
 msgid "Cache strategy"
@@ -738,6 +759,9 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
+msgid "Theme color"
+msgstr ""
+
 msgid "Start page"
 msgstr ""
 
@@ -790,6 +814,9 @@ msgid "Login page template"
 msgstr ""
 
 msgid "Enable Global Shell"
+msgstr ""
+
+msgid "Enable custom translations"
 msgstr ""
 
 msgid "Custom login page logo"
