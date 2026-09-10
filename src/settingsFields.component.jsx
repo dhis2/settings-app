@@ -16,10 +16,13 @@ import ColorPicker from './form-fields/color-picker/colorPicker.jsx'
 import SelectField from './form-fields/drop-down.jsx'
 import FileUpload from './form-fields/file-upload.jsx'
 import TextField from './form-fields/text-field.jsx'
+import { groupSettingsBySection } from './groupSettingsBySection.js'
 import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component.jsx'
 import metadataSettings from './metadata-settings/metadataSettings.component.jsx'
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component.jsx'
 import Oauth2ClientEditor41 from './oauth2-client-editor-41/OAuth2ClientEditor.component.jsx'
+import DefaultRelativePeriod from './period-labels/DefaultRelativePeriod.jsx'
+import RelativePeriodLabels from './period-labels/RelativePeriodLabels.jsx'
 import PeriodTypes from './period-types/PeriodTypes.component.jsx'
 import settingsActions from './settingsActions.js'
 import { categories } from './settingsCategories.js'
@@ -313,6 +316,16 @@ class SettingsFields extends React.Component {
                     ...fieldBase,
                     component: PeriodTypes,
                 }
+            case 'relativePeriodLabels':
+                return {
+                    ...fieldBase,
+                    component: RelativePeriodLabels,
+                }
+            case 'defaultRelativePeriod':
+                return {
+                    ...fieldBase,
+                    component: DefaultRelativePeriod,
+                }
             case 'colorPicker':
                 return {
                     ...fieldBase,
@@ -339,7 +352,6 @@ class SettingsFields extends React.Component {
     }
 
     renderFields(settings) {
-        const d2 = this.context.d2
         if (settings.length === 0) {
             return (
                 <div style={styles.noHits}>
@@ -358,7 +370,37 @@ class SettingsFields extends React.Component {
             )
         }
 
-        const fields = settings
+        const groups = groupSettingsBySection({
+            category: this.props.category,
+            settingKeys: settings,
+            categories,
+        })
+
+        return (
+            <Card className={classes.card} key={this.props.category}>
+                {groups.map((group) => (
+                    <div
+                        key={group.id || group.settings.join(',')}
+                        className={group.label ? classes.section : undefined}
+                    >
+                        {group.label && (
+                            <h2 className={classes.sectionHeading}>
+                                {group.label}
+                            </h2>
+                        )}
+                        <FormBuilder
+                            fields={this.buildFields(group.settings)}
+                            onUpdateField={settingsActions.saveKey}
+                        />
+                    </div>
+                ))}
+            </Card>
+        )
+    }
+
+    buildFields(settings) {
+        const d2 = this.context.d2
+        return settings
             .map((key) => {
                 const mapping = settingsKeyMapping[key]
 
@@ -422,15 +464,6 @@ class SettingsFields extends React.Component {
 
                 return field
             })
-
-        return (
-            <Card className={classes.card} key={this.props.category}>
-                <FormBuilder
-                    fields={fields}
-                    onUpdateField={settingsActions.saveKey}
-                />
-            </Card>
-        )
     }
 
     render() {

@@ -2,41 +2,124 @@
     margin: 16px 0;
 }
 
-.sectionLabel {
-    color: var(--colors-grey800);
-    font-size: 12px;
+.box {
+    background: var(--colors-white);
+    border: 1px solid var(--colors-grey300);
+    border-radius: 3px;
+}
+
+.sectionHeader {
     margin: 0;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    background: var(--colors-grey050);
+    color: var(--colors-grey900);
+    border-bottom: 1px solid var(--colors-grey200);
 }
 
 .groupsWrapper {
-    margin: 8px 0;
-    padding: 12px;
-    background: var(--colors-grey050);
-    border: 1px solid var(--colors-grey200);
-    border-radius: 7px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    padding: 12px 16px 24px;
+    column-width: 220px;
+    column-count: 3;
+    column-gap: 24px;
+}
+
+.group {
+    break-inside: avoid;
+    margin-bottom: 24px;
 }
 
 .groupLabel {
     font-size: 13px;
     font-weight: 500;
-    color: var(--colors-grey600);
+    color: var(--colors-grey700);
     margin: 0px 0 8px 0;
 }
 
 .checkboxList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 6px 24px;
+    gap: 10px 24px;
     padding-left: 8px;
     width: 100%;
 }
 
 .checkboxItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     min-width: 0;
-    font-size: 15px;
+    gap: 4px;
+}
+
+.checkboxRow {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.addLabelAction {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-inline-start: 24px;
+    color: var(--colors-grey800);
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.addLabelAction:hover {
+    text-decoration: underline;
+}
+
+.labelEditor {
+    display: flex;
+    align-items: stretch;
+    height: 32px;
+    margin-inline-start: 24px;
+    width: calc(100% - 24px);
+}
+
+.labelInput {
+    flex: 1;
+    min-width: 0;
+    height: 32px;
+}
+
+.labelInput :global([data-test='dhis2-uicore-input']) {
+    display: flex;
+    width: 100%;
+    height: 32px;
+}
+
+.labelInput :global(input) {
+    height: 32px;
+    max-height: 32px;
+    box-sizing: border-box;
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+}
+
+.translateButton {
+    box-sizing: border-box;
+    height: 32px !important;
+    min-height: 32px !important;
+    width: 32px;
+    padding: 0 !important;
+    border-start-start-radius: 0 !important;
+    border-end-start-radius: 0 !important;
+    border-start-end-radius: 3px !important;
+    border-end-end-radius: 3px !important;
+    margin-inline-start: -1px;
+    z-index: 0;
+}
+
+.translateButton:hover,
+.translateButton:focus {
+    z-index: 1;
 }
 
 .error {

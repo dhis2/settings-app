@@ -3,3 +3,16 @@
     padding: 1rem 2rem;
     max-width: 1000px;
 }
+
+.section + .section {
+    border-top: 1px solid var(--colors-grey300);
+    margin-top: 8px;
+    padding-top: 20px;
+}
+
+.sectionHeading {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--colors-grey900);
+    margin: 0 0 4px;
+}

@@ -1,0 +1,126 @@
+.section {
+    width: 100%;
+    padding: 8px 0 16px;
+}
+
+.empty {
+    font-size: 13px;
+    color: var(--colors-grey600);
+    font-style: italic;
+    margin: 0 0 12px;
+}
+
+.addRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    max-width: 340px;
+}
+
+.card {
+    border: 1px solid var(--colors-grey300);
+    border-radius: 4px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.cardHeading {
+    margin: 0;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--colors-grey900);
+    background: var(--colors-grey050);
+    border-bottom: 1px solid var(--colors-grey300);
+}
+
+.cardBody {
+    padding: 12px 14px;
+}
+
+.periodSelect {
+    max-width: 360px;
+    margin-bottom: 12px;
+}
+
+.seedWarning {
+    margin-bottom: 12px;
+}
+
+.labelsDetails {
+    margin-top: 4px;
+}
+
+.labelsSummary {
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--colors-grey800);
+    padding: 6px 0;
+    user-select: none;
+}
+
+.labelsSummary:hover {
+    color: var(--colors-grey900);
+}
+
+.relativeLabelList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacers-dp8);
+    max-width: 360px;
+    padding-top: 8px;
+}
+
+.relativeLabelField {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.labelEditor {
+    display: flex;
+    align-items: stretch;
+    height: 32px;
+}
+
+.labelInput {
+    flex: 1;
+    min-width: 0;
+    height: 32px;
+}
+
+.labelInput :global([data-test='dhis2-uicore-input']) {
+    display: flex;
+    width: 100%;
+    height: 32px;
+}
+
+.labelInput :global(input) {
+    height: 32px;
+    max-height: 32px;
+    box-sizing: border-box;
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+}
+
+.translateButton {
+    box-sizing: border-box;
+    height: 32px !important;
+    min-height: 32px !important;
+    width: 32px;
+    padding: 0 !important;
+    border-start-start-radius: 0 !important;
+    border-end-start-radius: 0 !important;
+    border-start-end-radius: 3px !important;
+    border-end-end-radius: 3px !important;
+    margin-inline-start: -1px;
+    z-index: 0;
+}
+
+.translateButton:hover,
+.translateButton:focus {
+    z-index: 1;
+}
