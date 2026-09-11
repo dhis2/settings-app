@@ -5,14 +5,16 @@
 }
 
 .section + .section {
-    border-top: 1px solid var(--colors-grey300);
-    margin-top: 8px;
+    margin-top: 40px;
     padding-top: 20px;
 }
 
+.section:first-child {
+    margin-top: 16px;
+}
 .sectionHeading {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--colors-grey900);
-    margin: 0 0 4px;
+    margin: 0 0 8px;
 }

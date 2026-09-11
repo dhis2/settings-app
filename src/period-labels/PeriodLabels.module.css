@@ -1,48 +1,23 @@
-.section {
-    width: 100%;
-    padding: 8px 0 16px;
+.sectionBody {
+    padding-top: 8px;
 }
 
-.empty {
+.block {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--colors-grey200);
+}
+
+.groupLabel {
     font-size: 13px;
-    color: var(--colors-grey600);
-    font-style: italic;
-    margin: 0 0 12px;
-}
-
-.addRow {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 12px;
-    max-width: 340px;
-}
-
-.card {
-    border: 1px solid var(--colors-grey300);
-    border-radius: 4px;
-    margin-bottom: 12px;
-    overflow: hidden;
-}
-
-.cardHeading {
-    margin: 0;
-    padding: 10px 14px;
-    font-size: 14px;
     font-weight: 500;
-    line-height: 20px;
-    color: var(--colors-grey900);
-    background: var(--colors-grey050);
-    border-bottom: 1px solid var(--colors-grey300);
-}
-
-.cardBody {
-    padding: 12px 14px;
+    color: var(--colors-grey700);
+    margin: 0 0 8px;
 }
 
 .periodSelect {
     max-width: 360px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .seedWarning {

@@ -26,32 +26,24 @@ const DefaultRelativePeriod = () => {
     const selected = settings?.keyAnalysisRelativePeriod || ''
 
     return (
-        <div className={styles.card}>
-            <h3 className={styles.cardHeading}>Default relative period</h3>
-            <div className={styles.cardBody}>
-                <div className={styles.periodSelect}>
-                    <SingleSelectField
-                        dense
-                        label="Default relative period for analysis"
-                        helpText="Will be used for analytics apps when no other period is selected."
-                        selected={selected}
-                        onChange={({ selected: next }) =>
-                            settingsActions.saveKey(
-                                'keyAnalysisRelativePeriod',
-                                next
-                            )
-                        }
-                    >
-                        {Object.entries(options).map(([value, label]) => (
-                            <SingleSelectOption
-                                key={value}
-                                value={value}
-                                label={label}
-                            />
-                        ))}
-                    </SingleSelectField>
-                </div>
-            </div>
+        <div className={styles.periodSelect}>
+            <SingleSelectField
+                dense
+                label="Default relative period for analysis"
+                helpText="Used in analytics apps when no period is chosen."
+                selected={selected}
+                onChange={({ selected: next }) =>
+                    settingsActions.saveKey('keyAnalysisRelativePeriod', next)
+                }
+            >
+                {Object.entries(options).map(([value, label]) => (
+                    <SingleSelectOption
+                        key={value}
+                        value={value}
+                        label={label}
+                    />
+                ))}
+            </SingleSelectField>
         </div>
     )
 }

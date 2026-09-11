@@ -75,7 +75,8 @@ export const categories = {
         icon: 'equalizer',
         pageLabel: i18n.t('Analytics settings'),
         sectionLabels: {
-            periods: i18n.t('Periods'),
+            periods: i18n.t('Periods available for analysis'),
+            relativePeriods: i18n.t('Relative period configuration'),
             display: i18n.t('Display & formatting'),
             calculation: i18n.t('Calculation & data output'),
             caching: i18n.t('Caching & performance'),
@@ -114,12 +115,8 @@ export const categories = {
                 minimumApiVersion: 43,
             },
             {
-                setting: 'keyAnalysisRelativePeriod',
-                section: 'periods',
-            },
-            {
                 setting: 'relativePeriodLabels',
-                section: 'periods',
+                section: 'relativePeriods',
                 minimumApiVersion: 43,
             },
             {

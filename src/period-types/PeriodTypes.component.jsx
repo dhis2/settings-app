@@ -153,8 +153,17 @@ const PeriodTypeItem = ({
                     onChange={() => onToggle(periodType.name, isEnabled)}
                 />
             </div>
-            {isEnabled &&
-                (showLabelInput ? (
+            {isEnabled && (
+                <details
+                    className={styles.customLabelDetails}
+                    open={showLabelInput}
+                    onToggle={(event) =>
+                        setShowLabelInput(event.target.open)
+                    }
+                >
+                    <summary className={styles.customLabelSummary}>
+                        {i18n.t('Custom label')}
+                    </summary>
                     <div className={styles.labelEditor}>
                         <div className={styles.labelInput}>
                             <Input
@@ -174,15 +183,8 @@ const PeriodTypeItem = ({
                             onClick={() => setTranslateOpen(true)}
                         />
                     </div>
-                ) : (
-                    <button
-                        type="button"
-                        className={styles.addLabelAction}
-                        onClick={() => setShowLabelInput(true)}
-                    >
-                        {i18n.t('+ Custom label')}
-                    </button>
-                ))}
+                </details>
+            )}
             {translateOpen && (
                 <PrototypeTranslationDialog
                     name={customLabel || displayName}
@@ -288,9 +290,6 @@ const PeriodTypes = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.box}>
-                <h3 className={styles.sectionHeader}>
-                    {i18n.t('Analysis periods')}
-                </h3>
                 <div className={styles.groupsWrapper}>
                     {groupedPeriodTypes.map((group) => (
                         <div key={group.groupKey} className={styles.group}>

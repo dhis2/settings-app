@@ -148,93 +148,89 @@ const RelativePeriodSet = ({ set }) => {
     }
 
     return (
-        <div className={styles.card}>
-            <h3 className={styles.cardHeading}>
-                {`Relative period: ${set.label.toLowerCase()}`}
-            </h3>
-            <div className={styles.cardBody}>
-                <div className={styles.periodSelect}>
-                    <SingleSelectField
-                        dense
-                        disabled={noneEnabled}
-                        label={set.periodSelectLabel}
-                        selected={selected}
-                        onChange={handleStartChange}
-                    >
-                        {options.map(([value, typeName]) => {
-                            const builtIn = formatPeriodDisplayName(
-                                null,
-                                typeName
-                            )
-                            const custom = (
-                                labels.periodTypes[typeName]?.default || ''
-                            ).trim()
-                            return (
-                                <SingleSelectOption
-                                    key={value}
-                                    value={value}
-                                    label={
-                                        custom
-                                            ? `${builtIn} – ${custom}`
-                                            : builtIn
-                                    }
-                                />
-                            )
-                        })}
-                    </SingleSelectField>
-                </div>
-
-                {warnMissingSeedLabel && (
-                    <NoticeBox
-                        dense
-                        warning
-                        className={styles.seedWarning}
-                        title="No custom label on the period these are based on"
-                    >
-                        {seedName
-                            ? `${seedName} still uses its built-in name. Add a custom label for it above, or these relative labels may look inconsistent.`
-                            : 'No period is selected to base these relative labels on.'}
-                    </NoticeBox>
-                )}
-
-                {warnEmptyRelativeLabels && (
-                    <NoticeBox
-                        dense
-                        warning
-                        className={styles.seedWarning}
-                        title={`This period uses a custom label (${seedCustom}), but some relative custom labels are empty.`}
-                    />
-                )}
-
-                <details
-                    className={styles.labelsDetails}
-                    open={labelsOpen}
-                    onToggle={(event) => setLabelsOpen(event.target.open)}
+        <div className={styles.block}>
+            <p className={styles.groupLabel}>{set.label}</p>
+            <div className={styles.periodSelect}>
+                <SingleSelectField
+                    dense
+                    disabled={noneEnabled}
+                    label={set.periodSelectLabel}
+                    selected={selected}
+                    onChange={handleStartChange}
                 >
-                    <summary className={styles.labelsSummary}>
-                        Custom labels
-                    </summary>
-                    <div className={styles.relativeLabelList}>
-                        {set.relativePeriods.map((period) => (
-                            <RelativeLabelField
-                                key={period.id}
-                                period={period}
-                                value={
-                                    labels.relativePeriods[period.id]
-                                        ?.default || ''
-                                }
-                                onChange={(languageKey, next) =>
-                                    setRelativePeriodLabel(
-                                        period.id,
-                                        languageKey,
-                                        next
-                                    )
+                    {options.map(([value, typeName]) => {
+                        const builtIn = formatPeriodDisplayName(
+                            null,
+                            typeName
+                        )
+                        const custom = (
+                            labels.periodTypes[typeName]?.default || ''
+                        ).trim()
+                        return (
+                            <SingleSelectOption
+                                key={value}
+                                value={value}
+                                label={
+                                    custom
+                                        ? `${builtIn} – ${custom}`
+                                        : builtIn
                                 }
                             />
-                        ))}
-                    </div>
-                </details>
+                        )
+                    })}
+                </SingleSelectField>
             </div>
+
+            {warnMissingSeedLabel && (
+                <NoticeBox
+                    dense
+                    warning
+                    className={styles.seedWarning}
+                    title="No custom label on the period these are based on"
+                >
+                    {seedName
+                        ? `${seedName} still uses its built-in name. Add a custom label for it above, or these relative labels may look inconsistent.`
+                        : 'No period is selected to base these relative labels on.'}
+                </NoticeBox>
+            )}
+
+            {warnEmptyRelativeLabels && (
+                <NoticeBox
+                    dense
+                    warning
+                    className={styles.seedWarning}
+                    title={`This period uses a custom label (${seedCustom}), but some relative custom labels are empty.`}
+                />
+            )}
+
+            <details
+                className={styles.labelsDetails}
+                open={labelsOpen}
+                onToggle={(event) => setLabelsOpen(event.target.open)}
+            >
+                <summary className={styles.labelsSummary}>
+                    Custom labels
+                </summary>
+                <div className={styles.relativeLabelList}>
+                    {set.relativePeriods.map((period) => (
+                        <RelativeLabelField
+                            key={period.id}
+                            period={period}
+                            value={
+                                labels.relativePeriods[period.id]
+                                    ?.default || ''
+                            }
+                            onChange={(languageKey, next) =>
+                                setRelativePeriodLabel(
+                                    period.id,
+                                    languageKey,
+                                    next
+                                )
+                            }
+                        />
+                    ))}
+                </div>
+            </details>
         </div>
     )
 }
