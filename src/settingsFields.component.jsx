@@ -391,6 +391,7 @@ class SettingsFields extends React.Component {
                         <FormBuilder
                             fields={this.buildFields(group.settings)}
                             onUpdateField={settingsActions.saveKey}
+                            fieldWrapStyle={{ marginBottom: 16 }}
                         />
                     </div>
                 ))}
@@ -416,6 +417,7 @@ class SettingsFields extends React.Component {
                         floatingLabelText: mapping.label,
                         style: {
                             width: '100%',
+                            maxWidth: 640,
                             ...addConditionallyHiddenStyles(mapping),
                         },
                         hintText: mapping.hintText,

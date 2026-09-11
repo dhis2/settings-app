@@ -47,6 +47,9 @@
     gap: var(--spacers-dp8);
     max-width: 360px;
     padding-top: 8px;
+    margin-inline-start: 4px;
+    padding-inline-start: 16px;
+    border-inline-start: 1px solid var(--colors-grey300);
 }
 
 .relativeLabelField {
