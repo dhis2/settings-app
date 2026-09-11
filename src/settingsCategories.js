@@ -74,97 +74,125 @@ export const categories = {
         label: i18n.t('Analytics'),
         icon: 'equalizer',
         pageLabel: i18n.t('Analytics settings'),
+        sectionLabels: {
+            periods: i18n.t('Periods available for analysis'),
+            relativePeriods: i18n.t('Relative periods'),
+            display: i18n.t('Display & formatting'),
+            calculation: i18n.t('Calculation & data output'),
+            caching: i18n.t('Caching & performance'),
+            dashboards: i18n.t('Dashboards'),
+            maps: i18n.t('Maps'),
+        },
         settings: [
             {
-                setting: 'keyAnalysisDisplayProperty',
-            },
-            {
-                setting: 'keyAnalysisDigitGroupSeparator',
-            },
-            {
                 setting: 'keyHideDailyPeriods',
+                section: 'periods',
                 maximumApiVersion: 42,
             },
             {
                 setting: 'keyHideWeeklyPeriods',
+                section: 'periods',
                 maximumApiVersion: 42,
             },
             {
                 setting: 'keyHideBiWeeklyPeriods',
+                section: 'periods',
                 maximumApiVersion: 42,
             },
             {
                 setting: 'keyHideMonthlyPeriods',
+                section: 'periods',
                 maximumApiVersion: 42,
             },
             {
                 setting: 'keyHideBiMonthlyPeriods',
+                section: 'periods',
                 maximumApiVersion: 42,
             },
             {
                 setting: 'dataOutputPeriodTypes',
+                section: 'periods',
                 minimumApiVersion: 43,
             },
             {
-                setting: 'keyAnalysisRelativePeriod',
-            },
-            {
-                setting: 'analyticsWeeklyStart',
+                setting: 'relativePeriodLabels',
+                section: 'relativePeriods',
                 minimumApiVersion: 43,
             },
             {
-                setting: 'analyticsFinancialYearStart',
+                setting: 'keyAnalysisDisplayProperty',
+                section: 'display',
             },
             {
-                setting: 'keyCacheStrategy',
+                setting: 'keyAnalysisDigitGroupSeparator',
+                section: 'display',
             },
             {
-                setting: 'keyCacheability',
-            },
-            {
-                setting: 'keyAnalyticsCacheTtlMode',
-            },
-            {
-                setting: 'keyAnalyticsCacheProgressiveTtlFactor',
-            },
-            {
-                setting: 'keyIgnoreAnalyticsApprovalYearThreshold',
+                setting: 'keyIncludeZeroValuesInAnalytics',
+                section: 'calculation',
             },
             {
                 setting:
                     'keyRespectMetaDataStartEndDatesInAnalyticsTableExport',
+                section: 'calculation',
             },
             {
-                setting: 'keyIncludeZeroValuesInAnalytics',
+                setting: 'keyIgnoreAnalyticsApprovalYearThreshold',
+                section: 'calculation',
+            },
+            {
+                setting: 'keyCacheStrategy',
+                section: 'caching',
+            },
+            {
+                setting: 'keyCacheability',
+                section: 'caching',
+            },
+            {
+                setting: 'keyAnalyticsCacheTtlMode',
+                section: 'caching',
+            },
+            {
+                setting: 'keyAnalyticsCacheProgressiveTtlFactor',
+                section: 'caching',
             },
             {
                 setting: 'keyEmbeddedDashboardsEnabled',
+                section: 'dashboards',
                 minimumApiVersion: 42,
             },
             {
                 setting: 'keyDashboardContextMenuItemSwitchViewType',
+                section: 'dashboards',
             },
             {
                 setting: 'keyDashboardContextMenuItemOpenInRelevantApp',
+                section: 'dashboards',
             },
             {
                 setting:
                     'keyDashboardContextMenuItemShowInterpretationsAndDetails',
+                section: 'dashboards',
             },
             {
                 setting: 'keyDashboardContextMenuItemViewFullscreen',
-            },
-            {
-                setting: 'orgUnitCentroidsInEventsAnalytics',
-            },
-            {
-                setting: 'facilityOrgUnitGroupSet',
-            },
-            {
-                setting: 'facilityOrgUnitLevel',
+                section: 'dashboards',
             },
             {
                 setting: 'keyDefaultBaseMap',
+                section: 'maps',
+            },
+            {
+                setting: 'facilityOrgUnitGroupSet',
+                section: 'maps',
+            },
+            {
+                setting: 'facilityOrgUnitLevel',
+                section: 'maps',
+            },
+            {
+                setting: 'orgUnitCentroidsInEventsAnalytics',
+                section: 'maps',
             },
         ],
     },

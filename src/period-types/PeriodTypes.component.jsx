@@ -1,10 +1,19 @@
 import { useDataQuery, useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { CenteredContent, CircularLoader } from '@dhis2/ui'
-import CheckboxMaterial from 'material-ui/Checkbox'
+import {
+    CenteredContent,
+    CircularLoader,
+    Checkbox,
+    Input,
+    Button,
+    IconTranslate16,
+} from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import configOptionStore from '../configOptionStore.js'
+import PrototypeTranslationDialog from '../period-labels/PrototypeTranslationDialog.jsx'
+import { getCustomLabel } from '../period-labels/resolveLabel.js'
 import settingsActions from '../settingsActions.js'
+import { formatPeriodDisplayName } from './builtInPeriodNames.js'
 import styles from './PeriodTypes.module.css'
 
 const query = {
@@ -21,155 +30,39 @@ const query = {
 
 const mandatoryPeriodTypes = new Set(['Yearly'])
 
-const monthMap = {
-    Jan: i18n.t('January'),
-    Feb: i18n.t('February'),
-    Mar: i18n.t('March'),
-    Apr: i18n.t('April'),
-    May: i18n.t('May'),
-    Jun: i18n.t('June'),
-    Jul: i18n.t('July'),
-    Aug: i18n.t('August'),
-    Sep: i18n.t('September'),
-    Oct: i18n.t('October'),
-    Nov: i18n.t('November'),
-    Dec: i18n.t('December'),
-    April: i18n.t('April'),
-    July: i18n.t('July'),
-    October: i18n.t('October'),
-    November: i18n.t('November'),
-    September: i18n.t('September'),
+const getGroupKey = (periodType) => {
+    if (periodType.frequencyOrder !== 365) {
+        return String(periodType.frequencyOrder)
+    }
+    // frequencyOrder 365 is currently only Yearly and the 7 Financial* variants
+    return periodType.name === 'Yearly' ? 'yearly' : 'financialYear'
 }
 
-const dayMap = {
-    Monday: i18n.t('Monday'),
-    Tuesday: i18n.t('Tuesday'),
-    Wednesday: i18n.t('Wednesday'),
-    Thursday: i18n.t('Thursday'),
-    Friday: i18n.t('Friday'),
-    Saturday: i18n.t('Saturday'),
-    Sunday: i18n.t('Sunday'),
-}
-
-const simpleLabels = {
-    Daily: i18n.t('Daily'),
-    Weekly: i18n.t('Weekly'),
-    Monthly: i18n.t('Monthly'),
-    BiMonthly: i18n.t('Bi-monthly'),
-    Yearly: i18n.t('Yearly'),
-    BiWeekly: i18n.t('Bi-weekly'),
-    Quarterly: i18n.t('Quarterly'),
-    SixMonthly: i18n.t('Six-monthly'),
-}
-
-const formatWeeklyPeriod = (name) => {
-    const day = name.replace('Weekly', '')
-    if (!day) {
-        return simpleLabels.Weekly || i18n.t('Weekly')
+const getGroupLabel = (groupKey, frequencyOrder) => {
+    if (groupKey === 'yearly') {
+        return 'Yearly'
     }
-    const translatedDay = dayMap[day] || i18n.t(day)
-    return i18n.t('Weekly (start {{day}})', { day: translatedDay })
-}
-
-const formatPeriodWithMonth = (name, options) => {
-    const { prefix, template, defaultLabel } = options
-    const monthAbbrev = name.replace(prefix, '')
-    if (!monthAbbrev) {
-        return defaultLabel
-            ? simpleLabels[defaultLabel] || i18n.t(defaultLabel)
-            : null
+    if (groupKey === 'financialYear') {
+        return 'Financial yearly'
     }
-    const month = monthMap[monthAbbrev] || monthAbbrev
-    return i18n.t(template, { month })
-}
-
-const formatFinancialPeriod = (name) => {
-    return formatPeriodWithMonth(name, {
-        prefix: 'Financial',
-        template: 'Financial year (start {{month}})',
-        defaultLabel: null,
-    })
-}
-
-const formatSixMonthlyPeriod = (name) => {
-    return formatPeriodWithMonth(name, {
-        prefix: 'SixMonthly',
-        template: 'Six-monthly (start {{month}})',
-        defaultLabel: 'SixMonthly',
-    })
-}
-
-const formatQuarterlyPeriod = (name) => {
-    return formatPeriodWithMonth(name, {
-        prefix: 'Quarterly',
-        template: 'Quarterly (start {{month}})',
-        defaultLabel: 'Quarterly',
-    })
-}
-
-const formatNameBasedPeriod = (name, displayName) => {
-    if (name.startsWith('Weekly')) {
-        return formatWeeklyPeriod(name)
-    }
-    if (name.startsWith('Financial')) {
-        return formatFinancialPeriod(name) || displayName || ''
-    }
-    if (name.startsWith('SixMonthly')) {
-        return formatSixMonthlyPeriod(name)
-    }
-    if (name.startsWith('Quarterly')) {
-        return formatQuarterlyPeriod(name)
-    }
-    if (simpleLabels[name]) {
-        return simpleLabels[name]
-    }
-    return name
-        .split(/(?=[A-Z])/)
-        .join(' ')
-        .trim()
-}
-
-const formatDisplayNameFallback = (displayName) => {
-    if (displayName === 'FinancialSep') {
-        return i18n.t('Financial year (start {{month}})', {
-            month: monthMap.Sep,
-        })
-    }
-    return displayName
-}
-
-const formatPeriodDisplayName = (displayName, name) => {
-    if (!name && !displayName) {
-        return ''
-    }
-
-    if (name) {
-        const formatted = formatNameBasedPeriod(name, displayName)
-        if (formatted) {
-            return formatted
-        }
-    }
-
-    if (displayName) {
-        return formatDisplayNameFallback(displayName)
-    }
-
-    return ''
-}
-
-const getGroupLabel = (frequencyOrder) => {
     const labels = {
-        1: i18n.t('Days'),
-        7: i18n.t('Weeks'),
-        14: i18n.t('Bi-weeks'),
-        30: i18n.t('Months'),
-        60: i18n.t('Bi-months'),
-        61: i18n.t('Bi-months'),
-        91: i18n.t('Quarters'),
-        182: i18n.t('Six months'),
-        365: i18n.t('Years'),
+        1: 'Daily',
+        7: 'Weekly',
+        14: 'Bi-weekly',
+        30: 'Monthly',
+        60: 'Bi-monthly',
+        61: 'Bi-monthly',
+        91: 'Quarterly',
+        182: 'Six-monthly',
     }
-    return labels[frequencyOrder] || i18n.t('Other')
+    return labels[frequencyOrder] || 'Other'
+}
+
+// Yearly and Financial year both carry frequencyOrder 365; this keeps
+// Yearly sorted directly before Financial year, where "Years" used to sit.
+const groupSortOrder = {
+    yearly: 365,
+    financialYear: 365.5,
 }
 
 const periodTypeOrder = {
@@ -201,18 +94,19 @@ const periodTypeOrder = {
 const groupByFrequency = (periodTypes) => {
     const groups = {}
     periodTypes.forEach((pt) => {
-        const freq = pt.frequencyOrder
-        if (!groups[freq]) {
-            groups[freq] = {
-                label: getGroupLabel(freq),
-                frequencyOrder: freq,
+        const groupKey = getGroupKey(pt)
+        if (!groups[groupKey]) {
+            groups[groupKey] = {
+                groupKey,
+                label: getGroupLabel(groupKey, pt.frequencyOrder),
+                sortOrder: groupSortOrder[groupKey] ?? pt.frequencyOrder,
                 periodTypes: [],
             }
         }
-        groups[freq].periodTypes.push(pt)
+        groups[groupKey].periodTypes.push(pt)
     })
     const sorted = Object.values(groups).sort(
-        (a, b) => a.frequencyOrder - b.frequencyOrder
+        (a, b) => a.sortOrder - b.sortOrder
     )
     sorted.forEach((group) => {
         group.periodTypes.sort(
@@ -221,6 +115,84 @@ const groupByFrequency = (periodTypes) => {
         )
     })
     return sorted
+}
+
+const PeriodTypeItem = ({
+    periodType,
+    isEnabled,
+    isMandatory,
+    updating,
+    onToggle,
+}) => {
+    const existingLabel = getCustomLabel('periodTypes', periodType.name)
+    const [showLabelInput, setShowLabelInput] = useState(Boolean(existingLabel))
+    const [customLabel, setCustomLabel] = useState(existingLabel || '')
+    const [translateOpen, setTranslateOpen] = useState(false)
+    const displayName = formatPeriodDisplayName(
+        periodType.displayName,
+        periodType.name
+    )
+
+    return (
+        <div
+            className={styles.checkboxItem}
+            title={
+                isMandatory
+                    ? i18n.t(
+                          'This period type is always enabled and cannot be disabled'
+                      )
+                    : undefined
+            }
+        >
+            <div className={styles.checkboxRow}>
+                <Checkbox
+                    dense
+                    checked={isEnabled}
+                    disabled={updating || isMandatory}
+                    label={displayName}
+                    onChange={() => onToggle(periodType.name, isEnabled)}
+                />
+            </div>
+            {isEnabled && (
+                <details
+                    className={styles.customLabelDetails}
+                    open={showLabelInput}
+                    onToggle={(event) =>
+                        setShowLabelInput(event.target.open)
+                    }
+                >
+                    <summary className={styles.customLabelSummary}>
+                        {i18n.t('Custom label')}
+                    </summary>
+                    <div className={styles.labelEditor}>
+                        <div className={styles.labelInput}>
+                            <Input
+                                dense
+                                value={customLabel}
+                                placeholder={i18n.t('Custom label')}
+                                onChange={({ value }) =>
+                                    setCustomLabel(value || '')
+                                }
+                            />
+                        </div>
+                        <Button
+                            small
+                            className={styles.translateButton}
+                            icon={<IconTranslate16 />}
+                            title={i18n.t('Translate')}
+                            onClick={() => setTranslateOpen(true)}
+                        />
+                    </div>
+                </details>
+            )}
+            {translateOpen && (
+                <PrototypeTranslationDialog
+                    name={customLabel || displayName}
+                    onClose={() => setTranslateOpen(false)}
+                />
+            )}
+        </div>
+    )
 }
 
 const PeriodTypes = () => {
@@ -317,53 +289,42 @@ const PeriodTypes = () => {
 
     return (
         <div className={styles.wrapper}>
-            <p className={styles.sectionLabel}>
-                {i18n.t('Period types available in analytics apps')}
-            </p>
-            <div className={styles.groupsWrapper}>
-                {groupedPeriodTypes.map((group) => (
-                    <div key={group.frequencyOrder} className={styles.group}>
-                        <p className={styles.groupLabel}>{group.label}</p>
-                        <div className={styles.checkboxList}>
-                            {group.periodTypes.map((periodType) => {
-                                const isEnabled = allowedSet.has(
-                                    periodType.name
-                                )
-                                const isMandatory = mandatoryPeriodTypes.has(
-                                    periodType.name
-                                )
-                                return (
-                                    <div
+            <div className={styles.box}>
+                <div className={styles.groupsWrapper}>
+                    {groupedPeriodTypes.map((group) => {
+                        const hasEnabled = group.periodTypes.some((pt) =>
+                            allowedSet.has(pt.name)
+                        )
+                        return (
+                        <div
+                            key={group.groupKey}
+                            className={
+                                hasEnabled
+                                    ? `${styles.group} ${styles.groupActive}`
+                                    : `${styles.group} ${styles.groupIdle}`
+                            }
+                        >
+                            <p className={styles.groupLabel}>{group.label}</p>
+                            <div className={styles.checkboxList}>
+                                {group.periodTypes.map((periodType) => (
+                                    <PeriodTypeItem
                                         key={periodType.name}
-                                        className={styles.checkboxItem}
-                                        title={
-                                            isMandatory
-                                                ? i18n.t(
-                                                      'This period type is always enabled and cannot be disabled'
-                                                  )
-                                                : undefined
-                                        }
-                                    >
-                                        <CheckboxMaterial
-                                            checked={isEnabled}
-                                            disabled={updating || isMandatory}
-                                            label={formatPeriodDisplayName(
-                                                periodType.displayName,
-                                                periodType.name
-                                            )}
-                                            onCheck={() =>
-                                                handlePeriodTypeToggle(
-                                                    periodType.name,
-                                                    isEnabled
-                                                )
-                                            }
-                                        />
-                                    </div>
-                                )
-                            })}
+                                        periodType={periodType}
+                                        isEnabled={allowedSet.has(
+                                            periodType.name
+                                        )}
+                                        isMandatory={mandatoryPeriodTypes.has(
+                                            periodType.name
+                                        )}
+                                        updating={updating}
+                                        onToggle={handlePeriodTypeToggle}
+                                    />
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )
