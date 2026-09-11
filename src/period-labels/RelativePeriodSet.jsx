@@ -14,10 +14,7 @@ import configOptionStore from '../configOptionStore.js'
 import { formatPeriodDisplayName } from '../period-types/builtInPeriodNames.js'
 import settingsActions from '../settingsActions.js'
 import settingsStore from '../settingsStore.js'
-import {
-    useLabelState,
-    setRelativePeriodLabel,
-} from './labelStore.js'
+import { useLabelState, setRelativePeriodLabel } from './labelStore.js'
 import PrototypeTranslationDialog from './PrototypeTranslationDialog.jsx'
 import styles from './PeriodLabels.module.css'
 
@@ -131,8 +128,7 @@ const RelativePeriodSet = ({ set }) => {
         Boolean((labels.relativePeriods[period.id]?.default || '').trim())
     )
     const hasEmptyRelativeLabels = set.relativePeriods.some(
-        (period) =>
-            !(labels.relativePeriods[period.id]?.default || '').trim()
+        (period) => !(labels.relativePeriods[period.id]?.default || '').trim()
     )
     const seedName = formatPeriodDisplayName(null, selectedTypeName)
     const seedCustom = (
@@ -157,10 +153,7 @@ const RelativePeriodSet = ({ set }) => {
                     onChange={handleStartChange}
                 >
                     {options.map(([value, typeName]) => {
-                        const builtIn = formatPeriodDisplayName(
-                            null,
-                            typeName
-                        )
+                        const builtIn = formatPeriodDisplayName(null, typeName)
                         const custom = (
                             labels.periodTypes[typeName]?.default || ''
                         ).trim()
@@ -169,9 +162,7 @@ const RelativePeriodSet = ({ set }) => {
                                 key={value}
                                 value={value}
                                 label={
-                                    custom
-                                        ? `${builtIn} – ${custom}`
-                                        : builtIn
+                                    custom ? `${builtIn} – ${custom}` : builtIn
                                 }
                             />
                         )
@@ -187,7 +178,7 @@ const RelativePeriodSet = ({ set }) => {
                     title="No custom label on the period these are based on"
                 >
                     {seedName
-                        ? `${seedName} still uses its built-in name. Add a custom label for it above, or these relative labels may look inconsistent.`
+                        ? `${seedName} still uses its default label. Add a custom label for it above, or these relative labels may look inconsistent.`
                         : 'No period is selected to base these relative labels on.'}
                 </NoticeBox>
             )}
@@ -215,8 +206,7 @@ const RelativePeriodSet = ({ set }) => {
                             key={period.id}
                             period={period}
                             value={
-                                labels.relativePeriods[period.id]
-                                    ?.default || ''
+                                labels.relativePeriods[period.id]?.default || ''
                             }
                             onChange={(languageKey, next) =>
                                 setRelativePeriodLabel(
