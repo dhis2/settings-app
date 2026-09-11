@@ -291,8 +291,19 @@ const PeriodTypes = () => {
         <div className={styles.wrapper}>
             <div className={styles.box}>
                 <div className={styles.groupsWrapper}>
-                    {groupedPeriodTypes.map((group) => (
-                        <div key={group.groupKey} className={styles.group}>
+                    {groupedPeriodTypes.map((group) => {
+                        const hasEnabled = group.periodTypes.some((pt) =>
+                            allowedSet.has(pt.name)
+                        )
+                        return (
+                        <div
+                            key={group.groupKey}
+                            className={
+                                hasEnabled
+                                    ? `${styles.group} ${styles.groupActive}`
+                                    : `${styles.group} ${styles.groupIdle}`
+                            }
+                        >
                             <p className={styles.groupLabel}>{group.label}</p>
                             <div className={styles.checkboxList}>
                                 {group.periodTypes.map((periodType) => (
@@ -311,7 +322,8 @@ const PeriodTypes = () => {
                                 ))}
                             </div>
                         </div>
-                    ))}
+                        )
+                    })}
                 </div>
             </div>
         </div>
