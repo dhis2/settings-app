@@ -149,10 +149,8 @@ const RelativePeriodSet = ({ set }) => {
 
     return (
         <div className={styles.block}>
-            <p className={styles.groupLabel}>{set.label}</p>
             <div className={styles.periodSelect}>
                 <SingleSelectField
-                    dense
                     disabled={noneEnabled}
                     label={set.periodSelectLabel}
                     selected={selected}

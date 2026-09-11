@@ -28,7 +28,6 @@ const DefaultRelativePeriod = () => {
     return (
         <div className={styles.periodSelect}>
             <SingleSelectField
-                dense
                 label="Default relative period for analysis"
                 helpText="Used in analytics apps when no period is chosen."
                 selected={selected}

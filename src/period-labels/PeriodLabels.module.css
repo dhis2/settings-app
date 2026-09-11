@@ -1,27 +1,18 @@
 .sectionBody {
-    padding-top: 8px;
 }
 
 .block {
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid var(--colors-grey200);
-}
-
-.groupLabel {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--colors-grey700);
-    margin: 0 0 8px;
+    margin-top: 24px;
 }
 
 .periodSelect {
-    max-width: 360px;
+    width: 640px;
+    max-width: 100%;
     margin-bottom: 8px;
 }
 
 .seedWarning {
-    margin-bottom: 12px;
+    max-width: 640px;
 }
 
 .labelsDetails {

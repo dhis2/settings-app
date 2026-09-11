@@ -76,7 +76,7 @@ export const categories = {
         pageLabel: i18n.t('Analytics settings'),
         sectionLabels: {
             periods: i18n.t('Periods available for analysis'),
-            relativePeriods: i18n.t('Relative period configuration'),
+            relativePeriods: i18n.t('Relative periods'),
             display: i18n.t('Display & formatting'),
             calculation: i18n.t('Calculation & data output'),
             caching: i18n.t('Caching & performance'),

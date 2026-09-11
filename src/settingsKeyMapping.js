@@ -256,7 +256,6 @@ const settingsKeyMapping = {
         searchLabels: [
             i18n.t('Relative periods'),
             i18n.t('Relative period labels'),
-            i18n.t('Relative period configuration'),
             i18n.t('Default relative period for analysis'),
             i18n.t('Weekly relative period start day'),
             i18n.t('Financial year relative period start month'),

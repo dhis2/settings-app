@@ -4,8 +4,7 @@ import {
     Card,
     CenteredContent,
     CircularLoader,
-    IconInfo24,
-    Tooltip,
+    IconInfo16,
 } from '@dhis2/ui'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component.js'
 import PropTypes from 'prop-types'
@@ -30,7 +29,6 @@ import classes from './SettingsFields.module.css'
 import settingsKeyMapping from './settingsKeyMapping.js'
 import settingsStore from './settingsStore.js'
 import { buildValidatorsForMapping } from './settingValidators.js'
-import AppTheme from './theme.js'
 
 const styles = {
     header: {
@@ -45,10 +43,13 @@ const styles = {
         fontWeight: 300,
     },
     userSettingsOverride: {
-        color: AppTheme.rawTheme.palette.primary1Color,
-        position: 'absolute',
-        right: 0,
-        top: 36,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 4,
+        maxWidth: 640,
+        fontSize: 12,
+        color: 'var(--colors-grey600)',
+        margin: '4px 0 0',
     },
     menuIcon: {
         color: '#757575',
@@ -63,29 +64,23 @@ const styles = {
 function wrapUserSettingsOverride({ component, valueLabel }) {
     return class extends component {
         render() {
-            const labelStyle = Object.assign({}, styles.userSettingsOverride)
-            if (component === Checkbox) {
-                labelStyle.top = -8
-            }
-
             const labelText = valueLabel
-                ? `${i18n.t(
+                ? i18n.t(
                       'This setting will be overridden by the current user setting: {{settingName}}',
                       {
                           settingName: valueLabel,
                           nsSeparator: '-:-',
                       }
-                  )}`
+                  )
                 : i18n.t('This setting can be overridden by user settings')
 
             return (
-                <div style={{ marginRight: 36 }}>
+                <div>
                     {super.render()}
-                    <div style={labelStyle}>
-                        <Tooltip content={labelText}>
-                            <IconInfo24 />
-                        </Tooltip>
-                    </div>
+                    <p style={styles.userSettingsOverride}>
+                        <IconInfo16 />
+                        {labelText}
+                    </p>
                 </div>
             )
         }
