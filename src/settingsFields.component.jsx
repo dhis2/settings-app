@@ -20,9 +20,8 @@ import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.comp
 import metadataSettings from './metadata-settings/metadataSettings.component.jsx'
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component.jsx'
 import Oauth2ClientEditor41 from './oauth2-client-editor-41/OAuth2ClientEditor.component.jsx'
-import CustomPeriodLabels from './period-labels/CustomPeriodLabels.jsx'
 import DefaultRelativePeriod from './period-labels/DefaultRelativePeriod.jsx'
-import RelativePeriodBehaviour from './period-labels/RelativePeriodBehaviour.jsx'
+import PeriodMatrix from './period-matrix/PeriodMatrix.component.jsx'
 import PeriodTypes from './period-types/PeriodTypes.component.jsx'
 import settingsActions from './settingsActions.js'
 import { categories } from './settingsCategories.js'
@@ -312,16 +311,10 @@ class SettingsFields extends React.Component {
                     ...fieldBase,
                     component: PeriodTypes,
                 }
-            case 'relativePeriodBehaviour':
+            case 'periodMatrix':
                 return {
                     ...fieldBase,
-                    component: RelativePeriodBehaviour,
-                    props: { apiVersion },
-                }
-            case 'customPeriodLabels':
-                return {
-                    ...fieldBase,
-                    component: CustomPeriodLabels,
+                    component: PeriodMatrix,
                 }
             case 'defaultRelativePeriod':
                 return {

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-09-15T06:20:25.037Z\n"
-"PO-Revision-Date: 2026-09-15T06:20:25.038Z\n"
+"POT-Creation-Date: 2026-09-15T09:31:35.008Z\n"
+"PO-Revision-Date: 2026-09-15T09:31:35.008Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -176,36 +176,6 @@ msgstr "Name"
 msgid "Password"
 msgstr "Password"
 
-msgid "Translate"
-msgstr "Translate"
-
-msgid "No custom label on the period these are based on"
-msgstr "No custom label on the period these are based on"
-
-msgid ""
-"{{variant}} still uses its default label. These relative labels may look "
-"inconsistent."
-msgstr ""
-"{{variant}} still uses its default label. These relative labels may look "
-"inconsistent."
-
-msgid "No period is selected to base these relative labels on."
-msgstr "No period is selected to base these relative labels on."
-
-msgid ""
-"This period uses a custom label ({{custom}}), but some relative custom "
-"labels are empty."
-msgstr ""
-"This period uses a custom label ({{custom}}), but some relative custom "
-"labels are empty."
-
-msgid ""
-"Rename the relative periods shown in analytics apps. Each family is "
-"collapsed until you add a custom label."
-msgstr ""
-"Rename the relative periods shown in analytics apps. Each family is "
-"collapsed until you add a custom label."
-
 msgid "Days"
 msgstr "Days"
 
@@ -365,17 +335,41 @@ msgstr "Last 5 years"
 msgid "Last 10 years"
 msgstr "Last 10 years"
 
-msgid "This period type is always enabled and cannot be disabled"
-msgstr "This period type is always enabled and cannot be disabled"
-
-msgid "Custom label"
-msgstr "Custom label"
-
 msgid "Settings updated"
 msgstr "Settings updated"
 
 msgid "There was a problem updating settings. Changes have not been saved."
 msgstr "There was a problem updating settings. Changes have not been saved."
+
+msgid "Default relative period for analysis"
+msgstr "Default relative period for analysis"
+
+msgid "Used in analytics apps when no period is chosen."
+msgstr "Used in analytics apps when no period is chosen."
+
+msgid "Period"
+msgstr "Period"
+
+msgid "Enabled"
+msgstr "Enabled"
+
+msgid "Custom label"
+msgstr "Custom label"
+
+msgid "{{enabled}} enabled · {{relative}} relative"
+msgstr "{{enabled}} enabled · {{relative}} relative"
+
+msgid "disabled"
+msgstr "disabled"
+
+msgid "Period types"
+msgstr "Period types"
+
+msgid "Relative periods"
+msgstr "Relative periods"
+
+msgid "This period type is always enabled and cannot be disabled"
+msgstr "This period type is always enabled and cannot be disabled"
 
 msgid "January"
 msgstr "January"
@@ -467,8 +461,8 @@ msgstr "Analytics settings"
 msgid "Periods available for analysis"
 msgstr "Periods available for analysis"
 
-msgid "Relative periods"
-msgstr "Relative periods"
+msgid "Period settings"
+msgstr "Period settings"
 
 msgid "Display & formatting"
 msgstr "Display & formatting"
@@ -673,23 +667,20 @@ msgstr "Hide monthly periods"
 msgid "Hide bimonthly periods"
 msgstr "Hide bimonthly periods"
 
-msgid "Period types"
-msgstr "Period types"
-
 msgid "Allowed period types"
 msgstr "Allowed period types"
-
-msgid "Relative period labels"
-msgstr "Relative period labels"
-
-msgid "Default relative period for analysis"
-msgstr "Default relative period for analysis"
 
 msgid "Weekly relative period start day"
 msgstr "Weekly relative period start day"
 
 msgid "Financial year relative period start month"
 msgstr "Financial year relative period start month"
+
+msgid "Custom period labels"
+msgstr "Custom period labels"
+
+msgid "Relative period labels"
+msgstr "Relative period labels"
 
 msgid "Cache strategy"
 msgstr "Cache strategy"
@@ -1118,3 +1109,59 @@ msgstr "Clean idle jobs after (in milliseconds)"
 
 msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr "Use centroids for organisation unit polygons in event analytics"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr "System Settings"
+
+msgctxt "Application description"
+msgid "__MANIFEST_APP_DESCRIPTION"
+msgstr ""
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_General"
+msgstr "General"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Analytics"
+msgstr "Analytics"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Server"
+msgstr "Server"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Appearance"
+msgstr "Appearance"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Email"
+msgstr "Email"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Access"
+msgstr "Access"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Calendar"
+msgstr "Calendar"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Data import settings"
+msgstr "Data import settings"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Synchronization"
+msgstr "Synchronization"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Scheduled job settings"
+msgstr "Scheduled job settings"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_Notification settings"
+msgstr "Notification settings"
+
+msgctxt "Title for shortcut used by command palette"
+msgid "__MANIFEST_SHORTCUT_OAuth2 clients"
+msgstr "OAuth2 clients"
