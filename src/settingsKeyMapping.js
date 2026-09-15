@@ -251,14 +251,21 @@ const settingsKeyMapping = {
         type: 'periodTypes',
         searchLabels: [i18n.t('Period types'), i18n.t('Allowed period types')],
     },
-    relativePeriodLabels: {
-        type: 'relativePeriodLabels',
+    relativePeriodBehaviour: {
+        type: 'relativePeriodBehaviour',
         searchLabels: [
             i18n.t('Relative periods'),
-            i18n.t('Relative period labels'),
             i18n.t('Default relative period for analysis'),
             i18n.t('Weekly relative period start day'),
             i18n.t('Financial year relative period start month'),
+        ],
+    },
+    customPeriodLabels: {
+        type: 'customPeriodLabels',
+        searchLabels: [
+            i18n.t('Custom period labels'),
+            i18n.t('Relative period labels'),
+            i18n.t('Period type labels'),
         ],
     },
     keyAnalysisRelativePeriod: {

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-09-11T07:44:08.451Z\n"
-"PO-Revision-Date: 2026-09-11T07:44:08.451Z\n"
+"POT-Creation-Date: 2026-09-15T06:20:25.037Z\n"
+"PO-Revision-Date: 2026-09-15T06:20:25.038Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -179,8 +179,68 @@ msgstr "Password"
 msgid "Translate"
 msgstr "Translate"
 
-msgid "Weekly"
-msgstr "Weekly"
+msgid "No custom label on the period these are based on"
+msgstr "No custom label on the period these are based on"
+
+msgid ""
+"{{variant}} still uses its default label. These relative labels may look "
+"inconsistent."
+msgstr ""
+"{{variant}} still uses its default label. These relative labels may look "
+"inconsistent."
+
+msgid "No period is selected to base these relative labels on."
+msgstr "No period is selected to base these relative labels on."
+
+msgid ""
+"This period uses a custom label ({{custom}}), but some relative custom "
+"labels are empty."
+msgstr ""
+"This period uses a custom label ({{custom}}), but some relative custom "
+"labels are empty."
+
+msgid ""
+"Rename the relative periods shown in analytics apps. Each family is "
+"collapsed until you add a custom label."
+msgstr ""
+"Rename the relative periods shown in analytics apps. Each family is "
+"collapsed until you add a custom label."
+
+msgid "Days"
+msgstr "Days"
+
+msgid "Today"
+msgstr "Today"
+
+msgid "Yesterday"
+msgstr "Yesterday"
+
+msgid "Last 3 days"
+msgstr "Last 3 days"
+
+msgid "Last 7 days"
+msgstr "Last 7 days"
+
+msgid "Last 14 days"
+msgstr "Last 14 days"
+
+msgid "Last 30 days"
+msgstr "Last 30 days"
+
+msgid "Last 60 days"
+msgstr "Last 60 days"
+
+msgid "Last 90 days"
+msgstr "Last 90 days"
+
+msgid "Last 180 days"
+msgstr "Last 180 days"
+
+msgid "Weeks"
+msgstr "Weeks"
+
+msgid "Weekly start day"
+msgstr "Weekly start day"
 
 msgid "This week"
 msgstr "This week"
@@ -197,8 +257,89 @@ msgstr "Last 12 weeks"
 msgid "Last 52 weeks"
 msgstr "Last 52 weeks"
 
-msgid "Financial year"
-msgstr "Financial year"
+msgid "Bi-weeks"
+msgstr "Bi-weeks"
+
+msgid "This bi-week"
+msgstr "This bi-week"
+
+msgid "Last bi-week"
+msgstr "Last bi-week"
+
+msgid "Last 4 bi-weeks"
+msgstr "Last 4 bi-weeks"
+
+msgid "Months"
+msgstr "Months"
+
+msgid "This month"
+msgstr "This month"
+
+msgid "Last month"
+msgstr "Last month"
+
+msgid "Months this year"
+msgstr "Months this year"
+
+msgid "Months last year"
+msgstr "Months last year"
+
+msgid "Last 3 months"
+msgstr "Last 3 months"
+
+msgid "Last 6 months"
+msgstr "Last 6 months"
+
+msgid "Last 12 months"
+msgstr "Last 12 months"
+
+msgid "Bi-months"
+msgstr "Bi-months"
+
+msgid "This bi-month"
+msgstr "This bi-month"
+
+msgid "Last bi-month"
+msgstr "Last bi-month"
+
+msgid "Last 6 bi-months"
+msgstr "Last 6 bi-months"
+
+msgid "Quarters"
+msgstr "Quarters"
+
+msgid "This quarter"
+msgstr "This quarter"
+
+msgid "Last quarter"
+msgstr "Last quarter"
+
+msgid "Quarters this year"
+msgstr "Quarters this year"
+
+msgid "Quarters last year"
+msgstr "Quarters last year"
+
+msgid "Last 4 quarters"
+msgstr "Last 4 quarters"
+
+msgid "Six-months"
+msgstr "Six-months"
+
+msgid "This six-month"
+msgstr "This six-month"
+
+msgid "Last six-month"
+msgstr "Last six-month"
+
+msgid "Last 2 six-months"
+msgstr "Last 2 six-months"
+
+msgid "Financial Years"
+msgstr "Financial Years"
+
+msgid "Financial year start month"
+msgstr "Financial year start month"
 
 msgid "This financial year"
 msgstr "This financial year"
@@ -208,6 +349,21 @@ msgstr "Last financial year"
 
 msgid "Last 5 financial years"
 msgstr "Last 5 financial years"
+
+msgid "Years"
+msgstr "Years"
+
+msgid "This year"
+msgstr "This year"
+
+msgid "Last year"
+msgstr "Last year"
+
+msgid "Last 5 years"
+msgstr "Last 5 years"
+
+msgid "Last 10 years"
+msgstr "Last 10 years"
 
 msgid "This period type is always enabled and cannot be disabled"
 msgstr "This period type is always enabled and cannot be disabled"
@@ -311,8 +467,8 @@ msgstr "Analytics settings"
 msgid "Periods available for analysis"
 msgstr "Periods available for analysis"
 
-msgid "Relative period configuration"
-msgstr "Relative period configuration"
+msgid "Relative periods"
+msgstr "Relative periods"
 
 msgid "Display & formatting"
 msgstr "Display & formatting"
@@ -436,6 +592,9 @@ msgstr "Infrastructural period type"
 msgid "Daily"
 msgstr "Daily"
 
+msgid "Weekly"
+msgstr "Weekly"
+
 msgid "Monthly"
 msgstr "Monthly"
 
@@ -520,9 +679,6 @@ msgstr "Period types"
 msgid "Allowed period types"
 msgstr "Allowed period types"
 
-msgid "Relative periods"
-msgstr "Relative periods"
-
 msgid "Relative period labels"
 msgstr "Relative period labels"
 
@@ -534,72 +690,6 @@ msgstr "Weekly relative period start day"
 
 msgid "Financial year relative period start month"
 msgstr "Financial year relative period start month"
-
-msgid "This month"
-msgstr "This month"
-
-msgid "Last month"
-msgstr "Last month"
-
-msgid "Months this year"
-msgstr "Months this year"
-
-msgid "Months last year"
-msgstr "Months last year"
-
-msgid "Last 3 months"
-msgstr "Last 3 months"
-
-msgid "Last 6 months"
-msgstr "Last 6 months"
-
-msgid "Last 12 months"
-msgstr "Last 12 months"
-
-msgid "This bi-month"
-msgstr "This bi-month"
-
-msgid "Last bi-month"
-msgstr "Last bi-month"
-
-msgid "Last 6 bi-months"
-msgstr "Last 6 bi-months"
-
-msgid "This quarter"
-msgstr "This quarter"
-
-msgid "Last quarter"
-msgstr "Last quarter"
-
-msgid "Quarters this year"
-msgstr "Quarters this year"
-
-msgid "Quarters last year"
-msgstr "Quarters last year"
-
-msgid "Last 4 quarters"
-msgstr "Last 4 quarters"
-
-msgid "This six-month"
-msgstr "This six-month"
-
-msgid "Last six-month"
-msgstr "Last six-month"
-
-msgid "Last 2 six-months"
-msgstr "Last 2 six-months"
-
-msgid "This year"
-msgstr "This year"
-
-msgid "Last year"
-msgstr "Last year"
-
-msgid "Last 5 years"
-msgstr "Last 5 years"
-
-msgid "Last 10 years"
-msgstr "Last 10 years"
 
 msgid "Cache strategy"
 msgstr "Cache strategy"
@@ -1028,59 +1118,3 @@ msgstr "Clean idle jobs after (in milliseconds)"
 
 msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr "Use centroids for organisation unit polygons in event analytics"
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr "System Settings"
-
-msgctxt "Application description"
-msgid "__MANIFEST_APP_DESCRIPTION"
-msgstr ""
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_General"
-msgstr "General"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Analytics"
-msgstr "Analytics"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Server"
-msgstr "Server"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Appearance"
-msgstr "Appearance"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Email"
-msgstr "Email"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Access"
-msgstr "Access"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Calendar"
-msgstr "Calendar"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data import settings"
-msgstr "Data import settings"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Synchronization"
-msgstr "Synchronization"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Scheduled job settings"
-msgstr "Scheduled job settings"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Notification settings"
-msgstr "Notification settings"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_OAuth2 clients"
-msgstr "OAuth2 clients"

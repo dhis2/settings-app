@@ -77,6 +77,7 @@ export const categories = {
         sectionLabels: {
             periods: i18n.t('Periods available for analysis'),
             relativePeriods: i18n.t('Relative periods'),
+            customPeriodLabels: i18n.t('Custom period labels'),
             display: i18n.t('Display & formatting'),
             calculation: i18n.t('Calculation & data output'),
             caching: i18n.t('Caching & performance'),
@@ -115,8 +116,13 @@ export const categories = {
                 minimumApiVersion: 43,
             },
             {
-                setting: 'relativePeriodLabels',
+                setting: 'relativePeriodBehaviour',
                 section: 'relativePeriods',
+                minimumApiVersion: 43,
+            },
+            {
+                setting: 'customPeriodLabels',
+                section: 'customPeriodLabels',
                 minimumApiVersion: 43,
             },
             {

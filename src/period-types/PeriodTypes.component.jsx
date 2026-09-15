@@ -4,14 +4,9 @@ import {
     CenteredContent,
     CircularLoader,
     Checkbox,
-    Input,
-    Button,
-    IconTranslate16,
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import configOptionStore from '../configOptionStore.js'
-import PrototypeTranslationDialog from '../period-labels/PrototypeTranslationDialog.jsx'
-import { getCustomLabel } from '../period-labels/resolveLabel.js'
 import settingsActions from '../settingsActions.js'
 import { formatPeriodDisplayName } from './builtInPeriodNames.js'
 import styles from './PeriodTypes.module.css'
@@ -124,10 +119,6 @@ const PeriodTypeItem = ({
     updating,
     onToggle,
 }) => {
-    const existingLabel = getCustomLabel('periodTypes', periodType.name)
-    const [showLabelInput, setShowLabelInput] = useState(Boolean(existingLabel))
-    const [customLabel, setCustomLabel] = useState(existingLabel || '')
-    const [translateOpen, setTranslateOpen] = useState(false)
     const displayName = formatPeriodDisplayName(
         periodType.displayName,
         periodType.name
@@ -153,44 +144,6 @@ const PeriodTypeItem = ({
                     onChange={() => onToggle(periodType.name, isEnabled)}
                 />
             </div>
-            {isEnabled && (
-                <details
-                    className={styles.customLabelDetails}
-                    open={showLabelInput}
-                    onToggle={(event) =>
-                        setShowLabelInput(event.target.open)
-                    }
-                >
-                    <summary className={styles.customLabelSummary}>
-                        {i18n.t('Custom label')}
-                    </summary>
-                    <div className={styles.labelEditor}>
-                        <div className={styles.labelInput}>
-                            <Input
-                                dense
-                                value={customLabel}
-                                placeholder={i18n.t('Custom label')}
-                                onChange={({ value }) =>
-                                    setCustomLabel(value || '')
-                                }
-                            />
-                        </div>
-                        <Button
-                            small
-                            className={styles.translateButton}
-                            icon={<IconTranslate16 />}
-                            title={i18n.t('Translate')}
-                            onClick={() => setTranslateOpen(true)}
-                        />
-                    </div>
-                </details>
-            )}
-            {translateOpen && (
-                <PrototypeTranslationDialog
-                    name={customLabel || displayName}
-                    onClose={() => setTranslateOpen(false)}
-                />
-            )}
         </div>
     )
 }

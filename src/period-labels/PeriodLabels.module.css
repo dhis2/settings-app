@@ -1,35 +1,53 @@
 .sectionBody {
 }
 
-.block {
-    margin-top: 24px;
-}
-
 .periodSelect {
     width: 640px;
     max-width: 100%;
     margin-bottom: 8px;
 }
 
-.seedWarning {
-    max-width: 640px;
+.family {
+    margin-bottom: 4px;
 }
 
-.labelsDetails {
-    margin-top: 4px;
-}
-
-.labelsSummary {
+.familySummary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     cursor: pointer;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--colors-grey800);
-    padding: 6px 0;
+    padding: 8px 0;
+    list-style: none;
     user-select: none;
 }
 
-.labelsSummary:hover {
-    color: var(--colors-grey900);
+.familySummary::-webkit-details-marker {
+    display: none;
+}
+
+.familySummary svg {
+    transition: transform 0.15s ease;
+}
+
+.family[open] > .familySummary svg {
+    transform: rotate(90deg);
+}
+
+.familyName {
+    font-weight: 500;
+}
+
+.familyBody {
+    padding: 4px 0 8px 32px;
+}
+
+.subhead {
+    margin: 12px 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--colors-grey600);
 }
 
 .relativeLabelList {
@@ -37,10 +55,6 @@
     flex-direction: column;
     gap: var(--spacers-dp8);
     max-width: 360px;
-    padding-top: 8px;
-    margin-inline-start: 4px;
-    padding-inline-start: 16px;
-    border-inline-start: 1px solid var(--colors-grey300);
 }
 
 .relativeLabelField {
