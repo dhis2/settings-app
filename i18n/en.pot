@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-04-17T07:03:07.634Z\n"
-"PO-Revision-Date: 2026-04-17T07:03:07.634Z\n"
+"POT-Creation-Date: 2026-09-16T07:11:56.947Z\n"
+"PO-Revision-Date: 2026-09-16T07:11:56.948Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -176,6 +176,255 @@ msgstr "Name"
 msgid "Password"
 msgstr "Password"
 
+msgid "Days"
+msgstr "Days"
+
+msgid "Today"
+msgstr "Today"
+
+msgid "Yesterday"
+msgstr "Yesterday"
+
+msgid "Last 3 days"
+msgstr "Last 3 days"
+
+msgid "Last 7 days"
+msgstr "Last 7 days"
+
+msgid "Last 14 days"
+msgstr "Last 14 days"
+
+msgid "Last 30 days"
+msgstr "Last 30 days"
+
+msgid "Last 60 days"
+msgstr "Last 60 days"
+
+msgid "Last 90 days"
+msgstr "Last 90 days"
+
+msgid "Last 180 days"
+msgstr "Last 180 days"
+
+msgid "Weeks"
+msgstr "Weeks"
+
+msgid "Weekly start day"
+msgstr "Weekly start day"
+
+msgid "This week"
+msgstr "This week"
+
+msgid "Last week"
+msgstr "Last week"
+
+msgid "Last 4 weeks"
+msgstr "Last 4 weeks"
+
+msgid "Last 12 weeks"
+msgstr "Last 12 weeks"
+
+msgid "Last 52 weeks"
+msgstr "Last 52 weeks"
+
+msgid "Bi-weeks"
+msgstr "Bi-weeks"
+
+msgid "This bi-week"
+msgstr "This bi-week"
+
+msgid "Last bi-week"
+msgstr "Last bi-week"
+
+msgid "Last 4 bi-weeks"
+msgstr "Last 4 bi-weeks"
+
+msgid "Months"
+msgstr "Months"
+
+msgid "This month"
+msgstr "This month"
+
+msgid "Last month"
+msgstr "Last month"
+
+msgid "Months this year"
+msgstr "Months this year"
+
+msgid "Months last year"
+msgstr "Months last year"
+
+msgid "Last 3 months"
+msgstr "Last 3 months"
+
+msgid "Last 6 months"
+msgstr "Last 6 months"
+
+msgid "Last 12 months"
+msgstr "Last 12 months"
+
+msgid "Bi-months"
+msgstr "Bi-months"
+
+msgid "This bi-month"
+msgstr "This bi-month"
+
+msgid "Last bi-month"
+msgstr "Last bi-month"
+
+msgid "Last 6 bi-months"
+msgstr "Last 6 bi-months"
+
+msgid "Quarters"
+msgstr "Quarters"
+
+msgid "This quarter"
+msgstr "This quarter"
+
+msgid "Last quarter"
+msgstr "Last quarter"
+
+msgid "Quarters this year"
+msgstr "Quarters this year"
+
+msgid "Quarters last year"
+msgstr "Quarters last year"
+
+msgid "Last 4 quarters"
+msgstr "Last 4 quarters"
+
+msgid "Six-months"
+msgstr "Six-months"
+
+msgid "This six-month"
+msgstr "This six-month"
+
+msgid "Last six-month"
+msgstr "Last six-month"
+
+msgid "Last 2 six-months"
+msgstr "Last 2 six-months"
+
+msgid "Financial Years"
+msgstr "Financial Years"
+
+msgid "Financial year start month"
+msgstr "Financial year start month"
+
+msgid "This financial year"
+msgstr "This financial year"
+
+msgid "Last financial year"
+msgstr "Last financial year"
+
+msgid "Last 5 financial years"
+msgstr "Last 5 financial years"
+
+msgid "Years"
+msgstr "Years"
+
+msgid "This year"
+msgstr "This year"
+
+msgid "Last year"
+msgstr "Last year"
+
+msgid "Last 5 years"
+msgstr "Last 5 years"
+
+msgid "Last 10 years"
+msgstr "Last 10 years"
+
+msgid "Day"
+msgstr "Day"
+
+msgid "Week (Monday)"
+msgstr "Week (Monday)"
+
+msgid "Week (Wednesday)"
+msgstr "Week (Wednesday)"
+
+msgid "Week (Thursday)"
+msgstr "Week (Thursday)"
+
+msgid "Week (Friday)"
+msgstr "Week (Friday)"
+
+msgid "Week (Saturday)"
+msgstr "Week (Saturday)"
+
+msgid "Week (Sunday)"
+msgstr "Week (Sunday)"
+
+msgid "Bi-week"
+msgstr "Bi-week"
+
+msgid "Month"
+msgstr "Month"
+
+msgid "Bi-month"
+msgstr "Bi-month"
+
+msgid "Quarter"
+msgstr "Quarter"
+
+msgid "Quarter (November)"
+msgstr "Quarter (November)"
+
+msgid "Six-month"
+msgstr "Six-month"
+
+msgid "Six-month (April)"
+msgstr "Six-month (April)"
+
+msgid "Six-month (November)"
+msgstr "Six-month (November)"
+
+msgid "Financial year (April)"
+msgstr "Financial year (April)"
+
+msgid "Financial year (July)"
+msgstr "Financial year (July)"
+
+msgid "Financial year (October)"
+msgstr "Financial year (October)"
+
+msgid "Financial year (February)"
+msgstr "Financial year (February)"
+
+msgid "Financial year (August)"
+msgstr "Financial year (August)"
+
+msgid "Financial year (September)"
+msgstr "Financial year (September)"
+
+msgid "Financial year (November)"
+msgstr "Financial year (November)"
+
+msgid "Year"
+msgstr "Year"
+
+msgid "Translate"
+msgstr "Translate"
+
+msgid "Settings updated"
+msgstr "Settings updated"
+
+msgid "There was a problem updating settings. Changes have not been saved."
+msgstr "There was a problem updating settings. Changes have not been saved."
+
+msgid "Custom labels"
+msgstr "Custom labels"
+
+msgid "Period type labels"
+msgstr "Period type labels"
+
+msgid "Relative period labels"
+msgstr "Relative period labels"
+
+msgid "This period type is always enabled and cannot be disabled"
+msgstr "This period type is always enabled and cannot be disabled"
+
 msgid "January"
 msgstr "January"
 
@@ -233,75 +482,6 @@ msgstr "Saturday"
 msgid "Sunday"
 msgstr "Sunday"
 
-msgid "Daily"
-msgstr "Daily"
-
-msgid "Weekly"
-msgstr "Weekly"
-
-msgid "Monthly"
-msgstr "Monthly"
-
-msgid "Bi-monthly"
-msgstr "Bi-monthly"
-
-msgid "Yearly"
-msgstr "Yearly"
-
-msgid "Bi-weekly"
-msgstr "Bi-weekly"
-
-msgid "Quarterly"
-msgstr "Quarterly"
-
-msgid "Six-monthly"
-msgstr "Six-monthly"
-
-msgid "Weekly (start {{day}})"
-msgstr "Weekly (start {{day}})"
-
-msgid "Financial year (start {{month}})"
-msgstr "Financial year (start {{month}})"
-
-msgid "Days"
-msgstr "Days"
-
-msgid "Weeks"
-msgstr "Weeks"
-
-msgid "Bi-weeks"
-msgstr "Bi-weeks"
-
-msgid "Months"
-msgstr "Months"
-
-msgid "Bi-months"
-msgstr "Bi-months"
-
-msgid "Quarters"
-msgstr "Quarters"
-
-msgid "Six months"
-msgstr "Six months"
-
-msgid "Years"
-msgstr "Years"
-
-msgid "Other"
-msgstr "Other"
-
-msgid "Settings updated"
-msgstr "Settings updated"
-
-msgid "There was a problem updating settings. Changes have not been saved."
-msgstr "There was a problem updating settings. Changes have not been saved."
-
-msgid "Period types available in analytics apps"
-msgstr "Period types available in analytics apps"
-
-msgid "This period type is always enabled and cannot be disabled"
-msgstr "This period type is always enabled and cannot be disabled"
-
 msgid "This field is required"
 msgstr "This field is required"
 
@@ -331,6 +511,27 @@ msgstr "Analytics"
 
 msgid "Analytics settings"
 msgstr "Analytics settings"
+
+msgid "Periods available for analysis"
+msgstr "Periods available for analysis"
+
+msgid "Periods and labels"
+msgstr "Periods and labels"
+
+msgid "Display & formatting"
+msgstr "Display & formatting"
+
+msgid "Calculation & data output"
+msgstr "Calculation & data output"
+
+msgid "Caching & performance"
+msgstr "Caching & performance"
+
+msgid "Dashboards"
+msgstr "Dashboards"
+
+msgid "Maps"
+msgstr "Maps"
 
 msgid "Server"
 msgstr "Server"
@@ -436,8 +637,29 @@ msgstr "Infrastructural data elements"
 msgid "Infrastructural period type"
 msgstr "Infrastructural period type"
 
+msgid "Daily"
+msgstr "Daily"
+
+msgid "Weekly"
+msgstr "Weekly"
+
+msgid "Monthly"
+msgstr "Monthly"
+
+msgid "Bi-monthly"
+msgstr "Bi-monthly"
+
+msgid "Quarterly"
+msgstr "Quarterly"
+
+msgid "Six-monthly"
+msgstr "Six-monthly"
+
 msgid "Six-monthly April"
 msgstr "Six-monthly April"
+
+msgid "Yearly"
+msgstr "Yearly"
 
 msgid "Financial-April"
 msgstr "Financial-April"
@@ -508,101 +730,14 @@ msgstr "Allowed period types"
 msgid "Default relative period for analysis"
 msgstr "Default relative period for analysis"
 
-msgid "This week"
-msgstr "This week"
-
-msgid "Last week"
-msgstr "Last week"
-
-msgid "Last 4 weeks"
-msgstr "Last 4 weeks"
-
-msgid "Last 12 weeks"
-msgstr "Last 12 weeks"
-
-msgid "Last 52 weeks"
-msgstr "Last 52 weeks"
-
-msgid "This month"
-msgstr "This month"
-
-msgid "Last month"
-msgstr "Last month"
-
-msgid "Months this year"
-msgstr "Months this year"
-
-msgid "Months last year"
-msgstr "Months last year"
-
-msgid "Last 3 months"
-msgstr "Last 3 months"
-
-msgid "Last 6 months"
-msgstr "Last 6 months"
-
-msgid "Last 12 months"
-msgstr "Last 12 months"
-
-msgid "This bi-month"
-msgstr "This bi-month"
-
-msgid "Last bi-month"
-msgstr "Last bi-month"
-
-msgid "Last 6 bi-months"
-msgstr "Last 6 bi-months"
-
-msgid "This quarter"
-msgstr "This quarter"
-
-msgid "Last quarter"
-msgstr "Last quarter"
-
-msgid "Quarters this year"
-msgstr "Quarters this year"
-
-msgid "Quarters last year"
-msgstr "Quarters last year"
-
-msgid "Last 4 quarters"
-msgstr "Last 4 quarters"
-
-msgid "This six-month"
-msgstr "This six-month"
-
-msgid "Last six-month"
-msgstr "Last six-month"
-
-msgid "Last 2 six-months"
-msgstr "Last 2 six-months"
-
-msgid "This year"
-msgstr "This year"
-
-msgid "Last year"
-msgstr "Last year"
-
-msgid "Last 5 years"
-msgstr "Last 5 years"
-
-msgid "Last 10 years"
-msgstr "Last 10 years"
-
-msgid "This financial year"
-msgstr "This financial year"
-
-msgid "Last financial year"
-msgstr "Last financial year"
-
-msgid "Last 5 financial years"
-msgstr "Last 5 financial years"
+msgid "Weekly relative period start day"
+msgstr "Weekly relative period start day"
 
 msgid "Financial year relative period start month"
 msgstr "Financial year relative period start month"
 
-msgid "Weekly relative period start day"
-msgstr "Weekly relative period start day"
+msgid "Custom period labels"
+msgstr "Custom period labels"
 
 msgid "Cache strategy"
 msgstr "Cache strategy"

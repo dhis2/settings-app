@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import { resolveLabel } from './period-labels/resolveLabel.js'
 
 const canBeOverridenLabel = i18n.t(
     'This setting can be overridden by user settings'
@@ -250,15 +251,52 @@ const settingsKeyMapping = {
         type: 'periodTypes',
         searchLabels: [i18n.t('Period types'), i18n.t('Allowed period types')],
     },
+    periodMatrix: {
+        type: 'periodMatrix',
+        searchLabels: [
+            i18n.t('Periods and labels'),
+            i18n.t('Periods available for analysis'),
+            i18n.t('Default relative period for analysis'),
+            i18n.t('Weekly relative period start day'),
+            i18n.t('Financial year relative period start month'),
+            i18n.t('Custom period labels'),
+            i18n.t('Relative period labels'),
+        ],
+    },
     keyAnalysisRelativePeriod: {
         label: i18n.t('Default relative period for analysis'),
         type: 'dropdown',
-        options: {
-            THIS_WEEK: i18n.t('This week'),
-            LAST_WEEK: i18n.t('Last week'),
-            LAST_4_WEEKS: i18n.t('Last 4 weeks'),
-            LAST_12_WEEKS: i18n.t('Last 12 weeks'),
-            LAST_52_WEEKS: i18n.t('Last 52 weeks'),
+        searchLabels: [i18n.t('Default relative period for analysis')],
+        // PROTOTYPE: options is a function (rather than a plain object) so
+        // that custom relative period labels — read live from the label
+        // store via resolveLabel — are picked up on every render, following
+        // the same pattern as analyticsFinancialYearStart below.
+        options: () => ({
+            THIS_WEEK: resolveLabel(
+                'relativePeriods',
+                'THIS_WEEK',
+                i18n.t('This week')
+            ),
+            LAST_WEEK: resolveLabel(
+                'relativePeriods',
+                'LAST_WEEK',
+                i18n.t('Last week')
+            ),
+            LAST_4_WEEKS: resolveLabel(
+                'relativePeriods',
+                'LAST_4_WEEKS',
+                i18n.t('Last 4 weeks')
+            ),
+            LAST_12_WEEKS: resolveLabel(
+                'relativePeriods',
+                'LAST_12_WEEKS',
+                i18n.t('Last 12 weeks')
+            ),
+            LAST_52_WEEKS: resolveLabel(
+                'relativePeriods',
+                'LAST_52_WEEKS',
+                i18n.t('Last 52 weeks')
+            ),
             THIS_MONTH: i18n.t('This month'),
             LAST_MONTH: i18n.t('Last month'),
             MONTHS_THIS_YEAR: i18n.t('Months this year'),
@@ -281,10 +319,22 @@ const settingsKeyMapping = {
             LAST_YEAR: i18n.t('Last year'),
             LAST_5_YEARS: i18n.t('Last 5 years'),
             LAST_10_YEARS: i18n.t('Last 10 years'),
-            THIS_FINANCIAL_YEAR: i18n.t('This financial year'),
-            LAST_FINANCIAL_YEAR: i18n.t('Last financial year'),
-            LAST_5_FINANCIAL_YEARS: i18n.t('Last 5 financial years'),
-        },
+            THIS_FINANCIAL_YEAR: resolveLabel(
+                'relativePeriods',
+                'THIS_FINANCIAL_YEAR',
+                i18n.t('This financial year')
+            ),
+            LAST_FINANCIAL_YEAR: resolveLabel(
+                'relativePeriods',
+                'LAST_FINANCIAL_YEAR',
+                i18n.t('Last financial year')
+            ),
+            LAST_5_FINANCIAL_YEARS: resolveLabel(
+                'relativePeriods',
+                'LAST_5_FINANCIAL_YEARS',
+                i18n.t('Last 5 financial years')
+            ),
+        }),
         helpText: (value, context) =>
             getDisabledPeriodTypeWarning(
                 resolveRelativePeriodType(value, context.settings),
