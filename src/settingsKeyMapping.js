@@ -254,7 +254,7 @@ const settingsKeyMapping = {
     periodMatrix: {
         type: 'periodMatrix',
         searchLabels: [
-            i18n.t('Period settings'),
+            i18n.t('Periods and labels'),
             i18n.t('Periods available for analysis'),
             i18n.t('Default relative period for analysis'),
             i18n.t('Weekly relative period start day'),
@@ -264,7 +264,8 @@ const settingsKeyMapping = {
         ],
     },
     keyAnalysisRelativePeriod: {
-        type: 'defaultRelativePeriod',
+        label: i18n.t('Default relative period for analysis'),
+        type: 'dropdown',
         searchLabels: [i18n.t('Default relative period for analysis')],
         // PROTOTYPE: options is a function (rather than a plain object) so
         // that custom relative period labels — read live from the label

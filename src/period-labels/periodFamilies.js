@@ -167,3 +167,31 @@ export const PERIOD_FAMILIES = [
 export const ALL_RELATIVE_PERIOD_IDS = PERIOD_FAMILIES.flatMap((family) =>
     family.relativePeriods.map((period) => period.id)
 )
+
+// Singular noun labels for period types, so a custom label reads naturally
+// (e.g. "Day" → "School day"). Variants keep their qualifier in parentheses.
+export const PERIOD_TYPE_LABELS = {
+    Daily: i18n.t('Day'),
+    Weekly: i18n.t('Week (Monday)'),
+    WeeklyWednesday: i18n.t('Week (Wednesday)'),
+    WeeklyThursday: i18n.t('Week (Thursday)'),
+    WeeklyFriday: i18n.t('Week (Friday)'),
+    WeeklySaturday: i18n.t('Week (Saturday)'),
+    WeeklySunday: i18n.t('Week (Sunday)'),
+    BiWeekly: i18n.t('Bi-week'),
+    Monthly: i18n.t('Month'),
+    BiMonthly: i18n.t('Bi-month'),
+    Quarterly: i18n.t('Quarter'),
+    QuarterlyNov: i18n.t('Quarter (November)'),
+    SixMonthly: i18n.t('Six-month'),
+    SixMonthlyApril: i18n.t('Six-month (April)'),
+    SixMonthlyNov: i18n.t('Six-month (November)'),
+    FinancialApril: i18n.t('Financial year (April)'),
+    FinancialJuly: i18n.t('Financial year (July)'),
+    FinancialOct: i18n.t('Financial year (October)'),
+    FinancialFeb: i18n.t('Financial year (February)'),
+    FinancialAug: i18n.t('Financial year (August)'),
+    FinancialSep: i18n.t('Financial year (September)'),
+    FinancialNov: i18n.t('Financial year (November)'),
+    Yearly: i18n.t('Year'),
+}

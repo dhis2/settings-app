@@ -76,7 +76,7 @@ export const categories = {
         pageLabel: i18n.t('Analytics settings'),
         sectionLabels: {
             periods: i18n.t('Periods available for analysis'),
-            periodSettings: i18n.t('Period settings'),
+            periodSettings: i18n.t('Periods and labels'),
             display: i18n.t('Display & formatting'),
             calculation: i18n.t('Calculation & data output'),
             caching: i18n.t('Caching & performance'),
@@ -111,6 +111,11 @@ export const categories = {
             },
             {
                 setting: 'periodMatrix',
+                section: 'periodSettings',
+                minimumApiVersion: 43,
+            },
+            {
+                setting: 'keyAnalysisRelativePeriod',
                 section: 'periodSettings',
                 minimumApiVersion: 43,
             },
