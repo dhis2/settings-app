@@ -31,14 +31,14 @@ const dayMap = {
 }
 
 const simpleLabels = {
-    Daily: 'Days',
-    Weekly: 'Weeks',
-    Monthly: 'Months',
-    BiMonthly: 'Bi-months',
-    Yearly: 'Years',
-    BiWeekly: 'Bi-weeks',
-    Quarterly: 'Quarters',
-    SixMonthly: 'Six months',
+    Daily: 'Day',
+    Weekly: 'Week',
+    Monthly: 'Month',
+    BiMonthly: 'Bi-month',
+    Yearly: 'Year',
+    BiWeekly: 'Bi-week',
+    Quarterly: 'Quarter',
+    SixMonthly: 'Six-month',
 }
 
 const formatWeeklyPeriod = (name) => {
@@ -47,7 +47,7 @@ const formatWeeklyPeriod = (name) => {
         return simpleLabels.Weekly
     }
     const translatedDay = dayMap[day] || day
-    return `Weeks (start ${translatedDay})`
+    return `Week (start ${translatedDay})`
 }
 
 const formatPeriodWithMonth = (name, options) => {
@@ -65,7 +65,7 @@ const formatPeriodWithMonth = (name, options) => {
 const formatFinancialPeriod = (name) => {
     return formatPeriodWithMonth(name, {
         prefix: 'Financial',
-        format: (month) => `Financial years (start ${month})`,
+        format: (month) => `Financial year (start ${month})`,
         defaultLabel: null,
     })
 }
@@ -73,7 +73,7 @@ const formatFinancialPeriod = (name) => {
 const formatSixMonthlyPeriod = (name) => {
     return formatPeriodWithMonth(name, {
         prefix: 'SixMonthly',
-        format: (month) => `Six months (start ${month})`,
+        format: (month) => `Six-month (start ${month})`,
         defaultLabel: 'SixMonthly',
     })
 }
@@ -81,7 +81,7 @@ const formatSixMonthlyPeriod = (name) => {
 const formatQuarterlyPeriod = (name) => {
     return formatPeriodWithMonth(name, {
         prefix: 'Quarterly',
-        format: (month) => `Quarters (start ${month})`,
+        format: (month) => `Quarter (start ${month})`,
         defaultLabel: 'Quarterly',
     })
 }
@@ -110,7 +110,7 @@ const formatNameBasedPeriod = (name, displayName) => {
 
 const formatDisplayNameFallback = (displayName) => {
     if (displayName === 'FinancialSep') {
-        return `Financial years (start ${monthMap.Sep})`
+        return `Financial year (start ${monthMap.Sep})`
     }
     return displayName
 }

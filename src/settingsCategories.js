@@ -76,8 +76,6 @@ export const categories = {
         pageLabel: i18n.t('Analytics settings'),
         sectionLabels: {
             periods: i18n.t('Periods available for analysis'),
-            relativePeriods: i18n.t('Relative periods'),
-            customPeriodLabels: i18n.t('Custom period labels'),
             display: i18n.t('Display & formatting'),
             calculation: i18n.t('Calculation & data output'),
             caching: i18n.t('Caching & performance'),
@@ -113,16 +111,6 @@ export const categories = {
             {
                 setting: 'dataOutputPeriodTypes',
                 section: 'periods',
-                minimumApiVersion: 43,
-            },
-            {
-                setting: 'relativePeriodBehaviour',
-                section: 'relativePeriods',
-                minimumApiVersion: 43,
-            },
-            {
-                setting: 'customPeriodLabels',
-                section: 'customPeriodLabels',
                 minimumApiVersion: 43,
             },
             {

@@ -15,7 +15,7 @@ import i18n from '@dhis2/d2-i18n'
 export const PERIOD_FAMILIES = [
     {
         id: 'daily',
-        label: i18n.t('Days'),
+        label: i18n.t('Day'),
         periodTypeNames: ['Daily'],
         relativePeriods: [
             { id: 'TODAY', builtIn: i18n.t('Today') },
@@ -31,7 +31,7 @@ export const PERIOD_FAMILIES = [
     },
     {
         id: 'weekly',
-        label: i18n.t('Weeks'),
+        label: i18n.t('Week'),
         startSetting: 'analyticsWeeklyStart',
         startCaptionLabel: i18n.t('Weekly start day'),
         startToPeriodType: {
@@ -60,7 +60,7 @@ export const PERIOD_FAMILIES = [
     },
     {
         id: 'biWeekly',
-        label: i18n.t('Bi-weeks'),
+        label: i18n.t('Bi-week'),
         periodTypeNames: ['BiWeekly'],
         relativePeriods: [
             { id: 'THIS_BIWEEK', builtIn: i18n.t('This bi-week') },
@@ -70,7 +70,7 @@ export const PERIOD_FAMILIES = [
     },
     {
         id: 'monthly',
-        label: i18n.t('Months'),
+        label: i18n.t('Month'),
         periodTypeNames: ['Monthly'],
         relativePeriods: [
             { id: 'THIS_MONTH', builtIn: i18n.t('This month') },
@@ -84,7 +84,7 @@ export const PERIOD_FAMILIES = [
     },
     {
         id: 'biMonthly',
-        label: i18n.t('Bi-months'),
+        label: i18n.t('Bi-month'),
         periodTypeNames: ['BiMonthly'],
         relativePeriods: [
             { id: 'THIS_BIMONTH', builtIn: i18n.t('This bi-month') },
@@ -94,7 +94,7 @@ export const PERIOD_FAMILIES = [
     },
     {
         id: 'quarterly',
-        label: i18n.t('Quarters'),
+        label: i18n.t('Quarter'),
         periodTypeNames: ['Quarterly', 'QuarterlyNov'],
         relativePeriods: [
             { id: 'THIS_QUARTER', builtIn: i18n.t('This quarter') },
@@ -106,7 +106,7 @@ export const PERIOD_FAMILIES = [
     },
     {
         id: 'sixMonthly',
-        label: i18n.t('Six-months'),
+        label: i18n.t('Six-month'),
         periodTypeNames: ['SixMonthly', 'SixMonthlyApril', 'SixMonthlyNov'],
         relativePeriods: [
             { id: 'THIS_SIX_MONTH', builtIn: i18n.t('This six-month') },
@@ -116,7 +116,7 @@ export const PERIOD_FAMILIES = [
     },
     {
         id: 'financialYear',
-        label: i18n.t('Financial Years'),
+        label: i18n.t('Financial year'),
         startSetting: 'analyticsFinancialYearStart',
         startCaptionLabel: i18n.t('Financial year start month'),
         startToPeriodType: {
@@ -153,7 +153,7 @@ export const PERIOD_FAMILIES = [
     },
     {
         id: 'yearly',
-        label: i18n.t('Years'),
+        label: i18n.t('Year'),
         periodTypeNames: ['Yearly'],
         relativePeriods: [
             { id: 'THIS_YEAR', builtIn: i18n.t('This year') },

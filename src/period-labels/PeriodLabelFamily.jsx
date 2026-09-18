@@ -1,28 +1,18 @@
 import i18n from '@dhis2/d2-i18n'
-import {
-    Button,
-    Tag,
-    Help,
-    Input,
-    Label,
-    IconChevronRight24,
-    IconTranslate16,
-} from '@dhis2/ui'
+import { Tag, Help, IconChevronRight24 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import configOptionStore from '../configOptionStore.js'
 import { formatPeriodDisplayName } from '../period-types/builtInPeriodNames.js'
 import settingsStore from '../settingsStore.js'
+import LabelField from './LabelField.jsx'
 import {
     useLabelState,
     setPeriodTypeLabel,
     setRelativePeriodLabel,
 } from './labelStore.js'
 import styles from './PeriodLabels.module.css'
-import PrototypeTranslationDialog from './PrototypeTranslationDialog.jsx'
 
-// settingsStore and configOptionStore are plain d2-ui Stores, not React stores,
-// so components that read from them subscribe explicitly to see updates.
 const useStoreState = (store) => {
     const [state, setState] = useState(() => store.getState?.() ?? store.state)
 
@@ -40,44 +30,6 @@ const periodTypeNames = (list) =>
     (list || []).map((entry) =>
         typeof entry === 'string' ? entry : entry.name
     )
-
-const LabelField = ({ name, value, onChange }) => {
-    const [translateOpen, setTranslateOpen] = useState(false)
-
-    return (
-        <div className={styles.relativeLabelField}>
-            <Label>{name}</Label>
-            <div className={styles.labelEditor}>
-                <div className={styles.labelInput}>
-                    <Input
-                        dense
-                        value={value}
-                        onChange={({ value: next }) => onChange(next || '')}
-                    />
-                </div>
-                <Button
-                    small
-                    className={styles.translateButton}
-                    icon={<IconTranslate16 />}
-                    title={i18n.t('Translate')}
-                    onClick={() => setTranslateOpen(true)}
-                />
-            </div>
-            {translateOpen && (
-                <PrototypeTranslationDialog
-                    name={value || name}
-                    onClose={() => setTranslateOpen(false)}
-                />
-            )}
-        </div>
-    )
-}
-
-LabelField.propTypes = {
-    name: PropTypes.string.isRequired,
-    value: PropTypes.string,
-    onChange: PropTypes.func.isRequired,
-}
 
 const PeriodLabelFamily = ({ family }) => {
     const labels = useLabelState()
@@ -99,8 +51,6 @@ const PeriodLabelFamily = ({ family }) => {
             hasCustom('relativePeriods', period.id)
         ).length
 
-    // Collapsed by default; opened automatically for any family that already
-    // has custom labels so existing customisation is visible at a glance.
     const [open, setOpen] = useState(customCount > 0)
     useEffect(() => {
         if (customCount > 0) {
@@ -108,9 +58,6 @@ const PeriodLabelFamily = ({ family }) => {
         }
     }, [customCount])
 
-    // Option A: for start-based families the relative labels apply to whichever
-    // start variant is selected in the "Relative periods" section. We only read
-    // that selection to caption it — it is changed there, not here.
     const isStartBased = Boolean(family.startSetting)
     const selectedTypeName = isStartBased
         ? family.startToPeriodType[settings?.[family.startSetting] || '']

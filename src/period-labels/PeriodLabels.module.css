@@ -55,6 +55,7 @@
     flex-direction: column;
     gap: var(--spacers-dp8);
     max-width: 360px;
+    margin-bottom: var(--spacers-dp16);
 }
 
 .relativeLabelField {

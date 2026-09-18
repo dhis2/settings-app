@@ -2,62 +2,78 @@
     margin: 8px 0 16px;
 }
 
-.box {
+.table {
+    min-width: 0 !important;
+    width: max-content;
 }
 
-.groupsWrapper {
-    padding: 8px 0px 0px;
-    column-width: 220px;
-    column-count: 3;
-    column-gap: 24px;
+.defaultRelative {
+    margin-top: var(--spacers-dp16);
 }
 
-.group {
-    break-inside: avoid;
-    margin-bottom: 20px;
-    padding: 12px 12px 12px;
-    border-radius: 3px;
+.table :global(th),
+.table :global(td) {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    height: auto !important;
+    white-space: nowrap;
 }
 
-.groupIdle {
+.enabledHead,
+.enabledCell {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.relativeHead,
+.relativeCell {
+    min-width: 12.5rem;
+    white-space: nowrap;
+}
+
+.relativeTag {
+    background-color: var(--colors-teal100) !important;
+    color: var(--colors-teal900) !important;
+}
+
+.row:hover {
     background: var(--colors-grey100);
 }
 
-.groupActive {
+.row:hover .setCustomLabels,
+.row:focus-within .setCustomLabels,
+.row:hover .useRelativeLink,
+.row:focus-within .useRelativeLink {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.enabled {
     background: var(--colors-teal050);
-    border: 1px solid var(--colors-teal100);
 }
 
-.groupLabel {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--colors-grey900);
-    margin: 0px 0 8px 0;
+.enabled:hover {
+    background: var(--colors-teal100);
 }
 
-.checkboxList {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 12px 24px;
-    padding-left: 8px;
-    width: 100%;
-}
-
-.checkboxItem {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-width: 0;
-    gap: 4px;
-}
-
-.checkboxRow {
+.labelsCell {
     display: flex;
     align-items: center;
-    min-width: 0;
+    gap: 8px;
 }
 
-.error {
-    color: var(--colors-red600);
-    padding: 16px;
+.customLabelsLink {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--colors-grey800);
+    text-decoration: underline;
+    cursor: pointer;
+    font: inherit;
+}
+
+.setCustomLabels,
+.useRelativeLink {
+    opacity: 0;
+    pointer-events: none;
 }

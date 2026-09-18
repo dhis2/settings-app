@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-09-15T06:20:25.037Z\n"
-"PO-Revision-Date: 2026-09-15T06:20:25.038Z\n"
+"POT-Creation-Date: 2026-09-18T12:20:45.944Z\n"
+"PO-Revision-Date: 2026-09-18T12:20:45.944Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -176,35 +176,37 @@ msgstr "Name"
 msgid "Password"
 msgstr "Password"
 
+msgid "Custom labels — {{name}}"
+msgstr "Custom labels — {{name}}"
+
+msgid "Period type"
+msgstr "Period type"
+
+msgid "Relative periods"
+msgstr "Relative periods"
+
+msgid ""
+"Relative labels are shared by this group. They apply to the row marked Use "
+"for relative."
+msgstr ""
+"Relative labels are shared by this group. They apply to the row marked Use "
+"for relative."
+
+msgid "Done"
+msgstr "Done"
+
+msgid ""
+"Rename the periods shown in analytics apps. Only enabled period types "
+"appear here."
+msgstr ""
+"Rename the periods shown in analytics apps. Only enabled period types "
+"appear here."
+
 msgid "Translate"
 msgstr "Translate"
 
-msgid "No custom label on the period these are based on"
-msgstr "No custom label on the period these are based on"
-
-msgid ""
-"{{variant}} still uses its default label. These relative labels may look "
-"inconsistent."
-msgstr ""
-"{{variant}} still uses its default label. These relative labels may look "
-"inconsistent."
-
-msgid "No period is selected to base these relative labels on."
-msgstr "No period is selected to base these relative labels on."
-
-msgid ""
-"This period uses a custom label ({{custom}}), but some relative custom "
-"labels are empty."
-msgstr ""
-"This period uses a custom label ({{custom}}), but some relative custom "
-"labels are empty."
-
-msgid ""
-"Rename the relative periods shown in analytics apps. Each family is "
-"collapsed until you add a custom label."
-msgstr ""
-"Rename the relative periods shown in analytics apps. Each family is "
-"collapsed until you add a custom label."
+msgid "Period types"
+msgstr "Period types"
 
 msgid "Days"
 msgstr "Days"
@@ -365,17 +367,23 @@ msgstr "Last 5 years"
 msgid "Last 10 years"
 msgstr "Last 10 years"
 
-msgid "This period type is always enabled and cannot be disabled"
-msgstr "This period type is always enabled and cannot be disabled"
-
-msgid "Custom label"
-msgstr "Custom label"
-
 msgid "Settings updated"
 msgstr "Settings updated"
 
 msgid "There was a problem updating settings. Changes have not been saved."
 msgstr "There was a problem updating settings. Changes have not been saved."
+
+msgid "Period"
+msgstr "Period"
+
+msgid "Enabled"
+msgstr "Enabled"
+
+msgid "Use for relative?"
+msgstr "Use for relative?"
+
+msgid "Custom labels"
+msgstr "Custom labels"
 
 msgid "January"
 msgstr "January"
@@ -467,8 +475,8 @@ msgstr "Analytics settings"
 msgid "Periods available for analysis"
 msgstr "Periods available for analysis"
 
-msgid "Relative periods"
-msgstr "Relative periods"
+msgid "Custom period labels"
+msgstr "Custom period labels"
 
 msgid "Display & formatting"
 msgstr "Display & formatting"
@@ -673,14 +681,8 @@ msgstr "Hide monthly periods"
 msgid "Hide bimonthly periods"
 msgstr "Hide bimonthly periods"
 
-msgid "Period types"
-msgstr "Period types"
-
 msgid "Allowed period types"
 msgstr "Allowed period types"
-
-msgid "Relative period labels"
-msgstr "Relative period labels"
 
 msgid "Default relative period for analysis"
 msgstr "Default relative period for analysis"
@@ -690,6 +692,12 @@ msgstr "Weekly relative period start day"
 
 msgid "Financial year relative period start month"
 msgstr "Financial year relative period start month"
+
+msgid "Relative period labels"
+msgstr "Relative period labels"
+
+msgid "Period type labels"
+msgstr "Period type labels"
 
 msgid "Cache strategy"
 msgstr "Cache strategy"

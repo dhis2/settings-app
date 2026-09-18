@@ -2,12 +2,25 @@ import { useDataQuery, useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
-    CircularLoader,
     Checkbox,
+    CircularLoader,
+    Table,
+    TableBody,
+    TableCell,
+    TableCellHead,
+    TableHead,
+    TableRow,
+    TableRowHead,
+    Tag,
 } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 import configOptionStore from '../configOptionStore.js'
+import CustomLabelsModal from '../period-labels/CustomLabelsModal.jsx'
+import DefaultRelativePeriod from '../period-labels/DefaultRelativePeriod.jsx'
+import { useLabelState } from '../period-labels/labelStore.js'
+import { PERIOD_FAMILIES } from '../period-labels/periodFamilies.js'
 import settingsActions from '../settingsActions.js'
+import settingsStore from '../settingsStore.js'
 import { formatPeriodDisplayName } from './builtInPeriodNames.js'
 import styles from './PeriodTypes.module.css'
 
@@ -29,32 +42,9 @@ const getGroupKey = (periodType) => {
     if (periodType.frequencyOrder !== 365) {
         return String(periodType.frequencyOrder)
     }
-    // frequencyOrder 365 is currently only Yearly and the 7 Financial* variants
     return periodType.name === 'Yearly' ? 'yearly' : 'financialYear'
 }
 
-const getGroupLabel = (groupKey, frequencyOrder) => {
-    if (groupKey === 'yearly') {
-        return 'Yearly'
-    }
-    if (groupKey === 'financialYear') {
-        return 'Financial yearly'
-    }
-    const labels = {
-        1: 'Daily',
-        7: 'Weekly',
-        14: 'Bi-weekly',
-        30: 'Monthly',
-        60: 'Bi-monthly',
-        61: 'Bi-monthly',
-        91: 'Quarterly',
-        182: 'Six-monthly',
-    }
-    return labels[frequencyOrder] || 'Other'
-}
-
-// Yearly and Financial year both carry frequencyOrder 365; this keeps
-// Yearly sorted directly before Financial year, where "Years" used to sit.
 const groupSortOrder = {
     yearly: 365,
     financialYear: 365.5,
@@ -86,66 +76,75 @@ const periodTypeOrder = {
     FinancialNov: 8,
 }
 
-const groupByFrequency = (periodTypes) => {
-    const groups = {}
-    periodTypes.forEach((pt) => {
-        const groupKey = getGroupKey(pt)
-        if (!groups[groupKey]) {
-            groups[groupKey] = {
-                groupKey,
-                label: getGroupLabel(groupKey, pt.frequencyOrder),
-                sortOrder: groupSortOrder[groupKey] ?? pt.frequencyOrder,
-                periodTypes: [],
-            }
+const sortPeriodTypes = (periodTypes) =>
+    [...periodTypes].sort((a, b) => {
+        const aKey = getGroupKey(a)
+        const bKey = getGroupKey(b)
+        const aOrder = groupSortOrder[aKey] ?? a.frequencyOrder
+        const bOrder = groupSortOrder[bKey] ?? b.frequencyOrder
+        if (aOrder !== bOrder) {
+            return aOrder - bOrder
         }
-        groups[groupKey].periodTypes.push(pt)
+        return (periodTypeOrder[a.name] || 0) - (periodTypeOrder[b.name] || 0)
     })
-    const sorted = Object.values(groups).sort(
-        (a, b) => a.sortOrder - b.sortOrder
+
+const RELATIVE_SEED_GROUPS = [
+    {
+        id: 'weekly',
+        settingKey: 'analyticsWeeklyStart',
+        periodTypeToValue: {
+            Weekly: 'WEEKLY',
+            WeeklyWednesday: 'WEEKLY_WEDNESDAY',
+            WeeklyThursday: 'WEEKLY_THURSDAY',
+            WeeklyFriday: 'WEEKLY_FRIDAY',
+            WeeklySaturday: 'WEEKLY_SATURDAY',
+            WeeklySunday: 'WEEKLY_SUNDAY',
+        },
+    },
+    {
+        id: 'financialYear',
+        settingKey: 'analyticsFinancialYearStart',
+        periodTypeToValue: {
+            FinancialFeb: 'FINANCIAL_YEAR_FEBRUARY',
+            FinancialApril: 'FINANCIAL_YEAR_APRIL',
+            FinancialJuly: 'FINANCIAL_YEAR_JULY',
+            FinancialAug: 'FINANCIAL_YEAR_AUGUST',
+            FinancialSep: 'FINANCIAL_YEAR_SEPTEMBER',
+            FinancialOct: 'FINANCIAL_YEAR_OCTOBER',
+        },
+    },
+]
+
+const relativeSeedByPeriodType = RELATIVE_SEED_GROUPS.reduce((acc, group) => {
+    Object.keys(group.periodTypeToValue).forEach((name) => {
+        acc[name] = group
+    })
+    return acc
+}, {})
+
+const familyByPeriodType = PERIOD_FAMILIES.reduce((acc, family) => {
+    family.periodTypeNames.forEach((name) => {
+        acc[name] = family
+    })
+    return acc
+}, {})
+
+const namesFromList = (list) =>
+    (list || []).map((entry) =>
+        typeof entry === 'string' ? entry : entry.name
     )
-    sorted.forEach((group) => {
-        group.periodTypes.sort(
-            (a, b) =>
-                (periodTypeOrder[a.name] || 0) - (periodTypeOrder[b.name] || 0)
+
+const useStoreState = (store) => {
+    const [state, setState] = useState(() => store.getState?.() ?? store.state)
+
+    useEffect(() => {
+        const subscription = store.subscribe((next) =>
+            setState(next ? { ...next } : { ...store.state })
         )
-    })
-    return sorted
-}
+        return () => subscription.unsubscribe()
+    }, [store])
 
-const PeriodTypeItem = ({
-    periodType,
-    isEnabled,
-    isMandatory,
-    updating,
-    onToggle,
-}) => {
-    const displayName = formatPeriodDisplayName(
-        periodType.displayName,
-        periodType.name
-    )
-
-    return (
-        <div
-            className={styles.checkboxItem}
-            title={
-                isMandatory
-                    ? i18n.t(
-                          'This period type is always enabled and cannot be disabled'
-                      )
-                    : undefined
-            }
-        >
-            <div className={styles.checkboxRow}>
-                <Checkbox
-                    dense
-                    checked={isEnabled}
-                    disabled={updating || isMandatory}
-                    label={displayName}
-                    onChange={() => onToggle(periodType.name, isEnabled)}
-                />
-            </div>
-        </div>
-    )
+    return state
 }
 
 const PeriodTypes = () => {
@@ -153,6 +152,9 @@ const PeriodTypes = () => {
     const [allowedPeriodTypes, setAllowedPeriodTypes] = useState([])
     const { baseUrl, apiVersion } = useConfig()
     const [updating, setUpdating] = useState(false)
+    const [labelModalType, setLabelModalType] = useState(null)
+    const settings = useStoreState(settingsStore)
+    const labels = useLabelState()
 
     useEffect(() => {
         if (data?.dataOutputPeriodTypes) {
@@ -164,15 +166,27 @@ const PeriodTypes = () => {
         }
     }, [data?.dataOutputPeriodTypes])
 
+    useEffect(() => {
+        const allowed = new Set(namesFromList(allowedPeriodTypes))
+        RELATIVE_SEED_GROUPS.forEach((group) => {
+            const enabled = Object.keys(group.periodTypeToValue).filter(
+                (name) => allowed.has(name)
+            )
+            if (enabled.length !== 1) {
+                return
+            }
+            const onlyValue = group.periodTypeToValue[enabled[0]]
+            if (settings?.[group.settingKey] !== onlyValue) {
+                settingsActions.saveKey(group.settingKey, onlyValue)
+            }
+        })
+    }, [allowedPeriodTypes, settings])
+
     const handlePeriodTypeToggle = async (
         periodTypeName,
         isCurrentlyEnabled
     ) => {
-        const currentAllowedSet = new Set(
-            allowedPeriodTypes.map((pt) =>
-                typeof pt === 'string' ? pt : pt.name
-            )
-        )
+        const currentAllowedSet = new Set(namesFromList(allowedPeriodTypes))
 
         if (isCurrentlyEnabled) {
             currentAllowedSet.delete(periodTypeName)
@@ -230,55 +244,151 @@ const PeriodTypes = () => {
         )
     }
 
-    // Remove on v43-end-of-life
     const hiddenPeriodTypes = new Set(['TwoYearly'])
-    const allPeriodTypes = (data?.periodTypes?.periodTypes || []).filter(
-        (pt) => !hiddenPeriodTypes.has(pt.name)
+    const allPeriodTypes = sortPeriodTypes(
+        (data?.periodTypes?.periodTypes || []).filter(
+            (pt) => !hiddenPeriodTypes.has(pt.name)
+        )
     )
-    const allowedSet = new Set(
-        allowedPeriodTypes.map((pt) => (typeof pt === 'string' ? pt : pt.name))
-    )
-    const groupedPeriodTypes = groupByFrequency(allPeriodTypes)
+    const allowedSet = new Set(namesFromList(allowedPeriodTypes))
 
+    const enabledInSeedGroup = (group) =>
+        Object.keys(group.periodTypeToValue).filter((name) =>
+            allowedSet.has(name)
+        )
+
+    const seedGroupNeedsChoice = Object.fromEntries(
+        RELATIVE_SEED_GROUPS.map((group) => [
+            group.id,
+            enabledInSeedGroup(group).length > 1,
+        ])
+    )
     return (
         <div className={styles.wrapper}>
-            <div className={styles.box}>
-                <div className={styles.groupsWrapper}>
-                    {groupedPeriodTypes.map((group) => {
-                        const hasEnabled = group.periodTypes.some((pt) =>
-                            allowedSet.has(pt.name)
+            <Table className={styles.table} suppressZebraStriping>
+                <TableHead>
+                    <TableRowHead>
+                        <TableCellHead className={styles.enabledHead}>
+                            {i18n.t('Enabled?')}
+                        </TableCellHead>
+                        <TableCellHead>{i18n.t('Period')}</TableCellHead>
+                        <TableCellHead className={styles.relativeHead} />
+                        <TableCellHead>
+                            {i18n.t('Custom labels')}
+                        </TableCellHead>
+                    </TableRowHead>
+                </TableHead>
+                <TableBody>
+                    {allPeriodTypes.map((periodType) => {
+                        const isEnabled = allowedSet.has(periodType.name)
+                        const isMandatory = mandatoryPeriodTypes.has(
+                            periodType.name
                         )
+                        const seedGroup =
+                            relativeSeedByPeriodType[periodType.name]
+                        const selectedSeed =
+                            seedGroup && settings?.[seedGroup.settingKey]
+                        const seedValue = seedGroup
+                            ? seedGroup.periodTypeToValue[periodType.name]
+                            : undefined
+                        const showRelativeChoice =
+                            Boolean(seedGroup) &&
+                            isEnabled &&
+                            seedGroupNeedsChoice[seedGroup.id]
+                        const isRelativeSeed =
+                            showRelativeChoice && selectedSeed === seedValue
+                        const customLabel = (
+                            labels.periodTypes[periodType.name]?.default || ''
+                        ).trim()
+
                         return (
-                        <div
-                            key={group.groupKey}
-                            className={
-                                hasEnabled
-                                    ? `${styles.group} ${styles.groupActive}`
-                                    : `${styles.group} ${styles.groupIdle}`
-                            }
-                        >
-                            <p className={styles.groupLabel}>{group.label}</p>
-                            <div className={styles.checkboxList}>
-                                {group.periodTypes.map((periodType) => (
-                                    <PeriodTypeItem
-                                        key={periodType.name}
-                                        periodType={periodType}
-                                        isEnabled={allowedSet.has(
-                                            periodType.name
-                                        )}
-                                        isMandatory={mandatoryPeriodTypes.has(
-                                            periodType.name
-                                        )}
-                                        updating={updating}
-                                        onToggle={handlePeriodTypeToggle}
+                            <TableRow
+                                key={periodType.name}
+                                className={
+                                    isEnabled
+                                        ? `${styles.row} ${styles.enabled}`
+                                        : styles.row
+                                }
+                            >
+                                <TableCell className={styles.enabledCell}>
+                                    <Checkbox
+                                        dense
+                                        checked={isEnabled}
+                                        disabled={updating || isMandatory}
+                                        onChange={() =>
+                                            handlePeriodTypeToggle(
+                                                periodType.name,
+                                                isEnabled
+                                            )
+                                        }
                                     />
-                                ))}
-                            </div>
-                        </div>
+                                </TableCell>
+                                <TableCell>
+                                    {formatPeriodDisplayName(
+                                        periodType.displayName,
+                                        periodType.name
+                                    )}
+                                </TableCell>
+                                <TableCell className={styles.relativeCell}>
+                                    {isRelativeSeed && (
+                                        <Tag className={styles.relativeTag}>
+                                            {i18n.t('Used for relative period')}
+                                        </Tag>
+                                    )}
+                                    {showRelativeChoice && !isRelativeSeed && (
+                                        <button
+                                            type="button"
+                                            className={`${styles.customLabelsLink} ${styles.useRelativeLink}`}
+                                            onClick={() =>
+                                                settingsActions.saveKey(
+                                                    seedGroup.settingKey,
+                                                    seedValue
+                                                )
+                                            }
+                                        >
+                                            {i18n.t('Use for relative period')}
+                                        </button>
+                                    )}
+                                </TableCell>
+                                <TableCell>
+                                    <div className={styles.labelsCell}>
+                                        <button
+                                            type="button"
+                                            className={
+                                                customLabel
+                                                    ? styles.customLabelsLink
+                                                    : `${styles.customLabelsLink} ${styles.setCustomLabels}`
+                                            }
+                                            onClick={() =>
+                                                setLabelModalType(
+                                                    periodType.name
+                                                )
+                                            }
+                                        >
+                                            {customLabel
+                                                ? i18n.t(
+                                                      'Label: {{label}} · Edit',
+                                                      { label: customLabel }
+                                                  )
+                                                : i18n.t('Set custom label')}
+                                        </button>
+                                    </div>
+                                </TableCell>
+                            </TableRow>
                         )
                     })}
-                </div>
+                </TableBody>
+            </Table>
+            <div className={styles.defaultRelative}>
+                <DefaultRelativePeriod />
             </div>
+            {labelModalType && (
+                <CustomLabelsModal
+                    periodTypeName={labelModalType}
+                    family={familyByPeriodType[labelModalType]}
+                    onClose={() => setLabelModalType(null)}
+                />
+            )}
         </div>
     )
 }
