@@ -5,12 +5,11 @@ import React, { useState } from 'react'
 import styles from './PeriodLabels.module.css'
 import PrototypeTranslationDialog from './PrototypeTranslationDialog.jsx'
 
-const LabelField = ({ name, value, onChange }) => {
+export const LabelEditor = ({ name, value, onChange }) => {
     const [translateOpen, setTranslateOpen] = useState(false)
 
     return (
-        <div className={styles.relativeLabelField}>
-            <Label>{name}</Label>
+        <>
             <div className={styles.labelEditor}>
                 <div className={styles.labelInput}>
                     <Input
@@ -33,14 +32,27 @@ const LabelField = ({ name, value, onChange }) => {
                     onClose={() => setTranslateOpen(false)}
                 />
             )}
-        </div>
+        </>
     )
 }
 
+LabelEditor.propTypes = {
+    name: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    value: PropTypes.string,
+}
+
+const LabelField = ({ name, value, onChange }) => (
+    <div className={styles.relativeLabelField}>
+        <Label>{name}</Label>
+        <LabelEditor name={name} value={value} onChange={onChange} />
+    </div>
+)
+
 LabelField.propTypes = {
     name: PropTypes.string.isRequired,
-    value: PropTypes.string,
     onChange: PropTypes.func.isRequired,
+    value: PropTypes.string,
 }
 
 export default LabelField

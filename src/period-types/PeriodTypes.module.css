@@ -56,6 +56,27 @@
     background: var(--colors-teal100);
 }
 
+.sectionEnd :global(td) {
+    /* border-bottom-width: 2px !important; */
+    border-bottom-color: var(--colors-grey500) !important;
+}
+
+.expanded :global(td) {
+    border-bottom-color: transparent !important;
+}
+
+.expandedPanelRow:hover {
+    background: var(--colors-white);
+}
+
+.expandedPanelRow.enabled:hover {
+    background: var(--colors-teal050);
+}
+
+.expandedPanelRow :global(td) {
+    white-space: normal;
+}
+
 .labelsCell {
     display: flex;
     align-items: center;

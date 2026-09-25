@@ -13,9 +13,9 @@ import {
     TableRowHead,
     Tag,
 } from '@dhis2/ui'
-import React, { useState, useEffect } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import configOptionStore from '../configOptionStore.js'
-import CustomLabelsModal from '../period-labels/CustomLabelsModal.jsx'
+import CustomLabelsPanel from '../period-labels/CustomLabelsPanel.jsx'
 import DefaultRelativePeriod from '../period-labels/DefaultRelativePeriod.jsx'
 import { useLabelState } from '../period-labels/labelStore.js'
 import { PERIOD_FAMILIES } from '../period-labels/periodFamilies.js'
@@ -152,7 +152,7 @@ const PeriodTypes = () => {
     const [allowedPeriodTypes, setAllowedPeriodTypes] = useState([])
     const { baseUrl, apiVersion } = useConfig()
     const [updating, setUpdating] = useState(false)
-    const [labelModalType, setLabelModalType] = useState(null)
+    const [expandedTypes, setExpandedTypes] = useState(() => new Set())
     const settings = useStoreState(settingsStore)
     const labels = useLabelState()
 
@@ -181,6 +181,17 @@ const PeriodTypes = () => {
             }
         })
     }, [allowedPeriodTypes, settings])
+
+    const toggleExpanded = (periodTypeName) =>
+        setExpandedTypes((prev) => {
+            const next = new Set(prev)
+            if (next.has(periodTypeName)) {
+                next.delete(periodTypeName)
+            } else {
+                next.add(periodTypeName)
+            }
+            return next
+        })
 
     const handlePeriodTypeToggle = async (
         periodTypeName,
@@ -273,13 +284,11 @@ const PeriodTypes = () => {
                         </TableCellHead>
                         <TableCellHead>{i18n.t('Period')}</TableCellHead>
                         <TableCellHead className={styles.relativeHead} />
-                        <TableCellHead>
-                            {i18n.t('Custom labels')}
-                        </TableCellHead>
+                        <TableCellHead>{i18n.t('Custom labels')}</TableCellHead>
                     </TableRowHead>
                 </TableHead>
                 <TableBody>
-                    {allPeriodTypes.map((periodType) => {
+                    {allPeriodTypes.map((periodType, index) => {
                         const isEnabled = allowedSet.has(periodType.name)
                         const isMandatory = mandatoryPeriodTypes.has(
                             periodType.name
@@ -300,81 +309,151 @@ const PeriodTypes = () => {
                         const customLabel = (
                             labels.periodTypes[periodType.name]?.default || ''
                         ).trim()
+                        const nextPeriodType = allPeriodTypes[index + 1]
+                        const sectionId = (pt) =>
+                            familyByPeriodType[pt.name]?.id || getGroupKey(pt)
+                        const isSectionEnd =
+                            nextPeriodType &&
+                            sectionId(periodType) !== sectionId(nextPeriodType)
+                        const isExpanded = expandedTypes.has(periodType.name)
+                        const rowClassName = (...extra) =>
+                            [
+                                styles.row,
+                                isEnabled ? styles.enabled : '',
+                                ...extra,
+                            ]
+                                .filter(Boolean)
+                                .join(' ')
 
                         return (
-                            <TableRow
-                                key={periodType.name}
-                                className={
-                                    isEnabled
-                                        ? `${styles.row} ${styles.enabled}`
-                                        : styles.row
-                                }
-                            >
-                                <TableCell className={styles.enabledCell}>
-                                    <Checkbox
-                                        dense
-                                        checked={isEnabled}
-                                        disabled={updating || isMandatory}
-                                        onChange={() =>
-                                            handlePeriodTypeToggle(
-                                                periodType.name,
-                                                isEnabled
-                                            )
-                                        }
-                                    />
-                                </TableCell>
-                                <TableCell>
-                                    {formatPeriodDisplayName(
-                                        periodType.displayName,
-                                        periodType.name
+                            <Fragment key={periodType.name}>
+                                <TableRow
+                                    className={rowClassName(
+                                        isExpanded
+                                            ? styles.expanded
+                                            : isSectionEnd
+                                            ? styles.sectionEnd
+                                            : ''
                                     )}
-                                </TableCell>
-                                <TableCell className={styles.relativeCell}>
-                                    {isRelativeSeed && (
-                                        <Tag className={styles.relativeTag}>
-                                            {i18n.t('Used for relative period')}
-                                        </Tag>
-                                    )}
-                                    {showRelativeChoice && !isRelativeSeed && (
-                                        <button
-                                            type="button"
-                                            className={`${styles.customLabelsLink} ${styles.useRelativeLink}`}
-                                            onClick={() =>
-                                                settingsActions.saveKey(
-                                                    seedGroup.settingKey,
-                                                    seedValue
+                                >
+                                    <TableCell className={styles.enabledCell}>
+                                        <Checkbox
+                                            dense
+                                            checked={isEnabled}
+                                            disabled={updating || isMandatory}
+                                            onChange={() =>
+                                                handlePeriodTypeToggle(
+                                                    periodType.name,
+                                                    isEnabled
                                                 )
                                             }
-                                        >
-                                            {i18n.t('Use for relative period')}
-                                        </button>
-                                    )}
-                                </TableCell>
-                                <TableCell>
-                                    <div className={styles.labelsCell}>
-                                        <button
-                                            type="button"
-                                            className={
-                                                customLabel
-                                                    ? styles.customLabelsLink
-                                                    : `${styles.customLabelsLink} ${styles.setCustomLabels}`
-                                            }
-                                            onClick={() =>
-                                                setLabelModalType(
-                                                    periodType.name
+                                        />
+                                    </TableCell>
+                                    <TableCell>
+                                        {formatPeriodDisplayName(
+                                            periodType.displayName,
+                                            periodType.name
+                                        )}
+                                    </TableCell>
+                                    <TableCell className={styles.relativeCell}>
+                                        {isRelativeSeed && (
+                                            <Tag className={styles.relativeTag}>
+                                                {i18n.t('Relative period')}
+                                            </Tag>
+                                        )}
+                                        {showRelativeChoice &&
+                                            !isRelativeSeed && (
+                                                <button
+                                                    type="button"
+                                                    className={`${styles.customLabelsLink} ${styles.useRelativeLink}`}
+                                                    onClick={() =>
+                                                        settingsActions.saveKey(
+                                                            seedGroup.settingKey,
+                                                            seedValue
+                                                        )
+                                                    }
+                                                >
+                                                    {i18n.t(
+                                                        'Use for relative period'
+                                                    )}
+                                                </button>
+                                            )}
+                                    </TableCell>
+                                    <TableCell>
+                                        <div className={styles.labelsCell}>
+                                            {isExpanded ? (
+                                                customLabel && (
+                                                    <span
+                                                        className={
+                                                            styles.customLabelsLink
+                                                        }
+                                                    >
+                                                        {i18n.t(
+                                                            'Label: {{label}}',
+                                                            {
+                                                                label: customLabel,
+                                                            }
+                                                        )}
+                                                    </span>
                                                 )
-                                            }
-                                        >
-                                            {customLabel
-                                                ? i18n.t(
-                                                      'Label: {{label}} · Edit',
-                                                      { label: customLabel }
-                                                  )
-                                                : i18n.t('Set custom label')}
-                                        </button>
-                                    </div>
-                                </TableCell>
-                            </TableRow>
+                                            ) : (
+                                                <button
+                                                    type="button"
+                                                    aria-expanded={isExpanded}
+                                                    className={
+                                                        customLabel
+                                                            ? styles.customLabelsLink
+                                                            : `${styles.customLabelsLink} ${styles.setCustomLabels}`
+                                                    }
+                                                    onClick={() =>
+                                                        toggleExpanded(
+                                                            periodType.name
+                                                        )
+                                                    }
+                                                >
+                                                    {customLabel
+                                                        ? i18n.t(
+                                                              'Label: {{label}}',
+                                                              {
+                                                                  label: customLabel,
+                                                              }
+                                                          )
+                                                        : i18n.t(
+                                                              'Set custom label'
+                                                          )}
+                                                </button>
+                                            )}
+                                        </div>
+                                    </TableCell>
+                                </TableRow>
+                                {isExpanded && (
+                                    <TableRow
+                                        className={rowClassName(
+                                            styles.expandedPanelRow,
+                                            isSectionEnd
+                                                ? styles.sectionEnd
+                                                : ''
+                                        )}
+                                    >
+                                        <TableCell />
+                                        <TableCell colSpan="3">
+                                            <CustomLabelsPanel
+                                                periodTypeName={periodType.name}
+                                                family={
+                                                    familyByPeriodType[
+                                                        periodType.name
+                                                    ]
+                                                }
+                                                onDone={() =>
+                                                    toggleExpanded(
+                                                        periodType.name
+                                                    )
+                                                }
+                                            />
+                                        </TableCell>
+                                    </TableRow>
+                                )}
+                            </Fragment>
                         )
                     })}
                 </TableBody>
@@ -382,13 +461,6 @@ const PeriodTypes = () => {
             <div className={styles.defaultRelative}>
                 <DefaultRelativePeriod />
             </div>
-            {labelModalType && (
-                <CustomLabelsModal
-                    periodTypeName={labelModalType}
-                    family={familyByPeriodType[labelModalType]}
-                    onClose={() => setLabelModalType(null)}
-                />
-            )}
         </div>
     )
 }

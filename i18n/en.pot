@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-09-18T12:20:45.944Z\n"
-"PO-Revision-Date: 2026-09-18T12:20:45.944Z\n"
+"POT-Creation-Date: 2026-09-25T11:41:26.238Z\n"
+"PO-Revision-Date: 2026-09-25T11:41:26.239Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -185,13 +185,6 @@ msgstr "Period type"
 msgid "Relative periods"
 msgstr "Relative periods"
 
-msgid ""
-"Relative labels are shared by this group. They apply to the row marked Use "
-"for relative."
-msgstr ""
-"Relative labels are shared by this group. They apply to the row marked Use "
-"for relative."
-
 msgid "Done"
 msgstr "Done"
 
@@ -208,8 +201,8 @@ msgstr "Translate"
 msgid "Period types"
 msgstr "Period types"
 
-msgid "Days"
-msgstr "Days"
+msgid "Day"
+msgstr "Day"
 
 msgid "Today"
 msgstr "Today"
@@ -238,8 +231,8 @@ msgstr "Last 90 days"
 msgid "Last 180 days"
 msgstr "Last 180 days"
 
-msgid "Weeks"
-msgstr "Weeks"
+msgid "Week"
+msgstr "Week"
 
 msgid "Weekly start day"
 msgstr "Weekly start day"
@@ -259,8 +252,8 @@ msgstr "Last 12 weeks"
 msgid "Last 52 weeks"
 msgstr "Last 52 weeks"
 
-msgid "Bi-weeks"
-msgstr "Bi-weeks"
+msgid "Bi-week"
+msgstr "Bi-week"
 
 msgid "This bi-week"
 msgstr "This bi-week"
@@ -271,8 +264,8 @@ msgstr "Last bi-week"
 msgid "Last 4 bi-weeks"
 msgstr "Last 4 bi-weeks"
 
-msgid "Months"
-msgstr "Months"
+msgid "Month"
+msgstr "Month"
 
 msgid "This month"
 msgstr "This month"
@@ -295,8 +288,8 @@ msgstr "Last 6 months"
 msgid "Last 12 months"
 msgstr "Last 12 months"
 
-msgid "Bi-months"
-msgstr "Bi-months"
+msgid "Bi-month"
+msgstr "Bi-month"
 
 msgid "This bi-month"
 msgstr "This bi-month"
@@ -307,8 +300,8 @@ msgstr "Last bi-month"
 msgid "Last 6 bi-months"
 msgstr "Last 6 bi-months"
 
-msgid "Quarters"
-msgstr "Quarters"
+msgid "Quarter"
+msgstr "Quarter"
 
 msgid "This quarter"
 msgstr "This quarter"
@@ -325,8 +318,8 @@ msgstr "Quarters last year"
 msgid "Last 4 quarters"
 msgstr "Last 4 quarters"
 
-msgid "Six-months"
-msgstr "Six-months"
+msgid "Six-month"
+msgstr "Six-month"
 
 msgid "This six-month"
 msgstr "This six-month"
@@ -337,8 +330,8 @@ msgstr "Last six-month"
 msgid "Last 2 six-months"
 msgstr "Last 2 six-months"
 
-msgid "Financial Years"
-msgstr "Financial Years"
+msgid "Financial year"
+msgstr "Financial year"
 
 msgid "Financial year start month"
 msgstr "Financial year start month"
@@ -352,8 +345,8 @@ msgstr "Last financial year"
 msgid "Last 5 financial years"
 msgstr "Last 5 financial years"
 
-msgid "Years"
-msgstr "Years"
+msgid "Year"
+msgstr "Year"
 
 msgid "This year"
 msgstr "This year"
@@ -373,17 +366,23 @@ msgstr "Settings updated"
 msgid "There was a problem updating settings. Changes have not been saved."
 msgstr "There was a problem updating settings. Changes have not been saved."
 
+msgid "Enabled?"
+msgstr "Enabled?"
+
 msgid "Period"
 msgstr "Period"
 
-msgid "Enabled"
-msgstr "Enabled"
-
-msgid "Use for relative?"
-msgstr "Use for relative?"
-
 msgid "Custom labels"
 msgstr "Custom labels"
+
+msgid "Used for relative period"
+msgstr "Used for relative period"
+
+msgid "Use for relative period"
+msgstr "Use for relative period"
+
+msgid "Set custom label"
+msgstr "Set custom label"
 
 msgid "January"
 msgstr "January"
@@ -474,9 +473,6 @@ msgstr "Analytics settings"
 
 msgid "Periods available for analysis"
 msgstr "Periods available for analysis"
-
-msgid "Custom period labels"
-msgstr "Custom period labels"
 
 msgid "Display & formatting"
 msgstr "Display & formatting"
@@ -692,6 +688,9 @@ msgstr "Weekly relative period start day"
 
 msgid "Financial year relative period start month"
 msgstr "Financial year relative period start month"
+
+msgid "Custom period labels"
+msgstr "Custom period labels"
 
 msgid "Relative period labels"
 msgstr "Relative period labels"

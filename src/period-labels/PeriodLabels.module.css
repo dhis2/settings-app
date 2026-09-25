@@ -42,12 +42,49 @@
 }
 
 .subhead {
-    margin: 12px 0 4px;
+    margin: 12px 0 8px;
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--colors-grey600);
+}
+
+.subhead:first-child {
+    margin-top: 0;
+}
+
+.panel {
+    display: grid;
+    grid-template-columns: max-content 280px;
+    align-items: center;
+    column-gap: var(--spacers-dp16);
+    row-gap: var(--spacers-dp4);
+    padding: var(--spacers-dp4) 0 var(--spacers-dp12);
+}
+
+.panelLabelName {
+    color: var(--colors-grey800);
+}
+
+.panelSectionHead {
+    grid-column: 1 / -1;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--colors-grey600);
+    padding-top: var(--spacers-dp8);
+}
+
+.panelActions {
+    grid-column: 2;
+    padding-top: var(--spacers-dp8);
+}
+
+.panelSectionHead:first-child {
+    padding-top: 0;
 }
 
 .relativeLabelList {
