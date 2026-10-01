@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-09-25T11:41:26.238Z\n"
-"PO-Revision-Date: 2026-09-25T11:41:26.239Z\n"
+"POT-Creation-Date: 2026-10-01T13:59:05.469Z\n"
+"PO-Revision-Date: 2026-10-01T13:59:05.469Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -176,11 +176,11 @@ msgstr "Name"
 msgid "Password"
 msgstr "Password"
 
-msgid "Custom labels — {{name}}"
-msgstr "Custom labels — {{name}}"
-
 msgid "Period type"
 msgstr "Period type"
+
+msgid "Custom label"
+msgstr "Custom label"
 
 msgid "Relative periods"
 msgstr "Relative periods"
@@ -375,8 +375,8 @@ msgstr "Period"
 msgid "Custom labels"
 msgstr "Custom labels"
 
-msgid "Used for relative period"
-msgstr "Used for relative period"
+msgid "Relative period"
+msgstr "Relative period"
 
 msgid "Use for relative period"
 msgstr "Use for relative period"

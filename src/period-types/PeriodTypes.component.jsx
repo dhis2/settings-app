@@ -4,6 +4,8 @@ import {
     CenteredContent,
     Checkbox,
     CircularLoader,
+    IconChevronDown16,
+    IconChevronUp16,
     Table,
     TableBody,
     TableCell,
@@ -381,36 +383,21 @@ const PeriodTypes = () => {
                                     </TableCell>
                                     <TableCell>
                                         <div className={styles.labelsCell}>
-                                            {isExpanded ? (
-                                                customLabel && (
-                                                    <span
-                                                        className={
-                                                            styles.customLabelsLink
-                                                        }
-                                                    >
-                                                        {i18n.t(
-                                                            'Label: {{label}}',
-                                                            {
-                                                                label: customLabel,
-                                                            }
-                                                        )}
-                                                    </span>
-                                                )
-                                            ) : (
-                                                <button
-                                                    type="button"
-                                                    aria-expanded={isExpanded}
-                                                    className={
-                                                        customLabel
-                                                            ? styles.customLabelsLink
-                                                            : `${styles.customLabelsLink} ${styles.setCustomLabels}`
-                                                    }
-                                                    onClick={() =>
-                                                        toggleExpanded(
-                                                            periodType.name
-                                                        )
-                                                    }
-                                                >
+                                            <button
+                                                type="button"
+                                                aria-expanded={isExpanded}
+                                                className={
+                                                    customLabel || isExpanded
+                                                        ? styles.customLabelsLink
+                                                        : `${styles.customLabelsLink} ${styles.setCustomLabels}`
+                                                }
+                                                onClick={() =>
+                                                    toggleExpanded(
+                                                        periodType.name
+                                                    )
+                                                }
+                                            >
+                                                <span>
                                                     {customLabel
                                                         ? i18n.t(
                                                               'Label: {{label}}',
@@ -421,8 +408,13 @@ const PeriodTypes = () => {
                                                         : i18n.t(
                                                               'Set custom label'
                                                           )}
-                                                </button>
-                                            )}
+                                                </span>
+                                                {isExpanded ? (
+                                                    <IconChevronUp16 />
+                                                ) : (
+                                                    <IconChevronDown16 />
+                                                )}
+                                            </button>
                                         </div>
                                     </TableCell>
                                 </TableRow>

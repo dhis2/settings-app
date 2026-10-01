@@ -41,9 +41,9 @@
 }
 
 .row:hover .setCustomLabels,
-.row:focus-within .setCustomLabels,
+.row:has(:focus-visible) .setCustomLabels,
 .row:hover .useRelativeLink,
-.row:focus-within .useRelativeLink {
+.row:has(:focus-visible) .useRelativeLink {
     opacity: 1;
     pointer-events: auto;
 }
@@ -84,6 +84,9 @@
 }
 
 .customLabelsLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
     background: none;
     border: none;
     padding: 0;
