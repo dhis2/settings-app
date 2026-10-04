@@ -1,18 +1,17 @@
 # Translators:
-# Siddharth Agarwal, 2025
-# Rohit Wadhwani, 2026
+# Brar Piening, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-05-30T13:11:40.739Z\n"
 "PO-Revision-Date: 2022-10-15 22:32+0000\n"
-"Last-Translator: Rohit Wadhwani, 2026\n"
-"Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
+"Last-Translator: Brar Piening, 2026\n"
+"Language-Team: German (https://app.transifex.com/hisp-uio/teams/100509/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hi_IN\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Failed to load: {{error}}"
@@ -76,7 +75,7 @@ msgid "Master version:"
 msgstr ""
 
 msgid "None"
-msgstr "कोई नहीं"
+msgstr ""
 
 msgid "Last sync attempt"
 msgstr ""
@@ -100,10 +99,10 @@ msgid "This client ID is already taken"
 msgstr ""
 
 msgid "Name"
-msgstr "नाम"
+msgstr "Name"
 
 msgid "Required"
-msgstr "आवश्यकता है"
+msgstr ""
 
 msgid "Client ID"
 msgstr ""
@@ -115,7 +114,7 @@ msgid "Grant Types"
 msgstr ""
 
 msgid "Password"
-msgstr "पासवर्ड"
+msgstr ""
 
 msgid "Refresh token"
 msgstr ""
@@ -139,19 +138,19 @@ msgid "Edit OAuth2 Client"
 msgstr ""
 
 msgid "Save"
-msgstr "सहेजें"
+msgstr ""
 
 msgid "Cancel"
-msgstr "रद्द करें"
+msgstr ""
 
 msgid "There are currently no OAuth2 clients registered"
 msgstr ""
 
 msgid "Edit"
-msgstr "संपादन करें"
+msgstr ""
 
 msgid "Delete"
-msgstr "हटाएं"
+msgstr ""
 
 msgid "OAuth2 client saved"
 msgstr ""
@@ -163,10 +162,10 @@ msgid "Add OAuth2 client"
 msgstr ""
 
 msgid "Yes"
-msgstr "हाँ"
+msgstr ""
 
 msgid "No"
-msgstr "नहीं"
+msgstr ""
 
 msgid "OAuth2 client deleted"
 msgstr ""
@@ -202,7 +201,7 @@ msgid "Appearance settings"
 msgstr ""
 
 msgid "Email"
-msgstr "ईमेल"
+msgstr "E-Mail"
 
 msgid "Email settings"
 msgstr ""
@@ -214,7 +213,7 @@ msgid "Access settings"
 msgstr ""
 
 msgid "Calendar"
-msgstr ""
+msgstr "Kalender"
 
 msgid "Calendar settings"
 msgstr ""
@@ -235,7 +234,7 @@ msgid "OAuth2 Clients"
 msgstr ""
 
 msgid "This field is required"
-msgstr "यह फ़ील्ड आवश्यक है"
+msgstr ""
 
 msgid "This field should be a URL"
 msgstr ""
@@ -284,13 +283,13 @@ msgid "Infrastructural period type"
 msgstr ""
 
 msgid "Daily"
-msgstr "रोज़ाना"
+msgstr ""
 
 msgid "Weekly"
-msgstr "साप्ताहिक"
+msgstr ""
 
 msgid "Monthly"
-msgstr "मासिक"
+msgstr ""
 
 msgid "Bi-monthly"
 msgstr ""
@@ -305,7 +304,7 @@ msgid "Six-monthly April"
 msgstr ""
 
 msgid "Yearly"
-msgstr "वार्षिक"
+msgstr ""
 
 msgid "Financial-April"
 msgstr ""
@@ -353,25 +352,25 @@ msgid "Default relative period for analysis"
 msgstr ""
 
 msgid "This week"
-msgstr "इस सप्ताह"
+msgstr ""
 
 msgid "Last week"
-msgstr "पिछला सप्ताह"
+msgstr ""
 
 msgid "Last 4 weeks"
-msgstr "पिछले 4 सप्ताह"
+msgstr ""
 
 msgid "Last 12 weeks"
-msgstr "पिछले 12 सप्ताह"
+msgstr ""
 
 msgid "Last 52 weeks"
 msgstr ""
 
 msgid "This month"
-msgstr "इस महीने"
+msgstr ""
 
 msgid "Last month"
-msgstr "पिछला महीना"
+msgstr ""
 
 msgid "Months this year"
 msgstr ""
@@ -380,13 +379,13 @@ msgid "Months last year"
 msgstr ""
 
 msgid "Last 3 months"
-msgstr "पिछले 3 महीने"
+msgstr ""
 
 msgid "Last 6 months"
 msgstr ""
 
 msgid "Last 12 months"
-msgstr "पिछले 12 महीने"
+msgstr ""
 
 msgid "This bi-month"
 msgstr ""
@@ -401,7 +400,7 @@ msgid "This quarter"
 msgstr ""
 
 msgid "Last quarter"
-msgstr "पिछली तिमाही"
+msgstr ""
 
 msgid "Quarters this year"
 msgstr ""
@@ -410,25 +409,25 @@ msgid "Quarters last year"
 msgstr ""
 
 msgid "Last 4 quarters"
-msgstr "पिछली 4 तिमाहियाँ"
+msgstr ""
 
 msgid "This six-month"
 msgstr ""
 
 msgid "Last six-month"
-msgstr "पिछला छः-मासिक"
+msgstr ""
 
 msgid "Last 2 six-months"
-msgstr "पिछले 2 छः-मासिक"
+msgstr ""
 
 msgid "This year"
-msgstr "इस वर्ष"
+msgstr ""
 
 msgid "Last year"
-msgstr "पिछला वर्ष"
+msgstr ""
 
 msgid "Last 5 years"
-msgstr "पिछले 5 वर्ष"
+msgstr ""
 
 msgid "Last 10 years"
 msgstr ""
@@ -464,13 +463,13 @@ msgid "Financial year relative period start month"
 msgstr ""
 
 msgid "April"
-msgstr "अप्रैल"
+msgstr ""
 
 msgid "July"
-msgstr "जुलाई"
+msgstr ""
 
 msgid "October"
-msgstr "अक्टूबर"
+msgstr ""
 
 msgid "Cache strategy"
 msgstr ""
@@ -680,7 +679,7 @@ msgid "Port"
 msgstr ""
 
 msgid "Username"
-msgstr "यूज़रनेम"
+msgstr "Benutzername"
 
 msgid "TLS"
 msgstr ""
@@ -719,7 +718,7 @@ msgid "Require user account password change"
 msgstr ""
 
 msgid "Never"
-msgstr ""
+msgstr "Nie"
 
 msgid "3 months"
 msgstr ""
