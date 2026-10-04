@@ -1,16 +1,16 @@
-# 
 # Translators:
-# Siddharth Agarwal, 2025
+# Siddharth Agarwal, 2026
+# Rohit Wadhwani, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2025-01-17T10:18:20.401Z\n"
+"POT-Creation-Date: 2026-04-17T07:03:07.634Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Siddharth Agarwal, 2025\n"
+"Last-Translator: Rohit Wadhwani, 2026\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hi_IN\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -18,10 +18,19 @@ msgstr ""
 msgid "Failed to load: {{error}}"
 msgstr ""
 
+msgid "DHIS2"
+msgstr ""
+
 msgid "No flag"
 msgstr ""
 
 msgid "Search settings"
+msgstr ""
+
+msgid "No color selected"
+msgstr ""
+
+msgid "Remove color"
 msgstr ""
 
 msgid "Replace image"
@@ -99,22 +108,16 @@ msgstr ""
 msgid "This client ID is already taken"
 msgstr ""
 
-msgid "Name"
-msgstr "नाम"
+msgid "Client ID"
+msgstr ""
 
 msgid "Required"
 msgstr "आवश्यकता है"
-
-msgid "Client ID"
-msgstr ""
 
 msgid "Client Secret"
 msgstr ""
 
 msgid "Grant Types"
-msgstr ""
-
-msgid "Password"
 msgstr ""
 
 msgid "Refresh token"
@@ -174,10 +177,154 @@ msgstr ""
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Name"
+msgstr "नाम"
+
+msgid "Password"
+msgstr "पासवर्ड"
+
+msgid "January"
+msgstr "जनवरी"
+
+msgid "February"
+msgstr "फ़रवरी"
+
+msgid "March"
+msgstr "मार्च"
+
+msgid "April"
+msgstr "अप्रैल"
+
+msgid "May"
+msgstr "मई"
+
+msgid "June"
+msgstr "जून"
+
+msgid "July"
+msgstr "जुलाई"
+
+msgid "August"
+msgstr "अगस्त"
+
+msgid "September"
+msgstr "सितंबर"
+
+msgid "October"
+msgstr "अक्टूबर"
+
+msgid "November"
+msgstr "नवंबर"
+
+msgid "December"
+msgstr "दिसंबर"
+
+msgid "Monday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Daily"
+msgstr "रोज़ाना"
+
+msgid "Weekly"
+msgstr "साप्ताहिक"
+
+msgid "Monthly"
+msgstr "मासिक"
+
+msgid "Bi-monthly"
+msgstr ""
+
+msgid "Yearly"
+msgstr "वार्षिक"
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr ""
+
+msgid "Six-monthly"
+msgstr ""
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "दिन"
+
+msgid "Weeks"
+msgstr "सप्ताह"
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr "महीने"
+
+msgid "Bi-months"
+msgstr ""
+
+msgid "Quarters"
+msgstr "पिछली तिमाही"
+
+msgid "Six months"
+msgstr "छह महीने"
+
+msgid "Years"
+msgstr "वर्ष"
+
+msgid "Other"
+msgstr "दूसरा"
+
 msgid "Settings updated"
 msgstr ""
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
+msgstr ""
+
+msgid "This period type is always enabled and cannot be disabled"
+msgstr ""
+
+msgid "This field is required"
+msgstr "यह फ़ील्ड आवश्यक है"
+
+msgid "This field should be a URL"
+msgstr ""
+
+msgid "This field should be a number"
+msgstr ""
+
+msgid "This field should be a positive number"
+msgstr ""
+
+msgid "This field should be an email"
+msgstr ""
+
+msgid "Please enter a number from {{min}} to {{max}}"
 msgstr ""
 
 msgid "General"
@@ -205,7 +352,7 @@ msgid "Appearance settings"
 msgstr ""
 
 msgid "Email"
-msgstr ""
+msgstr "ईमेल"
 
 msgid "Email settings"
 msgstr ""
@@ -237,22 +384,10 @@ msgstr ""
 msgid "Scheduled jobs"
 msgstr ""
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
-msgstr ""
-
-msgid "This field is required"
-msgstr ""
-
-msgid "This field should be a URL"
-msgstr ""
-
-msgid "This field should be a number"
-msgstr ""
-
-msgid "This field should be a positive number"
-msgstr ""
-
-msgid "This field should be an email"
 msgstr ""
 
 msgid ""
@@ -265,10 +400,22 @@ msgstr ""
 msgid "No options"
 msgstr ""
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr ""
 
 msgid "Search results"
+msgstr ""
+
+msgid ""
+"This period type is currently disabled in the period type settings above"
 msgstr ""
 
 msgid "Maximum number of analytics records"
@@ -280,6 +427,11 @@ msgstr ""
 msgid "Maximum number of SQL view records"
 msgstr ""
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr ""
 
@@ -289,28 +441,7 @@ msgstr ""
 msgid "Infrastructural period type"
 msgstr ""
 
-msgid "Daily"
-msgstr ""
-
-msgid "Weekly"
-msgstr ""
-
-msgid "Monthly"
-msgstr ""
-
-msgid "Bi-monthly"
-msgstr ""
-
-msgid "Quarterly"
-msgstr ""
-
-msgid "Six-monthly"
-msgstr ""
-
 msgid "Six-monthly April"
-msgstr ""
-
-msgid "Yearly"
 msgstr ""
 
 msgid "Financial-April"
@@ -355,99 +486,6 @@ msgstr ""
 msgid "Include passive dashboard views in usage analytics statistics"
 msgstr ""
 
-msgid "Default relative period for analysis"
-msgstr ""
-
-msgid "This week"
-msgstr ""
-
-msgid "Last week"
-msgstr ""
-
-msgid "Last 4 weeks"
-msgstr ""
-
-msgid "Last 12 weeks"
-msgstr ""
-
-msgid "Last 52 weeks"
-msgstr ""
-
-msgid "This month"
-msgstr ""
-
-msgid "Last month"
-msgstr ""
-
-msgid "Months this year"
-msgstr ""
-
-msgid "Months last year"
-msgstr ""
-
-msgid "Last 3 months"
-msgstr ""
-
-msgid "Last 6 months"
-msgstr ""
-
-msgid "Last 12 months"
-msgstr ""
-
-msgid "This bi-month"
-msgstr ""
-
-msgid "Last bi-month"
-msgstr ""
-
-msgid "Last 6 bi-months"
-msgstr ""
-
-msgid "This quarter"
-msgstr ""
-
-msgid "Last quarter"
-msgstr ""
-
-msgid "Quarters this year"
-msgstr ""
-
-msgid "Quarters last year"
-msgstr ""
-
-msgid "Last 4 quarters"
-msgstr ""
-
-msgid "This six-month"
-msgstr ""
-
-msgid "Last six-month"
-msgstr ""
-
-msgid "Last 2 six-months"
-msgstr ""
-
-msgid "This year"
-msgstr ""
-
-msgid "Last year"
-msgstr ""
-
-msgid "Last 5 years"
-msgstr ""
-
-msgid "Last 10 years"
-msgstr ""
-
-msgid "This financial year"
-msgstr ""
-
-msgid "Last financial year"
-msgstr ""
-
-msgid "Last 5 financial years"
-msgstr ""
-
 msgid "Hide daily periods"
 msgstr ""
 
@@ -466,16 +504,109 @@ msgstr ""
 msgid "Hide bimonthly periods"
 msgstr ""
 
+msgid "Period types"
+msgstr ""
+
+msgid "Allowed period types"
+msgstr ""
+
+msgid "Default relative period for analysis"
+msgstr ""
+
+msgid "This week"
+msgstr "इस सप्ताह"
+
+msgid "Last week"
+msgstr "पिछला सप्ताह"
+
+msgid "Last 4 weeks"
+msgstr "पिछले 4 सप्ताह"
+
+msgid "Last 12 weeks"
+msgstr "पिछले 12 सप्ताह"
+
+msgid "Last 52 weeks"
+msgstr ""
+
+msgid "This month"
+msgstr "इस महीने"
+
+msgid "Last month"
+msgstr "पिछला महीना"
+
+msgid "Months this year"
+msgstr ""
+
+msgid "Months last year"
+msgstr ""
+
+msgid "Last 3 months"
+msgstr "पिछले 3 महीने"
+
+msgid "Last 6 months"
+msgstr ""
+
+msgid "Last 12 months"
+msgstr "पिछले 12 महीने"
+
+msgid "This bi-month"
+msgstr ""
+
+msgid "Last bi-month"
+msgstr ""
+
+msgid "Last 6 bi-months"
+msgstr ""
+
+msgid "This quarter"
+msgstr ""
+
+msgid "Last quarter"
+msgstr "पिछली तिमाही"
+
+msgid "Quarters this year"
+msgstr ""
+
+msgid "Quarters last year"
+msgstr ""
+
+msgid "Last 4 quarters"
+msgstr "पिछली 4 तिमाहियाँ"
+
+msgid "This six-month"
+msgstr ""
+
+msgid "Last six-month"
+msgstr "पिछला छः-मासिक"
+
+msgid "Last 2 six-months"
+msgstr "पिछले 2 छः-मासिक"
+
+msgid "This year"
+msgstr "इस वर्ष"
+
+msgid "Last year"
+msgstr "पिछला वर्ष"
+
+msgid "Last 5 years"
+msgstr "पिछले 5 वर्ष"
+
+msgid "Last 10 years"
+msgstr ""
+
+msgid "This financial year"
+msgstr ""
+
+msgid "Last financial year"
+msgstr ""
+
+msgid "Last 5 financial years"
+msgstr ""
+
 msgid "Financial year relative period start month"
 msgstr ""
 
-msgid "April"
-msgstr ""
-
-msgid "July"
-msgstr ""
-
-msgid "October"
+msgid "Weekly relative period start day"
 msgstr ""
 
 msgid "Cache strategy"
@@ -604,6 +735,9 @@ msgstr ""
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr ""
 
@@ -619,7 +753,13 @@ msgstr ""
 msgid "Application right-side footer"
 msgstr ""
 
+msgid "Style (android)"
+msgstr ""
+
 msgid "Style"
+msgstr ""
+
+msgid "Theme color"
 msgstr ""
 
 msgid "Start page"
@@ -673,6 +813,12 @@ msgstr ""
 msgid "Login page template"
 msgstr ""
 
+msgid "Enable Global Shell"
+msgstr ""
+
+msgid "Enable custom translations"
+msgstr ""
+
 msgid "Custom login page logo"
 msgstr ""
 
@@ -698,7 +844,7 @@ msgid "Port"
 msgstr ""
 
 msgid "Username"
-msgstr ""
+msgstr "यूज़रनेम"
 
 msgid "TLS"
 msgstr ""
@@ -728,6 +874,9 @@ msgid "Enable user account recovery"
 msgstr ""
 
 msgid "Lock user account temporarily after multiple failed login attempts"
+msgstr ""
+
+msgid "Enable embedded dashboards"
 msgstr ""
 
 msgid "Enforce verified emails"
@@ -859,4 +1008,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""

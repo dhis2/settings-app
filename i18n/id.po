@@ -1,21 +1,20 @@
-# 
 # Translators:
 # Carwoto Sa'an <carwoto@gmail.com>, 2021
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2024
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2024
-# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2024
-# Viktor Varland <viktor@dhis2.org>, 2024
 # Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2024
+# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2026
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2026
+# Viktor Varland <viktor@dhis2.org>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2026-04-17T07:03:07.634Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Yusuf Setiawan <mohammadyusufsetiawan@gmail.com>, 2024\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2026\n"
 "Language-Team: Indonesian (https://app.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: id\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -23,10 +22,19 @@ msgstr ""
 msgid "Failed to load: {{error}}"
 msgstr ""
 
+msgid "DHIS2"
+msgstr ""
+
 msgid "No flag"
 msgstr ""
 
 msgid "Search settings"
+msgstr ""
+
+msgid "No color selected"
+msgstr ""
+
+msgid "Remove color"
 msgstr ""
 
 msgid "Replace image"
@@ -104,23 +112,17 @@ msgstr ""
 msgid "This client ID is already taken"
 msgstr ""
 
-msgid "Name"
-msgstr "Nama"
+msgid "Client ID"
+msgstr ""
 
 msgid "Required"
 msgstr "Wajib"
-
-msgid "Client ID"
-msgstr ""
 
 msgid "Client Secret"
 msgstr ""
 
 msgid "Grant Types"
 msgstr ""
-
-msgid "Password"
-msgstr "Sandi"
 
 msgid "Refresh token"
 msgstr ""
@@ -179,10 +181,154 @@ msgstr ""
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Name"
+msgstr "Nama"
+
+msgid "Password"
+msgstr "Sandi"
+
+msgid "January"
+msgstr "Januari"
+
+msgid "February"
+msgstr "Februari"
+
+msgid "March"
+msgstr "Maret"
+
+msgid "April"
+msgstr "April"
+
+msgid "May"
+msgstr "Mei"
+
+msgid "June"
+msgstr "Juni"
+
+msgid "July"
+msgstr "Juli"
+
+msgid "August"
+msgstr "Agustus"
+
+msgid "September"
+msgstr "September"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "November"
+msgstr "November"
+
+msgid "December"
+msgstr "Desember"
+
+msgid "Monday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Daily"
+msgstr "Harian"
+
+msgid "Weekly"
+msgstr "Mingguan"
+
+msgid "Monthly"
+msgstr "Bulanan"
+
+msgid "Bi-monthly"
+msgstr "Dwiwulanan"
+
+msgid "Yearly"
+msgstr "Tahunan"
+
+msgid "Bi-weekly"
+msgstr "Dwiwulanan"
+
+msgid "Quarterly"
+msgstr "Triwulanan"
+
+msgid "Six-monthly"
+msgstr "Semester"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "Hari"
+
+msgid "Weeks"
+msgstr "Minggu"
+
+msgid "Bi-weeks"
+msgstr "Dwiwulan"
+
+msgid "Months"
+msgstr "Bulan"
+
+msgid "Bi-months"
+msgstr "Dwiwulan"
+
+msgid "Quarters"
+msgstr "Triwulan"
+
+msgid "Six months"
+msgstr "Semester"
+
+msgid "Years"
+msgstr "Tahun"
+
+msgid "Other"
+msgstr "Lainnya"
+
 msgid "Settings updated"
 msgstr ""
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
+msgstr ""
+
+msgid "This period type is always enabled and cannot be disabled"
+msgstr ""
+
+msgid "This field is required"
+msgstr "Kolom ini harus terisi"
+
+msgid "This field should be a URL"
+msgstr ""
+
+msgid "This field should be a number"
+msgstr ""
+
+msgid "This field should be a positive number"
+msgstr ""
+
+msgid "This field should be an email"
+msgstr ""
+
+msgid "Please enter a number from {{min}} to {{max}}"
 msgstr ""
 
 msgid "General"
@@ -242,22 +388,10 @@ msgstr ""
 msgid "Scheduled jobs"
 msgstr ""
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
-msgstr ""
-
-msgid "This field is required"
-msgstr "Kolom ini harus terisi"
-
-msgid "This field should be a URL"
-msgstr ""
-
-msgid "This field should be a number"
-msgstr ""
-
-msgid "This field should be a positive number"
-msgstr ""
-
-msgid "This field should be an email"
 msgstr ""
 
 msgid ""
@@ -270,10 +404,22 @@ msgstr ""
 msgid "No options"
 msgstr ""
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr ""
 
 msgid "Search results"
+msgstr ""
+
+msgid ""
+"This period type is currently disabled in the period type settings above"
 msgstr ""
 
 msgid "Maximum number of analytics records"
@@ -285,6 +431,11 @@ msgstr ""
 msgid "Maximum number of SQL view records"
 msgstr ""
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr ""
 
@@ -294,29 +445,8 @@ msgstr "Infrastruktur elemen data"
 msgid "Infrastructural period type"
 msgstr "Infrastruktur jenis periode"
 
-msgid "Daily"
-msgstr "Harian"
-
-msgid "Weekly"
-msgstr "Mingguan"
-
-msgid "Monthly"
-msgstr "Bulanan"
-
-msgid "Bi-monthly"
-msgstr "Dwiwulanan"
-
-msgid "Quarterly"
-msgstr "Triwulanan"
-
-msgid "Six-monthly"
-msgstr "Semester"
-
 msgid "Six-monthly April"
 msgstr "Semester April"
-
-msgid "Yearly"
-msgstr "Tahunan"
 
 msgid "Financial-April"
 msgstr ""
@@ -358,6 +488,30 @@ msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
 
 msgid "Include passive dashboard views in usage analytics statistics"
+msgstr ""
+
+msgid "Hide daily periods"
+msgstr ""
+
+msgid "Hidden period types in analytics apps"
+msgstr ""
+
+msgid "Hide weekly periods"
+msgstr ""
+
+msgid "Hide biweekly periods"
+msgstr ""
+
+msgid "Hide monthly periods"
+msgstr ""
+
+msgid "Hide bimonthly periods"
+msgstr ""
+
+msgid "Period types"
+msgstr ""
+
+msgid "Allowed period types"
 msgstr ""
 
 msgid "Default relative period for analysis"
@@ -453,35 +607,11 @@ msgstr "Tahun finansial kemarin"
 msgid "Last 5 financial years"
 msgstr "5 tahun finansial terakhir"
 
-msgid "Hide daily periods"
-msgstr ""
-
-msgid "Hidden period types in analytics apps"
-msgstr ""
-
-msgid "Hide weekly periods"
-msgstr ""
-
-msgid "Hide biweekly periods"
-msgstr ""
-
-msgid "Hide monthly periods"
-msgstr ""
-
-msgid "Hide bimonthly periods"
-msgstr ""
-
 msgid "Financial year relative period start month"
 msgstr ""
 
-msgid "April"
-msgstr "April"
-
-msgid "July"
-msgstr "Juli"
-
-msgid "October"
-msgstr "Oktober"
+msgid "Weekly relative period start day"
+msgstr ""
 
 msgid "Cache strategy"
 msgstr "Cache strategy"
@@ -609,6 +739,9 @@ msgstr ""
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr "Judul aplikasi"
 
@@ -624,8 +757,14 @@ msgstr ""
 msgid "Application right-side footer"
 msgstr ""
 
+msgid "Style (android)"
+msgstr ""
+
 msgid "Style"
 msgstr "Gaya"
+
+msgid "Theme color"
+msgstr ""
 
 msgid "Start page"
 msgstr "Halaman muka"
@@ -676,6 +815,12 @@ msgid "Custom"
 msgstr "Kustom"
 
 msgid "Login page template"
+msgstr ""
+
+msgid "Enable Global Shell"
+msgstr ""
+
+msgid "Enable custom translations"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -733,6 +878,12 @@ msgid "Enable user account recovery"
 msgstr "Mengaktifkan penyelamatan akun pengguna"
 
 msgid "Lock user account temporarily after multiple failed login attempts"
+msgstr ""
+
+msgid "Enable embedded dashboards"
+msgstr ""
+
+msgid "Enforce verified emails"
 msgstr ""
 
 msgid "Allow users to grant own user roles"
@@ -861,4 +1012,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""

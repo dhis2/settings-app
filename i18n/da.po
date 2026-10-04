@@ -1,16 +1,15 @@
-# 
 # Translators:
-# Philip Larsen Donnelly, 2024
+# Philip Larsen Donnelly, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2026-04-17T07:03:07.634Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Philip Larsen Donnelly, 2026\n"
 "Language-Team: Danish (https://app.transifex.com/hisp-uio/teams/100509/da/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -18,10 +17,19 @@ msgstr ""
 msgid "Failed to load: {{error}}"
 msgstr ""
 
+msgid "DHIS2"
+msgstr ""
+
 msgid "No flag"
 msgstr ""
 
 msgid "Search settings"
+msgstr ""
+
+msgid "No color selected"
+msgstr ""
+
+msgid "Remove color"
 msgstr ""
 
 msgid "Replace image"
@@ -99,13 +107,10 @@ msgstr ""
 msgid "This client ID is already taken"
 msgstr ""
 
-msgid "Name"
-msgstr "Name"
-
-msgid "Required"
+msgid "Client ID"
 msgstr ""
 
-msgid "Client ID"
+msgid "Required"
 msgstr ""
 
 msgid "Client Secret"
@@ -113,9 +118,6 @@ msgstr ""
 
 msgid "Grant Types"
 msgstr ""
-
-msgid "Password"
-msgstr "Password"
 
 msgid "Refresh token"
 msgstr ""
@@ -174,10 +176,154 @@ msgstr ""
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Name"
+msgstr "Name"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "January"
+msgstr "January"
+
+msgid "February"
+msgstr "February"
+
+msgid "March"
+msgstr "March"
+
+msgid "April"
+msgstr "April"
+
+msgid "May"
+msgstr "May"
+
+msgid "June"
+msgstr "June"
+
+msgid "July"
+msgstr "July"
+
+msgid "August"
+msgstr "August"
+
+msgid "September"
+msgstr "September"
+
+msgid "October"
+msgstr "October"
+
+msgid "November"
+msgstr "November"
+
+msgid "December"
+msgstr "December"
+
+msgid "Monday"
+msgstr "Monday"
+
+msgid "Tuesday"
+msgstr "Tuesday"
+
+msgid "Wednesday"
+msgstr "Wednesday"
+
+msgid "Thursday"
+msgstr "Thursday"
+
+msgid "Friday"
+msgstr "Friday"
+
+msgid "Saturday"
+msgstr "Saturday"
+
+msgid "Sunday"
+msgstr "Sunday"
+
+msgid "Daily"
+msgstr "Daily"
+
+msgid "Weekly"
+msgstr "Weekly"
+
+msgid "Monthly"
+msgstr "Monthly"
+
+msgid "Bi-monthly"
+msgstr "Bi-monthly"
+
+msgid "Yearly"
+msgstr "Yearly"
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr "Quarterly"
+
+msgid "Six-monthly"
+msgstr "Six-monthly"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr ""
+
+msgid "Weeks"
+msgstr ""
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr ""
+
+msgid "Bi-months"
+msgstr ""
+
+msgid "Quarters"
+msgstr ""
+
+msgid "Six months"
+msgstr ""
+
+msgid "Years"
+msgstr ""
+
+msgid "Other"
+msgstr "Other"
+
 msgid "Settings updated"
 msgstr ""
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
+msgstr ""
+
+msgid "This period type is always enabled and cannot be disabled"
+msgstr ""
+
+msgid "This field is required"
+msgstr ""
+
+msgid "This field should be a URL"
+msgstr ""
+
+msgid "This field should be a number"
+msgstr ""
+
+msgid "This field should be a positive number"
+msgstr ""
+
+msgid "This field should be an email"
+msgstr ""
+
+msgid "Please enter a number from {{min}} to {{max}}"
 msgstr ""
 
 msgid "General"
@@ -237,22 +383,10 @@ msgstr ""
 msgid "Scheduled jobs"
 msgstr ""
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
-msgstr ""
-
-msgid "This field is required"
-msgstr ""
-
-msgid "This field should be a URL"
-msgstr ""
-
-msgid "This field should be a number"
-msgstr ""
-
-msgid "This field should be a positive number"
-msgstr ""
-
-msgid "This field should be an email"
 msgstr ""
 
 msgid ""
@@ -265,10 +399,22 @@ msgstr ""
 msgid "No options"
 msgstr ""
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr ""
 
 msgid "Search results"
+msgstr ""
+
+msgid ""
+"This period type is currently disabled in the period type settings above"
 msgstr ""
 
 msgid "Maximum number of analytics records"
@@ -280,6 +426,11 @@ msgstr ""
 msgid "Maximum number of SQL view records"
 msgstr ""
 
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
+msgstr ""
+
 msgid "Infrastructural indicators"
 msgstr ""
 
@@ -289,29 +440,8 @@ msgstr ""
 msgid "Infrastructural period type"
 msgstr ""
 
-msgid "Daily"
-msgstr "Daily"
-
-msgid "Weekly"
-msgstr "Weekly"
-
-msgid "Monthly"
-msgstr "Monthly"
-
-msgid "Bi-monthly"
-msgstr "Bi-monthly"
-
-msgid "Quarterly"
-msgstr "Quarterly"
-
-msgid "Six-monthly"
-msgstr "Six-monthly"
-
 msgid "Six-monthly April"
 msgstr ""
-
-msgid "Yearly"
-msgstr "Yearly"
 
 msgid "Financial-April"
 msgstr ""
@@ -353,6 +483,30 @@ msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
 
 msgid "Include passive dashboard views in usage analytics statistics"
+msgstr ""
+
+msgid "Hide daily periods"
+msgstr ""
+
+msgid "Hidden period types in analytics apps"
+msgstr ""
+
+msgid "Hide weekly periods"
+msgstr ""
+
+msgid "Hide biweekly periods"
+msgstr ""
+
+msgid "Hide monthly periods"
+msgstr ""
+
+msgid "Hide bimonthly periods"
+msgstr ""
+
+msgid "Period types"
+msgstr ""
+
+msgid "Allowed period types"
 msgstr ""
 
 msgid "Default relative period for analysis"
@@ -448,35 +602,11 @@ msgstr ""
 msgid "Last 5 financial years"
 msgstr ""
 
-msgid "Hide daily periods"
-msgstr ""
-
-msgid "Hidden period types in analytics apps"
-msgstr ""
-
-msgid "Hide weekly periods"
-msgstr ""
-
-msgid "Hide biweekly periods"
-msgstr ""
-
-msgid "Hide monthly periods"
-msgstr ""
-
-msgid "Hide bimonthly periods"
-msgstr ""
-
 msgid "Financial year relative period start month"
 msgstr ""
 
-msgid "April"
-msgstr "April"
-
-msgid "July"
-msgstr "July"
-
-msgid "October"
-msgstr "October"
+msgid "Weekly relative period start day"
+msgstr ""
 
 msgid "Cache strategy"
 msgstr "Cache strategy"
@@ -604,6 +734,9 @@ msgstr ""
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr ""
 
@@ -619,8 +752,14 @@ msgstr ""
 msgid "Application right-side footer"
 msgstr ""
 
+msgid "Style (android)"
+msgstr ""
+
 msgid "Style"
 msgstr "Style"
+
+msgid "Theme color"
+msgstr ""
 
 msgid "Start page"
 msgstr ""
@@ -671,6 +810,12 @@ msgid "Custom"
 msgstr "Custom"
 
 msgid "Login page template"
+msgstr ""
+
+msgid "Enable Global Shell"
+msgstr ""
+
+msgid "Enable custom translations"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -728,6 +873,12 @@ msgid "Enable user account recovery"
 msgstr ""
 
 msgid "Lock user account temporarily after multiple failed login attempts"
+msgstr ""
+
+msgid "Enable embedded dashboards"
+msgstr ""
+
+msgid "Enforce verified emails"
 msgstr ""
 
 msgid "Allow users to grant own user roles"
@@ -856,4 +1007,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""
