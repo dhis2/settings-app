@@ -145,3 +145,49 @@
 .translateButton:focus {
     z-index: 1;
 }
+
+.nameEditor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacers-dp8);
+    min-height: 32px;
+}
+
+.nameInput {
+    width: 100%;
+}
+
+.replacedName {
+    color: var(--colors-grey600);
+}
+
+.nameAction {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 3px;
+    background: none;
+    color: var(--colors-grey600);
+    cursor: pointer;
+}
+
+.nameAction:hover,
+.nameAction:focus-visible {
+    background: var(--colors-grey200);
+    color: var(--colors-grey900);
+}
+
+/* Reset is the rarer action: only shown on row hover or keyboard focus. */
+.resetAction {
+    opacity: 0;
+}
+
+:global(tr):hover .resetAction,
+.resetAction:focus-visible {
+    opacity: 1;
+}

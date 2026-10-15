@@ -4,7 +4,9 @@
 
 .table {
     min-width: 0 !important;
-    width: max-content;
+    width: 46rem !important;
+    max-width: 100%;
+    table-layout: fixed;
 }
 
 .defaultRelative {
@@ -19,33 +21,29 @@
     white-space: nowrap;
 }
 
-.enabledHead,
 .enabledCell {
-    width: 1%;
-    white-space: nowrap;
+    width: 3rem;
 }
 
-.relativeHead,
+/* Long or renamed names wrap here rather than widening the table. */
+.nameCell {
+    white-space: normal !important;
+}
+
 .relativeCell {
-    min-width: 12.5rem;
+    width: 12.5rem;
     white-space: nowrap;
 }
 
-.relativeTag {
-    background-color: var(--colors-teal100) !important;
-    color: var(--colors-teal900) !important;
+.lockedSeed {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacers-dp4);
+    color: var(--colors-grey600);
 }
 
 .row:hover {
     background: var(--colors-grey100);
-}
-
-.row:hover .setCustomLabels,
-.row:has(:focus-visible) .setCustomLabels,
-.row:hover .useRelativeLink,
-.row:has(:focus-visible) .useRelativeLink {
-    opacity: 1;
-    pointer-events: auto;
 }
 
 .enabled {
@@ -56,48 +54,32 @@
     background: var(--colors-teal100);
 }
 
+/* Each section is boxed by its own border, with a gap between sections.
+   No rules between rows inside a section. */
+.table,
+.table :global(th),
+.table :global(td) {
+    border: none !important;
+}
+
+.row :global(td:first-child) {
+    border-left: 1px solid var(--colors-grey300) !important;
+}
+
+.row :global(td:last-child) {
+    border-right: 1px solid var(--colors-grey300) !important;
+}
+
+.sectionStart :global(td) {
+    border-top: 1px solid var(--colors-grey300) !important;
+}
+
 .sectionEnd :global(td) {
-    /* border-bottom-width: 2px !important; */
-    border-bottom-color: var(--colors-grey500) !important;
+    border-bottom: 1px solid var(--colors-grey300) !important;
 }
 
-.expanded :global(td) {
-    border-bottom-color: transparent !important;
-}
-
-.expandedPanelRow:hover {
+.table .sectionGap td {
+    height: 16px !important;
+    padding: 0 !important;
     background: var(--colors-white);
-}
-
-.expandedPanelRow.enabled:hover {
-    background: var(--colors-teal050);
-}
-
-.expandedPanelRow :global(td) {
-    white-space: normal;
-}
-
-.labelsCell {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.customLabelsLink {
-    display: inline-flex;
-    align-items: center;
-    gap: 2px;
-    background: none;
-    border: none;
-    padding: 0;
-    color: var(--colors-grey800);
-    text-decoration: underline;
-    cursor: pointer;
-    font: inherit;
-}
-
-.setCustomLabels,
-.useRelativeLink {
-    opacity: 0;
-    pointer-events: none;
 }

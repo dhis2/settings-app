@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-10-01T13:59:05.469Z\n"
-"PO-Revision-Date: 2026-10-01T13:59:05.469Z\n"
+"POT-Creation-Date: 2026-10-15T11:35:24.822Z\n"
+"PO-Revision-Date: 2026-10-15T11:35:24.822Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -176,18 +176,6 @@ msgstr "Name"
 msgid "Password"
 msgstr "Password"
 
-msgid "Period type"
-msgstr "Period type"
-
-msgid "Custom label"
-msgstr "Custom label"
-
-msgid "Relative periods"
-msgstr "Relative periods"
-
-msgid "Done"
-msgstr "Done"
-
 msgid ""
 "Rename the periods shown in analytics apps. Only enabled period types "
 "appear here."
@@ -200,6 +188,18 @@ msgstr "Translate"
 
 msgid "Period types"
 msgstr "Period types"
+
+msgid "Relative periods"
+msgstr "Relative periods"
+
+msgid "Rename"
+msgstr "Rename"
+
+msgid "Rename {{name}}"
+msgstr "Rename {{name}}"
+
+msgid "Reset to {{name}}"
+msgstr "Reset to {{name}}"
 
 msgid "Day"
 msgstr "Day"
@@ -366,23 +366,11 @@ msgstr "Settings updated"
 msgid "There was a problem updating settings. Changes have not been saved."
 msgstr "There was a problem updating settings. Changes have not been saved."
 
-msgid "Enabled?"
-msgstr "Enabled?"
-
-msgid "Period"
-msgstr "Period"
-
-msgid "Custom labels"
-msgstr "Custom labels"
-
 msgid "Relative period"
 msgstr "Relative period"
 
-msgid "Use for relative period"
-msgstr "Use for relative period"
-
-msgid "Set custom label"
-msgstr "Set custom label"
+msgid "Relative periods are always based on this period type"
+msgstr "Relative periods are always based on this period type"
 
 msgid "January"
 msgstr "January"
