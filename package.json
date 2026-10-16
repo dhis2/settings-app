@@ -29,10 +29,12 @@
         "@dhis2/ui": "^10.15.0",
         "d2": "^31.9.0",
         "d2-ui": "^29.0.35",
+        "dialkit": "^2.0.2",
         "history": "4.7.2",
         "loglevel": "^1.9.2",
         "material-design-icons-iconfont": "^6.1.0",
         "material-ui": "0.20.2",
+        "motion": "^14.3.0",
         "prop-types": "^15.7.2",
         "react-color": "^2.19.3",
         "rxjs": "5.5.7"

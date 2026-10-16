@@ -10,10 +10,17 @@ import {
     TableCell,
     TableRow,
     Radio,
+    SingleSelect,
+    SingleSelectField,
+    SingleSelectOption,
 } from '@dhis2/ui'
+import { DialRoot, useDialKit } from 'dialkit'
+import 'dialkit/styles.css' // eslint-disable-line import/no-unresolved
+import PropTypes from 'prop-types'
 import React, { Fragment, useState, useEffect } from 'react'
 import configOptionStore from '../configOptionStore.js'
 import DefaultRelativePeriod from '../period-labels/DefaultRelativePeriod.jsx'
+import { useLabelState } from '../period-labels/labelStore.js'
 import { PERIOD_FAMILIES } from '../period-labels/periodFamilies.js'
 import PeriodNameEditor from '../period-labels/PeriodNameEditor.jsx'
 import settingsActions from '../settingsActions.js'
@@ -89,6 +96,10 @@ const RELATIVE_SEED_GROUPS = [
     {
         id: 'weekly',
         settingKey: 'analyticsWeeklyStart',
+        title: i18n.t('Weeks'),
+        tagLabel: i18n.t('Relative weeks'),
+        useLabel: i18n.t('Use for relative weeks'),
+        selectLabel: i18n.t('Relative weeks based on'),
         periodTypeToValue: {
             Weekly: 'WEEKLY',
             WeeklyWednesday: 'WEEKLY_WEDNESDAY',
@@ -101,6 +112,10 @@ const RELATIVE_SEED_GROUPS = [
     {
         id: 'financialYear',
         settingKey: 'analyticsFinancialYearStart',
+        title: i18n.t('Financial years'),
+        tagLabel: i18n.t('Relative financial years'),
+        useLabel: i18n.t('Use for relative financial years'),
+        selectLabel: i18n.t('Relative financial years based on'),
         periodTypeToValue: {
             FinancialFeb: 'FINANCIAL_YEAR_FEBRUARY',
             FinancialApril: 'FINANCIAL_YEAR_APRIL',
@@ -156,7 +171,66 @@ const useStoreState = (store) => {
     return state
 }
 
+// Prototype: the ways to choose which week and financial year types relative
+// periods are based on, switched from the DialKit panel.
+const VARIANTS = {
+    radios: 'radios',
+    groupHeader: 'groupHeader',
+    rowBadge: 'rowBadge',
+    section: 'section',
+}
+
+const SeedSelect = ({ group, options, settings, field, label }) => {
+    const Select = field ? SingleSelectField : SingleSelect
+    const selected = settings?.[group.settingKey]
+    return (
+        <Select
+            dense
+            label={field ? label : undefined}
+            selected={options.some((o) => o.value === selected) ? selected : ''}
+            onChange={({ selected: next }) =>
+                settingsActions.saveKey(group.settingKey, next)
+            }
+        >
+            {options.map((option) => (
+                <SingleSelectOption
+                    key={option.value}
+                    value={option.value}
+                    label={option.label}
+                />
+            ))}
+        </Select>
+    )
+}
+
+SeedSelect.propTypes = {
+    group: PropTypes.shape({ settingKey: PropTypes.string }).isRequired,
+    options: PropTypes.arrayOf(
+        PropTypes.shape({ label: PropTypes.string, value: PropTypes.string })
+    ).isRequired,
+    field: PropTypes.bool,
+    label: PropTypes.string,
+    settings: PropTypes.object,
+}
+
 const PeriodTypes = () => {
+    const { variant } = useDialKit(
+        'Relative periods',
+        {
+            variant: {
+                type: 'select',
+                options: [
+                    { value: VARIANTS.radios, label: 'Current: radios' },
+                    { value: VARIANTS.groupHeader, label: 'A: group header' },
+                    { value: VARIANTS.rowBadge, label: 'B: row badge' },
+                    { value: VARIANTS.section, label: 'C: own section' },
+                ],
+                default: VARIANTS.groupHeader,
+            },
+        },
+        { persist: true }
+    )
+    const labels = useLabelState()
     const { loading, data } = useDataQuery(query)
     const [allowedPeriodTypes, setAllowedPeriodTypes] = useState([])
     const { baseUrl, apiVersion } = useConfig()
@@ -266,9 +340,36 @@ const PeriodTypes = () => {
         )
     )
     const allowedSet = new Set(namesFromList(allowedPeriodTypes))
+    const builtInNameOf = (periodType) =>
+        formatPeriodDisplayName(periodType.displayName, periodType.name)
+    // Enabled types each seed group can be based on, in table order.
+    const seedOptionsByGroup = RELATIVE_SEED_GROUPS.reduce((acc, group) => {
+        acc[group.id] = allPeriodTypes
+            .filter(
+                (pt) =>
+                    group.periodTypeToValue[pt.name] && allowedSet.has(pt.name)
+            )
+            .map((pt) => ({
+                value: group.periodTypeToValue[pt.name],
+                // Show a renamed type by its new name.
+                label:
+                    labels.periodTypes[pt.name]?.default?.trim() ||
+                    builtInNameOf(pt),
+            }))
+        return acc
+    }, {})
+    const showRelativeColumn =
+        variant === VARIANTS.radios || variant === VARIANTS.rowBadge
+    const tableClassName = [
+        styles.table,
+        showRelativeColumn ? '' : styles.noRelativeColumn,
+    ]
+        .filter(Boolean)
+        .join(' ')
+
     return (
         <div className={styles.wrapper}>
-            <Table className={styles.table} suppressZebraStriping>
+            <Table className={tableClassName} suppressZebraStriping>
                 <TableBody>
                     {allPeriodTypes.map((periodType, index) => {
                         const isEnabled = allowedSet.has(periodType.name)
@@ -283,10 +384,14 @@ const PeriodTypes = () => {
                         const isFixedSeed = FIXED_RELATIVE_SEEDS.has(
                             periodType.name
                         )
-                        const builtInName = formatPeriodDisplayName(
-                            periodType.displayName,
-                            periodType.name
-                        )
+                        const isChosenSeed =
+                            Boolean(seedGroup) &&
+                            settings?.[seedGroup.settingKey] === seedValue
+                        // The period type relative periods are based on gets
+                        // them in its rename modal.
+                        const isRelativeSeed =
+                            isEnabled && (isFixedSeed || isChosenSeed)
+                        const builtInName = builtInNameOf(periodType)
                         const prevPeriodType = allPeriodTypes[index - 1]
                         const nextPeriodType = allPeriodTypes[index + 1]
                         const sectionId = (pt) =>
@@ -297,10 +402,16 @@ const PeriodTypes = () => {
                         const isSectionEnd =
                             nextPeriodType &&
                             sectionId(periodType) !== sectionId(nextPeriodType)
+                        const showGroupHeader =
+                            variant === VARIANTS.groupHeader &&
+                            isSectionStart &&
+                            Boolean(seedGroup)
                         const rowClassName = [
                             styles.row,
                             isEnabled ? styles.enabled : '',
-                            isSectionStart ? styles.sectionStart : '',
+                            isSectionStart && !showGroupHeader
+                                ? styles.sectionStart
+                                : '',
                             isSectionEnd || !nextPeriodType
                                 ? styles.sectionEnd
                                 : '',
@@ -310,6 +421,51 @@ const PeriodTypes = () => {
 
                         return (
                             <Fragment key={periodType.name}>
+                                {showGroupHeader && (
+                                    <TableRow
+                                        className={[
+                                            styles.row,
+                                            styles.sectionStart,
+                                            styles.groupHeader,
+                                        ].join(' ')}
+                                    >
+                                        <TableCell colSpan="3">
+                                            <div
+                                                className={
+                                                    styles.groupHeaderContent
+                                                }
+                                            >
+                                                <span
+                                                    className={
+                                                        styles.groupHeaderTitle
+                                                    }
+                                                >
+                                                    {seedGroup.title}
+                                                </span>
+                                                {seedOptionsByGroup[
+                                                    seedGroup.id
+                                                ].length > 0 && (
+                                                    <span
+                                                        className={
+                                                            styles.groupHeaderSelect
+                                                        }
+                                                    >
+                                                        {seedGroup.selectLabel}
+                                                        <SeedSelect
+                                                            group={seedGroup}
+                                                            options={
+                                                                seedOptionsByGroup[
+                                                                    seedGroup.id
+                                                                ]
+                                                            }
+                                                            settings={settings}
+                                                        />
+                                                    </span>
+                                                )}
+                                            </div>
+                                        </TableCell>
+                                    </TableRow>
+                                )}
                                 <TableRow className={rowClassName}>
                                     <TableCell className={styles.enabledCell}>
                                         <Checkbox
@@ -324,54 +480,100 @@ const PeriodTypes = () => {
                                             }
                                         />
                                     </TableCell>
-                                    <TableCell className={styles.nameCell}>
+                                    <TableCell
+                                        className={styles.nameCell}
+                                        colSpan={
+                                            showRelativeColumn ? undefined : '2'
+                                        }
+                                    >
                                         <PeriodNameEditor
                                             periodTypeName={periodType.name}
                                             builtInName={builtInName}
                                             editable={isEnabled}
+                                            relativePeriods={
+                                                isRelativeSeed
+                                                    ? familyByPeriodType[
+                                                          periodType.name
+                                                      ]?.relativePeriods
+                                                    : undefined
+                                            }
                                         />
                                     </TableCell>
-                                    <TableCell className={styles.relativeCell}>
-                                        {isEnabled && seedGroup && (
-                                            <Radio
-                                                dense
-                                                name={seedGroup.settingKey}
-                                                value={seedValue}
-                                                label={i18n.t(
-                                                    'Relative period'
-                                                )}
-                                                checked={
-                                                    settings?.[
-                                                        seedGroup.settingKey
-                                                    ] === seedValue
-                                                }
-                                                onChange={() =>
-                                                    settingsActions.saveKey(
-                                                        seedGroup.settingKey,
-                                                        seedValue
-                                                    )
-                                                }
-                                            />
-                                        )}
-                                        {isEnabled && isFixedSeed && (
-                                            <span
-                                                className={styles.lockedSeed}
-                                                title={i18n.t(
-                                                    'Relative periods are always based on this period type'
-                                                )}
-                                            >
+                                    {variant === VARIANTS.radios && (
+                                        <TableCell
+                                            className={styles.relativeCell}
+                                        >
+                                            {isEnabled && seedGroup && (
                                                 <Radio
                                                     dense
-                                                    checked
-                                                    disabled
+                                                    name={seedGroup.settingKey}
+                                                    value={seedValue}
                                                     label={i18n.t(
                                                         'Relative period'
                                                     )}
+                                                    checked={isChosenSeed}
+                                                    onChange={() =>
+                                                        settingsActions.saveKey(
+                                                            seedGroup.settingKey,
+                                                            seedValue
+                                                        )
+                                                    }
                                                 />
-                                                <IconLock16 />
-                                            </span>
-                                        )}
-                                    </TableCell>
+                                            )}
+                                            {isEnabled && isFixedSeed && (
+                                                <span
+                                                    className={
+                                                        styles.lockedSeed
+                                                    }
+                                                    title={i18n.t(
+                                                        'Relative periods are always based on this period type'
+                                                    )}
+                                                >
+                                                    <Radio
+                                                        dense
+                                                        checked
+                                                        disabled
+                                                        label={i18n.t(
+                                                            'Relative period'
+                                                        )}
+                                                    />
+                                                    <IconLock16 />
+                                                </span>
+                                            )}
+                                        </TableCell>
+                                    )}
+                                    {variant === VARIANTS.rowBadge && (
+                                        <TableCell
+                                            className={`${styles.relativeCell} ${styles.badgeCell}`}
+                                        >
+                                            {isEnabled &&
+                                                seedGroup &&
+                                                (isChosenSeed ? (
+                                                    <span
+                                                        className={
+                                                            styles.seedTag
+                                                        }
+                                                    >
+                                                        {seedGroup.tagLabel}
+                                                    </span>
+                                                ) : (
+                                                    <button
+                                                        type="button"
+                                                        className={
+                                                            styles.useAction
+                                                        }
+                                                        onClick={() =>
+                                                            settingsActions.saveKey(
+                                                                seedGroup.settingKey,
+                                                                seedValue
+                                                            )
+                                                        }
+                                                    >
+                                                        {seedGroup.useLabel}
+                                                    </button>
+                                                ))}
+                                        </TableCell>
+                                    )}
                                 </TableRow>
                                 {isSectionEnd && (
                                     <tr
@@ -386,9 +588,39 @@ const PeriodTypes = () => {
                     })}
                 </TableBody>
             </Table>
+            {variant === VARIANTS.section && (
+                <div className={styles.relativeSection}>
+                    <h3 className={styles.relativeSectionTitle}>
+                        {i18n.t('Relative periods')}
+                    </h3>
+                    {RELATIVE_SEED_GROUPS.filter(
+                        (group) => seedOptionsByGroup[group.id].length > 0
+                    ).map((group) => (
+                        <div
+                            key={group.id}
+                            className={styles.relativeSectionField}
+                        >
+                            <SeedSelect
+                                field
+                                group={group}
+                                label={group.selectLabel}
+                                options={seedOptionsByGroup[group.id]}
+                                settings={settings}
+                            />
+                        </div>
+                    ))}
+                    <p className={styles.relativeSectionHelp}>
+                        {i18n.t(
+                            'Only enabled period types are listed. Other period types have a single variant, so their relative periods always follow it.'
+                        )}
+                    </p>
+                </div>
+            )}
             <div className={styles.defaultRelative}>
                 <DefaultRelativePeriod />
             </div>
+            {/* Prototype: shown in built previews so others can switch variants. */}
+            <DialRoot position="bottom-right" productionEnabled />
         </div>
     )
 }

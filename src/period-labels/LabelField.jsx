@@ -15,6 +15,7 @@ export const LabelEditor = ({ name, value, onChange }) => {
                     <Input
                         dense
                         value={value}
+                        placeholder={name}
                         onChange={({ value: next }) => onChange(next || '')}
                     />
                 </div>

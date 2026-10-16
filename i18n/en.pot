@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-10-15T11:35:24.822Z\n"
-"PO-Revision-Date: 2026-10-15T11:35:24.822Z\n"
+"POT-Creation-Date: 2026-10-16T12:53:35.444Z\n"
+"PO-Revision-Date: 2026-10-16T12:53:35.444Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -201,6 +201,9 @@ msgstr "Rename {{name}}"
 msgid "Reset to {{name}}"
 msgstr "Reset to {{name}}"
 
+msgid "Relative periods based on {{name}}"
+msgstr "Relative periods based on {{name}}"
+
 msgid "Day"
 msgstr "Day"
 
@@ -360,6 +363,30 @@ msgstr "Last 5 years"
 msgid "Last 10 years"
 msgstr "Last 10 years"
 
+msgid "Weeks"
+msgstr "Weeks"
+
+msgid "Relative weeks"
+msgstr "Relative weeks"
+
+msgid "Use for relative weeks"
+msgstr "Use for relative weeks"
+
+msgid "Relative weeks based on"
+msgstr "Relative weeks based on"
+
+msgid "Financial years"
+msgstr "Financial years"
+
+msgid "Relative financial years"
+msgstr "Relative financial years"
+
+msgid "Use for relative financial years"
+msgstr "Use for relative financial years"
+
+msgid "Relative financial years based on"
+msgstr "Relative financial years based on"
+
 msgid "Settings updated"
 msgstr "Settings updated"
 
@@ -371,6 +398,13 @@ msgstr "Relative period"
 
 msgid "Relative periods are always based on this period type"
 msgstr "Relative periods are always based on this period type"
+
+msgid ""
+"Only enabled period types are listed. Other period types have a single "
+"variant, so their relative periods always follow it."
+msgstr ""
+"Only enabled period types are listed. Other period types have a single "
+"variant, so their relative periods always follow it."
 
 msgid "January"
 msgstr "January"

@@ -151,11 +151,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: var(--spacers-dp8);
-    min-height: 32px;
-}
-
-.nameInput {
-    width: 100%;
+    min-height: 28px;
 }
 
 .replacedName {
@@ -190,4 +186,24 @@
 :global(tr):hover .resetAction,
 .resetAction:focus-visible {
     opacity: 1;
+}
+
+/* Rename modal: built-in names on the left, inputs on the right. The
+   relative periods heading spans both columns. */
+.renameGrid {
+    display: grid;
+    grid-template-columns: max-content minmax(16rem, 1fr);
+    align-items: center;
+    column-gap: var(--spacers-dp16);
+    row-gap: var(--spacers-dp8);
+}
+
+.renameLabel {
+    font-size: 14px;
+    color: var(--colors-grey900);
+}
+
+.renameSection {
+    grid-column: 1 / -1;
+    margin: var(--spacers-dp12) 0 0;
 }

@@ -15,8 +15,9 @@
 
 .table :global(th),
 .table :global(td) {
-    padding-top: 4px !important;
-    padding-bottom: 4px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    font-size: 13px !important;
     height: auto !important;
     white-space: nowrap;
 }
@@ -79,7 +80,104 @@
 }
 
 .table .sectionGap td {
-    height: 16px !important;
+    height: 12px !important;
     padding: 0 !important;
     background: var(--colors-white);
+}
+
+/* Radio labels follow the table's smaller text. */
+.table :global(label) {
+    font-size: 13px !important;
+}
+
+/* Prototype variants for choosing the relative period base. */
+.noRelativeColumn .relativeCell {
+    display: none;
+}
+
+/* A: the choice sits on the family's header row. */
+.table .groupHeader,
+.table .groupHeader:hover {
+    background: var(--colors-grey050);
+}
+
+.groupHeaderTitle {
+    font-weight: 500;
+    color: var(--colors-grey800);
+}
+
+.groupHeaderContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacers-dp12);
+}
+
+.groupHeaderSelect {
+    display: flex;
+    align-items: center;
+    gap: var(--spacers-dp8);
+    color: var(--colors-grey700);
+}
+
+.groupHeaderSelect > :global(div) {
+    width: 14rem;
+}
+
+/* B: tag on the chosen row, an action on hover of the others. */
+.table .badgeCell {
+    text-align: right;
+}
+
+.seedTag {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 3px;
+    border: 1px solid var(--colors-teal200);
+    color: var(--colors-teal800);
+    font-size: 12px;
+}
+
+.useAction {
+    visibility: hidden;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--colors-grey700);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.useAction:hover {
+    color: var(--colors-grey900);
+    text-decoration: underline;
+}
+
+.row:hover .useAction,
+.useAction:focus-visible {
+    visibility: visible;
+}
+
+/* C: the choice in its own section below the table. */
+.relativeSection {
+    margin-top: var(--spacers-dp24);
+    max-width: 46rem;
+}
+
+.relativeSectionTitle {
+    margin: 0 0 var(--spacers-dp8);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--colors-grey900);
+}
+
+.relativeSectionField {
+    max-width: 28rem;
+    margin-bottom: var(--spacers-dp12);
+}
+
+.relativeSectionHelp {
+    margin: 0;
+    font-size: 13px;
+    color: var(--colors-grey700);
 }
