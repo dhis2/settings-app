@@ -1,0 +1,112 @@
+.families {
+    width: 46rem;
+    max-width: 100%;
+    border: 1px solid var(--colors-grey300);
+    border-radius: 3px;
+}
+
+.family {
+    padding: var(--spacers-dp8) var(--spacers-dp12);
+    border-top: 1px solid var(--colors-grey300);
+    font-size: 13px;
+}
+
+.family:first-child {
+    border-top: none;
+}
+
+.familyHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--spacers-dp8);
+    min-height: 24px;
+}
+
+.familyName {
+    font-weight: 500;
+    color: var(--colors-grey900);
+}
+
+.off .familyName {
+    font-weight: 400;
+    color: var(--colors-grey700);
+}
+
+.alias {
+    margin-left: 4px;
+    font-weight: 400;
+    color: var(--colors-grey700);
+}
+
+/* Lines the lock up with the switches above and below it. */
+.lock {
+    display: inline-flex;
+    justify-content: center;
+    width: 32px;
+    color: var(--colors-grey600);
+}
+
+.always {
+    margin-left: auto;
+    color: var(--colors-grey600);
+    font-size: 12px;
+}
+
+/* Indented to start under the family name, past the switch. */
+.familyBody {
+    margin: var(--spacers-dp4) 0 var(--spacers-dp4) 40px;
+}
+
+.legend {
+    margin-bottom: var(--spacers-dp4);
+    color: var(--colors-grey700);
+    font-size: 12px;
+}
+
+.variants {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacers-dp4) var(--spacers-dp16);
+}
+
+.variant {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.variant :global(label) {
+    font-size: 13px !important;
+}
+
+.renameButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 3px;
+    background: none;
+    color: var(--colors-grey600);
+    cursor: pointer;
+}
+
+.renameButton:hover,
+.renameButton:focus-visible {
+    background: var(--colors-grey200);
+    color: var(--colors-grey900);
+}
+
+.relative {
+    display: flex;
+    align-items: center;
+    gap: var(--spacers-dp8);
+    margin-top: var(--spacers-dp8);
+    color: var(--colors-grey700);
+}
+
+.relative > :global(div) {
+    width: 14rem;
+}

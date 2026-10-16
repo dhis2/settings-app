@@ -10,13 +10,9 @@ import {
     TableCell,
     TableRow,
     Radio,
-    SingleSelect,
-    SingleSelectField,
-    SingleSelectOption,
 } from '@dhis2/ui'
 import { DialRoot, useDialKit } from 'dialkit'
 import 'dialkit/styles.css' // eslint-disable-line import/no-unresolved
-import PropTypes from 'prop-types'
 import React, { Fragment, useState, useEffect } from 'react'
 import configOptionStore from '../configOptionStore.js'
 import DefaultRelativePeriod from '../period-labels/DefaultRelativePeriod.jsx'
@@ -26,7 +22,9 @@ import PeriodNameEditor from '../period-labels/PeriodNameEditor.jsx'
 import settingsActions from '../settingsActions.js'
 import settingsStore from '../settingsStore.js'
 import { formatPeriodDisplayName } from './builtInPeriodNames.js'
+import PeriodFamilies from './PeriodFamilies.jsx'
 import styles from './PeriodTypes.module.css'
+import SeedSelect from './SeedSelect.jsx'
 
 const query = {
     periodTypes: {
@@ -179,39 +177,7 @@ const VARIANTS = {
     rowBadge: 'rowBadge',
     section: 'section',
     column: 'column',
-}
-
-const SeedSelect = ({ group, options, settings, field, label }) => {
-    const Select = field ? SingleSelectField : SingleSelect
-    const selected = settings?.[group.settingKey]
-    return (
-        <Select
-            dense
-            label={field ? label : undefined}
-            selected={options.some((o) => o.value === selected) ? selected : ''}
-            onChange={({ selected: next }) =>
-                settingsActions.saveKey(group.settingKey, next)
-            }
-        >
-            {options.map((option) => (
-                <SingleSelectOption
-                    key={option.value}
-                    value={option.value}
-                    label={option.label}
-                />
-            ))}
-        </Select>
-    )
-}
-
-SeedSelect.propTypes = {
-    group: PropTypes.shape({ settingKey: PropTypes.string }).isRequired,
-    options: PropTypes.arrayOf(
-        PropTypes.shape({ label: PropTypes.string, value: PropTypes.string })
-    ).isRequired,
-    field: PropTypes.bool,
-    label: PropTypes.string,
-    settings: PropTypes.object,
+    families: 'families',
 }
 
 const PeriodTypes = () => {
@@ -226,6 +192,7 @@ const PeriodTypes = () => {
                     { value: VARIANTS.rowBadge, label: 'B: row badge' },
                     { value: VARIANTS.section, label: 'C: own section' },
                     { value: VARIANTS.column, label: 'D: column' },
+                    { value: VARIANTS.families, label: 'E: family switches' },
                 ],
                 default: VARIANTS.groupHeader,
             },
@@ -279,10 +246,7 @@ const PeriodTypes = () => {
         })
     }, [allowedPeriodTypes, settings])
 
-    const handlePeriodTypeToggle = async (
-        periodTypeName,
-        isCurrentlyEnabled
-    ) => {
+    const handlePeriodTypeToggle = (periodTypeName, isCurrentlyEnabled) => {
         const currentAllowedSet = new Set(namesFromList(allowedPeriodTypes))
 
         if (isCurrentlyEnabled) {
@@ -291,11 +255,13 @@ const PeriodTypes = () => {
             currentAllowedSet.add(periodTypeName)
         }
 
-        const updatedPeriodTypes = Array.from(currentAllowedSet).map(
-            (name) => ({
-                name,
-            })
-        )
+        return savePeriodTypes(currentAllowedSet)
+    }
+
+    const savePeriodTypes = async (nextAllowedSet) => {
+        const updatedPeriodTypes = Array.from(nextAllowedSet).map((name) => ({
+            name,
+        }))
 
         setUpdating(true)
         try {
@@ -376,6 +342,46 @@ const PeriodTypes = () => {
     ]
         .filter(Boolean)
         .join(' ')
+
+    // The period type relative periods are based on gets them in its rename
+    // modal.
+    const relativePeriodsFor = (name) => {
+        const seedGroup = relativeSeedByPeriodType[name]
+        const isSeed =
+            FIXED_RELATIVE_SEEDS.has(name) ||
+            (Boolean(seedGroup) &&
+                settings?.[seedGroup.settingKey] ===
+                    seedGroup.periodTypeToValue[name])
+        return allowedSet.has(name) && isSeed
+            ? familyByPeriodType[name]?.relativePeriods
+            : undefined
+    }
+
+    if (variant === VARIANTS.families) {
+        return (
+            <div className={styles.wrapper}>
+                <PeriodFamilies
+                    periodTypes={allPeriodTypes.map((pt) => ({
+                        ...pt,
+                        builtInName: builtInNameOf(pt),
+                    }))}
+                    allowedSet={allowedSet}
+                    mandatoryPeriodTypes={mandatoryPeriodTypes}
+                    seedGroups={RELATIVE_SEED_GROUPS}
+                    settings={settings}
+                    labels={labels}
+                    updating={updating}
+                    relativePeriodsFor={relativePeriodsFor}
+                    onSave={savePeriodTypes}
+                />
+                <div className={styles.defaultRelative}>
+                    <DefaultRelativePeriod />
+                </div>
+                {/* Prototype: shown in built previews so others can switch variants. */}
+                <DialRoot position="bottom-right" productionEnabled />
+            </div>
+        )
+    }
 
     return (
         <div className={styles.wrapper}>

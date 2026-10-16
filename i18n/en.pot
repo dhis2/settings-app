@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-10-16T14:22:31.195Z\n"
-"PO-Revision-Date: 2026-10-16T14:22:31.196Z\n"
+"POT-Creation-Date: 2026-10-16T14:44:16.148Z\n"
+"PO-Revision-Date: 2026-10-16T14:44:16.148Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -363,6 +363,57 @@ msgstr "Last 5 years"
 msgid "Last 10 years"
 msgstr "Last 10 years"
 
+msgid "Monday"
+msgstr "Monday"
+
+msgid "Wednesday"
+msgstr "Wednesday"
+
+msgid "Thursday"
+msgstr "Thursday"
+
+msgid "Friday"
+msgstr "Friday"
+
+msgid "Saturday"
+msgstr "Saturday"
+
+msgid "Sunday"
+msgstr "Sunday"
+
+msgid "January"
+msgstr "January"
+
+msgid "November"
+msgstr "November"
+
+msgid "April"
+msgstr "April"
+
+msgid "February"
+msgstr "February"
+
+msgid "July"
+msgstr "July"
+
+msgid "August"
+msgstr "August"
+
+msgid "September"
+msgstr "September"
+
+msgid "October"
+msgstr "October"
+
+msgid "Always available"
+msgstr "Always available"
+
+msgid "Start day"
+msgstr "Start day"
+
+msgid "Start month"
+msgstr "Start month"
+
 msgid "Weeks"
 msgstr "Weeks"
 
@@ -418,17 +469,8 @@ msgstr ""
 "Only enabled period types are listed. Other period types have a single "
 "variant, so their relative periods always follow it."
 
-msgid "January"
-msgstr "January"
-
-msgid "February"
-msgstr "February"
-
 msgid "March"
 msgstr "March"
-
-msgid "April"
-msgstr "April"
 
 msgid "May"
 msgstr "May"
@@ -436,44 +478,11 @@ msgstr "May"
 msgid "June"
 msgstr "June"
 
-msgid "July"
-msgstr "July"
-
-msgid "August"
-msgstr "August"
-
-msgid "September"
-msgstr "September"
-
-msgid "October"
-msgstr "October"
-
-msgid "November"
-msgstr "November"
-
 msgid "December"
 msgstr "December"
 
-msgid "Monday"
-msgstr "Monday"
-
 msgid "Tuesday"
 msgstr "Tuesday"
-
-msgid "Wednesday"
-msgstr "Wednesday"
-
-msgid "Thursday"
-msgstr "Thursday"
-
-msgid "Friday"
-msgstr "Friday"
-
-msgid "Saturday"
-msgstr "Saturday"
-
-msgid "Sunday"
-msgstr "Sunday"
 
 msgid "This field is required"
 msgstr "This field is required"
