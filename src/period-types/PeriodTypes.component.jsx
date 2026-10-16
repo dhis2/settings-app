@@ -178,6 +178,7 @@ const VARIANTS = {
     groupHeader: 'groupHeader',
     rowBadge: 'rowBadge',
     section: 'section',
+    column: 'column',
 }
 
 const SeedSelect = ({ group, options, settings, field, label }) => {
@@ -214,7 +215,7 @@ SeedSelect.propTypes = {
 }
 
 const PeriodTypes = () => {
-    const { variant } = useDialKit(
+    const { variant, singleVariantRows } = useDialKit(
         'Relative periods',
         {
             variant: {
@@ -224,8 +225,15 @@ const PeriodTypes = () => {
                     { value: VARIANTS.groupHeader, label: 'A: group header' },
                     { value: VARIANTS.rowBadge, label: 'B: row badge' },
                     { value: VARIANTS.section, label: 'C: own section' },
+                    { value: VARIANTS.column, label: 'D: column' },
                 ],
                 default: VARIANTS.groupHeader,
+            },
+            // D only: what single-variant rows show in the column.
+            singleVariantRows: {
+                type: 'select',
+                options: ['Included', 'Blank'],
+                default: 'Included',
             },
         },
         { persist: true }
@@ -359,7 +367,9 @@ const PeriodTypes = () => {
         return acc
     }, {})
     const showRelativeColumn =
-        variant === VARIANTS.radios || variant === VARIANTS.rowBadge
+        variant === VARIANTS.radios ||
+        variant === VARIANTS.rowBadge ||
+        variant === VARIANTS.column
     const tableClassName = [
         styles.table,
         showRelativeColumn ? '' : styles.noRelativeColumn,
@@ -370,6 +380,17 @@ const PeriodTypes = () => {
     return (
         <div className={styles.wrapper}>
             <Table className={tableClassName} suppressZebraStriping>
+                {variant === VARIANTS.column && (
+                    <thead>
+                        <tr className={styles.columnHeader}>
+                            <th className={styles.enabledCell} />
+                            <th>{i18n.t('Period type')}</th>
+                            <th className={styles.relativeCell}>
+                                {i18n.t('Relative periods')}
+                            </th>
+                        </tr>
+                    </thead>
+                )}
                 <TableBody>
                     {allPeriodTypes.map((periodType, index) => {
                         const isEnabled = allowedSet.has(periodType.name)
@@ -570,6 +591,50 @@ const PeriodTypes = () => {
                                                         }
                                                     >
                                                         {seedGroup.useLabel}
+                                                    </button>
+                                                ))}
+                                        </TableCell>
+                                    )}
+                                    {variant === VARIANTS.column && (
+                                        <TableCell
+                                            className={styles.relativeCell}
+                                        >
+                                            {isEnabled &&
+                                                isFixedSeed &&
+                                                singleVariantRows ===
+                                                    'Included' && (
+                                                    <span
+                                                        className={
+                                                            styles.includedText
+                                                        }
+                                                    >
+                                                        {i18n.t('Included')}
+                                                    </span>
+                                                )}
+                                            {isEnabled &&
+                                                seedGroup &&
+                                                (isChosenSeed ? (
+                                                    <span
+                                                        className={
+                                                            styles.seedTag
+                                                        }
+                                                    >
+                                                        {i18n.t('In use')}
+                                                    </span>
+                                                ) : (
+                                                    <button
+                                                        type="button"
+                                                        className={
+                                                            styles.useAction
+                                                        }
+                                                        onClick={() =>
+                                                            settingsActions.saveKey(
+                                                                seedGroup.settingKey,
+                                                                seedValue
+                                                            )
+                                                        }
+                                                    >
+                                                        {i18n.t('Use instead')}
                                                     </button>
                                                 ))}
                                         </TableCell>

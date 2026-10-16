@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-10-16T12:53:35.444Z\n"
-"PO-Revision-Date: 2026-10-16T12:53:35.444Z\n"
+"POT-Creation-Date: 2026-10-16T14:22:31.195Z\n"
+"PO-Revision-Date: 2026-10-16T14:22:31.196Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -393,11 +393,23 @@ msgstr "Settings updated"
 msgid "There was a problem updating settings. Changes have not been saved."
 msgstr "There was a problem updating settings. Changes have not been saved."
 
+msgid "Period type"
+msgstr "Period type"
+
 msgid "Relative period"
 msgstr "Relative period"
 
 msgid "Relative periods are always based on this period type"
 msgstr "Relative periods are always based on this period type"
+
+msgid "Included"
+msgstr "Included"
+
+msgid "In use"
+msgstr "In use"
+
+msgid "Use instead"
+msgstr "Use instead"
 
 msgid ""
 "Only enabled period types are listed. Other period types have a single "

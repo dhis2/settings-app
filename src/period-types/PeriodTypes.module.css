@@ -181,3 +181,21 @@
     font-size: 13px;
     color: var(--colors-grey700);
 }
+
+/* D: a "Relative periods" column; the header carries the wording. */
+.table .columnHeader th {
+    padding: 0 0 var(--spacers-dp4) !important;
+    font-size: 13px !important;
+    font-weight: 500;
+    text-align: left;
+    color: var(--colors-grey700);
+    background: var(--colors-white);
+}
+
+.table .columnHeader th:not(:first-child) {
+    padding-left: 12px !important;
+}
+
+.includedText {
+    color: var(--colors-grey600);
+}
