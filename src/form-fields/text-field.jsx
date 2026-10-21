@@ -1,18 +1,16 @@
-import TextField from 'material-ui/TextField'
+import { InputField, TextAreaField } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const helpTextStyle = {
-    fontSize: '12px',
-    color: 'rgba(0, 0, 0, 0.3)',
-    margin: '-4px 0 0',
-}
-
 class TextFieldComponent extends React.Component {
     static propTypes = {
+        errorText: PropTypes.string,
+        floatingLabelText: PropTypes.node,
         helpText: PropTypes.node,
+        hintText: PropTypes.string,
         multiLine: PropTypes.bool,
         value: PropTypes.string,
+        onBlur: PropTypes.func,
         onChange: PropTypes.func,
     }
 
@@ -24,8 +22,8 @@ class TextFieldComponent extends React.Component {
 
     constructor(props) {
         super(props)
-
         this.onChange = this.onChange.bind(this)
+        this.onBlur = this.onBlur.bind(this)
     }
 
     state = {
@@ -36,32 +34,61 @@ class TextFieldComponent extends React.Component {
         this.setState({ value: props.value })
     }
 
-    onChange(e) {
-        this.setState({ value: e.target.value })
+    onChange({ value }) {
+        this.setState({ value })
         if (this.props.onChange) {
-            this.props.onChange(e)
+            this.props.onChange({ target: { value } })
+        }
+    }
+
+    onBlur({ value }) {
+        if (this.props.onBlur) {
+            this.props.onBlur({ target: { value } })
         }
     }
 
     render() {
         /* eslint-disable no-unused-vars, react/prop-types */
-        const { changeEvent, isRequired, defaultValue, helpText, ...other } =
-            this.props
+        const {
+            changeEvent,
+            isRequired,
+            defaultValue,
+            helpText,
+            hintText,
+            floatingLabelText,
+            multiLine,
+            rowsMax,
+            errorText,
+            errorStyle,
+            value,
+            onChange,
+            onBlur,
+            style,
+            type,
+            min,
+            max,
+            ...other
+        } = this.props
         /* eslint-enable no-unused-vars, react/prop-types */
-        const errorStyle = {
-            lineHeight: this.props.multiLine ? '48px' : '12px',
-            marginTop: this.props.multiLine ? -16 : 0,
-        }
+
+        const Field = multiLine ? TextAreaField : InputField
 
         return (
-            <div>
-                <TextField
-                    errorStyle={errorStyle}
-                    {...other}
+            <div style={style}>
+                <Field
+                    label={floatingLabelText}
+                    placeholder={hintText}
+                    helpText={helpText || undefined}
+                    error={!!errorText}
+                    validationText={errorText || undefined}
+                    type={multiLine ? undefined : type}
+                    min={min}
+                    max={max}
                     value={this.state.value}
                     onChange={this.onChange}
+                    onBlur={this.onBlur}
+                    {...other}
                 />
-                {helpText && <p style={helpTextStyle}>{helpText}</p>}
             </div>
         )
     }

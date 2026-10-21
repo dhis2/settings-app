@@ -5,9 +5,9 @@ import {
     ModalContent,
     ModalActions,
     ModalTitle,
+    SingleSelectField,
+    SingleSelectOption,
 } from '@dhis2/ui'
-import MenuItem from 'material-ui/MenuItem'
-import SelectField from 'material-ui/SelectField'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -20,32 +20,24 @@ const helpTextStyle = {
 class DropDown extends React.Component {
     static propTypes = {
         value: PropTypes.string.isRequired,
-        defaultValue: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.number,
-            PropTypes.bool,
-        ]),
+        disabled: PropTypes.bool,
         emptyLabel: PropTypes.string,
+        floatingLabelText: PropTypes.node,
         helpText: PropTypes.node,
         includeEmpty: PropTypes.bool,
         menuItems: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
         noOptionsLabel: PropTypes.string,
+        style: PropTypes.object,
         warning: PropTypes.object,
-        onBlur: PropTypes.func,
         onChange: PropTypes.func,
-        onFocus: PropTypes.func,
     }
 
     static defaultProps = {
-        defaultValue: '',
         includeEmpty: false,
         emptyLabel: '',
         menuItems: [],
         noOptionsLabel: '',
         warning: undefined,
-
-        onFocus: undefined,
-        onBlur: undefined,
         onChange: undefined,
     }
 
@@ -58,11 +50,11 @@ class DropDown extends React.Component {
             this.confirmProceedAfterWarning.bind(this)
     }
 
-    handleChange(event, index, value) {
+    handleChange({ selected }) {
         if (this.props.warning) {
-            this.setState({ warningModalOpen: true, pendingValue: value })
+            this.setState({ warningModalOpen: true, pendingValue: selected })
         } else {
-            this.props.onChange({ target: { value } })
+            this.props.onChange({ target: { value: selected } })
         }
     }
 
@@ -76,84 +68,86 @@ class DropDown extends React.Component {
         this.props.onChange({ target: { value } })
     }
 
-    renderMenuItems(menuItems) {
-        if (this.props.includeEmpty) {
-            menuItems = [
-                {
-                    id: 'null',
-                    displayName: this.props.emptyLabel,
-                },
-                ...menuItems,
-            ]
-        }
+    getOptionItems() {
+        const { menuItems, includeEmpty, emptyLabel } = this.props
+        return includeEmpty
+            ? [{ id: 'null', displayName: emptyLabel }, ...menuItems]
+            : menuItems
+    }
 
-        return menuItems.map((item) => (
-            <MenuItem
+    renderOptions() {
+        return this.getOptionItems().map((item) => (
+            <SingleSelectOption
                 key={item.id}
-                value={item.id}
-                primaryText={item.displayName}
+                value={String(item.id)}
+                label={item.displayName}
             />
         ))
     }
 
     render() {
         const {
-            /* eslint-disable no-unused-vars, react/prop-types */
-            onFocus,
-            onBlur,
-            onChange,
             value,
             disabled,
             menuItems,
-            includeEmpty,
-            emptyLabel,
             noOptionsLabel,
-            isRequired,
-            warning,
+            floatingLabelText,
             helpText,
-            /* eslint-enable no-unused-vars, react/prop-types */
-            ...other
+            warning,
+            style,
         } = this.props
         const hasOptions = menuItems.length > 0
+
+        // @dhis2/ui SingleSelect throws if `selected` has no matching option.
+        // Stored values may be stale (e.g. a legacy caching factor), so only
+        // pass `selected` when it matches an existing option.
+        const stringValue = String(value ?? '')
+        const selected = this.getOptionItems().some(
+            (item) => String(item.id) === stringValue
+        )
+            ? stringValue
+            : ''
+
         return (
             <>
-                {this.state.warningModalOpen && (
+                {this.state.warningModalOpen && warning && (
                     <Modal onClose={this.closeWarningModal}>
-                        <ModalTitle>{this.props.warning.title}</ModalTitle>
-                        <ModalContent>{this.props.warning.body}</ModalContent>
-
+                        <ModalTitle>{warning.title}</ModalTitle>
+                        <ModalContent>{warning.body}</ModalContent>
                         <ModalActions>
                             <ButtonStrip end>
                                 <Button onClick={this.closeWarningModal}>
-                                    {this.props.warning.cancel}
+                                    {warning.cancel}
                                 </Button>
                                 <Button
                                     destructive
                                     onClick={this.confirmProceedAfterWarning}
                                 >
-                                    {this.props.warning.proceed}
+                                    {warning.proceed}
                                 </Button>
                             </ButtonStrip>
                         </ModalActions>
                     </Modal>
                 )}
 
-                <SelectField
-                    value={hasOptions ? this.props.value : 1}
-                    onChange={this.handleChange}
-                    disabled={!hasOptions || disabled}
-                    {...other}
-                >
-                    {hasOptions ? (
-                        this.renderMenuItems(menuItems)
-                    ) : (
-                        <MenuItem
-                            value={1}
-                            primaryText={this.props.noOptionsLabel || '-'}
-                        />
-                    )}
-                </SelectField>
-                {helpText && <p style={helpTextStyle}>{helpText}</p>}
+                <div style={style}>
+                    <SingleSelectField
+                        label={floatingLabelText}
+                        selected={hasOptions ? selected : '__none'}
+                        disabled={!hasOptions || disabled}
+                        onChange={this.handleChange}
+                    >
+                        {hasOptions ? (
+                            this.renderOptions()
+                        ) : (
+                            <SingleSelectOption
+                                value="__none"
+                                label={noOptionsLabel || '-'}
+                            />
+                        )}
+                    </SingleSelectField>
+                    {helpText && <p style={helpTextStyle}>{helpText}</p>}
+                </div>
             </>
         )
     }

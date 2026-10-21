@@ -1,45 +1,201 @@
 .wrapper {
-    margin: 16px 0;
+    margin: 8px 0 16px;
 }
 
-.sectionLabel {
-    color: var(--colors-grey800);
-    font-size: 12px;
-    margin: 0;
+.table {
+    min-width: 0 !important;
+    width: 46rem !important;
+    max-width: 100%;
+    table-layout: fixed;
 }
 
-.groupsWrapper {
-    margin: 8px 0;
-    padding: 12px;
-    background: var(--colors-grey050);
-    border: 1px solid var(--colors-grey200);
-    border-radius: 7px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+.defaultRelative {
+    margin-top: var(--spacers-dp16);
 }
 
-.groupLabel {
-    font-size: 13px;
-    font-weight: 500;
+.table :global(th),
+.table :global(td) {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    font-size: 13px !important;
+    height: auto !important;
+    white-space: nowrap;
+}
+
+.enabledCell {
+    width: 3rem;
+}
+
+/* Long or renamed names wrap here rather than widening the table. */
+.nameCell {
+    white-space: normal !important;
+}
+
+.relativeCell {
+    width: 12.5rem;
+    white-space: nowrap;
+}
+
+.lockedSeed {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacers-dp4);
     color: var(--colors-grey600);
-    margin: 0px 0 8px 0;
 }
 
-.checkboxList {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 6px 24px;
-    padding-left: 8px;
-    width: 100%;
+.row:hover {
+    background: var(--colors-grey100);
 }
 
-.checkboxItem {
-    min-width: 0;
+.enabled {
+    background: var(--colors-teal050);
+}
+
+.enabled:hover {
+    background: var(--colors-teal100);
+}
+
+/* Each section is boxed by its own border, with a gap between sections.
+   No rules between rows inside a section. */
+.table,
+.table :global(th),
+.table :global(td) {
+    border: none !important;
+}
+
+.row :global(td:first-child) {
+    border-left: 1px solid var(--colors-grey300) !important;
+}
+
+.row :global(td:last-child) {
+    border-right: 1px solid var(--colors-grey300) !important;
+}
+
+.sectionStart :global(td) {
+    border-top: 1px solid var(--colors-grey300) !important;
+}
+
+.sectionEnd :global(td) {
+    border-bottom: 1px solid var(--colors-grey300) !important;
+}
+
+.table .sectionGap td {
+    height: 12px !important;
+    padding: 0 !important;
+    background: var(--colors-white);
+}
+
+/* Radio labels follow the table's smaller text. */
+.table :global(label) {
+    font-size: 13px !important;
+}
+
+/* Prototype variants for choosing the relative period base. */
+.noRelativeColumn .relativeCell {
+    display: none;
+}
+
+/* A: the choice sits on the family's header row. */
+.table .groupHeader,
+.table .groupHeader:hover {
+    background: var(--colors-grey050);
+}
+
+.groupHeaderTitle {
+    font-weight: 500;
+    color: var(--colors-grey800);
+}
+
+.groupHeaderContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacers-dp12);
+}
+
+.groupHeaderSelect {
+    display: flex;
+    align-items: center;
+    gap: var(--spacers-dp8);
+    color: var(--colors-grey700);
+}
+
+.groupHeaderSelect > :global(div) {
+    width: 14rem;
+}
+
+/* B: tag on the chosen row, an action on hover of the others. */
+.table .badgeCell {
+    text-align: right;
+}
+
+.seedTag {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 3px;
+    border: 1px solid var(--colors-teal200);
+    color: var(--colors-teal800);
+    font-size: 12px;
+}
+
+.useAction {
+    visibility: hidden;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--colors-grey700);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.useAction:hover {
+    color: var(--colors-grey900);
+    text-decoration: underline;
+}
+
+.row:hover .useAction,
+.useAction:focus-visible {
+    visibility: visible;
+}
+
+/* C: the choice in its own section below the table. */
+.relativeSection {
+    margin-top: var(--spacers-dp24);
+    max-width: 46rem;
+}
+
+.relativeSectionTitle {
+    margin: 0 0 var(--spacers-dp8);
     font-size: 15px;
+    font-weight: 500;
+    color: var(--colors-grey900);
 }
 
-.error {
-    color: var(--colors-red600);
-    padding: 16px;
+.relativeSectionField {
+    max-width: 28rem;
+    margin-bottom: var(--spacers-dp12);
+}
+
+.relativeSectionHelp {
+    margin: 0;
+    font-size: 13px;
+    color: var(--colors-grey700);
+}
+
+/* D: a "Relative periods" column; the header carries the wording. */
+.table .columnHeader th {
+    padding: 0 0 var(--spacers-dp4) !important;
+    font-size: 13px !important;
+    font-weight: 500;
+    text-align: left;
+    color: var(--colors-grey700);
+    background: var(--colors-white);
+}
+
+.table .columnHeader th:not(:first-child) {
+    padding-left: 12px !important;
+}
+
+.includedText {
+    color: var(--colors-grey600);
 }
