@@ -1,4 +1,4 @@
-import CheckboxMaterial from 'material-ui/Checkbox'
+import { Checkbox as CheckboxUI } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -15,21 +15,25 @@ class Checkbox extends React.Component {
             errorText,
             errorStyle,
             onChange,
+            onCheck,
             sectionLabel,
             value,
             explanatoryText,
+            style,
             ...other
         } = this.props
         /* eslint-enable no-unused-vars */
 
         return (
-            <div style={{ marginTop: 12, marginBottom: 12 }}>
+            <div>
                 {sectionLabel && (
                     <p style={sectionLabelStyle}>{sectionLabel}</p>
                 )}
-                <CheckboxMaterial
-                    onCheck={onChange}
+                <CheckboxUI
                     checked={value === 'true'}
+                    onChange={({ checked }, event) =>
+                        (onCheck || onChange)(event, checked)
+                    }
                     {...other}
                 />
                 {explanatoryText && (
@@ -41,12 +45,14 @@ class Checkbox extends React.Component {
 }
 
 Checkbox.propTypes = {
-    onChange: PropTypes.func.isRequired,
     errorStyle: PropTypes.object,
     errorText: PropTypes.string,
     explanatoryText: PropTypes.string,
     sectionLabel: PropTypes.string,
+    style: PropTypes.object,
     value: PropTypes.string,
+    onChange: PropTypes.func,
+    onCheck: PropTypes.func,
 }
 
 Checkbox.defaultProps = {
