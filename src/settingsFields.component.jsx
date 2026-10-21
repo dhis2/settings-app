@@ -4,8 +4,7 @@ import {
     Card,
     CenteredContent,
     CircularLoader,
-    IconInfo24,
-    Tooltip,
+    IconInfo16,
 } from '@dhis2/ui'
 import FormBuilder from 'd2-ui/lib/forms/FormBuilder.component.js'
 import PropTypes from 'prop-types'
@@ -16,10 +15,13 @@ import ColorPicker from './form-fields/color-picker/colorPicker.jsx'
 import SelectField from './form-fields/drop-down.jsx'
 import FileUpload from './form-fields/file-upload.jsx'
 import TextField from './form-fields/text-field.jsx'
+import { groupSettingsBySection } from './groupSettingsBySection.js'
 import LocalizedAppearance from './localized-text/LocalizedAppearanceEditor.component.jsx'
 import metadataSettings from './metadata-settings/metadataSettings.component.jsx'
 import Oauth2ClientEditor from './oauth2-client-editor/OAuth2ClientEditor.component.jsx'
 import Oauth2ClientEditor41 from './oauth2-client-editor-41/OAuth2ClientEditor.component.jsx'
+import DefaultRelativePeriod from './period-labels/DefaultRelativePeriod.jsx'
+import RelativePeriodLabels from './period-labels/RelativePeriodLabels.jsx'
 import PeriodTypes from './period-types/PeriodTypes.component.jsx'
 import settingsActions from './settingsActions.js'
 import { categories } from './settingsCategories.js'
@@ -27,7 +29,6 @@ import classes from './SettingsFields.module.css'
 import settingsKeyMapping from './settingsKeyMapping.js'
 import settingsStore from './settingsStore.js'
 import { buildValidatorsForMapping } from './settingValidators.js'
-import AppTheme from './theme.js'
 
 const styles = {
     header: {
@@ -42,10 +43,13 @@ const styles = {
         fontWeight: 300,
     },
     userSettingsOverride: {
-        color: AppTheme.rawTheme.palette.primary1Color,
-        position: 'absolute',
-        right: 0,
-        top: 36,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 4,
+        maxWidth: 640,
+        fontSize: 12,
+        color: 'var(--colors-grey600)',
+        margin: '4px 0 0',
     },
     menuIcon: {
         color: '#757575',
@@ -60,29 +64,23 @@ const styles = {
 function wrapUserSettingsOverride({ component, valueLabel }) {
     return class extends component {
         render() {
-            const labelStyle = Object.assign({}, styles.userSettingsOverride)
-            if (component === Checkbox) {
-                labelStyle.top = -8
-            }
-
             const labelText = valueLabel
-                ? `${i18n.t(
+                ? i18n.t(
                       'This setting will be overridden by the current user setting: {{settingName}}',
                       {
                           settingName: valueLabel,
                           nsSeparator: '-:-',
                       }
-                  )}`
+                  )
                 : i18n.t('This setting can be overridden by user settings')
 
             return (
-                <div style={{ marginRight: 36 }}>
+                <div>
                     {super.render()}
-                    <div style={labelStyle}>
-                        <Tooltip content={labelText}>
-                            <IconInfo24 />
-                        </Tooltip>
-                    </div>
+                    <p style={styles.userSettingsOverride}>
+                        <IconInfo16 />
+                        {labelText}
+                    </p>
                 </div>
             )
         }
@@ -313,6 +311,16 @@ class SettingsFields extends React.Component {
                     ...fieldBase,
                     component: PeriodTypes,
                 }
+            case 'relativePeriodLabels':
+                return {
+                    ...fieldBase,
+                    component: RelativePeriodLabels,
+                }
+            case 'defaultRelativePeriod':
+                return {
+                    ...fieldBase,
+                    component: DefaultRelativePeriod,
+                }
             case 'colorPicker':
                 return {
                     ...fieldBase,
@@ -339,7 +347,6 @@ class SettingsFields extends React.Component {
     }
 
     renderFields(settings) {
-        const d2 = this.context.d2
         if (settings.length === 0) {
             return (
                 <div style={styles.noHits}>
@@ -358,7 +365,38 @@ class SettingsFields extends React.Component {
             )
         }
 
-        const fields = settings
+        const groups = groupSettingsBySection({
+            category: this.props.category,
+            settingKeys: settings,
+            categories,
+        })
+
+        return (
+            <Card className={classes.card} key={this.props.category}>
+                {groups.map((group) => (
+                    <div
+                        key={group.id || group.settings.join(',')}
+                        className={group.label ? classes.section : undefined}
+                    >
+                        {group.label && (
+                            <h2 className={classes.sectionHeading}>
+                                {group.label}
+                            </h2>
+                        )}
+                        <FormBuilder
+                            fields={this.buildFields(group.settings)}
+                            onUpdateField={settingsActions.saveKey}
+                            fieldWrapStyle={{ marginBottom: 16 }}
+                        />
+                    </div>
+                ))}
+            </Card>
+        )
+    }
+
+    buildFields(settings) {
+        const d2 = this.context.d2
+        return settings
             .map((key) => {
                 const mapping = settingsKeyMapping[key]
 
@@ -374,6 +412,7 @@ class SettingsFields extends React.Component {
                         floatingLabelText: mapping.label,
                         style: {
                             width: '100%',
+                            maxWidth: 640,
                             ...addConditionallyHiddenStyles(mapping),
                         },
                         hintText: mapping.hintText,
@@ -422,15 +461,6 @@ class SettingsFields extends React.Component {
 
                 return field
             })
-
-        return (
-            <Card className={classes.card} key={this.props.category}>
-                <FormBuilder
-                    fields={fields}
-                    onUpdateField={settingsActions.saveKey}
-                />
-            </Card>
-        )
     }
 
     render() {
