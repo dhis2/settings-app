@@ -1,16 +1,15 @@
-# 
 # Translators:
-# Philip Larsen Donnelly, 2024
+# Philip Larsen Donnelly, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-06-28T11:48:52.681Z\n"
+"POT-Creation-Date: 2026-04-17T07:03:07.634Z\n"
 "PO-Revision-Date: 2021-03-18 19:32+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Philip Larsen Donnelly, 2026\n"
 "Language-Team: Persian (Afghanistan) (https://app.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fa_AF\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -18,11 +17,20 @@ msgstr ""
 msgid "Failed to load: {{error}}"
 msgstr ""
 
+msgid "DHIS2"
+msgstr ""
+
 msgid "No flag"
 msgstr "عدم پرچم"
 
 msgid "Search settings"
 msgstr "تنظیمات جستجو"
+
+msgid "No color selected"
+msgstr ""
+
+msgid "Remove color"
+msgstr ""
 
 msgid "Replace image"
 msgstr "تغیر تصویر"
@@ -99,23 +107,17 @@ msgstr "نسخه میتا دیتا"
 msgid "This client ID is already taken"
 msgstr "آی دی این استفاده کننده قبلا گرفته شده"
 
-msgid "Name"
-msgstr "نام"
+msgid "Client ID"
+msgstr "هویت مشتری"
 
 msgid "Required"
 msgstr "ضروری"
-
-msgid "Client ID"
-msgstr "هویت مشتری"
 
 msgid "Client Secret"
 msgstr "رمز مشتری"
 
 msgid "Grant Types"
 msgstr "نوع اعانه"
-
-msgid "Password"
-msgstr "کلید رمز"
 
 msgid "Refresh token"
 msgstr "علامت تجدید قوا"
@@ -174,10 +176,154 @@ msgstr "خذف OAuth2 client"
 msgid "Failed to delete OAuth2 client"
 msgstr ""
 
+msgid "Name"
+msgstr "نام"
+
+msgid "Password"
+msgstr "کلید رمز"
+
+msgid "January"
+msgstr "جنوری"
+
+msgid "February"
+msgstr "فبروری"
+
+msgid "March"
+msgstr "مارچ"
+
+msgid "April"
+msgstr "آپریل"
+
+msgid "May"
+msgstr "می"
+
+msgid "June"
+msgstr "جون"
+
+msgid "July"
+msgstr "جولای"
+
+msgid "August"
+msgstr "آگست"
+
+msgid "September"
+msgstr "سپتامبر"
+
+msgid "October"
+msgstr "اکتبر"
+
+msgid "November"
+msgstr "نوامبر"
+
+msgid "December"
+msgstr "دسامبر"
+
+msgid "Monday"
+msgstr "دوشنبه"
+
+msgid "Tuesday"
+msgstr "سه‌شنبه"
+
+msgid "Wednesday"
+msgstr "چهارشنبه"
+
+msgid "Thursday"
+msgstr "پنج‌شنبه"
+
+msgid "Friday"
+msgstr "جمعه"
+
+msgid "Saturday"
+msgstr "شنبه"
+
+msgid "Sunday"
+msgstr "یک‌شنبه"
+
+msgid "Daily"
+msgstr "روزنه"
+
+msgid "Weekly"
+msgstr "هفته وار"
+
+msgid "Monthly"
+msgstr "ماهانه"
+
+msgid "Bi-monthly"
+msgstr "دوبار در- ماه"
+
+msgid "Yearly"
+msgstr "سالانه"
+
+msgid "Bi-weekly"
+msgstr ""
+
+msgid "Quarterly"
+msgstr "سه ماهه"
+
+msgid "Six-monthly"
+msgstr "شش-ماهه"
+
+msgid "Weekly (start {{day}})"
+msgstr ""
+
+msgid "Financial year (start {{month}})"
+msgstr ""
+
+msgid "Days"
+msgstr "روزها"
+
+msgid "Weeks"
+msgstr "هفته ها"
+
+msgid "Bi-weeks"
+msgstr ""
+
+msgid "Months"
+msgstr "ماه ها"
+
+msgid "Bi-months"
+msgstr "دوبار در ماه"
+
+msgid "Quarters"
+msgstr "سه ماهه"
+
+msgid "Six months"
+msgstr "شپږ میاشتې"
+
+msgid "Years"
+msgstr "سالانه"
+
+msgid "Other"
+msgstr "دیگر"
+
 msgid "Settings updated"
 msgstr "تنظیمات تجدید گردید"
 
 msgid "There was a problem updating settings. Changes have not been saved."
+msgstr ""
+
+msgid "Period types available in analytics apps"
+msgstr ""
+
+msgid "This period type is always enabled and cannot be disabled"
+msgstr ""
+
+msgid "This field is required"
+msgstr "این بخش لازمی میباشد"
+
+msgid "This field should be a URL"
+msgstr ""
+
+msgid "This field should be a number"
+msgstr "این بخش باید ارقام باشد"
+
+msgid "This field should be a positive number"
+msgstr "این بخش باید ارقام مثبت باشد"
+
+msgid "This field should be an email"
+msgstr ""
+
+msgid "Please enter a number from {{min}} to {{max}}"
 msgstr ""
 
 msgid "General"
@@ -237,23 +383,11 @@ msgstr "تنظیمات همگاه سازی"
 msgid "Scheduled jobs"
 msgstr ""
 
+msgid "Notification settings"
+msgstr ""
+
 msgid "OAuth2 Clients"
 msgstr "مشتریان او ای یووت 2"
-
-msgid "This field is required"
-msgstr "این بخش لازمی میباشد"
-
-msgid "This field should be a URL"
-msgstr ""
-
-msgid "This field should be a number"
-msgstr "این بخش باید ارقام باشد"
-
-msgid "This field should be a positive number"
-msgstr "این بخش باید ارقام مثبت باشد"
-
-msgid "This field should be an email"
-msgstr ""
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
@@ -265,11 +399,23 @@ msgstr "این تنظیمات باید توسط تنظیمات استفاده ک
 msgid "No options"
 msgstr ""
 
+msgid "Settings must be configured to send emails to enforce verified emails"
+msgstr ""
+
+msgid ""
+"You cannot enable \"Enforce Verified Email\" until email settings are "
+"configured."
+msgstr ""
+
 msgid "No settings matched the search term"
 msgstr "هیچ تنظیمات به جستجو مطابق نکرد"
 
 msgid "Search results"
 msgstr "نتایج جستجو"
+
+msgid ""
+"This period type is currently disabled in the period type settings above"
+msgstr ""
 
 msgid "Maximum number of analytics records"
 msgstr "تعداد اعظمی ریکارد های انالتیکس"
@@ -278,6 +424,11 @@ msgid "Unlimited"
 msgstr "محدود ناشده"
 
 msgid "Maximum number of SQL view records"
+msgstr ""
+
+msgid ""
+"Maximum number of tracked entity records to fetch from database (enter 0 for"
+" unlimited)"
 msgstr ""
 
 msgid "Infrastructural indicators"
@@ -289,29 +440,8 @@ msgstr "عناصر اطلاعات بنیادی"
 msgid "Infrastructural period type"
 msgstr "نوع معیاد بنیادی"
 
-msgid "Daily"
-msgstr "روزنه"
-
-msgid "Weekly"
-msgstr "هفته وار"
-
-msgid "Monthly"
-msgstr "ماهانه"
-
-msgid "Bi-monthly"
-msgstr "دوبار در- ماه"
-
-msgid "Quarterly"
-msgstr "سه ماهه"
-
-msgid "Six-monthly"
-msgstr "شش-ماهه"
-
 msgid "Six-monthly April"
 msgstr "شش-ماهه اپریل"
-
-msgid "Yearly"
-msgstr "سالانه"
 
 msgid "Financial-April"
 msgstr "مالی- آپریل"
@@ -353,6 +483,30 @@ msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
 
 msgid "Include passive dashboard views in usage analytics statistics"
+msgstr ""
+
+msgid "Hide daily periods"
+msgstr ""
+
+msgid "Hidden period types in analytics apps"
+msgstr ""
+
+msgid "Hide weekly periods"
+msgstr ""
+
+msgid "Hide biweekly periods"
+msgstr ""
+
+msgid "Hide monthly periods"
+msgstr ""
+
+msgid "Hide bimonthly periods"
+msgstr ""
+
+msgid "Period types"
+msgstr "انواع دوره"
+
+msgid "Allowed period types"
 msgstr ""
 
 msgid "Default relative period for analysis"
@@ -448,35 +602,11 @@ msgstr "سال گذشته مالی"
 msgid "Last 5 financial years"
 msgstr "5 سال گذشته مالی"
 
-msgid "Hide daily periods"
-msgstr ""
-
-msgid "Hidden period types in analytics apps"
-msgstr ""
-
-msgid "Hide weekly periods"
-msgstr ""
-
-msgid "Hide biweekly periods"
-msgstr ""
-
-msgid "Hide monthly periods"
-msgstr ""
-
-msgid "Hide bimonthly periods"
-msgstr ""
-
 msgid "Financial year relative period start month"
 msgstr ""
 
-msgid "April"
-msgstr "آپریل"
-
-msgid "July"
-msgstr "جولای"
-
-msgid "October"
-msgstr "اکتبر"
+msgid "Weekly relative period start day"
+msgstr ""
 
 msgid "Cache strategy"
 msgstr "استراتیژی ذخیره"
@@ -604,6 +734,9 @@ msgstr "Google Maps API key"
 msgid "Bing Maps API key"
 msgstr ""
 
+msgid "Azure Maps API key"
+msgstr ""
+
 msgid "Application title"
 msgstr "عنوان درخواستی"
 
@@ -619,8 +752,14 @@ msgstr "طرف چپ پاورقی درخواستی"
 msgid "Application right-side footer"
 msgstr "طرف راست پاورقی درخواستی"
 
+msgid "Style (android)"
+msgstr ""
+
 msgid "Style"
 msgstr "استایل"
+
+msgid "Theme color"
+msgstr ""
 
 msgid "Start page"
 msgstr "صحفه آغاز"
@@ -671,6 +810,12 @@ msgid "Custom"
 msgstr "مروج"
 
 msgid "Login page template"
+msgstr ""
+
+msgid "Enable Global Shell"
+msgstr ""
+
+msgid "Enable custom translations"
 msgstr ""
 
 msgid "Custom login page logo"
@@ -729,6 +874,12 @@ msgstr "فعال سازی بازگیری مجدد حساب استفاده کنن
 
 msgid "Lock user account temporarily after multiple failed login attempts"
 msgstr "بعد از چند بار وارد کردن رمز اشتباه بسته نموده استفاده کننده"
+
+msgid "Enable embedded dashboards"
+msgstr ""
+
+msgid "Enforce verified emails"
+msgstr ""
 
 msgid "Allow users to grant own user roles"
 msgstr "اجازه استفاده کننده گان جهت تصدیق نقش های خود استفاده کننده"
@@ -856,4 +1007,25 @@ msgstr ""
 msgid ""
 "Job execution interval (seconds) below which a job will be logged at debug "
 "(rather than info) level (20+)"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Max messages per job"
+msgstr ""
+
+msgid "Max age in days"
+msgstr ""
+
+msgid "Max jobs per type"
+msgstr ""
+
+msgid "Enable Gist Overview"
+msgstr ""
+
+msgid "Clean idle jobs after (in milliseconds)"
+msgstr ""
+
+msgid "Use centroids for organisation unit polygons in event analytics"
 msgstr ""
