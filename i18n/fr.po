@@ -1,24 +1,25 @@
-# 
 # Translators:
 # Bram Piot <bram.piot@gmail.com>, 2023
 # Edem Kossi <ekossi@hispwca.org>, 2023
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
 # tx_e2f_frfr r6 <tx_e2f_frfr_r661@ate2f.com>, 2023
-# Viktor Varland <viktor@dhis2.org>, 2023
-# Philip Larsen Donnelly, 2023
-# tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2023
 # Yayra Gomado <ygomado@hispwca.org>, 2023
+# tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2023
 # Elise Desailly, 2024
+# Viktor Varland <viktor@dhis2.org>, 2025
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
+# Philip Larsen Donnelly, 2025
+# Esther Tokouli, 2025
+# Cyrille Kabrane, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-05-30T13:11:40.739Z\n"
+"POT-Creation-Date: 2025-08-08T08:33:10.371Z\n"
 "PO-Revision-Date: 2023-05-22 19:09+0000\n"
-"Last-Translator: Elise Desailly, 2024\n"
+"Last-Translator: Cyrille Kabrane, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
@@ -27,7 +28,7 @@ msgid "Failed to load: {{error}}"
 msgstr "Échec du chargement : {{error}}"
 
 msgid "No flag"
-msgstr "Pas de Drapeau"
+msgstr "Pas de drapeau"
 
 msgid "Search settings"
 msgstr "Paramètres de recherche"
@@ -36,7 +37,7 @@ msgid "Replace image"
 msgstr "Remplacer l'image"
 
 msgid "Preview image"
-msgstr "Aperçu de l'image"
+msgstr "Prévisualiser l'image"
 
 msgid "Preview of image"
 msgstr "Aperçu de l'image"
@@ -45,13 +46,13 @@ msgid "Upload image"
 msgstr "Télécharger une image"
 
 msgid "Error uploading file: {{error}}"
-msgstr "Erreur lors de l'importation du fichier : {{error}}"
+msgstr "Erreur lors du téléchargement du fichier : {{error}}"
 
 msgid "Cancel upload"
 msgstr "Annuler le téléchargement"
 
 msgid "System default ({{language}})"
-msgstr ""
+msgstr "Valeur par défaut du système ({{language}})"
 
 msgid "Set the main field value before adding a translation"
 msgstr "Définir la valeur du champ principal avant d'ajouter une traduction"
@@ -60,7 +61,7 @@ msgid "Could not fetch localized settings"
 msgstr "Impossible de récupérer les paramètres localisés"
 
 msgid "Select language"
-msgstr "Choisir la langue"
+msgstr "Sélectionner la langue"
 
 msgid "Version created"
 msgstr "Version créée"
@@ -81,7 +82,7 @@ msgid "Atomic"
 msgstr "Atomique"
 
 msgid "Master version:"
-msgstr "Version principale:"
+msgstr "Version principale :"
 
 msgid "None"
 msgstr "Aucun"
@@ -90,7 +91,7 @@ msgid "Last sync attempt"
 msgstr "Dernière tentative de synchronisation"
 
 msgid "Failed"
-msgstr "Echoué"
+msgstr "Échec"
 
 msgid "No versions exist"
 msgstr "Aucune version n'existe"
@@ -106,7 +107,7 @@ msgid "Metadata Versioning"
 msgstr "Gestion des versions des métadonnées"
 
 msgid "This client ID is already taken"
-msgstr "Cet identifiant client est déjà pris"
+msgstr "Cet identifiant client est déjà utilisé"
 
 msgid "Name"
 msgstr "Nom"
@@ -127,7 +128,7 @@ msgid "Password"
 msgstr "Mot de passe"
 
 msgid "Refresh token"
-msgstr "Actualiser le Token"
+msgstr "Actualiser le token"
 
 msgid "Authorization code"
 msgstr "Code d'autorisation"
@@ -145,10 +146,10 @@ msgid "Create new OAuth2 Client"
 msgstr "Créer un nouveau client OAuth2"
 
 msgid "Edit OAuth2 Client"
-msgstr "Modifier le client OAuth2"
+msgstr "Éditer le client OAuth2"
 
 msgid "Save"
-msgstr "Sauvegarder"
+msgstr "Enregistrer"
 
 msgid "Cancel"
 msgstr "Annuler"
@@ -157,7 +158,7 @@ msgid "There are currently no OAuth2 clients registered"
 msgstr "Il n'y a actuellement aucun client OAuth2 enregistré"
 
 msgid "Edit"
-msgstr "Modifier"
+msgstr "Éditer"
 
 msgid "Delete"
 msgstr "Supprimer"
@@ -193,7 +194,7 @@ msgid "General settings"
 msgstr "Paramètres généraux"
 
 msgid "Analytics"
-msgstr "Analytiques"
+msgstr "Analyse"
 
 msgid "Analytics settings"
 msgstr "Paramètres d'analyse"
@@ -205,7 +206,7 @@ msgid "Server settings"
 msgstr "Paramètres du serveur"
 
 msgid "Appearance"
-msgstr "Aspect"
+msgstr "Apparence"
 
 msgid "Appearance settings"
 msgstr "Paramètres d'apparence"
@@ -214,7 +215,7 @@ msgid "Email"
 msgstr "Adresse e-mail"
 
 msgid "Email settings"
-msgstr "paramètres e-mail"
+msgstr "Paramètres e-mail"
 
 msgid "Access"
 msgstr "Accès"
@@ -232,31 +233,31 @@ msgid "Data Import"
 msgstr "Importation de données"
 
 msgid "Data import settings"
-msgstr "Paramètres d'importation de données"
+msgstr "Paramètres d'importation des données"
 
 msgid "Synchronization"
 msgstr "Synchronisation"
 
 msgid "Synchronization settings"
-msgstr "Synchronisation"
+msgstr "Paramètres de synchronisation"
 
 msgid "OAuth2 Clients"
 msgstr "Clients OAuth2"
 
 msgid "This field is required"
-msgstr "Ce champs est requis"
+msgstr "Ce champ est requis"
 
 msgid "This field should be a URL"
-msgstr "Ce champ doit être une URL"
+msgstr "Ce champ doit contenir une URL"
 
 msgid "This field should be a number"
-msgstr "Ce champ doit être un nombre"
+msgstr "Ce champ doit contenir un nombre"
 
 msgid "This field should be a positive number"
-msgstr "Ce champ doit être un nombre positif"
+msgstr "Ce champ doit contenir un nombre positif"
 
 msgid "This field should be an email"
-msgstr "Ce champ doit être un e-mail"
+msgstr "Ce champ doit contenir une adresse e-mail"
 
 msgid ""
 "This setting will be overridden by the current user setting: {{settingName}}"
@@ -265,7 +266,7 @@ msgstr ""
 "{{settingName}}"
 
 msgid "This setting can be overridden by user settings"
-msgstr "Ce paramètre peut être remplacé par les paramètres utilisateur"
+msgstr "Ce paramètre peut être remplacé par les paramètres de l'utilisateur"
 
 msgid "No options"
 msgstr "Aucune option"
@@ -277,19 +278,19 @@ msgid "Search results"
 msgstr "Résultats de la recherche"
 
 msgid "Maximum number of analytics records"
-msgstr "Maximum number of analytics records"
+msgstr "Nombre maximum d'enregistrements d'analyse"
 
 msgid "Unlimited"
-msgstr "Unlimited"
+msgstr "Illimité"
 
 msgid "Maximum number of SQL view records"
-msgstr "Nombre maximal d'enregistrements de vue SQL"
+msgstr "Nombre maximum d'enregistrements de vues SQL"
 
 msgid "Infrastructural indicators"
 msgstr "Indicateurs d'infrastructure"
 
 msgid "Infrastructural data elements"
-msgstr "Infrastructures éléments de données"
+msgstr "Éléments de données d'infrastructure "
 
 msgid "Infrastructural period type"
 msgstr "Type de période d'infrastructure"
@@ -304,7 +305,7 @@ msgid "Monthly"
 msgstr "Mensuel"
 
 msgid "Bi-monthly"
-msgstr "Bimensuel"
+msgstr "Bimestriel"
 
 msgid "Quarterly"
 msgstr "Trimestriel"
@@ -319,7 +320,7 @@ msgid "Yearly"
 msgstr "Annuel"
 
 msgid "Financial-April"
-msgstr "Financier-Avril"
+msgstr "Financière-Avril"
 
 msgid "Financial-July"
 msgstr "Financière-Juillet"
@@ -328,10 +329,10 @@ msgid "Financial-Oct"
 msgstr "Financière-Oct"
 
 msgid "Feedback recipients"
-msgstr "Commentaires des bénéficiaires"
+msgstr "Destinataires des feedbacks"
 
 msgid "No message recipients"
-msgstr "Pas de destinataires du message"
+msgstr "Pas de destinataires pour le message"
 
 msgid "System update notification recipients"
 msgstr "Destinataires des notifications de mise à jour du système"
@@ -340,13 +341,13 @@ msgid "No update notification recipients"
 msgstr "Aucune mise à jour des destinataires des notifications"
 
 msgid "Max offline organisation unit levels"
-msgstr "Niveau maximum d'unité d'organisation en offline"
+msgstr "Niveau maximum d'unités d'organisation hors ligne"
 
 msgid "Data analysis std dev factor"
-msgstr "L'analyse des données écart facteur standard"
+msgstr "Facteur d'écart type dans l'analyse des données"
 
 msgid "Phone number area code"
-msgstr "Code zone du numéro de téléphone"
+msgstr "Indicatif régional du numéro de téléphone"
 
 msgid "Enable multi-organisation unit forms"
 msgstr "Activer les formulaires multi-unités d'organisation"
@@ -356,7 +357,7 @@ msgstr "Acceptation requise avant approbation"
 
 msgid "Gather analytical object statistics in dashboard views"
 msgstr ""
-"Recueillir des statistiques d'objets analytiques dans les vues de tableau de"
+"Recueillir des statistiques d'objets analytiques dans les vues du tableau de"
 " bord"
 
 msgid "Include passive dashboard views in usage analytics statistics"
@@ -371,7 +372,7 @@ msgid "This week"
 msgstr "Cette semaine"
 
 msgid "Last week"
-msgstr "Semaine passée"
+msgstr "Semaine dernière"
 
 msgid "Last 4 weeks"
 msgstr "4 dernières semaines"
@@ -389,7 +390,7 @@ msgid "Last month"
 msgstr "Mois dernier"
 
 msgid "Months this year"
-msgstr "Mois cette année"
+msgstr "Mois de cette année"
 
 msgid "Months last year"
 msgstr "Mois de l'année passée"
@@ -407,7 +408,7 @@ msgid "This bi-month"
 msgstr "Ces 2 dernières semaines"
 
 msgid "Last bi-month"
-msgstr "Dernier bi-mestre"
+msgstr "Bimestre précédent"
 
 msgid "Last 6 bi-months"
 msgstr "6 derniers bimestres"
@@ -431,7 +432,7 @@ msgid "This six-month"
 msgstr "Ce semestre"
 
 msgid "Last six-month"
-msgstr "Dernier semestre"
+msgstr "Semestre précédent"
 
 msgid "Last 2 six-months"
 msgstr "2 derniers semestres"
@@ -440,7 +441,7 @@ msgid "This year"
 msgstr "Année en cours"
 
 msgid "Last year"
-msgstr "L'année passée"
+msgstr "Année passée "
 
 msgid "Last 5 years"
 msgstr "5 dernières années"
@@ -449,34 +450,34 @@ msgid "Last 10 years"
 msgstr "10 dernières années"
 
 msgid "This financial year"
-msgstr "Année fiscale en cours"
+msgstr "Cette année financière"
 
 msgid "Last financial year"
-msgstr "Année fiscale précédente"
+msgstr "Année financière précédente"
 
 msgid "Last 5 financial years"
-msgstr "5 dernières années fiscales"
+msgstr "5 dernières années financières"
 
 msgid "Hide daily periods"
 msgstr "Masquer les périodes quotidiennes"
 
 msgid "Hidden period types in analytics apps"
-msgstr "Types de périodes masquées dans les applications d’analyses"
+msgstr "Types de périodes masquées dans les applications d’analyse"
 
 msgid "Hide weekly periods"
 msgstr "Masquer les périodes hebdomadaires"
 
 msgid "Hide biweekly periods"
-msgstr "Masquer les périodes bihebdomadaires"
+msgstr "Masquer les périodes bimensuelles"
 
 msgid "Hide monthly periods"
 msgstr "Masquer les périodes mensuelles"
 
 msgid "Hide bimonthly periods"
-msgstr "Masquer les périodes bimensuelles"
+msgstr "Masquer les périodes bimestrielles"
 
 msgid "Financial year relative period start month"
-msgstr "Mois de départ de la période relative à l’année financière"
+msgstr "Mois de début de la période relative à l'année financière"
 
 msgid "April"
 msgstr "Avril"
@@ -488,25 +489,25 @@ msgid "October"
 msgstr "Octobre"
 
 msgid "Cache strategy"
-msgstr "Stratégie de cache"
+msgstr "Stratégie de mise en cache"
 
 msgid "No cache"
 msgstr "Pas de cache"
 
 msgid "Cache for 15 minutes"
-msgstr "Cache pour 15 min"
+msgstr "Cache pour 15 minutes"
 
 msgid "Cache for 30 minutes"
-msgstr "Cache pour 30 min"
+msgstr "Cache pour 30 minutes"
 
 msgid "Cache for one hour"
-msgstr "Cache pendant 1 heure"
+msgstr "Cache pour une heure"
 
 msgid "Cache until 6AM tomorrow"
-msgstr "Cache jusqu'à 6 heures demain matin"
+msgstr "Cache jusqu'à 06h00 demain matin"
 
 msgid "Cache for two weeks"
-msgstr "Cache pendant 2 semaines"
+msgstr "Cache pour deux semaines"
 
 msgid "Cacheability"
 msgstr "Capacité de mise en cache"
@@ -518,7 +519,7 @@ msgid "Private"
 msgstr "Privé"
 
 msgid "Analytics cache mode"
-msgstr "Mode cache pour les analyses"
+msgstr "Mode de cache pour les analyses"
 
 msgid "Progressive"
 msgstr "Progressif"
@@ -528,7 +529,7 @@ msgstr "Fixe"
 
 msgid "Max number of years to hide unapproved data in analytics"
 msgstr ""
-"Nombre max. d’années pour masquer des données non approuvées dans des "
+"Nombre maximum d'années pour masquer les données non approuvées dans les "
 "analyses"
 
 msgid "Never check approval"
@@ -563,8 +564,8 @@ msgstr "9 dernières années"
 
 msgid "Respect category option start and end date in analytics table export"
 msgstr ""
-"Respecter les dates de début et de fin de l’option de catégorie dans "
-"l’exportation de tableaux analytiques"
+"Respecter les dates de début et de fin de l'option de catégorie dans "
+"l'exportation des tableaux analytiques"
 
 msgid "Include zero data values in analytics tables"
 msgstr "Inclure des valeurs de données nulles dans les tableaux analytiques"
@@ -583,43 +584,46 @@ msgstr ""
 "établissements"
 
 msgid "Default basemap"
-msgstr "Basemap par défaut"
+msgstr "Fond de carte par défaut"
 
 msgid "OSM Light (default)"
 msgstr "OSM Light (par défaut)"
 
 msgid "OSM Detailed"
-msgstr "OSM détaillée"
+msgstr "OSM Detailed"
 
 msgid "Bing Road"
-msgstr "Bing Route"
+msgstr "Bing Road"
 
 msgid "Bing Dark"
-msgstr "Bing Sombre"
+msgstr "Bing Dark"
 
 msgid "Bing Aerial"
-msgstr "Bing Satellite"
+msgstr "Bing Aerial"
 
 msgid "Bing Aerial Labels"
-msgstr "Étiquettes Bing Satellite"
+msgstr "Bing Aerial Labels"
 
 msgid "Number of database server CPUs"
-msgstr "Nombre d’UC de serveur de base de données"
+msgstr "Nombre de processeurs dans le serveur de la base de données"
 
 msgid "Automatic (detect based on web server)"
 msgstr "Automatique (détection basée sur le serveur Web)"
 
 msgid "System notifications email address"
-msgstr "Adresse e-mail des notifications du système"
+msgstr "Adresse e-mail pour les notifications du système"
 
 msgid "Google Analytics (Universal Analytics) key"
 msgstr "Clé de Google Analytics (Universal Analytics)"
 
 msgid "Google Maps API key"
-msgstr "Clé API Google Maps"
+msgstr "Clé API de Google Maps"
 
 msgid "Bing Maps API key"
 msgstr "Clé API de Bing Maps"
+
+msgid "Azure Maps API key"
+msgstr "Clé API de Azure Maps"
 
 msgid "Application title"
 msgstr "Titre de l'application"
@@ -658,7 +662,7 @@ msgid "Database language"
 msgstr "Langue de la base de données"
 
 msgid "Property to display in analysis modules"
-msgstr "Propriété à afficher dans les modules analytiques"
+msgstr "Propriété à afficher dans les modules d'analyse"
 
 msgid "Short name"
 msgstr "Nom court"
@@ -723,16 +727,16 @@ msgid "Send me a test email"
 msgstr "M’envoyer un e-mail de test"
 
 msgid "Self registration account user role"
-msgstr "Rôle d'utilisateur des des comptes auto-inscrits"
+msgstr "Rôle d'utilisateur du compte auto-inscrit"
 
 msgid "Disable self registration"
 msgstr "Désactiver l’auto-inscription"
 
 msgid "Self registration account organisation unit"
-msgstr "L'unité d'organisation des comptes auto-inscrits"
+msgstr "Unité d'organisation du compte auto-inscrit"
 
 msgid "Do not require recaptcha for self registration"
-msgstr "Do not require recaptcha for self registration"
+msgstr "Ne pas exiger de recaptcha pour l'auto-inscription"
 
 msgid "Enable user account recovery"
 msgstr "Permettre la restauration de compte utilisateur"
@@ -743,15 +747,15 @@ msgstr ""
 "tentatives de connexion infructueuses"
 
 msgid "Allow users to grant own user roles"
-msgstr "Allow users to grant own user roles"
+msgstr "Autoriser les utilisateurs à s'attribuer des rôles d'utilisateur"
 
 msgid "Allow assigning object to related objects during add or update"
 msgstr ""
-"Permettre l’attribution d’un objet à des objets liés pendant un ajout ou une"
-" mise à jour"
+"Autoriser l'attribution d'un objet à des objets associés pendant un ajout ou"
+" une mise à jour"
 
 msgid "Require user account password change"
-msgstr "Require user account password change"
+msgstr "Exiger le changement de mot de passe du compte utilisateur"
 
 msgid "Never"
 msgstr "Jamais"
@@ -771,14 +775,14 @@ msgstr ""
 
 msgid "Number of days before password expiry to send reminder (1–28)"
 msgstr ""
-"Nombre de jours avant l'expiration du mot de passe pour envoyer un rappel "
+"Nombre de jours avant l'expiration du mot de passe pour l'envoi d'un rappel "
 "(1-28)"
 
 msgid "Minimum characters in password"
-msgstr "Nombre min. de caractères dans un mot de passe"
+msgstr "Nombre minimum de caractères dans un mot de passe"
 
 msgid "CORS whitelist"
-msgstr "Liste verte CORS"
+msgstr "Liste d'autorisation CORS"
 
 msgid "reCAPTCHA Site Key"
 msgstr "Clé du site reCAPTCHA"
@@ -787,28 +791,28 @@ msgid "reCAPTCHA Secret Key"
 msgstr "Clé secrète reCAPTCHA"
 
 msgid "Coptic"
-msgstr "copte"
+msgstr "Copte"
 
 msgid "Ethiopian"
-msgstr "éthiopien"
+msgstr "Éthiopien"
 
 msgid "Gregorian"
-msgstr "grégorien"
+msgstr "Grégorien"
 
 msgid "Islamic"
-msgstr "islamique"
+msgstr "Islamique"
 
 msgid "ISO 8601"
 msgstr "ISO 8601"
 
 msgid "Julian"
-msgstr "julien"
+msgstr "Julien"
 
 msgid "Nepali"
-msgstr "népalais"
+msgstr "Népalais"
 
 msgid "Thai"
-msgstr "thaï"
+msgstr "Thaï"
 
 msgid "Persian"
 msgstr "Persan"
@@ -822,14 +826,14 @@ msgid ""
 "you do not change your calendar setting."
 msgstr ""
 "Modifier les paramètres du calendrier après avoir saisi des données peut "
-"rendre votre système inutilisable. Si vous avez saisi des données, il est "
-"fortement recommandé de ne pas modifier vos paramètres de calendrier."
+"rendre votre système inutilisable. Si vous avez saisi des données, nous vous"
+" recommandons fortement de ne pas modifier vos paramètres de calendrier."
 
 msgid "Yes, change calendar"
 msgstr "Oui, modifier le calendrier"
 
 msgid "Date format"
-msgstr "Format de date"
+msgstr "Format de la date"
 
 msgid "Require periods to match period type of data set"
 msgstr ""
@@ -841,8 +845,8 @@ msgstr "Les éléments de données doivent faire partie de l’ensemble de donn�
 
 msgid "Require category option combos to match category combo of data element"
 msgstr ""
-"Les combos d’options de catégorie doivent correspondre à la combinaison de "
-"catégories d’élément de données"
+"Les combinaisons d’options de catégorie doivent correspondre à la "
+"combinaison de catégories de l’élément de données"
 
 msgid "Require organisation units to match assignment of data set"
 msgstr ""
@@ -855,16 +859,16 @@ msgstr ""
 "de catégories de l’ensemble de données"
 
 msgid "Require category option combo to be specified"
-msgstr "Le combo d’options de catégorie doit être précisé"
+msgstr "La combinaison d'options de catégorie doit être précisée"
 
 msgid "Require attribute option combo to be specified"
 msgstr "La combinaison d’options d’attribut doit être précisée"
 
 msgid "Remote server URL"
-msgstr "URL de serveur distant"
+msgstr "URL du serveur distant"
 
 msgid "Remote server username"
-msgstr "Nom d’utilisateur de serveur distant"
+msgstr "Nom d'utilisateur du serveur distant"
 
 msgid "Remote server password"
-msgstr "Mot de passe de serveur distant"
+msgstr "Mot de passe du serveur distant"
