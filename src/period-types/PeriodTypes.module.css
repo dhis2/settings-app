@@ -1,103 +1,224 @@
 .wrapper {
     margin: 8px 0 16px;
+    max-width: 800px;
 }
 
-.table {
-    min-width: 0 !important;
-    width: max-content;
+.tabBody {
+    padding-top: 16px;
 }
 
 .defaultRelative {
     margin-top: var(--spacers-dp16);
 }
 
-.table :global(th),
-.table :global(td) {
-    padding-top: 4px !important;
-    padding-bottom: 4px !important;
-    height: auto !important;
-    white-space: nowrap;
+/* Availability */
+
+
+/* Two columns side by side, one when the section is narrow. */
+.columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    align-items: start;
 }
 
-.enabledHead,
-.enabledCell {
-    width: 1%;
-    white-space: nowrap;
+/* Each family is its own box, with a gap between families. */
+.table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.relativeHead,
-.relativeCell {
-    min-width: 12.5rem;
-    white-space: nowrap;
+.group {
+    border: 1px solid var(--colors-grey300);
+    border-radius: 3px;
+    overflow: hidden;
 }
 
-.relativeTag {
-    background-color: var(--colors-teal100) !important;
-    color: var(--colors-teal900) !important;
-}
-
-.row:hover {
-    background: var(--colors-grey100);
-}
-
-.row:hover .setCustomLabels,
-.row:has(:focus-visible) .setCustomLabels,
-.row:hover .useRelativeLink,
-.row:has(:focus-visible) .useRelativeLink {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.enabled {
-    background: var(--colors-teal050);
-}
-
-.enabled:hover {
-    background: var(--colors-teal100);
-}
-
-.sectionEnd :global(td) {
-    /* border-bottom-width: 2px !important; */
-    border-bottom-color: var(--colors-grey500) !important;
-}
-
-.expanded :global(td) {
-    border-bottom-color: transparent !important;
-}
-
-.expandedPanelRow:hover {
-    background: var(--colors-white);
-}
-
-.expandedPanelRow.enabled:hover {
-    background: var(--colors-teal050);
-}
-
-.expandedPanelRow :global(td) {
-    white-space: normal;
-}
-
-.labelsCell {
+.row {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 32px;
+    padding: 3px 12px;
+    color: var(--colors-grey700);
+    font-size: 14px;
 }
 
-.customLabelsLink {
+.rowOn {
+    background: var(--colors-teal050);
+    color: var(--colors-grey900);
+}
+
+.rowName {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    align-items: center;
+    min-width: 0;
+}
+
+.builtInStruck {
+    color: var(--colors-grey600);
+}
+
+.customName {
+    font-weight: 500;
+}
+
+.pencil {
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 3px;
+    background: none;
+    color: var(--colors-grey600);
+    cursor: pointer;
+}
+
+.pencil:hover {
+    background: var(--colors-grey200);
+    color: var(--colors-grey900);
+}
+
+.seedRow {
+    padding: 6px 12px 8px;
+}
+
+.seedNote {
+    margin: 0;
+    font-size: 13px;
+    color: var(--colors-grey700);
+}
+
+.seedWarning {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin: 8px 0 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--colors-yellow900);
+}
+
+.seedRow > .seedWarning:first-child {
+    margin-top: 0;
+}
+
+.seedWarning svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Names */
+
+.namesToolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+    margin-bottom: 12px;
+}
+
+.search {
+    width: 280px;
+}
+
+.namesTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.namesTable th,
+.namesTable td {
+    text-align: left;
+    padding: 4px 8px;
+    border-bottom: 1px solid var(--colors-grey200);
+}
+
+/* Name column only as wide as its longest label, so inputs sit close. */
+.namesTable th:first-child,
+.namesTable td:first-child {
+    width: 1%;
+    white-space: nowrap;
+    padding-right: 24px;
+}
+
+.namesTable thead th {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--colors-grey700);
+}
+
+.namesGroupRow th {
+    padding-top: 16px;
+    font-weight: 500;
+    border-bottom-color: var(--colors-grey300);
+}
+
+
+.nameCell {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nameInput {
+    flex: 1;
+    min-width: 200px;
+}
+
+.builtInCell {
     display: inline-flex;
     align-items: center;
-    gap: 2px;
-    background: none;
-    border: none;
-    padding: 0;
-    color: var(--colors-grey800);
-    text-decoration: underline;
-    cursor: pointer;
-    font: inherit;
+    gap: 6px;
 }
 
-.setCustomLabels,
-.useRelativeLink {
-    opacity: 0;
-    pointer-events: none;
+.childCell {
+    padding-left: 24px !important;
+}
+
+.infoIcon {
+    display: inline-flex;
+    color: var(--colors-grey600);
+    cursor: help;
+}
+
+.hiddenRow td:first-child {
+    color: var(--colors-grey600);
+}
+
+/* The row a pencil sent you to. */
+.focusRow td {
+    animation: focusFlash 1.6s ease-out;
+}
+
+@keyframes focusFlash {
+    from {
+        background: var(--colors-blue100);
+    }
+    to {
+        background: transparent;
+    }
+}
+
+.namesNote {
+    margin: 12px 0 0;
+    font-size: 13px;
+    color: var(--colors-grey700);
+}
+
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
 }

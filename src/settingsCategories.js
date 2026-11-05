@@ -75,7 +75,7 @@ export const categories = {
         icon: 'equalizer',
         pageLabel: i18n.t('Analytics settings'),
         sectionLabels: {
-            periods: i18n.t('Periods available for analysis'),
+            periods: i18n.t('Period configuration'),
             display: i18n.t('Display & formatting'),
             calculation: i18n.t('Calculation & data output'),
             caching: i18n.t('Caching & performance'),

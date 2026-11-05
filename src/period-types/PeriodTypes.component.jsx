@@ -1,29 +1,15 @@
 import { useDataQuery, useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import {
-    CenteredContent,
-    Checkbox,
-    CircularLoader,
-    IconChevronDown16,
-    IconChevronUp16,
-    Table,
-    TableBody,
-    TableCell,
-    TableCellHead,
-    TableHead,
-    TableRow,
-    TableRowHead,
-    Tag,
-} from '@dhis2/ui'
-import React, { Fragment, useState, useEffect } from 'react'
+import { CenteredContent, CircularLoader, Tab, TabBar } from '@dhis2/ui'
+import React, { useState, useEffect } from 'react'
 import configOptionStore from '../configOptionStore.js'
-import CustomLabelsPanel from '../period-labels/CustomLabelsPanel.jsx'
 import DefaultRelativePeriod from '../period-labels/DefaultRelativePeriod.jsx'
 import { useLabelState } from '../period-labels/labelStore.js'
-import { PERIOD_FAMILIES } from '../period-labels/periodFamilies.js'
 import settingsActions from '../settingsActions.js'
 import settingsStore from '../settingsStore.js'
-import { formatPeriodDisplayName } from './builtInPeriodNames.js'
+import AvailabilityTable from './AvailabilityTable.jsx'
+import { buildGroups, seedValueFor } from './periodGroups.js'
+import PeriodNames from './PeriodNames.jsx'
 import styles from './PeriodTypes.module.css'
 
 const query = {
@@ -37,99 +23,6 @@ const query = {
         resource: 'configuration/dataOutputPeriodTypes',
     },
 }
-
-const mandatoryPeriodTypes = new Set(['Yearly'])
-
-const getGroupKey = (periodType) => {
-    if (periodType.frequencyOrder !== 365) {
-        return String(periodType.frequencyOrder)
-    }
-    return periodType.name === 'Yearly' ? 'yearly' : 'financialYear'
-}
-
-const groupSortOrder = {
-    yearly: 365,
-    financialYear: 365.5,
-}
-
-const periodTypeOrder = {
-    Daily: 1,
-    Weekly: 1,
-    WeeklyWednesday: 2,
-    WeeklyThursday: 3,
-    WeeklyFriday: 4,
-    WeeklySaturday: 5,
-    WeeklySunday: 6,
-    BiWeekly: 1,
-    Monthly: 1,
-    BiMonthly: 1,
-    Quarterly: 1,
-    QuarterlyNov: 2,
-    SixMonthly: 1,
-    SixMonthlyApril: 2,
-    SixMonthlyNov: 3,
-    Yearly: 1,
-    FinancialFeb: 2,
-    FinancialApril: 3,
-    FinancialJuly: 4,
-    FinancialAug: 5,
-    FinancialSep: 6,
-    FinancialOct: 7,
-    FinancialNov: 8,
-}
-
-const sortPeriodTypes = (periodTypes) =>
-    [...periodTypes].sort((a, b) => {
-        const aKey = getGroupKey(a)
-        const bKey = getGroupKey(b)
-        const aOrder = groupSortOrder[aKey] ?? a.frequencyOrder
-        const bOrder = groupSortOrder[bKey] ?? b.frequencyOrder
-        if (aOrder !== bOrder) {
-            return aOrder - bOrder
-        }
-        return (periodTypeOrder[a.name] || 0) - (periodTypeOrder[b.name] || 0)
-    })
-
-const RELATIVE_SEED_GROUPS = [
-    {
-        id: 'weekly',
-        settingKey: 'analyticsWeeklyStart',
-        periodTypeToValue: {
-            Weekly: 'WEEKLY',
-            WeeklyWednesday: 'WEEKLY_WEDNESDAY',
-            WeeklyThursday: 'WEEKLY_THURSDAY',
-            WeeklyFriday: 'WEEKLY_FRIDAY',
-            WeeklySaturday: 'WEEKLY_SATURDAY',
-            WeeklySunday: 'WEEKLY_SUNDAY',
-        },
-    },
-    {
-        id: 'financialYear',
-        settingKey: 'analyticsFinancialYearStart',
-        periodTypeToValue: {
-            FinancialFeb: 'FINANCIAL_YEAR_FEBRUARY',
-            FinancialApril: 'FINANCIAL_YEAR_APRIL',
-            FinancialJuly: 'FINANCIAL_YEAR_JULY',
-            FinancialAug: 'FINANCIAL_YEAR_AUGUST',
-            FinancialSep: 'FINANCIAL_YEAR_SEPTEMBER',
-            FinancialOct: 'FINANCIAL_YEAR_OCTOBER',
-        },
-    },
-]
-
-const relativeSeedByPeriodType = RELATIVE_SEED_GROUPS.reduce((acc, group) => {
-    Object.keys(group.periodTypeToValue).forEach((name) => {
-        acc[name] = group
-    })
-    return acc
-}, {})
-
-const familyByPeriodType = PERIOD_FAMILIES.reduce((acc, family) => {
-    family.periodTypeNames.forEach((name) => {
-        acc[name] = family
-    })
-    return acc
-}, {})
 
 const namesFromList = (list) =>
     (list || []).map((entry) =>
@@ -154,9 +47,14 @@ const PeriodTypes = () => {
     const [allowedPeriodTypes, setAllowedPeriodTypes] = useState([])
     const { baseUrl, apiVersion } = useConfig()
     const [updating, setUpdating] = useState(false)
-    const [expandedTypes, setExpandedTypes] = useState(() => new Set())
+    const [tab, setTab] = useState('availability')
+    // Which name field to focus when Names opens from a pencil.
+    const [focusKey, setFocusKey] = useState(null)
     const settings = useStoreState(settingsStore)
     const labels = useLabelState()
+
+    const groups = buildGroups(data?.periodTypes?.periodTypes)
+    const allowedSet = new Set(namesFromList(allowedPeriodTypes))
 
     useEffect(() => {
         if (data?.dataOutputPeriodTypes) {
@@ -168,32 +66,33 @@ const PeriodTypes = () => {
         }
     }, [data?.dataOutputPeriodTypes])
 
+    // With exactly one usable type left, relative periods follow it.
     useEffect(() => {
         const allowed = new Set(namesFromList(allowedPeriodTypes))
-        RELATIVE_SEED_GROUPS.forEach((group) => {
-            const enabled = Object.keys(group.periodTypeToValue).filter(
-                (name) => allowed.has(name)
+        groups.forEach(({ family, types }) => {
+            if (!family.startSetting) {
+                return
+            }
+            const enabled = types.filter(
+                (type) =>
+                    allowed.has(type.name) && seedValueFor(family, type.name)
             )
             if (enabled.length !== 1) {
                 return
             }
-            const onlyValue = group.periodTypeToValue[enabled[0]]
-            if (settings?.[group.settingKey] !== onlyValue) {
-                settingsActions.saveKey(group.settingKey, onlyValue)
+            const onlyValue = seedValueFor(family, enabled[0].name)
+            if (settings?.[family.startSetting] !== onlyValue) {
+                settingsActions.saveKey(family.startSetting, onlyValue)
             }
         })
-    }, [allowedPeriodTypes, settings])
+        // groups is derived from data on every render; data is the real dependency.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [allowedPeriodTypes, settings, data])
 
-    const toggleExpanded = (periodTypeName) =>
-        setExpandedTypes((prev) => {
-            const next = new Set(prev)
-            if (next.has(periodTypeName)) {
-                next.delete(periodTypeName)
-            } else {
-                next.add(periodTypeName)
-            }
-            return next
-        })
+    const openTab = (next) => {
+        setFocusKey(null)
+        setTab(next)
+    }
 
     const handlePeriodTypeToggle = async (
         periodTypeName,
@@ -257,201 +156,50 @@ const PeriodTypes = () => {
         )
     }
 
-    const hiddenPeriodTypes = new Set(['TwoYearly'])
-    const allPeriodTypes = sortPeriodTypes(
-        (data?.periodTypes?.periodTypes || []).filter(
-            (pt) => !hiddenPeriodTypes.has(pt.name)
-        )
-    )
-    const allowedSet = new Set(namesFromList(allowedPeriodTypes))
-
-    const enabledInSeedGroup = (group) =>
-        Object.keys(group.periodTypeToValue).filter((name) =>
-            allowedSet.has(name)
-        )
-
-    const seedGroupNeedsChoice = Object.fromEntries(
-        RELATIVE_SEED_GROUPS.map((group) => [
-            group.id,
-            enabledInSeedGroup(group).length > 1,
-        ])
-    )
     return (
         <div className={styles.wrapper}>
-            <Table className={styles.table} suppressZebraStriping>
-                <TableHead>
-                    <TableRowHead>
-                        <TableCellHead className={styles.enabledHead}>
-                            {i18n.t('Enabled?')}
-                        </TableCellHead>
-                        <TableCellHead>{i18n.t('Period')}</TableCellHead>
-                        <TableCellHead className={styles.relativeHead} />
-                        <TableCellHead>{i18n.t('Custom labels')}</TableCellHead>
-                    </TableRowHead>
-                </TableHead>
-                <TableBody>
-                    {allPeriodTypes.map((periodType, index) => {
-                        const isEnabled = allowedSet.has(periodType.name)
-                        const isMandatory = mandatoryPeriodTypes.has(
-                            periodType.name
-                        )
-                        const seedGroup =
-                            relativeSeedByPeriodType[periodType.name]
-                        const selectedSeed =
-                            seedGroup && settings?.[seedGroup.settingKey]
-                        const seedValue = seedGroup
-                            ? seedGroup.periodTypeToValue[periodType.name]
-                            : undefined
-                        const showRelativeChoice =
-                            Boolean(seedGroup) &&
-                            isEnabled &&
-                            seedGroupNeedsChoice[seedGroup.id]
-                        const isRelativeSeed =
-                            showRelativeChoice && selectedSeed === seedValue
-                        const customLabel = (
-                            labels.periodTypes[periodType.name]?.default || ''
-                        ).trim()
-                        const nextPeriodType = allPeriodTypes[index + 1]
-                        const sectionId = (pt) =>
-                            familyByPeriodType[pt.name]?.id || getGroupKey(pt)
-                        const isSectionEnd =
-                            nextPeriodType &&
-                            sectionId(periodType) !== sectionId(nextPeriodType)
-                        const isExpanded = expandedTypes.has(periodType.name)
-                        const rowClassName = (...extra) =>
-                            [
-                                styles.row,
-                                isEnabled ? styles.enabled : '',
-                                ...extra,
-                            ]
-                                .filter(Boolean)
-                                .join(' ')
-
-                        return (
-                            <Fragment key={periodType.name}>
-                                <TableRow
-                                    className={rowClassName(
-                                        isExpanded
-                                            ? styles.expanded
-                                            : isSectionEnd
-                                            ? styles.sectionEnd
-                                            : ''
-                                    )}
-                                >
-                                    <TableCell className={styles.enabledCell}>
-                                        <Checkbox
-                                            dense
-                                            checked={isEnabled}
-                                            disabled={updating || isMandatory}
-                                            onChange={() =>
-                                                handlePeriodTypeToggle(
-                                                    periodType.name,
-                                                    isEnabled
-                                                )
-                                            }
-                                        />
-                                    </TableCell>
-                                    <TableCell>
-                                        {formatPeriodDisplayName(
-                                            periodType.displayName,
-                                            periodType.name
-                                        )}
-                                    </TableCell>
-                                    <TableCell className={styles.relativeCell}>
-                                        {isRelativeSeed && (
-                                            <Tag className={styles.relativeTag}>
-                                                {i18n.t('Relative period')}
-                                            </Tag>
-                                        )}
-                                        {showRelativeChoice &&
-                                            !isRelativeSeed && (
-                                                <button
-                                                    type="button"
-                                                    className={`${styles.customLabelsLink} ${styles.useRelativeLink}`}
-                                                    onClick={() =>
-                                                        settingsActions.saveKey(
-                                                            seedGroup.settingKey,
-                                                            seedValue
-                                                        )
-                                                    }
-                                                >
-                                                    {i18n.t(
-                                                        'Use for relative period'
-                                                    )}
-                                                </button>
-                                            )}
-                                    </TableCell>
-                                    <TableCell>
-                                        <div className={styles.labelsCell}>
-                                            <button
-                                                type="button"
-                                                aria-expanded={isExpanded}
-                                                className={
-                                                    customLabel || isExpanded
-                                                        ? styles.customLabelsLink
-                                                        : `${styles.customLabelsLink} ${styles.setCustomLabels}`
-                                                }
-                                                onClick={() =>
-                                                    toggleExpanded(
-                                                        periodType.name
-                                                    )
-                                                }
-                                            >
-                                                <span>
-                                                    {customLabel
-                                                        ? i18n.t(
-                                                              'Label: {{label}}',
-                                                              {
-                                                                  label: customLabel,
-                                                              }
-                                                          )
-                                                        : i18n.t(
-                                                              'Set custom label'
-                                                          )}
-                                                </span>
-                                                {isExpanded ? (
-                                                    <IconChevronUp16 />
-                                                ) : (
-                                                    <IconChevronDown16 />
-                                                )}
-                                            </button>
-                                        </div>
-                                    </TableCell>
-                                </TableRow>
-                                {isExpanded && (
-                                    <TableRow
-                                        className={rowClassName(
-                                            styles.expandedPanelRow,
-                                            isSectionEnd
-                                                ? styles.sectionEnd
-                                                : ''
-                                        )}
-                                    >
-                                        <TableCell />
-                                        <TableCell colSpan="3">
-                                            <CustomLabelsPanel
-                                                periodTypeName={periodType.name}
-                                                family={
-                                                    familyByPeriodType[
-                                                        periodType.name
-                                                    ]
-                                                }
-                                                onDone={() =>
-                                                    toggleExpanded(
-                                                        periodType.name
-                                                    )
-                                                }
-                                            />
-                                        </TableCell>
-                                    </TableRow>
-                                )}
-                            </Fragment>
-                        )
-                    })}
-                </TableBody>
-            </Table>
-            <div className={styles.defaultRelative}>
-                <DefaultRelativePeriod />
+            <TabBar>
+                <Tab
+                    selected={tab === 'availability'}
+                    onClick={() => openTab('availability')}
+                >
+                    {i18n.t('Availability for analysis')}
+                </Tab>
+                <Tab
+                    selected={tab === 'names'}
+                    onClick={() => openTab('names')}
+                >
+                    {i18n.t('Display names')}
+                </Tab>
+            </TabBar>
+            <div className={styles.tabBody}>
+                {tab === 'availability' ? (
+                    <>
+                        <AvailabilityTable
+                            groups={groups}
+                            allowedSet={allowedSet}
+                            settings={settings}
+                            labels={labels}
+                            updating={updating}
+                            onToggle={handlePeriodTypeToggle}
+                            onRename={(key) => {
+                                setFocusKey(key)
+                                setTab('names')
+                            }}
+                        />
+                        <div className={styles.defaultRelative}>
+                            <DefaultRelativePeriod />
+                        </div>
+                    </>
+                ) : (
+                    <PeriodNames
+                        groups={groups}
+                        allowedSet={allowedSet}
+                        settings={settings}
+                        labels={labels}
+                        focusKey={focusKey}
+                    />
+                )}
             </div>
         </div>
     )

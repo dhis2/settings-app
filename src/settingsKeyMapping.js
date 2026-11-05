@@ -250,6 +250,7 @@ const settingsKeyMapping = {
     dataOutputPeriodTypes: {
         type: 'periodTypes',
         searchLabels: [
+            i18n.t('Period configuration'),
             i18n.t('Periods available for analysis'),
             i18n.t('Period types'),
             i18n.t('Allowed period types'),

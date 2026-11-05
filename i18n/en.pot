@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2026-10-01T13:59:05.469Z\n"
-"PO-Revision-Date: 2026-10-01T13:59:05.469Z\n"
+"POT-Creation-Date: 2026-11-05T08:57:31.868Z\n"
+"PO-Revision-Date: 2026-11-05T08:57:31.868Z\n"
 
 msgid "Failed to load: {{error}}"
 msgstr "Failed to load: {{error}}"
@@ -176,31 +176,6 @@ msgstr "Name"
 msgid "Password"
 msgstr "Password"
 
-msgid "Period type"
-msgstr "Period type"
-
-msgid "Custom label"
-msgstr "Custom label"
-
-msgid "Relative periods"
-msgstr "Relative periods"
-
-msgid "Done"
-msgstr "Done"
-
-msgid ""
-"Rename the periods shown in analytics apps. Only enabled period types "
-"appear here."
-msgstr ""
-"Rename the periods shown in analytics apps. Only enabled period types "
-"appear here."
-
-msgid "Translate"
-msgstr "Translate"
-
-msgid "Period types"
-msgstr "Period types"
-
 msgid "Day"
 msgstr "Day"
 
@@ -360,29 +335,72 @@ msgstr "Last 5 years"
 msgid "Last 10 years"
 msgstr "Last 10 years"
 
+msgid "Relative weeks"
+msgstr "Relative weeks"
+
+msgid "Relative financial years"
+msgstr "Relative financial years"
+
+msgid "Relative periods"
+msgstr "Relative periods"
+
+msgid "{{relative}} are based on {{periodType}}."
+msgstr "{{relative}} are based on {{periodType}}."
+
+msgid "{{relative}} based on"
+msgstr "{{relative}} based on"
+
+msgid "{{periodType}} (not available)"
+msgstr "{{periodType}} (not available)"
+
+msgid ""
+"{{relative}} are not shown in analytics apps until they are based on an "
+"available period type."
+msgstr ""
+"{{relative}} are not shown in analytics apps until they are based on an "
+"available period type."
+
+msgid "Rename {{periodType}}"
+msgstr "Rename {{periodType}}"
+
+msgid "Rename"
+msgstr "Rename"
+
+msgid "{{periodType}} available for analysis"
+msgstr "{{periodType}} available for analysis"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "Show unavailable periods"
+msgstr "Show unavailable periods"
+
+msgid "Built-in name"
+msgstr "Built-in name"
+
+msgid "Custom name"
+msgstr "Custom name"
+
+msgid "Not available for analysis, won't be shown in analytics apps"
+msgstr "Not available for analysis, won't be shown in analytics apps"
+
+msgid "Translate"
+msgstr "Translate"
+
+msgid "No names match \"{{query}}\"."
+msgstr "No names match \"{{query}}\"."
+
 msgid "Settings updated"
 msgstr "Settings updated"
 
 msgid "There was a problem updating settings. Changes have not been saved."
 msgstr "There was a problem updating settings. Changes have not been saved."
 
-msgid "Enabled?"
-msgstr "Enabled?"
+msgid "Availability for analysis"
+msgstr "Availability for analysis"
 
-msgid "Period"
-msgstr "Period"
-
-msgid "Custom labels"
-msgstr "Custom labels"
-
-msgid "Relative period"
-msgstr "Relative period"
-
-msgid "Use for relative period"
-msgstr "Use for relative period"
-
-msgid "Set custom label"
-msgstr "Set custom label"
+msgid "Display names"
+msgstr "Display names"
 
 msgid "January"
 msgstr "January"
@@ -471,8 +489,8 @@ msgstr "Analytics"
 msgid "Analytics settings"
 msgstr "Analytics settings"
 
-msgid "Periods available for analysis"
-msgstr "Periods available for analysis"
+msgid "Period configuration"
+msgstr "Period configuration"
 
 msgid "Display & formatting"
 msgstr "Display & formatting"
@@ -676,6 +694,12 @@ msgstr "Hide monthly periods"
 
 msgid "Hide bimonthly periods"
 msgstr "Hide bimonthly periods"
+
+msgid "Periods available for analysis"
+msgstr "Periods available for analysis"
+
+msgid "Period types"
+msgstr "Period types"
 
 msgid "Allowed period types"
 msgstr "Allowed period types"
