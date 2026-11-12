@@ -3,3 +3,18 @@
     padding: 1rem 2rem;
     max-width: 1000px;
 }
+
+.section + .section {
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+.section:first-child {
+    margin-top: 16px;
+}
+.sectionHeading {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--colors-grey900);
+    margin: 0 0 16px;
+}

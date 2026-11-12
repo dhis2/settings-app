@@ -1,5 +1,4 @@
 import i18n from '@dhis2/d2-i18n'
-import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component.js'
 import createHistory from 'history/createHashHistory.js'
 import Snackbar from 'material-ui/Snackbar'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider.js'
@@ -16,6 +15,7 @@ import {
     filterSettingsByApiVersion,
 } from './settingsCategories.js'
 import SettingsFields from './settingsFields.component.jsx'
+import SettingsSidebar from './SettingsSidebar.jsx'
 import appTheme from './theme.js'
 
 class AppComponent extends React.Component {
@@ -25,9 +25,7 @@ class AppComponent extends React.Component {
         this.state = {
             category: categoryOrder[0],
             currentSettings: filterSettingsByApiVersion({
-                settings: categories[categoryOrder[0]].settings.map(
-                    (s) => s.setting
-                ),
+                settings: categories[categoryOrder[0]].settings,
                 apiVersion: props.apiVersion,
             }),
             snackbarMessage: '',
@@ -197,11 +195,10 @@ class AppComponent extends React.Component {
                         onRequestClose={this.closeSnackbar}
                     />
                     <div className={styles.contentWrap}>
-                        <Sidebar
+                        <SettingsSidebar
                             sections={sections}
                             onChangeSection={settingsActions.setCategory}
                             currentSection={this.state.category}
-                            showSearchField
                             searchFieldLabel={i18n.t('Search settings')}
                             ref={this.sidebarRef}
                             onChangeSearchText={this.doSearch}

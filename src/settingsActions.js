@@ -2,6 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import { getInstance as getD2 } from 'd2'
 import Action from 'd2-ui/lib/action/Action.js'
 import { Observable } from 'rxjs'
+import { getSectionLabelForSetting } from './groupSettingsBySection.js'
 import {
     categories,
     filterCategoriesByApiVersion,
@@ -181,20 +182,32 @@ const settingsSearchMap = Observable.fromPromise(
                             return translatedKeyValueMap
                         }
 
+                        const sectionLabel = getSectionLabelForSetting({
+                            settingKey: settingsKey,
+                            categories,
+                        })
+                        const sectionEntries = sectionLabel
+                            ? [[sectionLabel, settingsKey]]
+                            : []
+
                         if (settingsKeyMapping[settingsKey].searchLabels) {
                             return translatedKeyValueMap.concat(
                                 settingsKeyMapping[settingsKey].searchLabels
                                     .filter((label) => label)
-                                    .map((label) => [label, settingsKey])
+                                    .map((label) => [label, settingsKey]),
+                                sectionEntries
                             )
                         }
 
-                        return translatedKeyValueMap.concat([
+                        return translatedKeyValueMap.concat(
                             [
-                                settingsKeyMapping[settingsKey].label,
-                                settingsKey,
+                                [
+                                    settingsKeyMapping[settingsKey].label,
+                                    settingsKey,
+                                ],
                             ],
-                        ])
+                            sectionEntries
+                        )
                     }, [])
 
                 resolve(searchMapping)

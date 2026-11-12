@@ -1,0 +1,147 @@
+.sectionBody {
+}
+
+.periodSelect {
+    width: 640px;
+    max-width: 100%;
+    margin-bottom: 8px;
+}
+
+.family {
+    margin-bottom: 4px;
+}
+
+.familySummary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px 0;
+    list-style: none;
+    user-select: none;
+}
+
+.familySummary::-webkit-details-marker {
+    display: none;
+}
+
+.familySummary svg {
+    transition: transform 0.15s ease;
+}
+
+.family[open] > .familySummary svg {
+    transform: rotate(90deg);
+}
+
+.familyName {
+    font-weight: 500;
+}
+
+.familyBody {
+    padding: 4px 0 8px 32px;
+}
+
+.subhead {
+    margin: 12px 0 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--colors-grey600);
+}
+
+.subhead:first-child {
+    margin-top: 0;
+}
+
+.panel {
+    display: grid;
+    grid-template-columns: max-content 280px;
+    align-items: center;
+    column-gap: var(--spacers-dp16);
+    row-gap: var(--spacers-dp4);
+    padding: var(--spacers-dp4) 0 var(--spacers-dp12);
+}
+
+.panelLabelName {
+    color: var(--colors-grey800);
+}
+
+.panelSectionHead {
+    grid-column: 1 / -1;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--colors-grey600);
+    padding-top: var(--spacers-dp8);
+}
+
+.panelActions {
+    grid-column: 2;
+    padding-top: var(--spacers-dp8);
+}
+
+.panelSectionHead:first-child {
+    padding-top: 0;
+}
+
+.relativeLabelList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacers-dp8);
+    max-width: 360px;
+    margin-bottom: var(--spacers-dp16);
+}
+
+.relativeLabelField {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.labelEditor {
+    display: flex;
+    align-items: stretch;
+    height: 32px;
+}
+
+.labelInput {
+    flex: 1;
+    min-width: 0;
+    height: 32px;
+}
+
+.labelInput :global([data-test='dhis2-uicore-input']) {
+    display: flex;
+    width: 100%;
+    height: 32px;
+}
+
+.labelInput :global(input) {
+    height: 32px;
+    max-height: 32px;
+    box-sizing: border-box;
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+}
+
+.translateButton {
+    box-sizing: border-box;
+    height: 32px !important;
+    min-height: 32px !important;
+    width: 32px;
+    padding: 0 !important;
+    border-start-start-radius: 0 !important;
+    border-end-start-radius: 0 !important;
+    border-start-end-radius: 3px !important;
+    border-end-end-radius: 3px !important;
+    margin-inline-start: -1px;
+    z-index: 0;
+}
+
+.translateButton:hover,
+.translateButton:focus {
+    z-index: 1;
+}
