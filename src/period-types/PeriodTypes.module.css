@@ -8,11 +8,10 @@
 }
 
 .defaultRelative {
-    margin-top: var(--spacers-dp16);
+    margin-top: var(--spacers-dp24);
 }
 
 /* Availability */
-
 
 /* Two columns side by side, one when the section is narrow. */
 .columns {
@@ -38,8 +37,7 @@
 .row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    gap: 6px;
     min-height: 32px;
     padding: 3px 12px;
     color: var(--colors-grey700);
@@ -47,8 +45,17 @@
 }
 
 .rowOn {
-    background: var(--colors-teal050);
     color: var(--colors-grey900);
+}
+
+/* A family with anything available gets a light tint. */
+.groupOn {
+    background: color-mix(in srgb, var(--colors-teal050) 50%, white);
+    border-color: color-mix(
+        in srgb,
+        var(--colors-teal300) 20%,
+        var(--colors-grey300)
+    );
 }
 
 .rowName {
@@ -79,6 +86,16 @@
     background: none;
     color: var(--colors-grey600);
     cursor: pointer;
+}
+
+/* Rename is occasional, so the pencil shows only on hover or keyboard focus. */
+.pencil {
+    opacity: 0;
+}
+
+.row:hover .pencil,
+.pencil:focus-visible {
+    opacity: 1;
 }
 
 .pencil:hover {
@@ -161,7 +178,6 @@
     font-weight: 500;
     border-bottom-color: var(--colors-grey300);
 }
-
 
 .nameCell {
     display: flex;

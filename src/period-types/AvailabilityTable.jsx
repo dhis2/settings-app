@@ -1,10 +1,10 @@
 import i18n from '@dhis2/d2-i18n'
 import {
+    Checkbox,
     IconEdit16,
     IconWarning16,
     SingleSelect,
     SingleSelectOption,
-    Switch,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -45,8 +45,7 @@ const SeedChoice = ({ group, allowedSet, settings, displayName }) => {
     if (status === 'ok' && enabledSeedable.length === 1) {
         return (
             <p className={[styles.seedRow, styles.seedNote].join(' ')}>
-                {i18n.t('{{relative}} are based on {{periodType}}.', {
-                    relative: noun,
+                {i18n.t('Relative uses {{periodType}}', {
                     periodType: displayName(seedType),
                 })}
             </p>
@@ -64,7 +63,7 @@ const SeedChoice = ({ group, allowedSet, settings, displayName }) => {
         <div className={styles.seedRow}>
             <SingleSelect
                 dense
-                prefix={i18n.t('{{relative}} based on', { relative: noun })}
+                prefix={i18n.t('Relative uses')}
                 selected={seedType || ''}
                 onChange={({ selected }) =>
                     settingsActions.saveKey(
@@ -116,42 +115,42 @@ const TypeRow = ({
     onRename,
 }) => (
     <div className={[styles.row, enabled ? styles.rowOn : ''].join(' ')}>
-        <span className={styles.rowName}>
-            {customLabel ? (
-                <>
-                    <s className={styles.builtInStruck}>{type.builtIn}</s>
-                    <span className={styles.customName}>{customLabel}</span>
-                </>
-            ) : (
-                type.builtIn
-            )}
-            {enabled && (
-                <button
-                    type="button"
-                    className={styles.pencil}
-                    aria-label={i18n.t('Rename {{periodType}}', {
-                        periodType: type.builtIn,
-                    })}
-                    title={i18n.t('Rename')}
-                    onClick={onRename}
-                >
-                    <IconEdit16 />
-                </button>
-            )}
-        </span>
-        <Switch
+        <Checkbox
             dense
             label={
-                <span className={styles.srOnly}>
-                    {i18n.t('{{periodType}} available for analysis', {
-                        periodType: type.builtIn,
-                    })}
+                <span className={styles.rowName}>
+                    {customLabel ? (
+                        <>
+                            <s className={styles.builtInStruck}>
+                                {type.builtIn}
+                            </s>
+                            <span className={styles.customName}>
+                                {customLabel}
+                            </span>
+                        </>
+                    ) : (
+                        type.builtIn
+                    )}
                 </span>
             }
             checked={enabled}
             disabled={disabled || type.mandatory}
             onChange={() => onToggle(type.name, enabled)}
         />
+        {/* Outside the label: a button inside it would be invalid markup. */}
+        {enabled && (
+            <button
+                type="button"
+                className={styles.pencil}
+                aria-label={i18n.t('Rename {{periodType}}', {
+                    periodType: type.builtIn,
+                })}
+                title={i18n.t('Rename')}
+                onClick={onRename}
+            >
+                <IconEdit16 />
+            </button>
+        )}
     </div>
 )
 
@@ -185,7 +184,12 @@ const AvailabilityTable = ({
             key={group.family.id}
             role="group"
             aria-label={group.family.label}
-            className={styles.group}
+            className={[
+                styles.group,
+                group.types.some((t) => allowedSet.has(t.name))
+                    ? styles.groupOn
+                    : '',
+            ].join(' ')}
         >
             {group.types.map((type) => (
                 <TypeRow
