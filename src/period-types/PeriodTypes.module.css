@@ -25,7 +25,7 @@
 .table {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .group {
@@ -37,9 +37,9 @@
 .row {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     min-height: 32px;
-    padding: 3px 12px;
+    padding: 4px 12px;
     color: var(--colors-grey700);
     font-size: 14px;
 }
@@ -104,7 +104,7 @@
 }
 
 .seedRow {
-    padding: 6px 12px 8px;
+    padding: 4px 12px 8px;
 }
 
 .seedNote {
@@ -142,47 +142,124 @@
     margin-bottom: 12px;
 }
 
-.search {
-    width: 280px;
+.namesTable {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: var(--colors-grey900);
 }
 
 .namesTable {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-}
-
-.namesTable th,
-.namesTable td {
-    text-align: left;
-    padding: 4px 8px;
     border-bottom: 1px solid var(--colors-grey200);
 }
 
-/* Name column only as wide as its longest label, so inputs sit close. */
-.namesTable th:first-child,
+/* Inputs already draw each row's edge; only families get a line. */
+.namesTable th,
+.namesTable td {
+    text-align: left;
+    padding: 2px 8px;
+}
+
+/* Fits the longest built-in name ("Financial year (start November)" plus
+   its info icon); longer translations wrap rather than push the inputs. */
+.nameCol {
+    width: 280px;
+}
+
 .namesTable td:first-child {
-    width: 1%;
-    white-space: nowrap;
     padding-right: 24px;
 }
 
-.namesTable thead th {
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--colors-grey700);
+.namesGroupRow th {
+    padding: 0;
+    border-top: 1px solid var(--colors-grey200);
+    font-weight: 500;
 }
 
-.namesGroupRow th {
-    padding-top: 16px;
-    font-weight: 500;
-    border-bottom-color: var(--colors-grey300);
+/* An open family ends with a little air before the next header. */
+.namesTable tbody tr:last-child td {
+    padding-bottom: 8px;
+}
+
+/* Each family folds; the header is one full-width button. */
+.groupToggle {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background: none;
+    font: inherit;
+    font-size: 14px;
+    color: var(--colors-grey900);
+    text-align: left;
+    cursor: pointer;
+}
+
+.groupToggle svg {
+    align-self: center;
+    flex-shrink: 0;
+    color: var(--colors-grey600);
+}
+
+.groupToggle:hover {
+    background: var(--colors-grey050);
+}
+
+.groupToggle:hover svg {
+    color: var(--colors-grey900);
+}
+
+.groupToggle:focus-visible {
+    outline: 2px solid var(--colors-blue600);
+    outline-offset: -2px;
+}
+
+.renamedNote {
+    color: var(--colors-grey700);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* Renamed rows get the Availability tab's light teal, so the few changes
+   stand out. The tint starts past the chevron, so rows read as indented
+   under their family. */
+.renamedRow td {
+    --renamed-tint: color-mix(in srgb, var(--colors-teal050) 50%, white);
+    background: var(--renamed-tint);
+}
+
+.renamedRow td:first-child {
+    background: linear-gradient(
+        to right,
+        transparent 24px,
+        var(--renamed-tint) 24px
+    );
+}
+
+/* Holds the translate button's space so inputs line up either way. */
+.translateSlot {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    width: 32px;
 }
 
 .nameCell {
     display: flex;
     align-items: center;
     gap: 4px;
+}
+
+/* The hint only appears in the field you're typing in. */
+.namesTable input::placeholder {
+    color: transparent;
+}
+
+.namesTable input:focus::placeholder {
+    color: var(--colors-grey500);
 }
 
 .nameInput {
@@ -196,8 +273,13 @@
     gap: 6px;
 }
 
-.childCell {
-    padding-left: 24px !important;
+/* Rows start under their family's name (past the chevron); relatives one step further. */
+.namesTable td:first-child {
+    padding-left: 32px;
+}
+
+.namesTable td.childCell {
+    padding-left: 48px;
 }
 
 .infoIcon {
@@ -222,19 +304,4 @@
     to {
         background: transparent;
     }
-}
-
-.namesNote {
-    margin: 12px 0 0;
-    font-size: 13px;
-    color: var(--colors-grey700);
-}
-
-.srOnly {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
 }

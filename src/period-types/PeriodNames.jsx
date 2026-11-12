@@ -2,6 +2,8 @@ import i18n from '@dhis2/d2-i18n'
 import {
     Button,
     Checkbox,
+    IconChevronDown16,
+    IconChevronRight16,
     IconInfo16,
     IconTranslate16,
     Input,
@@ -19,7 +21,13 @@ import styles from './PeriodTypes.module.css'
 
 // Keeps its own text while typing and saves on blur or Enter, so a trailing
 // space isn't trimmed away mid-word.
-const NameInput = ({ builtIn, value, onCommit, initialFocus }) => {
+export const NameInput = ({
+    builtIn,
+    value,
+    onCommit,
+    initialFocus,
+    placeholder = builtIn,
+}) => {
     const [text, setText] = useState(value)
     const [focused, setFocused] = useState(false)
     const wrapper = useRef(null)
@@ -43,7 +51,10 @@ const NameInput = ({ builtIn, value, onCommit, initialFocus }) => {
                 dense
                 initialFocus={initialFocus}
                 value={text}
-                placeholder={builtIn}
+                placeholder={placeholder}
+                ariaLabel={i18n.t('Custom name for {{periodName}}', {
+                    periodName: builtIn,
+                })}
                 onChange={({ value: next }) => setText(next || '')}
                 onFocus={(_, event) => {
                     setFocused(true)
@@ -70,6 +81,7 @@ NameInput.propTypes = {
     builtIn: PropTypes.string.isRequired,
     onCommit: PropTypes.func.isRequired,
     initialFocus: PropTypes.bool,
+    placeholder: PropTypes.string,
     value: PropTypes.string,
 }
 
@@ -107,27 +119,18 @@ const nameRows = ({ groups, allowedSet, settings, labels }) =>
         ]
     })
 
+const UNAVAILABLE = () =>
+    i18n.t("Not available for analysis, won't be shown in analytics apps")
+
 const PeriodNames = ({ groups, allowedSet, settings, labels, focusKey }) => {
-    const [query, setQuery] = useState('')
     const [showHidden, setShowHidden] = useState(false)
     const [translating, setTranslating] = useState(null)
 
-    const q = query.trim().toLowerCase()
-    const matches = nameRows({
-        groups,
-        allowedSet,
-        settings,
-        labels,
-    }).filter(
-        (row) =>
-            !q ||
-            row.builtIn.toLowerCase().includes(q) ||
-            row.custom.toLowerCase().includes(q)
-    )
+    const rows = nameRows({ groups, allowedSet, settings, labels })
     // The pencil's target stays visible even when it is hidden from analysts.
     const shown = showHidden
-        ? matches
-        : matches.filter((row) => !row.hidden || row.key === focusKey)
+        ? rows
+        : rows.filter((row) => !row.hidden || row.key === focusKey)
     const visibleGroups = groups
         .map((group) => ({
             group,
@@ -135,17 +138,25 @@ const PeriodNames = ({ groups, allowedSet, settings, labels, focusKey }) => {
         }))
         .filter((entry) => entry.rows.length > 0)
 
+    // Families start folded; the one a pencil sent you to starts open.
+    const [open, setOpen] = useState(
+        () =>
+            new Set(
+                rows
+                    .filter((row) => row.key === focusKey)
+                    .map((row) => row.group.family.id)
+            )
+    )
+    const toggle = (id) =>
+        setOpen((prev) => {
+            const next = new Set(prev)
+            next.has(id) ? next.delete(id) : next.add(id)
+            return next
+        })
+
     return (
         <div className={styles.names}>
             <div className={styles.namesToolbar}>
-                <div className={styles.search}>
-                    <Input
-                        dense
-                        placeholder={i18n.t('Filter')}
-                        value={query}
-                        onChange={({ value }) => setQuery(value || '')}
-                    />
-                </div>
                 <Checkbox
                     dense
                     label={i18n.t('Show unavailable periods')}
@@ -154,81 +165,126 @@ const PeriodNames = ({ groups, allowedSet, settings, labels, focusKey }) => {
                 />
             </div>
             <table className={styles.namesTable}>
-                <thead>
-                    <tr>
-                        <th>{i18n.t('Built-in name')}</th>
-                        <th>{i18n.t('Custom name')}</th>
-                    </tr>
-                </thead>
-                {visibleGroups.map(({ group, rows }) => (
-                    <tbody key={group.family.id}>
-                        <tr className={styles.namesGroupRow}>
-                            <th colSpan={2}>{group.family.label}</th>
-                        </tr>
-                        {rows.map((row) => (
-                            <tr
-                                key={row.key}
-                                className={[
-                                    row.hidden ? styles.hiddenRow : '',
-                                    row.key === focusKey ? styles.focusRow : '',
-                                ].join(' ')}
-                            >
-                                <td
-                                    className={
-                                        row.child ? styles.childCell : undefined
-                                    }
-                                >
-                                    <span className={styles.builtInCell}>
-                                        {row.builtIn}
-                                        {row.hidden && (
-                                            <Tooltip
-                                                content={i18n.t(
-                                                    "Not available for analysis, won't be shown in analytics apps"
-                                                )}
-                                            >
-                                                <span
-                                                    className={styles.infoIcon}
-                                                    tabIndex={0}
-                                                    aria-label={i18n.t(
-                                                        "Not available for analysis, won't be shown in analytics apps"
-                                                    )}
-                                                >
-                                                    <IconInfo16 />
-                                                </span>
-                                            </Tooltip>
+                {/* Fixed widths, so opening a family never shifts the inputs. */}
+                <colgroup>
+                    <col className={styles.nameCol} />
+                    <col />
+                </colgroup>
+                {visibleGroups.map(({ group, rows: groupRows }) => {
+                    const { id, label } = group.family
+                    const isOpen = open.has(id)
+                    const renamed = groupRows.filter((row) => row.custom).length
+                    return (
+                        <tbody key={id}>
+                            <tr className={styles.namesGroupRow}>
+                                <th colSpan={2}>
+                                    <button
+                                        type="button"
+                                        className={styles.groupToggle}
+                                        aria-expanded={isOpen}
+                                        onClick={() => toggle(id)}
+                                    >
+                                        {isOpen ? (
+                                            <IconChevronDown16 />
+                                        ) : (
+                                            <IconChevronRight16 />
                                         )}
-                                    </span>
-                                </td>
-                                <td>
-                                    <span className={styles.nameCell}>
-                                        <NameInput
-                                            builtIn={row.builtIn}
-                                            value={row.custom}
-                                            onCommit={row.save}
-                                            initialFocus={row.key === focusKey}
-                                        />
-                                        <Button
-                                            small
-                                            icon={<IconTranslate16 />}
-                                            title={i18n.t('Translate')}
-                                            onClick={() =>
-                                                setTranslating(
-                                                    row.custom || row.builtIn
-                                                )
-                                            }
-                                        />
-                                    </span>
-                                </td>
+                                        <span>{label}</span>
+                                        {/* Only renames are worth seeing while folded. */}
+                                        {renamed > 0 && (
+                                            <span className={styles.renamedNote}>
+                                                {i18n.t('{{count}} renamed', {
+                                                    count: renamed,
+                                                })}
+                                            </span>
+                                        )}
+                                    </button>
+                                </th>
                             </tr>
-                        ))}
-                    </tbody>
-                ))}
+                            {isOpen &&
+                                groupRows.map((row) => (
+                                    <tr
+                                        key={row.key}
+                                        className={[
+                                            row.hidden ? styles.hiddenRow : '',
+                                            row.custom ? styles.renamedRow : '',
+                                            row.key === focusKey
+                                                ? styles.focusRow
+                                                : '',
+                                        ].join(' ')}
+                                    >
+                                        <td
+                                            className={
+                                                row.child
+                                                    ? styles.childCell
+                                                    : undefined
+                                            }
+                                        >
+                                            <span className={styles.builtInCell}>
+                                                {row.builtIn}
+                                                {row.hidden && (
+                                                    <Tooltip
+                                                        content={UNAVAILABLE()}
+                                                    >
+                                                        <span
+                                                            className={
+                                                                styles.infoIcon
+                                                            }
+                                                            tabIndex={0}
+                                                            aria-label={UNAVAILABLE()}
+                                                        >
+                                                            <IconInfo16 />
+                                                        </span>
+                                                    </Tooltip>
+                                                )}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span className={styles.nameCell}>
+                                                <NameInput
+                                                    builtIn={row.builtIn}
+                                                    value={row.custom}
+                                                    // Shown only while focused (see CSS): the name is already on the left.
+                                                    placeholder={i18n.t(
+                                                        'Enter new label for "{{periodName}}"',
+                                                        { periodName: row.builtIn }
+                                                    )}
+                                                    onCommit={row.save}
+                                                    initialFocus={
+                                                        row.key === focusKey
+                                                    }
+                                                />
+                                                {/* Only a custom name has anything to translate. */}
+                                                <span
+                                                    className={
+                                                        styles.translateSlot
+                                                    }
+                                                >
+                                                    {row.custom && (
+                                                        <Button
+                                                            small
+                                                            icon={
+                                                                <IconTranslate16 />
+                                                            }
+                                                            title={i18n.t(
+                                                                'Translate'
+                                                            )}
+                                                            onClick={() =>
+                                                                setTranslating(
+                                                                    row.custom
+                                                                )
+                                                            }
+                                                        />
+                                                    )}
+                                                </span>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                ))}
+                        </tbody>
+                    )
+                })}
             </table>
-            {!visibleGroups.length && q && (
-                <p className={styles.namesNote}>
-                    {i18n.t('No names match "{{query}}".', { query })}
-                </p>
-            )}
             {translating && (
                 <PrototypeTranslationDialog
                     name={translating}
